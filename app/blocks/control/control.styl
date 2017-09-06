@@ -1,0 +1,20 @@
+.control
+	padding 12px 16px
+	display inline-block
+	text-decoration none
+	color darken($colorDecorative, 40)
+	background-color #fff
+	border 1px solid $colorDecorative
+	border-left none
+	transition color .3s
+	
+	.control-group &
+		&:first-child 
+			border-left 1px solid $colorDecorative
+		
+	&:hover
+		color $colorText
+	
+	&_active
+		color $colorText
+		background-color lighten($colorDecorative, 10)

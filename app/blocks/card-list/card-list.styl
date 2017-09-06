@@ -1,0 +1,116 @@
+.card-list
+	margin-bottom 56px
+	display block
+	
+	&__list
+		margin-bottom 10px
+		
+	&__item
+		padding 16px
+		display table
+		width 100%
+		background-color #fff
+		
+		&:nth-child(even)
+			position relative
+			z-index 1
+			background-color lighten($colorDecorative, 10)
+			box-shadow 0 0 20px $colorDecorative
+			
+		&_mark,
+		&:nth-child(even)&_mark
+			background-color #fffcea
+			box-shadow 0 0 20px $colorDecorative, inset 0 0 0 3px #fff3b5
+		
+	&__thumb
+		position relative
+		display table-cell
+		vertical-align top
+		width 254px
+		font-size 0
+		
+	&__gallery
+		position absolute
+		top 0
+		left 0
+		bottom 0
+		width 100%
+	
+	&__about
+		padding 0 30px
+		display table-cell
+		vertical-align top
+		
+	&__contact
+		display table-cell
+		width 200px
+		vertical-align top
+		
+	&__action
+		display table-cell
+		width 54px
+		vertical-align middle
+
+	&__about-item
+		margin-bottom 16px
+
+	&__name
+		position relative
+		top -1px
+		margin-bottom 15px
+		font-size 16px
+		font-weight bold
+		
+	&__name-link
+		display inline-block
+		color $colorSecondary
+		text-decoration none
+		transition color .3s
+		
+		&:hover
+			text-decoration underline
+			color $colorMain
+		
+	&__price
+		margin-right 42px
+		display inline-block
+		font-size 16px
+		font-weight bold
+		
+	&__feature
+		line-height 1.73
+		
+	&__remark
+		color darken($colorDecorative, 40)
+		
+	&__place,
+	&__pubdate
+		font-size 12px
+		color darken($colorDecorative, 40)
+		
+	&__author
+		margin-bottom 15px
+		line-height 1.3
+
+	&__phone
+		padding 9px 12px 9px 32px
+		display inline-block
+		background-color #fff
+		border 1px dashed $colorSecondary
+		
+	&__phone-button
+		background-color transparent
+		border none
+		
+	&__phone-number
+		display inline-block
+		font-size 16px
+		font-weight bold
+		color $colorSecondary
+		
+		& + ^[0]__phone-remark
+			margin-top 12px
+		
+	&__phone-remark
+		margin-top 9px
+		font-size 11px

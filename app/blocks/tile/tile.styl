@@ -1,0 +1,42 @@
+.tile
+	display block
+	
+	&__fig
+		position relative
+		font-size 0
+		
+		img 
+			max-width 100%
+			
+	&__gallery
+		position absolute
+		z-index 5
+		top 0
+		left 0
+		bottom 0
+		display none
+		width 100%
+		opacity 0
+			
+		^[0]__fig:hover &
+			display block
+			opacity 1
+		
+	&__about
+		padding 8px 10px 15px
+		
+	&__name
+		margin-bottom 9px
+		font-weight bold
+		line-height 1.14286
+		
+	&__desc
+		margin-bottom 8px
+		color darken($colorDecorative, 40)
+		
+	&__price
+		color $colorMain
+		
+	&__address
+		font-size 12px
+		color darken($colorDecorative, 20)

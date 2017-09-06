@@ -1,0 +1,20 @@
+include ../select/select
+include ../control-group/control-group
+include ../control/control
+
+mixin sort()
+	+b.sort&attributes(attributes).block
+		+e.by
+			+select(name="sortBy")
+				option(value="1") По актуальности
+				option(value="") По дате
+				option(value="") По пробегу
+				option(value="") По названию
+				option(value="") По году (дешеле - дороже)
+				option(value="") По году (дороже - дешевле)
+		
+		+e.type
+			+control-group
+				+control(href="")._active Все
+				+control(href="") Автодилеры
+				+control(href="") Частные

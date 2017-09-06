@@ -1,0 +1,16 @@
+include ../tab/tab
+
+mixin group(data)
+	+b.group&attributes(attributes)
+		+tab._simple.group__tab
+			+e.head
+				+e.A.head-item(href="#brandPopular")._active Популярные
+				+e.A.head-item(href="#brandAll") Все
+			+e.content._active.group__(id="brandPopular")
+				+e.UL.list
+					each item in data
+						+e.list-item
+							+e.A.link(href=item.href)
+								+e.link-name #{item.name}
+								+e.link-count #{item.count}
+			+e.content(id="brandAll")

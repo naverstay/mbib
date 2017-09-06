@@ -1,0 +1,9 @@
+mixin logo()
+	+b.logo&attributes(attributes)
+		if (pageMod == 'index')
+			+e.SPAN.name mbib 
+			| ru
+		else
+			+e.A.link(href="")
+				+e.SPAN.name mbib 
+				| ru

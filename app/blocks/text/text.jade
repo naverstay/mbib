@@ -1,0 +1,6 @@
+include ../title/title
+
+mixin text(data)
+	+b.SECTION.text&attributes(attributes)
+		+title(data.titleLevel).text__title #{data.title}
+		+e.body !{data.content}

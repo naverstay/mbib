@@ -1,0 +1,31 @@
+.tab
+	margin-bottom 20px
+	display block
+	
+	&__head
+		^[0]_simple &
+			margin-bottom 15px
+			
+	&__head-item
+		^[0]_simple &
+			margin 0 12px
+			display inline-block
+			font-size 16px
+			font-weight bold
+			color $colorSecondary
+			text-decoration none
+			border-bottom 1px dashed
+			
+			&:first-child
+				margin-left 0
+			
+		&_active
+			^[0]_simple &
+				color $colorText
+				border-bottom-color transparent
+	
+	&__content
+		display none
+		
+		&_active
+			display block

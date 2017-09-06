@@ -1,0 +1,16 @@
+include ../control-group/control-group
+include ../control/control
+
+mixin pager()
+	+b.pager&attributes(attributes)
+		+control-group
+			+control(href="")._disabled.pager__prev Назад
+			+control(href="")._active 1
+			+control(href="") 2
+			+control(href="") 3
+			+control(href="") 4
+			+control(href="") 5
+			+control(href="") 6
+			+control(href="") …
+			+control(href="") 11
+			+control(href="").pager__next Вперёд

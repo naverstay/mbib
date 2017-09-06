@@ -1,0 +1,25 @@
+.group
+	margin-bottom 31px
+	display block
+	
+	&__list
+		column-gap 30px
+		column-count 6
+		
+	&__link
+		padding 5px 0 4px
+		display inline-block
+		text-decoration none
+		
+	&__link-name
+		display inline-block
+		color $colorSecondary
+		border-bottom 1px solid transparent
+		
+		^[0]__link:hover &
+			color $colorMain
+			border-bottom-color currentcolor
+		
+	&__link-count
+		font-size 12px
+		color darken($colorDecorative, 40)

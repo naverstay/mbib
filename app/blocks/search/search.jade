@@ -1,0 +1,129 @@
+include ../list/list
+include ../control-group/control-group
+include ../select/select
+include ../input/input
+include ../checkbox/checkbox
+include ../btn/btn
+
+mixin search()
+	+b.search&attributes(attributes)
+		+e.city
+			+list(getData('city'))
+			+e.city-other
+				+btn('link', 'pin')(href="")._theme_tertirary._size_s Другой город
+		+e.row
+			+e.col
+				+select(name="brand" data-placeholder="Марка")
+					option(value="")
+					option(value="") Audi
+					option(value="") BMW
+					option(value="") Kia
+					option(value="") Lada
+					option(value="") ЗАЗ
+					option(value="") ГАЗ
+					option(value="") УАЗ
+			+e.col
+				+select(name="model" data-placeholder="Модель")
+					option(value="")
+					option(value="") CL
+					option(value="") CLX
+					option(value="") MX
+					option(value="") MX5
+					option(value="") RL
+			+e.col
+				+select(name="body" data-placeholder="Тип кузова")
+					option(value="")
+					option(value="") Седан
+					option(value="") Пикап
+					option(value="") Купе
+					option(value="") Универсал
+					option(value="") Хэтчбек
+			+e.col
+				+control-group
+					+select(name="yearStart" data-placeholder="Год от")
+						option(value="")
+						option(value="") 2017
+						option(value="") 2016
+						option(value="") 2015
+						option(value="") 2014
+						option(value="") 2013
+						option(value="") 2012
+						option(value="") 2011
+						option(value="") 2010
+					+select(name="yearEnd" data-placeholder="до")
+						option(value="")
+						option(value="") 2017
+						option(value="") 2016
+						option(value="") 2015
+						option(value="") 2014
+						option(value="") 2013
+						option(value="") 2012
+						option(value="") 2011
+						option(value="") 2010
+			+e.col
+				+control-group
+					+select(name="mileageStart" data-placeholder="Пробег")
+						option(value="")
+						option(value="")
+					+select(name="mileageEnd" data-placeholder="до, км")
+						option(value="")
+						option(value="")
+		+e.row
+			+e.col
+				+select(name="transmission" data-placeholder="Коробка передач")
+					option(value="")
+					option(value="") Автомат
+					option(value="") Механическая
+			+e.col
+				+select(name="engineType" data-placeholder="Тип двигателя")
+					option(value="")
+					option(value="") Бензин
+					option(value="") Дизель
+					option(value="") Гибрид
+					option(value="") Электро
+			+e.col
+				+control-group
+					+select(name="engineStart" data-placeholder="Объём")
+						option(value="")
+						option(value="") 0.2 л
+						option(value="") 0.4 л
+						option(value="") 0.6 л
+						option(value="") 0.8 л
+						option(value="") 1 л
+						option(value="") 1.2 л
+						option(value="") 1.4 л
+						option(value="") 1.6 л
+						option(value="") 1.8 л
+						option(value="") 2 л
+					+select(name="engineEnd" data-placeholder="до, л")
+						option(value="")
+						option(value="") 0.2 л
+						option(value="") 0.4 л
+						option(value="") 0.6 л
+						option(value="") 0.8 л
+						option(value="") 1 л
+						option(value="") 1.2 л
+						option(value="") 1.4 л
+						option(value="") 1.6 л
+						option(value="") 1.8 л
+						option(value="") 2 л
+			+e.col
+				+select(name="drive" data-placeholder="Привод")
+					option(value="")
+					option(value="") Передний
+					option(value="") Задний
+					option(value="") Полный
+			+e.col
+				+control-group
+					+input(type="text", name="priceStart", placeholder="Цена от")
+					+input(type="text", name="priceEnd", placeholder="до, ₽")
+		+e.row._sbm._valign_center
+			+e.col._span_2
+				+input(type="text", name="text", placeholder="искать по тексту объявлений")
+			+e.col._span_2
+				+e.check
+					+checkbox(name="new") Новые
+				+e.check
+					+checkbox(name="old") С пробегом
+			+e.col
+				+btn('button', 'find')._theme_secondary._fullwidth Найти

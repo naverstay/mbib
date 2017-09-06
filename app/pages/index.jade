@@ -1,0 +1,23 @@
+extends /blocks/layout-default/layout-default
+include ../blocks/text/text
+include ../blocks/breadcrumbs/breadcrumbs
+include ../blocks/search/search
+include ../blocks/group/group
+include ../blocks/special/special
+include ../blocks/sort/sort
+include ../blocks/card-list/card-list
+include ../blocks/pager/pager
+
+
+block head
+	- var pageTitle = 'MBIB';
+	- var pageMod = 'index';
+
+block content
+	+breadcrumbs(getData('index-crumbs'))
+	+text(getData('main-text'))._important
+	+search
+	+group(getData('brands'))
+	+special(getData('cars'))
+	+card-list(getData('cars'))
+	+text(getData('seo-text'))

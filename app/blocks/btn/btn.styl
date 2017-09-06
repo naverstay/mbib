@@ -1,0 +1,43 @@
+.btn
+	padding 0 19px
+	display inline-block
+	height $heightM
+	font-size 12px
+	line-height 48px
+	text-align center
+	text-decoration none
+	text-transform uppercase
+	border none
+	
+	&_size_s
+		height 36px
+		line-height 38px
+		
+	&_fullwidth
+		width 100%
+
+	&__text
+		line-height 1.2
+		letter-spacing 1px
+			
+	&:active
+		transform translate3D(0, 2px, 0)
+		box-shadow none
+		
+	&_theme_main
+		color #fff
+		background-color $colorMain
+		background-image linear-gradient(to right, #b3001a, $colorMain)
+		box-shadow 0 2px 0 #900
+		
+	&_theme_secondary
+		color #fff
+		background-color $colorSecondary
+		background-image linear-gradient(to right, darken($colorSecondary, 10%), $colorSecondary)
+		box-shadow 0 2px 0 darken($colorSecondary, 30%)
+		
+	&_theme_tertirary
+		color $colorText
+		background-color #f8f8f8
+		box-shadow 0 2px 0 $colorDecorative
+		

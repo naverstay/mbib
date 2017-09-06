@@ -1,0 +1,364 @@
+[
+	{
+		"id" : "1",
+		"name" : "BMW 3 серия VI (F3x) Рестайлинг",
+		"price" : "1 957 000",
+		"thumbs" : [
+			"assets/images/bmw/3.jpg",
+			"assets/images/bmw/3.jpg"
+		],
+		"author" : "Алексей",
+		"authorcount" : 1,
+		"pubdate" : "20 минуты назад",
+		"contact" : {
+			"show" : false,
+			"phone" : "+7 912 669-66-66",
+			"callStart" : "",
+			"callEnd" : ""
+		},
+		"inspect" : {
+			"show" : false,
+			"city" : "Москва",
+			"address" : ""
+		},
+		"feature" : {
+			"year" : "1996",
+			"rightDrive" : true,
+			"mileage" : "420 000",
+			"body" : "седан-хардтоп",
+			"color" : "серебристый",
+			"transmission" : "АТ",
+			"drive" : "задний",
+			"engineType" : "бензин",
+			"engineCapacity" : "2.0",
+			"enginePower" : "91",
+			"state" : "не требует ремонта",
+			"owners" : "1",
+			"pts" : "оригинал",
+			"tenure" : "4 года и 1 месяц",
+			"cleared" : true,
+			"abs" : false,
+			"sensors" : false,
+			"cruiseControl" : false,
+			"tintedGlass" : true,
+			"servo": true,
+			"leatherInterior" : false,
+			"fabricInterior" : true,
+			"alloyWheels" : false,
+			"radiusWheels" : 15,
+			"driverAirbag" : true
+		},
+		"comment" : ""
+	},
+	{
+		"id" : "2",
+		"name" : "Cadillac Escalade III",
+		"price" : "1 500 000",
+		"thumbs" : [
+			"assets/images/cadillac/escalade3.jpg",
+			"assets/images/cadillac/escalade3.jpg"
+		],
+		"author" : "Самвел",
+		"authorcount" : 1,
+		"pubdate" : "7 часов назад",
+		"contact" : {
+			"show" : false,
+			"phone" : "+7 912 669-66-66",
+			"callStart" : "",
+			"callEnd" : ""
+		},
+		"inspect" : {
+			"show" : false,
+			"city" : "Екатеринбург",
+			"address" : ""
+		},
+		"feature" : {
+			"year" : "2010",
+			"rightDrive" : false,
+			"mileage" : "79 000",
+			"body" : "внедорожник 5 дв.",
+			"color" : "бежевый",
+			"transmission" : "АТ",
+			"drive" : "полный",
+			"engineType" : "бензин",
+			"engineCapacity" : "6.2",
+			"enginePower" : "409",
+			"state" : "не требует ремонта",
+			"owners" : "2",
+			"pts" : "оригинал",
+			"tenure" : "2 года и 7 месяц",
+			"cleared" : true,
+			"abs" : true,
+			"sensors" : true,
+			"cruiseControl" : true,
+			"tintedGlass" : true,
+			"servo": true,
+			"leatherInterior" : true,
+			"fabricInterior" : false,
+			"alloyWheels" : false,
+			"radiusWheels" : 18,
+			"driverAirbag" : true
+		},
+		"comment" : ""
+	},
+	{
+		"id" : "3",
+		"name" : "Mercedes-Benz GLA-klasse X156",
+		"price" : "1 957 000",
+		"thumbs" : [
+			"assets/images/mersedes/glax165-1.jpg",
+			"assets/images/mersedes/glax165-2.jpg",
+			"assets/images/mersedes/glax165-3.jpg"
+		],
+		"author" : "Дмитрий Николаевич",
+		"authorcount" : 1,
+		"pubdate" : "11 часов назад",
+		"contact" : {
+			"show" : true,
+			"phone" : "+7 912 669-66-66",
+			"callStart" : "",
+			"callEnd" : ""
+		},
+		"inspect" : {
+			"show" : false,
+			"city" : "Москва",
+			"address" : ""
+		},
+		"feature" : {
+			"year" : "2016",
+			"rightDrive" : false,
+			"mileage" : "20 000",
+			"body" : "внедорожник 5 дв.",
+			"color" : "красный",
+			"transmission" : "АТ",
+			"drive" : "полный",
+			"engineType" : "бензин",
+			"engineCapacity" : "2.0",
+			"enginePower" : "211",
+			"state" : "не требует ремонта",
+			"owners" : "1",
+			"pts" : "оригинал",
+			"tenure" : "1 год и 5 месяц",
+			"cleared" : true,
+			"abs" : true,
+			"sensors" : true,
+			"cruiseControl" : true,
+			"tintedGlass" : true,
+			"servo": true,
+			"leatherInterior" : true,
+			"fabricInterior" : false,
+			"alloyWheels" : true,
+			"radiusWheels" : 17,
+			"driverAirbag" : true
+		},
+		"comment" : ""
+	},
+	{
+		"id" : "4",
+		"mark" : true,
+		"name" : "Mercedes-Benz GLA-klasse X156",
+		"price" : "2 155 000",
+		"thumbs" : [
+			"assets/images/mersedes/glax165-2.jpg",
+			"assets/images/mersedes/glax165-3.jpg",
+			"assets/images/mersedes/glax165-1.jpg"
+		],
+		"author" : "Владимир Владимирович",
+		"authorcount" : "",
+		"pubdate" : "15 часов назад",
+		"contact" : {
+			"show" : true,
+			"phone" : "+7 912 755-55-55",
+			"callStart" : "16:00",
+			"callEnd" : "20:00"
+		},
+		"inspect" : {
+			"show" : true,
+			"city" : "Екатеринбург",
+			"address" : ""
+		},
+		"feature" : {
+			"year" : "2016",
+			"rightDrive" : false,
+			"mileage" : "20 000",
+			"body" : "внедорожник 5 дв.",
+			"color" : "красный",
+			"transmission" : "АТ",
+			"drive" : "полный",
+			"engineType" : "бензин",
+			"engineCapacity" : "2.0",
+			"enginePower" : "211",
+			"state" : "не требует ремонта",
+			"owners" : "1",
+			"pts" : "оригинал",
+			"tenure" : "1 год и 5 месяц",
+			"cleared" : true,
+			"abs" : true,
+			"sensors" : true,
+			"cruiseControl" : true,
+			"tintedGlass" : true,
+			"servo": true,
+			"leatherInterior" : true,
+			"fabricInterior" : false,
+			"alloyWheels" : true,
+			"radiusWheels" : 17,
+			"driverAirbag" : true
+		},
+		"comment" : ""
+	},
+	{
+		"id" : "5",
+		"name" : "Mercedes-Benz GLA-klasse X156",
+		"price" : "2 200 000",
+		"thumbs" : [
+			"assets/images/mersedes/glax165-3.jpg",
+			"assets/images/mersedes/glax165-1.jpg",
+			"assets/images/mersedes/glax165-2.jpg"
+		],
+		"author" : "Дмитрий Николаевич",
+		"authorcount" : "",
+		"pubdate" : "",
+		"contact" : {
+			"show" : false,
+			"phone" : "",
+			"callStart" : "",
+			"callEnd" : ""
+		},
+		"inspect" : {
+			"show" : false,
+			"city" : "",
+			"address" : ""
+		},
+		"feature" : {
+			"year" : "2016",
+			"rightDrive" : false,
+			"mileage" : "20 000",
+			"body" : "внедорожник 5 дв.",
+			"color" : "красный",
+			"transmission" : "АТ",
+			"drive" : "полный",
+			"engineType" : "бензин",
+			"engineCapacity" : "2.0",
+			"enginePower" : "211",
+			"state" : "не требует ремонта",
+			"owners" : "1",
+			"pts" : "оригинал",
+			"tenure" : "1 год и 5 месяц",
+			"cleared" : true,
+			"abs" : true,
+			"sensors" : true,
+			"cruiseControl" : true,
+			"tintedGlass" : true,
+			"servo": true,
+			"leatherInterior" : true,
+			"fabricInterior" : false,
+			"alloyWheels" : true,
+			"radiusWheels" : 17,
+			"driverAirbag" : true
+		},
+		"comment" : ""
+	},
+	{
+		"id" : "6",
+		"name" : "BMW 3 серия VI (F3x) Рестайлинг",
+		"price" : "1 957 000",
+		"thumbs" : [
+			"assets/images/bmw/3.jpg",
+			"assets/images/bmw/3.jpg"
+		],
+		"author" : "Алексей",
+		"authorcount" : 14,
+		"pubdate" : "2 дня назад",
+		"contact" : {
+			"show" : false,
+			"phone" : "+7 912 669-66-66",
+			"callStart" : "",
+			"callEnd" : ""
+		},
+		"inspect" : {
+			"show" : false,
+			"city" : "Москва",
+			"address" : ""
+		},
+		"feature" : {
+			"year" : "1996",
+			"rightDrive" : true,
+			"mileage" : "420 000",
+			"body" : "седан-хардтоп",
+			"color" : "серебристый",
+			"transmission" : "АТ",
+			"drive" : "задний",
+			"engineType" : "бензин",
+			"engineCapacity" : "2.0",
+			"enginePower" : "91",
+			"state" : "не требует ремонта",
+			"owners" : "1",
+			"pts" : "оригинал",
+			"tenure" : "4 года и 1 месяц",
+			"cleared" : true,
+			"abs" : false,
+			"sensors" : false,
+			"cruiseControl" : false,
+			"tintedGlass" : true,
+			"servo": true,
+			"leatherInterior" : false,
+			"fabricInterior" : true,
+			"alloyWheels" : false,
+			"radiusWheels" : 15,
+			"driverAirbag" : true
+		},
+		"comment" : ""
+	},
+	{
+		"id" : "7",
+		"name" : "Mercedes-Benz GLA-klasse X156",
+		"price" : "1 957 000",
+		"thumbs" : [
+			"assets/images/mersedes/glax165-1.jpg",
+			"assets/images/mersedes/glax165-2.jpg",
+			"assets/images/mersedes/glax165-3.jpg"
+		],
+		"author" : "Дмитрий Николаевич",
+		"authorcount" : 1,
+		"pubdate" : "2 дня назад",
+		"contact" : {
+			"show" : true,
+			"phone" : "+7 912 669-66-66",
+			"callStart" : "",
+			"callEnd" : ""
+		},
+		"inspect" : {
+			"show" : false,
+			"city" : "Екатеринбург",
+			"address" : ""
+		},
+		"feature" : {
+			"year" : "2016",
+			"rightDrive" : false,
+			"mileage" : "20 000",
+			"body" : "внедорожник 5 дв.",
+			"color" : "красный",
+			"transmission" : "АТ",
+			"drive" : "полный",
+			"engineType" : "бензин",
+			"engineCapacity" : "2.0",
+			"enginePower" : "211",
+			"state" : "не требует ремонта",
+			"owners" : "1",
+			"pts" : "оригинал",
+			"tenure" : "1 год и 5 месяц",
+			"cleared" : true,
+			"abs" : true,
+			"sensors" : true,
+			"cruiseControl" : true,
+			"tintedGlass" : true,
+			"servo": true,
+			"leatherInterior" : true,
+			"fabricInterior" : false,
+			"alloyWheels" : true,
+			"radiusWheels" : 17,
+			"driverAirbag" : true
+		},
+		"comment" : ""
+	}
+]

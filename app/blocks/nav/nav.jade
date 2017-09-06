@@ -1,0 +1,7 @@
+mixin nav(data)
+	+b.NAV.nav&attributes(attributes)
+		+e.UL.list
+			each item in data
+				+e.item
+					+e.A.link(href=item.href)
+						+e.link-text #{item.name}

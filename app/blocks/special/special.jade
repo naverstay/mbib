@@ -1,0 +1,13 @@
+include ../carousel/carousel
+include ../tile/tile
+
+mixin special(data)
+	+b.special&attributes(attributes)
+		+e.head
+			+e.H3.title Спецразмещение
+			+e.A.show-all(href="") Посмотреть все
+		+e.body
+			+carousel
+				each item in data
+					+e.item
+						+tile(item, true)

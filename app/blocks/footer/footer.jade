@@ -1,0 +1,25 @@
+include ../copy/copy
+include ../dev/dev
+include ../logo/logo
+include ../list/list
+include ../nav/nav
+
+mixin footer()
+	+b.footer&attributes(attributes)
+		.inner
+			+e.head
+				+e.head-logo
+					+logo._footer
+				+e.nav
+					+nav(getData('navFoot'))._footer
+			+e.lists
+				+e.section
+					+e.H5.section-title Продажа авто
+					+list(getData('cityList'),6)._columned
+				+e.section
+					+list(getData('regionList'),5)._columned._size_s
+
+			+e.foot
+				+copy
+				+dev
+

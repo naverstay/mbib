@@ -1,0 +1,51 @@
+.search
+	position relative
+	margin-bottom 47px
+	padding 27px 24px 0px
+	display block
+	background-color #fff
+	background-image linear-gradient(to right, lighten($colorDecorative, 10), #fff)
+	border 2px solid $colorDecorative
+	box-shadow 0 27px 23px -12px rgba(#000, .2)
+	
+	&:after
+		position absolute
+		top 100%
+		right 0
+		left 0
+		margin-top 2px
+		content ''
+		background-color transparent
+		background-clip border-box
+		border-top 4px solid darken($colorDecorative, 20)
+		border-left 5px solid rgba(#fff, 0)
+		border-right 5px solid rgba(#fff, 0)
+
+	&__city
+		margin-bottom 22px
+		display flex
+		justify-content space-between
+		
+	&__city-other
+		margin-top -9px
+		
+	&__row
+		margin 0 -15px 24px
+		display flex
+		align-items center
+		
+		&_sbm
+			margin-top -1px
+		
+	&__col
+		padding 0 15px
+		width 20%
+		flex-basis 20%
+		
+		&_span_2
+			width 40%
+			flex-basis 40%
+			
+	&__check
+		margin-right 34px
+		display inline-block

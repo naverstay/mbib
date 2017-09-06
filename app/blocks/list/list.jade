@@ -1,0 +1,9 @@
+mixin list(data, columns)
+	-var columnsMod = '_column_' + columns || '';
+	+b.UL.list&attributes(attributes)(class=columnsMod)
+		each item in data
+			+e.item
+				if item.href
+					+e.A.link(href=item.href) #{item.text}
+				else
+					| #{item.text}

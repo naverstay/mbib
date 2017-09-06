@@ -1,0 +1,28 @@
+.nav
+	padding 0 30px
+	display block
+	height 100%
+	
+	&_footer
+		padding 0
+	
+	&__list
+		display flex
+		justify-content center
+		align-items center
+		height 100%
+		font-size 16px
+		
+		^[0]_footer &
+			font-size 14px
+		
+	&__link
+		padding 10px 20px
+		display block
+		align-self center
+		text-decoration none
+		color #fff
+		
+	&__link-text
+		display inline-block
+		border-bottom 1px solid rgba(#fff,.23)

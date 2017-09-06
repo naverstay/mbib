@@ -1,0 +1,55 @@
+include ../sort/sort
+include ../tile/tile
+include ../pagination/pagination
+include ../pager/pager
+
+mixin card-list(data)
+	+b.card-list&attributes(attributes)
+		+sort
+		+e.UL.list
+			each item in data
+				if item.mark
+					-var mark = '_mark'
+				else 
+					-var mark = ''
+				+e.item(class=mark)
+					+e.thumb
+						+tile(item)
+					+e.about
+						+e.H3.name 
+							+e.A.name-link(href="") #{item.name}
+						+e.about-item
+							+e.SPAN.price #{item.price} ₽
+							if item.feature.rightDrive
+								+e.SPAN.remark Правый руль
+						+e.about-item
+							+e.P.feature
+								| #{item.feature.engineCapacity} #{item.feature.transmission} (#{item.feature.enginePower} лс) #{item.feature.engineType},
+								| #{item.feature.drive} привод, #{item.feature.body}, #{item.feature.color} 
+								br
+								| #{item.feature.year}, #{item.feature.mileage}&nbsp;км
+						+e.about-item
+							+e.SPAN.place #{item.inspect.city},
+							+e.SPAN.pubdate #{item.pubdate}
+					+e.contact
+						+e.author #{item.author}
+						+e.phone
+							//- +icon('phone', false).icon
+							if item.contact.show
+								+e.phone-number #{item.contact.phone}
+							else
+								+e.phone-button(type="button") Показать телефон
+							if item.inspect.show
+								+e.phone-remark Место осмотра: #{item.inspect.city}
+							if item.contact.callStart
+								+e.phone-remark Звоните с #{item.contact.callStart} до #{item.contact.callEnd}
+					+e.action
+		+pagination
+			+e.pager
+				+pager
+			+e.view-count
+				+select(name="viewCount")
+					option(value="1") 8 на страницу
+					option(value="") 16 на страницу
+					option(value="") 24 на страницу
+					option(value="") 32 на страницу

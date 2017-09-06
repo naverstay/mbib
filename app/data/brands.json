@@ -1,0 +1,152 @@
+[
+	{
+		"href" : "",
+		"name" : "Audi",
+		"count" : "3 369"
+	},
+	{
+		"href" : "",
+		"name" : "BMW",
+		"count" : "4 468"
+	},
+	{
+		"href" : "",
+		"name" : "Chevrolet",
+		"count" : "2 367"
+	},
+	{
+		"href" : "",
+		"name" : "Citroen",
+		"count" : "966"
+	},
+	{
+		"href" : "",
+		"name" : "Daewoo",
+		"count" : "771"
+	},
+	{
+		"href" : "",
+		"name" : "Ford",
+		"count" : "4 300"
+	},
+	{
+		"href" : "",
+		"name" : "Honda",
+		"count" : "1 034"
+	},
+	{
+		"href" : "",
+		"name" : "Hyundai",
+		"count" : "4 210"
+	},
+	{
+		"href" : "",
+		"name" : "Infiniti",
+		"count" : "702"
+	},
+	{
+		"href" : "",
+		"name" : "KIA",
+		"count" : "3 863"
+	},
+	{
+		"href" : "",
+		"name" : "Land Rover",
+		"count" : "1 968"
+	},
+	{
+		"href" : "",
+		"name" : "Lexus",
+		"count" : "1 264"
+	},
+	{
+		"href" : "",
+		"name" : "Mazda",
+		"count" : "1 655"
+	},
+	{
+		"href" : "",
+		"name" : "Mercedes-Benz",
+		"count" : "5 735"
+	},
+	{
+		"href" : "",
+		"name" : "Mitsubishi",
+		"count" : "2 249"
+	},
+	{
+		"href" : "",
+		"name" : "Nissan",
+		"count" : "3 994"
+	},
+	{
+		"href" : "",
+		"name" : "Opel",
+		"count" : "2 308"
+	},
+	{
+		"href" : "",
+		"name" : "Peugeot",
+		"count" : "1 455"
+	},
+	{
+		"href" : "",
+		"name" : "Porsche",
+		"count" : "912"
+	},
+	{
+		"href" : "",
+		"name" : "Renault",
+		"count" : "1 928"
+	},
+	{
+		"href" : "",
+		"name" : "Skoda",
+		"count" : "2 175"
+	},
+	{
+		"href" : "",
+		"name" : "SsangYong",
+		"count" : "588"
+	},
+	{
+		"href" : "",
+		"name" : "Subaru",
+		"count" : "565"
+	},
+	{
+		"href" : "",
+		"name" : "Suzuki",
+		"count" : "624"
+	},
+	{
+		"href" : "",
+		"name" : "Toyota",
+		"count" : "3 647"
+	},
+	{
+		"href" : "",
+		"name" : "Volkswagen",
+		"count" : "5 325"
+	},
+	{
+		"href" : "",
+		"name" : "Volvo",
+		"count" : "1 323"
+	},
+	{
+		"href" : "",
+		"name" : "ВАЗ (LADA)",
+		"count" : "4 914"
+	},
+	{
+		"href" : "",
+		"name" : "ГАЗ",
+		"count" : "2 355"
+	},
+	{
+		"href" : "",
+		"name" : "УАЗ",
+		"count" : "573"
+	}
+]
