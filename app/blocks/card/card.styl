@@ -1,2 +1,107 @@
 .card
+	margin 20px 0 10px
 	display block
+	background-color #fff
+	
+	&__head
+		padding 17px 18px 5px
+		border-bottom 1px solid $colorDecorative
+	
+	&__meta
+		padding 10px 19px 0
+		display flex
+		justify-content space-between
+		
+	&__meta-id
+		max-width 210px
+		
+	&__meta-lbl
+		margin-bottom 10px
+		color darken($colorDecorative, 40)
+		
+	&__meta-row
+		margin-bottom 10px
+		
+	&__meta-remark
+		margin-left 6px
+		font-size 12px
+		color darken($colorDecorative, 40)
+		
+		&:first-child
+			margin-left 0
+			
+	&__meta-date
+		margin-right 5px
+	
+
+	&__meta-price
+		position relative
+		margin-top 17px
+		padding-left 21px
+		align-items center
+		height 50px
+		overflow-y hidden
+		
+		&:before
+			position absolute
+			z-index 0
+			top -5px
+			left 0
+			content ''
+			border-top 30px solid rgba(#fff,0)
+			border-bottom 30px solid rgba(#fff,0)
+			border-right 25px solid $colorMain
+		
+	&__meta-price-value
+		position relative
+		padding 10px 15px 5px 5px
+		display block
+		height 50px
+		font-size 32px
+		font-weight bold
+		color #fff
+		background-color $colorMain
+		
+	&__meta-price-currency
+		font-size 28px
+		font-weight normal
+		
+	&__meta-phone
+		width 100%
+		
+	&__ads
+		margin-bottom 20px
+		
+	&__body
+		padding 0 20px 10px
+		
+	&__body-row
+		display flex
+		
+	&__feature
+		padding-right 15px
+		width 41%
+		
+	&__feature-row
+		padding 10px 0
+		display flex
+		border-bottom 1px solid $colorDecorative
+		
+		&:last-child
+			border-bottom none
+	
+	&__feature-term
+		width 151px
+		flex-basis 151px
+		color darken($colorDecorative, 40)
+		
+	&__feature-desc
+		&::first-letter
+			text-transform uppercase
+		
+	&__gallery
+		padding-left 15px
+		width 59%
+		
+		img
+			max-width 100%

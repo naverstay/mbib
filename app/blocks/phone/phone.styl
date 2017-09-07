@@ -1,0 +1,25 @@
+.phone
+	padding 0 16px
+	display inline-block
+	height 36px
+	min-width 180px
+	line-height 35px
+	overflow hidden
+	text-align center
+	text-decoration none
+	color #fff
+	background-color $colorSecondary
+	background-image linear-gradient(to right, darken($colorSecondary, 30), $colorSecondary)
+	border 1px dashed #fff
+	
+	&__placegholder,
+		display none
+		
+		^[0]_hidenumber &
+			display block
+			
+	&__number
+		display block
+		
+		^[0]_hidenumber &
+			display none

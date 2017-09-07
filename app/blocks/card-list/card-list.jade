@@ -33,7 +33,7 @@ mixin card-list(data)
 							+e.SPAN.pubdate #{item.pubdate}
 					+e.contact
 						+e.author #{item.author}
-						+e.phone
+						+e.A.phone(href="")
 							//- +icon('phone', false).icon
 							if item.contact.show
 								+e.phone-number #{item.contact.phone}

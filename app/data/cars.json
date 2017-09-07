@@ -1,15 +1,30 @@
 [
 	{
-		"id" : "1",
+		"id" : "1053286718",
 		"name" : "BMW 3 серия VI (F3x) Рестайлинг",
 		"price" : "1 957 000",
 		"thumbs" : [
 			"assets/images/bmw/3.jpg",
 			"assets/images/bmw/3.jpg"
 		],
+		"gallery" : [
+			"assets/images/bmw/bmw3-1.jpg",
+			"assets/images/bmw/bmw3-2.jpg",
+			"assets/images/bmw/bmw3-3.jpg",
+			"assets/images/bmw/bmw3-4.jpg",
+			"assets/images/bmw/bmw3-5.jpg",
+			"assets/images/bmw/bmw3-6.jpg",
+			"assets/images/bmw/bmw3-7.jpg",
+			"assets/images/bmw/bmw3-8.jpg",
+			"assets/images/bmw/bmw3-9.jpg",
+			"assets/images/bmw/bmw3-10.jpg",
+			"assets/images/bmw/bmw3-11.jpg",
+			"assets/images/bmw/bmw3-12.jpg"
+		],
 		"author" : "Алексей",
 		"authorcount" : 1,
-		"pubdate" : "20 минуты назад",
+		"authorStatus" : "частное лицо",
+		"pubdate" : "4 июля",
 		"contact" : {
 			"show" : false,
 			"phone" : "+7 912 669-66-66",
@@ -19,7 +34,9 @@
 		"inspect" : {
 			"show" : false,
 			"city" : "Москва",
-			"address" : ""
+			"address" : "",
+			"viewAll" : "1923",
+			"viewToday" : "193"
 		},
 		"feature" : {
 			"year" : "1996",
@@ -51,7 +68,7 @@
 		"comment" : ""
 	},
 	{
-		"id" : "2",
+		"id" : "1053284753",
 		"name" : "Cadillac Escalade III",
 		"price" : "1 500 000",
 		"thumbs" : [
@@ -102,7 +119,7 @@
 		"comment" : ""
 	},
 	{
-		"id" : "3",
+		"id" : "1043736716",
 		"name" : "Mercedes-Benz GLA-klasse X156",
 		"price" : "1 957 000",
 		"thumbs" : [
@@ -154,7 +171,7 @@
 		"comment" : ""
 	},
 	{
-		"id" : "4",
+		"id" : "1073287792",
 		"mark" : true,
 		"name" : "Mercedes-Benz GLA-klasse X156",
 		"price" : "2 155 000",
@@ -207,7 +224,7 @@
 		"comment" : ""
 	},
 	{
-		"id" : "5",
+		"id" : "1259288414",
 		"name" : "Mercedes-Benz GLA-klasse X156",
 		"price" : "2 200 000",
 		"thumbs" : [
@@ -259,7 +276,7 @@
 		"comment" : ""
 	},
 	{
-		"id" : "6",
+		"id" : "1854286788",
 		"name" : "BMW 3 серия VI (F3x) Рестайлинг",
 		"price" : "1 957 000",
 		"thumbs" : [
@@ -310,7 +327,7 @@
 		"comment" : ""
 	},
 	{
-		"id" : "7",
+		"id" : "2083285714",
 		"name" : "Mercedes-Benz GLA-klasse X156",
 		"price" : "1 957 000",
 		"thumbs" : [
