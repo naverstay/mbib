@@ -1,3 +1,5 @@
+include ../list/list
+
 mixin tags()
 	+b.tags&attributes(attributes)
-		block
+		+list(getData('regionList'),4)._columned

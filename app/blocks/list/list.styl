@@ -30,6 +30,9 @@
 			content '|'
 			color $colorSecondary
 			
+		&:last-child:after
+			display none
+			
 		^[0]_columned &
 			display block
 			
@@ -55,6 +58,13 @@
 			
 			&:hover
 				text-decoration underline 
+				color $colorMain
+				
+			.tags &
+				color $colorSecondary
+				
+				&:hover
+					color $colorMain
 		
 		&:hover
 			color $colorMain

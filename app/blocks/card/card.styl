@@ -1,11 +1,14 @@
 .card
 	margin 20px 0 10px
 	display block
-	background-color #fff
 	
 	&__head
 		padding 17px 18px 5px
+		background-color #fff
 		border-bottom 1px solid $colorDecorative
+		
+	&__body
+		background-color #fff
 	
 	&__meta
 		padding 10px 19px 0
@@ -72,18 +75,21 @@
 	&__ads
 		margin-bottom 20px
 		
-	&__body
+	&__data
 		padding 0 20px 10px
 		
-	&__body-row
+	&__data-row
 		display flex
 		
 	&__feature
 		padding-right 15px
 		width 41%
 		
+	&__feature-list
+		margin 12px 0 20px
+		
 	&__feature-row
-		padding 10px 0
+		padding 10px 0 11px
 		display flex
 		border-bottom 1px solid $colorDecorative
 		
@@ -91,8 +97,8 @@
 			border-bottom none
 	
 	&__feature-term
-		width 151px
-		flex-basis 151px
+		width 150px
+		flex-basis 150px
 		color darken($colorDecorative, 40)
 		
 	&__feature-desc
@@ -105,3 +111,47 @@
 		
 		img
 			max-width 100%
+
+	&__yad
+		margin-bottom 20px
+		width 100%
+		
+	&__kit
+		padding-right 15px
+		width 50%
+		
+	&__kit-head
+		margin-bottom 19px
+		
+	&__kit-list
+		margin 0 -15px
+		display flex
+		flex-wrap wrap
+		
+	&__kit-item
+		margin-bottom 23px
+		padding 0 15px
+		width 50%
+		
+	&__kit-title
+		margin-bottom 9px
+		font-size 16px
+		font-weight bold
+		
+	&__kit-desc
+		margin-bottom 10px
+		
+	&__comment
+		padding-left 15px
+		width 50%
+		
+	&__comment-body
+		line-height 1.71429
+		
+	&__action
+		margin-top 12px
+		padding 7px 20px
+		display flex
+		align-content flex-end
+		align-items center
+		background-color #fff

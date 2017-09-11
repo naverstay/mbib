@@ -1,0 +1,8 @@
+include ../title/title
+include ../list/list
+
+mixin headblock()
+	+b.headblock&attributes(attributes).block
+		+title(2).headblock__title Похожие объявления
+		+e.content
+			+list(getData('city'))

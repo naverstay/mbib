@@ -1,5 +1,9 @@
 mixin list(data, columns)
-	-var columnsMod = '_column_' + columns || '';
+	if columns
+		-var columnsMod = '_column_' + columns;
+	else 
+		-var columnsMod = '';
+
 	+b.UL.list&attributes(attributes)(class=columnsMod)
 		each item in data
 			+e.item

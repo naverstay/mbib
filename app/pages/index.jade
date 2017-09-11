@@ -4,8 +4,9 @@ include ../blocks/text/text
 include ../blocks/search/search
 include ../blocks/group/group
 include ../blocks/special/special
+include ../blocks/sort/sort
 include ../blocks/card-list/card-list
-
+include ../blocks/pagination/pagination
 
 block head
 	- var pageTitle = 'MBIB';
@@ -17,5 +18,7 @@ block content
 	+search
 	+group(getData('brands'))
 	+special(getData('cars'))
+	+sort
 	+card-list(getData('cars'))
+	+pagination
 	+text(getData('seo-text'))

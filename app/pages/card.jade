@@ -2,7 +2,11 @@ extends /blocks/layout-default/layout-default
 include ../blocks/breadcrumbs/breadcrumbs
 include ../blocks/card/card
 include ../blocks/card-list/card-list
-include ../blocks/sort/sort
+include ../blocks/block/block
+include ../blocks/headblock/headblock
+include ../blocks/pagination/pagination
+include ../blocks/yad/yad
+include ../blocks/tags/tags
 
 
 block head
@@ -12,4 +16,8 @@ block head
 block content
 	+breadcrumbs(getData('card-crumbs'))
 	+card(getData('cars'))
+	+headblock
 	+card-list(getData('cars'))
+	+pagination
+	+yad
+	+tags

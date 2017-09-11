@@ -1,11 +1,8 @@
-include ../sort/sort
 include ../tile/tile
-include ../pagination/pagination
-include ../pager/pager
 
 mixin card-list(data)
 	+b.card-list&attributes(attributes)
-		+sort
+		
 		+e.UL.list
 			each item in data
 				if item.mark
@@ -44,12 +41,3 @@ mixin card-list(data)
 							if item.contact.callStart
 								+e.phone-remark Звоните с #{item.contact.callStart} до #{item.contact.callEnd}
 					+e.action
-		+pagination
-			+e.pager
-				+pager
-			+e.view-count
-				+select(name="viewCount")
-					option(value="1") 8 на страницу
-					option(value="") 16 на страницу
-					option(value="") 24 на страницу
-					option(value="") 32 на страницу

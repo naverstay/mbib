@@ -1,3 +1,13 @@
+include ../pager/pager
+include ../select/select
+
 mixin pagination()
 	+b.pagination&attributes(attributes).block
-		block
+		+e.pager
+			+pager
+		+e.view-count
+			+select(name="viewCount")
+				option(value="1") 8 на страницу
+				option(value="") 16 на страницу
+				option(value="") 24 на страницу
+				option(value="") 32 на страницу
