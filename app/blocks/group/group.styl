@@ -1,15 +1,31 @@
 .group
-	margin-bottom 31px
+	margin-bottom 20px
 	display block
 	
+	+above(768px)
+		margin-bottom 31px
+	
 	&__list
-		column-gap 30px
-		column-count 6
+		column-gap 10px
+		column-count 2
+			
+		+above(768px)
+			column-gap 30px
+			column-count 6
+		
+	&__list-item
+		margin-bottom 6px
+		
+		+above(768px)
+			margin-bottom unset
 		
 	&__link
-		padding 5px 0 4px
+		padding 8px 0 7px
 		display inline-block
 		text-decoration none
+		
+		+above(768px)
+			padding 5px 0 4px
 		
 	&__link-name
 		display inline-block

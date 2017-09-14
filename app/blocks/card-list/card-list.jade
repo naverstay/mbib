@@ -1,4 +1,5 @@
 include ../tile/tile
+include ../action/action
 
 mixin card-list(data)
 	+b.card-list&attributes(attributes)
@@ -25,13 +26,15 @@ mixin card-list(data)
 								| #{item.feature.drive} привод, #{item.feature.body}, #{item.feature.color} 
 								br
 								| #{item.feature.year}, #{item.feature.mileage}&nbsp;км
+						+e.P.comment
+							| #{item.comment}
 						+e.about-item
 							+e.SPAN.place #{item.inspect.city},
 							+e.SPAN.pubdate #{item.pubdate}
 					+e.contact
 						+e.author #{item.author}
 						+e.A.phone(href="")
-							//- +icon('phone', false).icon
+							+icon('phone', false).phone-icon
 							if item.contact.show
 								+e.phone-number #{item.contact.phone}
 							else
@@ -41,3 +44,4 @@ mixin card-list(data)
 							if item.contact.callStart
 								+e.phone-remark Звоните с #{item.contact.callStart} до #{item.contact.callEnd}
 					+e.action
+						+action._only-icon

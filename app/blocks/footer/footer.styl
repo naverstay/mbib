@@ -7,16 +7,32 @@
 	&__head,
 	&__foot
 		padding 26px 0 25px
-		display flex
 		justify-content space-between
 		border-bottom 1px solid rgba(darken($colorDecorative, 40), .3)
 		
+	&__head
+		+above(768px)
+			display flex
+			
+	&__head-logo
+		margin-bottom 10px
+		
+		+above(768px)
+			margin-bottom 0
+		
 	&__foot
+		display flex
 		border-top 1px solid rgba(darken($colorDecorative, 40), .3)
 		border-bottom none
 	
 	&__section
 		padding 29px 0 26px
+		
+		&_mobile_hide
+			display none
+			
+			+above(768px)
+				display block
 		
 	&__section-title
 		margin-bottom 28px

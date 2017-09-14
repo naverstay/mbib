@@ -3,25 +3,51 @@
 	display block
 	height 100%
 	
-	&_footer
+	&_footer,
+	&_sidenav
 		padding 0
 	
 	&__list
-		display flex
-		justify-content center
-		align-items center
-		height 100%
 		font-size 16px
+		
+		+above(768px)
+			display flex
+			justify-content center
+			align-items center
+			height 100%
 		
 		^[0]_footer &
 			font-size 14px
 		
+	&__item
+		flex-grow 1
+
+		^[0]_footer &
+			display inline-block
+			
+			+above(768px)
+				display block
+		
+
 	&__link
-		padding 10px 20px
+		padding 10px 0
 		display block
 		align-self center
 		text-decoration none
 		color #fff
+		
+		+above(768px)
+			padding 10px 0
+			
+		^[0]_footer &
+			padding 10px 0
+			
+			+above(768px)
+				padding 10px
+		
+		^[0]_sidenav &
+			padding-left 0
+			padding-right 0
 		
 	&__link-text
 		display inline-block

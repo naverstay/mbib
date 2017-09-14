@@ -1,17 +1,19 @@
 include ../logo/logo
 include ../nav/nav
+include ../sidenav/sidenav
 include ../post-ads/post-ads
 
 mixin header()
 	+b.HEADER.header&attributes(attributes)
 		+e.inner.inner
 			+e.sidenav
+				+sidenav
 			+e.logo
 				+logo
 			+e.nav
 				+nav(getData('nav'))
 			+e.A.auth(href="")
-				//- +icon('user', false).auth-icon
+				+icon('user', false).auth-icon
 				+e.SPAN.auth-text Войти
 			+e.add
 				+post-ads(href="")

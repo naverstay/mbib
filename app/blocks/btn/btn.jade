@@ -1,13 +1,13 @@
 mixin btn(tag, iconName)
 	if tag == 'link'
 		+b.A.btn&attributes(attributes)
-			//- if iconName
-			//- 	+icon(iconName, false).icon
+			if iconName
+				+icon(iconName, false).icon
 			+e.SPAN.text
 				block
 	else
 		+b.BUTTON.btn&attributes(attributes)
-			//- if iconName
-			//- 	+icon(iconName, false).icon
+			if iconName
+				+icon(iconName, false).icon
 			+e.SPAN.text
 				block

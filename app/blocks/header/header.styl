@@ -1,9 +1,12 @@
 .header
-	margin-top 10px
-	margin-bottom 19px
+	margin-bottom 17px
 	display block
 	height 73px
 	background-color darken($colorDecorative, 40)
+	
+	+above(768px)
+		margin-top 10px
+		margin-bottom 19px
 
 	&__inner
 		display flex
@@ -14,20 +17,41 @@
 		flex-basis 70px
 		
 	&__nav
+		display none
 		flex-grow 1
 		text-align center
 		
+		+above(980px)
+			display block
+		
 	&__add
+		display none
 		padding 0 20px
-		display flex
 		align-items center
 		
+		+above(980px)
+			display flex
+		
 	&__auth
-		padding 10px 20px
-		display inline-block
+		position relative
+		padding 10px 20px 10px 32px
+		display none
 		align-self center
 		font-size 16px
+		text-decoration none
 		color #fff
+		
+		+above(980px)
+			display inline-block
+			
+	&__auth-icon
+		position absolute
+		top 50%
+		left 0
+		margin-top -12px
+		size 22px
+		fill $colorDecorative
+
 		
 	&__auth-text
 		display inline-block

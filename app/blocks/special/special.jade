@@ -4,8 +4,12 @@ include ../tile/tile
 mixin special(data)
 	+b.special&attributes(attributes)
 		+e.head
-			+e.H3.title Спецразмещение
-			+e.A.show-all(href="") Посмотреть все
+			+e.H3.title 
+				+icon('star', false).title-icon
+				| Спецразмещение
+			+e.A.show-all(href="")
+				+icon('eye', false).show-icon
+				+e.show-text Посмотреть все
 		+e.body
 			+carousel
 				each item in data

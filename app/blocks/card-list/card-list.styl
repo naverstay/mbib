@@ -6,11 +6,14 @@
 		margin-bottom 10px
 		
 	&__item
-		padding 16px
-		display table
+		padding 10px
 		width 100%
 		background-color #fff
 		
+		+above(768px)
+			padding 16px
+			display table
+
 		&:nth-child(even)
 			position relative
 			z-index 1
@@ -24,11 +27,15 @@
 		
 	&__thumb
 		position relative
-		display table-cell
-		vertical-align top
-		width 254px
+		margin-bottom 16px
 		font-size 0
 		
+		+above(768px)
+			margin-bottom 0
+			display table-cell
+			width 254px
+			vertical-align top
+
 	&__gallery
 		position absolute
 		top 0
@@ -37,23 +44,26 @@
 		width 100%
 	
 	&__about
-		padding 0 30px
-		display table-cell
-		vertical-align top
+		+above(768px)
+			padding 0 30px
+			display table-cell
+			vertical-align top
 		
-	&__contact
-		display table-cell
-		width 200px
-		vertical-align top
-		
-	&__action
-		display table-cell
-		width 54px
-		vertical-align middle
-
 	&__about-item
 		margin-bottom 16px
-
+		
+	&__contact
+		+above(768px)
+			display table-cell
+			width 200px
+			vertical-align top
+		
+	&__action
+		+above(768px)
+			display table-cell
+			width 54px
+			vertical-align middle
+	
 	&__name
 		position relative
 		top -1px
@@ -63,8 +73,8 @@
 		
 	&__name-link
 		display inline-block
-		color $colorSecondary
 		text-decoration none
+		color $colorSecondary
 		transition color .3s
 		
 		&:hover
@@ -83,6 +93,12 @@
 	&__remark
 		color darken($colorDecorative, 40)
 		
+	&__comment {
+		margin -10px 0 10px
+		font-size 12px
+		line-height 1.5
+	}
+		
 	&__place,
 	&__pubdate
 		font-size 12px
@@ -93,12 +109,23 @@
 		line-height 1.3
 
 	&__phone
+		position relative
 		padding 9px 12px 9px 32px
-		display inline-block
+		display block
 		text-decoration none
 		color inherit
 		background-color #fff
 		border 1px dashed $colorSecondary
+		
+		+above(768px)
+			display inline-block
+			
+	&__phone-icon
+		position absolute
+		top 11px
+		left 15px
+		size 12px
+		
 		
 	&__phone-button
 		background-color transparent

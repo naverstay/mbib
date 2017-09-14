@@ -1,10 +1,13 @@
 .sort
-	display flex
-	justify-content space-between
+	
+	+above(768px)
+		display flex
+		justify-content space-between
 	
 	&__by
-		width 255px
-	
-	&__type
-		display flex
+		margin-bottom 8px
+		width 100%
 		
+		+above(768px)
+			margin-bottom 0
+			width 255px

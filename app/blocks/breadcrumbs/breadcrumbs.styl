@@ -1,7 +1,10 @@
 .breadcrumbs
-	margin-bottom 10px
+	margin-bottom 14px
 	display block
 	font-size 12px
+	
+	+above(768px)
+		margin-bottom 10px
 	
 	&__item
 		position relative
@@ -13,9 +16,9 @@
 			top 50%
 			right 1px
 			margin-top -6px
-			content '\2192'
-			font-size 12px
 			font-family Georgia, serif
+			font-size 12px
+			content '\2192'
 			color #787878
 			
 		&:last-child

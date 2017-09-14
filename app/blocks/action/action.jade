@@ -1,11 +1,13 @@
 mixin action()
 	+b.action&attributes(attributes)
 		+e.A.item(href="")
-			//- +icon()
+			+icon('top', false).icon
 			+e.item-text Поднять обьявление
 		+e.A.item(href="")
 			//- +icon()
+			+icon('like', false).icon
 			+e.item-text В избранное
 		+e.A.item(href="")
 			//- +icon()
+			+icon('pencil', false).icon
 			+e.item-text Пожаловаться

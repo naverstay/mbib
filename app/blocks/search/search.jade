@@ -10,7 +10,7 @@ mixin search()
 		+e.city
 			+list(getData('city'))
 			+e.city-other
-				+btn('link', 'pin')(href="")._theme_tertirary._size_s Другой город
+				+btn('link', 'pin')(href="")._theme_tertirary._size_s.search__city-btn Другой город
 		+e.row
 			+e.col
 				+select(name="brand" data-placeholder="Марка")
@@ -120,10 +120,10 @@ mixin search()
 		+e.row._sbm._valign_center
 			+e.col._span_2
 				+input(type="text", name="text", placeholder="искать по тексту объявлений")
-			+e.col._span_2
+			+e.col._span_2._for-checkbox
 				+e.check
 					+checkbox(name="new", checked) Новые
 				+e.check
 					+checkbox(name="old") С пробегом
 			+e.col
-				+btn('button', 'find')._theme_secondary._fullwidth Найти
+				+btn('button', 'search')._theme_secondary._fullwidth Найти

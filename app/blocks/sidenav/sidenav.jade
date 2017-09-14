@@ -1,0 +1,19 @@
+include ../nav/nav
+
+mixin sidenav()
+	+b.sidenav&attributes(attributes)
+		+e.btn
+			+e.btn-inner
+		+e.body
+			+e.action
+				+e.A.action-link(href="")._pseudo
+					//- +icon()
+					+e.action-text Войти
+				+e.A.action-link(href="") 
+					//- +icon()
+					+e.action-text Поднять вверх
+				+e.A.action-link(href="")._pseudo
+					//- +icon()
+					+e.action-text В избранное
+			+e.nav
+				+nav(getData('nav'))._sidenav

@@ -6,24 +6,58 @@
 	
 	&__head
 		margin 1px 1px 0
-		padding 0 28px 0 20px
-		display flex
-		height 45px
-		justify-content space-between
-		align-items center
-		background-color #fff3b5
+		text-align center
 		
+		+above(768px)
+			padding 0 28px 0 20px
+			display flex
+			height 45px
+			justify-content space-between
+			align-items center
+			text-align initial
+			background-color #fff3b5
+
 	&__title
 		position relative
-		padding-left 35px
+		height 45px
 		font-family $fontTitle
 		font-size 20px
+		line-height @height
 		font-weight bold
+		text-align center
+		background-color #fff3b5
+		
+		+above(768px)
+			height auto
+			line-height inherit
+			text-align
+			background-color transparent
+			
+	&__title-icon
+		position relative
+		top 3px
+		margin-top -4px
+		margin-right 8px
+		display inline-block
+		size 24px
+		fill $colorMain
 		
 	&__show-all
 		position relative
-		padding-left 26px
+		padding 10px 0 10px 26px
 		display inline-block
 		line-height 1.4
 		text-decoration none
 		color $colorSecondary
+		
+		+above(768px)
+			padding-top 0
+			padding-bottom 0
+			
+	&__show-icon
+		position relative
+		margin-right 5px
+		display inline-block
+		size 16px
+		vertical-align middle
+		fill #86857e

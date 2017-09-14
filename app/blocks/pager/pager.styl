@@ -1,2 +1,26 @@
 .pager
 	display block
+	
+	&__prev,
+	&__next
+		width 40px
+		font-size 0
+		flex-shrink 0
+		
+		+above(768px)
+			width auto
+			font-size 1rem
+
+	&__item
+		padding-left 5px
+		padding-right 5px
+		width 40px
+		flex-shrink 0
+		text-align center
+		color $colorSecondary
+		
+		&_active,
+		&_active:hover
+			cursor default
+			color #fff
+			background-color $colorMain

@@ -24,7 +24,7 @@ const tab = (function ($) {
 	function show(id) {
 		// if no value was given, let's take the first panel
 		if (!id) {
-			// id = targets[0];
+			id = targets[0];
 		}
 		// remove the selected class from the tabs,
 		// and add it back to the one the user selected
@@ -60,7 +60,6 @@ const tab = (function ($) {
 	let btnClose = $('.tab__close');
 
 	btnClose.on('click', function () {
-		// console.log('this');
 		// window.history.back();
 		// update();
 		const offset = $(this).closest('.tab').offset();
