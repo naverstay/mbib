@@ -32,8 +32,7 @@
     "zip": "gulp zip",
     "patch": "gulp patch",
     "minor": "gulp minor",
-    "major": "gulp major",
-    "prepush": "npm run lint"
+    "major": "gulp major"
   },
   "repository": {
     "type": "git",
