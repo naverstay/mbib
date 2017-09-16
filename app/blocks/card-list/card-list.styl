@@ -57,21 +57,23 @@
 		margin-bottom 16px
 		
 	&__contact
+		margin-bottom 10px
+		
 		+above(768px)
 			display table-cell
 			width 200px
 			vertical-align top
+			margin-bottom 0
 		
 	&__action
-		opacity 0
-		
 		+above(768px)
 			display table-cell
 			width 54px
 			vertical-align middle
+			opacity 0
 			
-		^[0]__item:hover &
-			opacity 1
+			^[0]__item:hover &
+				opacity 1
 	
 	&__name
 		position relative
