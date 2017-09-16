@@ -1,7 +1,17 @@
 .share
+	margin-bottom 20px
 	display flex
 	align-items center
+	justify-content center
 	
+	+above(768px)
+		margin-bottom 0
+		justify-content flex-start
+		
 	&__lbl
-		margin-right 30px
-		font-weight bold
+		display none
+		
+		+above(768px)
+			display block
+			margin-right 30px
+			font-weight bold
