@@ -17,7 +17,9 @@ mixin card(data)
 					+e.meta-row № #{item.id}
 					+e.meta-row 
 						+e.SPAN.meta-date #{item.pubdate}
-						+e.SPAN.meta-view #{item.inspect.viewAll} 
+						+e.SPAN.meta-view
+							+icon('eye', false).meta-view-icon
+							| #{item.inspect.viewAll} 
 						+e.SPAN.meta-remark (#{item.inspect.viewToday} сегодня)
 				+e.meta-inspect
 					+e.meta-lbl Адрес осмотра:

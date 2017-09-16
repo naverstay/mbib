@@ -5,7 +5,7 @@ mixin phone(data)
 		-var mod = ''
 	+b.A.phone&attributes(attributes)(href="", class=mod)
 		if !data.show
-			//- +icon('phone', false).icon
+			+icon('phone', false).icon
 			+e.placeholder Показать телефон
 			+e.number #{data.phone}
 
