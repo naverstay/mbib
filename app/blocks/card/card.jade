@@ -41,6 +41,10 @@ mixin card(data)
 
 			+e.data
 				+e.data-row
+					+e.gallery
+						+e.gallery-list
+							each img in item.gallery
+								img(src=img, alt="")
 					+e.feature
 						+e.DL.feature-list
 							+e.feature-row
@@ -91,11 +95,6 @@ mixin card(data)
 								+e.DD.feature-desc #{cleared}
 						+e.yad
 							img(src="assets/images/yad1.png", alt="")
-
-					+e.gallery
-						+e.gallery-list
-							each img in item.gallery
-								img(src=img, alt="")
 				+e.data-row
 					+e.yad
 						img(src="assets/images/yad2.jpg", alt="")

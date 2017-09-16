@@ -1,22 +1,38 @@
 .card
-	margin 20px 0 10px
+	margin 20px 0 30px
 	display block
 	
 	&__head
-		padding 17px 18px 5px
-		background-color #fff
-		border-bottom 1px solid $colorDecorative
+		+above(768px)
+			padding 17px 18px 5px
+			background-color #fff
+			border-bottom 1px solid $colorDecorative
 		
 	&__body
-		background-color #fff
+		+above(768px)
+			background-color #fff
 	
 	&__meta
-		padding 10px 19px 0
-		display flex
-		justify-content space-between
+		margin-bottom 15px
+		
+		+above(768px)
+			margin-bottom 0
+			padding 10px 19px 0
+			display flex
+			justify-content space-between
 		
 	&__meta-id
-		max-width 210px
+		margin-bottom 18px
+		
+		+above(768px)
+			margin-bottom 0
+			max-width 210px
+	
+	&__meta-inspect
+		margin-bottom 18px
+		
+		+above(768px)
+			margin-bottom 0
 		
 	&__meta-lbl
 		margin-bottom 10px
@@ -46,38 +62,44 @@
 
 	&__meta-price
 		position relative
-		margin-top 17px
-		padding-left 21px
-		align-items center
-		overflow-y hidden
-		height 50px
 		
-		&:before
-			position absolute
-			z-index 0
-			top -5px
-			left 0
-			content ''
-			border-top 30px solid rgba(#fff, 0)
-			border-right 25px solid $colorMain
-			border-bottom 30px solid rgba(#fff, 0)
+		+above(768px)
+			margin-top 17px
+			padding-left 21px
+			align-items center
+			overflow-y hidden
+			height 50px
+
+			&:before
+				position absolute
+				z-index 0
+				top -5px
+				left 0
+				content ''
+				border-top 30px solid rgba(#fff, 0)
+				border-right 25px solid $colorMain
+				border-bottom 30px solid rgba(#fff, 0)
 		
 	&__meta-price-value
 		position relative
-		padding 10px 15px 5px 5px
 		display block
-		height 50px
 		font-size 32px
 		font-weight bold
-		color #fff
-		background-color $colorMain
+		color $colorMain
 		
+		+above(768px)
+			padding 10px 15px 5px 5px
+			height 50px
+			background-color $colorMain
+			color #fff
+
 	&__meta-price-currency
 		font-size 28px
 		font-weight normal
 		
 	&__meta-phone
-		width 100%
+		+above(768px)
+			width 100%
 		
 	&__ads
 		margin-bottom 20px
@@ -86,14 +108,17 @@
 			max-width 100%
 		
 	&__data
-		padding 0 20px
+		+above(768px)
+			padding 0 20px
 		
 	&__data-row
-		display flex
+		+above(768px)
+			display flex
 		
 	&__feature
-		padding-right 15px
-		width 41%
+		+above(768px)
+			padding-right 15px
+			width 41%
 		
 	&__feature-list
 		margin 12px 0 19px
@@ -116,8 +141,9 @@
 			text-transform uppercase
 		
 	&__gallery
-		padding-left 15px
-		width 59%
+		+above(768px)
+			padding-left 15px
+			width 59%
 		
 		img
 			max-width 100%
@@ -130,21 +156,25 @@
 			max-width 100%
 		
 	&__kit
-		padding-right 15px
-		width 50%
+		+above(768px)
+			padding-right 15px
+			width 50%
 		
 	&__kit-head
 		margin-bottom 19px
 		
 	&__kit-list
-		margin 0 -15px
-		display flex
-		flex-wrap wrap
+		+above(768px)
+			margin 0 -15px
+			display flex
+			flex-wrap wrap
 		
 	&__kit-item
 		margin-bottom 23px
-		padding 0 15px
-		width 50%
+		
+		+above(768px)
+			padding 0 15px
+			width 50%
 		
 	&__kit-title
 		margin-bottom 9px
@@ -155,16 +185,19 @@
 		margin-bottom 10px
 		
 	&__comment
-		padding-left 15px
-		width 50%
+		+above(768px)
+			padding-left 15px
+			width 50%
 		
 	&__comment-body
 		line-height 1.71429
 		
 	&__action
 		margin-top 12px
-		padding 7px 20px
-		display flex
-		align-content flex-end
-		align-items center
-		background-color #fff
+		
+		+above(768px)
+			padding 7px 20px
+			display flex
+			align-content flex-end
+			align-items center
+			background-color #fff
