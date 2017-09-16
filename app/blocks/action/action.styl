@@ -3,28 +3,39 @@
 	font-size 0
 	
 	&__item
-		margin 0 20px
-		padding 0 20px
-		display inline-block
+		margin 0 20px 10px
+		padding 0 15px
+		display block
 		height 36px
 		font-size 1rem
-		font-weight bold
 		line-height 36px
 		text-decoration none
 		color $colorText
+		background-color #fff
 		border 1px dashed $colorDecorative
+		
+		+above(768px)
+			margin-bottom 0
+			padding 0 20px
+			display inline-block
+			font-weight bold
 		
 		^[0]_only-icon &
 			position relative
-			margin 0 0 5px
-			padding 0
-			display block
-			size 30px
-			font-size 11px
-			font-weight normal
-			line-height @height
-			text-align center
-			border none
+			margin-left 0
+			margin-right 0
+
+			+above(768px)
+				margin 0 0 5px
+				padding 0
+				display block
+				size 30px
+				font-size 11px
+				font-weight normal
+				line-height @height
+				text-align center
+				background-color transparent
+				border none
 			
 			&:last-child
 				margin-bottom 0
@@ -33,20 +44,21 @@
 		line-height 1.2
 		
 		^[0]_only-icon &
-			position absolute
-			z-index 1
-			top 0
-			right 100%
-			margin-right 5px
-			padding 9px 18px 8px
-			white-space nowrap
-			color darken($colorDecorative, 40)
-			background-color #fff
-			border 1px solid $colorDecorative
-			box-shadow 0 2px 8px rgba($colorDecorative, .4)
-			opacity 0
-			pointer-events none
-			
+			+above(768px)
+				position absolute
+				z-index 1
+				top 0
+				right 100%
+				margin-right 5px
+				padding 9px 18px 8px
+				white-space nowrap
+				color darken($colorDecorative, 40)
+				background-color #fff
+				border 1px solid $colorDecorative
+				box-shadow 0 2px 8px rgba($colorDecorative, .4)
+				opacity 0
+				pointer-events none
+				
 			
 			&:before
 				position absolute
