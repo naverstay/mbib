@@ -104,11 +104,13 @@
 	&__remark
 		color darken($colorDecorative, 40)
 		
-	&__comment {
+	&__comment
 		margin -10px 0 10px
 		font-size 12px
 		line-height 1.5
-	}
+		
+		+above(768px)
+			display none
 		
 	&__place,
 	&__pubdate
