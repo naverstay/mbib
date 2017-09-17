@@ -28,6 +28,9 @@
 			
 			&:hover
 				box-shadow inset 0 0 0 3px #fff3b5, 0 0 20px $colorDecorative
+				
+		&_mark + &
+			border-top-color transparent
 		
 	&__thumb
 		position relative
@@ -81,6 +84,14 @@
 		margin-bottom 15px
 		font-size 16px
 		font-weight bold
+		
+	&__name-icon
+		position relative
+		top 1px
+		margin-right 8px
+		display inline-block
+		size 16px
+		fill $colorMain
 		
 	&__name-link
 		display inline-block
