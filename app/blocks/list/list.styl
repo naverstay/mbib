@@ -6,8 +6,13 @@
 		display block
 		
 	&_column_4
-		column-count 4
-		column-gap 30px
+		column-count 2
+		column-gap 20px
+		
+		&&
+			+above(768px)
+				column-count 4
+				column-gap 30px
 		
 	&_column_5
 		column-count 5
