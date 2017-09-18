@@ -15,16 +15,23 @@
 				column-gap 30px
 		
 	&_column_5
-		column-count 5
-		column-gap 30px
+		+above(768px)
+			column-count 4
+			column-gap 30px
+			
+		+above(980px)
+			column-count 5
 		
 	&_column_6
 		column-count 2
 		column-gap 20px
 		
 		+above(768px)
-			column-count 6
+			column-count 5
 			column-gap 30px
+			
+		+above(980px)
+			column-count 6
 		
 	&_size_s
 		font-size 12px
