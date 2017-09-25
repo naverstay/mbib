@@ -21,9 +21,11 @@
 		
 	&__item
 		flex-grow 1
+		height 100%
 
 		^[0]_footer &
 			display inline-block
+			height auto
 			
 			+above(768px)
 				display block
@@ -38,17 +40,36 @@
 		
 		+above(768px)
 			padding 10px 0
+			display flex
+			height 100%
+			align-items center
+			justify-content center
+			transition background-color .3s, color .3s
+			
+		&:hover
+			color #fff
+			background-color $colorMain
 			
 		^[0]_footer &
+			display block
 			padding 10px 0
 			
 			+above(768px)
 				padding 10px
+				
+			&:hover
+				color $colorMain
+				background-color transparent
 		
 		^[0]_sidenav &
 			padding-left 0
 			padding-right 0
+			
 		
 	&__link-text
 		display inline-block
 		border-bottom 1px solid rgba(#fff,.23)
+		transition border-color .3s
+		
+		^[0]__link:hover &
+			border-bottom-color currentcolor

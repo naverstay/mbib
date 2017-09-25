@@ -111,6 +111,7 @@
     "rimraf": "^2.5.0",
     "run-sequence": "^1.2.2",
     "rupture": "^0.6.1",
+    "select2": "^4.0.3",
     "slick-carousel": "^1.7.1",
     "source-map-loader": "^0.1.5",
     "spritesmith-dir-checker": "^1.0.0",

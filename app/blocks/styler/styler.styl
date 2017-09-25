@@ -4,6 +4,7 @@
 	display inline-block
 	position relative
 	overflow hidden
+	
 	input
 		position absolute
 		z-index -1
@@ -49,6 +50,7 @@
 
 .jq-selectbox
 	z-index 10
+	
 	&__select
 		position relative
 	&__select-text
@@ -282,9 +284,9 @@
 		// 	background #F5F5F5
 		// 	box-shadow inset 1px 1px 3px #DDD
 	
-	// &.focused
-	// 	.jq-selectbox__select
-	// 		border 1px solid #5794BF
+	&.focused
+		.jq-selectbox__select
+			border 1px solid $colorSecondary
 	
 	&.disabled
 		.jq-selectbox__select

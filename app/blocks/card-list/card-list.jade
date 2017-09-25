@@ -47,4 +47,5 @@ mixin card-list(data)
 							if item.contact.callStart
 								+e.phone-remark Звоните с #{item.contact.callStart} до #{item.contact.callEnd}
 						+e.action
-							+action._only-icon
+							+e.action-inner
+								+action._only-icon

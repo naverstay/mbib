@@ -6,6 +6,7 @@
 	&__btn
 		position relative
 		height 100%
+		cursor pointer
 		
 	&__btn-inner
 		position absolute
@@ -44,6 +45,9 @@
 		will-change transform
 		transition transform .4s
 		transform translate3D(-100%, 0, 0)
+		
+		.open-side &
+			transform translate3D(0, 0, 0)
 		
 	&__action
 		margin-bottom 14px

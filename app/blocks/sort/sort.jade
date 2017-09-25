@@ -5,7 +5,7 @@ include ../control/control
 mixin sort()
 	+b.sort&attributes(attributes).block
 		+e.by
-			+select(name="sortBy")
+			+select(name="sortBy" data-minimum-results-for-search="Infinity")
 				option(value="1") По актуальности
 				option(value="") По дате
 				option(value="") По пробегу

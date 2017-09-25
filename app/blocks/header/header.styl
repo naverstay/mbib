@@ -16,12 +16,19 @@
 		width 70px
 		flex-basis 70px
 		
+	&__spacer
+		flex-grow 1
+		
+		+above(1170px)
+			display none
+		
+		
 	&__nav
 		display none
 		flex-grow 1
 		text-align center
 		
-		+above(980px)
+		+above(1170px)
 			display block
 		
 	&__add
@@ -34,25 +41,39 @@
 		
 	&__auth
 		position relative
-		padding 10px 20px 10px 32px
+		padding 10px 15px 10px 47px
 		display none
 		align-self center
 		font-size 16px
 		text-decoration none
 		color #fff
+		transition color .3s, background-color .3s
 		
 		+above(980px)
-			display inline-block
+			display flex
+			height 100%
+			align-items center
+			
+		&:hover
+			color #fff
+			background-color $colorMain
 			
 	&__auth-icon
 		position absolute
 		top 50%
-		left 0
+		left 10px
 		margin-top -12px
 		size 22px
 		fill $colorDecorative
-
+		transition fill .3s
+		
+		^[0]__auth:hover &
+			fill #fff
 		
 	&__auth-text
 		display inline-block
 		border-bottom 1px dashed rgba(#fff, .23)
+		transition border-color .3s
+		
+		^[0]__auth:hover &
+			border-bottom-color #fff

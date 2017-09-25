@@ -30,11 +30,16 @@
 			
 		&:hover:before
 			border 1px solid $colorDecorative
+			
 		
 	&__control:checked:focus + &__text:before,
 	&__control:checked + &__text:before
 		background-color darken($colorDecorative, 20)
 		border-color darken($colorDecorative, 20)
+		
+	&__control:checked:focus + &__text:before,
+	&__control:focus + &__text:before 
+		border-color $colorSecondary
 		
 	&__control + &__text:after
 		position absolute
