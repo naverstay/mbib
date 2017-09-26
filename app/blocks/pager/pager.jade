@@ -4,7 +4,9 @@ include ../control/control
 mixin pager()
 	+b.pager&attributes(attributes)
 		+control-group
-			+control(href="")._disabled.pager__prev Назад
+			+control(href="")._disabled.pager__prev
+				+icon('pagin-left', true).pager__icon
+				| Назад
 			+control(href="").pager__item.pager__item_active 1
 			+control(href="").pager__item 2
 			+control(href="").pager__item 3
@@ -13,4 +15,6 @@ mixin pager()
 			//- +control(href="").pager__item 6
 			//- +control(href="").pager__item …
 			//- +control(href="").pager__item 11
-			+control(href="").pager__next Вперёд
+			+control(href="").pager__next
+				+icon('pagin-right', true).pager__icon
+				| Вперёд

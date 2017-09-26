@@ -18,6 +18,12 @@
 	&:hover
 		color $colorText
 	
-	&_active
+	&_disabled,
+	&_disabled:hover
+		cursor default
+		color $colorDecorative
+		
+	&_active,
+	&_active:hover
 		color $colorText
 		background-color lighten($colorDecorative, 10)
