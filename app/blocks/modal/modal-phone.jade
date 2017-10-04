@@ -1,0 +1,16 @@
+include ../cardowner/cardowner
+include ../notice/notice
+
+mixin modal-phone()
+	+b.modal&attributes(attributes)._size_s
+		+e.head
+			+e.H5.title Показать телефон
+			+e.SPAN.close
+		+e.inner
+			+e.body
+				+cardowner(getData('cars'))
+			+e.footer
+				+e.P.remark Пожалуйста, скажите продавцу, что вы звоните по объявлению с Mbib.ru
+				+e.notice 
+					| Внимание! Приобретая транспортное средство, 
+					+notice никогда не отправляйте предоплату.

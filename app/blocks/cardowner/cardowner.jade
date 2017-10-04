@@ -1,0 +1,14 @@
+include ../phone/phone
+
+mixin cardowner(data)
+	-var item = data[0];
+	+b.cardowner&attributes(attributes)
+		+e.author
+			+e.author-name #{item.author}
+			+e.author-status #{item.authorStatus}
+		+phone(item.contact, true)._size_l.cardowner__phone
+		+e.inspect
+			| Место осмотра: #{item.inspect.city}, #{item.inspect.address}
+			br
+			| Звоните с #{item.contact.callStart} до #{item.contact.callEnd}
+

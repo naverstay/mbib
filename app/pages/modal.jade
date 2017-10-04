@@ -1,0 +1,16 @@
+extends /blocks/layout-default/layout-default
+include ../blocks/modal/modal-phone
+include ../blocks/modal/modal-bookmark
+include ../blocks/modal/modal-claim
+
+block head
+	- var pageTitle = 'Модальные окна';
+	- var pageMod = 'index';
+
+block content
+	div(style="margin-bottom:40px")
+		+modal-bookmark
+	div(style="margin-bottom:40px")
+		+modal-phone
+	div(style="margin-bottom:40px")
+		+modal-claim

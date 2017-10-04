@@ -1,25 +1,31 @@
 .phone
 	padding 0 16px
 	display inline-block
-	min-width 180px
-	height 36px
-	line-height 35px
-	overflow hidden
-	text-align center
 	text-decoration none
-	color #fff
-	background-color $colorSecondary
-	background-image linear-gradient(to right, darken($colorSecondary, 30), $colorSecondary)
-	border 1px dashed #fff
 	
-	&__placegholder,
+	&_size_l
+		font-size 28px
+	
+	&_hidenumber
+		min-width 180px
+		height 36px
+		line-height 35px
+		overflow hidden
+		text-align center
+		color #fff
+		background-color $colorSecondary
+		background-image linear-gradient(to right, darken($colorSecondary, 30), $colorSecondary)
+		border 1px dashed #fff
+
+	&__placegholder
 		display none
 		
 		^[0]_hidenumber &
 			display block
 			
 	&__number
-		display block
+		display inline-block
+		color $colorSecondary
 		
 		^[0]_hidenumber &
 			display none
@@ -30,3 +36,7 @@
 		margin-right 6px
 		size 12px
 		fill currentcolor
+		
+		^[0]_size_l &
+			margin-right 0
+			size 20px

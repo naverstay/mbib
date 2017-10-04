@@ -1,0 +1,27 @@
+include ../input/input
+include ../lbl/lbl
+include ../area/area
+include ../btn/btn
+include ../link/link
+include ../text/text
+include ../form/form
+
+mixin modal-bookmark()
+	+b.modal&attributes(attributes)._size_s
+		+e.head
+			+e.H5.title Добавить в избранное
+			+e.SPAN.close
+				//- +icon('', false).close-icon
+		+e.inner
+			+e.body
+				+text
+					+link(href="") Mercedes-Benz E-klasse V (W213, S213, C238) в Москве
+				+form
+					+e.row
+						+lbl(for="claimText" hidden)
+						+area(name="" id="claimText" placeholder="Введите текст заметки (её увидите только вы)")
+					+e.row
+						+lbl(for="claimAuthor" hidden)
+						+input(type="email" class="claimAuthor" placeholder="Ваш email")
+					+e.row
+						+btn('button', 'like')._theme_secondary._fullwidth В избранное

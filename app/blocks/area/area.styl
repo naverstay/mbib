@@ -1,0 +1,25 @@
+.area
+	padding 10px
+	display block
+	box-sizing border-box
+	width 100%
+	font-family Arial, sans-serif
+	font-size 14px
+	line-height 1.42857
+	border 1px solid #dedede
+	
+	+above(1170px)
+		padding-right 14px
+		padding-left 14px
+		
+	&::placeholder
+		color #787878
+		opacity 1
+		
+	&_iconed
+		padding-left 48px
+		
+	&:focus
+		position relative
+		z-index 1
+		border 1px solid $colorSecondary

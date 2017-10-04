@@ -28,13 +28,13 @@
 		"contact" : {
 			"show" : false,
 			"phone" : "+7 912 669-66-66",
-			"callStart" : "",
-			"callEnd" : ""
+			"callStart" : "16:00",
+			"callEnd" : "20:00"
 		},
 		"inspect" : {
 			"show" : false,
 			"city" : "Москва",
-			"address" : "",
+			"address" : "ул. Дворянская, д. 10",
 			"viewAll" : "1923",
 			"viewToday" : "193"
 		},
@@ -133,13 +133,13 @@
 		"contact" : {
 			"show" : true,
 			"phone" : "+7 912 669-66-66",
-			"callStart" : "",
-			"callEnd" : ""
+			"callStart" : "16:00",
+			"callEnd" : "20:00"
 		},
 		"inspect" : {
 			"show" : false,
 			"city" : "Москва",
-			"address" : ""
+			"address" : "ул. Дворянская, д. 10"
 		},
 		"feature" : {
 			"year" : "2016",

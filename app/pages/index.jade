@@ -1,24 +1,11 @@
 extends /blocks/layout-default/layout-default
-include ../blocks/breadcrumbs/breadcrumbs
-include ../blocks/text/text
-include ../blocks/search/search
-include ../blocks/group/group
-include ../blocks/special/special
-include ../blocks/sort/sort
-include ../blocks/card-list/card-list
-include ../blocks/pagination/pagination
 
 block head
-	- var pageTitle = 'MBIB';
-	- var pageMod = 'index';
+	- var pageTitle = 'Список страниц';
+	- var pageMod = 'list';
 
 block content
-	+breadcrumbs(getData('index-crumbs'))
-	+text(getData('main-text'))._important
-	+search
-	+group(getData('brands'))
-	+special(getData('cars'))
-	+sort
-	+card-list(getData('cars'))
-	+pagination
-	+text(getData('seo-text'))
+	ul
+		li(style="padding: 5px;"): a(href="main.html") index
+		li(style="padding: 5px;"): a(href="card.html") card
+		li(style="padding: 5px;"): a(href="modal.html") modal
