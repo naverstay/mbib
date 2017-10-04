@@ -1,3 +1,5 @@
 mixin radio()
-	+b.radio&attributes(attributes)
-		block
+	+b.LABEL.radio
+		+e.INPUT.control(type="radio")&attributes(attributes)
+		+e.SPAN.text
+			block

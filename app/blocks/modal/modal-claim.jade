@@ -1,3 +1,47 @@
+include ../input/input
+include ../lbl/lbl
+include ../area/area
+include ../btn/btn
+include ../radio/radio
+include ../text/text
+include ../form/form
+
 mixin modal-claim()
-	+b.modal&attributes(attributes)
-		block
+	+b.modal&attributes(attributes)._size_m
+		+e.head
+			+e.H5.title Жалоба на объявление
+			+e.SPAN.close
+				//- +icon('', false).close-icon
+		+e.inner
+			+e.body
+				+form(name="claim")
+					+e.row
+						+radio(name="claimCause") Автомобиль продан
+					+e.row
+						+radio(name="claimCause") Перекупщик или салон
+					+e.row
+						+radio(name="claimCause") Телефон продавца недоступен
+					+e.row
+						+radio(name="claimCause") Указана заниженная цена
+					+e.row
+						+radio(name="claimCause") Фото не соответствует автомобилю
+					+e.row
+						+radio(name="claimCause") Неверный год выпуска
+					+e.row
+						+radio(name="claimCause") Неверно указана модель или поколение
+					+e.row
+						+radio(name="claimCause") Автомобиль в другом городе
+					+e.row
+						+radio(name="claimCause") Объявление дублируется
+					+e.row
+						+radio(name="claimCause") Продажа запчастей
+					+e.row
+						+radio(name="claimCause" value="other") Другая причина
+					+e.row
+						+lbl(for="claimText") Комментарий
+						+area#claimText(name="claimText")
+					+e.row
+						+lbl(for="claimAuthor" hidden)
+						+input(type="email" class="claimAuthor" placeholder="Ваш email")
+					+e.row._align_right
+						+btn('button', 'plaint')._theme_secondary Пожаловаться

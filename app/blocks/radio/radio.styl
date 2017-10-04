@@ -1,2 +1,57 @@
 .radio
-	display block
+	position relative
+	padding-left 35px
+	height 25px
+	line-height 25px
+	
+	&__control
+		position absolute
+		left -9999px
+
+	&__text
+		position relative
+		margin-top 1px
+		display inline-block
+		vertical-align top
+		
+		&:before
+			position absolute
+			top 3px
+			left -30px
+			margin 0 4px 0 0
+			size 16px
+			vertical-align middle
+			cursor pointer
+			content ''
+			background-color #fff
+			border 1px solid $colorDecorative
+			border-radius 50%
+			transition background-color .3s, border-color .3s
+			
+		&:hover:before
+			border 1px solid $colorDecorative
+			
+		
+	/*&__control:checked:focus + &__text:before,
+	&__control:checked + &__text:before
+	*/	
+		
+	&__control:checked:focus + &__text:before,
+	&__control:focus + &__text:before 
+		border-color $colorSecondary
+		
+	&__control + &__text:after
+		position absolute
+		top 9px 
+		left -24px
+		size 6px
+		content ''
+		background-color $colorMain
+		border-radius 50%
+		opacity 0
+		transition all .3s
+		transform scale(0)
+		
+	&__control:checked + &__text:after
+		transform scale(1)
+		opacity 1
