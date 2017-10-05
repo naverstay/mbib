@@ -2,15 +2,19 @@ extends /blocks/layout-default/layout-default
 include ../blocks/modal/modal-phone
 include ../blocks/modal/modal-bookmark
 include ../blocks/modal/modal-claim
+include ../blocks/btn/btn
 
 block head
 	- var pageTitle = 'Модальные окна';
 	- var pageMod = 'index';
 
 block content
-	div(style="margin-bottom:40px")
+	div(style="margin-bottom:10px")
+		+btn('link')(href="#modalBookmark" data-effect="mfp-zoom-in").link-modal В избранное
 		+modal-bookmark
-	div(style="margin-bottom:40px")
+	div(style="margin-bottom:10px")
+		+btn('link')(href="#modalPhone" data-effect="mfp-zoom-in").link-modal Показать телефон
 		+modal-phone
-	div(style="margin-bottom:40px")
+	div(style="margin-bottom:10px")
 		+modal-claim
+		+btn('link')(href="#modalClaim" data-effect="mfp-zoom-in").link-modal Подать жалобу

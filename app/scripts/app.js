@@ -8,6 +8,7 @@ import carousel from '../blocks/carousel/carousel';
 import gallery from '../blocks/gallery/gallery';
 import digitpretify from '../blocks/input/input';
 import sidenav from '../blocks/sidenav/sidenav';
+import modal from '../blocks/modal/modal';
 
 $(() => {
 	svg4everybody();

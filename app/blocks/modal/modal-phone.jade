@@ -2,11 +2,11 @@ include ../cardowner/cardowner
 include ../notice/notice
 
 mixin modal-phone()
-	+b.modal&attributes(attributes)._size_s
+	+b.modal#modalPhone&attributes(attributes)._size_s.mfp-with-anim.mfp-hide
 		+e.head
 			+e.H5.title Показать телефон
-			+e.SPAN.close
-				//- +icon('', false).close-icon
+			+e.SPAN.close.mfp-close
+				+icon('close', false).close-icon
 		+e.inner
 			+e.body
 				+cardowner(getData('cars'))

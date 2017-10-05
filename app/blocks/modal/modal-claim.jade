@@ -7,11 +7,11 @@ include ../text/text
 include ../form/form
 
 mixin modal-claim()
-	+b.modal&attributes(attributes)._size_m
+	+b.modal#modalClaim&attributes(attributes)._size_m.mfp-with-anim.mfp-hide
 		+e.head
 			+e.H5.title Жалоба на объявление
-			+e.SPAN.close
-				//- +icon('', false).close-icon
+			+e.SPAN.close.mfp-close
+				+icon('close', false).close-icon
 		+e.inner
 			+e.body
 				+form(name="claim")
