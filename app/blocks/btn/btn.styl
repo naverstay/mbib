@@ -27,19 +27,47 @@
 	&_theme_main
 		color #fff
 		background-color $colorMain
-		background-image linear-gradient(to right, #b3001a, $colorMain)
+		background-image linear-gradient(to right, $colorMain, #E61A4D)
 		box-shadow 0 2px 0 #900
+		
+		&:hover,
+		&:focus
+			background-image linear-gradient(to right, #E61A4D), lighten($colorMain, 20))
+			
+		&:active
+			background-image none
+			background-color darken($colorMain, 5)
+			box-shadow inset 0 3px 6px #900
 		
 	&_theme_secondary
 		color #fff
 		background-color $colorSecondary
-		background-image linear-gradient(to right, darken($colorSecondary, 10%), $colorSecondary)
-		box-shadow 0 2px 0 darken($colorSecondary, 30%)
+		background-image linear-gradient(to right, $colorSecondary, #528AE0)
+		box-shadow 0 2px 0 #053d93
 		
+		&:hover,
+		&:focus
+			background-image linear-gradient(to right, #528ae0, #6ba3f9)
+			box-shadow 0 2px 0 #1f57ad
+			
+		&:active
+			background-image none
+			background-color #1f57ad
+			box-shadow inset 0 3px 6px #053d93
+			
 	&_theme_tertirary
 		color $colorText
-		background-color #f8f8f8
-		box-shadow 0 2px 0 $colorDecorative
+		background-color lighten($colorDecorative, 10)
+		box-shadow 0 2px 0 darken($colorDecorative, 20)
+		
+		&:hover,
+		&:focus
+			background-color $colorDecorative
+			box-shadow 0 2px 0 darken($colorDecorative, 40)
+			
+		&:active
+			background-color darken($colorDecorative, 20)
+			box-shadow inset 0 3px 6px darken($colorDecorative, 40)
 	
 	&__icon
 		position relative
