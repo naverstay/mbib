@@ -40,16 +40,23 @@ mixin card-list(data)
 							+e.SPAN.pubdate #{item.pubdate}
 					+e.contact
 						+e.author #{item.author}
-						+e.A.phone(href="")
-							+icon('phone', false).phone-icon
-							if item.contact.show
-								+e.phone-number #{item.contact.phone}
-							else
-								+e.phone-button(type="button") Показать телефон
-							if item.inspect.show
-								+e.phone-remark Место осмотра: #{item.inspect.city}
-							if item.contact.callStart
-								+e.phone-remark Звоните с #{item.contact.callStart} до #{item.contact.callEnd}
+						
+						if item.authorcount > 1
+							+e.count #{item.authorcount} объявлений
+
+						- var mod = item.contact.show ? '_showed' : '';
+						+e.phone
+							+e.phone-button(type="button")
+								+icon('phone', false).phone-icon
+								| Показать телефон
+							+e.phone-inner
+								+e.A.phone-link(href="" class=mod)
+									+icon('phone', false).phone-icon
+									+e.phone-number #{item.contact.phone}
+									if item.inspect.show
+										+e.phone-remark Место осмотра: #{item.inspect.city}
+									if item.contact.callStart
+										+e.phone-remark Звоните с #{item.contact.callStart} до #{item.contact.callEnd}
+
 						+e.action
-							+e.action-inner
-								+action._only-icon
+							+action._only-icon

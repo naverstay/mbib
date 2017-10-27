@@ -7,6 +7,7 @@ import 'select2';
 import carousel from '../blocks/carousel/carousel';
 import gallery from '../blocks/gallery/gallery';
 import digitpretify from '../blocks/input/input';
+import cardList from '../blocks/card-list/card-list';
 import sidenav from '../blocks/sidenav/sidenav';
 import modal from '../blocks/modal/modal';
 
