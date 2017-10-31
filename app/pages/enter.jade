@@ -1,0 +1,9 @@
+extends /blocks/layout-default/layout-default
+include ../blocks/auth/auth-enter
+
+block head
+	- var pageTitle = 'Вход';
+	- var pageMod = 'enter';
+
+block content
+	+auth-enter

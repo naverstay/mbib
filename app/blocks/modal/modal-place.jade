@@ -1,0 +1,20 @@
+include ../input/input
+include ../lbl/lbl
+include ../btn/btn
+include ../form/form
+
+mixin modal-place()
+	+b.modal#modalPlace&attributes(attributes)._size_m.mfp-with-anim  
+		//.mfp-hide
+		+e.head
+			+e.H5.title Выбрать место поиска
+			+e.SPAN.close.mfp-close
+				+icon('close', false).close-icon
+		+e.inner
+			+e.body
+				+form(name="place")
+					+e.row
+						+lbl(for="placeField" hidden)
+						+input(type="text" id="placeField" placeholder="Регион, город, населенный пункт")
+					+e.row._align_right
+						+btn('button')._theme_secondary Сохранить

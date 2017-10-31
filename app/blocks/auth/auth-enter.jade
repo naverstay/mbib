@@ -1,0 +1,38 @@
+include ../form/form
+include ../lbl/lbl
+include ../input/input
+include ../btn/btn
+include ../link/link
+include ../text/text
+include ../list/list
+include ../title/title
+include ../switcher/switcher
+include ../control-group/control-group
+
+mixin auth-enter()
+	+b.SECTION.auth&attributes(attributes)
+		+e.HEADER.header
+			+title(3).auth__header-text Вход на сайт
+			+link(href="") Зарегистрироваться
+		+e.body
+			+form(name="auth")
+				+e.row._align_center
+					+e.SPAN.remark Используя
+				+e.row._align_center
+					+control-group._align_center
+						+switcher(id="authTypePhone" name="authType" type="radio" value="phone")._theme_secondary._active Телефон
+						+switcher(id="authTypeEmail" name="authType" type="radio" value="email")._theme_secondary E-mail
+				+e.row
+					+lbl(for="authLogin" hidden) Логин
+					+input(type="text" id="authLogin" placeholder="Логин")
+				+e.row
+					+lbl(for="authPassword" hidden) Пароль
+					+input(type="password" id="authPassword" placeholder="Пароль")
+				+e.row._align_justify
+					+link(href="")._theme_decorative Восстановить пароль
+					+btn()._theme_main Войти
+				+e.row
+					+text 
+						| Нажимая кнопку «Войти», я даю своё согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных 
+						+link(href="") Политикой конфиденциальности.
+

@@ -24,6 +24,10 @@
 			padding 0 20px
 			font-weight bold
 			
+		&:hover
+			border-color $colorMain
+			// background-color $colorMain
+
 		.card__action &
 			+above(768px)
 				margin 0 5px
@@ -39,6 +43,16 @@
 			.card__action &
 				+above(768px)
 					margin-right 0
+					
+		&_simple
+			border none
+			padding-left 0
+			padding-right 0
+			background-color transparent
+			
+			+above(768px)
+				margin-left 0
+				margin-bottom 0
 		
 		^[0]_only-icon &
 			position relative
@@ -119,6 +133,6 @@
 			+above(768px)
 				margin-right 0
 			
-		^[0]_only-icon ^[0]__item:hover &
+		^[0]__item:hover &
 		// ^[0]_only-icon ^[0]__item:hover & .likeBorder
 			fill $colorMain

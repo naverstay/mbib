@@ -20,7 +20,8 @@
 		line-height 1.2
 		letter-spacing 1px
 			
-	&:active
+	&:active,
+	&_active
 		transform translate3D(0, 2px, 0)
 		box-shadow none
 		
@@ -34,7 +35,8 @@
 		&:focus
 			background-image linear-gradient(to right, #E61A4D, lighten($colorMain, 20))
 			
-		&:active
+		&:active,
+		^[0]_active&
 			background-image none
 			background-color darken($colorMain, 5)
 			box-shadow inset 0 3px 6px #900
@@ -50,7 +52,8 @@
 			background-image linear-gradient(to right, #528ae0, #6ba3f9)
 			box-shadow 0 2px 0 #1f57ad
 			
-		&:active
+		&:active,
+		^[0]_active&
 			background-image none
 			background-color #1f57ad
 			box-shadow inset 0 3px 6px #053d93
@@ -65,7 +68,8 @@
 			background-color $colorDecorative
 			box-shadow 0 2px 0 darken($colorDecorative, 40)
 			
-		&:active
+		&:active,
+		^[0]_active&
 			background-color darken($colorDecorative, 20)
 			box-shadow inset 0 3px 6px darken($colorDecorative, 40)
 	

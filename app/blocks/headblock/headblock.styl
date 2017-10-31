@@ -1,7 +1,9 @@
 .headblock
 	+above(768px)
 		display flex
-		align-items center
+		
+		+above(768px)
+			align-items center
 	
 	&__title
 		text-align center
@@ -15,4 +17,5 @@
 			margin-bottom 0
 	
 	&__content
-		margin-top 7px
+		+above(768px)
+			margin-top 7px

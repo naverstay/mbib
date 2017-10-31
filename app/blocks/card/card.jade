@@ -32,9 +32,11 @@ mixin card(data)
 					+e.meta-row
 						+phone(item.contact).card__meta-phone
 				+e.meta-price
-					+e.meta-price-value
-						| #{item.price} 
-						+e.SPAN.meta-price-currency ₽
+					+action('like').card__meta-action
+					+e.price
+						+e.price-value
+							| #{item.price} 
+							+e.SPAN.price-currency ₽
 
 			+e.ads
 				img(src="assets/images/card-ads.jpg", alt="")

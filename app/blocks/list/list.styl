@@ -6,6 +6,10 @@
 	&_columned
 		display block
 		
+	&_column_1
+		column-count unset
+		column-gap 0
+
 	&_column_4
 		column-count 2
 		column-gap 20px
@@ -44,6 +48,9 @@
 		+above(768px)
 			display flex
 			align-items flex-start
+			margin-bottom 2px
+			
+		+above(980px)
 			margin-bottom 0
 		
 		&:after 
