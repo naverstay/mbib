@@ -33,16 +33,17 @@ mixin card-list(data)
 								| #{item.feature.drive} привод, #{item.feature.body}, #{item.feature.color} 
 								br
 								| #{item.feature.year}, #{item.feature.mileage}&nbsp;км
-						+e.P.comment
-							| #{item.comment}
+						if item.count
+							+e.P.comment
+								| #{item.comment}
 						+e.about-item
 							+e.SPAN.place #{item.inspect.city},
 							+e.SPAN.pubdate #{item.pubdate}
 					+e.contact
-						+e.author #{item.author}
-						
-						if item.authorcount > 1
-							+e.count #{item.authorcount} объявлений
+						+e.author 
+							+e.author-name #{item.author}
+							if item.authorcount > 1
+								+e.author-count #{item.authorcount} объявлений
 
 						- var mod = item.contact.show ? '_showed' : '';
 						+e.phone
