@@ -2,6 +2,7 @@ extends /blocks/layout-default/layout-default
 include ../blocks/modal/modal-phone
 include ../blocks/modal/modal-bookmark
 include ../blocks/modal/modal-claim
+include ../blocks/modal/modal-place
 include ../blocks/btn/btn
 
 block head
@@ -17,4 +18,8 @@ block content
 		+modal-phone
 	div(style="margin-bottom:10px")
 		+modal-claim
+		+btn('link')(href="#modalClaim" data-effect="mfp-zoom-in").link-modal Подать жалобу
+
+	div(style="margin-bottom:10px")
+		+modal-place
 		+btn('link')(href="#modalClaim" data-effect="mfp-zoom-in").link-modal Подать жалобу
