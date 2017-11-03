@@ -1,0 +1,9 @@
+extends /blocks/layout-default/layout-default
+include ../blocks/auth/auth-registr
+
+block head
+	- var pageTitle = 'Регистрация';
+	- var pageMod = 'registr';
+
+block content
+	+auth-registr

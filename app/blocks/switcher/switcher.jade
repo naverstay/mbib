@@ -2,6 +2,6 @@ include ../btn/btn
 
 mixin switcher()
 	+b.LABEL.switcher&attributes()(for=attributes.id)
-		+e.INPUT.control(type=attributes.type, name=attributes.name, value=attributes.value, id=attributes.id)
-		+btn()(class=attributes.class role=attributes.type).switcher__text
+		+e.INPUT.control(type=attributes.type, name=attributes.name, value=attributes.value, id=attributes.id, tabindex=attributes.tabindex)
+		+e.SPAN.text(class=attributes.class, role=attributes.type)
 			block

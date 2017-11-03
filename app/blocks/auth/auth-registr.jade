@@ -1,0 +1,42 @@
+include ../form/form
+include ../lbl/lbl
+include ../input/input
+include ../btn/btn
+include ../link/link
+include ../text/text
+include ../list/list
+include ../title/title
+include ../switcher/switcher
+include ../control-group/control-group
+
+mixin auth-registr()
+	+b.SECTION.auth&attributes(attributes)
+		+e.HEADER.header
+			+title(3).auth__header-text Регистрация
+			+link(href="enter.html") Войти
+		+e.body
+			+form(name="registr" action="" method="post")
+				+e.row
+					+lbl(for="registrTypeOwner") Зарегистрироваться как:
+					+control-group
+						+switcher(type="radio", name="registrType", value="owner", id="registrTypeOwner", role="radio", tabindex="0")._theme_secondary Собственник
+						+switcher(type="radio", name="registrType", value="seller", id="registrTypeSeller", role="radio", tabindex="1")._theme_secondary Покупатель
+				+e.row
+					+lbl(for="registrName") Имя 
+					+input(type="text" name="name" id="registrName" tabindex="2")
+				+e.row
+					+lbl(for="registrPhone") Телефон
+					+input(type="text" name="phone" id="registrPhone" tabindex="3")
+				+e.row
+					+lbl(for="registrEmail") E-mail
+					+input(type="text" name="email" id="registrEmail" tabindex="4")
+				+e.row
+					+lbl(for="registrPassword") Пароль
+					+input(type="password" name="password" id="registrPassword" tabindex="5")
+				+e.row._align_right
+					+btn(tabindex="6")._theme_main Зарегистрироваться
+				+e.row
+					+text 
+						| Нажимая кнопку «Зарегистрироваться», я принимаю условия Предоставления услуг, Оферты и даю своё согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных 
+						+link(href="") Политикой конфиденциальности.
+
