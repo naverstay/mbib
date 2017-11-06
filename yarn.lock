@@ -3522,6 +3522,10 @@ husky@^0.11.9:
     is-ci "^1.0.9"
     normalize-path "^1.0.0"
 
+hyperform-l10n@^0.9.3:
+  version "0.9.3"
+  resolved "https://registry.yarnpkg.com/hyperform-l10n/-/hyperform-l10n-0.9.3.tgz#423e1e88a7d1783d81e313c6b6b679e401c14849"
+
 hyperform@^0.9.9:
   version "0.9.9"
   resolved "https://registry.yarnpkg.com/hyperform/-/hyperform-0.9.9.tgz#a32cca140b1f658aa6a51e1200a4f31f6dc4a230"
