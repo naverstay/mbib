@@ -11,7 +11,7 @@
 	
 	&_size_s
 		height 36px
-		line-height 38px
+		line-height 37px
 		
 	&_fullwidth
 		width 100%
@@ -81,7 +81,20 @@
 		padding-right 0
 		color darken($colorDecorative, 40)
 		background-color transparent
+		
+	&_theme_pseudo
+		color inherit
+		background-color transparent
+		border 1px dashed darken($colorDecorative, 40)
 	
+	&__remove
+		margin-right -17px
+		margin-left 3px
+		display inline-block
+		width 19px
+		line-height 1
+		text-align center
+
 	&__icon
 		position relative
 		top 5px
@@ -89,3 +102,7 @@
 		display inline-block
 		size 20px
 		fill currentcolor
+		
+		^[0]__remove &
+			top 1px
+			size 11px

@@ -1,13 +1,15 @@
 mixin btn(tag, iconName)
-	if tag == 'link'
-		+b.A.btn&attributes(attributes)
-			if iconName
+	- var tag = tag == 'link' ? 'a' : 'button'
+		+b({tag: tag}).btn&attributes(attributes)
+			if !iconName
+				+e.SPAN.text
+					block
+			else if iconName == 'close'
+				+e.SPAN.text
+					block
+				+e.SPAN.remove
+					+icon(iconName, false).icon
+			else
 				+icon(iconName, false).icon
-			+e.SPAN.text
-				block
-	else
-		+b.BUTTON.btn&attributes(attributes)
-			if iconName
-				+icon(iconName, false).icon
-			+e.SPAN.text
-				block
+				+e.SPAN.text
+					block

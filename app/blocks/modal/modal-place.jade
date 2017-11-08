@@ -1,10 +1,13 @@
 include ../input/input
 include ../lbl/lbl
 include ../btn/btn
+include ../popup/popup
+include ../menu/menu
 include ../form/form
+include ../geoplace/geoplace-list
 
 mixin modal-place()
-	+b.modal#modalPlace&attributes(attributes)._size_m.mfp-with-anim  
+	+b.modal#modalPlace&attributes(attributes)._size_m.mfp-with-anim.mfp-hide
 		//.mfp-hide
 		+e.head
 			+e.H5.title Выбрать место поиска
@@ -12,9 +15,15 @@ mixin modal-place()
 				+icon('close', false).close-icon
 		+e.inner
 			+e.body
-				+form(name="place")
+				+form(name="place").geoplace
 					+e.row
 						+lbl(for="placeField" hidden)
-						+input(type="text" id="placeField" placeholder="Регион, город, населенный пункт")
+						+input(type="text" id="placeField" value="" placeholder="Регион, город, населенный пункт").geoplace__field
+						+popup.geoplace__popup
+							+geoplace-list(getData('geoplace'))
+					+e.row.geoplace__area
+						+btn('link', 'close')(href="")._theme_pseudo._size_s.geoplace__item Москва
+						+btn('link', 'close')(href="")._theme_pseudo._size_s.geoplace__item Московская область
+						+btn('link', 'close')(href="")._theme_pseudo._size_s.geoplace__item Калининград
 					+e.row._align_right
-						+btn('button')._theme_secondary Сохранить
+						+btn('button')(type="button")._theme_secondary Сохранить
