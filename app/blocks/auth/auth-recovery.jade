@@ -1,0 +1,25 @@
+include ../form/form
+include ../lbl/lbl
+include ../input/input
+include ../btn/btn
+include ../text/text
+include ../title/title
+include ../link/link
+
+mixin auth-recovery()
+	+b.SECTION.auth&attributes(attributes)
+		+e.HEADER.header
+			+title(3).auth__header-text Восстановить доступ
+			+link(href="registr.html") Зарегистрироваться
+		+e.body
+			+form(name="recovery" action="" method="post").auth__form
+				+e.row
+					+lbl(for="recoveryLogin") Логин, телефон или email
+					+input(type="text" id="authLogin" required tabindex="0" data-value-missing="Введите логин, телефон или email")
+				+e.row._align_right
+					+btn(type="submit" tabindex="2")._theme_main Восстановить
+				+e.row
+					+text 
+						| Нажимая кнопку «Востановить», я принимаю условия Предоставления услуг, Оферты и даю своё согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных 
+						+link(href="") Политикой конфиденциальности.
+

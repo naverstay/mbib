@@ -1,0 +1,9 @@
+extends /blocks/layout-default/layout-default
+include ../blocks/auth/auth-recovery
+
+block head
+	- var pageTitle = 'Восстановление пароля';
+	- var pageMod = 'inner';
+
+block content
+	+auth-recovery
