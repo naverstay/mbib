@@ -11,7 +11,7 @@ mixin search()
 	+b.search&attributes(attributes)
 		+e.city
 			+control-group
-				+switcher(type="radio", name="type", value="typeAll", id="typeAll", role="radio", tabindex="0")._theme_tertirary._size_s Все
+				+switcher(type="radio", name="type", value="typeAll", id="typeAll", role="radio", tabindex="0", checked)._theme_tertirary._size_s Все
 				+switcher(type="radio", name="type", value="typeDiler", id="typeDiler", role="radio", tabindex="0")._theme_tertirary._size_s Автодилер
 				+switcher(type="radio", name="type", value="typeOwner", id="typeOwner", role="radio", tabindex="0")._theme_tertirary._size_s Собственник
 			+e.city-other
