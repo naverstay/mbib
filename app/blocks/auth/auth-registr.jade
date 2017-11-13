@@ -19,8 +19,9 @@ mixin auth-registr()
 				+e.row
 					+lbl(for="registrTypeOwner") Зарегистрироваться как:
 					+control-group
-						+switcher(type="radio", name="registrType", value="owner", id="registrTypeOwner", role="radio", tabindex="0", required, data-value-missing="Выберите тип пользователя")._theme_secondary Собственник
-						+switcher(type="radio", name="registrType", value="seller", id="registrTypeSeller", role="radio", tabindex="1")._theme_secondary Покупатель
+						+switcher(type="radio", name="registrType", value="owner", id="registrTypeOwner", role="radio", tabindex="0")._theme_tertirary Собственник
+						+switcher(type="radio", name="registrType", value="seller", id="registrTypeSeller", role="radio", required, data-value-missing="Выберите тип пользователя", tabindex="1")._theme_tertirary Покупатель
+					//- +e.warning sdf
 				+e.row
 					+lbl(for="registrName") Имя 
 					+input(type="text" name="name" id="registrName" tabindex="2" required data-value-missing="Введите имя")

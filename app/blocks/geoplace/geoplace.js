@@ -33,7 +33,6 @@ const geoplace = (() => {
 
 	listItems.on('click', function(){
 		const el = $(this);
-		console.log(el.html());
 		placeField.val('');
 		addItem(el.text());
 	})

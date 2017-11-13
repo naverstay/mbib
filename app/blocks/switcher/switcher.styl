@@ -60,3 +60,19 @@
 				background-image none
 				background-color #1f57ad
 				box-shadow inset 0 3px 6px #053d93
+				
+		&_theme_tertirary
+			background-color lighten($colorDecorative, 10)
+			box-shadow 0 2px 0 darken($colorDecorative, 20)
+			
+			&:hover,
+			&:focus
+				background-color $colorDecorative
+				box-shadow 0 2px 0 darken($colorDecorative, 40)
+		
+				
+			&:active,
+			^[0]__control:checked + &
+				background-image none
+				background-color darken($colorDecorative, 20)
+				box-shadow inset 0 3px 6px darken($colorDecorative, 40)

@@ -23,7 +23,7 @@ mixin auth-enter()
 					+lbl(for="authPassword") Пароль
 					+input(type="password" id="authPassword" required tabindex="1" data-value-missing="Введите пароль")
 				+e.row._align_justify
-					+btn()._theme_link Восстановить пароль
+					+btn('link')._theme_link Восстановить пароль
 					+btn(type="submit" tabindex="2")._theme_main Войти
 				+e.row
 					+text 
