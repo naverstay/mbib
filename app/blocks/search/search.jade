@@ -4,13 +4,18 @@ include ../select/select
 include ../input/input
 include ../checkbox/checkbox
 include ../btn/btn
+include ../switcher/switcher
+include ../control-group/control-group
 
 mixin search()
 	+b.search&attributes(attributes)
 		+e.city
-			+list(getData('city')).search__city-list
+			+control-group
+				+switcher(type="radio", name="type", value="typeAll", id="typeAll", role="radio", tabindex="0")._theme_tertirary._size_s Все
+				+switcher(type="radio", name="type", value="typeDiler", id="typeDiler", role="radio", tabindex="0")._theme_tertirary._size_s Автодилер
+				+switcher(type="radio", name="type", value="typeOwner", id="typeOwner", role="radio", tabindex="0")._theme_tertirary._size_s Собственник
 			+e.city-other
-				+btn('link', 'pin')(href="")._theme_tertirary._size_s.search__city-btn Другой город
+				+btn('link', 'pin')(href="")._theme_secondary._size_s.search__city-btn Другой город
 		+e.row
 			+e.col
 				+select(name="brand" data-placeholder="Марка" tabindex="1")
