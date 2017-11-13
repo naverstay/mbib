@@ -37,6 +37,12 @@ const form = (() => {
 	});
 	hyperform.setLanguage("ru");
 
+	hyperform.setRenderer('attachWarning', function(warning, element) {
+		if (element.getAttribute('type') === 'radio' || element.getAttribute('type') === 'checkbox') {
+			element.closest('.control-group').after(warning);
+		}
+	});
+
 	const authForm = document.querySelector('.form[name=auth]');
 	const registrForm = document.querySelector('.form[name=registr]');
 	const validatorClasses = {
