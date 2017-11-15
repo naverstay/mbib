@@ -1,3 +1,4 @@
+include ../formblock/formblock
 include ../form/form
 include ../lbl/lbl
 include ../input/input
@@ -11,22 +12,22 @@ include ../control-group/control-group
 
 mixin auth-enter()
 	+b.SECTION.auth&attributes(attributes)
-		+e.HEADER.header
-			+title(3).auth__header-text Вход на сайт
-			+link(href="registr.html") Зарегистрироваться
-		+e.body
-			+form(name="auth" action="" method="post").auth__form
-				+e.row
-					+lbl(for="authLogin") Логин, телефон или email
-					+input(type="text" id="authLogin" required tabindex="0" data-value-missing="Введите логин, телефон или email")
-				+e.row
-					+lbl(for="authPassword") Пароль
-					+input(type="password" id="authPassword" required tabindex="1" data-value-missing="Введите пароль")
-				+e.row._align_justify
-					+btn('link')(href="recovery.html")._theme_link Восстановить пароль
-					+btn(type="submit" tabindex="2")._theme_main Войти
-				+e.row
-					+text 
-						| Нажимая кнопку «Войти», я даю своё согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных 
-						+link(href="") Политикой конфиденциальности.
-
+		+formblock
+			+e.HEADER.header
+				+title(3).formblock__header-text Вход на сайт
+				+link(href="registr.html") Зарегистрироваться
+			+e.body
+				+form(name="auth" action="" method="post").auth__form
+					+e.row
+						+lbl(for="authLogin") Логин, телефон или email
+						+input(type="text" id="authLogin" required tabindex="0" data-value-missing="Введите логин, телефон или email")
+					+e.row
+						+lbl(for="authPassword") Пароль
+						+input(type="password" id="authPassword" required tabindex="1" data-value-missing="Введите пароль")
+					+e.row._align_justify
+						+btn('link')(href="recovery.html")._theme_link Восстановить пароль
+						+btn(type="submit" tabindex="2")._theme_main Войти
+					+e.row
+						+text 
+							| Нажимая кнопку «Войти», я даю своё согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных 
+							+link(href="") Политикой конфиденциальности.

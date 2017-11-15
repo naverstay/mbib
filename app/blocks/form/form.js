@@ -40,11 +40,16 @@ const form = (() => {
 	hyperform.setRenderer('attachWarning', function(warning, element) {
 		if (element.getAttribute('type') === 'radio' || element.getAttribute('type') === 'checkbox') {
 			element.closest('.control-group').after(warning);
+		} else {
+			element.parentNode.append(warning);
 		}
 	});
 
 	const authForm = document.querySelector('.form[name=auth]');
 	const registrForm = document.querySelector('.form[name=registr]');
+	const recoveryForm = document.querySelector('.form[name=recovery]');
+	const feedbackForm = document.querySelector('.form[name=feedback]');
+
 	const validatorClasses = {
 		classes : {
 			warning : 'form__warning',
@@ -53,6 +58,7 @@ const form = (() => {
 			validated : 'input_validated'
 		}
 	};
+
 	if (authForm) {
 		const $formAuth = hyperform(authForm, validatorClasses);
 	}
@@ -60,6 +66,15 @@ const form = (() => {
 	if (registrForm) {
 		const $formRegistr = hyperform(registrForm, validatorClasses);
 	}
+
+	if (recoveryForm) {
+		const $formRegistr = hyperform(recoveryForm, validatorClasses);
+	}
+
+	if (feedbackForm) {
+		const $formRegistr = hyperform(feedbackForm, validatorClasses);
+	}
+	
 })();
 
 export default form

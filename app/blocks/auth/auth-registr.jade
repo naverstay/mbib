@@ -1,3 +1,4 @@
+include ../formblock/formblock
 include ../form/form
 include ../lbl/lbl
 include ../input/input
@@ -11,33 +12,33 @@ include ../control-group/control-group
 
 mixin auth-registr()
 	+b.SECTION.auth&attributes(attributes)
-		+e.HEADER.header
-			+title(3).auth__header-text Регистрация
-			+link(href="enter.html") Войти
-		+e.body
-			+form(name="registr" action="" method="post")
-				+e.row
-					+lbl(for="registrTypeOwner") Зарегистрироваться как:
-					+control-group
-						+switcher(type="radio", name="registrType", value="owner", id="registrTypeOwner", role="radio", tabindex="0")._theme_tertirary Собственник
-						+switcher(type="radio", name="registrType", value="seller", id="registrTypeSeller", role="radio", required, data-value-missing="Выберите тип пользователя", tabindex="1")._theme_tertirary Покупатель
-					//- +e.warning sdf
-				+e.row
-					+lbl(for="registrName") Имя 
-					+input(type="text" name="name" id="registrName" tabindex="2" required data-value-missing="Введите имя")
-				+e.row
-					+lbl(for="registrPhone") Телефон
-					+input(type="tel" name="phone" id="registrPhone" tabindex="3" pattern="[0-9]{10}" required data-value-missing="Введите телефон")
-				+e.row
-					+lbl(for="registrEmail") E-mail
-					+input(type="email" name="email" id="registrEmail" tabindex="4" required data-value-missing="Введите e-mail")
-				+e.row
-					+lbl(for="registrPassword") Пароль
-					+input(type="password" name="password" id="registrPassword" tabindex="5" required data-value-missing="Введите пароль")
-				+e.row._align_right
-					+btn(tabindex="6")._theme_main Зарегистрироваться
-				+e.row
-					+text 
-						| Нажимая кнопку «Зарегистрироваться», я принимаю условия Предоставления услуг, Оферты и даю своё согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных 
-						+link(href="") Политикой конфиденциальности.
-
+		+formblock
+			+e.HEADER.header
+				+title(3).formblock__header-text Регистрация
+				+link(href="enter.html") Войти
+			+e.body
+				+form(name="registr" action="" method="post")
+					+e.row
+						+lbl(for="registrTypeOwner") Зарегистрироваться как:
+						+control-group
+							+switcher(type="radio", name="registrType", value="owner", id="registrTypeOwner", role="radio", tabindex="0")._theme_tertirary Собственник
+							+switcher(type="radio", name="registrType", value="seller", id="registrTypeSeller", role="radio", required, data-value-missing="Выберите тип пользователя", tabindex="1")._theme_tertirary Покупатель
+						//- +e.warning sdf
+					+e.row
+						+lbl(for="registrName") Имя 
+						+input(type="text" name="name" id="registrName" tabindex="2" required data-value-missing="Введите имя")
+					+e.row
+						+lbl(for="registrPhone") Телефон
+						+input(type="tel" name="phone" id="registrPhone" tabindex="3" pattern="[0-9]{10}" required data-value-missing="Введите телефон")
+					+e.row
+						+lbl(for="registrEmail") E-mail
+						+input(type="email" name="email" id="registrEmail" tabindex="4" required data-value-missing="Введите e-mail")
+					+e.row
+						+lbl(for="registrPassword") Пароль
+						+input(type="password" name="password" id="registrPassword" tabindex="5" required data-value-missing="Введите пароль")
+					+e.row._align_right
+						+btn(tabindex="6")._theme_main Зарегистрироваться
+					+e.row
+						+text 
+							| Нажимая кнопку «Зарегистрироваться», я принимаю условия Предоставления услуг, Оферты и даю своё согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных 
+							+link(href="") Политикой конфиденциальности.

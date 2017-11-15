@@ -1,0 +1,38 @@
+include ../formblock/formblock
+include ../form/form
+include ../lbl/lbl
+include ../input/input
+include ../area/area
+include ../btn/btn
+include ../link/link
+include ../text/text
+include ../list/list
+include ../title/title
+include ../switcher/switcher
+include ../control-group/control-group
+
+mixin feedback()
+	+b.SECTION.feedback&attributes(attributes)
+		+formblock
+			+e.HEADER.header
+				+title(3).formblock__header-text Техподержка сайта
+			+e.body
+				+form(name="feedback" action="" method="post")
+					+e.row
+						+lbl(for="feedbackName") Имя 
+						+input(type="text" name="name" id="feedbackName" tabindex="0" required data-value-missing="Введите имя" autofocus)
+					+e.row
+						+lbl(for="feedbackPhone") Телефон
+						+input(type="tel" name="phone" id="feedbackPhone" tabindex="1" pattern="[0-9]{10}" required data-value-missing="Введите телефон")
+					+e.row
+						+lbl(for="feedbackEmail") E-mail
+						+input(type="email" name="email" id="feedbackEmail" tabindex="2" required data-value-missing="Введите e-mail")
+					+e.row
+						+lbl(for="feedbackMessage") Сообщение
+						+area(name="message" id="feedbackMessage" tabindex="3" required data-value-missing="Введите пароль")
+					+e.row._align_right
+						+btn(tabindex="4")._theme_main Отправить
+					+e.row
+						+text 
+							| Нажимая кнопку «Отправить», я принимаю условия Предоставления услуг, Оферты и даю своё согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных 
+							+link(href="") Политикой конфиденциальности.
