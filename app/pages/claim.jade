@@ -1,0 +1,17 @@
+extends /blocks/layout-default/layout-default
+include ../blocks/breadcrumbs/breadcrumbs
+include ../blocks/text/text
+include ../blocks/sort/sort-claim
+include ../blocks/card-list/card-list-claim
+include ../blocks/pagination/pagination
+
+block head
+	- var pageTitle = 'MBIB';
+	- var pageMod = 'claim';
+
+block content
+	+breadcrumbs(getData('index-crumbs'))
+	+text(getData('claim-text'))._important
+	+sort-claim
+	+card-list-claim(getData('cars'))
+	+pagination

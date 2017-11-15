@@ -15,49 +15,50 @@ mixin card-list(data)
 				else 
 					-var mark = ''
 				+e.item(class=mark)
-					+e.thumb
-						+tile(item)
-					+e.about
-						+e.H3.name 
-							+e.A.name-link(href="")
-								if item.mark
-									+icon('star', false).name-icon
-								| #{item.name}
-						+e.about-item
-							+e.SPAN.price #{item.price} ₽
-							if item.feature.rightDrive
-								+e.SPAN.remark Правый руль
-						+e.about-item
-							+e.P.feature
-								| #{item.feature.engineCapacity} #{item.feature.transmission} (#{item.feature.enginePower} лс) #{item.feature.engineType},
-								| #{item.feature.drive} привод, #{item.feature.body}, #{item.feature.color} 
-								br
-								| #{item.feature.year}, #{item.feature.mileage}&nbsp;км
-						if item.count
-							+e.P.comment
-								| #{item.comment}
-						+e.about-item
-							+e.SPAN.place #{item.inspect.city},
-							+e.SPAN.pubdate #{item.pubdate}
-					+e.contact
-						+e.author 
-							+e.author-name #{item.author}
-							if item.authorcount > 1
-								+e.author-count #{item.authorcount} объявлений
+					+e.item-body
+						+e.thumb
+							+tile(item)
+						+e.about
+							+e.H3.name 
+								+e.A.name-link(href="")
+									if item.mark
+										+icon('star', false).name-icon
+									| #{item.name}
+							+e.about-item
+								+e.SPAN.price #{item.price} ₽
+								if item.feature.rightDrive
+									+e.SPAN.remark Правый руль
+							+e.about-item
+								+e.P.feature
+									| #{item.feature.engineCapacity} #{item.feature.transmission} (#{item.feature.enginePower} лс) #{item.feature.engineType},
+									| #{item.feature.drive} привод, #{item.feature.body}, #{item.feature.color} 
+									br
+									| #{item.feature.year}, #{item.feature.mileage}&nbsp;км
+							if item.count
+								+e.P.comment
+									| #{item.comment}
+							+e.about-item
+								+e.SPAN.place #{item.inspect.city},
+								+e.SPAN.pubdate #{item.pubdate}
+						+e.contact
+							+e.author 
+								+e.author-name #{item.author}
+								if item.authorcount > 1
+									+e.author-count #{item.authorcount} объявлений
 
-						- var mod = item.contact.show ? '_showed' : '';
-						+e.phone
-							+e.phone-button(type="button")
-								+icon('phone', false).phone-icon
-								| Показать телефон
-							+e.phone-inner
-								+e.A.phone-link(href="" class=mod)
+							- var mod = item.contact.show ? '_showed' : '';
+							+e.phone
+								+e.phone-button(type="button")
 									+icon('phone', false).phone-icon
-									+e.phone-number #{item.contact.phone}
-									if item.inspect.show
-										+e.phone-remark Место осмотра: #{item.inspect.city}
-									if item.contact.callStart
-										+e.phone-remark Звоните с #{item.contact.callStart} до #{item.contact.callEnd}
+									| Показать телефон
+								+e.phone-inner
+									+e.A.phone-link(href="" class=mod)
+										+icon('phone', false).phone-icon
+										+e.phone-number #{item.contact.phone}
+										if item.inspect.show
+											+e.phone-remark Место осмотра: #{item.inspect.city}
+										if item.contact.callStart
+											+e.phone-remark Звоните с #{item.contact.callStart} до #{item.contact.callEnd}
 
-						+e.action
-							+action._only-icon
+							+e.action
+								+action._only-icon

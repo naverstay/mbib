@@ -27,22 +27,10 @@
 		margin-bottom 10px
 		
 	&__item
-		padding 10px
 		width 100%
 		background-color #fff
 		border-top 1px solid #f5f5f5
 		transition background-color .3s
-		
-		+above(768px)
-			position relative
-			padding 16px
-			// display table
-			display flex
-			flex-wrap wrap
-			
-		+above(980px)
-			flex-wrap nowrap
-			padding-right 70px
 
 		&:hover
 			position relative
@@ -61,7 +49,21 @@
 				
 		&_mark + &
 			border-top-color transparent
+			
+	&__item-body
+		padding 10px
 		
+		+above(768px)
+			position relative
+			padding 16px
+			// display table
+			display flex
+			flex-wrap wrap
+		
+		+above(980px)
+			flex-wrap nowrap
+			padding-right 70px
+
 	&__thumb
 		position relative
 		margin-bottom 16px
@@ -204,7 +206,7 @@
 		color darken($colorDecorative, 40)
 		
 		+above(980px)
-			margin-top -5px
+			// margin-top -5px
 
 	&__phone
 		border 1px dashed $colorDecorative
@@ -285,3 +287,12 @@
 		margin-top 9px
 		display block
 		font-size 11px
+		
+	&__claim
+		padding 10px
+		width 100%
+		background-color lighten($colorDecorative, 5)
+		
+		+above(768px)
+			position relative
+			padding 16px
