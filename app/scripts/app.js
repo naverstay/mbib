@@ -12,6 +12,7 @@ import sidenav from '../blocks/sidenav/sidenav';
 import modal from '../blocks/modal/modal';
 import form from '../blocks/form/form';
 import geoplace from '../blocks/geoplace/geoplace';
+import 'lazysizes';
 
 $(() => {
 	svg4everybody();

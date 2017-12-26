@@ -4075,6 +4075,10 @@ lazy-debug-legacy@0.0.X:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/lazy-debug-legacy/-/lazy-debug-legacy-0.0.1.tgz#537716c0776e4cf79e3ed1b621f7658c2911b1b1"
 
+lazysizes@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/lazysizes/-/lazysizes-4.0.1.tgz#428fe9561d7ff5c3b2b2787b78ed54080986420b"
+
 lazystream@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/lazystream/-/lazystream-1.0.0.tgz#f6995fe0f820392f61396be89462407bb77168e4"

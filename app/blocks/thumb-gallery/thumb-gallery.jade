@@ -3,5 +3,5 @@ mixin thumb-gallery(data)
 		each item, i in data
 			+e.item(class="_column_"+data.length)
 				+e.img-wrap
-					img(src=item, alt="")
+					img(data-src=item, alt="").lazyload
 				+e.SPAN.marker
