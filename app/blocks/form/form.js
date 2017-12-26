@@ -46,6 +46,7 @@ const form = (() => {
 	});
 
 	const authForm = document.querySelector('.form[name=auth]');
+	const bookmarkletForm = document.querySelector('.form[name=bookmarklet]');
 	const registrForm = document.querySelector('.form[name=registr]');
 	const recoveryForm = document.querySelector('.form[name=recovery]');
 	const feedbackForm = document.querySelector('.form[name=feedback]');
@@ -59,6 +60,10 @@ const form = (() => {
 		}
 	};
 
+	if (bookmarkletForm) {
+		const $bookmarkletForm = hyperform(bookmarkletForm, validatorClasses);
+	}
+	
 	if (authForm) {
 		const $formAuth = hyperform(authForm, validatorClasses);
 	}
