@@ -4,7 +4,6 @@
 	&__prev,
 	&__next
 		position relative
-		display none
 		width 40px
 		font-size 0
 		flex-shrink 0
@@ -13,6 +12,14 @@
 			display inline-block
 			width auto
 			font-size 1rem
+
+	&__text
+		^[0]__prev &,
+		^[0]__next &
+			display none
+			
+			+above(768px)
+				display inline
 			
 	&__icon
 		position absolute
@@ -43,3 +50,4 @@
 			cursor default
 			color #fff
 			background-color $colorMain
+			
