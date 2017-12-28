@@ -82,6 +82,7 @@
 		"name" : "Cadillac Escalade III",
 		"price" : "1 500 000",
 		"author" : "Самвел",
+		"authorStatus" : "частное лицо",
 		"authorcount" : 1,
 		"pubdate" : "7 часов назад",
 		"contact" : {
@@ -144,6 +145,7 @@
 			"assets/images/mersedes/glax165-3.jpg"
 		],
 		"author" : "Дмитрий Николаевич",
+		"authorStatus" : "компания",
 		"authorcount" : 1,
 		"pubdate" : "11 часов назад",
 		"contact" : {

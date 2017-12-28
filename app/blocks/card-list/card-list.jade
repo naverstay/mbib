@@ -43,6 +43,9 @@ mixin card-list(data)
 						+e.contact
 							+e.author 
 								+e.author-name #{item.author}
+									if item.authorStatus
+										| ,
+										+e.SPAN.author-status #{item.authorStatus}
 								if item.authorcount > 1
 									+e.author-count #{item.authorcount} объявлений
 
