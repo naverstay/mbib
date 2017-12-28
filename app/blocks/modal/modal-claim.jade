@@ -5,6 +5,7 @@ include ../btn/btn
 include ../radio/radio
 include ../text/text
 include ../form/form
+include ../control-group/control-group
 
 mixin modal-claim()
 	+b.modal#modalClaim&attributes(attributes)._size_m.mfp-with-anim.mfp-hide
@@ -14,34 +15,35 @@ mixin modal-claim()
 				+icon('close', false).close-icon
 		+e.inner
 			+e.body
-				+form(name="claim")
-					+e.row
-						+radio(name="claimCause") Автомобиль продан
-					+e.row
-						+radio(name="claimCause") Перекупщик или салон
-					+e.row
-						+radio(name="claimCause") Телефон продавца недоступен
-					+e.row
-						+radio(name="claimCause") Указана заниженная цена
-					+e.row
-						+radio(name="claimCause") Фото не соответствует автомобилю
-					+e.row
-						+radio(name="claimCause") Неверный год выпуска
-					+e.row
-						+radio(name="claimCause") Неверно указана модель или поколение
-					+e.row
-						+radio(name="claimCause") Автомобиль в другом городе
-					+e.row
-						+radio(name="claimCause") Объявление дублируется
-					+e.row
-						+radio(name="claimCause") Продажа запчастей
-					+e.row
-						+radio(name="claimCause" value="other") Другая причина
+				+form(name="claim" action="" method="")
+					.control-group.control-group_block
+						+e.row
+							+radio(name="claimCause" value="salled" required role="radio") Автомобиль продан
+						+e.row
+							+radio(name="claimCause" value="perekup" role="radio") Перекупщик или салон
+						+e.row
+							+radio(name="claimCause" value="notavaible" role="radio") Телефон продавца недоступен
+						+e.row
+							+radio(name="claimCause" value="otherprice" role="radio") Указана заниженная цена
+						+e.row
+							+radio(name="claimCause" value="photo" role="radio") Фото не соответствует автомобилю
+						+e.row
+							+radio(name="claimCause" value="year" role="radio") Неверный год выпуска
+						+e.row
+							+radio(name="claimCause" value="model" role="radio") Неверно указана модель или поколение
+						+e.row
+							+radio(name="claimCause" value="city" role="radio") Автомобиль в другом городе
+						+e.row
+							+radio(name="claimCause" value="copy" role="radio") Объявление дублируется
+						+e.row
+							+radio(name="claimCause" value="rec" role="radio") Продажа запчастей
+						+e.row
+							+radio(name="claimCause" value="other" role="radio") Другая причина
 					+e.row
 						+lbl(for="claimText") Комментарий
-						+area#claimText(name="claimText")
+						+area#claimText(name="claimText" required)
 					+e.row
 						+lbl(for="claimAuthor" hidden)
-						+input(type="email" id="claimAuthor" placeholder="Ваш email")
+						+input(type="email" id="claimAuthor" placeholder="Ваш email" required)
 					+e.row._align_right
 						+btn('button', 'plaint')._theme_secondary Пожаловаться
