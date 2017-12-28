@@ -74,6 +74,16 @@
 				text-align center
 				background-color transparent
 				border none
+				opacity 0
+				transition opacity .3s
+			
+			.card-list__item:hover &,
+			.card-list__item &_active
+				opacity 1
+				
+			.page_touch &
+				+above(980px)
+					opacity 1
 			
 			&:last-child
 				margin-bottom 0
@@ -133,6 +143,7 @@
 			+above(768px)
 				margin-right 0
 			
-		^[0]__item:hover &
+		^[0]__item:hover &,
+		^[0]__item_active &
 		// ^[0]_only-icon ^[0]__item:hover & .likeBorder
 			fill $colorMain

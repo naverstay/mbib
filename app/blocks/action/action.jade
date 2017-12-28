@@ -1,8 +1,11 @@
-mixin action(item)
+mixin action(isFavorite)
 	+b.action&attributes(attributes)
 		if !item
-			+e.A.item(href="")
-				//- +icon()
+			if isFavorite
+				- var mod = "_active"
+			else 
+				- var mod = ""
+			+e.A.item(href="" class=mod)
 				+icon('like', false).icon
 				+e.item-text В избранное
 			+e.A.item(href="")
