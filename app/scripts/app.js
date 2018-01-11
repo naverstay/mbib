@@ -2,8 +2,8 @@ import svg4everybody from 'svg4everybody';
 import $ from 'jquery';
 // import styler from 'jquery-form-styler';
 import tab from '../blocks/tab/tab';
-import 'select2';
-// import select from '../blocks/tab/tab';
+// import 'select2';
+import select from '../blocks/select/select';
 import carousel from '../blocks/carousel/carousel';
 import gallery from '../blocks/gallery/gallery';
 import digitpretify from '../blocks/input/input';
@@ -27,7 +27,7 @@ $(() => {
 		width : "100%"
 	});
 
-	// select.init();
+	select.init();
 
 	gallery.init();
 
