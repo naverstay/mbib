@@ -51,7 +51,7 @@
 			border-top-color transparent
 			
 	&__item-body
-		padding 10px
+		padding 16px 10px
 		
 		+above(768px)
 			position relative
@@ -59,6 +59,7 @@
 			// display table
 			display flex
 			flex-wrap wrap
+			min-height 222px
 		
 		+above(980px)
 			flex-wrap nowrap
@@ -70,6 +71,9 @@
 		font-size 0
 		
 		+above(768px)
+			position absolute
+			left 16px
+			top 16px
 			margin-bottom 0
 			width 255px
 			height 190px
@@ -87,9 +91,10 @@
 	
 	&__about
 		+above(768px)
-			padding 0 0 0 30px
+			padding 0 0 0 285px
 			flex-grow 1
 			flex-basis 50%
+			min-height 190px
 			// display table-cell
 			// vertical-align top
 				

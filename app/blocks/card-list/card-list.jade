@@ -16,14 +16,14 @@ mixin card-list(data)
 					-var mark = ''
 				+e.item(class=mark)
 					+e.item-body
-						+e.thumb
-							+tile(item)
 						+e.about
 							+e.H3.name 
 								+e.A.name-link(href="")
 									if item.mark
 										+icon('star', false).name-icon
 									| #{item.name}
+							+e.thumb
+								+tile(item)
 							+e.about-item
 								+e.SPAN.price #{item.price} ₽
 								if item.feature.rightDrive
