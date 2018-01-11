@@ -6,6 +6,7 @@ const modal = (() => {
 		type:'inline',
 		closeBtnInside:true,
 		removalDelay: 500,
+		// fixedContentPos: true,
 		mainClass: 'mfp-zoom-in'
 		/*callbacks: {
 			beforeOpen: function() {
