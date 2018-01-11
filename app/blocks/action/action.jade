@@ -7,7 +7,11 @@ mixin action(isFavorite)
 				- var mod = ""
 			+e.A.item(href="" class=mod)
 				+icon('like', false).icon
-				+e.item-text В избранное
+				+e.item-text 
+					if isFavorite
+						| В избранном
+					else
+						| В избранное
 			+e.A.item(href="")
 				+icon('top', false).icon
 				+e.item-text Поднять обьявление
