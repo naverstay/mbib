@@ -6,21 +6,27 @@ mixin action(isFavorite)
 			else 
 				- var mod = ""
 			+e.A.item(href="" class=mod)
-				+icon('like', false).icon
+				+e.SPAN.icon
+					+icon('like', false).icon-img._like
+					+icon('like_fill', false).icon-img._like._like_fill
 				+e.item-text 
 					if isFavorite
 						| В избранном
 					else
 						| В избранное
 			+e.A.item(href="")
-				+icon('top', false).icon
+				+e.SPAN.icon
+					+icon('top', false).icon-img
 				+e.item-text Поднять обьявление
 			+e.A.item(href="")
 				//- +icon()
-				+icon('plaint', false).icon
+				+e.SPAN.icon
+					+icon('plaint', false).icon-img
 				+e.item-text Пожаловаться
 		else if item === 'like'
 			+e.A.item._simple(href="")
 				//- +icon()
-				+icon('like', false).icon
+				+e.SPAN.icon
+					+icon('like', false).icon-img._like
+					+icon('like_fill', false).icon-img._like._like_fill
 				+e.item-text В избранное
