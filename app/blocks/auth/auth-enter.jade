@@ -18,6 +18,7 @@ mixin auth-enter()
 				+link(href="registr.html") Зарегистрироваться
 			+e.body
 				+form(name="auth" action="" method="post").auth__form
+					+e.P.message._error Проверьте логин  и пароль
 					+e.row
 						+lbl(for="authLogin") Логин, телефон или email
 						+input(type="text" id="authLogin" required tabindex="0" data-value-missing="Введите логин, телефон или email")
