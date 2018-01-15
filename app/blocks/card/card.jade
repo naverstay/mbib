@@ -32,7 +32,7 @@ mixin card(data)
 					+e.meta-row
 						+phone(item.contact).card__meta-phone
 				+e.meta-price
-					+action('like').card__meta-action
+					+action('like', item.isFavorite).card__meta-action
 					+e.price
 						+e.price-value
 							| #{item.price} 
