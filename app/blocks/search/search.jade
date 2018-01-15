@@ -6,6 +6,7 @@ include ../checkbox/checkbox
 include ../btn/btn
 include ../switcher/switcher
 include ../control-group/control-group
+include ../modal/modal-select
 
 mixin search()
 	+b.search&attributes(attributes)
@@ -141,3 +142,4 @@ mixin search()
 					+checkbox(name="old" tabindex="17") С пробегом
 			+e.col
 				+btn('button', 'search')._theme_secondary._fullwidth(tabindex="18") Найти
+	+modal-select
