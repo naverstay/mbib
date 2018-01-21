@@ -1,0 +1,18 @@
+include ../akcent-block/akcent-block
+include ../title/title
+include ../form/form
+include ../input/input
+include ../checklist/checklist
+
+mixin step1()
+	+b.step&attributes(attributes)
+		+akcent-block
+			+form()
+				+title(2) Какой марки ваш автомобиль?
+				+e.row
+					+input(type="text" name="brand" placeholder="Марка")
+				+e.row
+					+checklist(getData('brands'), 'brand')
+						+e.item
+							+e.BUTTON.more(type="button") 
+								+e.SPAN.more-text Все марки

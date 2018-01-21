@@ -1,0 +1,83 @@
+.checklist
+	display block
+	column-count 5
+	orphans 5
+	
+	&__item
+		padding-bottom 5px
+		width 100%
+		display inline-block
+		vertical-align top
+	
+	&__control
+		position absolute
+		left -9999px
+	
+	&__text
+		position relative
+		padding-left 15px
+		display block
+		height 32px
+		font-size 14px
+		line-height 30px
+		cursor pointer
+		border 1px dashed transparent
+		
+		&_hasIcon
+			padding-left 40px
+			
+		^[0]__control:checked + &
+			background-color #fff
+			border-color $colorSecondary
+			
+	&__more
+		position relative
+		padding-left 55px
+		height 32px
+		line-height 30px
+		background-color transparent
+		border none
+		
+		&:before
+			position absolute
+			top 14px
+			left 15px
+			size 6px
+			content ''
+			border-radius 50%
+			background-color $colorText
+			box-shadow 10px 0, 20px 0
+			
+		&_inIconed
+			padding-left 40px
+			
+			&:before
+				left 3px
+		
+	&__more-text
+		display inline-block
+		line-height 1.2
+		font-weight bold
+		color $colorSecondary
+		border-bottom 1px dashed
+		
+	&__thumb 
+		position absolute
+		left 0
+		top 0
+		
+		&_audi
+			sprite $audi
+			
+		&_bmw
+			sprite $bmw
+			
+		&_chevrolet
+			sprite $chevrolet
+			
+		&_citroen
+			sprite $citroen
+			
+		&_daewoo
+			sprite $daewoo
+			

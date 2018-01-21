@@ -1,0 +1,26 @@
+.akcent-block
+	position relative
+	margin-bottom 35px
+	padding 14px 8px 0
+	display block
+	background-color #fff
+	background-image linear-gradient(to right, lighten($colorDecorative, 10), #fff)
+	border 2px solid $colorDecorative
+	
+	+above(768px)
+		margin-bottom 27px
+		padding 17px 24px 0
+		box-shadow 0 27px 23px -12px rgba(#000, .2)
+		
+		&:after
+			position absolute
+			top 100%
+			right 0
+			left 0
+			margin-top 2px
+			content ''
+			background-color transparent
+			background-clip border-box
+			border-top 4px solid darken($colorDecorative, 20)
+			border-left 5px solid rgba(#fff, 0)
+			border-right 5px solid rgba(#fff, 0)

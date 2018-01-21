@@ -1,0 +1,14 @@
+include ../list/list
+
+mixin checklist(data, name)
+	+b.UL.checklist&attributes(attributes)
+		each item in data
+			+e.item
+				+e.LABEL.variant(for=item.thumb)
+					+e.INPUT.control(type="radio" name=name id=item.thumb value=item.thumb)
+					+e.SPAN.text(class=item.thumb ? "_hasIcon" : "")
+						if item.thumb
+							+e.SPAN.thumb(class="_"+item.thumb)
+						| #{item.name}
+		block
+

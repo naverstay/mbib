@@ -1,0 +1,25 @@
+include ../akcent-block/akcent-block
+include ../title/title
+include ../form/form
+include ../car-name/car-name
+include ../input/input
+include ../btn/btn
+include ../checklist/checklist
+
+mixin step2()
+	+b.step&attributes(attributes)
+		+akcent-block
+			+form()
+				+title(2).visuallyhidden Какой модели ваш автомобиль?
+				.step__head
+					.step__.head-name
+						+car-name(1, 'BMW', 'bmw')
+					.step__.head-action
+						+btn('button', 'close')(href="")._theme_tertirary._size_s Очистить
+				+e.row
+					+input(type="text" name="model" placeholder="Модель")
+				+e.row
+					+checklist(getData('modelbmw'), 'model')
+						+e.item
+							+e.BUTTON.more(type="button").inIconed
+								+e.SPAN.more-text Все модели

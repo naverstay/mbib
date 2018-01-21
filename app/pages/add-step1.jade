@@ -1,0 +1,11 @@
+extends /blocks/layout-default/layout-default
+include ../blocks/breadcrumbs/breadcrumbs
+include ../blocks/step/step1
+
+block head
+	- var pageTitle = 'MBIB';
+	- var pageMod = 'Step 1';
+
+block content
+	+breadcrumbs(getData('index-crumbs'))
+	+step1
