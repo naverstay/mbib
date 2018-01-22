@@ -5,8 +5,8 @@ include ../gallery/gallery
 include ../share/share
 include ../action/action
 
-mixin card(data)
-	-var item = data[0];
+mixin card(data, id)
+	-var item = data[id];
 	+b.card&attributes(attributes)
 		+e.head
 			+title(1) Продажа #{item.name} в Москве
@@ -44,9 +44,10 @@ mixin card(data)
 			+e.data
 				+e.data-row
 					+e.gallery
-						+e.gallery-list
-							each img in item.gallery
-								img(src=img, alt="")
+						if item.gallery
+							+e.gallery-list
+								each img in item.gallery
+									img(src=img, alt="")
 					+e.feature
 						+e.DL.feature-list
 							+e.feature-row

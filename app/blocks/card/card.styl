@@ -183,6 +183,7 @@
 	&__data-row
 		+above(980px)
 			display flex
+			flex-wrap wrap
 		
 	&__feature
 		width 100%
@@ -193,6 +194,9 @@
 			padding-right 15px
 			width 41%
 			order 1
+			
+			^[0]__data_nophoto &
+				order 0
 		
 	&__feature-list
 		margin 12px 0 19px
@@ -259,6 +263,10 @@
 		+above(980px)
 			padding-right 15px
 			width 50%
+			
+			^[0]__data_nophoto &
+				width 100%
+				padding-right 0
 		
 	&__kit-head
 		margin-bottom 19px
@@ -295,6 +303,10 @@
 			margin-bottom 23px
 			padding-left 15px
 			width 50%
+			
+			^[0]__data_nophoto &
+				padding-left 0
+				width 100%
 			
 	&__comment-body
 		line-height 1.71429

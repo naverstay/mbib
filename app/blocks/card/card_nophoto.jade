@@ -1,0 +1,139 @@
+include ../title/title
+include ../phone/phone
+include ../action/action
+include ../gallery/gallery
+include ../share/share
+include ../action/action
+
+mixin card_nophoto(data, id)
+	-var item = data[id];
+	+b.card&attributes(attributes)
+		+e.head
+			+title(1) Продажа #{item.name} в Москве
+		+e.body
+			+e.meta
+				+e.meta-id
+					+e.meta-lbl Номер объявления:
+					+e.meta-row № #{item.id}
+					+e.meta-row 
+						+e.SPAN.meta-date #{item.pubdate}
+						+e.SPAN.meta-view
+							+icon('eye', false).meta-view-icon
+							| #{item.inspect.viewAll} 
+						+e.SPAN.meta-remark (#{item.inspect.viewToday} сегодня)
+				+e.meta-inspect
+					+e.meta-lbl Адрес осмотра:
+					+e.meta-row #{item.inspect.city}, #{item.inspect.adress}
+					+e.meta-row 5 автомобилей в наличии
+				+e.meta-seller
+					+e.meta-lbl Продавец:
+					+e.meta-row #{item.author} 
+						+e.SPAN.meta-remark (#{item.authorStatus})
+					+e.meta-row
+						+phone(item.contact).card__meta-phone
+				+e.meta-price
+					+action('like', item.isFavorite).card__meta-action
+					+e.price
+						+e.price-value
+							| #{item.price} 
+							+e.SPAN.price-currency ₽
+
+			+e.ads
+				img(src="assets/images/card-ads.jpg", alt="")
+
+			+e.data._nophoto
+				+e.data-row
+					+e.feature
+						+e.DL.feature-list
+							+e.feature-row
+								+e.DT.feature-term Год выпуска
+								+e.DD.feature-desc #{item.feature.year}
+							+e.feature-row
+								+e.DT.feature-term Пробег
+								+e.DD.feature-desc #{item.feature.mileage}
+							+e.feature-row
+								+e.DT.feature-term Кузов
+								+e.DD.feature-desc #{item.feature.body}
+							+e.feature-row
+								+e.DT.feature-term Цвет
+								+e.DD.feature-desc #{item.feature.color}
+							+e.feature-row
+								+e.DT.feature-term Двигатель
+								+e.DD.feature-desc #{item.feature.engineCapacity} л / #{item.feature.enginePower} л.с. / #{item.feature.engineType}
+							+e.feature-row
+								+e.DT.feature-term Коробка
+								if item.feature.transmission == 'АТ'
+									-var transmission = 'автоматическая';
+								else
+									-var transmission = 'механическая';
+
+								+e.DD.feature-desc #{transmission}
+							+e.feature-row
+								+e.DT.feature-term Привод
+								+e.DD.feature-desc #{item.feature.drive}
+							+e.feature-row
+								+e.DT.feature-term Руль
+								-var drive = item.feature.rightDrive ? 'правый' : 'левый';
+								+e.DD.feature-desc #{drive}
+							+e.feature-row
+								+e.DT.feature-term Состояние
+								+e.DD.feature-desc #{item.feature.state}
+							+e.feature-row
+								+e.DT.feature-term Владельцы
+								+e.DD.feature-desc #{item.feature.owners}
+							+e.feature-row
+								+e.DT.feature-term ПТС
+								+e.DD.feature-desc #{item.feature.pts}
+							+e.feature-row
+								+e.DT.feature-term Владение
+								+e.DD.feature-desc #{item.feature.tenure}
+							+e.feature-row
+								+e.DT.feature-term Таможня
+								-var cleared = item.feature.cleared ? 'растаможен' : 'не растаможен';
+								+e.DD.feature-desc #{cleared}
+					+e.holder
+						+e.kit
+							+e.kit-head
+								+title(3) Комплектация
+							+e.kit-list
+								+e.DL.kit-item
+									+e.DT.kit-title Безопасность
+									if item.feature.abs
+										+e.DD.kit-desc Антиблокировочная система (ABS)
+									if item.feature.servo
+										+e.DD.kit-desc Парктроник
+								+e.DL.kit-item
+									+e.DT.kit-title Салон
+									if item.feature.fabricInterior
+										+e.DD.kit-desc Тканевый салон
+									if item.feature.leatherInterior
+										+e.DD.kit-desc Кожанный салон
+								+e.DL.kit-item
+									+e.DT.kit-title Комфорт
+									if item.feature.cruiseControl
+										+e.DD.kit-desc Круиз-контроль
+									if item.feature.servo
+										+e.DD.kit-desc Усилитель руляк
+									if item.feature.tintedGlass
+										+e.DD.kit-desc Тонированные стекла
+									//- if item.tintedGlass
+									//- 	+e.DD.desc
+								+e.DL.kit-item
+									+e.DT.kit-title Экстерьер
+									+e.DD.kit-desc 
+										if item.feature.alloyWheels
+											| Легкосплавные диски 
+										| #{item.feature.radiusWheels}''
+						+e.comment
+							+title(3) Комментарий продавца
+							+e.comment-body
+								| #{item.comment}
+
+						+e.yad
+							img(src="assets/images/yad1.png", alt="")
+				+e.data-row
+					+e.yad
+						img(src="assets/images/yad2.jpg", alt="")
+		+e.action
+			+share
+			+action

@@ -1,6 +1,6 @@
 extends /blocks/layout-default/layout-default
 include ../blocks/breadcrumbs/breadcrumbs
-include ../blocks/card/card
+include ../blocks/card/card_nophoto
 include ../blocks/card-list/card-list
 include ../blocks/block/block
 include ../blocks/headblock/headblock
@@ -15,7 +15,7 @@ block head
 
 block content
 	+breadcrumbs(getData('card-crumbs'))
-	+card(getData('cars'), 0)
+	+card_nophoto(getData('cars'), 1)
 	+headblock
 	+card-list(getData('cars'))
 	+pagination
