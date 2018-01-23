@@ -130,6 +130,7 @@
     "webpack-stream": "^3.1.0"
   },
   "dependencies": {
-    "lazysizes": "^4.0.1"
+    "lazysizes": "^4.0.1",
+    "notyf": "^2.0.1"
   }
 }

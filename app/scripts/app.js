@@ -13,6 +13,7 @@ import modal from '../blocks/modal/modal';
 import form from '../blocks/form/form';
 import geoplace from '../blocks/geoplace/geoplace';
 import 'lazysizes';
+import 'notyf';
 
 $(() => {
 	svg4everybody();
@@ -32,6 +33,14 @@ $(() => {
 	gallery.init();
 
 	digitpretify();
+
+	/*var notyf = new Notyf();
+
+	// Display an alert notification
+	notyf.alert('You must fill out the form before moving forward');
+
+	// Display a success notification
+	notyf.confirm('Your changes have been successfully saved!');*/
 	
 });
 
