@@ -1,0 +1,25 @@
+include ../akcent-block/akcent-block
+include ../title/title
+include ../form/form
+include ../car-name/car-name
+include ../input/input
+include ../lbl/lbl
+include ../btn/btn
+include ../checklist/checklist
+
+mixin step3()
+	+b.step&attributes(attributes)
+		+akcent-block
+			+form()
+				+title(2).visuallyhidden Год выпуска вашего автомобиля?
+				.step__head
+					.step__.head-name
+						+car-name(1, 'BMW / X3', 'bmw')
+					.step__.head-action
+						+btn('button', 'close')(href="")._theme_tertirary._size_s Очистить
+				+e.row
+					+lbl(for="year") Год выпуска
+					+checklist(getData('modelbmw'), 'year')
+						+e.item
+							+e.BUTTON.more(type="button").inIconed
+								+e.SPAN.more-text Старше
