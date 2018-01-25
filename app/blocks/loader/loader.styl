@@ -4,8 +4,11 @@
 	width 1em
 	height 4em
 	background-color $colorSecondary
-	
-	&_active
+
+.loader
+	&_active,
+	&_active::before,
+	&_active::after
 		animation load1 1s infinite ease-in-out
 
 .loader
@@ -17,6 +20,7 @@
 	transform translateZ(0)
 	animation-delay -0.16s
 
+		
 .loader::before,
 .loader::after
 	position absolute

@@ -3,11 +3,12 @@ include ../action/action
 include ../loader/loader
 
 mixin card-list(data)
+	// ._loading - for activation
 	+b.card-list&attributes(attributes)
 		+e.overlay
 			+e.loader
 				// ._active - for activation
-				+loader 
+				+loader
 		+e.UL.list
 			each item in data
 				if item.mark
