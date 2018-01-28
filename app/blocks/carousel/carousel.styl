@@ -116,6 +116,7 @@ $slick-opacity-not-active = .25
 	font-size 0
 	line-height 0
 	cursor pointer
+	
 	color transparent
 	background-color #fff
 	border 1px solid $colorDecorative
@@ -124,8 +125,8 @@ $slick-opacity-not-active = .25
 	
 	&:hover, 
 	&:focus 
-		outline none
 		color transparent
+		outline none
 		
 		&:before
 			opacity $slick-opacity-on-hover
@@ -227,8 +228,10 @@ $slick-opacity-not-active = .25
 				content $slick-dot-character
 				color $slick-dot-color
 				opacity $slick-opacity-not-active
-				-webkit-font-smoothing antialiased
-				-moz-osx-font-smoothing grayscale
+				
+				-webkit-font-smoothing antialiased /* stylelint-disable-line*/
+				-moz-osx-font-smoothing grayscale /* stylelint-disable-line*/
+				
 			
 		
 		&.slick-active button:before 

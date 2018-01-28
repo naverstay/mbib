@@ -72,8 +72,8 @@
 		
 		+above(768px)
 			position absolute
-			left 16px
 			top 16px
+			left 16px
 			margin-bottom 0
 			width 255px
 			height 190px
@@ -130,22 +130,12 @@
 		+above(980px)
 			position absolute
 			top 16px
-			bottom 16px
 			right 16px
+			bottom 16px
 			margin-left 0
 			display block
 			width 54px
 			
-			/*opacity 0
-			transition opacity .3s
-			
-			^[0]__item:hover &
-				opacity 1
-				
-		.page_touch &
-			+above(980px)
-				opacity 1*/
-				
 	&__name
 		position relative
 		top -1px
@@ -220,25 +210,25 @@
 			// margin-top -5px
 
 	&__phone
-		border 1px dashed $colorDecorative
 		margin-bottom 10px
 		color inherit
+		border 1px dashed $colorDecorative
 		
 		&:hover
-			border-color $colorMain
 			border-style solid
+			border-color $colorMain
 			
 		&_showed
 			border-color $colorSecondary
 		
 		+above(768px)
-			display inline-block
-			margin-left 30px
 			margin-bottom 0
+			margin-left 30px
+			display inline-block
 			
 		+above(980px)
-			margin-left 0
 			margin-bottom 10px
+			margin-left 0
 
 	&__phone-button
 		position relative
@@ -254,10 +244,10 @@
 			display none
 		
 	&__phone-inner
+		visibility hidden
+		overflow hidden
 		height 0
 		max-height 0
-		overflow hidden
-		visibility hidden
 		transition ease max-height .3s, visibility .3s
 		
 		^[0]__phone_showed &

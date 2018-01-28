@@ -9,6 +9,8 @@
 		visibility hidden
 		
 	&__text
+		position relative
+		z-index 2
 		padding 0 19px
 		display inline-block
 		height $heightM
@@ -22,6 +24,12 @@
 		&_size_s
 			height 36px
 			line-height 37px
+			
+		&_size_m
+			padding 0 15px
+			font-size 14px
+			height 40px
+			line-height 40px
 		
 		&:focus
 			transform translate3D(0, 1px, 0)
@@ -80,3 +88,32 @@
 				background-image none
 				background-color darken($colorDecorative, 20)
 				box-shadow inset 0 3px 6px darken($colorDecorative, 40)
+				
+		^[0]__control[disabled] + &
+			background-image none
+			background-color #f8f8f8
+			box-shadow none
+			
+		&_theme_simple
+			position relative
+			color #787878
+			background-color #fff
+			border 1px solid $colorDecorative
+			transition background-color .3s, color .3s, border-color .3s
+			
+			.control-group &
+				margin-right -1px
+				margin-bottom -1px
+			
+			^[0]__control[disabled] + &
+				background-color #f8f8f8
+			
+			^[0]__control:active + &,
+			^[0]__control:checked + &
+				color #fff
+				background-color $colorSecondary
+				border-color #1f57ad
+				transform translate3D(0, 0, 0)
+			
+			^[0]__control:checked + &
+				z-index 3

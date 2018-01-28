@@ -2,12 +2,20 @@
 	display block
 
 	&__message
-		line-height 1.71429
 		margin-bottom 1.5em
+		line-height 1.71429
 		
 		&_error
 			color lighten($colorMain, 20)
 	
+	&__section
+		border none
+
+	&__section-name 
+		margin-bottom 18px
+		font-size 18px
+		font-weight bold
+		
 	&__row
 		position relative
 		margin-bottom 15px
@@ -25,13 +33,10 @@
 			
 	&__warning
 		position relative
-		// z-index 1
-		// top 100%
-		// left 0
-		// width 100%
-		padding 10px
 		margin 10px 0 0
+		padding 10px
 		font-size 12px
+
 		color lighten($colorMain, 20)
 		background-color #fff
 		border 1px solid darken($colorDecorative, 10)
@@ -43,7 +48,7 @@
 			left 15px
 			size 10px
 			content ''
+			background-color #fff
 			border-top 1px solid darken($colorDecorative, 10)
 			border-right 1px solid darken($colorDecorative, 10)
-			background-color #fff
 			transform rotate(-45deg)

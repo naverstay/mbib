@@ -1,0 +1,42 @@
+.more
+	display inline-block
+	position relative
+	padding-left 50px
+	height 32px
+	line-height 30px
+	background-color transparent
+	border none
+	
+	&:before
+		position absolute
+		top 14px
+		left 15px
+		size 6px
+		content ''
+		border-radius 50%
+		background-color $colorText
+		box-shadow 10px 0, 20px 0
+		
+	&_theme_simple
+		border 1px solid $colorDecorative
+		
+	&_size_m
+		height 40px
+		line-height 40px
+		padding 0 15px 0 50px
+		
+		&:before
+			top 17px
+		
+	&_inIconed
+		padding-left 40px
+		
+		&:before
+			left 3px
+	
+	&__text
+		display inline-block
+		line-height 1.2
+		font-weight bold
+		color $colorSecondary
+		border-bottom 1px dashed

@@ -16,7 +16,7 @@
 		border 1px dashed $colorDecorative
 		
 		+above(768px)
-			margin 0 10px 0
+			margin 0 10px
 			padding 0 7px
 			display inline-block
 			
@@ -27,7 +27,6 @@
 			
 		&:hover
 			border-color $colorMain
-			// background-color $colorMain
 
 		.card__action &
 			+above(768px)
@@ -46,23 +45,23 @@
 					margin-right 0
 					
 		&_simple
-			border none
-			padding-left 0
 			padding-right 0
+			padding-left 0
 			background-color transparent
+			border none
 			
 			+above(768px)
-				margin-left 0
 				margin-bottom 0
+				margin-left 0
 		
 		^[0]_only-icon &
 			position relative
-			margin-left 0
 			margin-right 0
+			margin-left 0
 			
 			+above(768px)
-				margin-left 5px
 				margin-right 5px
+				margin-left 5px
 
 			+above(980px)
 				margin 0 auto 5px
@@ -75,6 +74,7 @@
 				text-align center
 				background-color transparent
 				border none
+				
 				opacity 0
 				transition opacity .3s
 			
@@ -101,20 +101,21 @@
 				margin-right 5px
 				padding 9px 18px 8px
 				white-space nowrap
+				pointer-events none
 				color darken($colorDecorative, 40)
 				background-color #fff
 				border 1px solid $colorDecorative
 				box-shadow 0 2px 8px rgba($colorDecorative, .4)
+				
 				opacity 0
-				pointer-events none
 				transform translate3D(-10px, 0, 0)
 				transition opacity .3s, transform .3s
 			
 			&:before
 				position absolute
 				z-index -1
-				right -5px
 				top 50%
+				right -5px
 				margin-top -3px
 				size 7px
 				content ''
@@ -158,9 +159,10 @@
 		
 	&__icon-img_like_fill
 		position absolute
-		left 0
 		top 0
+		left 0
 		size 20px
+		
 		opacity 0
 		transition fill .3s, opacity .3s
 		

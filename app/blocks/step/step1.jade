@@ -3,6 +3,7 @@ include ../title/title
 include ../form/form
 include ../input/input
 include ../checklist/checklist
+include ../more/more
 
 mixin step1()
 	+b.step&attributes(attributes)
@@ -14,5 +15,4 @@ mixin step1()
 				+e.row
 					+checklist(getData('brands'), 'brand')
 						+e.item
-							+e.BUTTON.more(type="button") 
-								+e.SPAN.more-text Все марки
+							+more._inIconed Все марки
