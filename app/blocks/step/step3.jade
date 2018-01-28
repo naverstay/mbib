@@ -23,8 +23,7 @@ mixin step3()
 				+e.FIELDSET.section
 					+e.LEGEND.section-name Год выпуска
 					+e.row
-						+lbl(for="year" hidden) Год выпуска
-						+control-group
+						+control-group._wrap
 							+switcher(type="radio", name="year", value="2017", id="year", role="radio", tabindex="0", required, data-value-missing="Выберите тип пользователя")._theme_simple._size_m 2017
 							+switcher(type="radio", name="year", value="2016", id="year2016", role="radio", tabindex="1")._theme_simple._size_m 2016
 							+switcher(type="radio", name="year", value="2015", id="year2015", role="radio", tabindex="2", disabled="disabled")._theme_simple._size_m 2015

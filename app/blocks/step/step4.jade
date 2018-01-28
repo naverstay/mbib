@@ -1,0 +1,90 @@
+include ../akcent-block/akcent-block
+include ../title/title
+include ../form/form
+include ../car-name/car-name
+include ../input/input
+include ../lbl/lbl
+include ../btn/btn
+include ../radio/radio
+include ../checkbox/checkbox
+include ../control-group/control-group
+include ../switcher/switcher
+include ../more/more
+
+mixin step4()
+	+b.step&attributes(attributes)
+		+akcent-block
+			+form()
+				+title(2).visuallyhidden Год выпуска вашего автомобиля?
+				.step__head
+					.step__.head-name
+						+car-name(1, 'BMW / X3 / 2013 Хэтчбек 5 дв. VI (F3x)', 'bmw')
+					.step__.head-action
+						+btn('button', 'close')(href="")._theme_tertirary._size_s Очистить
+				+e.FIELDSET.section
+					+e.LEGEND.section-name Год выпуска
+					+e.row
+						+control-group._wrap
+							+switcher(type="radio", name="year", value="2017", id="year", role="radio", tabindex="0", required, data-value-missing="Выберите тип пользователя")._theme_simple._size_m 2017
+							+switcher(type="radio", name="year", value="2016", id="year2016", role="radio", tabindex="1")._theme_simple._size_m 2016
+							+switcher(type="radio", name="year", value="2015", id="year2015", role="radio", tabindex="2", disabled="disabled")._theme_simple._size_m 2015
+							+switcher(type="radio", name="year", value="2014", id="year2014", role="radio", tabindex="3")._theme_simple._size_m 2014
+							+switcher(type="radio", name="year", value="2013", id="year2013", role="radio", tabindex="4")._theme_simple._size_m 2013
+							+switcher(type="radio", name="year", value="2012", id="year2012", role="radio", tabindex="5")._theme_simple._size_m 2012
+							+switcher(type="radio", name="year", value="2011", id="year2011", role="radio", tabindex="6", checked="checked")._theme_simple._size_m 2011
+							+switcher(type="radio", name="year", value="2010", id="year2010", role="radio", tabindex="7")._theme_simple._size_m 2010
+							+switcher(type="radio", name="year", value="2009", id="year2009", role="radio", tabindex="8")._theme_simple._size_m 2009
+							+switcher(type="radio", name="year", value="2008", id="year2008", role="radio", tabindex="9")._theme_simple._size_m 2008
+							+switcher(type="radio", name="year", value="2007", id="year2007", role="radio", tabindex="10")._theme_simple._size_m 2007
+							+switcher(type="radio", name="year", value="2006", id="year2006", role="radio", tabindex="11")._theme_simple._size_m 2006
+							+switcher(type="radio", name="year", value="2005", id="year2005", role="radio", tabindex="12")._theme_simple._size_m 2005
+							+switcher(type="radio", name="year", value="2004", id="year2004", role="radio", tabindex="13")._theme_simple._size_m 2004
+							+switcher(type="radio", name="year", value="2003", id="year2003", role="radio", tabindex="14")._theme_simple._size_m 2003
+							+switcher(type="radio", name="year", value="2002", id="year2002", role="radio", tabindex="15")._theme_simple._size_m 2002
+							+more._theme_simple._size_m Старше
+
+				+e.FIELDSET.section
+					+e.LEGEND.section-name Тип кузова
+					+e.row._align_left
+						+e.item
+							+switcher(type="radio", name="type", value="t1", id="t1", role="radio", tabindex="16", checked="checked")._theme_simple._size_m Внедорожник 5 дв.
+						+e.item
+							+switcher(type="radio", name="type", value="t2", id="t2", role="radio", tabindex="17")._theme_simple._size_m Хэтчбек 5 дв.
+						+e.item
+							+switcher(type="radio", name="type", value="t3", id="t3", role="radio", tabindex="18")._theme_simple._size_m Кабриолет
+						+e.item
+							+switcher(type="radio", name="type", value="t4", id="t4", role="radio", tabindex="19")._theme_simple._size_m Универсал 5 дв.
+						+e.item
+							+switcher(type="radio", name="type", value="t5", id="t5", role="radio", tabindex="20")._theme_simple._size_m Купе
+						+e.item
+							+switcher(type="radio", name="type", value="t6", id="t6", role="radio", tabindex="21")._theme_simple._size_m Седан
+						+e.item
+							+checkbox(name="rightdrive", tabindex="22") Правый руль
+
+				+e.FIELDSET.section
+					+e.LEGEND.section-name Двигатель
+					+e.row._align_left
+						+e.item
+							+switcher(type="radio", name="engine", value="diz", id="e1", role="radio", tabindex="23")._theme_simple._size_m Дизель
+						+e.item
+							+switcher(type="radio", name="engine", value="benz", id="e2", role="radio", tabindex="24", checked="checked")._theme_simple._size_m Бензин
+						+e.item
+							+checkbox(name="rightdrive", tabindex="25") Газобалонное оборудование
+
+				+e.FIELDSET.section
+					+e.LEGEND.section-name Привод
+					+e.row._align_left
+						+e.item
+							+switcher(type="radio", name="drive", value="forw", id="d1", role="radio", tabindex="26")._theme_simple._size_m Передний
+						+e.item
+							+switcher(type="radio", name="drive", value="back", id="d2", role="radio", tabindex="27")._theme_simple._size_m Задний
+						+e.item
+							+switcher(type="radio", name="drive", value="full", id="d3", role="radio", tabindex="28", checked="checked")._theme_simple._size_m Полный
+
+				+e.FIELDSET.section
+					+e.LEGEND.section-name Коробка передач
+					+e.row._align_left
+						+e.item
+							+switcher(type="radio", name="trans", value="mech", id="tr1", role="radio", tabindex="29")._theme_simple._size_m Автоматическая
+						+e.item
+							+switcher(type="radio", name="trans", value="auto", id="tr2", role="radio", tabindex="30")._theme_simple._size_m Механическая
