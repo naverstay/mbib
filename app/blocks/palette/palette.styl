@@ -1,0 +1,95 @@
+.palette
+	display block
+	font-size 0
+	
+	&__item
+		position relative
+		margin-right 18px
+		display inline-block
+		size 32px
+		border 1px solid $colorDecorative
+		border-radius 50%
+		box-shadow 0 4px 16px rgba(#000, 0.1)
+		
+		&::before
+			position absolute
+			left 50%
+			bottom 100%
+			margin-bottom 10px
+			min-width 82px
+			height 30px
+			content attr(title)
+			font-size 11px
+			line-height 30px
+			color #787878
+			background-color #fff
+			border 1px solid $colorDecorative
+			opacity 0
+			transition opacity .1s, transform .1s
+			transform translate3d(-50%, 5px, 0)
+			
+		&:hover::before
+			opacity 1
+			transform translate3d(-50%, 0, 0)
+			
+		&::after
+			position absolute
+			left 50%
+			bottom 100%
+			margin-bottom 10px
+			size 8px
+			content ''
+			opacity 0
+			background-color #fff
+			box-shadow 1px 1px 0 $colorDecorative
+			transition opacity .1s, transform .1s
+			transform translate3d(-50%, 5px, 0) rotate(45deg)
+			
+		&:hover::after
+			opacity 1
+			transform translate3d(-50%, 2px, 0) rotate(45deg)
+		
+		&_color_white
+			background-color #fff
+			
+		&_color_grey
+			background-color #c1c1c1
+			
+		&_color_dark
+			background-color #9c9999
+			
+		&_color_beige
+			background-color #ffefd5
+			
+		&_color_yellow
+			background-color #fde910
+			
+		&_color_orange
+			background-color #fabe00
+			
+		&_color_pink
+			background-color #ffc0cb
+			
+		&_color_red
+			background-color #fc4829
+			
+		&_color_brown
+			background-color #926547
+			
+		&_color_azure
+			background-color #0088ff
+			
+		&_color_blue
+			background-color #0433ff
+			
+		&_color_carmin
+			background-color #c5172d
+			
+		&_color_purple
+			background-color #9966cc
+			
+		&_color_green
+			background-color #35ba2b
+			
+		&_color_black
+			background-color #000

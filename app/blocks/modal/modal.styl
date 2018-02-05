@@ -1,7 +1,10 @@
 .modal
-	margin 0 auto
+	margin 20px auto 0
 	display block
 	box-shadow 0 0 0 10px darken($colorDecorative, 40)
+	
+	+above(980px)
+		margin-top 0
 	
 	&_size_s
 		+above(420px)
@@ -39,7 +42,7 @@
 		pointer-events none
 		
 	&__inner
-		box-shadow 0 0px 1px 0 rgba(#000, .75)
+		box-shadow 0 0 1px 0 rgba(#000, .75)
 		
 	&__body
 		position relative 
@@ -66,12 +69,12 @@
 	/* start state */
 	.mfp-with-anim 
 		opacity 0
-		transition all 0.2s ease-in-out 
-		transform scale(0.8) 
+		transition all .2s ease-in-out 
+		transform scale(.8) 
 
 	&.mfp-bg 
 		opacity 0
-		transition all 0.3s ease-out
+		transition all .3s ease-out
 
 	/* animate in */
 	&.mfp-ready 
@@ -80,13 +83,13 @@
 			transform scale(1) 
 
 	&.mfp-bg 
-		opacity 0.8
+		opacity .8
 
 	/* animate out */
 	&.mfp-removing 
 
 		.mfp-with-anim 
-			transform scale(0.8) 
+			transform scale(.8) 
 			opacity 0
 
 		&.mfp-bg 

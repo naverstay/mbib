@@ -1,0 +1,54 @@
+.add-photo
+	padding 24px
+	display flex
+	background-color #fff
+	border 1px dashed #ababab
+	
+	&__item
+		margin 0 1px
+		display flex
+		width 12.5%
+		height 100px
+		flex-grow 1
+		flex-direction column
+		justify-content center
+		align-items center
+		text-align center
+		background-color #fff
+		border 1px solid $colorDecorative
+		
+		&_main
+			width 25%
+			font-size 16px
+			font-weight bold
+			color #fff
+			background-color $colorSecondary
+			background-image linear-gradient(to right, $colorSecondary, #528AE0)
+	
+	&__icon
+		display block
+		margin-bottom 10px
+		
+		&:last-child
+			margin-bottom 0
+		
+		&_tap
+			sprite $tap
+			
+		&_drive
+			sprite $drive
+			
+		&_forward
+			sprite $forward
+			
+		&_left
+			sprite $left
+		
+		&_db
+			sprite $db
+			
+		&_df
+			sprite $df
+			
+		&_right
+			sprite $right

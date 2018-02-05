@@ -18,32 +18,46 @@ mixin modal-claim()
 				+form(name="claim" action="" method="")
 					.control-group.control-group_block
 						+e.row
-							+radio(name="claimCause" value="salled" required role="radio") Автомобиль продан
+							+e.item._fullwidth
+								+radio(name="claimCause" value="salled" required role="radio") Автомобиль продан
 						+e.row
-							+radio(name="claimCause" value="perekup" role="radio") Перекупщик или салон
+							+e.item._fullwidth
+								+radio(name="claimCause" value="perekup" role="radio") Перекупщик или салон
 						+e.row
-							+radio(name="claimCause" value="notavaible" role="radio") Телефон продавца недоступен
+							+e.item._fullwidth
+								+radio(name="claimCause" value="notavaible" role="radio") Телефон продавца недоступен
 						+e.row
-							+radio(name="claimCause" value="otherprice" role="radio") Указана заниженная цена
+							+e.item._fullwidth
+								+radio(name="claimCause" value="otherprice" role="radio") Указана заниженная цена
 						+e.row
-							+radio(name="claimCause" value="photo" role="radio") Фото не соответствует автомобилю
+							+e.item._fullwidth
+								+radio(name="claimCause" value="photo" role="radio") Фото не соответствует автомобилю
 						+e.row
-							+radio(name="claimCause" value="year" role="radio") Неверный год выпуска
+							+e.item._fullwidth
+								+radio(name="claimCause" value="year" role="radio") Неверный год выпуска
 						+e.row
-							+radio(name="claimCause" value="model" role="radio") Неверно указана модель или поколение
+							+e.item._fullwidth
+								+radio(name="claimCause" value="model" role="radio") Неверно указана модель или поколение
 						+e.row
-							+radio(name="claimCause" value="city" role="radio") Автомобиль в другом городе
+							+e.item._fullwidth
+								+radio(name="claimCause" value="city" role="radio") Автомобиль в другом городе
 						+e.row
-							+radio(name="claimCause" value="copy" role="radio") Объявление дублируется
+							+e.item._fullwidth
+								+radio(name="claimCause" value="copy" role="radio") Объявление дублируется
 						+e.row
-							+radio(name="claimCause" value="rec" role="radio") Продажа запчастей
+							+e.item._fullwidth
+								+radio(name="claimCause" value="rec" role="radio") Продажа запчастей
 						+e.row
-							+radio(name="claimCause" value="other" role="radio") Другая причина
+							+e.item._fullwidth
+								+radio(name="claimCause" value="other" role="radio") Другая причина
 					+e.row
-						+lbl(for="claimText") Комментарий
-						+area#claimText(name="claimText" required)
+						+e.item._fullwidth
+							+lbl(for="claimText") Комментарий
+							+area#claimText(name="claimText" required)
 					+e.row
-						+lbl(for="claimAuthor" hidden)
-						+input(type="email" id="claimAuthor" placeholder="Ваш email" required)
+						+e.item._fullwidth
+							+lbl(for="claimAuthor" hidden)
+							+input(type="email" id="claimAuthor" placeholder="Ваш email" required)
 					+e.row._align_right
-						+btn('button', 'plaint')._theme_secondary Пожаловаться
+						+e.item._fullwidth
+							+btn('button', 'plaint')._theme_secondary Пожаловаться

@@ -11,8 +11,10 @@ mixin step1()
 			+form()
 				+title(2) Какой марки ваш автомобиль?
 				+e.row
-					+input(type="text" name="brand" placeholder="Марка")
+					+e.item._fullwidth
+						+input(type="text" name="brand" placeholder="Марка")
 				+e.row
-					+checklist(getData('brands'), 'brand')
-						+e.item
-							+more._inIconed Все марки
+					+e.item._fullwidth
+						+checklist(getData('brands'), 'brand')
+							+e.item
+								+more._inIconed Все марки

@@ -1,0 +1,76 @@
+.saletype
+	margin-top 60px
+	display block
+	background-color #fff
+	
+	.tab&
+		margin-bottom 0
+	
+	&__simple,
+	&__premium
+		position relative
+		margin -20px -30px 30px
+		padding 20px 30px
+		
+	&__simple
+		background #e4f2dd url(../images/bg-sale.png) right bottom no-repeat
+		box-shadow inset 0 2px 0 #b4e19d
+		
+	&__premium
+		background #fff3b5 url(../images/bg-sale-premium.jpg) bottom right no-repeat
+		box-shadow inset 0 2px 0 #ffe03e
+		
+	&__tab-simple.tab__head-item_active
+		position relative
+		z-index 1
+		background-color #e4f2dd
+		box-shadow inset 0 2px 0 #b4e19d, 0 4px 0 #e4f2dd
+		
+	&__tab-premium.tab__head-item_active
+		position relative
+		z-index 1
+		background-color #fff3b5
+		box-shadow inset 0 2px 0 #ffe03e, 0 4px 0 #fff3b5
+
+	&__content
+		display flex
+		min-height 284px
+		
+	&__fig
+		margin-right 45px
+		
+	&__text
+		margin-top 35px
+		width 420px
+		font-weight bold
+		font-size 16px
+		line-height 1.5
+		
+		^[0]__premium &
+			width 350px
+			margin-left 20px
+		
+		h3
+			margin-bottom 24px
+			font-size 34px
+			line-height 1.1
+			
+			^[0]__premium &
+				color #c53226
+		
+		p
+			margin-bottom 1.5em
+			
+	&__price
+		position absolute
+		top 89px
+		left 50%
+		margin-left -70px
+		font-size 20px
+		color #ffe984
+		
+	&__price-num
+		font-size 40px
+	
+	&__sbm
+		margin-bottom 20px

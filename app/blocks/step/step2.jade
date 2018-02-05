@@ -18,8 +18,10 @@ mixin step2()
 					.step__.head-action
 						+btn('button', 'close')(href="")._theme_tertirary._size_s Очистить
 				+e.row
-					+input(type="text" name="model" placeholder="Модель")
+					+e.item._fullwidth
+						+input(type="text" name="model" placeholder="Модель")
 				+e.row
-					+checklist(getData('modelbmw'), 'model')
-						+e.item
-							+more Все модели
+					+e.item._fullwidth
+						+checklist(getData('modelbmw'), 'model')
+							+e.item
+								+more Все модели

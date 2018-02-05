@@ -1,7 +1,7 @@
 .radio
 	position relative
 	display block
-	padding 5px 0 6px 35px
+	padding 6px 0 7px 35px
 	
 	&__control
 		position absolute
@@ -15,37 +15,42 @@
 		
 		&:before
 			position absolute
-			top -2px
-			left -30px
+			top -6px
+			left -35px
 			margin 0 4px 0 0
-			size 16px
+			size 25px
 			vertical-align middle
 			cursor pointer
 			content ''
-			background-color #fff
-			border 1px solid $colorDecorative
+			background-color #f8f8f8
+			box-shadow inset 0 2px 6px rgba(#000, .25)
 			border-radius 50%
-			transition background-color .3s, border-color .3s
+			transition background-color .3s
 			
 		&:hover:before
-			border 1px solid $colorDecorative
+			background-color $colorMain
 			
 		
 	&__control:checked:focus + &__text:before,
 	&__control:focus + &__text:before 
-		border-color $colorSecondary
+		border-color $colorMAin
 		
 	&__control + &__text:after
 		position absolute
-		top 4px 
-		left -24px
-		size 6px
+		top 0px 
+		left -29px
+		size 13px
 		content ''
-		background-color $colorMain
+		background-color #fff
 		border-radius 50%
 		opacity 0
 		transition all .3s
 		transform scale(0)
+		box-shadow 0 2px 5px rgba(#000, .25)
+		
+	&__control:checked + &__text:before
+		background-color $colorMain
+		box-shadow none
 		
 	&__control:checked + &__text:after
 		transform scale(1)

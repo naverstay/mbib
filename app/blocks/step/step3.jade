@@ -23,28 +23,29 @@ mixin step3()
 				+e.FIELDSET.section
 					+e.LEGEND.section-name Год выпуска
 					+e.row
-						+control-group._wrap
-							+switcher(type="radio", name="year", value="2017", id="year", role="radio", tabindex="0", required, data-value-missing="Выберите тип пользователя")._theme_simple._size_m 2017
-							+switcher(type="radio", name="year", value="2016", id="year2016", role="radio", tabindex="1")._theme_simple._size_m 2016
-							+switcher(type="radio", name="year", value="2015", id="year2015", role="radio", tabindex="2", disabled="disabled")._theme_simple._size_m 2015
-							+switcher(type="radio", name="year", value="2014", id="year2014", role="radio", tabindex="3")._theme_simple._size_m 2014
-							+switcher(type="radio", name="year", value="2013", id="year2013", role="radio", tabindex="4")._theme_simple._size_m 2013
-							+switcher(type="radio", name="year", value="2012", id="year2012", role="radio", tabindex="5")._theme_simple._size_m 2012
-							+switcher(type="radio", name="year", value="2011", id="year2011", role="radio", tabindex="6")._theme_simple._size_m 2011
-							+switcher(type="radio", name="year", value="2010", id="year2010", role="radio", tabindex="7")._theme_simple._size_m 2010
-							+switcher(type="radio", name="year", value="2009", id="year2009", role="radio", tabindex="8")._theme_simple._size_m 2009
-							+switcher(type="radio", name="year", value="2008", id="year2008", role="radio", tabindex="9")._theme_simple._size_m 2008
-							+switcher(type="radio", name="year", value="2007", id="year2007", role="radio", tabindex="10")._theme_simple._size_m 2007
-							+switcher(type="radio", name="year", value="2006", id="year2006", role="radio", tabindex="11")._theme_simple._size_m 2006
-							+switcher(type="radio", name="year", value="2005", id="year2005", role="radio", tabindex="12")._theme_simple._size_m 2005
-							+switcher(type="radio", name="year", value="2004", id="year2004", role="radio", tabindex="13")._theme_simple._size_m 2004
-							+switcher(type="radio", name="year", value="2003", id="year2003", role="radio", tabindex="14")._theme_simple._size_m 2003
-							+switcher(type="radio", name="year", value="2002", id="year2002", role="radio", tabindex="15")._theme_simple._size_m 2002
-							+switcher(type="radio", name="year", value="2001", id="year2001", role="radio", tabindex="16")._theme_simple._size_m 2001
-							+switcher(type="radio", name="year", value="2000", id="year2000", role="radio", tabindex="17")._theme_simple._size_m 2000
-							+switcher(type="radio", name="year", value="1999", id="year1999", role="radio", tabindex="18")._theme_simple._size_m 1999
-							+switcher(type="radio", name="year", value="1998", id="year1998", role="radio", tabindex="19")._theme_simple._size_m 1998
-							+more._theme_simple._size_m Старше
+						+e.item._fullwidth
+							+control-group._wrap
+								+switcher(type="radio", name="year", value="2017", id="year", role="radio", tabindex="0", required, data-value-missing="Выберите тип пользователя")._theme_simple._size_m 2017
+								+switcher(type="radio", name="year", value="2016", id="year2016", role="radio", tabindex="1")._theme_simple._size_m 2016
+								+switcher(type="radio", name="year", value="2015", id="year2015", role="radio", tabindex="2", disabled="disabled")._theme_simple._size_m 2015
+								+switcher(type="radio", name="year", value="2014", id="year2014", role="radio", tabindex="3")._theme_simple._size_m 2014
+								+switcher(type="radio", name="year", value="2013", id="year2013", role="radio", tabindex="4")._theme_simple._size_m 2013
+								+switcher(type="radio", name="year", value="2012", id="year2012", role="radio", tabindex="5")._theme_simple._size_m 2012
+								+switcher(type="radio", name="year", value="2011", id="year2011", role="radio", tabindex="6")._theme_simple._size_m 2011
+								+switcher(type="radio", name="year", value="2010", id="year2010", role="radio", tabindex="7")._theme_simple._size_m 2010
+								+switcher(type="radio", name="year", value="2009", id="year2009", role="radio", tabindex="8")._theme_simple._size_m 2009
+								+switcher(type="radio", name="year", value="2008", id="year2008", role="radio", tabindex="9")._theme_simple._size_m 2008
+								+switcher(type="radio", name="year", value="2007", id="year2007", role="radio", tabindex="10")._theme_simple._size_m 2007
+								+switcher(type="radio", name="year", value="2006", id="year2006", role="radio", tabindex="11")._theme_simple._size_m 2006
+								+switcher(type="radio", name="year", value="2005", id="year2005", role="radio", tabindex="12")._theme_simple._size_m 2005
+								+switcher(type="radio", name="year", value="2004", id="year2004", role="radio", tabindex="13")._theme_simple._size_m 2004
+								+switcher(type="radio", name="year", value="2003", id="year2003", role="radio", tabindex="14")._theme_simple._size_m 2003
+								+switcher(type="radio", name="year", value="2002", id="year2002", role="radio", tabindex="15")._theme_simple._size_m 2002
+								+switcher(type="radio", name="year", value="2001", id="year2001", role="radio", tabindex="16")._theme_simple._size_m 2001
+								+switcher(type="radio", name="year", value="2000", id="year2000", role="radio", tabindex="17")._theme_simple._size_m 2000
+								+switcher(type="radio", name="year", value="1999", id="year1999", role="radio", tabindex="18")._theme_simple._size_m 1999
+								+switcher(type="radio", name="year", value="1998", id="year1998", role="radio", tabindex="19")._theme_simple._size_m 1998
+								+more._theme_simple._size_m Старше
 
 						//- +checklist(getData('modelbmw'), 'year')
 							+e.item

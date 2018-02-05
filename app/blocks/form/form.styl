@@ -9,36 +9,148 @@
 			color lighten($colorMain, 20)
 	
 	&__section
-		border none
 		margin-bottom 25px
+		border none
+		
+		^[0]_in-akcent &
+			margin-left -24px
+			margin-right -24px
+			padding 0 24px
+		
+		&_separated
+			border-bottom 1px dashed $colorDecorative
+		
+	&__section-wrap
+		margin 0 -24px 35px
+		padding 30px 26px 5px
+		border-top 2px solid #c7dcfc
+		border-bottom 2px solid #c7dcfc
 
-	&__section-name 
+		&_marked
+			background-color #eff5fd
+
+	&__section-name
 		margin-bottom 18px
 		font-size 18px
 		font-weight bold
+		-webkit-padding-start 0
+		-webkit-padding-end 0
+		
+	&__collapse-head
+		margin 0 -24px 12px
+		padding 14px 24px 12px
+		display block
+		width 100%
+		font-size 18px
+		font-weight bold
+		cursor pointer
+		background-color #fff
+		
+	&__collapse-name
+		position relative
+		display inline-block
+		line-height 1.1
+		color $colorSecondary
+		border-bottom 1px dashed $colorDecorative
+		
+		/*^[0]__collapse_open &
+			color $colorText
+		*/
+			
+		/*&:before
+			position absolute
+			right -35px
+			top -1px
+			box-sizing border-box
+			size 24px
+			content ''
+			border 1px dashed $colorDecorative*/
+			
+		&:after
+			position absolute
+			right -20px
+			top 3px
+			size 8px
+			content ''
+			background-color #fff
+			border-left 2px solid
+			border-bottom 2px solid
+			transform rotate(-45deg)
+			
+		^[0]__collapse_open &:after
+			transform rotate(-135deg)
+			
+	&__group
+		margin-bottom 25px
+		border none
+		
+		&:last-child
+			margin-bottom 0
+		
+	&__group-name
+		margin-bottom 18px
+		font-size 16px
+		
+	&__group-item
+		margin-bottom 10px
+		
+	&__head
+		margin 0 -24px 12px
+		padding 18px 25px
+		display block
+		font-size 18px
+		font-weight bold
+		background-color #fffcea
+		border-top 1px dashed $colorDecorative
 		
 	&__row
 		position relative
-		margin-bottom 15px
+		margin 0 -15px 15px
+		// margin-bottom 15px
+		display flex
+		flex-wrap wrap
 		
 		&_align_right
-			text-align right
+			justify-content flex-end
 			
 		&_align_center
 			text-align center
 		
 		&_align_justify
-			display flex
 			justify-content space-between
 			align-items flex-start
 			
 		&_align_left
-			display flex
 			justify-content flex-start
 			align-items baseline
 			
 	&__item
-		margin 0 20px 0 0
+		margin 0 15px
+		width calc(100% / 12 - 30px)
+		
+		&_fullwidth
+			width calc(100% - 30px)
+			
+		&_span_2
+			width calc(100% / 6 - 30px)
+			
+		&_span_3
+			width calc(100% / 4 - 30px)
+			
+		&_span_4
+			width calc(100% / 3 - 30px)
+			
+		&_span_5
+			width calc(100% * 5 / 12 - 30px)
+			
+		&_span_6
+			width calc(50% - 30px)
+			
+		&_span_7
+			width calc(100% * 7 / 12 - 30px)
+			
+		&_span_8
+			width calc(100% * 2 / 3 - 30px)
 			
 	&__warning
 		position relative
@@ -61,3 +173,14 @@
 			border-top 1px solid darken($colorDecorative, 10)
 			border-right 1px solid darken($colorDecorative, 10)
 			transform rotate(-45deg)
+	
+	&__remark
+		margin-top 10px
+		display inline-block
+		font-size 11px
+		line-height 1.2
+		color #ababab
+		
+	&__tab
+		&_in-akcent
+			margin 0 -24px

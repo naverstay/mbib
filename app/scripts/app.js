@@ -11,6 +11,7 @@ import cardList from '../blocks/card-list/card-list';
 import sidenav from '../blocks/sidenav/sidenav';
 import modal from '../blocks/modal/modal';
 import form from '../blocks/form/form';
+import collapse from '../blocks/collapse/collapse';
 import geoplace from '../blocks/geoplace/geoplace';
 import 'lazysizes';
 import 'notyf';
@@ -31,6 +32,8 @@ $(() => {
 	select.init();
 
 	gallery.init();
+
+	collapse();
 
 	digitpretify();
 
