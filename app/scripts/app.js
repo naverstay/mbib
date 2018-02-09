@@ -16,6 +16,12 @@ import geoplace from '../blocks/geoplace/geoplace';
 import 'lazysizes';
 import 'notyf';
 
+const checkTouch = () => {
+	if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
+		document.body.classList.add('page_touch');
+	}
+}
+
 $(() => {
 	svg4everybody();
 
@@ -46,9 +52,3 @@ $(() => {
 	notyf.confirm('Your changes have been successfully saved!');*/
 	
 });
-
-const checkTouch = () => {
-	if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
-		document.body.classList.add('page_touch');
-	}
-}
