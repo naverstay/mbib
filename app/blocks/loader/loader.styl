@@ -1,38 +1,75 @@
-.loader,
-.loader::before,
-.loader::after
-	width 1em
-	height 4em
-	background-color $colorSecondary
-
 .loader
-	&_active,
-	&_active::before,
-	&_active::after
-		animation load1 1s infinite ease-in-out
-
-.loader
-	position relative
-	margin 88px auto
-	font-size 11px
-	text-indent -9999em
-	color $colorSecondary
-	transform translateZ(0)
-	animation-delay -.16s
-
-		
-.loader::before,
-.loader::after
-	position absolute
+	position fixed
+	z-index 100
 	top 0
-	content ''
+	right 0
+	left 0
+	bottom 0
+	display none
+	
+	&_active
+		display block
 
-.loader::before
-	left -1.5em
-	animation-delay -.32s
+	&__overlay
+		position absolute
+		z-index -1
+		top 0
+		right 0
+		left 0
+		bottom 0
+		display flex
+		justify-content center
+		align-items center
+		background-color rgba(#f5f5f5, .75)
+		
+		^[0]_active &
+			z-index 150
+			opacity 1
 
-.loader::after
-	left 1.5em
+	&__loader
+		position absolute
+		top 50%
+		left 50%
+		margin-top -2em
+		margin-left 1em
+
+	&__spiner,
+	&__spiner::before,
+	&__spiner::after
+		width 1em
+		height 4em
+		background-color $colorSecondary
+
+	&__spiner
+		^[0]_active &,
+		^[0]_active &::before,
+		^[0]_active &::after
+			animation load1 1s infinite ease-in-out
+
+	&__spiner
+		position relative
+		margin 88px auto
+		font-size 11px
+		text-indent -9999em
+		color $colorSecondary
+		transform translateZ(0)
+		
+		^[0]_active &
+			animation-delay -.16s
+			
+	&__spiner::before,
+	&__spiner::after
+		position absolute
+		top 0
+		content ''
+
+	&__spiner::before
+		left -1.5em
+		^[0]_active &
+			animation-delay -.32s
+
+	&__spiner::after
+		left 1.5em
 
 @-webkit-keyframes load1
 	0%,

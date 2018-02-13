@@ -1,3 +1,5 @@
 mixin loader()
-	+b.loader&attributes(attributes)
-		block
+	// ._active - for activation
+	+b.loader&attributes(attributes) 
+		+e.overlay
+			+e.spiner
