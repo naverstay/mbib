@@ -12,8 +12,10 @@
 		height 100%
 
 	&__sidenav
-		width 70px
-		flex-basis 70px
+		margin-left -12px
+		width 55px
+		flex-basis 55px
+		
 		
 	&__spacer
 		flex-grow 1
@@ -30,28 +32,33 @@
 			display block
 		
 	&__add
-		padding 0 20px
-		display none
+		padding 0 0 0 3px
+		display flex
 		align-items center
 		
-		+above(980px)
-			display flex
+		+above(370px)
+			padding-left 15px
+			
+		+above(768px)
+			padding 0 20px
 		
 	&__auth
 		position relative
-		padding 10px 15px 10px 47px
-		display none
+		padding 0 15px 0 28px
+		display flex
 		align-self center
+		height 45px
 		font-size 16px
+		line-height 45px
 		text-decoration none
 		color #fff
 		transition color .3s, background-color .3s
 		
-		+above(980px)
-			display flex
+		+above(600px)
 			height 100%
+			padding-left 47px
 			align-items center
-			
+		
 		&:hover
 			color #fff
 			background-color $colorMain
@@ -60,7 +67,7 @@
 		position absolute
 		top 50%
 		left 10px
-		margin-top -12px
+		margin-top -11px
 		size 22px
 		fill $colorDecorative
 		transition fill .3s
@@ -69,9 +76,14 @@
 			fill #fff
 		
 	&__auth-text
-		display inline-block
+		padding-top 1px
+		display none
+		line-height 1.1
 		border-bottom 1px dashed rgba(#fff, .23)
 		transition border-color .3s
+		
+		+above(600px)
+			display inline-block
 		
 		^[0]__auth:hover &
 			border-bottom-color #fff
