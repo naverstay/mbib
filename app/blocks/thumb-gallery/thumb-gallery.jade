@@ -1,7 +1,7 @@
 mixin thumb-gallery(data)
 	+b.thumb-gallery&attributes(attributes)
 		each item, i in data
-			+e.item(class="_column_"+data.length, onclick="return true;")
+			+e.item(class="_column_"+data.length)
 				+e.img-wrap
 					img(data-src=item, alt="").lazyload
 				+e.SPAN.marker
