@@ -43,6 +43,8 @@ $(() => {
 
 	digitpretify();
 
+	$('.tile').on('click', ()=> {return true});
+
 	/*var notyf = new Notyf();
 
 	// Display an alert notification
