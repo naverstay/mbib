@@ -1,8 +1,20 @@
 .checklist
 	display block
-	column-count 5
+	column-count 2
 	orphans 5
+	column-gap 10px
+
+	+above(480px)
+		column-count 2
+		column-gap 20px
+		orphans 5
+		
+	+above(768px)
+		column-count 3
 	
+	+above(980px)
+		column-count 5
+
 	&__item
 		padding-bottom 5px
 		display inline-block
@@ -16,10 +28,12 @@
 	&__text
 		position relative
 		padding-left 15px
-		display block
+		display flex
+		align-items center
+		width 100%
 		height 32px
 		font-size 14px
-		line-height 30px
+		line-height 1.2
 		cursor pointer
 		border 1px dashed transparent
 		

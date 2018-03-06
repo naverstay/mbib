@@ -8,5 +8,15 @@
 		align-items center
 		
 	&__head-action
-		margin-left 20px
+		margin-left 15px
 		flex-shrink 0
+		
+		+above(768px)
+			margin-left 20px
+		
+	&__head-clear
+		.btn__text
+			display none
+			
+			+above(768px)
+				display inline-block

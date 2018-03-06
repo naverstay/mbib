@@ -9,22 +9,35 @@
 			color lighten($colorMain, 20)
 	
 	&__section
-		margin-bottom 25px
+		margin-bottom 10px
 		border none
 		
+		+above(768px)
+			margin-bottom 25px
+
 		^[0]_in-akcent &
-			margin-left -24px
-			margin-right -24px
-			padding 0 24px
+			margin-left -10px
+			margin-right -10px
+			padding 0 10px
+			
+			+above(768px)
+				margin-left -24px
+				margin-right -24px
+				padding 0 24px
 		
 		&_separated
 			border-bottom 1px dashed $colorDecorative
 		
 	&__section-wrap
-		margin 0 -24px 35px
-		padding 30px 26px 5px
+		margin 0 -8px 35px
+		padding 30px 8px 5px
 		border-top 2px solid #c7dcfc
 		border-bottom 2px solid #c7dcfc
+		
+		+above(768px)
+			margin 0 -24px 35px
+			padding 30px 26px 5px
+			
 
 		&_marked
 			background-color #eff5fd
@@ -37,8 +50,8 @@
 		-webkit-padding-end 0
 		
 	&__collapse-head
-		margin 0 -24px 12px
-		padding 14px 24px 12px
+		margin 0 -8px 12px
+		padding 14px 20px 12px 8px
 		display block
 		width 100%
 		font-size 18px
@@ -46,16 +59,25 @@
 		cursor pointer
 		background-color #fff
 		
+		+above(768px)
+			margin 0 -24px 12px
+			padding 14px 24px 12px
+		
 	&__collapse-name
 		position relative
-		display inline-block
 		line-height 1.1
 		color $colorSecondary
-		border-bottom 1px dashed $colorDecorative
+		background-image linear-gradient(to right, $colorDecorative 75%, transparent 75%)
+		background-position 0 1.04em
+		background-repeat repeat-x
+		background-size 8px 3px
 		
-		/*^[0]__collapse_open &
+		.collapse_open &
 			color $colorText
-		*/
+		
+			
+		// border-bottom 1px dashed $colorDecorative
+		
 			
 		/*&:before
 			position absolute
@@ -66,26 +88,30 @@
 			content ''
 			border 1px dashed $colorDecorative*/
 			
-		&:after
-			position absolute
-			right -20px
-			top 3px
-			size 8px
-			content ''
-			background-color #fff
-			border-left 2px solid
-			border-bottom 2px solid
-			transform rotate(-45deg)
+	&__collapse-icon
+		position absolute
+		right 0
+		top 18px
+		size 8px
+		color $colorSecondary
+		background-color #fff
+		border-left 2px solid
+		border-bottom 2px solid
+		transform rotate(-45deg)
 			
-		^[0]__collapse_open &:after
-			transform rotate(-135deg)
+		.collapse_open &
+			transform rotate(135deg) translate3D(2px, -3px, 0)
+			color $colorText
 			
 	&__group
-		margin-bottom 25px
+		margin-bottom 10px
 		border none
 		
-		&:last-child
-			margin-bottom 0
+		+above(768px)
+			margin-bottom 25px
+		
+		// &:last-child
+		// 	margin-bottom 0
 		
 	&__group-name
 		margin-bottom 18px
@@ -95,13 +121,17 @@
 		margin-bottom 10px
 		
 	&__head
-		margin 0 -24px 12px
-		padding 18px 25px
+		margin 0 -8px 12px
+		padding 18px 8px
 		display block
 		font-size 18px
 		font-weight bold
 		background-color #fffcea
 		border-top 1px dashed $colorDecorative
+		
+		+above(768px)
+			margin 0 -24px 12px
+			padding 18px 25px
 		
 	&__row
 		position relative
@@ -124,33 +154,63 @@
 			justify-content flex-start
 			align-items baseline
 			
+		^[0]__section &:last-child
+			margin-bottom 0
+			
 	&__item
-		margin 0 15px
-		width calc(100% / 12 - 30px)
+		margin 0 15px 10px
+		width calc(100% - 30px)
+		
+		+above(768px)
+			margin-bottom 0
+			width calc(100% / 12 - 30px)
 		
 		&_fullwidth
 			width calc(100% - 30px)
 			
-		&_span_2
-			width calc(100% / 6 - 30px)
-			
-		&_span_3
-			width calc(100% / 4 - 30px)
-			
-		&_span_4
-			width calc(100% / 3 - 30px)
-			
-		&_span_5
-			width calc(100% * 5 / 12 - 30px)
-			
-		&_span_6
-			width calc(50% - 30px)
-			
-		&_span_7
-			width calc(100% * 7 / 12 - 30px)
-			
-		&_span_8
-			width calc(100% * 2 / 3 - 30px)
+		+above(768px)
+			&_tb_fullwidth
+				width calc(100% - 30px)
+				
+			&_tb_2
+				width calc(100% / 6 - 30px)
+				
+			&_tb_3
+				width calc(100% / 4 - 30px)
+				
+			&_tb_4
+				width calc(100% / 3 - 30px)
+
+			&_tb_5
+				width calc(100% * 5 / 12 - 30px)
+				
+			&_tb_6
+				width calc(50% - 30px)
+				
+			&_tb_7
+				width calc(100% * 7 / 12 - 30px)
+		
+		+above(980px)
+			&_span_2
+				width calc(100% / 6 - 30px)
+				
+			&_span_3
+				width calc(100% / 4 - 30px)
+				
+			&_span_4
+				width calc(100% / 3 - 30px)
+				
+			&_span_5
+				width calc(100% * 5 / 12 - 30px)
+				
+			&_span_6
+				width calc(50% - 30px)
+				
+			&_span_7
+				width calc(100% * 7 / 12 - 30px)
+				
+			&_span_8
+				width calc(100% * 2 / 3 - 30px)
 			
 	&__warning
 		position relative
@@ -183,4 +243,6 @@
 		
 	&__tab
 		&_in-akcent
-			margin 0 -24px
+			margin 0 -8px
+			+above(768px)
+				margin 0 -24px

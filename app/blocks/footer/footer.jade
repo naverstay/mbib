@@ -3,6 +3,7 @@ include ../dev/dev
 include ../logo/logo
 include ../list/list
 include ../nav/nav
+include ../modal/modal-select
 
 mixin footer()
 	+b.footer&attributes(attributes)
@@ -22,4 +23,6 @@ mixin footer()
 			+e.foot
 				+copy
 				+dev
+
+	+modal-select
 

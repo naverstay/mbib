@@ -1,11 +1,17 @@
 .switcher
 	display inline-block
-	margin-right 20px
+	margin-right 10px
+	margin-bottom 10px
+	
+	+above(980px)
+		margin-right 20px
 	
 	&:last-child,
 	.control-group &
 		margin-right 0
 	
+	.control-group &
+		margin-bottom 0
 	
 	&__control
 		position absolute

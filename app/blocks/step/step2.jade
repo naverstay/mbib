@@ -13,10 +13,10 @@ mixin step2()
 			+form()
 				+title(2).visuallyhidden Какой модели ваш автомобиль?
 				.step__head
-					.step__.head-name
+					.step__head-name
 						+car-name(1, 'BMW', 'bmw')
-					.step__.head-action
-						+btn('button', 'close')(href="")._theme_tertirary._size_s Очистить
+					.step__head-action
+						+btn('button', 'close')(href="")._theme_tertirary._size_s.step__head-clear Очистить
 				+e.row
 					+e.item._fullwidth
 						+input(type="text" name="model" placeholder="Модель")

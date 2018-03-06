@@ -11,18 +11,25 @@
 	
 	&_size_s
 		height $heightS
-		line-height $heightS + 1
+		line-height @height + 1
 		
 	&_size_m
 		height $heightM
-		line-height $heightM + 1
+		line-height @height + 1
 		
 	&_size_xxl
 		height $heightXXL
-		font-size 34px
-		line-height $heightXXL + 1
+		font-size 16px
+		line-height @height + 1
 		text-transform none
 		
+		+above(768px)
+			height $heightXXL_t
+			font-size 30px
+			
+		+above(980px)
+			font-size 34px
+
 	&_fullwidth
 		width 100%
 
@@ -118,7 +125,6 @@
 		border 1px dashed darken($colorDecorative, 40)
 	
 	&__remove
-		margin-left 3px
 		display inline-block
 		width 19px
 		line-height 1
@@ -137,4 +143,7 @@
 			
 		^[0]_size_xxl & 
 			top 9px
-			size 40px
+			size 26px
+			
+			+above(768px)
+				size 40px

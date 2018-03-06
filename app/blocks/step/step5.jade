@@ -27,7 +27,7 @@ mixin step5()
 					.step__head-name
 						+car-name(1, 'BMW / X3 / 2013 Внедорожник 5 дв. II (F25) / xDrive 2.0 AT (184 л.с.)', 'bmw')
 					.step__head-action
-						+btn('button', 'close')(href="")._theme_tertirary._size_s Очистить
+						+btn('button', 'close')(href="")._theme_tertirary._size_s.step__head-clear Очистить
 
 				+e.FIELDSET.section
 					+e.LEGEND.section-name Добавить фотографии <span class="marked">*</span>
@@ -44,53 +44,54 @@ mixin step5()
 				+e.FIELDSET.section
 					+e.LEGEND.section-name Пробег <span class="marked">*</span>
 					+e.row._align_left
-						+e.item._span_4
+						+e.item._tb_3._span_4
 							+input(type="text" name="mileage" placeholder="км")
-						+e.item._span_6
+						+e.item._tb_4._span_3
 							+checkbox(name="cleared" id="cleared") Битый или не на ходу
+						+e.item._tb_4._span_3
 							+checkbox(name="cleared" id="cleared") Не растаможен
 
 				+e.FIELDSET.section
 					+e.LEGEND.section-name Цена <span class="marked">*</span>
 					+e.row._align_left
-						+e.item._span_4
-							+input(type="text" name="price" placeholder="укажите цену и валюту")
-						+e.item._span_4
+						+e.item._tb_3._span_4
+							+input(type="text" name="price" placeholder="укажите цену")
+						+e.item._tb_7._span_4
 							+checkbox(name="cleared" id="forchange") Возможен обмен
 
 				+e.FIELDSET.section
 					+e.LEGEND.section-name Место осмотра <span class="marked">*</span>
 					+e.row._align_left
-						+e.item._span_4
+						+e.item._tb_5._span_4
 							+input(type="text" name="city" placeholder="Город продажи")
 							+e.SPAN.remark Изменить город после размещения невозможно
-						+e.item._span_4
+						+e.item._tb_7._span_4
 							+input(type="text" name="place" placeholder="Место осмотра")
 
 				+e.section-wrap._marked
 					+e.FIELDSET.section
 						+e.LEGEND.section-name Личные данные <span class="marked">*</span>
 						+e.row._align_left
-							+e.item._span_4
+							+e.item._tb_6._span_4
 								+input(type="text" name="city" placeholder="Как к вам обращаться?")
 								+e.SPAN.remark Имя будет указано в объявлении
 						+e.row._align_left
-							+e.item._span_4
+							+e.item._tb_6._span_4
 								+input(type="tel" name="place" placeholder="Номер телефона")
-							+e.item._span_4
+							+e.item._tb_6._span_4
 								+input(type="email" name="place" placeholder="Электронная почта (e-mail)")
 
 				+e.FIELDSET.section
 					+e.LEGEND.section-name Паспорт транспортного средства (ПТС)
 					+e.row._align_left
-						+e.item._span_4
+						+e.item._tb_6._span_6
 							+switcher(type="radio", name="pts", value="original", id="pts1", role="radio")._theme_simple._size_m Оригинал
 							+switcher(type="radio", name="pts", value="dubl", id="pts2", role="radio", checked="checked")._theme_simple._size_m Дубликат
 
 				+e.FIELDSET.section
 					+e.LEGEND.section-name Какой вы владелец по счету?
 					+e.row._align_left
-						+e.item._span_6
+						+e.item._tb_fullwidth._span_8
 							+switcher(type="radio", name="owner", value="first", id="owner1", role="radio")._theme_simple._size_m Первый
 							+switcher(type="radio", name="owner", value="second", id="owner2", role="radio")._theme_simple._size_m Второй
 							+switcher(type="radio", name="owner", value="third", id="owner3", role="radio", checked="checked")._theme_simple._size_m Третий и более
@@ -98,7 +99,7 @@ mixin step5()
 				+e.FIELDSET.section
 					+e.LEGEND.section-name Дата покупки автомобиля
 					+e.row._align_left
-						+e.item._span_2
+						+e.item._tb_2._span_2
 							+select(name="year" data-placeholder="Год")
 								option(value="")
 								option(value="m1") 2018
@@ -114,7 +115,7 @@ mixin step5()
 								option(value="m11") 2008
 								option(value="m12") 2007
 								option(value="m13") 2006
-						+e.item._span_2
+						+e.item._tb_2._span_2
 							+select(name="month" data-placeholder="Месяц")
 								option(value="")
 								option(value="jan") Январь
@@ -129,16 +130,16 @@ mixin step5()
 								option(value="oct") Октябрь
 								option(value="nov") Ноябрь
 								option(value="dec") Декабрь
-						+e.item._span_4
+						+e.item._tb_6._span_4
 							+checkbox(name="garant" id="garant") На гарантии
 
 				+e.FIELDSET.section
 					+e.LEGEND.section-name Укажите VIN и свидетельство о регистрации (СТС)
 					+e.row._align_left
-						+e.item._span_4
+						+e.item._tb_6._span_4
 							+input(type="text" name="vin" placeholder="VIN или номер кузова")
 							+e.SPAN.remark Покупатели больше доверяют объявлениям с указанным <span class="nobr">VIN-номером</span>.
-						+e.item._span_4
+						+e.item._tb_6._span_4
 							+input(type="text" name="ctc" placeholder="Cвидетельство о регистрации (СТС)")
 					small Номера VIN и СТС не показываются в объявлении!
 
@@ -147,9 +148,10 @@ mixin step5()
 					+e.collapse.collapse
 						+e.collapse-head.collapse__head
 							+e.SPAN.collapse-name Безопастность и защита
+							+e.SPAN.collapse-icon
 						+e.collapse-body.collapse__body
 							+e.row
-								+e.item._span_4
+								+e.item._tb_4._span_4
 									+e.FIELDSET.group
 										+e.LEGEND.group-name Активная безопасность
 										+e.group-item
@@ -167,7 +169,7 @@ mixin step5()
 										+e.group-item
 											+checkbox(name="pds" id="pds") Обнаружение пешеходов
 
-								+e.item._span_4
+								+e.item._tb_4._span_4
 									+e.FIELDSET.group
 										+e.LEGEND.group-name Подушки безопасности
 										+e.group-item
@@ -181,7 +183,7 @@ mixin step5()
 										+e.group-item
 											+checkbox(name="airbagbs" id="airbagbs") Боковые задние
 
-								+e.item._span_4
+								+e.item._tb_4._span_4
 									+e.FIELDSET.group
 										+e.LEGEND.group-name Противоугонная система
 										+e.group-item
@@ -196,14 +198,16 @@ mixin step5()
 					+e.collapse.collapse
 						+e.collapse-head.collapse__head
 							+e.SPAN.collapse-name Помощь при вождении
+							+e.SPAN.collapse-icon
 						+e.collapse-body.collapse__body
 
 					+e.collapse.collapse
 						+e.collapse-head.collapse__head
 							+e.SPAN.collapse-name Салон, климат
+							+e.SPAN.collapse-icon
 						+e.collapse-body.collapse__body
 							+e.row
-								+e.item._span_4
+								+e.item._tb_4._span_4
 									+e.FIELDSET.group
 										+e.LEGEND.group-name Салон
 										+e.group-item
@@ -222,7 +226,7 @@ mixin step5()
 										+e.group-item
 											+checkbox(name="airlock" id="airlock") Люк
 
-								+e.item._span_4
+								+e.item._tb_4._span_4
 									+e.FIELDSET.group
 										+e.LEGEND.group-name Управление климатом
 										+e.group-item
@@ -240,7 +244,7 @@ mixin step5()
 										+e.group-item
 											+checkbox(name="climatglass" id="climatglass") Атермальное остекление
 
-								+e.item._span_4
+								+e.item._tb_4._span_4
 									+e.FIELDSET.group
 										+e.LEGEND.group-name Обогрев
 										+e.group-item
@@ -257,9 +261,10 @@ mixin step5()
 					+e.collapse.collapse
 						+e.collapse-head.collapse__head
 							+e.SPAN.collapse-name Электростеклоподъемники, электропривод, память настроек
+							+e.SPAN.collapse-icon
 						+e.collapse-body.collapse__body
 							+e.row
-								+e.item._span_4
+								+e.item._tb_4._span_4
 									+e.FIELDSET.group
 										+e.LEGEND.group-name Электростеклоподъемники
 										+e.group-item
@@ -267,7 +272,7 @@ mixin step5()
 										+e.group-item
 											+radio(name="windows" id="windows" value="full") Передние и задние
 
-								+e.item._span_4
+								+e.item._tb_4._span_4
 									+e.FIELDSET.group
 										+e.LEGEND.group-name Электропривод <span class="remark">(дополнительные опции)</span>
 										+e.group-item
@@ -281,7 +286,7 @@ mixin step5()
 										+e.group-item
 											+checkbox(name="collapsemiracle" id="collapsemiracle") Складывания зеркал
 
-								+e.item._span_4
+								+e.item._tb_4._span_4
 									+e.FIELDSET.group
 										+e.LEGEND.group-name Память настроек
 										+e.group-item
@@ -297,9 +302,10 @@ mixin step5()
 					+e.collapse.collapse
 						+e.collapse-head.collapse__head
 							+e.SPAN.collapse-name Аудиосистема, мультимедиа
+							+e.SPAN.collapse-icon
 						+e.collapse-body.collapse__body
 							+e.row
-								+e.item._span_4
+								+e.item._tb_4._span_4
 									+e.FIELDSET.group
 										+e.LEGEND.group-name Мультимедиа и навигация
 										+e.group-item
@@ -319,7 +325,7 @@ mixin step5()
 										+e.group-item
 											+checkbox(name="usb" id="usb") USB
 
-								+e.item._span_4
+								+e.item._tb_4._span_4
 									+e.FIELDSET.group
 										+e.LEGEND.group-name Аудиосистема
 										+e.group-item
@@ -334,9 +340,10 @@ mixin step5()
 					+e.collapse.collapse
 						+e.collapse-head.collapse__head
 							+e.SPAN.collapse-name Фары, шины и диски
+							+e.SPAN.collapse-icon
 						+e.collapse-body.collapse__body
 							+e.row
-								+e.item._span_4
+								+e.item._tb_4._span_4
 									+e.FIELDSET.group
 										+e.LEGEND.group-name Фары
 										+e.group-item
@@ -346,7 +353,7 @@ mixin step5()
 										+e.group-item
 											+radio(name="headlight" id="diod" value="diod") Светодиодные
 
-								+e.item._span_4
+								+e.item._tb_4._span_4
 									+e.FIELDSET.group
 										+e.LEGEND.group-name Фары <span class="remark">(дополнительные опции)</span>
 										+e.group-item
@@ -356,7 +363,7 @@ mixin step5()
 										+e.group-item
 											+checkbox(name="headlight_ad" id="adcl") Адаптивное освещение
 
-								+e.item._span_4
+								+e.item._tb_4._span_4
 									+e.FIELDSET.group
 										+e.LEGEND.group-name Шины и диски (диаметр), дюймы
 										+e.group-item
@@ -375,7 +382,7 @@ mixin step5()
 				+e.FIELDSET.section
 					+e.LEGEND.section-name Опишите ваш автомобиль
 					+e.row
-						+e.item._span_8
+						+e.item._tb_fullwidth._span_8
 							+area(name="comment")
 							+e.SPAN.remark Запрещается давать ссылки, указывать адреса эл.почты, телефоны, цену, предлагать услуги, не связанные с продажей этого авто.
 

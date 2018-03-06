@@ -1,15 +1,18 @@
 .palette
-	display block
+	margin 0 -4px
 	font-size 0
 	
 	&__item
 		position relative
-		margin-right 18px
+		margin 0 4px 5px
 		display inline-block
 		size 32px
 		border 1px solid $colorDecorative
 		border-radius 50%
 		box-shadow 0 4px 16px rgba(#000, 0.1)
+		
+		+above(980px)
+			margin-right 18px
 		
 		&::before
 			position absolute

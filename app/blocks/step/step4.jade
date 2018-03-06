@@ -17,10 +17,10 @@ mixin step4()
 			+form()
 				+title(2).visuallyhidden Год выпуска вашего автомобиля?
 				.step__head
-					.step__.head-name
+					.step__head-name
 						+car-name(1, 'BMW / X3 / 2013 Хэтчбек 5 дв. VI (F3x)', 'bmw')
-					.step__.head-action
-						+btn('button', 'close')(href="")._theme_tertirary._size_s Очистить
+					.step__head-action
+						+btn('button', 'close')(href="")._theme_tertirary._size_s.step__head-clear Очистить
 				+e.FIELDSET.section
 					+e.LEGEND.section-name Год выпуска
 					+e.row
