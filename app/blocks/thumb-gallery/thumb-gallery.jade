@@ -1,7 +1,11 @@
 mixin thumb-gallery(data)
 	+b.thumb-gallery&attributes(attributes)
 		each item, i in data
+			if i === 0
+				-var active = "_hovered"
+			else
+				-var active = ""
 			+e.item(class="_column_"+data.length)
 				+e.img-wrap
 					img(data-src=item, alt="").lazyload
-				+e.SPAN.marker
+				+e.SPAN.marker(class=active)

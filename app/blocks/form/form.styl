@@ -93,11 +93,19 @@
 		right 0
 		top 18px
 		size 8px
+		display inline-block
 		color $colorSecondary
 		background-color #fff
 		border-left 2px solid
 		border-bottom 2px solid
 		transform rotate(-45deg)
+		
+		+above(980px)
+			position relative
+			top -3px
+			right auto
+			margin-left 5px
+
 			
 		.collapse_open &
 			transform rotate(135deg) translate3D(2px, -3px, 0)
