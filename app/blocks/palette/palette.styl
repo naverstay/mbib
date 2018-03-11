@@ -2,6 +2,10 @@
 	margin 0 -4px
 	font-size 0
 	
+	&__control
+		position absolute
+		left -9999px
+	
 	&__item
 		position relative
 		margin 0 4px 5px
@@ -24,6 +28,7 @@
 			content attr(title)
 			font-size 11px
 			line-height 30px
+			text-align center
 			color #787878
 			background-color #fff
 			border 1px solid $colorDecorative
@@ -96,3 +101,21 @@
 			
 		&_color_black
 			background-color #000
+		
+	&__check
+		position absolute
+		right -1px
+		top 5px
+		display none
+		width 20px
+		height 9px
+		color #000
+		border-bottom 3px solid
+		border-left 3px solid
+		transform rotate(-45deg)
+		
+		^[0]__item_color_black &
+			color #fff
+		
+		^[0]__control:checked + &
+			display block
