@@ -1,4 +1,5 @@
 include ../input/input
+include ../select/select
 include ../lbl/lbl
 include ../btn/btn
 include ../popup/popup
@@ -19,7 +20,22 @@ mixin modal-place()
 					+e.row
 						+e.item._fullwidth
 							+lbl(for="placeField" hidden)
-							+input(type="text" id="placeField" value="" placeholder="Регион, город, населенный пункт").geoplace__field
+							+select(name="place" data-placeholder="Регион, город, населенный пункт" tabindex="1")._dont-use-modal.geoplace__field
+								option(value="")
+								option(value="pl1") Audi
+								option(value="pl2") BMW
+								option(value="pl3") Kia
+								option(value="pl4") Lada
+								option(value="pl5") ЗАЗ
+								option(value="pl6") ГАЗ
+								option(value="pl7") УАЗ
+								option(value="pl8") BMW
+								option(value="pl9") Kia
+								option(value="pl0") Lada
+								option(value="pl11") ЗАЗ
+								option(value="pl12") ГАЗ
+								option(value="pl13") УАЗ
+							//- +input(type="text" id="placeField" value="" placeholder="Регион, город, населенный пункт").geoplace__field
 							+popup.geoplace__popup
 								+geoplace-list(getData('geoplace'))
 					+e.row.geoplace__area
