@@ -1,18 +1,22 @@
 import $ from 'jquery';
+import 'select2';
 
 const geoplace = (() => {
-	const placeField = $('.geoplace__field');
+	const placeField = $('.geoplace__field').select2({
+		width : '100%',
+		dropdownParent: $('#modalPlace .modal__body')
+	});;
 	const placePopup = $('.popup.geoplace__popup');
 	const area = $('.geoplace__area');
 	const listItems = $('.geoplace-list__item');
 
-	const openPopup = () => {
-		placePopup.addClass('popup_show');
-	};
-
-	const closePopup = () => {
-		placePopup.removeClass('popup_show');
-	};
+	placeField.on('select2:select', function (e) {
+		var data = e.params.data;
+		console.log(data);
+		addItem(data.text);
+		console.log(e);
+		$(e.target).val(null).trigger("change");
+	});
 
 	const addItem = function(place){
 		const btn = $('<a>', {
@@ -24,12 +28,8 @@ const geoplace = (() => {
 				})
 				.add($('<span class="btn__remove"><svg class="btn__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/images/icon.svg#icon_close"></use></svg></span>'))
 		}).appendTo(area);
-		closePopup();
+		// closePopup();
 	}
-
-	placeField.on('keyup', function(){
-		$(this).val() !== '' ? openPopup() : closePopup();
-	});
 
 	listItems.on('click', function(){
 		const el = $(this);

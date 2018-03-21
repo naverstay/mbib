@@ -18,7 +18,7 @@ mixin search()
 				+btn('link', 'pin')(href="")._theme_tertirary._size_s.search__city-btn Другой город
 		+e.row
 			+e.col
-				+select(name="brand" data-placeholder="Марка" tabindex="1")
+				+select(name="brand" data-placeholder="Марка" tabindex="1")._search
 					option(value="")
 					option(value="m1") Audi
 					option(value="m2") BMW
@@ -34,7 +34,7 @@ mixin search()
 					option(value="m12") ГАЗ
 					option(value="m13") УАЗ
 			+e.col
-				+select(name="model" data-placeholder="Модель" tabindex="2")
+				+select(name="model" data-placeholder="Модель" tabindex="2")._search
 					option(value="")
 					option(value="v1") CL
 					option(value="v2") CLX
@@ -42,7 +42,7 @@ mixin search()
 					option(value="v4") MX5
 					option(value="v5") RL
 			+e.col
-				+select(name="body" data-placeholder="Тип кузова" data-minimum-results-for-search="Infinity" tabindex="3")
+				+select(name="body" data-placeholder="Тип кузова" data-minimum-results-for-search="Infinity" tabindex="3")._search
 					option(value="")
 					option(value="k1") Седан
 					option(value="k2") Пикап
@@ -51,7 +51,7 @@ mixin search()
 					option(value="k5") Хэтчбек
 			+e.col
 				+control-group
-					+select(name="yearStart" data-placeholder="Год от" tabindex="4")
+					+select(name="yearStart" data-placeholder="Год от" tabindex="4")._search
 						option(value="")
 						option(value="ys1") 2017
 						option(value="ys2") 2016
@@ -61,7 +61,7 @@ mixin search()
 						option(value="ys6") 2012
 						option(value="ys7") 2011
 						option(value="ys8") 2010
-					+select(name="yearEnd" data-placeholder="до" tabindex="5")
+					+select(name="yearEnd" data-placeholder="до" tabindex="5")._search
 						option(value="")
 						option(value="ye1") 2017
 						option(value="ye2") 2016
@@ -73,22 +73,22 @@ mixin search()
 						option(value="ye8") 2010
 			+e.col
 				+control-group
-					+select(name="mileageStart" data-placeholder="Пробег" data-minimum-results-for-search="Infinity" tabindex="6")
+					+select(name="mileageStart" data-placeholder="Пробег" data-minimum-results-for-search="Infinity" tabindex="6")._search
 						option(value="")
 						option(value="1000")
 						option(value="5000")
-					+select(name="mileageEnd" data-placeholder="до, км" data-minimum-results-for-search="Infinity" tabindex="7")
+					+select(name="mileageEnd" data-placeholder="до, км" data-minimum-results-for-search="Infinity" tabindex="7")._search
 						option(value="")
 						option(value="10000")
 						option(value="20000")
 		+e.row
 			+e.col
-				+select(name="transmission" data-placeholder="Коробка передач" data-minimum-results-for-search="Infinity" tabindex="8")
+				+select(name="transmission" data-placeholder="Коробка передач" data-minimum-results-for-search="Infinity" tabindex="8")._search
 					option(value="")
 					option(value="ta") Автомат
 					option(value="tm") Механическая
 			+e.col
-				+select(name="engineType" data-placeholder="Тип двигателя" data-minimum-results-for-search="Infinity" tabindex="9")
+				+select(name="engineType" data-placeholder="Тип двигателя" data-minimum-results-for-search="Infinity" tabindex="9")._search
 					option(value="")
 					option(value="teb") Бензин
 					option(value="ted") Дизель
@@ -96,7 +96,7 @@ mixin search()
 					option(value="tee") Электро
 			+e.col
 				+control-group
-					+select(name="engineStart" data-placeholder="Объём" tabindex="10")
+					+select(name="engineStart" data-placeholder="Объём" tabindex="10")._search
 						option(value="")
 						option(value="0.2") 0.2 л
 						option(value="0.4") 0.4 л
@@ -108,7 +108,7 @@ mixin search()
 						option(value="1.6") 1.6 л
 						option(value="1.8") 1.8 л
 						option(value="2") 2 л
-					+select(name="engineEnd" data-placeholder="до, л" tabindex="11")
+					+select(name="engineEnd" data-placeholder="до, л" tabindex="11")._search
 						option(value="")
 						option(value="0.2") 0.2 л
 						option(value="0.4") 0.4 л
@@ -121,7 +121,7 @@ mixin search()
 						option(value="1.8") 1.8 л
 						option(value="2") 2 л
 			+e.col
-				+select(name="drive" data-placeholder="Привод" data-minimum-results-for-search="Infinity" tabindex="12")
+				+select(name="drive" data-placeholder="Привод" data-minimum-results-for-search="Infinity" tabindex="12")._search
 					option(value="")
 					option(value="fr") Передний
 					option(value="bk") Задний

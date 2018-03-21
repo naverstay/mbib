@@ -38,8 +38,8 @@ mixin modal-place()
 							//- +input(type="text" id="placeField" value="" placeholder="Регион, город, населенный пункт").geoplace__field
 							+popup.geoplace__popup
 								+geoplace-list(getData('geoplace'))
-					+e.row.geoplace__area
-						+e.item._fullwidth
+					+e.row
+						+e.item._fullwidth.geoplace__area
 							+btn('link', 'close')(href="")._theme_pseudo._size_s.geoplace__item Москва
 							+btn('link', 'close')(href="")._theme_pseudo._size_s.geoplace__item Московская область
 							+btn('link', 'close')(href="")._theme_pseudo._size_s.geoplace__item Калининград
