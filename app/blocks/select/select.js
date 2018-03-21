@@ -7,9 +7,19 @@ export default {
 	init() {
 		const isMobile = checkIsMobile();
 		if (!isMobile) {
-			$('.select').select2({
-				width : '100%'
-			});
+			var selects = $('.select');
+			for (const select of selects) {
+				if ($(select).hasClass('geoplace__field')) {
+					$(select).select2({
+						width : '100%',
+						dropdownParent: $('#modalPlace .modal__body')
+					});
+				} else {
+					$('.select').select2({
+						width : '100%'
+					});
+				}
+			}
 		} else {
 			var selects = $('.select');
 

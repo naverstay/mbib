@@ -20,7 +20,7 @@ mixin modal-place()
 					+e.row
 						+e.item._fullwidth
 							+lbl(for="placeField" hidden)
-							+select(name="place" data-placeholder="Регион, город, населенный пункт" tabindex="1")._dont-use-modal.geoplace__field
+							+select(name="place" id="placeField" data-placeholder="Регион, город, населенный пункт" tabindex="1")._dont-use-modal.geoplace__field
 								option(value="")
 								option(value="pl1") Audi
 								option(value="pl2") BMW
