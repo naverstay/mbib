@@ -21,7 +21,7 @@ include ../tab/tab
 mixin step5()
 	+b.step&attributes(attributes)
 		+akcent-block
-			+form()._in-akcent
+			+form(name="addCar" action="" method="")._in-akcent
 				+e.navigation
 					+btn('button').__navigation-back Назад
 					+e.SPAN.navigation-spacer
@@ -48,7 +48,7 @@ mixin step5()
 					+e.LEGEND.section-name Пробег <span class="marked">*</span>
 					+e.row._align_left
 						+e.item._tb_3._span_4
-							+input(type="text" name="mileage" placeholder="км")
+							+input(type="text" name="mileage" placeholder="км" required)
 						+e.item._tb_4._span_3
 							+checkbox(name="cleared" id="cleared") Битый или не на ходу
 						+e.item._tb_4._span_3
@@ -58,7 +58,7 @@ mixin step5()
 					+e.LEGEND.section-name Цена <span class="marked">*</span>
 					+e.row._align_left
 						+e.item._tb_3._span_4
-							+input(type="text" name="price" placeholder="укажите цену")
+							+input(type="text" name="price" placeholder="укажите цену" required)
 						+e.item._tb_7._span_4
 							+checkbox(name="cleared" id="forchange") Возможен обмен
 
@@ -66,7 +66,7 @@ mixin step5()
 					+e.LEGEND.section-name Место осмотра <span class="marked">*</span>
 					+e.row._align_left
 						+e.item._tb_5._span_4
-							+input(type="text" name="city" placeholder="Город продажи")
+							+input(type="text" name="city" placeholder="Город продажи" required)
 							+e.SPAN.remark Изменить город после размещения невозможно
 						+e.item._tb_7._span_4
 							+input(type="text" name="place" placeholder="Место осмотра")
@@ -76,13 +76,13 @@ mixin step5()
 						+e.LEGEND.section-name Личные данные <span class="marked">*</span>
 						+e.row._align_left
 							+e.item._tb_6._span_4
-								+input(type="text" name="city" placeholder="Как к вам обращаться?")
+								+input(type="text" name="city" placeholder="Как к вам обращаться?" required)
 								+e.SPAN.remark Имя будет указано в объявлении
 						+e.row._align_left
 							+e.item._tb_6._span_4
-								+input(type="tel" name="place" placeholder="Номер телефона")
+								+input(type="tel" name="place" placeholder="Номер телефона" required)
 							+e.item._tb_6._span_4
-								+input(type="email" name="place" placeholder="Электронная почта (e-mail)")
+								+input(type="email" name="place" placeholder="Электронная почта (e-mail)" required)
 
 				+e.FIELDSET.section
 					+e.LEGEND.section-name Паспорт транспортного средства (ПТС)
@@ -103,7 +103,7 @@ mixin step5()
 					+e.LEGEND.section-name Дата покупки автомобиля
 					+e.row._align_left
 						+e.item._tb_2._span_2
-							+select(name="year" data-placeholder="Год")
+							+select(name="year" data-placeholder="Год")._search
 								option(value="")
 								option(value="m1") 2018
 								option(value="m2") 2017
@@ -119,7 +119,7 @@ mixin step5()
 								option(value="m12") 2007
 								option(value="m13") 2006
 						+e.item._tb_2._span_2
-							+select(name="month" data-placeholder="Месяц")
+							+select(name="month" data-placeholder="Месяц")._search
 								option(value="")
 								option(value="jan") Январь
 								option(value="feb") Февраль
@@ -391,7 +391,7 @@ mixin step5()
 									+e.FIELDSET.group
 										+e.LEGEND.group-name Шины и диски (диаметр), дюймы
 										+e.group-item
-											+select(name="radius" data-placeholder="Радиус")
+											+select(name="radius" data-placeholder="Радиус")._search
 												option(value="r14") 14
 												option(value="r15") 15
 												option(value="r16") 16

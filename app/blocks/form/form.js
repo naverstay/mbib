@@ -51,6 +51,7 @@ const form = (() => {
 	const recoveryForm = document.querySelector('.form[name=recovery]');
 	const feedbackForm = document.querySelector('.form[name=feedback]');
 	const claimForm = document.querySelector('.form[name=claim]');
+	const addCarForm = document.querySelector('.form[name=addCar]');
 
 	const validatorClasses = {
 		classes : {
@@ -83,6 +84,10 @@ const form = (() => {
 
 	if (claimForm) {
 		const $formClaim = hyperform(claimForm, validatorClasses);
+	}
+	
+	if (addCarForm) {
+		const $addCarForm = hyperform(addCarForm, validatorClasses);
 	}
 	
 })();
