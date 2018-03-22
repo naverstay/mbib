@@ -11,6 +11,10 @@ mixin step2()
 	+b.step&attributes(attributes)
 		+akcent-block
 			+form()
+				+e.navigation
+					+btn('button').__navigation-back Назад
+					+e.SPAN.navigation-spacer
+					+btn('button').__navigation-next Вперёд
 				+title(2).visuallyhidden Какой модели ваш автомобиль?
 				.step__head
 					.step__head-name

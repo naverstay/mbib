@@ -15,6 +15,10 @@ mixin step4()
 	+b.step&attributes(attributes)
 		+akcent-block
 			+form()
+				+e.navigation
+					+btn('button').__navigation-back Назад
+					+e.SPAN.navigation-spacer
+					+btn('button').__navigation-next Вперёд
 				+title(2).visuallyhidden Год выпуска вашего автомобиля?
 				.step__head
 					.step__head-name
