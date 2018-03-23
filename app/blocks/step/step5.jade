@@ -17,6 +17,7 @@ include ../add-photo/add-photo
 include ../palette/palette
 include ../remark/remark
 include ../tab/tab
+include ../alert/alert
 
 mixin step5()
 	+b.step&attributes(attributes)
@@ -31,6 +32,10 @@ mixin step5()
 						+car-name(1, 'BMW / X3 / 2013 Внедорожник 5 дв. II (F25) / xDrive 2.0 AT (184 л.с.)', 'bmw')
 					.step__head-action
 						+btn('button', 'close')(href="")._theme_tertirary._size_s.step__head-clear Очистить
+
+				+e.row
+					+e.item._fullwidth
+						+alert._warning Будьте внимательные при заполнении VIN кода
 
 				+e.FIELDSET.section
 					+e.LEGEND.section-name Добавить фотографии <span class="marked">*</span>
