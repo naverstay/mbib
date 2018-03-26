@@ -2,6 +2,7 @@ include ../akcent-block/akcent-block
 include ../title/title
 include ../form/form
 include ../input/input
+include ../select/select
 include ../btn/btn
 include ../checklist/checklist
 include ../more/more
@@ -16,7 +17,22 @@ mixin step1()
 				+title(2) Какой марки ваш автомобиль?
 				+e.row
 					+e.item._fullwidth
-						+input(type="text" name="brand" placeholder="Марка")
+						//- +input(type="text" name="brand" placeholder="Марка")
+						+select(name="brand" data-placeholder="Марка")._search
+							option(value="")
+							option(value="m1") Audi
+							option(value="m2") BMW
+							option(value="m3") Kia
+							option(value="m4") Lada
+							option(value="m5") ЗАЗ
+							option(value="m6") ГАЗ
+							option(value="m7") УАЗ
+							option(value="m8") BMW
+							option(value="m9") Kia
+							option(value="m0") Lada
+							option(value="m11") ЗАЗ
+							option(value="m12") ГАЗ
+							option(value="m13") УАЗ
 				+e.row
 					+e.item._fullwidth
 						+checklist(getData('brands'), 'brand')
