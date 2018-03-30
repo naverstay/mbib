@@ -1,7 +1,9 @@
 .radio
 	position relative
+	padding-left 35px
 	display block
-	padding 6px 0 7px 35px
+	min-height 25px
+	line-height 25px
 	
 	&__control
 		position absolute
@@ -9,13 +11,14 @@
 
 	&__text
 		position relative
-		margin-top 1px
+		padding-top 4px
 		display inline-block
 		vertical-align top
+		line-height 1.2
 		
 		&:before
 			position absolute
-			top -6px
+			top -1px
 			left -35px
 			margin 0 4px 0 0
 			size 25px
@@ -37,7 +40,7 @@
 		
 	&__control + &__text:after
 		position absolute
-		top 0px 
+		top 5px 
 		left -29px
 		size 13px
 		content ''
