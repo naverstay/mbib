@@ -19,9 +19,9 @@ gulp.task('resize', () => (
 			})
 		))
 		.pipe(gm(function(gmfile) {
-			// return gmfile.resize(50, 50);
-			return gmfile.resize(30, 30);
+			return gmfile.resize(50, 50);
+			// return gmfile.resize(30, 30);
 		}))
-		// .pipe(rename({suffix: '_b'}))
+		.pipe(rename({suffix: '_b'}))
 		.pipe(gulp.dest('app/thumbs_new/'))
 ));
