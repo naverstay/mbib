@@ -6,6 +6,7 @@ include ../checkbox/checkbox
 include ../btn/btn
 include ../switcher/switcher
 include ../control-group/control-group
+include ../palette/palette
 
 mixin search()
 	+b.search&attributes(attributes)
@@ -140,4 +141,22 @@ mixin search()
 				+e.check
 					+checkbox(name="old" tabindex="17") С пробегом
 			+e.col
-				+btn('button', 'search')._theme_secondary._fullwidth(tabindex="18") Найти
+				+btn('button')._theme_link(tabindex="18").search__switcher Расширенный поиск
+
+		.search__advanced
+			+e.row
+				+e.col
+					+palette
+			+e.row
+				+e.col
+					+checkbox(name="hasPhoto", checked  tabindex="19") Только с фото
+			+e.row
+				+e.col
+					+checkbox(name="forChange", checked  tabindex="20") Возможен обмен
+
+				+e.col
+					+checkbox(name="tax", tabindex="21") Не расстаможен
+
+		+e.row._sbm._valign_center
+			+e.col
+				+btn('button')._theme_secondary._fullwidth(tabindex="28") Показать 479 544 объявлений

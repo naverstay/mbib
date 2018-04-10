@@ -2,6 +2,8 @@
 app/styles/helpers/svg-size.styl
 app/styles/sprites
 dist
+app/thumbs
+app/thumbs_new
 
 # Numerous always-ignore extensions
 *.bak
@@ -41,3 +43,4 @@ bower_components
 node_modules
 npm-debug.log
 .happypack/
+
