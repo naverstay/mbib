@@ -1,4 +1,5 @@
 include ../list/list
+include ../brand/brand
 
 mixin checklist(data, name)
 	+b.UL.checklist&attributes(attributes)
@@ -8,7 +9,8 @@ mixin checklist(data, name)
 					+e.INPUT.control(type="radio" name=name id=item.thumb value=item.thumb)
 					+e.SPAN.text(class=item.thumb ? "_hasIcon" : "")
 						if item.thumb
-							+e.SPAN.thumb(class="_"+item.thumb)
+							+brand(item.thumb)
+							//- +e.SPAN.thumb(class="_"+item.thumb)
 						| #{item.name}
 		block
 

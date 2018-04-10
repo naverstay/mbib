@@ -3,7 +3,9 @@ const addPhoto = (() => {
 	const wrapper = document.querySelector('.add-photo');
 	let queue = [];
 	let temp = [];
-	// const placeholder = document.querySelectorAll('.add-photo__item_placeholder');
+	
+	if (!addPhotoField) return;
+	
 	addPhotoField.addEventListener('change', function() {
 		[].forEach.call(this.files, function(file) {
 			if (file.type.match(/image.*/)) {
