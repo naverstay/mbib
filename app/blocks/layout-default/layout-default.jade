@@ -3,6 +3,7 @@ include /../node_modules/jade-injected/jade-injected
 include ../icon/icon
 include ../page/page
 include ../header/header
+include ../content/content
 include ../footer/footer
 include ../scripts/scripts
 
@@ -11,7 +12,8 @@ html(lang='ru')
 	include ../head/head
 	+page
 		+header
-		.inner
-			block content
+		+content
+			.inner
+				block content
 		+footer
 		+scripts(['app.min.js'])
