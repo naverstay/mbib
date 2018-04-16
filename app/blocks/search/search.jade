@@ -3,6 +3,7 @@ include ../control-group/control-group
 include ../select/select
 include ../input/input
 include ../checkbox/checkbox
+include ../radio/radio
 include ../btn/btn
 include ../switcher/switcher
 include ../control-group/control-group
@@ -13,8 +14,8 @@ mixin search()
 		+e.city
 			+control-group
 				+switcher(type="radio", name="type", value="typeAll", id="typeAll", role="radio", tabindex="0", checked)._theme_tertirary._size_s Все
-				+switcher(type="radio", name="type", value="typeDiler", id="typeDiler", role="radio", tabindex="0")._theme_tertirary._size_s Автодилер
-				+switcher(type="radio", name="type", value="typeOwner", id="typeOwner", role="radio", tabindex="0")._theme_tertirary._size_s Собственник
+				+switcher(type="radio", name="type", value="typeDiler", id="typeDiler", role="radio", tabindex="0")._theme_tertirary._size_s Новые
+				+switcher(type="radio", name="type", value="typeOwner", id="typeOwner", role="radio", tabindex="0")._theme_tertirary._size_s С пробегом
 			+e.city-other
 				+btn('link', 'pin')(href="")._theme_tertirary._size_s.search__city-btn Другой город
 		+e.row
@@ -131,32 +132,251 @@ mixin search()
 				+control-group
 					+input(type="text", name="priceStart", placeholder="Цена от" tabindex="13")._digit-pretify
 					+input(type="text", name="priceEnd", placeholder="до, ₽" tabindex="14")._digit-pretify
+		
+		.search__advanced
+			.search__advanced-inner
+				+e.row
+					+e.col._span_2
+						+palette.search__palette
+					
+					+e.col
+						+e.item
+							+checkbox(name="hasPhoto", checked  tabindex="19") Только с фото
+						+e.item
+							+select(name="ownerCount" data-placeholder="Владелец по счету" data-minimum-results-for-search="Infinity" tabindex="22")._search
+								option(value="") 
+								option(value="fr") Один
+								option(value="bk") Два
+								option(value="fl") Три и более
+					+e.col
+						+e.item
+							+checkbox(name="forChange", checked  tabindex="20") Возможен обмен
+						+e.item
+							+select(name="to" data-placeholder="Данные о ТО" data-minimum-results-for-search="Infinity" tabindex="23")._search
+								option(value="")
+								option(value="fr") Есть сервисная книжка
+								option(value="bk") Обслуживался у дилера
+								option(value="fl") На гарантии
+
+					+e.col
+						+e.item
+							+checkbox(name="tax", tabindex="21") Не расстаможен
+						+e.item
+							+select(name="ownertype" data-placeholder="Любой продавец" data-minimum-results-for-search="Infinity" tabindex="22")._search
+								option(value="") 
+								option(value="fr") Все 
+								option(value="bk") Автодилер
+								option(value="fl") Собственник
+				+e.row
+					+e.col._span_3.form__
+						+e.FIELDSET.group._is-accordion
+							+e.LEGEND.group-name
+								+e.SPAN.group-name-text Помощь при вождении
+							+e.group-inner
+								+e.group-item
+									+checkbox(name="hd" id="prt") Автоматический парковщик
+								+e.group-item
+									+checkbox(name="hd" id="rainc") Датчик дождя
+								+e.group-item
+									+checkbox(name="hd" id="ss") Датчик света
+								+e.group-item
+									+checkbox(name="hd" id="prctb") Парктроник задний
+								+e.group-item
+									+checkbox(name="hd" id="prctf") Парктроник передний
+								+e.group-item
+									+checkbox(name="hd" id="sctrin") Система контроля слепых зон
+								+e.group-item
+									+checkbox(name="hd" id="cambac") Камера заднего вида
+								+e.group-item
+									+checkbox(name="hd" id="crcont") Круиз-контроль
+								+e.group-item
+									+checkbox(name="hd" id="comp") Бортовой компьютер
+
+						+e.FIELDSET.group._is-accordion
+							+e.LEGEND.group-name
+								+e.SPAN.group-name-text Противоугонная система
+							+e.group-inner
+								+e.group-item
+									+checkbox(name="alarm" id="alarm") Сигнализация
+								+e.group-item
+									+checkbox(name="lock" id="lock") Центральный замок
+								+e.group-item
+									+checkbox(name="immobiliser" id="immobiliser") Иммобилайзер
+								+e.group-item
+									+checkbox(name="sputnik" id="sputnik") Спутник
+
+						+e.FIELDSET.group._is-accordion
+							+e.LEGEND.group-name
+								+e.SPAN.group-name-text Подушки безопасности
+							+e.group-inner
+								+e.group-item
+									+checkbox(name="airbagf" id="airbag") Фронтальные
+								+e.group-item
+									+checkbox(name="airbagk" id="airbagk") Коленные
+								+e.group-item
+									+checkbox(name="airbagс" id="airbagс") Шторки
+								+e.group-item
+									+checkbox(name="airbagfs" id="airbagfs") Боковые передние
+								+e.group-item
+									+checkbox(name="airbagbs" id="airbagbs") Боковые задние
+
+					+e.col._span_3.form__
+						+e.FIELDSET.group._is-accordion
+							+e.LEGEND.group-name
+								+e.SPAN.group-name-text Активная безопасность
+							+e.group-inner
+								+e.group-item
+									+checkbox(name="abs" id="abs") Антиблокировка тормозов
+								+e.group-item
+									+checkbox(name="asr" id="asr") Антипробуксовка
+								+e.group-item
+									+checkbox(name="abs" id="esp") Курсовая устойчивость
+								+e.group-item
+									+checkbox(name="ebd" id="ebd") Распред. тормозных усилий
+								+e.group-item
+									+checkbox(name="aeb" id="aeb") Экстренное торможение
+								+e.group-item
+									+checkbox(name="arb" id="arb") Блок. дифференциала
+								+e.group-item
+									+checkbox(name="pds" id="pds") Обнаружение пешеходов
+
+						+e.FIELDSET.group._is-accordion
+							+e.LEGEND.group-name
+								+e.SPAN.group-name-text Фары, шины и диски
+							+e.group-inner
+								+e.group-item
+									+select(name="to" data-placeholder="Фары" data-minimum-results-for-search="Infinity" tabindex="23")._search
+										option(value="")
+										option(value="gal") Галогенные
+										option(value="ksen") Ксеноновые
+										option(value="diod") Светодиодные
+								+e.group-item
+									+checkbox(name="headlight_ad" id="pt") Противотуманные
+								+e.group-item
+									+checkbox(name="headlight_ad" id="chd") Омыватели фар
+								+e.group-item
+									+checkbox(name="headlight_ad" id="adcl") Адаптивное освещение
+								+e.group-item
+									+select(name="radius" data-placeholder="Радиус")._search
+										option(value="r14") 14
+										option(value="r15") 15
+										option(value="r16") 16
+										option(value="r17") 17
+										option(value="r18") 18
+								+e.group-item
+									+checkbox(name="winter" id="winter") Зимние шины в комплекте
+
+						+e.FIELDSET.group._is-accordion
+							+e.LEGEND.group-name
+								+e.SPAN.group-name-text Электростеклоподъемники
+							+e.group-inner
+								+e.group-item
+									+select(name="windows" data-placeholder="Электростеклоподъемники" data-minimum-results-for-search="Infinity")._search
+										option(value="")
+										option(value="fr") Только передние
+										option(value="bfr") Передние и задние
+
+					+e.col._span_3.form__
+						+e.FIELDSET.group._is-accordion
+							+e.LEGEND.group-name
+								+e.SPAN.group-name-text Аудиосистема, мультимедиа
+							+e.group-inner
+								+e.group-item
+									+select(name="audio" data-placeholder="Аудиосистема" data-minimum-results-for-search="Infinity")._search
+										option(value="")
+										option(value="fr") 2 колонки
+										option(value="bfr") 4 колонки
+										option(value="bfr") 6 колонки
+										option(value="bfr") 8 колонки
+								+e.group-item
+									+checkbox(name="cd" id="cd") CD/DVD/Blu-ray
+								+e.group-item
+									+checkbox(name="mp3" id="mp3") MP3
+								+e.group-item
+									+checkbox(name="mirc" id="mirc") Зеркал
+								+e.group-item
+									+checkbox(name="radio" id="radio") Радио
+								+e.group-item
+									+checkbox(name="tv" id="tv") TV
+								+e.group-item
+									+checkbox(name="video" id="video") Видео
+								+e.group-item
+									+checkbox(name="ondrive" id="ondrive") Управление на руле
+								+e.group-item
+									+checkbox(name="usb" id="usb") USB
+
+						+e.FIELDSET.group._is-accordion
+							+e.LEGEND.group-name
+								+e.SPAN.group-name-text Электропривод
+							+e.group-inner
+								+e.group-item
+									+checkbox(name="climatdrive" id="climatdrive") Управление на руле
+								+e.group-item
+									+checkbox(name="climatglass" id="climatglass") Атермальное остекление
+								+e.group-item
+									+checkbox(name="drivemiracle" id="drivemiracle") Зеркал
+								+e.group-item
+									+checkbox(name="driveve" id="driveve") Рулевой колонки
+								+e.group-item
+									+checkbox(name="collapsemiracle" id="collapsemiracle") Складывания зеркал
+
+					+e.col._span_3.form__
+						+e.FIELDSET.group._is-accordion
+							+e.LEGEND.group-name
+								+e.SPAN.group-name-text Салон, климат
+							+e.group-inner
+								+e.group-item
+									+select(name="material" data-placeholder="Материал салона" data-minimum-results-for-search="Infinity")._search
+										option(value="") 
+										option(value="") Кожа
+										option(value="") Ткань
+										option(value="") Велюр
+										option(value="") Комбинированный
+
+								+e.group-item
+									+checkbox(name="drives" id="drives") Кожаный руль
+								+e.group-item
+									+checkbox(name="airlock" id="airlock") Люк
+
+						+e.FIELDSET.group._is-accordion
+							+e.LEGEND.group-name
+								+e.SPAN.group-name-text Управление климатом
+							+e.group-inner
+								+e.group-item
+									+select(name="climat" data-placeholder="Управление климатом" data-minimum-results-for-search="Infinity")._search
+										option(value="")
+										option(value="") Кондиционер
+										option(value="") Климат-контроль однозонный
+										option(value="") Климат-контроль многозонный
+								
+								+e.group-item
+									+checkbox(name="warmfrontsit" id="warmfrontsit") Обогрев передних сидений
+								+e.group-item
+									+checkbox(name="warmbacksit" id="warmbacksit") Обогрев задних сидений
+								+e.group-item
+									+checkbox(name="warmmiracle" id="warmmiracle") Обогрев зеркал
+								+e.group-item
+									+checkbox(name="warmbackglass" id="warmbackglass") Обогрев заднего стекла
+								+e.group-item
+									+checkbox(name="warmdrive" id="warmdrive") Обогрев руля
+
+						+e.FIELDSET.group._is-accordion
+							+e.LEGEND.group-name
+								+e.SPAN.group-name-text Память настроек
+							+e.group-inner
+								+e.group-item
+									+checkbox(name="memory" id="memorysit") Передних сидений
+								+e.group-item
+									+checkbox(name="memory" id="memorybacksut") Задних сидений
+								+e.group-item
+									+checkbox(name="memory" id="memorymir") Зеркал
+								+e.group-item
+									+checkbox(name="memory" id="memorybackmir") Заднего стекла
+
 		+e.row._sbm._valign_center
 			+e.col._span_2
 				+input(type="text", name="text", placeholder="искать по тексту объявлений" tabindex="15")._iconed
 				+icon('search', false).icon-search
-			+e.col._span_2._for-checkbox
-				+e.check
-					+checkbox(name="new", checked  tabindex="16") Новые
-				+e.check
-					+checkbox(name="old" tabindex="17") С пробегом
-			+e.col
+			+e.col._span_4._sbm
 				+btn('button')._theme_link(tabindex="18").search__switcher Расширенный поиск
-
-		.search__advanced
-			+e.row
-				+e.col
-					+palette
-			+e.row
-				+e.col
-					+checkbox(name="hasPhoto", checked  tabindex="19") Только с фото
-			+e.row
-				+e.col
-					+checkbox(name="forChange", checked  tabindex="20") Возможен обмен
-
-				+e.col
-					+checkbox(name="tax", tabindex="21") Не расстаможен
-
-		+e.row._sbm._valign_center
-			+e.col
-				+btn('button')._theme_secondary._fullwidth(tabindex="28") Показать 479 544 объявлений
+				+btn('button')._theme_secondary(tabindex="28").search__sbm Показать 479 544 объявлений

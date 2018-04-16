@@ -125,13 +125,85 @@
 		
 		+above(768px)
 			margin-bottom 25px
-		
-		// &:last-child
-		// 	margin-bottom 0
+			
+		&_is-accordion
+			margin-bottom 10px
+			
+			+above(768px)
+				margin-bottom 10px
+			
+			+above(980px)
+				margin-bottom 25px
+				
+	&__group-inner
+		^[0]__group_is-accordion &
+			overflow hidden
+			max-height 0
+			transition max-height .3s
+			
+			+above(980px)
+				max-height 100%
+				overflow visible
+			
+		^[0]__group_is-accordion-open &
+			max-height 1000px
+
 		
 	&__group-name
 		margin-bottom 18px
 		font-size 16px
+		
+		^[0]__group_is-accordion &
+			margin-bottom 10px
+			display block
+			width 100%
+			font-weight bold
+			font-size 14px
+				
+	&__group-name-text
+		^[0]__group_is-accordion &
+			position relative
+			padding-right 30px
+			display flex
+			flex-wrap nowrap
+			width 100%
+			
+			+above(980px)
+				display inline
+			
+			&::after
+				margin-left 10px
+				display block
+				align-self center
+				height 1px
+				width 10%
+				flex-grow 1
+				content ''
+				border-bottom 1px dashed $colorDecorative
+				
+				+above(980px)
+					display none
+				
+			&::before
+				position absolute
+				right 0
+				top 0
+				height 14px
+				width 20px
+				font-size 20px
+				font-weight normal
+				text-align center
+				line-height 14px
+				content '+'
+				
+				+above(980px)
+					display none
+				
+		^[0]__group_is-accordion-open &
+			color $colorMain
+			
+			&::before
+				content '\2013'
 		
 	&__group-item
 		margin-bottom 10px
