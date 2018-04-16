@@ -13,16 +13,16 @@ mixin footer()
 					+logo._footer
 				+e.nav
 					+nav(getData('navFoot'))._footer
-			//- +e.lists
-			//- 	+e.section
-			//- 		+e.H5.section-title Продажа авто
-			//- 		+list(getData('cityList'),6)._columned
-			//- 	+e.section._mobile_hide
-			//- 		+list(getData('regionList'),5)._columned._size_s
+			+e.lists
+				+e.section
+					+e.H5.section-title Продажа авто
+					+list(getData('cityList'),6)._columned
+				+e.section._mobile_hide
+					+list(getData('regionList'),5)._columned._size_s
 
-			//- +e.foot
-			//- 	+copy
-			//- 	+dev
+			+e.foot
+				+copy
+				+dev
 
 	+modal-select
 
