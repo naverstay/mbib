@@ -59,5 +59,9 @@ export default {
 				});
 			});
 		}
+
+		$('.pagination .select, .sort .select').select2({
+			width : '100%'
+		});
 	}
 }
