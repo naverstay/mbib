@@ -88,8 +88,11 @@ const form = (() => {
 	
 	if (addCarForm) {
 		const $addCarForm = hyperform(addCarForm, validatorClasses);
+		addCarForm.addEventListener('invalid', event => {
+			let invalidElement = $('.input_invalid').closest('.form__section');
+			$('html, body').animate({ scrollTop: invalidElement.offset().top }, 500); 
+		});
 	}
-	
 })();
 
 export default form

@@ -1,7 +1,7 @@
 mixin palette()
-	+b.palette&attributes(attributes)
+	+b.palette&attributes(attributes).control-group
 		+e.LABEL.item._color_brown(title="Коричневый")
-			+e.INPUT.control(type="radio" name="palette" value="")
+			+e.INPUT.control(type="radio" name="palette" required value="")
 			+e.SPAN.check
 		+e.LABEL.item._color_orange(title="Оранжевый")
 			+e.INPUT.control(type="radio" name="palette" value="")
