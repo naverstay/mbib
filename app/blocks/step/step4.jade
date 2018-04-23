@@ -51,21 +51,23 @@ mixin step4()
 				+e.FIELDSET.section
 					+e.LEGEND.section-name Тип кузова
 					+e.row._align_left
-						+e.item._fullwidth
+						+e.item._span_flex
 							+switcher(type="radio", name="type", value="t1", id="t1", role="radio", tabindex="16", checked="checked")._theme_simple._size_m Внедорожник 5 дв.
 							+switcher(type="radio", name="type", value="t2", id="t2", role="radio", tabindex="17")._theme_simple._size_m Хэтчбек 5 дв.
 							+switcher(type="radio", name="type", value="t3", id="t3", role="radio", tabindex="18")._theme_simple._size_m Кабриолет
 							+switcher(type="radio", name="type", value="t4", id="t4", role="radio", tabindex="19")._theme_simple._size_m Универсал 5 дв.
 							+switcher(type="radio", name="type", value="t5", id="t5", role="radio", tabindex="20")._theme_simple._size_m Купе
 							+switcher(type="radio", name="type", value="t6", id="t6", role="radio", tabindex="21")._theme_simple._size_m Седан
+						+e.item._span_flex
 							+checkbox(name="rightdrive", tabindex="22") Правый руль
 
 				+e.FIELDSET.section
 					+e.LEGEND.section-name Двигатель
 					+e.row._align_left
-						+e.item._fullwidth
+						+e.item._span_flex
 							+switcher(type="radio", name="engine", value="diz", id="e1", role="radio", tabindex="23")._theme_simple._size_m Дизель
 							+switcher(type="radio", name="engine", value="benz", id="e2", role="radio", tabindex="24", checked="checked")._theme_simple._size_m Бензин
+						+e.item._span_flex
 							+checkbox(name="rightdrive", tabindex="25") Газобалонное оборудование
 
 				+e.FIELDSET.section
