@@ -55,3 +55,17 @@ mixin step3()
 							+e.item
 								+e.BUTTON.more(type="button").inIconed
 									+e.SPAN.more-text Старше
+
+				+e.FIELDSET.section
+					+e.LEGEND.section-name Поколение
+					+e.row
+						+e.item._tb_3._span_3
+							+switcher(type="radio", name="generation", value="g2", id="g2", role="radio", tabindex="20")._theme_simple._type_card
+								img(src="assets/images/bmw/3.jpg", alt="").switcher__img
+								+e.title II рестайлинг
+								+e.subtitle 2017-2018
+						+e.item._tb_3._span_3
+							+switcher(type="radio", name="generation", value="g3", id="g3", role="radio", tabindex="21")._theme_simple._type_card
+								img(src="assets/images/bmw/3.jpg", alt="").switcher__img
+								+e.title II рестайлинг
+								+e.subtitle 2012-2016
