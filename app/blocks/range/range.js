@@ -3,24 +3,26 @@ import rangeSlider from 'rangeslider-pure';
 
 const range = (() => {
 	const slider = document.querySelectorAll('input[type="range"]');
-	rangeSlider.create(slider, {
-		polyfill: true
-	});
-	
-	const powerRange = document.querySelector('.range_power');
-	const powerRangeOutput = document.querySelector('.form__output_power');
+	if (slider.length) {
+		rangeSlider.create(slider, {
+			polyfill: true
+		});
+		
+		const powerRange = document.querySelector('.range_power');
+		const powerRangeOutput = document.querySelector('.form__output_power');
 
-	powerRange.addEventListener('input', (event) => {
-		powerRangeOutput.innerHTML = powerRange.value;
-	})
+		powerRange.addEventListener('input', (event) => {
+			powerRangeOutput.innerHTML = powerRange.value;
+		})
 
 
-	const valueRange = document.querySelector('.range_value');
-	const valueRangeOutput = document.querySelector('.form__output_value');
+		const valueRange = document.querySelector('.range_value');
+		const valueRangeOutput = document.querySelector('.form__output_value');
 
-	valueRange.addEventListener('input', (event) => {
-		valueRangeOutput.innerHTML = valueRange.value;
-	})
+		valueRange.addEventListener('input', (event) => {
+			valueRangeOutput.innerHTML = valueRange.value;
+		})
+	}
 
 })();
 

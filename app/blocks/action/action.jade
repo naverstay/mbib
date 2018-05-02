@@ -23,6 +23,11 @@ mixin action(item, isFavorite)
 				+e.SPAN.icon
 					+icon('plaint', false).icon-img
 				+e.item-text Пожаловаться
+			+e.A.item(href="")
+				//- +icon()
+				+e.SPAN.icon
+					+icon('pencil', false).icon-img
+				+e.item-text Редактировать
 		else if item === 'like'
 			+e.A.item._simple(href="")
 				//- +icon()
