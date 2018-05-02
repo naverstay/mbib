@@ -229,7 +229,16 @@ mixin step5()
 											+checkbox(name="hd" id="crcont") Круиз-контроль
 										+e.group-item
 											+checkbox(name="hd" id="comp") Бортовой компьютер
-								
+
+								+e.item._tb_2._span_3
+									+e.FIELDSET.group
+										+e.group-item
+											+select(name="radius" data-placeholder="Усилитель руля"  data-minimum-results-for-search="Infinity")._search
+												option(value="")
+												option(value="g") Гидроусилитель руля
+												option(value="e") Электроусилитель руля
+												option(value="ge") Электрогидроусилитель руля
+
 
 					+e.collapse.collapse
 						+e.collapse-head.collapse__head

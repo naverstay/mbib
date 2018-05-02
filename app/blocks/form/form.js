@@ -93,6 +93,7 @@ const form = (() => {
 			$('html, body').animate({ scrollTop: invalidElement.offset().top }, 500); 
 		});
 	}
+	
 })();
 
 export default form

@@ -4,6 +4,7 @@ include ../form/form
 include ../car-name/car-name
 include ../input/input
 include ../lbl/lbl
+include ../range/range
 include ../btn/btn
 include ../radio/radio
 include ../checkbox/checkbox
@@ -69,6 +70,26 @@ mixin step4()
 							+switcher(type="radio", name="engine", value="benz", id="e2", role="radio", tabindex="24", checked="checked")._theme_simple._size_m Бензин
 						+e.item._span_flex
 							+checkbox(name="rightdrive", tabindex="25") Газобалонное оборудование
+
+				+e.FIELDSET.section
+					+e.LEGEND.section-name Мощность
+					+e.row._align_left
+						+e.item._tb_3._span_4
+							+range(name="power" id="power" value="78" min="10" max="1000" step="1")._power
+						+e.item._tb_3._span_4
+							span 
+								+e.SPAN.output._power 78 
+								span л.с.
+
+				+e.FIELDSET.section
+					+e.LEGEND.section-name Объем двигателя
+					+e.row._align_left
+						+e.item._tb_3._span_4
+							+range(name="value" id="value" value="1.5" min="1" max="10" step="0.1")._value
+						+e.item._tb_3._span_4
+							span 
+								+e.SPAN.output._value 1.5 
+								span л
 
 				+e.FIELDSET.section
 					+e.LEGEND.section-name Привод

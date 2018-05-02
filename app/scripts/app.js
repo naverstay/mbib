@@ -13,6 +13,7 @@ import collapse from '../blocks/collapse/collapse';
 import geoplace from '../blocks/geoplace/geoplace';
 import search from '../blocks/search/search';
 import '../blocks/add-photo/add-photo';
+import '../blocks/range/range';
 import 'lazysizes';
 import 'notyf';
 

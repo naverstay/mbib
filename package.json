@@ -133,6 +133,7 @@
   },
   "dependencies": {
     "lazysizes": "^4.0.1",
-    "notyf": "^2.0.1"
+    "notyf": "^2.0.1",
+    "rangeslider-pure": "^0.4.5-1"
   }
 }
