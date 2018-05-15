@@ -1,0 +1,22 @@
+include ../logo/logo
+include ../nav/nav
+include ../btn/btn
+include ../sidenav/sidenav-auth
+include ../post-ads/post-ads
+
+mixin header-auth()
+	+b.HEADER.header&attributes(attributes)
+		+e.inner.inner
+			+e.sidenav
+				+sidenav-auth
+			+e.logo
+				+logo
+			+e.nav
+				+nav(getData('navAuth'))
+			+e.spacer
+			+e.posting
+				+btn('link')(href="") Мои обновления
+			+e.user
+				+btn('link')._theme_secondary(href="") Александров А.
+			+e.add
+				+post-ads(href="")
