@@ -4,16 +4,45 @@ import 'select2';
 import checkIsMobile from '../../scripts/isMobile.js';
 
 export default {
+	
 	init() {
 		const isMobile = checkIsMobile();
+		const formatState = state => {
+			if (!state.id) {
+				return state.text;
+			}
+			const imgName = state.element.getAttribute('data-image');
+			if (!imgName) {
+				return state.text;
+			}
+			const baseUrl = "assets/images/generations/";
+			const $state = $(
+				'<span class="select2-results__option-photo"><img src="' + baseUrl + '/' + state.element.value.toLowerCase() + '.jpg" /></span>'
+				+'<span>' + state.text + '</span>'
+			);
+
+			return $state;
+		};
+
 		if (!isMobile) {
 			$('.select_search').select2({
 				width : '100%'
+			});
+
+			$('.select_has-image').select2({
+				width : '100%',
+				templateResult: formatState
 			});
 		} else {
 			$('.select_search').select2({
 				width : '100%',
 				dropdownParent: $('#modal .modal__body')
+			});
+
+			$('.select_has-image').select2({
+				width : '100%',
+				dropdownParent: $('#modal .modal__body'),
+				templateResult: formatState
 			});
 
 			$('.select_search').on('select2:open', function() {
