@@ -72,6 +72,9 @@
 	&__advanced-inner
 		padding-top 10px
 		
+		+above(768px)
+			clear both
+		
 	&__row
 		+above(768px)
 			margin 0 -10px 15px
@@ -208,9 +211,12 @@
 		&::after
 			margin-top 2px
 			
+	&__palette
+		flex-wrap wrap
 
 	&__sbm
 		width 100%
 		
 		+above(768px)
 			width auto
+			
