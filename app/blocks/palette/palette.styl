@@ -28,6 +28,7 @@
 			left 50%
 			bottom 100%
 			margin-bottom 10px
+			display none
 			min-width 82px
 			height 30px
 			content attr(title)
@@ -40,8 +41,10 @@
 			opacity 0
 			transition opacity .1s, transform .1s
 			transform translate3d(-50%, 5px, 0)
+			pointer-events none
 			
 		&:hover::before
+			display block
 			opacity 1
 			transform translate3d(-50%, 0, 0)
 			
@@ -51,6 +54,7 @@
 			bottom 100%
 			margin-bottom 10px
 			size 8px
+			display none
 			content ''
 			opacity 0
 			background-color #fff
@@ -59,6 +63,7 @@
 			transform translate3d(-50%, 5px, 0) rotate(45deg)
 			
 		&:hover::after
+			display block
 			opacity 1
 			transform translate3d(-50%, 2px, 0) rotate(45deg)
 		
