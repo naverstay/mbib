@@ -40,6 +40,9 @@ const form = (() => {
 	hyperform.setRenderer('attachWarning', function(warning, element) {
 		if (element.getAttribute('type') === 'radio' || element.getAttribute('type') === 'checkbox') {
 			element.closest('.control-group').after(warning);
+		} else if (element.classList.contains('phone-field')) {
+			element.parentNode.after(warning);
+			// element.parentNode.append(warning);
 		} else {
 			element.parentNode.append(warning);
 		}

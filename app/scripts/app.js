@@ -14,6 +14,7 @@ import geoplace from '../blocks/geoplace/geoplace';
 import search from '../blocks/search/search';
 import '../blocks/add-photo/add-photo';
 import '../blocks/range/range';
+import '../blocks/phone-field/phoneField';
 import 'lazysizes';
 import 'notyf';
 
