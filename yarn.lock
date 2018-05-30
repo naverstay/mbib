@@ -3861,6 +3861,10 @@ ignore@^3.1.2:
   version "3.3.7"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.3.7.tgz#612289bfb3c220e186a58118618d5be8c1bab021"
 
+imask@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/imask/-/imask-3.3.0.tgz#abd30e12212971f7d4c949d49533f0f885beb3b2"
+
 immutable@3.8.2, immutable@^3.7.6:
   version "3.8.2"
   resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.8.2.tgz#c2439951455bb39913daf281376f1530e104adf3"
