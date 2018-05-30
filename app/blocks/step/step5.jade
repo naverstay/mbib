@@ -54,7 +54,7 @@ mixin step5()
 					+e.LEGEND.section-name Пробег <span class="marked">*</span>
 					+e.row._align_left
 						+e.item._tb_3._span_4
-							+input(type="text" name="mileage" placeholder="км" required)
+							+input(type="text" name="mileage" placeholder="км" required)._digit-pretify
 						+e.item._tb_4._span_3
 							+checkbox(name="cleared" id="cleared") Битый или не на ходу
 						+e.item._tb_4._span_3
@@ -64,7 +64,7 @@ mixin step5()
 					+e.LEGEND.section-name Цена <span class="marked">*</span>
 					+e.row._align_left
 						+e.item._tb_3._span_4
-							+input(type="text" name="price" placeholder="укажите цену" required)
+							+input(type="text" name="price" placeholder="укажите цену" required)._digit-pretify
 						+e.item._tb_7._span_4
 							+checkbox(name="cleared" id="forchange") Возможен обмен
 

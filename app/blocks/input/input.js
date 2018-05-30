@@ -2,16 +2,10 @@ const digitpretify = () => {
 	const inputs = document.querySelectorAll('.input_digit-pretify');
 	let oldValue;
 	let oldCursor;
-	const regex = new RegExp(/^\d{0,16}$/g);
+	const regex = new RegExp(/^\d{0,15}$/g);
 	const mask = function (value) {
-		const output = [];
-		for (let i = 0; i < value.length; i++) {
-			if (i !== 0 && i % 3 === 0) {
-				output.push(' '); // add the separator
-			}
-			output.push(value[i]);
-		}
-		return output.join('');
+		const newValue = value.split("").reverse().join("").replace(/\d{3}(?!$|(?:\s$))/g, "$& ").split("").reverse().join("");
+		return newValue;
 	};
 
 	const unmask = function (value) {
