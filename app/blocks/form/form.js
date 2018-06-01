@@ -27,7 +27,7 @@ const form = (() => {
 		BadInputNumber:"Пожалуйста, введите число",
 		"Please match the requested type.":"Пожалуйста, придерживайтесь требуемого типа.",
 		"Please comply with all requirements.":"Пожалуйста, выполните все необходимые условия.",
-		"Please lengthen this text to %l characters or more (you are currently using %l characters).":"Пожалуйста, увеличьте этот текст на %l символов или более (вы используете %l символов).",
+		"Please lengthen this text to %l characters or more (you are currently using %l characters).":"Пожалуйста, увеличьте этот текст до %l символов или более (вы используете %l символов).",
 		"Please use the appropriate format.":"Пожалуйста, используйте правильный формат.",
 		"Please enter a comma separated list of email addresses.":"Пожалуйста, введите список адресов электронной почты через запятую",
 		"Please select a file of the correct type.":"Пожалуйста, выберите файл правильного типа.",
@@ -40,9 +40,6 @@ const form = (() => {
 	hyperform.setRenderer('attachWarning', function(warning, element) {
 		if (element.getAttribute('type') === 'radio' || element.getAttribute('type') === 'checkbox') {
 			element.closest('.control-group').after(warning);
-		} else if (element.classList.contains('phone-field')) {
-			element.parentNode.after(warning);
-			// element.parentNode.append(warning);
 		} else {
 			element.parentNode.append(warning);
 		}
