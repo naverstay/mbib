@@ -30,8 +30,7 @@ mixin auth-registr()
 						+input(type="text" name="name" id="registrName" tabindex="2" required data-value-missing="Введите имя")
 					+e.row
 						+lbl(for="registrPhone") Телефон
-						+phone-field(type="tel" name="phone" id="registrPhone" placeholder="000 000 00 00" tabindex="3" pattern="[0-9]{3} [0-9]{3} [0-9]{2} [0-9]{2}" maxlength="13" required data-value-missing="Введите телефон" data-pattern-mismatch="Проверьте количество цифр, должно быть 10")
-						//- +input(type="tel" name="phone" id="registrPhone" tabindex="3" pattern="[0-9]{10}" required data-value-missing="Введите телефон")
+						+phone-field(type="tel" name="phone" id="registrPhone" placeholder="+7 000 000 00 00" tabindex="3" pattern="+7 [0-9]{3} [0-9]{3} [0-9]{2} [0-9]{2}" required data-value-missing="Введите телефон" data-pattern-mismatch="Проверьте количество цифр, должно быть 10")
 					+e.row
 						+lbl(for="registrEmail") E-mail
 						+input(type="email" name="email" id="registrEmail" tabindex="4" required data-value-missing="Введите e-mail")

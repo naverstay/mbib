@@ -10,6 +10,7 @@ include ../list/list
 include ../title/title
 include ../switcher/switcher
 include ../control-group/control-group
+include ../phone-field/phone-field
 
 mixin feedback()
 	+b.SECTION.feedback&attributes(attributes)
@@ -23,7 +24,7 @@ mixin feedback()
 						+input(type="text" name="name" id="feedbackName" tabindex="0" required data-value-missing="Введите имя" autofocus)
 					+e.row
 						+lbl(for="feedbackPhone") Телефон
-						+input(type="tel" name="phone" id="feedbackPhone" tabindex="1" pattern="[0-9]{10}" required data-value-missing="Введите телефон")
+						+phone-field(type="tel" name="phone" id="feedbackPhone" tabindex="1" placeholder="+7 000 000 00 00" pattern="+7 [0-9]{3} [0-9]{3} [0-9]{2} [0-9]{2}" required data-value-missing="Введите телефон")
 					+e.row
 						+lbl(for="feedbackEmail") E-mail
 						+input(type="email" name="email" id="feedbackEmail" tabindex="2" required data-value-missing="Введите e-mail")

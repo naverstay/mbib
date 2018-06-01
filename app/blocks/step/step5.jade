@@ -86,8 +86,7 @@ mixin step5()
 								+e.SPAN.remark Имя будет указано в объявлении
 						+e.row._align_left
 							+e.item._tb_6._span_4
-								+phone-field(type="tel" name="phonePlace" id="registrPhone" placeholder="Номер телефона" tabindex="3" pattern="[0-9]{3} [0-9]{3} [0-9]{2} [0-9]{2}" maxlength="13" required data-value-missing="Введите телефон" data-pattern-mismatch="Проверьте количество цифр, должно быть 10")
-								//- +input(type="tel" name="place" placeholder="Номер телефона" required)
+								+phone-field(type="tel" name="phonePlace" id="registrPhone" placeholder="Номер телефона" tabindex="3" pattern="[0-9]{3} [0-9]{3} [0-9]{2} [0-9]{2}" required data-value-missing="Введите телефон")
 							+e.item._tb_6._span_4
 								+input(type="email" name="place" placeholder="Электронная почта (e-mail)" required)
 
