@@ -7,6 +7,9 @@
 	bottom 0
 	display none
 	
+	&_for-block
+		position absolute
+	
 	&_active
 		display block
 
@@ -22,6 +25,9 @@
 		align-items center
 		background-color rgba(#f5f5f5, .75)
 		
+		^[0]_for-block &
+			background-color rgba(#f5f5f5, .95)
+			
 		^[0]_active &
 			z-index 150
 			opacity 1

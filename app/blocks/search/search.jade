@@ -8,9 +8,11 @@ include ../btn/btn
 include ../switcher/switcher
 include ../control-group/control-group
 include ../palette/palette
+include ../loader/loader
 
 mixin search()
 	+b.search&attributes(attributes)
+		+loader._for-block
 		+e.city
 			+control-group
 				+switcher(type="radio", name="type", value="typeAll", id="typeAll", role="radio", tabindex="0", checked)._theme_tertirary._size_s Все
