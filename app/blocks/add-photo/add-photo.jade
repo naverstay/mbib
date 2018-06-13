@@ -1,7 +1,7 @@
 mixin add-photo()
 	+b.add-photo&attributes(attributes)
 		+e.LABEL.item._main(for="addPhotoField")
-			+e.SPAN.icon._tap
+			+icon('tap', false).icon._tap
 			span Добавить фотографии
 			+e.INPUT.control#addPhotoField(type="file" name="images" accept="image/*" multiple)
 		+e.item._placeholder

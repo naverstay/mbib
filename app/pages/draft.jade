@@ -1,0 +1,20 @@
+extends /blocks/layout-default/layout-default
+include ../blocks/breadcrumbs/breadcrumbs
+include ../blocks/card/card_draft
+include ../blocks/card-list/card-list
+include ../blocks/block/block
+include ../blocks/headblock/headblock
+include ../blocks/pagination/pagination
+include ../blocks/yad/yad
+include ../blocks/tags/tags
+
+block head
+	- var pageTitle = 'Разместить объявление';
+	- var pageMod = 'draft';
+
+block content
+	+breadcrumbs(getData('card-crumbs'))
+	+card_draft(getData('cars'), 0)
+	+headblock
+	+card-list(getData('cars'))
+	+pagination

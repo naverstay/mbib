@@ -1,0 +1,77 @@
+.cardtype
+	&.tab
+		margin-bottom 0
+	
+	& .tab__head-item_active&__tab-premium
+		color #fff
+		background-color $colorSecondary
+		box-shadow inset 0 2px 0 #053d93, 0 4px 0 $colorSecondary
+		
+	& .tab__head-item_active&__tab-up
+		color #fff
+		background-color darken($colorDecorative, 40)
+		box-shadow inset 0 2px 0 darken($colorDecorative, 56), 0 4px 0 darken($colorDecorative, 40)
+		
+		
+	&__content
+		margin -20px -30px
+		padding 20px 30px
+		display flex
+		
+		&_premium
+			color #fff
+			background-color $colorSecondary
+			box-shadow inset 0 2px 0 #053d93
+			
+		&_up
+			color #fff
+			background-color darken($colorDecorative, 40)
+			box-shadow inset 0 2px 0 darken($colorDecorative, 56)
+		
+	&__fig
+		flex-shrink 0
+		width 206px
+		flex-basis 206px
+		
+	&__desc
+		margin 0 35px
+		
+		h3
+			margin 15px 0 20px
+			font-size 23px
+			
+		p
+			font-size 16px
+			line-height 1.5
+	
+	&__buy-wrap
+		width 300px
+		flex-shrink 0
+		
+	&__buy
+		font-weight bold
+		
+	&__feature
+		margin-top 15px
+		margin-bottom 27px
+		font-size 16px
+		line-height 1.5
+		
+	&__feature-item
+		position relative
+		margin-bottom 15px
+		padding-left 32px
+		
+		&::before
+			position absolute
+			left 0
+			top 6px
+			width 13px
+			height 5px
+			content ''
+			border-bottom 3px solid #facd05
+			border-left 3px solid #facd05
+			transform rotate(-45deg)
+			
+			^[0]__content_up &
+				border-color $colorSecondary
