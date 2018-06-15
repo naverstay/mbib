@@ -12,8 +12,20 @@ mixin card_draft(data, id)
 	-var item = data[id];
 	+b.card&attributes(attributes)._draft
 		+e.bar
-			+e.bar-status._error Не опубликовано
-				+icon('forbidden', false).bar-icon
+			+e.bar-status._error 
+				+e.bar-status-text
+					| Не опубликовано
+					+icon('forbidden', false).bar-icon
+			+e.A.bar-action(href="") Редактировать 
+				+icon('pen-admin', false).bar-icon
+			+e.A.bar-action(href="") Опубликовать 
+				+icon('add-sq', false).bar-icon
+		//- +e.bar
+			+e.bar-status._complete 
+				+e.bar-status-text
+					| Опубликовано
+					+icon('checked', false).bar-icon
+				+e.SPAN.bar-remark осталось 59 дней
 			+e.A.bar-action(href="") Редактировать 
 				+icon('pen-admin', false).bar-icon
 			+e.A.bar-action(href="") Опубликовать 
@@ -38,7 +50,7 @@ mixin card_draft(data, id)
 				+e.meta-seller
 					+e.meta-lbl Продавец:
 					+e.meta-row #{item.author} 
-						+e.SPAN.meta-remark (#{item.authorStatus})
+						+e.SPAN.meta-remark.nobr (#{item.authorStatus})
 				+e.meta-price
 					+e.price
 						+e.price-value
@@ -179,8 +191,10 @@ mixin card_draft(data, id)
 							| #{item.comment}
 
 		+e.bar
-			+e.bar-status._moderation Модерация
-				+icon('hourglass', false).bar-icon
+			+e.bar-status._moderation
+				+e.bar-status-text
+					Модерация
+					+icon('hourglass', false).bar-icon
 				+e.SPAN.bar-remark в течении 30 минут
 			+e.A.bar-action(href="") Редактировать 
 				+icon('pen-admin', false).bar-icon

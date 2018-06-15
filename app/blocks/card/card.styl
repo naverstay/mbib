@@ -4,13 +4,22 @@
 	
 	&_draft
 		box-shadow 0 0 0 2px $colorDecorative
-	
+		
 	&__bar
-		padding 12px 20px
+		padding 10px
 		display flex
+		flex-wrap wrap
+		justify-content space-between
 		background-color $bgDecorative
 		box-shadow inset 0 1px 0 #fff
 		
+		+above(768px)
+			padding-left 23px
+			padding-right 23px
+			
+		+above(980px)
+			padding 12px 20px
+
 		&:first-child
 			border-bottom 1px solid $colorDecorative
 			
@@ -19,9 +28,16 @@
 
 	&__bar-status
 		position relative
-		padding-left 26px
+		margin-bottom 15px
 		font-weight bold
 		flex-grow 1
+		width 100%
+		text-align center
+		
+		+above(768px)
+			margin-bottom 0
+			width auto
+			text-align left
 		
 		&_error
 			color $colorMain
@@ -29,6 +45,14 @@
 		&_moderation
 			color $colorSecondary
 			
+		&_complete
+			color $colorAkcent
+			
+	&__bar-status-text
+		position relative
+		padding 3px 0 3px 26px
+		display inline-block
+		
 	&__bar-remark
 		margin-left 16px
 		display inline-block
@@ -38,10 +62,18 @@
 		
 	&__bar-action
 		position relative
-		margin 0 20px
-		padding-left 26px
+		margin 0
+		padding 3px 0 3px 26px
 		display inline-block
+		font-size 12px
 		
+		+above(768px)
+			margin 0 15px
+			font-size 14px
+			
+		+above(980px)
+			margin 0 20px
+
 		&:last-child
 			margin-right 0
 			
@@ -62,10 +94,27 @@
 			border-bottom 1px solid $colorDecorative
 			
 		&_draft
-			padding-bottom 18px
+			padding 10px
 			border-bottom none
+			background-color #fff
+			
+			+above(768px)
+				padding-left 23px
+				padding-right 23px
+				
+			+above(980px)
+				padding-bottom 18px
 		
 	&__body
+		^[0]_draft &
+			padding-left 10px
+			padding-right 10px
+			background-color #fff
+			
+			+above(768px)
+				padding-left 23px
+				padding-right 23px
+
 		+above(980px)
 			background-color #fff
 	
@@ -211,6 +260,7 @@
 		+above(768px)
 			padding 10px 15px 5px 5px
 			height 50px
+			white-space nowrap
 			color #fff
 			background-color $colorMain
 			background-image linear-gradient(to right, #b3001a, $colorMain)
@@ -225,9 +275,14 @@
 			text-transform uppercase
 			
 	&__tab
-		margin-right 0
-		margin-left 0
+		margin-right -10px
+		margin-left -10px
 		margin-bottom 10px
+		
+		+above(768px)
+			margin-left -23px
+			margin-right -23px
+			
 		
 	&__ads
 		margin-bottom 0
@@ -242,6 +297,11 @@
 
 		+above(980px)
 			padding 20px 20px 1px
+			
+		^[0]_draft &
+			+above(768px)
+				padding-left 0
+				padding-right 0
 			
 		
 	&__data-row
@@ -310,6 +370,7 @@
 			max-width 100%
 			
 	&__gallery-placeholder
+		padding 40px 10px
 		height 100%
 		display flex
 		flex-direction column
@@ -324,8 +385,9 @@
 		font-size 22px
 		
 	&__gallery-desc
-		margin-bottom 44px
+		margin-bottom 42px
 		font-size 12px
+		line-height 1.4
 		color darken($colorDecorative, 40)
 		
 	&__gallery-bg
