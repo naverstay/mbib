@@ -61,8 +61,11 @@ mixin card_draft(data, id)
 				+tab._default.cardtype
 					+e.head
 						+e.A.head-item._active(href="#cardPremium").cardtype__tab-premium 
+							+icon('trophy', false).head-icon.cardtype__tab-icon
 							| Спецразмещение
-						+e.A.head-item(href="#cardUp").cardtype__tab-up Поднятие в поиске
+						+e.A.head-item(href="#cardUp").cardtype__tab-up 
+							+icon('cursor', false).head-icon.cardtype__tab-icon
+							| Поднятие в поиске
 					+e.content._active(id="cardPremium")
 						.cardtype__content.cardtype__content_premium
 							.cardtype__fig
@@ -103,8 +106,8 @@ mixin card_draft(data, id)
 							+e.gallery-title Добавьте фотографи вашего авто
 							+e.gallery-desc По статистике, люди не смотрят обьявления без картинок
 							+e.gallery-bg
-							+e.add
-								+btn('button', 'tap')._size_m._theme_secondary Добавить фото
+							+e.gallery-add
+								+btn('button', 'tap')._size_xxl._theme_secondary Добавить фотографии
 					+e.feature
 						+e.DL.feature-list
 							+e.feature-row
