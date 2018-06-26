@@ -130,6 +130,7 @@
 			
 		+above(980px)
 			padding 10px 19px 0
+			flex-wrap nowrap
 			
 		^[0]_draft &
 			margin-bottom 30px
@@ -142,6 +143,7 @@
 			width 50%
 			flex-basis 50%
 			padding-right 15px
+			
 			
 		+above(980px)
 			margin-bottom 0
@@ -188,6 +190,11 @@
 		+above(980px)
 			margin-right 0
 			float none
+			
+		^[0]__meta-inspect &
+			+above(768px)
+				float none
+				
 		
 	&__meta-row
 		margin-bottom 10px
