@@ -1,5 +1,9 @@
 mixin switcher()
-	+b.LABEL.switcher&attributes()(for=attributes.id)
+	if attributes.fullwidth
+		-var wrapClass = '_fullwidth'
+	else
+		-var wrapClass = ''
+	+b.LABEL.switcher&attributes()(for=attributes.id, class=wrapClass)
 		+e.INPUT.control(type=attributes.type, name=attributes.name, value=attributes.value, id=attributes.id, tabindex=attributes.tabindex, required = attributes.required, data-value-missing = attributes['data-value-missing'], checked = attributes.checked, disabled=attributes.disabled)
 		+e.SPAN.text(class=attributes.class, role=attributes.type)
 			block
