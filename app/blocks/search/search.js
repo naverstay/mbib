@@ -4,6 +4,9 @@ const search = (() => {
 	if (!wrap) return;
 
 	const switcher = wrap.querySelector('.search__switcher');
+
+	if (!switcher) return;
+		
 	const switcherText = switcher.querySelector('.btn__text');
 	const switcherLabelOpen = "Скрыть поиск";
 	const switcherLabelСlose = "Расширенный поиск";

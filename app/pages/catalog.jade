@@ -1,0 +1,14 @@
+extends /blocks/layout-default/layout-default
+include ../blocks/search/search-model
+include ../blocks/breadcrumbs/breadcrumbs
+include ../blocks/title-block/title-block
+
+block head
+	- var pageTitle = 'Каталог';
+	- var pageMod = 'catalog';
+
+block content
+	+breadcrumbs(getData('index-crumbs'))
+	+search-model()
+	+title-block({level: '2'}) Популярные
+

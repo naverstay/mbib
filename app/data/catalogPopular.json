@@ -1,0 +1,47 @@
+[
+	{
+		"name" : "Hyundai Solaris",
+		"meta" : "5064 с пробегом, 3 689 новых",
+		"img" : "assets/images/catalog/solaris.jpg"
+	},
+	{
+		"name" : "LADA (ВАЗ) Priora",
+		"meta" : "8228 с пробегом, 75 новых",
+		"img" : "assets/images/catalog/priora.jpg"
+	},
+	{
+		"name" : "LADA (ВАЗ) 2114 I",
+		"meta" : "7607 с пробегом, 23 новых",
+		"img" : "assets/images/catalog/samara.jpg"
+	},
+	{
+		"name" : "Opel Astra",
+		"meta" : "7388 с пробегом",
+		"img" : "assets/images/catalog/astra.jpg"
+	},
+	{
+		"name" : "Ford Focus",
+		"meta" : "11481 с пробегом, 1 668 новых",
+		"img" : "assets/images/catalog/focus.jpg"
+	},
+	{
+		"name" : "Volkswagen Polo",
+		"meta" : "3390 с пробегом, 3 407 новых",
+		"img" : "assets/images/catalog/polo.jpg"
+	},
+	{
+		"name" : "LADA (ВАЗ) Kalina",
+		"meta" : "6325 с пробегом, 439 новых",
+		"img" : "assets/images/catalog/kalina.jpg"
+	},
+	{
+		"name" : "Skoda Octavia",
+		"meta" : "5128 с пробегом, 1 462 новых",
+		"img" : "assets/images/catalog/octavia.jpg"
+	},
+	{
+		"name" : "LADA (ВАЗ) Granta I",
+		"meta" : "4523 с пробегом, 2 043 новых",
+		"img" : "assets/images/catalog/granta.jpg"
+	}
+]
