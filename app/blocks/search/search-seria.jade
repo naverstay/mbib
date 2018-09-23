@@ -9,14 +9,26 @@ include ../switcher/switcher
 include ../control-group/control-group
 include ../palette/palette
 include ../loader/loader
+include ../checklist/checklist
+include ../more/more
+include ../brand/brand
 
-mixin search-model()
+mixin search-seria()
 	+b.search&attributes(attributes)
 		+loader._for-block
-		+e.header
+		+e.header._open
 			+e.BUTTON.header-toggler(type="button")
-				| Марка, модель, поколение
+				+brand('bmw').search__header-brand
+				+e.SPAN.header-name BMW
+				+icon('right-arrow').header-next-icon
+				+e.SPAN.header-label Выберите модель
 				+icon('down-arrow').header-icon
+		+e.row._advanced
+			+e.item._fullwidth
+				+checklist(getData('modelbmw'), 'model')
+					+e.item
+						+more Все модели
+
 		+e.row._hide-on-tablet
 			+e.col
 				+e.BUTTON.drop-switcher(type="button")

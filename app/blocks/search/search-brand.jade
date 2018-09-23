@@ -9,14 +9,22 @@ include ../switcher/switcher
 include ../control-group/control-group
 include ../palette/palette
 include ../loader/loader
+include ../checklist/checklist
+include ../more/more
 
-mixin search-model()
+mixin search-brand()
 	+b.search&attributes(attributes)
 		+loader._for-block
 		+e.header
 			+e.BUTTON.header-toggler(type="button")
-				| Марка, модель, поколение
+				| Выберите марку
 				+icon('down-arrow').header-icon
+		+e.row._advanced
+			+e.item._fullwidth
+				+checklist(getData('brands'), 'brand')
+					+e.item
+						+more._inIconed Все марки
+
 		+e.row._hide-on-tablet
 			+e.col
 				+e.BUTTON.drop-switcher(type="button")

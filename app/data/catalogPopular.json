@@ -22,7 +22,9 @@
 	{
 		"name" : "Ford Focus",
 		"meta" : "11481 с пробегом, 1 668 новых",
-		"img" : "assets/images/catalog/focus.jpg"
+		"img" : "assets/images/catalog/focus.jpg",
+		"isX2": true,
+		"alignTablet" : "right"
 	},
 	{
 		"name" : "Volkswagen Polo",

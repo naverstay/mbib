@@ -51,13 +51,53 @@
 		+above(768px)
 			padding 10px 24px
 		
+	&__header-brand
+		margin-right 4px
+		display inline-block
+		vertical-align middle
+		font-size 0
+		
+		+above(768px)
+			margin-right 10px
+		
+	&__header-name
+		position relative
+		top 2px
+		margin-right 4px
+		display inline-block
+		color #000
+		
+		+above(768px)
+			margin-right 9px
+		
+	&__header-label
+		position relative
+		top 2px
+		display inline-block
+
 	&__header-icon
 		position absolute
-		right 22px
+		right 0px
 		top 12px
 		width 30px
 		height 16px
 		fill #7a7a7a
+		transform rotate(0)
+		transition transform .3s
+		
+		+above(768px)
+			right 22px
+		
+		^[0]__header_open &
+			transform rotate(180deg)
+		
+	&__header-next-icon
+		position relative
+		top 2px
+		display inline-block
+		width 12px
+		height 12px
+		margin-right 7px
 
 	&__city
 		margin-bottom 10px
@@ -130,6 +170,18 @@
 				
 			&:last-child
 				margin-bottom 0
+				
+		&_advanced 
+			margin-top -10px
+			padding-top 10px
+			
+			+above(768px)
+				margin -24px -24px 24px
+				padding 24px 24px 10px
+				background-color #fff
+				
+			+above(980px)
+				padding-bottom 10px
 			
 		&_sbm
 			margin-bottom 10px
@@ -137,6 +189,10 @@
 			+above(980px)
 				margin-top -1px
 				clear none
+				
+		&_hide-on-tablet
+			+above(768px)
+				display none
 		
 	&__col
 		position relative
@@ -250,3 +306,31 @@
 		+above(768px)
 			width auto
 			
+	&__drop
+		max-height 0
+		overflow hidden
+		transition max-height .3s
+		
+		+above(768px)
+			max-height 100%
+		
+		^[0]_show-drop &
+			max-height 1000px
+
+	&__drop-switcher
+		color $colorMain
+		background-color transparent
+		border none
+		
+		
+	&__drop-switcher-icon
+		fill currentColor
+		width 20px
+		height 20px
+		margin-right 4px
+		display inline-block
+		vertical-align middle
+		
+	&__drop-switcher-text
+		display inline-block
+		border-bottom 1px dashed

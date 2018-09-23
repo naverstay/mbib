@@ -1,0 +1,51 @@
+.brand-about
+	display block
+	
+	+above(768px)
+		display flex
+		
+	+above(980px)
+		padding-top 24px
+	
+	&__fig
+		margin-bottom 32px
+		height 204px
+		font-size 0
+		line-height 204px
+		text-align center
+		background-color #fff
+		
+		+above(768px)
+			margin-right 20px
+			width 218px
+			height 163px
+			line-height 163px
+			flex-basis 218px
+			flex-shrink 0
+			
+		+above(980px)
+			margin-right 28px
+			width 258px
+			flex-basis 258px
+			height 193px
+			line-height 193px
+		
+	&__img
+		vertical-align middle
+		
+	// &__body
+		
+	&__title
+		margin-bottom 16px
+		font-size 28px
+		font-weight bold
+		
+	&__title-remark
+		color #787878
+		
+	&__text
+		line-height 1.71429
+		color #787878
+		
+		p
+			margin-bottom 1.71429em

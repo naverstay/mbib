@@ -8,6 +8,7 @@ include ../blocks/sort/sort
 include ../blocks/card-list/card-list
 include ../blocks/pagination/pagination
 include ../blocks/loader/loader
+include ../blocks/result-message/result-message
 
 block head
 	- var pageTitle = 'MBIB';
@@ -20,6 +21,9 @@ block content
 	+group(getData('brands'))
 	+special(getData('cars'))
 	+sort
+	+result-message
+		+e.P.text Найдено 45811 объявлений.
+		+e.P.text Показаны 1-25 (страница №1).
 	+card-list(getData('cars'))
 	+pagination
 	+text(getData('seo-text'))

@@ -1,0 +1,30 @@
+extends /blocks/layout-default/layout-default
+include ../blocks/search/search-seria
+include ../blocks/breadcrumbs/breadcrumbs
+include ../blocks/title-block/title-block
+include ../blocks/catalog/catalog
+include ../blocks/akcent-block/akcent-block
+include ../blocks/text/text-more
+
+block head
+	- var pageTitle = 'Каталог';
+	- var pageMod = 'catalog';
+
+block content
+	+breadcrumbs(getData('index-crumbs'))
+	+search-seria()
+	+akcent-block().brand-about__
+		+e.FIGURE.fig
+			+e.IMG.img(src="assets/images/brand/bmw.jpg")
+		+e.body
+			+e.H2.title
+				| BMW
+				+e.SPAN.title-remark (БМВ)
+			+e.text
+				p BMW — одна из крупнейших немецких компаний, выпускающая в настоящее время мотоциклы, автомобили и велосипеды, — была образована на базе завода авиационных двигателей, основанного в 1913 году в Мюнхене.
+				p В 1929 году дебютная машина этой марки, малолитражка Dixi, сошла с конвейера купленного годом раннее завода в Айзенахе. Через 30 лет будет выпущен BMW 700 — первый серийный автомобиль, принесший компании большой успех. В 1994 году в состав Bayerische Motoren Werke AG входит британская промышленная группа Rover, в 1998-м — марка Rolls-Royce. Сегодня концерн располагает пятью современными производственными площадками в Германии и еще 22 дочерними предприятиями по всему миру, а автомобили «БМВ» стали синонимом безупречного дизайна и качества.
+					+text-more подробнее
+	+title-block({level: '2'}) Популярные модели BMW
+	+catalog(getData('catalogPopular'))
+	+title-block({level: '2'}) Все модели
+	+catalog(getData('catalogAll'), 'hasPagination')

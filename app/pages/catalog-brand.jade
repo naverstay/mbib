@@ -1,5 +1,5 @@
 extends /blocks/layout-default/layout-default
-include ../blocks/search/search-model
+include ../blocks/search/search-brand
 include ../blocks/breadcrumbs/breadcrumbs
 include ../blocks/title-block/title-block
 include ../blocks/catalog/catalog
@@ -10,7 +10,7 @@ block head
 
 block content
 	+breadcrumbs(getData('index-crumbs'))
-	+search-model()
+	+search-brand()
 	+title-block({level: '2'}) Популярные
 	+catalog(getData('catalogPopular'))
 	+title-block({level: '2'}) Все модели

@@ -1,0 +1,216 @@
+[
+	{
+		"name" : "AC 378 GT Zagato I",
+		"img" : "assets/images/catalog/as378.jpg"
+	},
+	{
+		"name" : "AC Ace",
+		"img" : "assets/images/catalog/ace.jpg"
+	},
+	{
+		"name" : "AC Aceca",
+		"img" : "assets/images/catalog/aceca.jpg"
+	},
+	{
+		"name" : "AC Cobra",
+		"meta" : "2 с пробегом",
+		"img" : "assets/images/catalog/cobra.jpg"
+	},
+	{
+		"name" : "Acura CSX",
+		"img" : "assets/images/catalog/crx.jpg",
+		"alignTablet" : "right",
+		"isX2": true
+	},
+	{
+		"name" : "Acura CL",
+		"img" : "assets/images/catalog/cl.jpg"
+	},
+	{
+		"name" : "Acura ILX",
+		"img" : "assets/images/catalog/alx.jpg"
+	},
+	{
+		"name" : "Acura EL",
+		"meta" : "1 с пробегом",
+		"img" : "assets/images/catalog/el.jpg"
+	},
+	{
+		"name" : "Acura CL",
+		"img" : "assets/images/catalog/cl.jpg"
+	},
+	{
+		"name" : "Acura ILX",
+		"img" : "assets/images/catalog/alx.jpg"
+	},
+	{
+		"name" : "Acura Integra",
+		"img" : "assets/images/catalog/integra.jpg"
+	},
+	{
+		"name" : "AC 378 GT Zagato I",
+		"img" : "assets/images/catalog/as378.jpg"
+	},
+	{
+		"name" : "AC Ace",
+		"img" : "assets/images/catalog/ace.jpg"
+	},
+	{
+		"name" : "AC Aceca",
+		"img" : "assets/images/catalog/aceca.jpg"
+	},
+	{
+		"name" : "AC Cobra",
+		"meta" : "2 с пробегом",
+		"img" : "assets/images/catalog/cobra.jpg"
+	},
+	{
+		"name" : "Acura CSX",
+		"img" : "assets/images/catalog/crx.jpg",
+		"isX2": true,
+		"isRight" : true
+	},
+	{
+		"name" : "AC Aceca",
+		"img" : "assets/images/catalog/aceca.jpg"
+	},
+	{
+		"name" : "AC Cobra",
+		"meta" : "2 с пробегом",
+		"img" : "assets/images/catalog/cobra.jpg"
+	},
+	{
+		"name" : "Acura EL",
+		"meta" : "1 с пробегом",
+		"img" : "assets/images/catalog/el.jpg"
+	},
+	{
+		"name" : "Acura CL",
+		"img" : "assets/images/catalog/cl.jpg"
+	},
+	{
+		"name" : "AC 378 GT Zagato I",
+		"img" : "assets/images/catalog/as378.jpg"
+	},
+	{
+		"name" : "AC Ace",
+		"img" : "assets/images/catalog/ace.jpg"
+	},
+	{
+		"name" : "Acura ILX",
+		"img" : "assets/images/catalog/alx.jpg"
+	},
+	{
+		"name" : "AC Cobra",
+		"meta" : "2 с пробегом",
+		"img" : "assets/images/catalog/cobra.jpg"
+	},
+	{
+		"name" : "AC 378 GT Zagato I",
+		"img" : "assets/images/catalog/as378.jpg"
+	},
+	{
+		"name" : "AC 378 GT Zagato I",
+		"img" : "assets/images/catalog/as378.jpg"
+	},
+	{
+		"name" : "AC Ace",
+		"img" : "assets/images/catalog/ace.jpg"
+	},
+	{
+		"name" : "AC Aceca",
+		"img" : "assets/images/catalog/aceca.jpg"
+	},
+	{
+		"name" : "AC Ace",
+		"img" : "assets/images/catalog/ace.jpg"
+	},
+	{
+		"name" : "AC Aceca",
+		"img" : "assets/images/catalog/aceca.jpg"
+	},
+	{
+		"name" : "Acura TSX",
+		"meta" : "7 с пробегом",
+		"img" : "assets/images/catalog/tsx.jpg",
+		"alignTablet" : "right",
+		"isX2": true
+	},
+	{
+		"name" : "AC Ace",
+		"img" : "assets/images/catalog/ace.jpg"
+	},
+	{
+		"name" : "AC Aceca",
+		"img" : "assets/images/catalog/aceca.jpg"
+	},
+	{
+		"name" : "AC Aceca",
+		"img" : "assets/images/catalog/aceca.jpg"
+	},
+	{
+		"name" : "AC Ace",
+		"img" : "assets/images/catalog/ace.jpg"
+	},
+	{
+		"name" : "AC Cobra",
+		"meta" : "2 с пробегом",
+		"img" : "assets/images/catalog/cobra.jpg"
+	},
+	{
+		"name" : "AC Ace",
+		"img" : "assets/images/catalog/ace.jpg"
+	},
+	{
+		"name" : "AC Aceca",
+		"img" : "assets/images/catalog/aceca.jpg"
+	},
+	{
+		"name" : "AC Cobra",
+		"meta" : "2 с пробегом",
+		"img" : "assets/images/catalog/cobra.jpg"
+	},
+	{
+		"name" : "AC Aceca",
+		"img" : "assets/images/catalog/aceca.jpg"
+	},
+	{
+		"name" : "Acura RDX",
+		"img" : "assets/images/catalog/crx.jpg",
+		"isX2": true,
+		"isRight" : true
+	},
+	{
+		"name" : "AC 378 GT Zagato I",
+		"img" : "assets/images/catalog/as378.jpg"
+	},
+	{
+		"name" : "AC Ace",
+		"img" : "assets/images/catalog/ace.jpg"
+	},
+	{
+		"name" : "Acura EL",
+		"meta" : "1 с пробегом",
+		"img" : "assets/images/catalog/el.jpg"
+	},
+	{
+		"name" : "Acura CL",
+		"img" : "assets/images/catalog/cl.jpg"
+	},
+	{
+		"name" : "Acura ILX",
+		"img" : "assets/images/catalog/alx.jpg"
+	},
+	{
+		"name" : "Acura Integra",
+		"img" : "assets/images/catalog/integra.jpg"
+	},
+	{
+		"name" : "AC 378 GT Zagato I",
+		"img" : "assets/images/catalog/as378.jpg"
+	},
+	{
+		"name" : "AC Ace",
+		"img" : "assets/images/catalog/ace.jpg"
+	}	
+]
