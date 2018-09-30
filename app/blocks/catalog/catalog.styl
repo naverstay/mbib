@@ -100,6 +100,10 @@
 		+above(768px)
 			left 12px
 			bottom 12px
+			
+		+above(980px)
+			left 30px
+			bottom 16px
 		
 		^[0]__list-item_x2 &
 			left 10px
@@ -109,6 +113,10 @@
 			+above(768px)
 				left 24px
 				bottom 24px
+				
+			+above(980px)
+				left 36px
+				bottom 28px
 		
 	&__list-name
 		margin-bottom 3px
@@ -124,3 +132,22 @@
 			+above(768px)
 				margin-bottom 10px
 				font-size 28px
+				
+	&__count
+		color inherit
+		text-decoration inherit
+		font-size 11px
+		white-space nowrap
+		
+		+above(768px)
+			font-size 14px
+		
+		&:hover
+			color inherit
+			text-decoration inherit
+			
+		&::after 
+			content ','
+			
+		&:last-child::after
+			display none

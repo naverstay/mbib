@@ -11,8 +11,12 @@ mixin catalog(list, hasPagination)
 						+e.A.link-wrap(href="")
 							+e.FIGURE.list-fig
 								+e.IMG.list-img(src=item.img alt=item.name)
-							+e.list-about
-								+e.H3.list-name #{item.name}
-								+e.P.list-desc #{item.meta}
+						+e.list-about
+							+e.H3.list-name #{item.name}
+							+e.P.list-desc
+								if item.old
+									+e.A.count(href="") #{item.old} с пробегом
+								if item.new
+									+e.A.count(href="") #{item.new} новых
 			if hasPagination
 				+pagination._in-block

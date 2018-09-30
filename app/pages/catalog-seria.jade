@@ -2,9 +2,8 @@ extends /blocks/layout-default/layout-default
 include ../blocks/search/search-generation
 include ../blocks/breadcrumbs/breadcrumbs
 include ../blocks/title-block/title-block
-include ../blocks/catalog/catalog
-include ../blocks/akcent-block/akcent-block
 include ../blocks/brand-card/brand-card
+include ../blocks/generation/generation-list
 
 block head
 	- var pageTitle = 'Каталог';
@@ -14,7 +13,5 @@ block content
 	+breadcrumbs(getData('index-crumbs'))
 	+search-generation()
 	+brand-card()
-	+title-block({level: '2'}) Популярные модели BMW
-	+catalog(getData('catalogPopular'))
-	+title-block({level: '2'}) Все модели
-	+catalog(getData('catalogAll'), 'hasPagination')
+	+title-block({level: '2'}) Поколения
+	+generation-list(getData('generation'))

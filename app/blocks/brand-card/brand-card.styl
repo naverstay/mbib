@@ -3,37 +3,74 @@
 	flex-wrap wrap
 	
 	&__gallery
-		width 60%
-		flex-basis 60%
+		width 100%
 		font-size 0
 		
+		+above(768px)
+			width 60%
+			flex-basis 60%
+			
+		
 	&__info
-		padding 38px 45px 38px 60px
-		width 40%
-		flex-basis 40%
+		padding 20px
+		width 100%
 		background-color #787878
 		color #fff
+		
+		+above(768px)
+			padding 38px 18px
+			width 40%
+			flex-basis 40%
+		
+		+above(980px)
+			padding-left 60px
 	
 	&__info-term
-		margin-bottom 16px
+		margin-bottom 10px
 		font-size 16px
 		font-weight bold
 		color #ababab
 		
+		+above(980px)
+			margin-bottom 16px
+
 	&__info-desc
-		margin-bottom 38px
-		font-size 22px
+		margin-bottom 30px
+		font-size 16px
 		font-weight bold
+		
+		&:last-child
+			margin-bottom 0
+		
+		+above(768px)
+			margin-bottom 40px
+		
+		+above(980px)
+			margin-bottom 38px
+			font-size 22px
 		
 	&__info-desc-text
 		margin-top 3px
-		font-size 14px
+		font-size 12px
 		font-weight normal
 		color $colorDecorative
 		
+		+above(980px)
+			font-size 14px
+		
 	&__body
-		padding-top 20px
+		padding 20px 10px
 		width 100%
+		
+		+above(768px)
+			padding-left 0
+			padding-right 0
+			
+	&__title&__title
+		font-size 22px
+		
+		+above(768px)
+			font-size inherit
 		
 	&__text
 		line-height 1.71429

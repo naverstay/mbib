@@ -1,0 +1,104 @@
+[
+	{
+		"year" : "2015 – н.в.",
+		"desc" : "F30, F31, F34",
+		"restyling" : true,
+		"list" : [
+			{
+				"img" : "assets/images/gl/1.jpg",
+				"type" : "Седан",
+				"old" : 247,
+				"new" : 696
+			},
+			{
+				"img" : "assets/images/gl/2.jpg",
+				"type" : "Хэтчбек 5 дв. Gran Turismo",
+				"old" : 19,
+				"new" : 164
+			},
+			{
+				"img" : "assets/images/gl/3.jpg",
+				"type" : "Универсал 5 дв.",
+				"old" : 1
+			}
+		]
+	},
+	{
+		"year" : "2011 – 2016",
+		"desc" : "F30, F31, F34",
+		"list" : [
+			{
+				"img" : "assets/images/gl/4.jpg",
+				"type" : "Хэтчбек 5 дв. Gran Turismo",
+				"old" : 67
+			},
+			{
+				"img" : "assets/images/gl/5.jpg",
+				"type" : "Седан",
+				"old" : 750
+			},
+			{
+				"img" : "assets/images/gl/6.jpg",
+				"type" : "Универсал 5 дв.",
+				"old" : 1
+			}
+		]
+	},
+	{
+		"year" : "2008 – 2013",
+		"desc" : "E90-E93 рестайлинг",
+		"list" : [
+			{
+				"img" : "assets/images/gl/7.jpg",
+				"type" : "Седан",
+				"old" : 611
+			},
+			{
+				"img" : "assets/images/gl/8.jpg",
+				"type" : "Универсал 5 дв.",
+				"old" : 19
+			},
+			{
+				"img" : "assets/images/gl/9.jpg",
+				"type" : "Купе",
+				"old" : 92
+			},
+			{
+				"img" : "assets/images/gl/10.jpg",
+				"type" : "Кабриолет",
+				"old" : 10
+			}
+		]
+	},
+	{
+		"year" : "2001 – 2006",
+		"desc" : "E46 рестайлинг",
+		"list" : [
+			{
+				"img" : "assets/images/gl/11.jpg",
+				"type" : "Кабриолет",
+				"old" : 1
+			},
+			{
+				"img" : "assets/images/gl/12.jpg",
+				"type" : "Хэтчбек 3 дв.",
+				"old" : 23
+			},
+			{
+				"img" : "assets/images/gl/13.jpg",
+				"type" : "Универсал 5 дв.",
+				"old" : 40
+			},
+			{
+				"img" : "assets/images/gl/14.jpg",
+				"type" : "Купе",
+				"old" : 26
+			},
+			{
+				"img" : "assets/images/gl/15.jpg",
+				"type" : "Седан",
+				"old" : 268
+			}
+		]
+	}
+]

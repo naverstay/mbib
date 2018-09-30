@@ -13,7 +13,7 @@
 	},
 	{
 		"name" : "AC Cobra",
-		"meta" : "2 с пробегом",
+		"old" : 4,
 		"img" : "assets/images/catalog/cobra.jpg"
 	},
 	{
@@ -32,7 +32,7 @@
 	},
 	{
 		"name" : "Acura EL",
-		"meta" : "1 с пробегом",
+		"old" : 1,
 		"img" : "assets/images/catalog/el.jpg"
 	},
 	{
