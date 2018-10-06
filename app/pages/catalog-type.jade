@@ -1,10 +1,9 @@
 extends /blocks/layout-default/layout-default
-include ../blocks/search/search-generation
+include ../blocks/search/search-type
 include ../blocks/breadcrumbs/breadcrumbs
 include ../blocks/title-block/title-block
 include ../blocks/brand-card/brand-card
 include ../blocks/generation/generation-list
-include ../blocks/akcent-block/akcent-block
 
 block head
 	- var pageTitle = 'Каталог';
@@ -12,8 +11,4 @@ block head
 
 block content
 	+breadcrumbs(getData('index-crumbs'))
-	+search-generation()
-	+brand-card()
-	+title-block({level: '2'}) Поколения
-	+akcent-block._plain
-		+generation-list(getData('generation'))
+	+search-type()
