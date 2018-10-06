@@ -1,3 +1,73 @@
+include ../text/text-more
+
 mixin kit()
 	+b.kit&attributes(attributes)
-		block
+		+e.TABLE.table
+			+e.THEAD.head
+				+e.TR.row
+					+e.TH.head-name._title Название
+					+e.TH.head-name._engine Двигатель
+					+e.TH.head-name._trans Коробка
+					+e.TH.head-name Привод
+					+e.TH.head-name._rashod._align_center Расход, л
+					+e.TH.head-name._razgon._align_center Разгон до 100, с.
+			+e.TBODY.body
+				+e.TR.row
+					+e.TD.cell._bold 320
+					+e.TD.cell 2.0 156 л.c. бензин
+					+e.TD.cell автомат
+					+e.TD.cell задний
+					+e.TD.cell._align_center 11.3/5.9
+					+e.TD.cell._align_center 8.9
+				+e.TR.row
+					+e.TD.cell._empty
+					+e.TD.cell._empty
+					+e.TD.cell механика
+					+e.TD.cell задний
+					+e.TD.cell._align_center 11.3/5.9
+					+e.TD.cell._align_center 8.9
+				+e.TR.row
+					+e.TD.cell._empty
+					+e.TD.cell 2.0d 184 л.c. дизель
+					+e.TD.cell автомат
+					+e.TD.cell задний
+					+e.TD.cell._align_center 11.3/5.9
+					+e.TD.cell._align_center 8.9
+				+e.TR.row
+					+e.TD.cell._empty
+					+e.TD.cell._empty
+					+e.TD.cell механика
+					+e.TD.cell задний
+					+e.TD.cell._align_center 11.3/5.9
+					+e.TD.cell._align_center 8.9
+				+e.TR.row
+					+e.TD.cell._bold 320
+					+e.TD.cell 2.0 156 л.c. бензин
+					+e.TD.cell автомат
+					+e.TD.cell задний
+					+e.TD.cell._align_center 11.3/5.9
+					+e.TD.cell._align_center 8.9
+				+e.TR.row
+					+e.TD.cell._empty
+					+e.TD.cell._empty
+					+e.TD.cell механика
+					+e.TD.cell задний
+					+e.TD.cell._align_center 11.3/5.9
+					+e.TD.cell._align_center 8.9
+				+e.TR.row
+					+e.TD.cell._empty
+					+e.TD.cell 2.0d 184 л.c. дизель
+					+e.TD.cell автомат
+					+e.TD.cell задний
+					+e.TD.cell._align_center 11.3/5.9
+					+e.TD.cell._align_center 8.9
+				+e.TR.row
+					+e.TD.cell._empty
+					+e.TD.cell._empty
+					+e.TD.cell механика
+					+e.TD.cell задний
+					+e.TD.cell._align_center 11.3/5.9
+					+e.TD.cell._align_center 8.9
+		+e.more
+			+text-more ещё 2 комплектации
+

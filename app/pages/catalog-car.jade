@@ -1,0 +1,18 @@
+extends /blocks/layout-default/layout-default
+include ../blocks/search/search-car
+include ../blocks/breadcrumbs/breadcrumbs
+include ../blocks/title-block/title-block
+include ../blocks/akcent-block/akcent-block
+include ../blocks/kit/kit
+
+block head
+	- var pageTitle = 'Каталог';
+	- var pageMod = 'catalog';
+
+block content
+	+breadcrumbs(getData('index-crumbs'))
+	+search-car()
+	+title-block({level: '2'}) Комплектации
+	+akcent-block
+		+kit
+

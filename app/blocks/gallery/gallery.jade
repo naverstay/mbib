@@ -1,3 +1,5 @@
-mixin gallery()
+mixin gallery(imgList)
 	+b.gallery&attributes(attributes)
-		block
+		+e.list
+			each img in imgList
+				img(src=img, alt="")
