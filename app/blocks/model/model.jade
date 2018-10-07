@@ -1,0 +1,270 @@
+mixin model()
+	+b.model&attributes(attributes)
+		+e.switcher
+			+e.H3.switcher-title Бензин
+			+e.DL.switcher-list
+				+e.DT.switcher-model 320
+				+e.DD.switcher-desc
+					+e.A.switcher-link(href="") 
+						+e.switcher-engine 2.0 АТ
+						+e.switcher-power 156 л.с.
+						+e.switcher-transmission автомат
+						+e.switcher-check
+
+				+e.DD.switcher-desc
+					+e.A.switcher-link(href="")._active
+						+e.switcher-engine 2.0 МТ
+						+e.switcher-power 156 л.с.
+						+e.switcher-transmission механика
+						+e.switcher-check
+				
+				+e.DT.switcher-model 335
+				+e.DD.switcher-desc
+					+e.A.switcher-link(href="") 
+						+e.switcher-engine 3.0 АТ
+						+e.switcher-power 304 л.с. 4х4
+						+e.switcher-transmission автомат
+						+e.switcher-check
+				+e.DD.switcher-desc
+					+e.A.switcher-link(href="") 
+						+e.switcher-engine 3.0 МТ
+						+e.switcher-power 304 л.с. 4х4
+						+e.switcher-transmission механика
+						+e.switcher-check
+
+				+e.DT.switcher-model 320 специальная версия
+				+e.DD.switcher-desc
+					+e.A.switcher-link(href="") 
+						+e.switcher-engine 2.0 АТ
+						+e.switcher-power 156 л.с.
+						+e.switcher-transmission автомат
+						+e.switcher-check
+				+e.DD.switcher-desc
+					+e.A.switcher-link(href="") 
+						+e.switcher-engine 2.0 МТ
+						+e.switcher-power 156 л.с.
+						+e.switcher-transmission механика
+						+e.switcher-check
+
+				+e.DT.switcher-model 335 специальная версия
+				+e.DD.switcher-desc
+					+e.A.switcher-link(href="") 
+						+e.switcher-engine 3.0 АТ
+						+e.switcher-power 304 л.с. 4х4
+						+e.switcher-transmission автомат
+						+e.switcher-check
+				+e.DD.switcher-desc
+					+e.A.switcher-link(href="") 
+						+e.switcher-engine 3.0 МТ
+						+e.switcher-power 304 л.с. 4х4
+						+e.switcher-transmission механика
+						+e.switcher-check
+
+				+e.DT.switcher-model —
+				+e.DD.switcher-desc
+					+e.A.switcher-link(href="") 
+						+e.switcher-engine 3.0 АТ
+						+e.switcher-power 304 л.с. 4х4
+						+e.switcher-transmission автомат
+						+e.switcher-check
+				+e.DD.switcher-desc
+					+e.A.switcher-link(href="") 
+						+e.switcher-engine 3.0 МТ
+						+e.switcher-power 304 л.с. 4х4
+						+e.switcher-transmission механика
+						+e.switcher-check
+				+e.DD.switcher-desc
+					+e.A.switcher-link(href="") 
+						+e.switcher-engine 2.0 АТ
+						+e.switcher-power 156 л.с.
+						+e.switcher-transmission автомат
+						+e.switcher-check
+				+e.DD.switcher-desc
+					+e.A.switcher-link(href="") 
+						+e.switcher-engine 2.0 МТ
+						+e.switcher-power 156 л.с.
+						+e.switcher-transmission механика
+						+e.switcher-check
+				+e.DD.switcher-desc
+					+e.A.switcher-link(href="") 
+						+e.switcher-engine 3.0 АТ
+						+e.switcher-power 304 л.с. 4х4
+						+e.switcher-transmission автомат
+						+e.switcher-check
+				+e.DD.switcher-desc
+					+e.A.switcher-link(href="") 
+						+e.switcher-engine 3.0 МТ
+						+e.switcher-power 304 л.с. 4х4
+						+e.switcher-transmission механика
+						+e.switcher-check
+		+e.body
+			+e.about
+				+e.col
+					+e.H4.title Модификация 2.0 MT
+					+e.P.about-desc
+						| С пробегом 
+						a(href="") 2 690 000 – 6 634 900 ₽
+					+e.figure
+						img(src="assets/images/car-profile.png", alt="")
+						+e.SPAN.figure-height 1395
+						+e.SPAN.figure-width 4580
+						+e.SPAN.figure-clearance 143
+
+				+e.col.__feature-wrap
+					+e.DL.feature
+						+e.DIV.feature-row
+							+e.DT.feature-term Объем
+							+e.DD.feature-desc 2.0 л
+						+e.DIV.feature-row
+							+e.DT.feature-term Мощность
+							+e.DD.feature-desc 156 л.с.
+						+e.DIV.feature-row
+							+e.DT.feature-term Коробка
+							+e.DD.feature-desc механика
+						+e.DIV.feature-row
+							+e.DT.feature-term Тип двигателя
+							+e.DD.feature-desc бензин
+
+					+e.DL.feature
+						+e.DIV.feature-row
+							+e.DT.feature-term Топливо
+							+e.DT.feature-desc АИ-95
+						+e.DIV.feature-row
+							+e.DT.feature-term Привод
+							+e.DT.feature-desc задний
+						+e.DIV.feature-row
+							+e.DT.feature-term Разгон
+							+e.DT.feature-desc 8.9 с
+						+e.DIV.feature-row
+							+e.DT.feature-term Расход
+							+e.DT.feature-desc 7.9 л
+
+			+e.info
+				+e.col
+					+e.section
+						+e.H5.section-title Общая информация
+						+e.DL.info-list
+							+e.info-row
+								+e.DT.info-term Страна марки
+								+e.DT.info-desc Германия
+							+e.info-row
+								+e.DT.info-term Класс автомобиля
+								+e.DT.info-desc D
+							+e.info-row
+								+e.DT.info-term Класс автомобиля
+								+e.DT.info-desc 2
+							+e.info-row
+								+e.DT.info-term Количество мест
+								+e.DT.info-desc 4
+					+e.section
+						+e.H5.section-title Размеры, мм
+						+e.DL.info-list
+							+e.info-row
+								+e.DT.info-term Длина
+								+e.DT.info-desc 4580
+							+e.info-row
+								+e.DT.info-term Ширин автомобиля
+								+e.DT.info-desc 1782
+							+e.info-row
+								+e.DT.info-term Высота дверей
+								+e.DT.info-desc 1395
+							+e.info-row
+								+e.DT.info-term Колёсная база
+								+e.DT.info-desc 2760
+							+e.info-row
+								+e.DT.info-term Клиренс
+								+e.DT.info-desc 143
+							+e.info-row
+								+e.DT.info-term Ширина передней колеи
+								+e.DT.info-desc 1513
+							+e.info-row
+								+e.DT.info-term Размер колёс
+								+e.DT.info-desc 225/45/R17
+					+e.section
+						+e.H5.section-title Объём и масса
+						+e.DL.info-list
+							+e.info-row
+								+e.DT.info-term Объем багажника мин/макс, л 
+								+e.DT.info-desc 440
+							+e.info-row
+								+e.DT.info-term Объём топливного бака, л
+								+e.DT.info-desc 61
+							+e.info-row
+								+e.DT.info-term Снаряженная масса, кг
+								+e.DT.info-desc 1670
+							+e.info-row
+								+e.DT.info-term Полная масса, кг
+								+e.DT.info-desc 2025
+					+e.section
+						+e.H5.section-title Трансмиссия
+						+e.DL.info-list
+							+e.info-row
+								+e.DT.info-term Коробка передач мин/макс, л 
+								+e.DT.info-desc механика
+							+e.info-row
+								+e.DT.info-term Количество передач
+								+e.DT.info-desc 6
+							+e.info-row
+								+e.DT.info-term Тип привода
+								+e.DT.info-desc задний
+				+e.col
+					+e.section
+						+e.H5.section-title Эксплуатационные показатели
+						+e.DL.info-list
+							+e.info-row
+								+e.DT.info-term Максимальная скорость, км/ч  
+								+e.DT.info-desc 220
+							+e.info-row
+								+e.DT.info-term Разгон до 100 км/ч, с
+								+e.DT.info-desc 8.9
+							+e.info-row
+								+e.DT.info-term Расход топлива, л город/трасса/смешанный
+								+e.DT.info-desc 11.3/5.9/7.9
+							+e.info-row
+								+e.DT.info-term Марка топлива
+								+e.DT.info-desc АИ-95
+							+e.info-row
+								+e.DT.info-term Экологический класс
+								+e.DT.info-desc Euro 5
+							+e.info-row
+								+e.DT.info-term Выбросы CO2, г/км
+								+e.DT.info-desc 153
+					+e.section
+						+e.H5.section-title Двигатель
+						+e.DL.info-list
+							+e.info-row
+								+e.DT.info-term Тип двигателя
+								+e.DT.info-desc бензин
+							+e.info-row
+								+e.DT.info-term Расположение двигателя
+								+e.DT.info-desc переднее, поперечное
+							+e.info-row
+								+e.DT.info-term Объем двигателя, см
+								+e.DT.info-desc 1995
+							+e.info-row
+								+e.DT.info-term Тип наддува
+								+e.DT.info-desc нет
+							+e.info-row
+								+e.DT.info-term Максимальная мощность, л.с./кВт при об/мин
+								+e.DT.info-desc 156 / 115 при 6400
+							+e.info-row
+								+e.DT.info-term Максимальный крутящий момент, Н*м при об/мин
+								+e.DT.info-desc 200 при 3600
+							+e.info-row
+								+e.DT.info-term Расположение цилиндров
+								+e.DT.info-desc рядное
+							+e.info-row
+								+e.DT.info-term Количество цилиндров
+								+e.DT.info-desc 4
+							+e.info-row
+								+e.DT.info-term Число клапанов на цилиндр
+								+e.DT.info-desc 4
+							+e.info-row
+								+e.DT.info-term Система питания двигателя
+								+e.DT.info-desc распределенный впрыск (многоточечный)
+							+e.info-row
+								+e.DT.info-term Степень сжатия
+								+e.DT.info-desc 12
+							+e.info-row
+								+e.DT.info-term Диаметр цилиндра и ход поршня, мм
+								+e.DT.info-desc 84 × 90

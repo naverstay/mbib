@@ -2,8 +2,6 @@
 	margin-bottom 20px
 	display block
 	
-	// &_default
-	
 	&__head
 		^[0]_simple &
 			margin-bottom 15px
@@ -15,6 +13,9 @@
 			
 			+above(600px)
 				display block
+				
+		^[0]_switcher &
+			box-shadow 0 2px 0 darken($colorDecorative, 20)
 			
 	&__head-item
 		^[0]_simple &
@@ -52,7 +53,39 @@
 				
 			+above(600px)
 				flex-grow initial
+		
+
+		^[0]_switcher &
+			position relative
+			z-index 2
+			padding 0 19px
+			display block
+			height $heightM
+			font-size 12px
+			line-height 48px
+			text-align center
+			text-decoration none
+			text-transform uppercase
+			color #000
+			border none
+			transition box-shadow .3s, background-color .3s, color .3s
+			background-color lighten($colorDecorative, 10)
+			box-shadow 0 2px 0 darken($colorDecorative, 20)
+			
+			+above(768px)
+				display inline-block
+			
+			&:hover,
+			&:focus
+				background-color $colorDecorative
+				box-shadow 0 2px 0 darken($colorDecorative, 40)
+		
 				
+			&_active
+				color #fff
+				background-image none
+				background-color darken($colorDecorative, 40)
+				box-shadow 0 2px 0 darken($colorDecorative, 100)
 	
 	&__content
 		display none
