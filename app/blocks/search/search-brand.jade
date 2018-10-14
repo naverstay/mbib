@@ -20,10 +20,11 @@ mixin search-brand()
 				| Выберите марку
 				+icon('down-arrow').header-icon
 		+e.row._advanced
-			+e.item._fullwidth
-				+checklist(getData('brands'), 'brand')
-					+e.item
-						+more._inIconed Все марки
+			+e.row-advanced-inner
+				+e.item._fullwidth
+					+checklist(getData('brands'), 'brand')
+						+e.item
+							+more._inIconed Все марки
 
 		+e.row._hide-on-tablet
 			+e.col

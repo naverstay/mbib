@@ -14,7 +14,7 @@ include ../more/more
 include ../brand/brand
 
 mixin search-seria()
-	+b.search&attributes(attributes)
+	+b.search&attributes(attributes)._show-advanced
 		+loader._for-block
 		+e.header._open
 			+e.BUTTON.header-toggler(type="button")
@@ -24,10 +24,11 @@ mixin search-seria()
 				+e.SPAN.header-label Выберите модель
 				+icon('down-arrow').header-icon
 		+e.row._advanced
-			+e.item._fullwidth
-				+checklist(getData('modelbmw'), 'model')
-					+e.item
-						+more Все модели
+			+e.row-advanced-inner
+				+e.item._fullwidth
+					+checklist(getData('modelbmw'), 'model')
+						+e.item
+							+more Все модели
 
 		+e.row._hide-on-tablet
 			+e.col

@@ -4,6 +4,7 @@ const search = (() => {
 	if (!wrap) { return false; }
 
 	try {
+		
 		const switcher = wrap.querySelector('.search__switcher');
 		const switcherText = switcher.querySelector('.btn__text');
 		const switcherLabelOpen = 'Скрыть поиск';
@@ -41,6 +42,27 @@ const search = (() => {
 		dropSwitcher.addEventListener('click', () => {
 			wrap.classList.toggle(showDropClass);
 		});
+
+	} catch(err) {}
+
+	try {
+		const header = wrap.querySelector('.search__header');
+		const headerButton = wrap.querySelector('.search__header-toggler');
+		const advanced = wrap.querySelector('.search__row_advanced');
+
+		headerButton.addEventListener('click', (e) => {
+			if (wrap.classList.contains('search_show-advanced')) {
+				advanced.style.overflow = 'hidden';
+			}
+
+			header.classList.toggle('search__header_open');
+			wrap.classList.toggle('search_show-advanced');
+		});
+
+		wrap.addEventListener('transitionend', () => {
+			wrap.classList.contains('search_show-advanced') ? advanced.style.overflow = 'visible' : '';
+		});
+
 
 	} catch(err) {}
 

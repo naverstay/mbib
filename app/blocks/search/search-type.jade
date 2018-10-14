@@ -16,7 +16,7 @@ include ../switcher/switcher
 include ../generation/generation-list
 
 mixin search-type()
-	+b.search&attributes(attributes)
+	+b.search&attributes(attributes)._show-advanced
 		+loader._for-block
 		+e.header._open
 			+e.BUTTON.header-toggler(type="button")
@@ -30,7 +30,9 @@ mixin search-type()
 				+e.SPAN.header-label Выбрать кузов
 				+icon('down-arrow').header-icon
 		+e.row._advanced
-			+generation-list(getData('generation'),true)
+			+e.row-advanced-inner
+				+e.item._fullwidth
+					+generation-list(getData('generation'),true)
 
 		+e.row._hide-on-tablet
 			+e.col

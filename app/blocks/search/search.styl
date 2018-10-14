@@ -171,17 +171,16 @@
 			&:last-child
 				margin-bottom 0
 				
-		&_advanced 
-			margin-top -10px
-			padding-top 10px
+		&_advanced
+			overflow hidden
+			max-height 0
+			transition max-height .4s
+		
+			^[0]_show-advanced &
+				max-height 3000px
 			
 			+above(768px)
 				margin -24px -24px 24px
-				padding 24px 24px 10px
-				background-color #fff
-				
-			+above(980px)
-				padding-bottom 10px
 			
 		&_sbm
 			margin-bottom 10px
@@ -194,6 +193,17 @@
 			+above(768px)
 				display none
 		
+	&__row-advanced-inner
+		padding-left 10px
+		padding-right 10px
+		
+		+above(768px)
+			padding 24px 24px 10px
+			background-color #fff
+				
+		+above(980px)
+			padding-bottom 10px
+
 	&__col
 		position relative
 		margin-bottom 8px

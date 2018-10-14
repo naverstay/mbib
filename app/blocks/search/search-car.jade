@@ -19,7 +19,7 @@ include ../model/model
 include ../model/model-package
 
 mixin search-car()
-	+b.search&attributes(attributes)
+	+b.search&attributes(attributes)._show-advanced
 		+loader._for-block
 		+e.header._open
 			+e.BUTTON.header-toggler(type="button")
@@ -31,7 +31,6 @@ mixin search-car()
 				+e.SPAN.header-name  2008 – 2013 V (E90/E91/E92/E93) Рестайлинг
 				+icon('right-arrow').header-next-icon
 				+e.SPAN.header-name Купе
-				+icon('down-arrow').header-icon
 
 		+e.row._advanced
 			+tab._switcher.search__tab
