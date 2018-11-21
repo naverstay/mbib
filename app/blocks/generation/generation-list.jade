@@ -1,13 +1,7 @@
 mixin generation-list(list, countRow)
 	+b.generation-list&attributes(attributes)
 		if countRow
-			+e.DL.item
-				+e.DT.head
-					+e.H3.year #{list[0].year}
-					+e.P.desc 
-						| #{list[0].desc}
-						if list[0].restyling
-							+e.SPAN.restyling рестайлинг
+			+e.item
 				each car in list[0].list
 					+e.DD.car
 						+e.A.car-link(href="")
