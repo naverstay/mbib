@@ -1,0 +1,34 @@
+include ../akcent-block/akcent-block
+include ../gallery/gallery
+include ../tab/tab
+include ../model/model
+include ../model/model-package
+
+
+mixin car-card()
+	+akcent-block.car-card__
+		+tab._switcher.car-card__tab
+			+e.head
+				+e.A.head-item(href="#modelCard") Карточка модели
+				+e.A.head-item(href="#propertyCard") Характеристики
+				+e.A.head-item._active(href="#kitCard") Комплектации
+
+			+e.content(id="modelCard").car-card__tab-content
+				+gallery(getData('cars')[0].gallery).car-card__gallery
+				.car-card__about
+					.car-card__about-rate
+						.car-card__about-rating 
+							span.car-card__about-rating-value 4.3
+						.car-card__about-review
+							| Оценка авто
+							a.car-card__about-review-link(href="") по 16 отзывам
+
+					.car-card__about-desc
+						p BMW 3 серия V (E90/E91/E92/E93) Рестайлинг – купе D-класса, задний и полный привод. Автомат, механика и робот. Бензиновые и дизельные двигатели мощностью от 143 до 306 лошадиных сил.. D-класса, задний и полный привод.
+							+text-more подробнее
+
+			+e.content(id="propertyCard").car-card__tab-content
+				+model()
+
+			+e.content(id="kitCard").car-card__tab-content
+				+model-package()

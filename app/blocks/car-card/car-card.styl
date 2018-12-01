@@ -1,0 +1,68 @@
+.car-card
+	display block
+	
+	&__tab
+		width 100%
+		&&
+			+above(768px)
+				margin-bottom -24px
+				padding 24px
+		
+	&__tab-content
+		padding-top 20px
+	
+	&__gallery
+		margin-bottom 20px
+		width 100%
+	
+	&__about
+		width 100%
+		
+		+above(768px)
+			display flex
+		
+	&__about-rate
+		display flex
+		padding-right 24px
+		width 244px
+		flex-basis 244px
+		flex-shrink 0
+		
+	&__about-rating
+		margin-right 15px
+		width 60px
+		height 60px
+		border-radius 50%
+		padding 4px
+		background-image linear-gradient(to right, $colorMain, $colorSecondary)
+
+	&__about-rating-value
+		display block
+		width 52px
+		height 52px
+		font-size 22px
+		font-weight bold
+		line-height 52px
+		text-align center
+		border-right 50%
+		background-color #fff
+		border-radius 50%
+		
+	&__about-review
+		padding-top 5px
+		line-height 1.5
+		font-size 16px
+		font-weight bold
+		color #787878
+		
+	&__about-review-link
+		display inline-block
+		color $colorSecondary
+		
+	&__about-desc
+		padding-top 5px
+		line-height 1.71429
+		color #787878
+		
+		p
+			margin 0

@@ -4,6 +4,7 @@ include ../blocks/breadcrumbs/breadcrumbs
 include ../blocks/title-block/title-block
 include ../blocks/akcent-block/akcent-block
 include ../blocks/kit/kit
+include ../blocks/car-card/car-card
 
 block head
 	- var pageTitle = 'Каталог';
@@ -12,6 +13,7 @@ block head
 block content
 	+breadcrumbs(getData('index-crumbs'))
 	+search-car()
+	+car-card
 	+title-block({level: '2'}) Комплектации
 	+akcent-block
 		+kit
