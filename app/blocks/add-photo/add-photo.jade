@@ -1,9 +1,10 @@
-mixin add-photo()
+mixin add-photo(arg = {withoutInput : false})
 	+b.add-photo&attributes(attributes)
-		+e.LABEL.item._main(for="addPhotoField")
-			+icon('tap', false).icon._tap
-			span Добавить фотографии
-			+e.INPUT.control#addPhotoField(type="file" name="images" accept="image/*" multiple)
+		if !arg.withoutInput
+			+e.LABEL.item._main(for="addPhotoField")
+				+icon('tap', false).icon._tap
+				span Добавить фотографии
+				+e.INPUT.control#addPhotoField(type="file" name="images" accept="image/*" multiple)
 		+e.item._placeholder
 			+e.SPAN.icon._drive
 		+e.item._placeholder
