@@ -8,6 +8,7 @@ include ../btn/btn
 include ../car-name/car-name
 include ../tab/tab
 include ../add-photo/add-photo
+include ../upload/upload
 
 mixin card_draft(data, id)
 	-var item = data[id];
@@ -96,7 +97,7 @@ mixin card_draft(data, id)
 						+e.gallery-placeholder
 							+add-photo({withoutInput: true}).__gallery-load
 							+e.gallery-add
-								+btn('button', 'tap')._size_xxl._theme_secondary.__gallery-add-button Добавить фотографии
+								+upload()._size_xxl._theme_secondary
 					+e.feature
 						+e.DL.feature-list
 							+e.feature-row
