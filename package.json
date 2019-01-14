@@ -17,7 +17,7 @@
     "stylus"
   ],
   "scripts": {
-    "start": "gulp --debug",
+    "start": "gulp",
     "build": "gulp build",
     "production": "cross-env NODE_ENV=production npm-run-all clean build",
     "make-block": "babel-node make-block.js",
@@ -134,6 +134,7 @@
   "dependencies": {
     "imask": "^3.3.0",
     "lazysizes": "^4.0.1",
+    "natives": "^1.1.6",
     "notyf": "^2.0.1",
     "rangeslider-pure": "^0.4.5-1"
   }
