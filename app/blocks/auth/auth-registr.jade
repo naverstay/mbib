@@ -31,6 +31,9 @@ mixin auth-registr()
 					+e.row
 						+lbl(for="registrPhone") Телефон
 						+phone-field(type="tel" name="phone" id="registrPhone" placeholder="+7 000 000 00 00" tabindex="3" required minlength="16" data-too-short="Номер введён не полностью, должно быть 11 цифр" data-value-missing="Введите телефон")
+					+e.row.js-row_can-cloned
+						+lbl(for="registrPhoneAddition") Телефон
+						+phone-field({hasAppend:true})(type="tel" name="phone" id="registrPhoneAddition" placeholder="+7 000 000 00 00" tabindex="3" required minlength="16" data-too-short="Номер введён не полностью, должно быть 11 цифр" data-value-missing="Введите телефон")
 					+e.row
 						+lbl(for="registrEmail") E-mail
 						+input(type="email" name="email" id="registrEmail" tabindex="4" required data-value-missing="Введите e-mail")

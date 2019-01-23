@@ -38,12 +38,36 @@ const form = (() => {
 	hyperform.setLanguage("ru");
 
 	hyperform.setRenderer('attachWarning', function(warning, element) {
-		if (element.getAttribute('type') === 'radio' || element.getAttribute('type') === 'checkbox') {
-			element.closest('.control-group').after(warning);
-		} else {
-			element.parentNode.append(warning);
+		if (element.getAttribute('type') === 'tel') {
+			element.closest('.phone-field').after(warning);
 		}
 	});
+
+	hyperform.setRenderer('attachWarning', function(warning, element) {
+		switch (element.getAttribute('type')) {
+			case 'radio' : 
+				element.closest('.control-group').after(warning);
+				break;
+			case 'checkbox' : 
+				element.closest('.control-group').after(warning);
+				break;
+			case 'tel' : 
+				element.closest('.phone-field').after(warning);
+				break;
+			default: 
+				element.parentNode.append(warning);
+				break;
+		}
+		/*if (element.getAttribute('type') === 'radio' || element.getAttribute('type') === 'checkbox') {
+			element.closest('.control-group').after(warning);
+		} else if {
+			element.parentNode.append(warning);
+		}
+		else {
+			element.parentNode.append(warning);
+		}*/
+	});
+
 
 	const authForm = document.querySelector('.form[name=auth]');
 	const bookmarkletForm = document.querySelector('.form[name=bookmarklet]');

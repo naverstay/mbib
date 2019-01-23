@@ -1,4 +1,11 @@
 include ../input/input
 
-mixin phone-field()
-	+input.phone-field&attributes(attributes)
+mixin phone-field(attrs = {hasAppend : false})
+	- const {hasAppend} = attrs;
+
+	+b.phone-field
+		+input.phone-field__control&attributes(attributes).js-phone-field__control
+		if hasAppend
+			+e.BUTTON.button._append(type="button").js-phone-field__clone +
+			+e.BUTTON.button._remove(type="button").js-phone-field__remove &ndash;
+
