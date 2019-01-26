@@ -6,6 +6,7 @@ include ../popup/popup
 include ../menu/menu
 include ../form/form
 include ../geoplace/geoplace-list
+include ../alert/alert
 
 mixin modal-place()
 	+b.modal#modalPlace&attributes(attributes)._size_m.mfp-with-anim.mfp-hide
@@ -16,6 +17,7 @@ mixin modal-place()
 				+icon('close', false).close-icon
 		+e.inner
 			+e.body
+				+alert._warning На данный момент в оиске доступны лишь населённые пункты ЮФО.
 				+form(name="place").geoplace
 					+e.row
 						+e.item._fullwidth

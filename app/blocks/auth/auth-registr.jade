@@ -10,6 +10,7 @@ include ../title/title
 include ../phone-field/phone-field
 include ../switcher/switcher
 include ../control-group/control-group
+include ../alert/alert
 
 mixin auth-registr()
 	+b.SECTION.auth&attributes(attributes)
@@ -19,6 +20,8 @@ mixin auth-registr()
 				+link(href="enter.html") Войти
 			+e.body
 				+form(name="registr" action="" method="post")
+					+e.row
+						+alert._warning Ошибка при регистрации, попробуйте ещё раз.
 					+e.row
 						+lbl(for="registrTypeOwner") Зарегистрироваться как:
 						+control-group._flex
