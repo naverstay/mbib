@@ -1,0 +1,30 @@
+extends /blocks/layout-default/layout-auth
+include ../blocks/breadcrumbs/breadcrumbs
+include ../blocks/text/text
+include ../blocks/search/search-ext
+include ../blocks/group/group
+include ../blocks/special/special
+include ../blocks/sort/sort
+include ../blocks/card-list/card-list
+include ../blocks/pagination/pagination
+include ../blocks/loader/loader
+include ../blocks/result-message/result-message
+
+block head
+	- var pageTitle = 'MBIB';
+	- var pageMod = 'index';
+
+block content
+	+breadcrumbs(getData('index-crumbs'))
+	+text(getData('main-text'))._important
+	+search-ext
+	+group(getData('brands'))
+	+special(getData('cars'))
+	+sort
+	+result-message
+		+e.P.text Найдено 45811 объявлений.
+		+e.P.text Показаны 1-25 (страница №1).
+	+card-list(getData('cars'))
+	+pagination
+	+text(getData('seo-text'))
+	+loader
