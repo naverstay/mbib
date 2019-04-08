@@ -1,6 +1,8 @@
 mixin switcher()
 	if attributes.fullwidth
 		-var wrapClass = '_fullwidth'
+	if attributes.isTable
+		-var wrapClass = '_theme_table'
 	else
 		-var wrapClass = ''
 	+b.LABEL.switcher&attributes()(for=attributes.id, class=wrapClass)
