@@ -22,21 +22,21 @@ mixin search()
 				+btn('link', 'pin')(href="")._theme_tertirary._size_s.search__city-btn Другой город
 		+e.row
 			+e.col
-				+select(name="brand" data-placeholder="Марка" tabindex="1")._search
+				+select(name="brand" data-placeholder="Марка" tabindex="1")._search._for-brand
 					option(value="")
-					option(value="m1") Audi
-					option(value="m2") BMW
-					option(value="m3") Kia
-					option(value="m4") Lada
-					option(value="m5") ЗАЗ
-					option(value="m6") ГАЗ
-					option(value="m7") УАЗ
-					option(value="m8") BMW
-					option(value="m9") Kia
-					option(value="m0") Lada
-					option(value="m11") ЗАЗ
-					option(value="m12") ГАЗ
-					option(value="m13") УАЗ
+					option(value="m1" data-brand="audi") Audi
+					option(value="m2" data-brand="bmw") BMW
+					option(value="m3" data-brand="kia") Kia
+					option(value="m4" data-brand="lada") Lada
+					option(value="m5" data-brand="zaz") ЗАЗ
+					option(value="m6" data-brand="gaz") ГАЗ
+					option(value="m7" data-brand="uaz") УАЗ
+					option(value="m8" data-brand="bmw") BMW
+					option(value="m9" data-brand="kia") Kia
+					option(value="m0" data-brand="lada") Lada
+					option(value="m11" data-brand="zaz") ЗАЗ
+					option(value="m12" data-brand="gaz") ГАЗ
+					option(value="m13" data-brand="uaz") УАЗ
 			+e.col
 				+select(name="model" data-placeholder="Модель" tabindex="2")._search
 					option(value="")

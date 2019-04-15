@@ -7,6 +7,41 @@ export default {
 	
 	init() {
 		const isMobile = checkIsMobile();
+		const formatBrandResult = state => {
+			if (!state.id) {
+				return state.text;
+			}
+			const brandName = state.element.getAttribute('data-brand');
+			if (!brandName) {
+				return state.text;
+			}
+			const $state = $(
+				`<span class="select2-results__option-brand">
+					<span class="select2-results__option-icon brand brand_${brandName}"></span>
+					<span>${state.text}</span>
+				</span>`
+			);
+
+			return $state;
+		};
+
+		const formatBrandSelection = state => {
+			if (!state.id) {
+				return state.text;
+			}
+			const brandName = state.element.getAttribute('data-brand');
+			if (!brandName) {
+				return state.text;
+			}
+			const $state = $(
+			`<span class="select2-selection__value">
+				<span class="select2-selection__value-icon brand brand_${brandName}"></span>
+				${state.text}
+			</span>`
+			);
+			return $state;
+		};
+
 		const formatState = state => {
 			if (!state.id) {
 				return state.text;
@@ -32,6 +67,13 @@ export default {
 			$('.select_has-image').select2({
 				width : '100%',
 				templateResult: formatState
+			});
+
+			$('.select_for-brand').select2({
+				width : '100%',
+				templateResult: formatBrandResult,
+				templateSelection: formatBrandSelection,
+				allowClear: true,
 			});
 		} else {
 			$('.select_search').select2({
