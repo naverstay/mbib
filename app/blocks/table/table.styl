@@ -1,0 +1,55 @@
+.table
+	width 100%
+	border-collapse collapse
+	
+	+above(768px)
+		border 1px solid $colorDecorative
+	
+	&__row
+		margin-bottom 10px
+		display block
+		border 1px solid $colorDecorative
+		
+		+above(768px)
+			display table-row
+			margin-bottom 0
+			border none
+			border-top 1px solid $colorDecorative
+			
+			&:first-child
+				border-top none
+				
+		&_head
+			display none
+			
+			+above(768px)
+				display table-row
+
+	&__head-cell
+		display none
+		padding 10px
+		text-align left
+		background-color $colorMain
+		color #fff
+		
+		+above(768px)
+			display table-cell
+		
+	&__cell
+		display flex
+		padding 10px
+		
+		&::before
+			content attr(data-th)
+			margin-right 10px
+			display block
+			width 95px
+			font-weight bold
+			text-align right
+			color #555
+			
+			+above(768px)
+				display none
+		
+		+above(768px)
+			display table-cell

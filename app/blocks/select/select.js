@@ -61,7 +61,8 @@ export default {
 
 		if (!isMobile) {
 			$('.select_search').select2({
-				width : '100%'
+				width : '100%',
+				minimumResultsForSearch: 20
 			});
 
 			$('.select_has-image').select2({
@@ -71,6 +72,7 @@ export default {
 
 			$('.select_for-brand').select2({
 				width : '100%',
+				minimumResultsForSearch: 20,
 				templateResult: formatBrandResult,
 				templateSelection: formatBrandSelection,
 				allowClear: true,
@@ -78,11 +80,13 @@ export default {
 		} else {
 			$('.select_search').select2({
 				width : '100%',
+				minimumResultsForSearch: 20,
 				dropdownParent: $('#modal .modal__body')
 			});
 
 			$('.select_has-image').select2({
 				width : '100%',
+				minimumResultsForSearch: 20,
 				dropdownParent: $('#modal .modal__body'),
 				templateResult: formatState
 			});
