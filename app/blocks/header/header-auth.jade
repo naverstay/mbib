@@ -15,8 +15,8 @@ mixin header-auth()
 				+nav(getData('navAuth'))
 			+e.spacer
 			+e.posting
-				+btn('link')(href="") Мои обновления
+				+btn('link', 'file')(href="") Мои обновления
 			+e.user
-				+btn('link')._theme_secondary(href="") Александров А.
+				+btn('link', 'user')._theme_secondary(href="").user-link Александров А.
 			+e.add
 				+post-ads(href="")
