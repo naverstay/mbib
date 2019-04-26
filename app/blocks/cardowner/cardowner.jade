@@ -6,7 +6,9 @@ mixin cardowner(data)
 		+e.author
 			+e.author-name #{item.author}
 			+e.author-status #{item.authorStatus}
-		+phone(item.contact, true)._size_l.cardowner__phone
+		+e.phone
+			+phone(item.contact, true)._size_l.cardowner__phone-value
+			+e.phone-desc ОАО "МТТ" Краснодарский край
 		+e.inspect
 			| Место осмотра: #{item.inspect.city}, #{item.inspect.address}
 			br
