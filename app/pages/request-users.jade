@@ -3,6 +3,7 @@ include ../blocks/table/table
 include ../blocks/block/block
 include ../blocks/breadcrumbs/breadcrumbs
 include ../blocks/select/select
+include ../blocks/pager/pager
 
 block head
 	- var pageTitle = 'Список страниц';
@@ -31,7 +32,8 @@ block content
 					+e.TD.cell(data-th="Email") mauiluser@mail.ru
 					+e.TD.cell(data-th="Комментарий") 
 						a(href="") ссылка
-		+e.footer._align-content_right
+		+e.footer._align-content_between
+			+pager
 			div
 				+select()._search
 					option 25 объявлений на страницу
