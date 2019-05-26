@@ -1,53 +1,65 @@
 include ../title/title
 include ../phone/phone
+include ../show-phone/show-phone
 include ../action/action
 include ../gallery/gallery
 include ../share/share
-include ../action/action
+include ../short-poster/short-poster
 
 mixin card(data, id)
 	-var item = data[id];
 	+b.card&attributes(attributes)
 		+e.head
-			+title(1) Продажа #{item.name} в Москве
+			+e.H1.head-title Продажа #{item.name} в Москве
+			+e.head-price
+				+e.price
+					| #{item.price} 
+					+e.SPAN.price-currency ₽
+				+action('like', item.isFavorite)._only-icon._is-visible.card__head-action
+
 		+e.body
 			+e.meta
-				+e.meta-id
-					+e.meta-lbl Номер объявления:
-					+e.meta-row № #{item.id}
-					+e.meta-row 
-						+e.SPAN.meta-date #{item.pubdate}
-						+e.SPAN.meta-view
-							+icon('eye', false).meta-view-icon
-							| #{item.inspect.viewAll} 
-						+e.SPAN.meta-remark (#{item.inspect.viewToday} сегодня)
-				+e.meta-inspect
-					+e.meta-lbl Адрес осмотра:
-					+e.meta-row #{item.inspect.city}, #{item.inspect.adress}
-					+e.meta-row 5 автомобилей в наличии
-				+e.meta-seller
-					+e.meta-lbl Продавец:
-					+e.meta-row #{item.author} 
-						+e.SPAN.meta-remark (#{item.authorStatus})
+				+e.meta-data
 					+e.meta-row
-						+phone(item.contact).card__meta-phone
-				+e.meta-price
-					+action('like', item.isFavorite).card__meta-action
-					+e.price
-						+e.price-value
-							| #{item.price} 
-							+e.SPAN.price-currency ₽
+						+e.meta-updated
+							+e.SPAN.meta-date
+								+e.SPAN.meta-lbl 
+									+icon('update', false).meta-view-icon
+									| Обновлено
+								| #{item.updated}
+						+e.meta-input
+							+e.SPAN.meta-date
+								+e.SPAN.meta-lbl 
+									+icon('update', false).meta-view-icon
+									| Добавлено
+								| #{item.pubdate}
+							+e.SPAN.meta-id № #{item.id}
 
-			+e.ads
-				img(src="assets/images/card-ads.jpg", alt="")
+					+e.meta-row
+						+e.meta-updated
+							+e.SPAN.meta-view
+								+icon('eye', false).meta-view-icon
+								| #{item.inspect.viewAll}
+
+								+e.SPAN.meta-remark (#{item.inspect.viewToday} сегодня)
+
+						+e.meta-input
+							+e.meta-inspect(title="#{item.inspect.city}, #{item.inspect.address}")
+								+e.SPAN.meta-lbl 
+									+icon('pin', false).meta-view-icon
+									| Место осмотра
+								| #{item.inspect.city}, #{item.inspect.address}
+
+				+e.meta-seller
+					+e.meta-owner 
+						| #{item.author} 
+						+e.SPAN.meta-remark (#{item.authorStatus})
+					+e.meta-contact
+						+show-phone(item.contact).card__meta-phone
+						//- +phone(item.contact).card__meta-phone
 
 			+e.data
-				+e.data-row
-					+e.gallery
-						if item.gallery
-							+e.gallery-list
-								each img in item.gallery
-									img(src=img, alt="")
+				+e.data-side
 					+e.feature
 						+e.DL.feature-list
 							+e.feature-row
@@ -96,12 +108,22 @@ mixin card(data, id)
 								+e.DT.feature-term Таможня
 								-var cleared = item.feature.cleared ? 'растаможен' : 'не растаможен';
 								+e.DD.feature-desc #{cleared}
-						+e.yad
-							img(src="assets/images/yad1.png", alt="")
-				+e.data-row
-					+e.yad
-						img(src="assets/images/yad2.jpg", alt="")
-				+e.data-row
+						+e.A.feature-link(href="") Все характеристики модели в каталоге
+
+					+short-poster(item).card__data-sticky
+
+				+e.data-main
+					+e.gallery
+						if item.gallery
+							+e.gallery-list
+								each img in item.gallery
+									img(src=img, alt="")
+
+					+e.comment
+						+title(3) Комментарий продавца
+						+e.comment-body
+							| #{item.comment}
+
 					+e.kit
 						+e.kit-head
 							+title(3) Комплектация
@@ -126,18 +148,13 @@ mixin card(data, id)
 									+e.DD.kit-desc Усилитель руляк
 								if item.feature.tintedGlass
 									+e.DD.kit-desc Тонированные стекла
-								//- if item.tintedGlass
-								//- 	+e.DD.desc
 							+e.DL.kit-item
 								+e.DT.kit-title Экстерьер
 								+e.DD.kit-desc 
 									if item.feature.alloyWheels
 										| Легкосплавные диски 
 									| #{item.feature.radiusWheels}''
-					+e.comment
-						+title(3) Комментарий продавца
-						+e.comment-body
-							| #{item.comment}
+					
 		+e.action
 			+share
 			+action

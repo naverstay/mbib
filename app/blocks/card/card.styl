@@ -88,10 +88,16 @@
 			fill currentColor
 
 	&__head
+		+above(768px)
+			display flex
+			flex-wrap nowrap
+			align-items flex-start
+			margin-bottom 15px
+			
 		+above(980px)
-			padding 17px 18px 5px
+			margin-bottom 0
+			padding 25px 18px
 			background-color #fff
-			border-bottom 1px solid $colorDecorative
 			
 		&_draft
 			padding 10px
@@ -104,7 +110,46 @@
 				
 			+above(980px)
 				padding-bottom 18px
+				
+	&__head-title
+		margin-bottom 15px
+		font-size 24px
+		line-height 1.2
+		font-weight bold
 		
+		+above(768px)
+			margin-bottom 0
+			padding-right 20px
+			flex-shrink 0
+			width 68%
+			
+		+above(980px)
+			width 75%
+			font-size 30px
+		
+	&__head-price
+		margin-bottom 15px
+		display flex
+		justify-content space-between
+		align-items center
+		
+		+above(768px)
+			margin-bottom 0
+			width 32%
+		
+		+above(980px)
+			margin-bottom 0
+			padding-top 3px
+			width 25%
+			flex-shrink 0
+			justify-content flex-end
+		
+	&__head-action
+		margin-left 20px
+		
+		+above(768px)
+			margin-left 0
+
 	&__body
 		^[0]_draft &
 			padding-left 10px
@@ -135,80 +180,109 @@
 		^[0]_draft &
 			margin-bottom 30px
 			
+	&__meta-data
+		+above(768px)
+			padding-right 15px
+			width 65%
+			flex-shrink 0
+			
+		// +above(980px)
+			
+		+above(1170px)
+			width 50%
+			
+			
 	&__meta-id
-		margin-bottom 18px
-		
+		display inline-block
+	
+	&__meta-seller
 		+above(768px)
 			margin-bottom 6px
-			width 50%
-			flex-basis 50%
-			padding-right 15px
-			
+			padding-left 15px
+			display flex
+			width 35%
+			flex-shrink 0
+			flex-direction column
 			
 		+above(980px)
 			margin-bottom 0
-			width 20%
-			max-width 210px
-			flex-basis unset
-	
-	&__meta-inspect
-		margin-bottom 18px
+			
+		+above(1170px)
+			width 50%
+			flex-basis 50%
+			flex-direction row
+
+	&__meta-owner
+		margin-bottom 20px
+		font-weight bold
 		
-		+above(768px)
-			margin-bottom 6px
+		+above(1170px)
+			margin-bottom 0
 			width 50%
 			flex-basis 50%
 			padding-left 15px
 			
-		+above(980px)
+	&__meta-row
+		margin-bottom 15px
+		line-height 1.2
+		
+		+above(768px)
+			display flex
+			
+	&__meta-updated
+		margin-bottom 15px
+		
+		+above(768px)
 			margin-bottom 0
 			padding-right 15px
-			width auto
-			flex-basis unset
-			
-	&__meta-seller
+			width 40%
+			flex-basis 40%
+		
+	&__meta-input
 		+above(768px)
-			margin-bottom 6px
-			padding-right 15px
+			padding-left 15px
+			width 60%
+			flex-basis 60%
+			
+	&__meta-contact
+		+above(1170px)
 			width 50%
 			flex-basis 50%
+			padding-left 15px
 			
+	&__meta-inspect
 		+above(980px)
-			margin-bottom 0
-			padding-right 15px
-			width 20%
-			flex-basis unset
-		
+			white-space nowrap
+			overflow hidden
+			text-overflow ellipsis
+			width 100%
+			
 	&__meta-lbl
-		margin-bottom 10px
+		display inline-block
+		margin-right 5px
 		color darken($colorDecorative, 40)
 		
-		+above(768px)
-			margin-right 5px
-			float left
-			
-		+above(980px)
-			margin-right 0
-			float none
-			
 		^[0]__meta-inspect &
 			+above(768px)
 				float none
-				
-		
-	&__meta-row
-		margin-bottom 10px
-		
+
 	&__meta-remark
 		margin-left 6px
 		font-size 12px
+		font-weight normal
 		color darken($colorDecorative, 40)
 		
 		&:first-child
 			margin-left 0
-			
+	
 	&__meta-date
-		margin-right 5px
+		margin-right 15px
+		
+		+above(768px)
+			margin-right 40px
+		
+		&:last-child
+			margin-right 0
 
 	&__meta-view-icon
 		position relative
@@ -238,43 +312,22 @@
 			
 	&__price
 		position relative
-		
-		+above(768px)
-			padding-left 21px
-			overflow-y hidden
-			height 50px
-
-			&:before
-				position absolute
-				z-index 0
-				top -5px
-				left 0
-				content ''
-				border-top 30px solid rgba(#fff, 0)
-				border-right 25px solid #b3001a
-				border-bottom 30px solid rgba(#fff, 0)
-				
-		/*+above(980px)
-			margin-top 17px*/
-		
-	&__price-value
-		position relative
-		display block
-		font-size 32px
+		font-size 28px
 		font-weight bold
-		color $colorMain
+		letter-spacing -1px
 		
 		+above(768px)
-			padding 10px 15px 5px 5px
-			height 50px
+			margin-right 10px
+			font-size 34px
 			white-space nowrap
-			color #fff
-			background-color $colorMain
-			background-image linear-gradient(to right, #b3001a, $colorMain)
 
 	&__price-currency
-		font-size 28px
+		font-size 20px
 		font-weight normal
+		letter-spacing 0
+		
+		+above(768px)
+			font-size 28px
 		
 	&__meta-phone
 		+above(768px)
@@ -303,32 +356,52 @@
 			background-color #fff
 
 		+above(980px)
+			display flex
 			padding 20px 20px 1px
 			
 		^[0]_draft &
 			+above(768px)
 				padding-left 0
 				padding-right 0
+	
+	&__data-side
+		width 100%
+		
+		+above(980px)
+			padding-right 15px
+			padding-bottom 20px
+			flex-basis 35%
+			width 35%
 			
+	&__data-main
+		width 100%
+		
+		+above(980px)
+			padding-left 15px
+			flex-basis 65%
+			width 65%
 		
 	&__data-row
 		+above(980px)
 			display flex
 			flex-wrap wrap
+			
+	&__data-sticky
+		&&
+			display none
+			top 20px
+		
+			+above(768px)
+				display block
+				position sticky
 		
 	&__feature
 		margin-bottom 15px
 		width 100%
 		
 		+above(980px)
-			margin-bottom 0
-			padding-right 15px
-			width 41%
-			order 1
+			margin-bottom 67px
 			
-			^[0]__data_nophoto &
-				order 0
-		
 	&__feature-list
 		margin 12px 0 19px
 		
@@ -362,6 +435,10 @@
 	&__feature-desc
 		&::first-letter
 			text-transform uppercase
+			
+	&__feature-link
+		text-decoration underline
+		color #787878
 		
 	&__gallery
 		margin-bottom 15px
@@ -369,9 +446,6 @@
 			
 		+above(980px)
 			margin-bottom 30px
-			padding-left 15px
-			width 59%
-			order 2
 		
 		img
 			max-width 100%
@@ -432,14 +506,7 @@
 		+above(980px)
 			width 59%
 
-	&__kit
-		+above(980px)
-			padding-right 15px
-			width 50%
-			
-			^[0]__data_nophoto &
-				padding-right 0
-				width 100%
+	// &__kit
 		
 	&__kit-head
 		margin-bottom 19px
@@ -474,8 +541,6 @@
 			
 		+above(980px)
 			margin-bottom 23px
-			padding-left 15px
-			width 50%
 			
 			^[0]__data_nophoto &
 				padding-left 0

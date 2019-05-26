@@ -83,6 +83,7 @@
 			
 			.card-list__item:hover &,
 			.card-list__item &_active
+			^[0]_is-visible&
 				opacity 1
 				
 			.page_touch &
@@ -115,17 +116,18 @@
 				transition opacity .3s, transform .3s
 			
 			&:before
-				position absolute
-				z-index -1
-				top 50%
-				right -5px
-				margin-top -3px
-				size 7px
-				content ''
-				background-color #fff
-				border-top 1px solid $colorDecorative
-				border-right 1px solid $colorDecorative
-				transform rotate(45deg)
+				+above(768px)
+					position absolute
+					z-index -1
+					top 50%
+					right -5px
+					margin-top -3px
+					size 7px
+					content ''
+					background-color #fff
+					border-top 1px solid $colorDecorative
+					border-right 1px solid $colorDecorative
+					transform rotate(45deg)
 				
 		.page:not(.page_touch) ^[0]_only-icon ^[0]__item:hover &
 			+above(768px)

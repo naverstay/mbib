@@ -1,0 +1,16 @@
+include ../show-phone/show-phone
+include ../action/action
+
+mixin short-poster(data)
+	+b.short-poster&attributes(attributes)
+		+e.H4.title #{data.name}
+		+e.price 
+			| #{data.price} 
+			+e.SPAN.price-currency ₽
+			+action('like', data.isFavorite)._only-icon._is-visible.short-poster__action
+		+e.owner
+			| #{data.author} 
+			+e.SPAN.remark (#{data.authorStatus})
+		+e.address #{data.inspect.city}, #{data.inspect.address}
+		+e.contact
+			+show-phone(data.contact).card__meta-phone

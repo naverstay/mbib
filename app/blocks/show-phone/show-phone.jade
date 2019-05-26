@@ -1,0 +1,6 @@
+include ../btn/btn
+
+mixin show-phone(data)
+	+btn()._size_xxl._theme_secondary(type="button").show-phone__&attributes(attributes)
+		+e.SPAN.label Показать телефон
+		+e.SPAN.placeholder +7&nbsp;***&nbsp;***&nbsp;**&nbsp;**

@@ -1,0 +1,62 @@
+.short-poster
+	display block
+	padding 12px
+	font-size 12px
+	border 1px solid $colorDecorative
+	
+	+above(768px)
+		padding 24px
+	
+	&__title
+		margin-bottom 16px
+		font-size 16px
+		line-height 1.5
+		font-weight bold
+		
+		+above(768px)
+			margin-bottom 24px
+	
+	&__price
+		margin-bottom 15px
+		display flex
+		align-items baseline
+		font-weight bold
+		font-size 24px
+		
+		+above(768px)
+			margin-bottom 22px
+			justify-content flex-start
+			font-size 28px
+			
+		
+	&__price-currency
+		font-weight normal
+		margin-left 6px
+		font-size 20px
+		
+		+above(768px)
+			margin-left 10px
+			font-size 24px
+		
+	&__action
+		margin-top -5px
+		display inline-block
+		align-self flex-end
+		margin-left auto
+		font-weight normal
+		
+		+above(768px)
+			margin-top 0
+			margin-left 55px
+		
+	&__owner
+		margin-bottom 10px
+		font-weight bold
+		
+	&__remark
+		color darken($colorDecorative, 40)
+		font-weight normal
+		
+	&__address
+		margin-bottom 25px
+		color #787878
