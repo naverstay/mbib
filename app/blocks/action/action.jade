@@ -28,6 +28,11 @@ mixin action(item, isFavorite)
 				+e.SPAN.icon
 					+icon('pencil', false).icon-img
 				+e.item-text Редактировать
+			+e.A.item(href="")
+				//- +icon()
+				+e.SPAN.icon
+					+icon('close', false).icon-img
+				+e.item-text Удалить
 		else if item === 'like'
 			+e.A.item._simple(href="")
 				//- +icon()
