@@ -24,13 +24,13 @@ mixin card(data, id)
 						+e.meta-updated
 							+e.SPAN.meta-date
 								+e.SPAN.meta-lbl 
-									+icon('update', false).meta-view-icon
+									+icon('round-arrow', false).meta-view-icon
 									| Обновлено
 								| #{item.updated}
 						+e.meta-input
 							+e.SPAN.meta-date
 								+e.SPAN.meta-lbl 
-									+icon('update', false).meta-view-icon
+									+icon('clock', false).meta-view-icon
 									| Добавлено
 								| #{item.pubdate}
 							+e.SPAN.meta-id № #{item.id}
