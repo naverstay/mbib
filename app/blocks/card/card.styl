@@ -237,12 +237,17 @@
 			padding-right 15px
 			width 40%
 			flex-basis 40%
+			flex-shrink 0
 		
 	&__meta-input
 		+above(768px)
 			padding-left 15px
 			width 60%
 			flex-basis 60%
+			flex-grow 1
+			
+			&:first-child
+				padding-left 0
 			
 	&__meta-contact
 		+above(1170px)
