@@ -1,6 +1,10 @@
 include ../btn/btn
 
-mixin show-phone(data)
-	+btn()._size_xxl._theme_secondary(type="button").show-phone__&attributes(attributes)
-		+e.SPAN.label Показать телефон
-		+e.SPAN.placeholder +7&nbsp;***&nbsp;***&nbsp;**&nbsp;**
+mixin show-phone(data, show)
+	+b.show-phone&attributes(attributes)
+		if show
+			+btn()._size_xxl._theme_secondary(type="button").show-phone__button.show-phone__
+				span.show-phone__label Показать телефон
+				span.show-phone__placeholder +7&nbsp;***&nbsp;***&nbsp;**&nbsp;**
+		else
+			+e.A.link(href=`tel:#{data.phone}`) #{data.phone}

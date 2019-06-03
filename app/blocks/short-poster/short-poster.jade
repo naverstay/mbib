@@ -13,4 +13,4 @@ mixin short-poster(data)
 			+e.SPAN.remark (#{data.authorStatus})
 		+e.address #{data.inspect.city}, #{data.inspect.address}
 		+e.contact
-			+show-phone(data.contact).card__meta-phone
+			+show-phone(data.contact, true).card__meta-phone

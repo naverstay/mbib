@@ -55,7 +55,7 @@ mixin card(data, id)
 						| #{item.author} 
 						+e.SPAN.meta-remark (#{item.authorStatus})
 					+e.meta-contact
-						+show-phone(item.contact).card__meta-phone
+						+show-phone(item.contact, false).card__meta-phone
 						//- +phone(item.contact).card__meta-phone
 
 			+e.data
