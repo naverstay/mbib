@@ -16,6 +16,7 @@ import '../blocks/add-photo/add-photo';
 import '../blocks/range/range';
 import '../blocks/thumb-gallery/thumb-gallery';
 import '../blocks/phone-field/phoneField';
+import '../blocks/show-phone/show-phone';
 import 'lazysizes';
 import 'notyf';
 
