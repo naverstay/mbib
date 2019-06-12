@@ -9,6 +9,7 @@ include ../car-name/car-name
 include ../tab/tab
 include ../upload/upload
 include ../show-phone/show-phone
+include ../short-poster/short-poster
 
 mixin card_draft(data, id)
 	-var item = data[id];
@@ -47,13 +48,13 @@ mixin card_draft(data, id)
 						+e.meta-updated
 							+e.SPAN.meta-date
 								+e.SPAN.meta-lbl 
-									+icon('update', false).meta-view-icon
+									+icon('round-arrow', false).meta-view-icon
 									| Обновлено
 								| #{item.updated}
 						+e.meta-input
 							+e.SPAN.meta-date
 								+e.SPAN.meta-lbl 
-									+icon('update', false).meta-view-icon
+									+icon('clock', false).meta-view-icon
 									| Добавлено
 								| #{item.pubdate}
 							+e.SPAN.meta-id № #{item.id}
@@ -173,6 +174,8 @@ mixin card_draft(data, id)
 								+e.DT.feature-term Таможня
 								-var cleared = item.feature.cleared ? 'растаможен' : 'не растаможен';
 								+e.DD.feature-desc #{cleared}
+
+					+short-poster(item).card__data-sticky
 
 				+e.data-main
 					+e.gallery
