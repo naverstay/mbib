@@ -33,7 +33,8 @@ mixin card_draft(data, id)
 			+e.A.bar-action(href="") Опубликовать 
 				+icon('add-sq', false).bar-icon
 		+e.head._draft
-			+car-name(1, 'BMW / X3 / 2013 Внедорожник 5 дв. II (F25) / xDrive 2.0 AT (184 л.с.)', 'bmw')._draft
+			+e.head-title
+				+car-name(1, 'BMW / X3 / 2013 Внедорожник 5 дв. II (F25) / xDrive 2.0 AT (184 л.с.)', 'bmw')._draft
 			+e.head-price
 				+e.price
 					| #{item.price} 
