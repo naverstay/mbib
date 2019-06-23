@@ -1,70 +1,70 @@
 const search = (() => {
-	const wrap = document.querySelector('.search');
+  const wrap = document.querySelector('.search');
 
-	if (!wrap) { return false; }
+  if (!wrap) { return false; }
 
-	try {
-		
-		const switcher = wrap.querySelector('.search__switcher');
-		const switcherText = switcher.querySelector('.btn__text');
-		const switcherLabelOpen = 'Скрыть поиск';
-		const switcherLabelСlose = 'Расширенный поиск';
-		const advanced = wrap.querySelector('.search__advanced');
+  try {
 
-		switcher.addEventListener('click', () => {
-			switcherText.textContent = switcherLabelOpen;
-			if (wrap.classList.contains('search_show-advanced')) {
-				switcherText.textContent = switcherLabelСlose;
-				advanced.style.overflow = 'hidden';
-			}
-			wrap.classList.toggle('search_show-advanced');
-		});
+    const switcher = wrap.querySelector('.search__switcher');
+    const switcherText = switcher.querySelector('.btn__text');
+    const switcherLabelOpen = 'Скрыть поиск';
+    const switcherLabelСlose = 'Расширенный поиск';
+    const advanced = wrap.querySelector('.search__advanced');
 
-		wrap.addEventListener('transitionend', () => {
-			wrap.classList.contains('search_show-advanced') ? advanced.style.overflow = 'visible' : '';
-		});
+    switcher.addEventListener('click', () => {
+      switcherText.textContent = switcherLabelOpen;
+      if (wrap.classList.contains('search_show-advanced')) {
+        switcherText.textContent = switcherLabelСlose;
+        advanced.style.overflow = 'hidden';
+      }
+      wrap.classList.toggle('search_show-advanced');
+    });
 
-		const switcherGroup = document.querySelectorAll('.search .form__group-name');
+    wrap.addEventListener('transitionend', () => {
+      wrap.classList.contains('search_show-advanced') ? advanced.style.overflow = 'visible' : '';
+    });
 
-		for (let switcherItem of switcherGroup) {
-			switcherItem.addEventListener('click', event => {
-				const wrapper = event.target.closest('.form__group_is-accordion');
-				wrapper.classList.toggle('form__group_is-accordion-open');
-			});
-		}
-	} catch(err) {
-	};
+    const switcherGroup = document.querySelectorAll('.search .form__group-name');
 
-	try {
-		const dropSwitcher = wrap.querySelector('.search__drop-switcher');
-		const showDropClass = 'search_show-drop';
+    for (let switcherItem of switcherGroup) {
+      switcherItem.addEventListener('click', event => {
+        const wrapper = event.target.closest('.form__group_is-accordion');
+        wrapper.classList.toggle('form__group_is-accordion-open');
+      });
+    }
+  }catch (err) {
+  }
 
-		dropSwitcher.addEventListener('click', () => {
-			wrap.classList.toggle(showDropClass);
-		});
+  try {
+    const dropSwitcher = wrap.querySelector('.search__drop-switcher');
+    const showDropClass = 'search_show-drop';
 
-	} catch(err) {}
+    dropSwitcher.addEventListener('click', () => {
+      wrap.classList.toggle(showDropClass);
+    });
 
-	try {
-		const header = wrap.querySelector('.search__header');
-		const headerButton = wrap.querySelector('.search__header-toggler');
-		const advanced = wrap.querySelector('.search__row_advanced');
+  }catch (err) {}
 
-		headerButton.addEventListener('click', (e) => {
-			if (wrap.classList.contains('search_show-advanced')) {
-				advanced.style.overflow = 'hidden';
-			}
+  try {
+    const header = wrap.querySelector('.search__header');
+    const headerButton = wrap.querySelector('.search__header-toggler');
+    const advanced = wrap.querySelector('.search__row_advanced');
 
-			header.classList.toggle('search__header_open');
-			wrap.classList.toggle('search_show-advanced');
-		});
+    headerButton.addEventListener('click', (e) => {
+      if (wrap.classList.contains('search_show-advanced')) {
+        advanced.style.overflow = 'hidden';
+      }
 
-		wrap.addEventListener('transitionend', () => {
-			wrap.classList.contains('search_show-advanced') ? advanced.style.overflow = 'visible' : '';
-		});
+      header.classList.toggle('search__header_open');
+      wrap.classList.toggle('search_show-advanced');
+    });
+
+    wrap.addEventListener('transitionend', () => {
+      wrap.classList.contains('search_show-advanced') ? advanced.style.overflow = 'visible' : '';
+    });
 
 
-	} catch(err) {}
+  }catch (err) {}
 
 })();
 
