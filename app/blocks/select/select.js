@@ -1,12 +1,9 @@
 import $ from 'jquery';
-import jQuery from 'jquery';
 import 'magnific-popup';
 import 'select2';
 import checkIsMobile from '../../scripts/isMobile.js';
 
-export default {
-
-  init() {
+export default (() => {
     const isMobile = checkIsMobile();
     const formatBrandResult = state => {
       if (!state.id) {
@@ -147,70 +144,4 @@ export default {
             // templateSelection: formatMultiSelectResult,
             allowClear: true
           }); */
-  }
-};
-
-jQuery(function ($) {
-  $.fn.select2.amd.require([
-    'select2/selection/single',
-    'select2/selection/placeholder',
-    'select2/selection/allowClear',
-    'select2/dropdown',
-    'select2/dropdown/search',
-    'select2/dropdown/attachBody',
-    'select2/utils'
-  ], function (SingleSelection, Placeholder, AllowClear, Dropdown, DropdownSearch, AttachBody, Utils) {
-
-    const isMobile = checkIsMobile();
-
-    let SelectionAdapter = Utils.Decorate(
-      SingleSelection,
-      Placeholder
-    );
-
-    SelectionAdapter = Utils.Decorate(
-      SelectionAdapter,
-      AllowClear
-    );
-
-    const DropdownAdapter = Utils.Decorate(
-      Utils.Decorate(
-        Dropdown,
-        DropdownSearch
-      ),
-      AttachBody,
-    );
-
-    const multiSelects = document.querySelectorAll('.select_multi');
-
-    multiSelects.forEach(select => {
-      $(select).select2({
-        selectionAdapter: SelectionAdapter,
-        dropdownAdapter: DropdownAdapter,
-        allowClear: true,
-        // dropdownParent: $('#modal .modal__body'),
-        templateResult: (data) => {
-          if (!data.id) { return data.text; }
-
-          const $res = $('<div></div>');
-
-          $res.text(data.text);
-          $res.addClass('wrap');
-
-          return $res;
-        },
-        templateSelection: (data) => {
-          if (!data.id) { return data.text; }
-
-          const selected = ($(select).val() || []).length;
-          const placeholder = $(data.element.parentNode).attr('data-placeholder');
-
-          return selected >= 2 ? `${placeholder} (${selected})` : data.text;
-        }
-      });
-
-    });
-
-  });
-
-});
+})();

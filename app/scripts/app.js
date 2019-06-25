@@ -2,6 +2,7 @@ import svg4everybody from 'svg4everybody';
 import $ from 'jquery';
 import tab from '../blocks/tab/tab';
 import select from '../blocks/select/select';
+import multiselect from '../blocks/select/multiselect';
 import carousel from '../blocks/carousel/carousel';
 import gallery from '../blocks/gallery/gallery';
 import digitpretify from '../blocks/input/input';
@@ -34,8 +35,6 @@ $(() => {
   sidenav();
 
   carousel.init();
-
-  select.init();
 
   gallery.init();
 

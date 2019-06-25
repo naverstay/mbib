@@ -185,7 +185,7 @@ mixin search()
         +e.row
           +e.col._span_3.form__
             +e.FIELDSET.group
-              +select(name="helpDrive[]" data-placeholder="Помощь при вождении" multiple="multiple" data-minimum-results-for-search="Infinity")._search._multi
+              +select(name="helpDrive[]" data-placeholder="Помощь при вождении" multiple="multiple" data-minimum-results-for-search="Infinity")._multi
                   option(value="prt") Автоматический парковщик
                   option(value="rainc") Датчик дождя
                   option(value="ss") Датчик света
@@ -197,14 +197,14 @@ mixin search()
                   option(value="comp") Бортовой компьютер
 
             +e.FIELDSET.group
-              +select(name="alarm[]" data-placeholder="Противоугонная система" multiple="multiple" data-minimum-results-for-search="Infinity")._search._multi
+              +select(name="alarm[]" data-placeholder="Противоугонная система" multiple="multiple" data-minimum-results-for-search="Infinity")._multi
                 option(value="alarm") Сигнализация
                 option(value="lock") Центральный замок
                 option(value="immobiliser") Иммобилайзер
                 option(value="sputnik") Спутник
 
             +e.FIELDSET.group
-              +select(name="airbag[]" data-placeholder="Подушки безопасности" multiple="multiple" data-minimum-results-for-search="Infinity")._search._multi
+              +select(name="airbag[]" data-placeholder="Подушки безопасности" multiple="multiple" data-minimum-results-for-search="Infinity")._multi
                 option(value="airbagf") Фронтальные
                 option(value="airbagk") Коленные
                 option(value="airbagс") Шторки
@@ -213,7 +213,7 @@ mixin search()
 
           +e.col._span_3.form__
             +e.FIELDSET.group
-              +select(name="abs[]" data-placeholder="Активная безопасность" multiple="multiple" data-minimum-results-for-search="Infinity")._search._multi
+              +select(name="abs[]" data-placeholder="Активная безопасность" multiple="multiple" data-minimum-results-for-search="Infinity")._multi
                 option(value="abs") Антиблокировка тормозов
                 option(value="asr") Антипробуксовка
                 option(value="abs") Курсовая устойчивость
@@ -222,44 +222,68 @@ mixin search()
                 option(value="arb") Блок. дифференциала
                 option(value="pds") Обнаружение пешеходов
 
-            +e.FIELDSET.group
-              +select(name="to[]" data-placeholder="Фары, шины и диски" multiple="multiple" data-minimum-results-for-search="Infinity")._search._multi
-                option(value="gal") Галогенные
-                option(value="ksen") Ксеноновые
-                option(value="diod") Светодиодные
-                option(value="headlight_ad") Противотуманные
-                option(value="headlight_ad") Омыватели фар
-                option(value="headlight_ad") Адаптивное освещение
-                option(value="r14") 14 радиус
-                option(value="r15") 15 радиус
-                option(value="r16") 16 радиус
-                option(value="r17") 17 радиус
-                option(value="r18") 18 радиус
-                option(value="winter") Зимние шины в комплекте
+            +e.FIELDSET.group._is-accordion
+              +e.LEGEND.group-name
+                +e.SPAN.group-name-text Фары, шины и диски
+              +e.group-inner
+                +e.group-item
+                  +select(name="to[]" data-placeholder="Фары" multiple="multiple" data-minimum-results-for-search="Infinity" tabindex="23")._multi
+                    option(value="")
+                    option(value="gal") Галогенные
+                    option(value="ksen") Ксеноновые
+                    option(value="diod") Светодиодные
+                +e.group-item
+                  +checkbox(name="headlight_ad" id="pt") Противотуманные
+                +e.group-item
+                  +checkbox(name="headlight_ad" id="chd") Омыватели фар
+                +e.group-item
+                  +checkbox(name="headlight_ad" id="adcl") Адаптивное освещение
+                +e.group-item
+                  +select(name="radius[]" multiple="multiple" data-placeholder="Радиус")._multi
+                    option(value="r14") 14
+                    option(value="r15") 15
+                    option(value="r16") 16
+                    option(value="r17") 17
+                    option(value="r18") 18
+                +e.group-item
+                  +checkbox(name="winter" id="winter") Зимние шины в комплекте
 
             +e.FIELDSET.group._is-accordion
-              +select(name="windows[]" data-placeholder="Электростеклоподъемники" multiple="multiple" data-minimum-results-for-search="Infinity")._search._multi
+              +select(name="windows" data-placeholder="Электростеклоподъемники" data-minimum-results-for-search="Infinity")._search
                 option(value="fr") Только передние
                 option(value="bfr") Передние и задние
 
           +e.col._span_3.form__
-            +e.FIELDSET.group
-              +select(name="audio[]" data-placeholder="Аудиосистема, мультимедиа" multiple="multiple" data-minimum-results-for-search="Infinity")._search._multi
-                option(value="fr") 2 колонки
-                option(value="bfr") 4 колонки
-                option(value="bfr") 6 колонки
-                option(value="bfr") 8 колонки
-                option(value="cd") CD/DVD/Blu-ray
-                option(value="mp3") MP3
-                option(value="mirc") Зеркал
-                option(value="radio") Радио
-                option(value="tv") TV
-                option(value="video") Видео
-                option(value="ondrive") Управление на руле
-                option(value="usb") USB
+            +e.FIELDSET.group._is-accordion
+              +e.LEGEND.group-name
+                +e.SPAN.group-name-text Аудиосистема, мультимедиа
+              +e.group-inner
+                +e.group-item
+                  +select(name="audio" data-placeholder="Аудиосистема" data-minimum-results-for-search="Infinity")._search
+                    option(value="")
+                    option(value="fr") 2 колонки
+                    option(value="bfr") 4 колонки
+                    option(value="bfr") 6 колонки
+                    option(value="bfr") 8 колонки
+                +e.group-item
+                  +checkbox(name="cd" id="cd") CD/DVD/Blu-ray
+                +e.group-item
+                  +checkbox(name="mp3" id="mp3") MP3
+                +e.group-item
+                  +checkbox(name="mirc" id="mirc") Зеркал
+                +e.group-item
+                  +checkbox(name="radio" id="radio") Радио
+                +e.group-item
+                  +checkbox(name="tv" id="tv") TV
+                +e.group-item
+                  +checkbox(name="video" id="video") Видео
+                +e.group-item
+                  +checkbox(name="ondrive" id="ondrive") Управление на руле
+                +e.group-item
+                  +checkbox(name="usb" id="usb") USB
 
             +e.FIELDSET.group
-              +select(name="electrodrive[]" data-placeholder="Электропривод" multiple="multiple" data-minimum-results-for-search="Infinity")._search._multi
+              +select(name="electrodrive[]" data-placeholder="Электропривод" multiple="multiple" data-minimum-results-for-search="Infinity")._multi
                 option(value="climatdrive") Управление на руле
                 option(value="climatglass") Атермальное остекление
                 option(value="drivemiracle") Зеркал
@@ -268,7 +292,7 @@ mixin search()
 
           +e.col._span_3.form__
             +e.FIELDSET.group
-              +select(name="material[]" data-placeholder="Салон, климат" multiple="multiple" data-minimum-results-for-search="Infinity")._search._multi
+              +select(name="material[]" data-placeholder="Салон, климат" multiple="multiple" data-minimum-results-for-search="Infinity")._multi
                 option(value="sa") Кожа
                 option(value="as") Ткань
                 option(value="fe") Велюр
@@ -277,7 +301,7 @@ mixin search()
                 option(value="airlock") Люк
 
             +e.FIELDSET.group._is-accordion
-              +select(name="climat[]" data-placeholder="Управление климатом" multiple="multiple" data-minimum-results-for-search="Infinity")._search._multi
+              +select(name="climat[]" data-placeholder="Управление климатом" multiple="multiple" data-minimum-results-for-search="Infinity")._multi
                 option(value="ac") Кондиционер
                 option(value="climco") Климат-контроль однозонный
                 option(value="climcsm") Климат-контроль многозонный
@@ -288,7 +312,7 @@ mixin search()
                 option(value="warmdrive") Обогрев руля
 
             +e.FIELDSET.group._is-accordion
-              +select(name="memory[]" data-placeholder="Память настроек" multiple="multiple" data-minimum-results-for-search="Infinity")._search._multi
+              +select(name="memory[]" data-placeholder="Память настроек" multiple="multiple" data-minimum-results-for-search="Infinity")._multi
                 option(value="memory1") Передних сидений
                 option(value="memory2") Задних сидений
                 option(value="memory3") Зеркал
