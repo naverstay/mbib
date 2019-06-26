@@ -54,7 +54,7 @@ export default (() => {
               const $res = $('<div></div>');
 
               $res.text(data.text);
-              $res.addClass('wrap');
+              $res.addClass('select2-results__option-inner');
 
               return $res;
             },

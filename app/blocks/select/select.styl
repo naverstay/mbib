@@ -120,17 +120,51 @@
   padding 0
   list-style none
 
-.select2-results__option
-  padding 8px 10px
-  user-select none
-  -webkit-user-select none
+.select2-results
+  &__option
+    padding 8px 10px
+    user-select none
+    -webkit-user-select none
 
-  +above(1170px)
-    padding-right 14px
-    padding-left 14px
+    +above(1170px)
+      padding-right 14px
+      padding-left 14px
 
-  &[aria-selected]
-    cursor pointer
+    &[aria-selected]
+      cursor pointer
+
+  &__option-inner
+    position relative
+    padding-left 24px
+
+    &::before
+      content ''
+      position absolute
+      left 0px
+      top 0
+      width 12px
+      height 12px
+      border 1px solid $colorDecorative
+      border-radius 2px
+
+    &::after
+      content ''
+      position absolute
+      left 3px
+      top 4px
+      width 8px
+      height 4px
+      border-left 1px solid #000
+      border-bottom 1px solid #000
+      transform rotate(-45deg)
+      opacity 0
+
+      ^[0]__option--highlighted &
+        border-color #fff
+
+
+  &__option[aria-selected=true] &__option-inner::after
+    opacity 1
 
 .select2-results__option-brand
   position relative
@@ -368,6 +402,12 @@
 
 .select2-container--default .select2-results__option[aria-selected=true]
   background-color #ddd
+
+.select2-results__options[aria-multiselectable="true"] .select2-results__option[aria-selected=true]
+  background-color #fff
+
+.select2-results__options[aria-multiselectable="true"] .select2-results__option--highlighted[aria-selected=true]
+  background-color $colorSecondary
 
 .select2-container--default .select2-results__option .select2-results__option
   padding-left 1em
