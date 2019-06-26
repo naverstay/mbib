@@ -1,340 +1,334 @@
 .form
-	display block
-	
-	&__navigation
-		margin-bottom 20px
-		display flex
-		justify-content space-between
-		
-	&__navigation-spacer
-		flex-grow 1
+  display block
 
-	&__message
-		margin-bottom 1.5em
-		line-height 1.71429
-		
-		&_error
-			color lighten($colorMain, 20)
-	
-	&__section
-		margin-bottom 10px
-		border none
-		
-		+above(768px)
-			margin-bottom 25px
+  &__navigation
+    margin-bottom 20px
+    display flex
+    justify-content space-between
 
-		^[0]_in-akcent &
-			margin-left -10px
-			margin-right -10px
-			padding 0 10px
-			
-			+above(768px)
-				margin-left -24px
-				margin-right -24px
-				padding 0 24px
-		
-		&_separated
-			border-bottom 1px dashed $colorDecorative
-		
-	&__section-wrap
-		margin 0 -8px 35px
-		padding 30px 8px 5px
-		border-top 2px solid #c7dcfc
-		border-bottom 2px solid #c7dcfc
-		
-		+above(768px)
-			margin 0 -24px 35px
-			padding 30px 26px 5px
-			
+  &__navigation-spacer
+    flex-grow 1
 
-		&_marked
-			background-color #eff5fd
+  &__message
+    margin-bottom 1.5em
+    line-height 1.71429
 
-	&__section-name
-		margin-bottom 18px
-		font-size 18px
-		font-weight bold
-		-webkit-padding-start 0
-		-webkit-padding-end 0
-		
-	&__collapse-head
-		margin 0 -8px 12px
-		padding 14px 20px 12px 8px
-		display block
-		width 100%
-		font-size 18px
-		font-weight bold
-		cursor pointer
-		background-color #fff
-		
-		+above(768px)
-			margin 0 -24px 12px
-			padding 14px 24px 12px
-		
-	&__collapse-name
-		position relative
-		line-height 1.1
-		color $colorSecondary
-		background-image linear-gradient(to right, $colorDecorative 75%, transparent 75%)
-		background-position 0 1.1em
-		background-repeat repeat-x
-		background-size 8px 1px
-		
-		.collapse_open &
-			color $colorText
+    &_error
+      color lighten($colorMain, 20)
 
-	&__collapse-icon
-		position absolute
-		right 0
-		top 18px
-		size 8px
-		display inline-block
-		color $colorSecondary
-		background-color #fff
-		border-left 2px solid
-		border-bottom 2px solid
-		transform rotate(-45deg)
-		
-		+above(980px)
-			position relative
-			top -3px
-			right auto
-			margin-left 5px
+  &__section
+    margin-bottom 10px
+    border none
 
-			
-		.collapse_open &
-			transform rotate(135deg) translate3D(2px, -3px, 0)
-			color $colorText
-			
-	&__group
-		margin-bottom 10px
-		width 100%
-		border none
-		
-		+above(768px)
-			margin-bottom 25px
-			
-		&_is-accordion
-			margin-bottom 10px
-			
-			+above(768px)
-				margin-bottom 10px
-			
-			+above(980px)
-				margin-bottom 25px
-				
-	&__group-inner
-		^[0]__group_is-accordion &
-			overflow hidden
-			max-height 0
-			transition max-height .3s
-			
-			+above(980px)
-				max-height 100%
-				overflow visible
-			
-		^[0]__group_is-accordion-open &
-			max-height 3000px
+    +above(768px)
+      margin-bottom 25px
 
-		
-	&__group-name
-		margin-bottom 18px
-		font-size 16px
-		
-		^[0]__group_is-accordion &
-			margin-bottom 10px
-			display block
-			width 100%
-			font-weight bold
-			font-size 14px
-				
-	&__group-name-text
-		^[0]__group_is-accordion &
-			position relative
-			padding-right 30px
-			display flex
-			flex-wrap nowrap
-			width 100%
-			
-			+above(980px)
-				display inline
-			
-			&::after
-				margin-left 10px
-				display block
-				align-self center
-				height 1px
-				width 10%
-				flex-grow 1
-				content ''
-				border-bottom 1px dashed $colorDecorative
-				
-				+above(980px)
-					display none
-				
-			&::before
-				position absolute
-				right 0
-				top 0
-				height 14px
-				width 20px
-				font-size 20px
-				font-weight normal
-				text-align center
-				line-height 14px
-				content '+'
-				
-				+above(980px)
-					display none
-				
-		^[0]__group_is-accordion-open &
-			color $colorMain
-			
-			&::before
-				content '\2013'
-		
-	&__group-item
-		margin-bottom 10px
-		
-	&__head
-		margin 0 -8px 12px
-		padding 18px 8px
-		display block
-		font-size 18px
-		font-weight bold
-		background-color #fffcea
-		border-top 1px dashed $colorDecorative
-		
-		+above(768px)
-			margin 0 -24px 12px
-			padding 18px 25px
-		
-	&__row
-		position relative
-		margin 0 -15px 15px
-		// margin-bottom 15px
-		display flex
-		flex-wrap wrap
-		
-		&_align_right
-			justify-content flex-end
-			
-		&_align_center
-			text-align center
-		
-		&_align_justify
-			justify-content space-between
-			align-items flex-start
-			
-		&_align_left
-			align-items baseline
-			justify-content flex-start
-			
-		^[0]__section &:last-child
-			margin-bottom 0
-			
-	&__item
-		margin 0 15px 10px
-		display flex
-		flex-wrap wrap
-		width calc(100% - 30px)
-		
-		+above(768px)
-			margin-bottom 0
-			width calc(100% / 12 - 30px)
-		
-		&_fullwidth
-			width calc(100% - 30px)
-			
-		&_valign_center
-			align-self center
-			
-		+above(768px)
-			&_tb_fullwidth
-				width calc(100% - 30px)
-				
-			&_tb_2
-				width calc(100% / 6 - 30px)
-				
-			&_tb_3
-				width calc(100% / 4 - 30px)
-				
-			&_tb_4
-				width calc(100% / 3 - 30px)
+    ^[0]_in-akcent &
+      margin-left -10px
+      margin-right -10px
+      padding 0 10px
 
-			&_tb_5
-				width calc(100% * 5 / 12 - 30px)
-				
-			&_tb_6
-				width calc(50% - 30px)
-				
-			&_tb_7
-				width calc(100% * 7 / 12 - 30px)
-		
-		+above(980px)
-			&_span_2
-				width calc(100% / 6 - 31px)
-				
-			&_span_3
-				width calc(100% / 4 - 31px)
-				
-			&_span_4
-				width calc(100% / 3 - 31px)
-				
-			&_span_5
-				width calc(100% * 5 / 12 - 31px)
-				
-			&_span_6
-				width calc(50% - 31px)
-				
-			&_span_7
-				width calc(100% * 7 / 12 - 31px)
-				
-			&_span_8
-				width calc(100% * 2 / 3 - 31px)
-				
-		&_span_flex
-			width auto
-			
-			+above(768px)
-				width auto
-				
-		&_theme_block
-			display block
-			
-	&__warning
-		position relative
-		margin 10px 0 0
-		padding 10px
-		font-size 12px
+      +above(768px)
+        margin-left -24px
+        margin-right -24px
+        padding 0 24px
 
-		color lighten($colorMain, 20)
-		background-color #fff
-		border 1px solid darken($colorDecorative, 10)
-		box-shadow 0 2px 10px rgba(#000, .3)
-		
-		&:before
-			position absolute
-			top -6px
-			left 15px
-			size 10px
-			content ''
-			background-color #fff
-			border-top 1px solid darken($colorDecorative, 10)
-			border-right 1px solid darken($colorDecorative, 10)
-			transform rotate(-45deg)
-	
-	&__remark
-		margin-top 10px
-		// display inline-block
-		display block
-		width 100%
-		font-size 11px
-		line-height 1.2
-		color #ababab
-		
-	&__tab
-		&_in-akcent
-			margin 0 -8px
-			+above(768px)
-				margin 0 -24px
+    &_separated
+      border-bottom 1px dashed $colorDecorative
+
+  &__section-wrap
+    margin 0 -8px 35px
+    padding 30px 8px 5px
+    border-top 2px solid #c7dcfc
+    border-bottom 2px solid #c7dcfc
+
+    +above(768px)
+      margin 0 -24px 35px
+      padding 30px 26px 5px
+
+
+    &_marked
+      background-color #eff5fd
+
+  &__section-name
+    margin-bottom 18px
+    font-size 18px
+    font-weight bold
+    -webkit-padding-start 0
+    -webkit-padding-end 0
+
+  &__collapse-head
+    margin 0 -8px 12px
+    padding 14px 20px 12px 8px
+    display block
+    width 100%
+    font-size 18px
+    font-weight bold
+    cursor pointer
+    background-color #fff
+
+    +above(768px)
+      margin 0 -24px 12px
+      padding 14px 24px 12px
+
+  &__collapse-name
+    position relative
+    line-height 1.1
+    color $colorSecondary
+    background-image linear-gradient(to right, $colorDecorative 75%, transparent 75%)
+    background-position 0 1.1em
+    background-repeat repeat-x
+    background-size 8px 1px
+
+    .collapse_open &
+      color $colorText
+
+  &__collapse-icon
+    position absolute
+    right 0
+    top 18px
+    size 8px
+    display inline-block
+    color $colorSecondary
+    background-color #fff
+    border-left 2px solid
+    border-bottom 2px solid
+    transform rotate(-45deg)
+
+    +above(980px)
+      position relative
+      top -3px
+      right auto
+      margin-left 5px
+
+
+    .collapse_open &
+      transform rotate(135deg) translate3D(2px, -3px, 0)
+      color $colorText
+
+  &__group
+    margin-bottom 10px
+    width 100%
+    border none
+
+    &_is-accordion
+      margin-bottom 10px
+
+  &__group-inner
+    ^[0]__group_is-accordion &
+      overflow hidden
+      max-height 0
+      transition max-height .3s
+
+      +above(980px)
+        max-height 100%
+        overflow visible
+
+    ^[0]__group_is-accordion-open &
+      max-height 3000px
+
+
+  &__group-name
+    margin-bottom 18px
+    font-size 16px
+
+    ^[0]__group_is-accordion &
+      margin-bottom 10px
+      display block
+      width 100%
+      font-weight bold
+      font-size 14px
+
+  &__group-name-text
+    ^[0]__group_is-accordion &
+      position relative
+      padding-right 30px
+      display flex
+      flex-wrap nowrap
+      width 100%
+
+      +above(980px)
+        display inline
+
+      &::after
+        margin-left 10px
+        display block
+        align-self center
+        height 1px
+        width 10%
+        flex-grow 1
+        content ''
+        border-bottom 1px dashed $colorDecorative
+
+        +above(980px)
+          display none
+
+      &::before
+        position absolute
+        right 0
+        top 0
+        height 14px
+        width 20px
+        font-size 20px
+        font-weight normal
+        text-align center
+        line-height 14px
+        content '+'
+
+        +above(980px)
+          display none
+
+    ^[0]__group_is-accordion-open &
+      color $colorMain
+
+      &::before
+        content '\2013'
+
+  &__group-item
+    margin-bottom 10px
+
+    &:last-child
+      margin-bottom 0
+
+  &__head
+    margin 0 -8px 12px
+    padding 18px 8px
+    display block
+    font-size 18px
+    font-weight bold
+    background-color #fffcea
+    border-top 1px dashed $colorDecorative
+
+    +above(768px)
+      margin 0 -24px 12px
+      padding 18px 25px
+
+  &__row
+    position relative
+    margin 0 -15px 15px
+    // margin-bottom 15px
+    display flex
+    flex-wrap wrap
+
+    &_align_right
+      justify-content flex-end
+
+    &_align_center
+      text-align center
+
+    &_align_justify
+      justify-content space-between
+      align-items flex-start
+
+    &_align_left
+      align-items baseline
+      justify-content flex-start
+
+    ^[0]__section &:last-child
+      margin-bottom 0
+
+  &__item
+    margin 0 15px 10px
+    display flex
+    flex-wrap wrap
+    width calc(100% - 30px)
+
+    +above(768px)
+      margin-bottom 0
+      width calc(100% / 12 - 30px)
+
+    &_fullwidth
+      width calc(100% - 30px)
+
+    &_valign_center
+      align-self center
+
+    +above(768px)
+      &_tb_fullwidth
+        width calc(100% - 30px)
+
+      &_tb_2
+        width calc(100% / 6 - 30px)
+
+      &_tb_3
+        width calc(100% / 4 - 30px)
+
+      &_tb_4
+        width calc(100% / 3 - 30px)
+
+      &_tb_5
+        width calc(100% * 5 / 12 - 30px)
+
+      &_tb_6
+        width calc(50% - 30px)
+
+      &_tb_7
+        width calc(100% * 7 / 12 - 30px)
+
+    +above(980px)
+      &_span_2
+        width calc(100% / 6 - 31px)
+
+      &_span_3
+        width calc(100% / 4 - 31px)
+
+      &_span_4
+        width calc(100% / 3 - 31px)
+
+      &_span_5
+        width calc(100% * 5 / 12 - 31px)
+
+      &_span_6
+        width calc(50% - 31px)
+
+      &_span_7
+        width calc(100% * 7 / 12 - 31px)
+
+      &_span_8
+        width calc(100% * 2 / 3 - 31px)
+
+    &_span_flex
+      width auto
+
+      +above(768px)
+        width auto
+
+    &_theme_block
+      display block
+
+  &__warning
+    position relative
+    margin 10px 0 0
+    padding 10px
+    font-size 12px
+
+    color lighten($colorMain, 20)
+    background-color #fff
+    border 1px solid darken($colorDecorative, 10)
+    box-shadow 0 2px 10px rgba(#000, .3)
+
+    &:before
+      position absolute
+      top -6px
+      left 15px
+      size 10px
+      content ''
+      background-color #fff
+      border-top 1px solid darken($colorDecorative, 10)
+      border-right 1px solid darken($colorDecorative, 10)
+      transform rotate(-45deg)
+
+  &__remark
+    margin-top 10px
+    // display inline-block
+    display block
+    width 100%
+    font-size 11px
+    line-height 1.2
+    color #ababab
+
+  &__tab
+    &_in-akcent
+      margin 0 -8px
+      +above(768px)
+        margin 0 -24px
