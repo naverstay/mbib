@@ -1,572 +1,574 @@
 .card
-	margin 10px 0 30px
-	display block
-	
-	&_draft
-		box-shadow 0 0 0 2px $colorDecorative
-		
-	&__bar
-		padding 10px
-		display flex
-		flex-wrap wrap
-		justify-content space-between
-		background-color $bgDecorative
-		box-shadow inset 0 1px 0 #fff
-		
-		+above(768px)
-			padding-left 23px
-			padding-right 23px
-			
-		+above(980px)
-			padding 12px 20px
+  margin 10px 0 30px
+  display block
 
-		&:first-child
-			border-bottom 1px solid $colorDecorative
-			
-		&:last-child
-			border-top 1px solid $colorDecorative
+  &_draft
+    box-shadow 0 0 0 2px $colorDecorative
 
-	&__bar-status
-		position relative
-		margin-bottom 15px
-		font-weight bold
-		flex-grow 1
-		width 100%
-		text-align center
-		
-		+above(768px)
-			margin-bottom 0
-			width auto
-			text-align left
-		
-		&_error
-			color $colorMain
-			
-		&_moderation
-			color $colorSecondary
-			
-		&_complete
-			color $colorAkcent
-			
-	&__bar-status-text
-		position relative
-		padding 3px 0 3px 26px
-		display inline-block
-		
-	&__bar-remark
-		margin-left 16px
-		display inline-block
-		font-size 12px
-		font-weight normal
-		color darken($colorDecorative, 40)
-		
-	&__bar-action
-		position relative
-		margin 0
-		padding 3px 0 3px 26px
-		display inline-block
-		font-size 12px
-		
-		+above(768px)
-			margin 0 15px
-			font-size 14px
-			
-		+above(980px)
-			margin 0 20px
+  &__bar
+    padding 10px
+    display flex
+    flex-wrap wrap
+    justify-content space-between
+    background-color $bgDecorative
+    box-shadow inset 0 1px 0 #fff
 
-		&:last-child
-			margin-right 0
-			
-	&__bar-icon
-		position absolute
-		top 50%
-		left 0
-		margin-top -9px
-		size 18px
-		
-		^[0]__bar-status &
-			fill currentColor
+    +above(768px)
+      padding-left 23px
+      padding-right 23px
 
-	&__head
-		+above(768px)
-			display flex
-			flex-wrap nowrap
-			align-items flex-start
-			margin-bottom 15px
-			
-		+above(980px)
-			margin-bottom 0
-			padding 25px 18px
-			background-color #fff
-			
-		&_draft
-			padding 10px
-			border-bottom none
-			background-color #fff
-			
-			+above(768px)
-				padding-left 23px
-				padding-right 23px
-				
-			+above(980px)
-				padding-bottom 18px
-				
-	&__head-title
-		margin-bottom 15px
-		font-size 24px
-		line-height 1.2
-		font-weight bold
-		
-		+above(768px)
-			margin-bottom 0
-			padding-right 20px
-			flex-shrink 0
-			width 68%
-			
-		+above(980px)
-			width 75%
-			font-size 30px
-		
-	&__head-price
-		margin-bottom 15px
-		display flex
-		justify-content space-between
-		align-items center
-		
-		+above(768px)
-			margin-bottom 0
-			width 32%
-		
-		+above(980px)
-			margin-bottom 0
-			padding-top 3px
-			width 25%
-			flex-shrink 0
-			justify-content flex-end
-		
-	&__head-action
-		margin-left 20px
-		
-		+above(768px)
-			margin-left 0
+    +above(980px)
+      padding 12px 20px
 
-	&__body
-		^[0]_draft &
-			padding-left 10px
-			padding-right 10px
-			background-color #fff
-			
-			+above(768px)
-				padding-left 23px
-				padding-right 23px
+    &:first-child
+      border-bottom 1px solid $colorDecorative
 
-		+above(980px)
-			background-color #fff
-	
-	&__meta
-		margin-bottom 15px
-		
-		+above(768px)
-			margin-bottom 0
-			padding-top 5px
-			display flex
-			justify-content space-between
-			flex-wrap wrap
-			
-		+above(980px)
-			padding 10px 19px 0
-			flex-wrap nowrap
-			
-		^[0]_draft &
-			margin-bottom 30px
-			
-	&__meta-data
-		+above(768px)
-			padding-right 15px
-			width 65%
-			flex-shrink 0
-			
-		// +above(980px)
-			
-		+above(1170px)
-			width 50%
-			
-			
-	&__meta-id
-		display inline-block
-	
-	&__meta-seller
-		+above(768px)
-			margin-bottom 6px
-			padding-left 15px
-			display flex
-			width 35%
-			flex-shrink 0
-			flex-direction column
-			
-		+above(980px)
-			margin-bottom 0
-			
-		+above(1170px)
-			width 50%
-			flex-basis 50%
-			flex-direction row
+    &:last-child
+      border-top 1px solid $colorDecorative
 
-	&__meta-owner
-		margin-bottom 20px
-		font-weight bold
-		
-		+above(1170px)
-			margin-bottom 0
-			width 50%
-			flex-basis 50%
-			padding-left 15px
-			
-	&__meta-row
-		margin-bottom 15px
-		line-height 1.2
-		
-		+above(768px)
-			display flex
-			
-	&__meta-updated
-		margin-bottom 15px
-		
-		+above(768px)
-			margin-bottom 0
-			padding-right 15px
-			width 40%
-			flex-basis 40%
-			flex-shrink 0
-		
-	&__meta-input
-		+above(768px)
-			padding-left 15px
-			width 60%
-			flex-basis 60%
-			flex-grow 1
-			
-			&:first-child
-				padding-left 0
-			
-	&__meta-contact
-		+above(1170px)
-			width 50%
-			flex-basis 50%
-			padding-left 15px
-			
-	&__meta-inspect
-		+above(980px)
-			white-space nowrap
-			overflow hidden
-			text-overflow ellipsis
-			width 100%
-			
-	&__meta-lbl
-		display inline-block
-		margin-right 5px
-		color darken($colorDecorative, 40)
-		
-		^[0]__meta-inspect &
-			+above(768px)
-				float none
+  &__bar-status
+    position relative
+    margin-bottom 15px
+    font-weight bold
+    flex-grow 1
+    width 100%
+    text-align center
 
-	&__meta-remark
-		margin-left 6px
-		font-size 12px
-		font-weight normal
-		color darken($colorDecorative, 40)
-		
-		&:first-child
-			margin-left 0
-	
-	&__meta-date
-		margin-right 15px
-		
-		+above(768px)
-			margin-right 40px
-		
-		&:last-child
-			margin-right 0
+    +above(768px)
+      margin-bottom 0
+      width auto
+      text-align left
 
-	&__meta-view-icon
-		position relative
-		top 1px
-		margin-right 4px
-		display inline-block
-		size 12px
-		fill darken($colorDecorative, 40)
+    &_error
+      color $colorMain
 
-	&__meta-price
-		+above(768px)
-			padding-left 15px
-			align-items center
-			display flex
-			box-sizing 50%
-			width 50%
-			justify-content space-between
-			
-		+above(980px)
-			display block
-			width 20%
-			flex-basis unset
-			
-	&__meta-action
-		+above(980px)
-			margin-left 18px
-			
-	&__price
-		position relative
-		font-size 28px
-		font-weight bold
-		letter-spacing -1px
-		
-		+above(768px)
-			margin-right 10px
-			font-size 34px
-			white-space nowrap
+    &_moderation
+      color $colorSecondary
 
-	&__price-currency
-		font-size 20px
-		font-weight normal
-		letter-spacing 0
-		
-		+above(768px)
-			font-size 28px
-		
-	&__meta-phone
-		+above(768px)
-			letter-spacing 1px
-			text-transform uppercase
-			
-	&__tab
-		margin-right -10px
-		margin-left -10px
-		margin-bottom 10px
-		
-		+above(768px)
-			margin-left -23px
-			margin-right -23px
-			
-		
-	&__ads
-		margin-bottom 0
-		
-		img
-			max-width 100%
-		
-	&__data
-		+above(768px)
-			padding 10px 10px 1px
-			background-color #fff
+    &_complete
+      color $colorAkcent
 
-		+above(980px)
-			display flex
-			padding 20px 20px 1px
-			
-		^[0]_draft &
-			+above(768px)
-				padding-left 0
-				padding-right 0
-	
-	&__data-side
-		width 100%
-		
-		+above(980px)
-			padding-right 15px
-			padding-bottom 20px
-			flex-basis 35%
-			width 35%
-			
-	&__data-main
-		width 100%
-		
-		+above(980px)
-			padding-left 15px
-			width 65%
-		
-	&__data-row
-		+above(980px)
-			display flex
-			flex-wrap wrap
-			
-	&__data-sticky
-		&&
-			display none
-			top 20px
-		
-			+above(768px)
-				display block
-				position sticky
-		
-	&__feature
-		margin-bottom 15px
-		width 100%
-		
-		+above(980px)
-			margin-bottom 67px
-			
-	&__feature-list
-		margin 12px 0 19px
-		
-		+above(768px)
-			margin 12px -15px 19px
-			display flex
-			flex-wrap wrap
-			
-		+above(980px)
-			display block
-		
-	&__feature-row
-		padding 10px 0 11px
-		display flex
-		border-bottom 1px solid $colorDecorative
-		
-		+above(768px)
-			margin-right 15px
-			margin-left 15px
-			flex-basis 40%
-			flex-grow 1
-		
-		&:last-child
-			border-bottom none
-	
-	&__feature-term
-		width 150px
-		flex-basis 150px
-		color darken($colorDecorative, 40)
-		
-	&__feature-desc
-		&::first-letter
-			text-transform uppercase
-			
-	&__feature-link
-		text-decoration underline
-		color #787878
-		
-	&__gallery
-		margin-bottom 15px
-		width 100%
-			
-		+above(980px)
-			margin-bottom 30px
-		
-		img
-			max-width 100%
-			
-	&__gallery-placeholder
-		padding 40px 10px
-		height 100%
-		display flex
-		flex-direction column
-		justify-content center
-		align-items center
-		font-size inherit
-		text-align center
-		background-color $bgDecorative
-		
-	&__gallery-title
-		margin-bottom 15px
-		font-size 22px
-		
-	&__gallery-desc
-		margin-bottom 42px
-		font-size 12px
-		line-height 1.4
-		color darken($colorDecorative, 40)
-		
-	&__gallery-bg
-		margin-bottom 30px
-		width 240px
-		height 185px
-		background url(../images/no-photo.svg) 0 0 no-repeat
-		opacity .1
-	
-	&__gallery-load
-		margin-bottom 24px
-		justify-content center
-		
-	&__gallery-add
-		font-weight bold
-		
-	&__gallery-add-button
-		white-space nowrap
+  &__bar-status-text
+    position relative
+    padding 3px 0 3px 26px
+    display inline-block
 
-	&__yad
-		margin-bottom 24px
-		width 100%
-		
-		img
-			max-width 100%
-			
-		^[0]__feature & 
-			+above(768px)
-				display none
-			
-			+above(980px)
-				display block
-	
-	&__holder 
-		+above(980px)
-			width 59%
+  &__bar-remark
+    margin-left 16px
+    display inline-block
+    font-size 12px
+    font-weight normal
+    color darken($colorDecorative, 40)
 
-	// &__kit
-		
-	&__kit-head
-		margin-bottom 19px
-		
-	&__kit-list
-		+above(768px)
-			margin 0 -15px
-			display flex
-			flex-wrap wrap
-		
-	&__kit-item
-		margin-bottom 23px
-		
-		+above(768px)
-			padding 0 15px
-			width 33%
-			
-		+above(980px)
-			width 50%
-		
-	&__kit-title
-		margin-bottom 9px
-		font-size 16px
-		font-weight bold
-		
-	&__kit-desc
-		margin-bottom 10px
-		
-	&__comment
-		+above(768px)
-			margin-bottom 15px
-			
-		+above(980px)
-			margin-bottom 23px
-			
-			^[0]__data_nophoto &
-				padding-left 0
-				width 100%
-				
-			&:first-child
-				padding-left 0
-			
-	&__comment-body
-		line-height 1.71429
-		
-	&__action
-		margin-top 12px
-		
-		+above(768px)
-			padding 7px 20px
-			display flex
-			justify-content space-between
-			align-content flex-end
-			align-items center
-			background-color #fff
-	
-	&__action-inner 
-		+above(768px)
-			margin-left 20px
+  &__bar-action
+    position relative
+    margin 0
+    padding 3px 0 3px 26px
+    display inline-block
+    font-size 12px
+
+    +above(768px)
+      margin 0 15px
+      font-size 14px
+
+    +above(980px)
+      margin 0 20px
+
+    &:last-child
+      margin-right 0
+
+  &__bar-icon
+    position absolute
+    top 50%
+    left 0
+    margin-top -9px
+    size 18px
+
+    ^[0]__bar-status &
+      fill currentColor
+
+  &__head
+    +above(768px)
+      display flex
+      flex-wrap nowrap
+      align-items flex-start
+      margin-bottom 15px
+
+    +above(980px)
+      margin-bottom 0
+      padding 25px 18px
+      background-color #fff
+
+    &_draft
+      padding 10px
+      border-bottom none
+      background-color #fff
+
+      +above(768px)
+        padding-left 23px
+        padding-right 23px
+
+      +above(980px)
+        padding-bottom 18px
+
+  &__head-title
+    margin-bottom 15px
+    font-size 24px
+    line-height 1.2
+    font-weight bold
+
+    +above(768px)
+      margin-bottom 0
+      padding-right 20px
+      flex-shrink 0
+      width 68%
+
+    +above(980px)
+      width 75%
+      font-size 30px
+
+  &__head-price
+    margin-bottom 15px
+    display flex
+    justify-content space-between
+    align-items center
+
+    +above(768px)
+      margin-bottom 0
+      width 32%
+
+    +above(980px)
+      margin-bottom 0
+      padding-top 3px
+      width 25%
+      flex-shrink 0
+      justify-content flex-end
+
+  &__head-action
+    margin-left 20px
+
+    +above(768px)
+      margin-left 0
+
+  &__body
+    ^[0]_draft &
+      padding-left 10px
+      padding-right 10px
+      background-color #fff
+
+      +above(768px)
+        padding-left 23px
+        padding-right 23px
+
+    +above(980px)
+      background-color #fff
+
+  &__meta
+    margin-bottom 15px
+
+    +above(768px)
+      margin-bottom 0
+      padding-top 5px
+      display flex
+      justify-content space-between
+      flex-wrap wrap
+
+    +above(980px)
+      padding 10px 19px 0
+      flex-wrap nowrap
+
+    ^[0]_draft &
+      margin-bottom 30px
+
+  &__meta-data
+    +above(768px)
+      padding-right 15px
+      width 65%
+      flex-shrink 0
+
+    // +above(980px)
+
+    +above(1170px)
+      width 50%
+
+
+  &__meta-id
+    display inline-block
+
+  &__meta-seller
+    +above(768px)
+      margin-bottom 6px
+      padding-left 15px
+      display flex
+      width 35%
+      flex-shrink 0
+      flex-direction column
+
+    +above(980px)
+      margin-bottom 0
+
+    +above(1170px)
+      width 50%
+      flex-basis 50%
+      flex-direction row
+
+  &__meta-owner
+    margin-bottom 20px
+    font-weight bold
+
+    +above(1170px)
+      margin-bottom 0
+      width 50%
+      flex-basis 50%
+      padding-left 15px
+
+  &__meta-row
+    margin-bottom 15px
+    line-height 1.2
+
+    +above(768px)
+      display flex
+
+  &__meta-updated
+    margin-bottom 15px
+
+    +above(768px)
+      margin-bottom 0
+      padding-right 15px
+      width 40%
+      flex-basis 40%
+      flex-shrink 0
+
+  &__meta-input
+    +above(768px)
+      padding-left 15px
+      width 60%
+      flex-basis 60%
+      flex-grow 1
+
+      &:first-child
+        padding-left 0
+
+  &__meta-contact
+    +above(1170px)
+      width 50%
+      flex-basis 50%
+      padding-left 15px
+
+  &__meta-inspect
+    +above(980px)
+      white-space nowrap
+      overflow hidden
+      text-overflow ellipsis
+      width 100%
+
+  &__meta-lbl
+    display inline-block
+    margin-right 5px
+    color darken($colorDecorative, 40)
+
+    ^[0]__meta-inspect &
+      +above(768px)
+        float none
+
+  &__meta-remark
+    margin-left 6px
+    font-size 12px
+    font-weight normal
+    color darken($colorDecorative, 40)
+
+    &:first-child
+      margin-left 0
+
+  &__meta-date
+    margin-right 15px
+
+    +above(768px)
+      margin-right 40px
+
+    &:last-child
+      margin-right 0
+
+  &__meta-view-icon
+    position relative
+    top 1px
+    margin-right 4px
+    display inline-block
+    size 12px
+    fill darken($colorDecorative, 40)
+
+  &__meta-price
+    +above(768px)
+      padding-left 15px
+      align-items center
+      display flex
+      box-sizing 50%
+      width 50%
+      justify-content space-between
+
+    +above(980px)
+      display block
+      width 20%
+      flex-basis unset
+
+  &__meta-action
+    +above(980px)
+      margin-left 18px
+
+  &__price
+    position relative
+    font-size 28px
+    font-weight bold
+    letter-spacing -1px
+
+    +above(768px)
+      margin-right 10px
+      font-size 34px
+      white-space nowrap
+
+  &__price-currency
+    font-size 20px
+    font-weight normal
+    letter-spacing 0
+
+    +above(768px)
+      font-size 28px
+
+  &__meta-phone
+    +above(768px)
+      letter-spacing 1px
+      text-transform uppercase
+
+  &__tab
+    margin-right -10px
+    margin-left -10px
+    margin-bottom 10px
+
+    +above(768px)
+      margin-left -23px
+      margin-right -23px
+
+
+  &__ads
+    margin-bottom 0
+
+    img
+      max-width 100%
+
+  &__data
+    +above(768px)
+      padding 10px 10px 1px
+      background-color #fff
+
+    +above(980px)
+      display flex
+      padding 20px 20px 1px
+
+    ^[0]_draft &
+      +above(768px)
+        padding-left 0
+        padding-right 0
+
+  &__data-side
+    width 100%
+
+    +above(980px)
+      padding-right 15px
+      padding-bottom 20px
+      flex-basis 35%
+      width 35%
+
+  &__data-main
+    width 100%
+
+    +above(980px)
+      padding-left 15px
+      width 65%
+
+  &__data-row
+    +above(980px)
+      display flex
+      flex-wrap wrap
+
+  &__data-sticky
+    &&
+      display none
+      top 20px
+
+      +above(768px)
+        display block
+        position sticky
+
+  &__feature
+    margin-bottom 15px
+    width 100%
+
+    +above(980px)
+      margin-bottom 67px
+
+  &__feature-list
+    margin 12px 0 19px
+
+    +above(768px)
+      margin 12px -15px 19px
+      display flex
+      flex-wrap wrap
+
+    +above(980px)
+      display block
+
+  &__feature-row
+    padding 10px 0 11px
+    display flex
+    border-bottom 1px solid $colorDecorative
+
+    +above(768px)
+      margin-right 15px
+      margin-left 15px
+      flex-basis 40%
+      flex-grow 1
+
+    &:last-child
+      border-bottom none
+
+  &__feature-term
+    width 150px
+    flex-basis 150px
+    color darken($colorDecorative, 40)
+
+  &__feature-desc
+    &::first-letter
+      text-transform uppercase
+
+  &__feature-link
+    text-decoration underline
+    color #787878
+
+  &__gallery
+    margin-bottom 15px
+    width 100%
+
+    +above(980px)
+      margin-bottom 30px
+
+    img
+      max-width 100%
+
+  &__gallery-placeholder
+    padding 40px 10px
+    height 100%
+    display flex
+    flex-direction column
+    justify-content center
+    align-items center
+    font-size inherit
+    text-align center
+    background-color $bgDecorative
+
+  &__gallery-title
+    margin-bottom 15px
+    font-size 22px
+
+  &__gallery-desc
+    margin-bottom 42px
+    font-size 12px
+    line-height 1.4
+    color darken($colorDecorative, 40)
+
+  &__gallery-bg
+    margin-bottom 30px
+    width 240px
+    height 185px
+    background url(../images/no-photo.svg) 0 0 no-repeat
+    opacity .1
+
+  &__gallery-load
+    margin-bottom 24px
+    justify-content center
+
+  &__gallery-add
+    font-weight bold
+
+  &__gallery-add-button
+    white-space nowrap
+
+  &__yad
+    margin-bottom 24px
+    width 100%
+
+    img
+      max-width 100%
+
+    ^[0]__feature &
+      +above(768px)
+        display none
+
+      +above(980px)
+        display block
+
+  &__holder
+    +above(980px)
+      width 59%
+
+  // &__kit
+
+  &__kit-head
+    margin-bottom 19px
+
+  &__kit-list
+    +above(768px)
+      margin 0 -15px
+      display flex
+      flex-wrap wrap
+
+  &__kit-item
+    margin-bottom 23px
+
+    +above(768px)
+      padding 0 15px
+      width 33%
+
+    +above(980px)
+      width 50%
+
+  &__kit-title
+    margin-bottom 9px
+    font-size 16px
+    font-weight bold
+
+  &__kit-desc
+    margin-bottom 10px
+
+  &__comment
+    +above(768px)
+      margin-bottom 15px
+
+    +above(980px)
+      margin-bottom 23px
+
+      ^[0]__data_nophoto &
+        padding-left 0
+        width 100%
+
+      &:first-child
+        padding-left 0
+
+  &__comment-body
+    line-height 1.71429
+    word-break break-word
+    hyphens auto
+
+  &__action
+    margin-top 12px
+
+    +above(768px)
+      padding 7px 20px
+      display flex
+      justify-content space-between
+      align-content flex-end
+      align-items center
+      background-color #fff
+
+  &__action-inner
+    +above(768px)
+      margin-left 20px
