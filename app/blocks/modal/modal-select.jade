@@ -1,8 +1,12 @@
+include ../btn/btn
+
 mixin modal-select()
-	+b.modal#modal&attributes(attributes)._size_s._mobile-select.mfp-with-anim.mfp-hide
-		+e.head
-			+e.H5.title 
-			+e.SPAN.close.mfp-close
-				+icon('close', false).close-icon
-		+e.inner
-			+e.body
+  +b.modal#modal&attributes(attributes)._size_s._mobile-select.mfp-with-anim.mfp-hide
+    +e.head
+      +e.H5.title
+      +e.SPAN.close.mfp-close
+        +icon('close', false).close-icon
+    +e.inner
+      +e.body
+    +e.footer._align_right
+      +btn('button')._theme_secondary._space_left.close-multiselect Применить

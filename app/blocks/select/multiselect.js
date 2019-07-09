@@ -45,7 +45,7 @@ export default (() => {
           const sel = $(select).select2({
             selectionAdapter: SelectionAdapter,
             dropdownAdapter: DropdownAdapter,
-            width: 'resolve',
+            width: '100%',
             allowClear: true,
             dropdownParent: isMobile ? $('#modal .modal__body') : null,
             templateResult: (data) => {
@@ -68,12 +68,15 @@ export default (() => {
             }
           });
 
+          const magnificPopup = $.magnificPopup.instance;
+
           if (isMobile ) {
             sel.on('select2:open', function () {
               const modal = $('.modal_mobile-select');
               const modalTitle = modal.find('.modal__title');
               const dropdown = modal.find('.select2-dropdown');
               const placeholder = $(this).attr('data-placeholder');
+              modal.addClass('modal_mobile-select-multi');
 
               modal.find('.select2-container').css({
                 position: 'relative',
@@ -90,8 +93,9 @@ export default (() => {
 
               modalTitle.text(placeholder);
 
+
               setTimeout(() => {
-                $.magnificPopup.open({
+                magnificPopup.open({
                   alignTop: true,
                   fixedContentPos: true,
                   items: {
@@ -101,6 +105,13 @@ export default (() => {
                 });
               }, 0);
             });
+
+            sel.on('select2:close', function () {
+              const modal = $('.modal_mobile-select');
+              modal.removeClass('modal_mobile-select-multi');
+              magnificPopup.close();
+            });
+
           }
         });
 

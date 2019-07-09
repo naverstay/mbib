@@ -138,10 +138,4 @@ export default (() => {
     $('.pagination .select, .sort .select').select2({
       width: '100%'
     });
-         /*  $('.select_multi').select2MultiCheckboxes({
-            width: '100%',
-            minimumResultsForSearch: 20,
-            // templateSelection: formatMultiSelectResult,
-            allowClear: true
-          }); */
 })();

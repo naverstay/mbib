@@ -3,18 +3,18 @@ import 'magnific-popup';
 import checkIsMobile from '../../scripts/isMobile.js';
 
 const modal = (() => {
-	const isMobile = checkIsMobile();
+  const isMobile = checkIsMobile();
 
-	const options = {
-		type:'inline',
-		closeBtnInside:true,
-		removalDelay: 500,
-		fixedContentPos : true,
-		mainClass: 'mfp-zoom-in',
-		alignTop : isMobile ? true : false
-	};
+  const options = {
+    type: 'inline',
+    closeBtnInside: true,
+    removalDelay: 500,
+    fixedContentPos: true,
+    mainClass: 'mfp-zoom-in',
+    alignTop: isMobile ? true : false
+  };
 
-	$('.link-modal').magnificPopup(options);
+  $('.link-modal').magnificPopup(options);
 })();
 
-export default modal
+export default modal;

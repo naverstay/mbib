@@ -1,99 +1,115 @@
+/* .mfp-close
+  position relative
+  width auto
+  opacity 1
+  right auto
+  bottom auto
+  display inline-block
+  background initial */
+
 .modal
-	margin 20px auto 0
-	display block
-	box-shadow 0 0 0 10px darken($colorDecorative, 40)
-	
-	+above(980px)
-		margin-top 0
-	
-	&_size_s
-		+above(420px)
-			width 360px
-		
-	&_size_m
-		+above(540px)
-			width 460px
-			
-	&_mobile-select
-		margin-top 20px
+  margin 20px auto 0
+  display block
+  box-shadow 0 0 0 10px darken($colorDecorative, 40)
 
-	&__head
-		position relative
-		padding 15px 45px 15px 19px
-		font-family $fontTitle
-		font-size 16px
-		font-weight bold
-		color #444
-		background-color lighten($colorDecorative, 10)
-		
-	&__close
-		position absolute
-		top 0
-		right 0
-		bottom 0
-		width 45px
-		
-	&__close-icon
-		position absolute
-		top 50%
-		left 50%
-		margin -8px 0 0 -8px
-		size 16px
-		pointer-events none
-		
-	&__inner
-		box-shadow 0 0 1px 0 rgba(#000, .75)
-		
-	&__body
-		position relative 
-		padding 15px 19px
-		background-color #fff
-	
-	&__footer
-		padding 15px 19px
-		font-size 13px
-		line-height 1.53846
-		color darken($colorDecorative, 40)
-		background-color lighten($colorDecorative, 10)
-		
-		&_align_right
-			text-align right
-	
-	&__remark
-		margin-bottom 12px
-		line-height 1.84615
-		color darken($colorDecorative, 20)
-		
+  +above(980px)
+    margin-top 0
+
+  &_size_s
+    +above(420px)
+      width 360px
+
+  &_size_m
+    +above(540px)
+      width 460px
+
+  &_mobile-select
+    margin-top 20px
+
+  &__head
+    position relative
+    padding 15px 45px 15px 19px
+    font-family $fontTitle
+    font-size 16px
+    font-weight bold
+    color #444
+    background-color lighten($colorDecorative, 10)
+
+  &__close
+    position absolute
+    top 0
+    right 0
+    bottom 0
+    width 45px
+
+  &__close-icon
+    position absolute
+    top 50%
+    left 50%
+    margin -8px 0 0 -8px
+    size 16px
+    pointer-events none
+
+  &__inner
+    box-shadow 0 0 1px 0 rgba(#000, .75)
+
+  &__body
+    position relative
+    padding 15px 19px
+    background-color #fff
+
+  &__footer
+    padding 15px 19px
+    font-size 13px
+    line-height 1.53846
+    color darken($colorDecorative, 40)
+    background-color lighten($colorDecorative, 10)
+
+    &_align_right
+      text-align right
+
+    ^[0]_mobile-select &
+      display none
+
+    ^[0]_mobile-select-multi &
+      display block
+
+  &__remark
+    margin-bottom 12px
+    line-height 1.84615
+    color darken($colorDecorative, 20)
+
 .mfp-bg
-	background-color $colorDecorative
-	opacity .75
-	
-.mfp-zoom-in 
-	/* start state */
-	.mfp-with-anim 
-		opacity 0
-		transition all .2s ease-in-out 
-		transform scale(.8) 
+  background-color $colorDecorative
+  opacity .75
 
-	&.mfp-bg 
-		opacity 0
-		transition all .3s ease-out
+.mfp-zoom-in
+  /* start state */
+  .mfp-with-anim
+    opacity 0
+    transition all .2s ease-in-out
+    transform scale(.8)
 
-	/* animate in */
-	&.mfp-ready 
-		.mfp-with-anim 
-			opacity 1
-			transform scale(1) 
+  &.mfp-bg
+    opacity 0
+    transition all .3s ease-out
 
-	&.mfp-bg 
-		opacity .8
+  /* animate in */
+  &.mfp-ready
+    .mfp-with-anim
+      opacity 1
+      transform scale(1)
 
-	/* animate out */
-	&.mfp-removing 
+  &.mfp-bg
+    opacity .8
 
-		.mfp-with-anim 
-			transform scale(.8) 
-			opacity 0
+  /* animate out */
+  &.mfp-removing
 
-		&.mfp-bg 
-			opacity 0
+    .mfp-with-anim
+      transform scale(.8)
+      opacity 0
+
+    &.mfp-bg
+      opacity 0
+
