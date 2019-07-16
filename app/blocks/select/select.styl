@@ -7,6 +7,13 @@
   &:focus
     box-shadow 0 0 0 3px $colorSecondary
 
+  .control-group &
+    width 50% !important
+    flex-grow 1
+
+  .control-group & ~ &
+    margin-left -1px
+
 
 .select2-container
   position relative
@@ -19,13 +26,6 @@
   .modal_mobile-select &
     left 0 !important
     top 0 !important
-
-  .control-group &
-    width 50% !important
-    flex-grow 1
-
-  .control-group & ~ &
-    margin-left -1px
 
   & .select2-selection--single
     box-sizing border-box

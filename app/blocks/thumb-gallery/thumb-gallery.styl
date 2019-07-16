@@ -1,54 +1,49 @@
 .thumb-gallery
-	position relative
-	display flex
-	height 100%
-	
-	&__item
-		padding 3px 2px
-		width 100%
-		height 100%
-		display flex
-		align-items flex-end
-		
-		&_column_2
-			width 50%
-			
-		&_column_3
-			width 33.333%
-		
-		&_column_4
-			width 25%
-			
-		&_column_5
-			width 20%
-			
-	&__img-wrap
-		position absolute
-		z-index -3
-		top 0
-		left 0
-		width 100%
-		height 100%
-		opacity 0
-		
-		^[0]__item_hovered &
-			z-index -1
-			opacity 1
-			
-		img
-			display block
-			width 100%
-			height 100%
-			object-fit cover
-			
-	&__marker
-		position relative
-		z-index 1
-		display block
-		width 100%
-		height 3px
-		background-color #fff
-		transition background-color .3s
-		
-		^[0]__item_hovered &
-			background-color $colorMain
+  position relative
+  display flex
+  height 100%
+
+.slick-dots
+  bottom 10px
+  top 10px
+  padding-left 10px
+  padding-right 10px
+  display flex
+  opacity 0
+  transition opacity .3s ease
+
+  .thumb-gallery:hover &
+    opacity 1
+
+  .page_touch &
+    opacity 1
+    top auto
+
+  li
+    width 10%
+    height 100%
+    flex-grow 1
+
+    .page_touch &
+      height 3px
+
+  li > button
+    position absolute
+    bottom 0
+    left 0
+    padding 0
+    width 100%
+    height 100%
+
+  li > button::before
+    content ''
+    position absolute
+    top auto
+    bottom 0
+    width 100%
+    height 3px
+    opacity 1
+    background-color #fff
+
+  li.slick-active > button::before
+    background-color red

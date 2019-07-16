@@ -58,17 +58,17 @@ export default (() => {
     };
 
     if (!isMobile) {
-      $('.select_search').select2({
+      $('.select_search .select__control').select2({
         width: '100%',
         minimumResultsForSearch: 20
       });
 
-      $('.select_has-image').select2({
+      $('.select_has-image .select__control').select2({
         width: '100%',
         templateResult: formatState
       });
 
-      $('.select_for-brand').select2({
+      $('.select_for-brand .select__control').select2({
         width: '100%',
         minimumResultsForSearch: 20,
         templateResult: formatBrandResult,
@@ -77,20 +77,20 @@ export default (() => {
       });
 
     }else {
-      $('.select_search').select2({
+      $('.select_search .select__control').select2({
         width: '100%',
         minimumResultsForSearch: 20,
         dropdownParent: $('#modal .modal__body')
       });
 
-      $('.select_has-image').select2({
+      $('.select_has-image .select__control').select2({
         width: '100%',
         minimumResultsForSearch: 20,
         dropdownParent: $('#modal .modal__body'),
         templateResult: formatState
       });
 
-      $('.select_search').on('select2:open', function () {
+      $('.select_search .select__control').on('select2:open', function () {
         const modal = $('.modal_mobile-select');
         const modalTitle = modal.find('.modal__title');
         const dropdown = modal.find('.select2-dropdown');
@@ -123,7 +123,7 @@ export default (() => {
         }, 0);
       });
 
-      $('.select_search').on('select2:close', function () {
+      $('.select_search .select__control').on('select2:close', function () {
         const modal = $('.modal_mobile-select');
         $.magnificPopup.close({
           items: {
@@ -135,7 +135,7 @@ export default (() => {
 
     }
 
-    $('.pagination .select, .sort .select').select2({
+  $('.pagination .select .select__control, .sort .select .select__control').select2({
       width: '100%'
     });
 })();

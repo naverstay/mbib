@@ -1,24 +1,26 @@
 import $ from 'jquery';
+import checkIsMobile from '../../scripts/isMobile.js';
+import 'slick-carousel';
 
 const thumbGallery = (() => {
-	const isTouch = ('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch;
-	const galleryItem = $('.thumb-gallery__item');
-	const hoverMarkerClass = 'thumb-gallery__item_hovered';
 
-	if (!isTouch) {
-		galleryItem.on('mouseenter', (e) => {
-			const el = $(e.target);
+  const isMobile = checkIsMobile();
 
-			el.siblings().removeClass(hoverMarkerClass);
-			el.addClass(hoverMarkerClass);
-		})
-	} else {
-		galleryItem.on('touchstart', (e) => {
-			const el = $(e.target);
-			el.siblings().removeClass(hoverMarkerClass);
-			el.addClass(hoverMarkerClass);
-		})
-	}
+  $('.thumb-gallery').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    speed: 0,
+    lazyLoad: 'progressive',
+    dots: true
+  });
+
+  if (!isMobile) {
+    $('.thumb-gallery .slick-dots button').mouseenter((e) => {
+      $(e.target).trigger('click');
+    });
+  }
+
 })();
 
-export default thumbGallery
+export default thumbGallery;

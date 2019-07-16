@@ -39,7 +39,7 @@ export default (() => {
           AttachBody,
         );
 
-        const multiSelects = document.querySelectorAll('.select_multi');
+          const multiSelects = document.querySelectorAll('.select_multi .select__control');
 
         multiSelects.forEach(select => {
           const sel = $(select).select2({

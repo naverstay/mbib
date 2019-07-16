@@ -1,3 +1,6 @@
 mixin select()
-	+b.SELECT.select&attributes(attributes)
-		block
+  - var classNames = attributes.class
+  - attributes.class = ''
+  +b.select(class=classNames)
+    +e.SELECT.control&attributes(attributes)
+      block

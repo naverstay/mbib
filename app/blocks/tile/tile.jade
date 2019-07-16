@@ -1,19 +1,19 @@
 include ../thumb-gallery/thumb-gallery
 
 mixin tile(data, needAbout)
-	+b.tile&attributes(attributes)
-		+e.FIGURE.fig
-			if data.thumbs
-				img(src=data.thumbs[0], alt=data.name)
-				+e.gallery
-					+thumb-gallery(data.thumbs)
-			else
-				img(src="assets/images/no-photo.svg", alt="")
-		if needAbout
-			+e.about
-				+e.H3.name #{data.name}
-				+e.P.desc
-					+e.SPAN.price #{data.price} ₽, 
-					| #{data.feature.year}, 
-					| #{data.feature.mileage} км
-				+e.address #{data.inspect.city}
+  +b.tile&attributes(attributes)
+    +e.FIGURE.fig
+      if data.thumbs
+        //- img(src=data.thumbs[0], alt=data.name)
+        +e.gallery
+          +thumb-gallery(data.thumbs)
+      else
+        img(src="assets/images/no-photo.svg", alt="")
+    if needAbout
+      +e.about
+        +e.H3.name #{data.name}
+        +e.P.desc
+          +e.SPAN.price #{data.price} ₽,
+          | #{data.feature.year},
+          | #{data.feature.mileage} км
+        +e.address #{data.inspect.city}
