@@ -1,0 +1,40 @@
+.doc
+  padding 24px
+  display block
+
+  &__text
+    margin-bottom 24px
+    line-height 1.5
+
+
+  &__list
+    padding-left 24px
+    margin-bottom 24px
+    line-height 1.5
+    counter-reset section
+
+  &__list-item
+    position relative
+    margin-bottom 12px
+
+    &::before
+      position absolute
+      right 100%
+      margin-right 8px
+      display inline-block
+      counter-increment section
+      content counters(section,".")
+
+    &_head-item
+      &::before
+        font-weight bold
+        font-size 16px
+
+  &__subtitle
+    margin-bottom 4px
+    display block
+    font-weight bold
+    font-size 16px
+
+  &__text
+    margin-bottom 1.5em

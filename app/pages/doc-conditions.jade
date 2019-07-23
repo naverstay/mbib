@@ -1,0 +1,9 @@
+extends /blocks/layout-default/layout-default
+include ../blocks/doc/doc-conditions
+
+block head
+  - var pageTitle = 'Условия предоставления услуг';
+  - var pageMod = 'docs';
+
+block content
+  +doc-conditions

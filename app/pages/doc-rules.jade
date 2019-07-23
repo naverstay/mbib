@@ -1,0 +1,9 @@
+extends /blocks/layout-default/layout-default
+include ../blocks/doc/doc-rules
+
+block head
+  - var pageTitle = 'Правила пользования сайтом «mbib.ru»';
+  - var pageMod = 'docs';
+
+block content
+  +doc-rules

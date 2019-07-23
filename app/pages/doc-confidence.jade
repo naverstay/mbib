@@ -1,0 +1,9 @@
+extends /blocks/layout-default/layout-default
+include ../blocks/doc/doc-confidence
+
+block head
+  - var pageTitle = 'Политика конфиденциальности';
+  - var pageMod = 'docs';
+
+block content
+  +doc-confidence

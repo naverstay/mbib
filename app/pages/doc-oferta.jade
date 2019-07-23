@@ -1,0 +1,9 @@
+extends /blocks/layout-default/layout-default
+include ../blocks/doc/doc-oferta
+
+block head
+  - var pageTitle = 'Публичная оферта о заключении договора оказания услуг';
+  - var pageMod = 'docs';
+
+block content
+  +doc-oferta
