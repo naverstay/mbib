@@ -1,183 +1,186 @@
 .action
-	display block
-	font-size 0
-	
-	&__item
-		position relative
-		margin 0 20px 10px
-		padding 0 15px
-		display block
-		height 36px
-		font-size 1rem
-		line-height 36px
-		text-decoration none
-		color $colorText
-		background-color #fff
-		border 1px dashed $colorDecorative
-		
-		+above(768px)
-			margin 0 10px
-			padding 0 7px
-			display inline-block
-			
-		+above(980px)
-			margin-bottom 10px
-			padding 0 20px
-			font-weight bold
-			
-		&:hover
-			border-color $colorMain
-			
+  display block
+  font-size 0
 
-		.card__action &
-			+above(768px)
-				margin 0 10px
-				padding 0
-				border none
-				
-			+above(1170px)
-				margin 0 8px
-			
-		&:last-child
-			.card__action &
-				+above(768px)
-					margin-right 0
-					
-		&_simple,
-		.card__meta-action &
-			padding-right 0
-			padding-left 0
-			background-color transparent
-			border none
-			white-space nowrap
-			
-			+above(768px)
-				margin-bottom 0
-				margin-left 0
-		
-		^[0]_only-icon &
-			position relative
-			margin-right 0
-			margin-left 0
-			
-			+above(768px)
-				margin-right 5px
-				margin-left 5px
+  &__item
+    position relative
+    margin 0 20px 10px
+    padding 0 15px
+    display block
+    height 36px
+    font-size 1rem
+    line-height 36px
+    text-decoration none
+    color $colorText
+    background-color #fff
+    border 1px dashed $colorDecorative
 
-			+above(980px)
-				margin 0 auto 5px
-				padding 0
-				display block
-				size 30px
-				font-size 11px
-				font-weight normal
-				line-height @height
-				text-align center
-				background-color transparent
-				border none
-				
-				opacity 0
-				transition opacity .3s
-			
-			.card-list__item:hover &,
-			.card-list__item &_active
-			^[0]_is-visible&
-				opacity 1
-				
-			.page_touch &
-				+above(980px)
-					opacity 1
-			
-			&:last-child
-				margin-bottom 0
-		
-	&__item-text
-		line-height 1.2
-		
-		^[0]_only-icon &
-			+above(768px)
-				position absolute
-				z-index 1
-				top -2px
-				right 100%
-				margin-right 5px
-				padding 9px 18px 8px
-				white-space nowrap
-				pointer-events none
-				color darken($colorDecorative, 40)
-				background-color #fff
-				border 1px solid $colorDecorative
-				box-shadow 0 2px 8px rgba($colorDecorative, .4)
-				
-				opacity 0
-				transform translate3D(-10px, 0, 0)
-				transition opacity .3s, transform .3s
-			
-			&:before
-				+above(768px)
-					position absolute
-					z-index -1
-					top 50%
-					right -5px
-					margin-top -3px
-					size 7px
-					content ''
-					background-color #fff
-					border-top 1px solid $colorDecorative
-					border-right 1px solid $colorDecorative
-					transform rotate(45deg)
-				
-		.page:not(.page_touch) ^[0]_only-icon ^[0]__item:hover &
-			+above(768px)
-				opacity 1
-				transform translate3D(0, 0, 0)
-	
-	&__icon
-		position relative
-		top -2px
-		margin-right 6px
-		display inline-block
-		size 20px
-		vertical-align middle
-		
-		^[0]_only-icon &
-			margin-right 0
-			
-		// ^[0]__item:hover &_like svg
-			
-	&__icon-img
-		display inline-block
-		vertical-align top
-		size 20px
-		
-		^[0]_only-icon &
-			size 20px
-			fill $colorText
-			transition fill .3s
-			
-			+above(768px)
-				margin-right 0
-			
-		^[0]__item:hover &,
-		^[0]__item_active &
-		// ^[0]_only-icon ^[0]__item:hover & .likeBorder
-			fill $colorMain
-		
-	&__icon-img_like_fill
-		position absolute
-		top 0
-		left 0
-		size 20px
-		
-		opacity 0
-		transition fill .3s, opacity .3s
-		
-		^[0]_only-icon &
-			top 0
-			left 50%
-			margin-left -10px
+    +above(768px)
+      margin 0 10px
+      padding 0 7px
+      display inline-block
 
-		^[0]__item:hover &,
-		^[0]__item_active &
-			fill $colorMain
-			opacity 1
+    +above(980px)
+      margin-bottom 10px
+      padding 0 20px
+      font-weight bold
+
+    &:hover
+      border-color $colorMain
+
+
+    .card__action &
+      +above(768px)
+        margin 0 10px
+        padding 0
+        border none
+
+      +above(1170px)
+        margin 0 8px
+
+    &:last-child
+      .card__action &
+        +above(768px)
+          margin-right 0
+
+    &_simple,
+    .card__meta-action &
+      padding-right 0
+      padding-left 0
+      background-color transparent
+      border none
+      white-space nowrap
+
+      +above(768px)
+        margin-bottom 0
+        margin-left 0
+
+    ^[0]_only-icon &
+      position relative
+      margin-right 0
+      margin-left 0
+
+      +above(768px)
+        margin-right 5px
+        margin-left 5px
+
+      +above(980px)
+        margin 0 auto 5px
+        padding 0
+        display block
+        size 30px
+        font-size 11px
+        font-weight normal
+        line-height @height
+        text-align center
+        background-color transparent
+        border none
+
+        opacity 0
+        transition opacity .3s
+
+      .card-list__item:hover &,
+      .card-list__item &_active
+      ^[0]_is-visible&
+        opacity 1
+
+      .page_touch &
+        +above(980px)
+          opacity 1
+
+      &:last-child
+        margin-bottom 0
+
+  &__item-text
+    line-height 1.2
+
+    ^[0]_only-icon &
+      +above(768px)
+        position absolute
+        z-index 1
+        top -2px
+        right 100%
+        margin-right 5px
+        padding 9px 18px 8px
+        white-space nowrap
+        pointer-events none
+        color darken($colorDecorative, 40)
+        background-color #fff
+        border 1px solid $colorDecorative
+        box-shadow 0 2px 8px rgba($colorDecorative, .4)
+
+        opacity 0
+        transform translate3D(-10px, 0, 0)
+        transition opacity .3s, transform .3s
+
+      &:before
+        +above(768px)
+          position absolute
+          z-index -1
+          top 50%
+          right -5px
+          margin-top -3px
+          size 7px
+          content ''
+          background-color #fff
+          border-top 1px solid $colorDecorative
+          border-right 1px solid $colorDecorative
+          transform rotate(45deg)
+
+    .page:not(.page_touch) ^[0]_only-icon ^[0]__item:hover &
+      +above(768px)
+        opacity 1
+        transform translate3D(0, 0, 0)
+
+  &__icon
+    position relative
+    top -2px
+    margin-right 6px
+    display inline-block
+    size 20px
+    vertical-align middle
+
+    ^[0]_only-icon &
+      margin-right 5px
+
+      +above(768px)
+        margin-right 0
+
+    // ^[0]__item:hover &_like svg
+
+  &__icon-img
+    display inline-block
+    vertical-align top
+    size 20px
+
+    ^[0]_only-icon &
+      size 20px
+      fill $colorText
+      transition fill .3s
+
+      +above(768px)
+        margin-right 0
+
+    ^[0]__item:hover &,
+    ^[0]__item_active &
+    // ^[0]_only-icon ^[0]__item:hover & .likeBorder
+      fill $colorMain
+
+  &__icon-img_like_fill
+    position absolute
+    top 0
+    left 0
+    size 20px
+
+    opacity 0
+    transition fill .3s, opacity .3s
+
+    ^[0]_only-icon &
+      top 0
+      left 50%
+      margin-left -10px
+
+    ^[0]__item:hover &,
+    ^[0]__item_active &
+      fill $colorMain
+      opacity 1
