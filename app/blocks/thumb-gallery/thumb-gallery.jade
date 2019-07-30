@@ -1,6 +1,9 @@
+include ../loader/loader
+
 mixin thumb-gallery(data)
   +b.thumb-gallery&attributes(attributes)
-    each item, i in data
-      +e.item
-        +e.img-wrap
-          img(src=item, alt="")
+    +e.inner
+      each item, i in data
+        +e.item
+          +e.img-wrap
+            img(data-lazy=item, alt="")
