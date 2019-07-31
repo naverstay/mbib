@@ -17,23 +17,21 @@ const thumbGallery = (() => {
 
   const loader = '<div class="loader loader_active thumb-gallery__loader"><div class="loader__overlay"><div class="loader__spiner"></div></div></div>';
 
+
   $('.thumb-gallery__inner').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-    const wrap = $(event.target).parent();
-    const notLoadedImage = wrap.find('slick-loading');
-    if (notLoadedImage.length === 0) {
+    const curSlide = $(slick.$slides.get(nextSlide));
+    const notLoadedImage = curSlide.find('img[data-lazy]');
+
+    if (notLoadedImage.length !== 0) {
+      const wrap = $(event.target).parent();
       wrap.append(loader);
     }
   });
 
-  $('.thumb-gallery__inner').on('afterChange', function (event, slick, currentSlide, nextSlide) {
+  $('.thumb-gallery__inner').on('lazyLoaded', function (event) {
     const wrap = $(event.target).parent();
     const loaderThumb = wrap.find('.loader');
-    const notLoadedImage = $(currentSlide).find('img[data-lazy]');
-    console.log(notLoadedImage);
-    if (notLoadedImage.length === 0) {
-      loaderThumb.remove();
-    }
-
+    loaderThumb.remove();
   });
 
   if (!isMobile) {
