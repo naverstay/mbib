@@ -60,6 +60,7 @@ export default (() => {
     if (!isMobile) {
       $('.select_search .select__control').select2({
         width: '100%',
+        allowClear: true,
         minimumResultsForSearch: 20
       });
 
@@ -79,6 +80,7 @@ export default (() => {
     }else {
       $('.select_search .select__control').select2({
         width: '100%',
+        allowClear: true,
         minimumResultsForSearch: 20,
         dropdownParent: $('#modal .modal__body')
       });
