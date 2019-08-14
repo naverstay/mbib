@@ -1,431 +1,427 @@
 .search
-	position relative
-	margin-bottom 35px
-	padding 14px 8px 0
-	display block
-	background-color #fff
-	background-image linear-gradient(to right, lighten($colorDecorative, 10), #fff)
-	border 2px solid $colorDecorative
-	
-	+above(768px)
-		margin-bottom 27px
-		padding 10px 24px 0
-		display table
-		box-shadow 0 27px 23px -12px rgba(#000, .2)
-	
-		&:after
-			position absolute
-			top 100%
-			right 0
-			left 0
-			margin-top 2px
-			content ''
-			background-color transparent
-			background-clip border-box
-			border-top 4px solid darken($colorDecorative, 20)
-			border-left 5px solid rgba(#fff, 0)
-			border-right 5px solid rgba(#fff, 0)
-			
-	+above(980px)
-		display block
-		
-	&__header
-		position relative
-		margin -14px -8px 10px
-		border-bottom 1px solid $colorDecorative
-		
-		+above(768px)
-			margin -10px -24px 24px
-			
-	&__header-toggler
-		width 100%
-		padding 14px 8px
-		font-size 16px
-		font-weight bold
-		text-align left
-		color #787878
-		background-color $bgDecorative
-		box-shadow inset 0 1px 0 #fff
-		border none
-		
-		+above(768px)
-			padding 10px 24px
-		
-	&__header-brand
-		margin-right 4px
-		display inline-block
-		vertical-align middle
-		font-size 0
-		
-		+above(768px)
-			margin-right 10px
-		
-	&__header-name
-		position relative
-		top 2px
-		margin-right 4px
-		display inline-block
-		color #000
-		
-		+above(768px)
-			margin-right 9px
-		
-	&__header-label
-		position relative
-		top 2px
-		display inline-block
+  position relative
+  margin-bottom 35px
+  padding 14px 8px 0
+  display block
+  background-color #fff
+  background-image linear-gradient(to right, lighten($colorDecorative, 10), #fff)
+  border 2px solid $colorDecorative
 
-	&__header-icon
-		position absolute
-		right 0px
-		top 12px
-		width 30px
-		height 16px
-		fill #7a7a7a
-		transform rotate(0)
-		transition transform .3s
-		
-		+above(768px)
-			right 22px
-		
-		^[0]__header_open &
-			transform rotate(180deg)
-		
-	&__header-next-icon
-		position relative
-		top 2px
-		display inline-block
-		width 12px
-		height 12px
-		margin-right 7px
+  +above(768px)
+    margin-bottom 27px
+    padding 10px 24px 0
+    display table
+    box-shadow 0 27px 23px -12px rgba(#000, .2)
 
-	&__city
-		margin-bottom 10px
-		
-		+above(768px)
-			display flex
-			justify-content space-between
-		
-	&__city-list
-		+above(768px)
-			flex-wrap wrap
-			flex-shrink 1
+    &:after
+      position absolute
+      top 100%
+      right 0
+      left 0
+      margin-top 2px
+      content ''
+      background-color transparent
+      background-clip border-box
+      border-top 4px solid darken($colorDecorative, 20)
+      border-left 5px solid rgba(#fff, 0)
+      border-right 5px solid rgba(#fff, 0)
 
-	&__city-btn
-		display block
-		
-		+above(768px)
-			display inline-block
-			white-space nowrap
-		
-	&__city-other
-		margin-top 8px
-		text-align center
-		
-		+above(768px)
-			margin-top 0
-			flex-grow 1
-			margin-left 15px
-			
-		+above(980px)
-			flex-grow 0
-			
-	&__advanced
-		overflow hidden
-		width 100%
-		max-height 0
-		transition max-height .4s
-		
-		^[0]_show-advanced &
-			max-height 3000px
-			
-	&__advanced-inner
-		padding-top 10px
-		
-		+above(768px)
-			clear both
-		
-	&__row
-		display flex
-		flex-wrap wrap
-		align-items flex-start
-		width 100%
-		margin-bottom 10px
-		
-		+above(768px)
-			margin 0 -10px 5px
-			width auto
-			
-		+above(1170px)
-			margin-right -15px
-			margin-left -15px
-			
-		^[0]__advanced &
-			+above(768px)
-				display flex
-				align-items flex-start
-				flex-wrap wrap
-				
-			+above(980px)
-				flex-wrap nowrap
-				
-			&:last-child
-				margin-bottom 0
-				
-		&_advanced
-			overflow hidden
-			max-height 0
-			transition max-height .4s
-		
-			^[0]_show-advanced &
-				max-height 3000px
-			
-			+above(768px)
-				margin -24px -24px 24px
-			
-		&_sbm
-			margin-bottom 10px
-			
-			+above(980px)
-				margin-top -1px
-				clear none
-				
-		&_hide-on-tablet
-			+above(768px)
-				display none
-		
-	&__row-advanced-inner
-		padding-left 10px
-		padding-right 10px
-		
-		+above(768px)
-			padding 24px 24px 10px
-			background-color #fff
-				
-		+above(980px)
-			padding-bottom 10px
-			width 100%
+  +above(980px)
+    display block
 
-	&__group-on-mobile
-		display flex
-		width 100%
-		
-		+above(980px)
-			width 40%
-			flex-basis 40%
-	
-	&__col
-		position relative
-		margin-bottom -1px
-		width 100%
-		
-		^[0]__group-on-mobile &
-			width 50%
-			flex-grow 1
-			
-		^[0]__group-on-mobile & ~ &
-			margin-left -1px
-		
-		+above(768px)
-			margin-bottom 10px
-			padding 0 10px
-			width 50%
+  &__header
+    position relative
+    margin -14px -8px 10px
+    border-bottom 1px solid $colorDecorative
 
-		+above(980px)
-			width 20%
-			flex-basis 20%
-		
-			&_span_2
-				width 40%
-				flex-basis 40%
-				
-			&_span_3
-				width 25%
-				flex-basis 25%
-				
-			&_span_4
-				width 60%
-				flex-basis 60%
-				
-		+above(1170px)
-			padding-right 15px
-			padding-left 15px
-		
-		&_for-checkbox
-			margin 20px 0 23px
-			height $heightControl
-			
-			+above(768px)
-				margin-top 7px
-				margin-bottom unset
-				
-			+above(980px)
-				margin-top unset
-				height auto
-				align-self center
-				
-		&_sbm
-			text-align right
-			
-			+above(768px)
-				width 100%
-			
-			+above(980px)
-				display flex
-				justify-content flex-end
-				
-		&_mobile-order-last
-			order 1
-			
-			+above(980px)
-				order initial
-	&__item
-		margin-bottom 10px
+    +above(768px)
+      margin -10px -24px 24px
 
-	&__check
-		margin-right 34px
-		display inline-block
-	
-	&__icon-search
-		position absolute
-		z-index 2
-		top 12px
-		left 15px
-		size 18px
-		fill darken($colorDecorative, 40)
-		pointer-events none
-		
-		+above(768px)
-			left 32px
-			
-	&__switcher
-		position relative
-		margin-right 20px
-		padding-left 18px
-		color $colorMain
-		
-		&::before,
-		&::after
-			position absolute
-			left 0
-			top 50%
-			display inline-block
-			vertical-align middle
-			size 8px
-			content ''
-			border-top 2px solid
-			border-left 2px solid
-			transform rotate(225deg) translate3d(2px, 5px, 0)
-			
-			^[0]_show-advanced &
-				transform rotate(45deg) translate3d(2px, -2px, 0)
-		
-		&::before
-			margin-top -4px
-			
-		&::after
-			margin-top 2px
-			
-	&__palette
-		flex-wrap wrap
+  &__header-toggler
+    width 100%
+    padding 14px 8px
+    font-size 16px
+    font-weight bold
+    text-align left
+    color #787878
+    background-color $bgDecorative
+    box-shadow inset 0 1px 0 #fff
+    border none
 
-	&__sbm
-		width 100%
-		
-		+above(768px)
-			width auto
-			
-	&__drop
-		max-height 0
-		overflow hidden
-		transition max-height .3s
-		
-		+above(768px)
-			max-height 100%
-		
-		^[0]_show-drop &
-			max-height 1000px
+    +above(768px)
+      padding 10px 24px
 
-	&__drop-switcher
-		color $colorMain
-		background-color transparent
-		border none
-		
-		
-	&__drop-switcher-icon
-		fill currentColor
-		width 20px
-		height 20px
-		margin-right 4px
-		display inline-block
-		vertical-align middle
-		
-	&__drop-switcher-text
-		display inline-block
-		border-bottom 1px dashed
-		
-	&__tab
-		width 100%
-		&&
-			+above(768px)
-				margin-bottom -24px
-				padding 24px
-		
-	&__tab-content
-		padding-top 20px
-	
-	&__gallery
-		margin-bottom 20px
-		width 100%
-	
-	&__about
-		width 100%
-		
-		+above(768px)
-			display flex
-		
-	&__about-rate
-		display flex
-		padding-right 24px
-		width 244px
-		flex-basis 244px
-		flex-shrink 0
-		
-	&__about-rating
-		margin-right 15px
-		width 60px
-		height 60px
-		border-radius 50%
-		padding 4px
-		background-image linear-gradient(to right, $colorMain, $colorSecondary)
+  &__header-brand
+    margin-right 4px
+    display inline-block
+    vertical-align middle
+    font-size 0
 
-	&__about-rating-value
-		display block
-		width 52px
-		height 52px
-		font-size 22px
-		font-weight bold
-		line-height 52px
-		text-align center
-		border-right 50%
-		background-color #fff
-		border-radius 50%
-		
-	&__about-review
-		padding-top 5px
-		line-height 1.5
-		font-size 16px
-		font-weight bold
-		color #787878
-		
-	&__about-review-link
-		display inline-block
-		color $colorSecondary
-		
-	&__about-desc
-		padding-top 5px
-		line-height 1.71429
-		color #787878
-		
-		p
-			margin 0
+    +above(768px)
+      margin-right 10px
+
+  &__header-name
+    position relative
+    top 2px
+    margin-right 4px
+    display inline-block
+    color #000
+
+    +above(768px)
+      margin-right 9px
+
+  &__header-label
+    position relative
+    top 2px
+    display inline-block
+
+  &__header-icon
+    position absolute
+    right 0px
+    top 12px
+    width 30px
+    height 16px
+    fill #7a7a7a
+    transform rotate(0)
+    transition transform .3s
+
+    +above(768px)
+      right 22px
+
+    ^[0]__header_open &
+      transform rotate(180deg)
+
+  &__header-next-icon
+    position relative
+    top 2px
+    display inline-block
+    width 12px
+    height 12px
+    margin-right 7px
+
+  &__city
+    margin-bottom 10px
+
+    +above(768px)
+      display flex
+      justify-content space-between
+
+  &__city-list
+    +above(768px)
+      flex-wrap wrap
+      flex-shrink 1
+
+  &__city-btn
+    display block
+
+    +above(768px)
+      display inline-block
+      white-space nowrap
+
+  &__city-other
+    margin-top 8px
+    text-align center
+
+    +above(768px)
+      margin-top 0
+      flex-grow 1
+      margin-left 15px
+
+    +above(980px)
+      flex-grow 0
+
+  &__advanced
+    overflow hidden
+    width 100%
+    max-height 0
+    transition max-height .4s
+
+    ^[0]_show-advanced &
+      max-height 3000px
+
+  &__advanced-inner
+    padding-top 10px
+
+    +above(768px)
+      clear both
+
+  &__row
+    display flex
+    flex-wrap wrap
+    align-items flex-start
+    width 100%
+    margin-bottom 10px
+
+    +above(768px)
+      margin 0 -10px 5px
+      width auto
+
+    +above(1170px)
+      margin-right -15px
+      margin-left -15px
+
+    ^[0]__advanced &
+      +above(768px)
+        display flex
+        align-items flex-start
+        flex-wrap wrap
+
+      +above(980px)
+        flex-wrap nowrap
+
+      &:last-child
+        margin-bottom 0
+
+    &_advanced
+      overflow hidden
+      max-height 0
+      transition max-height .4s
+
+      ^[0]_show-advanced &
+        max-height 3000px
+
+      +above(768px)
+        margin -24px -24px 24px
+
+    &_sbm
+      margin-bottom 10px
+
+      +above(980px)
+        margin-top -1px
+        clear none
+
+    &_hide-on-tablet
+      +above(768px)
+        display none
+
+  &__row-advanced-inner
+    padding-left 10px
+    padding-right 10px
+
+    +above(768px)
+      padding 24px 24px 10px
+      background-color #fff
+
+    +above(980px)
+      padding-bottom 10px
+      width 100%
+
+  &__group-on-mobile
+    display flex
+    width 100%
+
+    +above(980px)
+      width 40%
+      flex-basis 40%
+
+  &__col
+    position relative
+    margin-bottom -1px
+    width 100%
+
+    ^[0]__group-on-mobile &
+      width 50%
+      flex-grow 1
+
+    ^[0]__group-on-mobile & ~ &
+      margin-left -1px
+
+    +above(768px)
+      margin-bottom 10px
+      padding 0 10px
+      width 50%
+
+    +above(980px)
+      width 20%
+
+      &_span_2
+        width 40%
+
+      &_span_3
+        width 25%
+
+      &_span_4
+        width 60%
+
+    +above(1170px)
+      padding-right 15px
+      padding-left 15px
+
+    &_for-checkbox
+      margin 20px 0 23px
+      height $heightControl
+
+      +above(768px)
+        margin-top 7px
+        margin-bottom unset
+
+      +above(980px)
+        margin-top unset
+        height auto
+        align-self center
+
+    &_sbm
+      text-align right
+
+      +above(768px)
+        width 100%
+
+      +above(980px)
+        display flex
+        justify-content flex-end
+
+    &_mobile-order-last
+      order 1
+
+      +above(980px)
+        order initial
+  &__item
+    margin-bottom 10px
+
+  &__check
+    margin-right 34px
+    display inline-block
+
+  &__icon-search
+    position absolute
+    z-index 2
+    top 12px
+    left 15px
+    size 18px
+    fill darken($colorDecorative, 40)
+    pointer-events none
+
+    +above(768px)
+      left 32px
+
+  &__switcher
+    position relative
+    margin-right 20px
+    padding-left 18px
+    color $colorMain
+
+    &::before,
+    &::after
+      position absolute
+      left 0
+      top 50%
+      display inline-block
+      vertical-align middle
+      size 8px
+      content ''
+      border-top 2px solid
+      border-left 2px solid
+      transform rotate(225deg) translate3d(2px, 5px, 0)
+
+      ^[0]_show-advanced &
+        transform rotate(45deg) translate3d(2px, -2px, 0)
+
+    &::before
+      margin-top -4px
+
+    &::after
+      margin-top 2px
+
+  &__palette
+    flex-wrap wrap
+
+  &__sbm
+    width 100%
+
+    +above(768px)
+      width auto
+
+  &__drop
+    max-height 0
+    overflow hidden
+    transition max-height .3s
+
+    +above(768px)
+      max-height 100%
+
+    ^[0]_show-drop &
+      max-height 1000px
+
+  &__drop-switcher
+    color $colorMain
+    background-color transparent
+    border none
+
+
+  &__drop-switcher-icon
+    fill currentColor
+    width 20px
+    height 20px
+    margin-right 4px
+    display inline-block
+    vertical-align middle
+
+  &__drop-switcher-text
+    display inline-block
+    border-bottom 1px dashed
+
+  &__tab
+    width 100%
+    &&
+      +above(768px)
+        margin-bottom -24px
+        padding 24px
+
+  &__tab-content
+    padding-top 20px
+
+  &__gallery
+    margin-bottom 20px
+    width 100%
+
+  &__about
+    width 100%
+
+    +above(768px)
+      display flex
+
+  &__about-rate
+    display flex
+    padding-right 24px
+    width 244px
+    flex-basis 244px
+    flex-shrink 0
+
+  &__about-rating
+    margin-right 15px
+    width 60px
+    height 60px
+    border-radius 50%
+    padding 4px
+    background-image linear-gradient(to right, $colorMain, $colorSecondary)
+
+  &__about-rating-value
+    display block
+    width 52px
+    height 52px
+    font-size 22px
+    font-weight bold
+    line-height 52px
+    text-align center
+    border-right 50%
+    background-color #fff
+    border-radius 50%
+
+  &__about-review
+    padding-top 5px
+    line-height 1.5
+    font-size 16px
+    font-weight bold
+    color #787878
+
+  &__about-review-link
+    display inline-block
+    color $colorSecondary
+
+  &__about-desc
+    padding-top 5px
+    line-height 1.71429
+    color #787878
+
+    p
+      margin 0
