@@ -1,160 +1,162 @@
 include ../title/title
 include ../phone/phone
 include ../show-phone/show-phone
+include ../show-phone/show-phones
 include ../action/action
 include ../gallery/gallery
 include ../share/share
 include ../short-poster/short-poster
 
 mixin card(data, id)
-	-var item = data[id];
-	+b.card&attributes(attributes)
-		+e.head
-			+e.H1.head-title Продажа #{item.name} в Москве
-			+e.head-price
-				+e.price
-					| #{item.price} 
-					+e.SPAN.price-currency ₽
-				+action('like', item.isFavorite)._only-icon._is-visible.card__head-action
+  -var item = data[id];
+  +b.card&attributes(attributes)
+    +e.head
+      +e.H1.head-title Продажа #{item.name} в Москве
+      +e.head-price
+        +e.price
+          | #{item.price}
+          +e.SPAN.price-currency ₽
+        +action('like', item.isFavorite)._only-icon._is-visible.card__head-action
 
-		+e.body
-			+e.meta
-				+e.meta-data
-					+e.meta-row
-						+e.meta-updated
-							+e.SPAN.meta-date
-								+e.SPAN.meta-lbl 
-									+icon('round-arrow', false).meta-view-icon
-									| Обновлено
-								| #{item.updated}
-						+e.meta-input
-							+e.SPAN.meta-date
-								+e.SPAN.meta-lbl 
-									+icon('clock', false).meta-view-icon
-									| Добавлено
-								| #{item.pubdate}
-							+e.SPAN.meta-id № #{item.id}
+    +e.body
+      +e.meta
+        +e.meta-data
+          +e.meta-row
+            +e.meta-updated
+              +e.SPAN.meta-date
+                +e.SPAN.meta-lbl
+                  +icon('round-arrow', false).meta-view-icon
+                  | Обновлено
+                | #{item.updated}
+            +e.meta-input
+              +e.SPAN.meta-date
+                +e.SPAN.meta-lbl
+                  +icon('clock', false).meta-view-icon
+                  | Добавлено
+                | #{item.pubdate}
+              +e.SPAN.meta-id № #{item.id}
 
-					+e.meta-row
-						+e.meta-updated
-							+e.SPAN.meta-view
-								+icon('eye', false).meta-view-icon
-								| #{item.inspect.viewAll}
+          +e.meta-row
+            +e.meta-updated
+              +e.SPAN.meta-view
+                +icon('eye', false).meta-view-icon
+                | #{item.inspect.viewAll}
 
-								+e.SPAN.meta-remark (#{item.inspect.viewToday} сегодня)
+                +e.SPAN.meta-remark (#{item.inspect.viewToday} сегодня)
 
-						+e.meta-input
-							+e.meta-inspect(title="#{item.inspect.city}, #{item.inspect.address}")
-								+e.SPAN.meta-lbl 
-									+icon('pin', false).meta-view-icon
-									| Место осмотра
-								| #{item.inspect.city}, #{item.inspect.address}
+            +e.meta-input
+              +e.meta-inspect(title="#{item.inspect.city}, #{item.inspect.address}")
+                +e.SPAN.meta-lbl
+                  +icon('pin', false).meta-view-icon
+                  | Место осмотра
+                | #{item.inspect.city}, #{item.inspect.address}
 
-				+e.meta-seller
-					+e.meta-owner 
-						| #{item.author} 
-						+e.SPAN.meta-remark (#{item.authorStatus})
-					+e.meta-contact
-						+show-phone(item.contact, false).card__meta-phone
-						//- +phone(item.contact).card__meta-phone
+        +e.meta-seller
+          +e.meta-owner
+            | #{item.author}
+            +e.SPAN.meta-remark (#{item.authorStatus})
+          +e.meta-contact
+            //- +show-phone(item.contact, false).card__meta-phone
+            +show-phones(item.contact, false).card__meta-phone
+            //- +phone(item.contact).card__meta-phone
 
-			+e.data
-				+e.data-side
-					+e.feature
-						+e.DL.feature-list
-							+e.feature-row
-								+e.DT.feature-term Год выпуска
-								+e.DD.feature-desc #{item.feature.year}
-							+e.feature-row
-								+e.DT.feature-term Пробег
-								+e.DD.feature-desc #{item.feature.mileage}
-							+e.feature-row
-								+e.DT.feature-term Кузов
-								+e.DD.feature-desc #{item.feature.body}
-							+e.feature-row
-								+e.DT.feature-term Цвет
-								+e.DD.feature-desc #{item.feature.color}
-							+e.feature-row
-								+e.DT.feature-term Двигатель
-								+e.DD.feature-desc #{item.feature.engineCapacity} л / #{item.feature.enginePower} л.с. / #{item.feature.engineType}
-							+e.feature-row
-								+e.DT.feature-term Коробка
-								if item.feature.transmission == 'АТ'
-									-var transmission = 'автоматическая';
-								else
-									-var transmission = 'механическая';
+      +e.data
+        +e.data-side
+          +e.feature
+            +e.DL.feature-list
+              +e.feature-row
+                +e.DT.feature-term Год выпуска
+                +e.DD.feature-desc #{item.feature.year}
+              +e.feature-row
+                +e.DT.feature-term Пробег
+                +e.DD.feature-desc #{item.feature.mileage}
+              +e.feature-row
+                +e.DT.feature-term Кузов
+                +e.DD.feature-desc #{item.feature.body}
+              +e.feature-row
+                +e.DT.feature-term Цвет
+                +e.DD.feature-desc #{item.feature.color}
+              +e.feature-row
+                +e.DT.feature-term Двигатель
+                +e.DD.feature-desc #{item.feature.engineCapacity} л / #{item.feature.enginePower} л.с. / #{item.feature.engineType}
+              +e.feature-row
+                +e.DT.feature-term Коробка
+                if item.feature.transmission == 'АТ'
+                  -var transmission = 'автоматическая';
+                else
+                  -var transmission = 'механическая';
 
-								+e.DD.feature-desc #{transmission}
-							+e.feature-row
-								+e.DT.feature-term Привод
-								+e.DD.feature-desc #{item.feature.drive}
-							+e.feature-row
-								+e.DT.feature-term Руль
-								-var drive = item.feature.rightDrive ? 'правый' : 'левый';
-								+e.DD.feature-desc #{drive}
-							+e.feature-row
-								+e.DT.feature-term Состояние
-								+e.DD.feature-desc #{item.feature.state}
-							+e.feature-row
-								+e.DT.feature-term Владельцы
-								+e.DD.feature-desc #{item.feature.owners}
-							+e.feature-row
-								+e.DT.feature-term ПТС
-								+e.DD.feature-desc #{item.feature.pts}
-							+e.feature-row
-								+e.DT.feature-term Владение
-								+e.DD.feature-desc #{item.feature.tenure}
-							+e.feature-row
-								+e.DT.feature-term Таможня
-								-var cleared = item.feature.cleared ? 'растаможен' : 'не растаможен';
-								+e.DD.feature-desc #{cleared}
-						+e.A.feature-link(href="") Все характеристики модели в каталоге
+                +e.DD.feature-desc #{transmission}
+              +e.feature-row
+                +e.DT.feature-term Привод
+                +e.DD.feature-desc #{item.feature.drive}
+              +e.feature-row
+                +e.DT.feature-term Руль
+                -var drive = item.feature.rightDrive ? 'правый' : 'левый';
+                +e.DD.feature-desc #{drive}
+              +e.feature-row
+                +e.DT.feature-term Состояние
+                +e.DD.feature-desc #{item.feature.state}
+              +e.feature-row
+                +e.DT.feature-term Владельцы
+                +e.DD.feature-desc #{item.feature.owners}
+              +e.feature-row
+                +e.DT.feature-term ПТС
+                +e.DD.feature-desc #{item.feature.pts}
+              +e.feature-row
+                +e.DT.feature-term Владение
+                +e.DD.feature-desc #{item.feature.tenure}
+              +e.feature-row
+                +e.DT.feature-term Таможня
+                -var cleared = item.feature.cleared ? 'растаможен' : 'не растаможен';
+                +e.DD.feature-desc #{cleared}
+            +e.A.feature-link(href="") Все характеристики модели в каталоге
 
-					+short-poster(item).card__data-sticky
+          +short-poster(item).card__data-sticky
 
-				+e.data-main
-					+e.gallery
-						if item.gallery
-							+e.gallery-list
-								each img in item.gallery
-									img(src=img, alt="")
+        +e.data-main
+          +e.gallery
+            if item.gallery
+              +e.gallery-list
+                each img in item.gallery
+                  img(src=img, alt="")
 
-					+e.comment
-						+title(3) Комментарий продавца
-						+e.comment-body
-							| #{item.comment}
+          +e.comment
+            +title(3) Комментарий продавца
+            +e.comment-body
+              | #{item.comment}
 
-					+e.kit
-						+e.kit-head
-							+title(3) Комплектация
-						+e.kit-list
-							+e.DL.kit-item
-								+e.DT.kit-title Безопасность
-								if item.feature.abs
-									+e.DD.kit-desc Антиблокировочная система (ABS)
-								if item.feature.servo
-									+e.DD.kit-desc Парктроник
-							+e.DL.kit-item
-								+e.DT.kit-title Салон
-								if item.feature.fabricInterior
-									+e.DD.kit-desc Тканевый салон
-								if item.feature.leatherInterior
-									+e.DD.kit-desc Кожанный салон
-							+e.DL.kit-item
-								+e.DT.kit-title Комфорт
-								if item.feature.cruiseControl
-									+e.DD.kit-desc Круиз-контроль
-								if item.feature.servo
-									+e.DD.kit-desc Усилитель руляк
-								if item.feature.tintedGlass
-									+e.DD.kit-desc Тонированные стекла
-							+e.DL.kit-item
-								+e.DT.kit-title Экстерьер
-								+e.DD.kit-desc 
-									if item.feature.alloyWheels
-										| Легкосплавные диски 
-									| #{item.feature.radiusWheels}''
-					
-		+e.action
-			+share
-			+action.card__action-inner
+          +e.kit
+            +e.kit-head
+              +title(3) Комплектация
+            +e.kit-list
+              +e.DL.kit-item
+                +e.DT.kit-title Безопасность
+                if item.feature.abs
+                  +e.DD.kit-desc Антиблокировочная система (ABS)
+                if item.feature.servo
+                  +e.DD.kit-desc Парктроник
+              +e.DL.kit-item
+                +e.DT.kit-title Салон
+                if item.feature.fabricInterior
+                  +e.DD.kit-desc Тканевый салон
+                if item.feature.leatherInterior
+                  +e.DD.kit-desc Кожанный салон
+              +e.DL.kit-item
+                +e.DT.kit-title Комфорт
+                if item.feature.cruiseControl
+                  +e.DD.kit-desc Круиз-контроль
+                if item.feature.servo
+                  +e.DD.kit-desc Усилитель руляк
+                if item.feature.tintedGlass
+                  +e.DD.kit-desc Тонированные стекла
+              +e.DL.kit-item
+                +e.DT.kit-title Экстерьер
+                +e.DD.kit-desc
+                  if item.feature.alloyWheels
+                    | Легкосплавные диски
+                  | #{item.feature.radiusWheels}''
+
+    +e.action
+      +share
+      +action.card__action-inner
