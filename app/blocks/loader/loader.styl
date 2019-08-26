@@ -1,100 +1,128 @@
 .loader
-	position fixed
-	z-index 100
-	top 0
-	right 0
-	left 0
-	bottom 0
-	display none
-	
-	&_for-block
-		position absolute
-	
-	&_active
-		display block
+  position fixed
+  z-index 100
+  top 0
+  right 0
+  left 0
+  bottom 0
+  display none
 
-	&__overlay
-		position absolute
-		z-index -1
-		top 0
-		right 0
-		left 0
-		bottom 0
-		display flex
-		justify-content center
-		align-items center
-		background-color rgba(#f5f5f5, .75)
-		
-		^[0]_for-block &
-			background-color rgba(#f5f5f5, .95)
-			
-		^[0]_active &
-			z-index 150
-			opacity 1
+  &_for-block,
+  &_for-select
+    position absolute
 
-	&__loader
-		position absolute
-		top 50%
-		left 50%
-		margin-top -2em
-		margin-left 1em
+  &_active
+    display block
 
-	&__spiner,
-	&__spiner::before,
-	&__spiner::after
-		width 1em
-		height 4em
-		background-color $colorSecondary
+  &__overlay
+    position absolute
+    z-index -1
+    top 0
+    right 0
+    left 0
+    bottom 0
+    display flex
+    justify-content center
+    align-items center
+    background-color rgba(#f5f5f5, .75)
 
-	&__spiner
-		^[0]_active &,
-		^[0]_active &::before,
-		^[0]_active &::after
-			animation load1 1s infinite ease-in-out
+    ^[0]_for-block &
+      background-color rgba(#f5f5f5, .95)
 
-	&__spiner
-		position relative
-		margin 88px auto
-		font-size 11px
-		text-indent -9999em
-		color $colorSecondary
-		transform translateZ(0)
-		
-		^[0]_active &
-			animation-delay -.16s
-			
-	&__spiner::before,
-	&__spiner::after
-		position absolute
-		top 0
-		content ''
+    ^[0]_for-select &
+      background-color transparent
 
-	&__spiner::before
-		left -1.5em
-		^[0]_active &
-			animation-delay -.32s
+    ^[0]_active &
+      z-index 150
+      opacity 1
 
-	&__spiner::after
-		left 1.5em
+  &__loader
+    position absolute
+    top 50%
+    left 50%
+    margin-top -2em
+    margin-left 1em
 
-@-webkit-keyframes load1
-	0%,
-	80%,
-	100%
-		box-shadow 0 0
-		height 4em
+    ^[0]_for-select &
+      margin-top 0
 
-	40%
-		box-shadow 0 -2em
-		height 5em
+  &__spiner,
+  &__spiner::before,
+  &__spiner::after
+    width 1em
+    height 4em
+    background-color $colorSecondary
+
+  &_size_s &__spiner,
+  &_size_s &__spiner::before,
+  &_size_s &__spiner::after
+    width .5em
+    height 1em
+
+  &__spiner
+    ^[0]_active &,
+    ^[0]_active &::before,
+    ^[0]_active &::after
+      animation load1 1s infinite ease-in-out
+
+    ^[0]_size_s^[0]_active &,
+    ^[0]_size_s^[0]_active &::before,
+    ^[0]_size_s^[0]_active &::after
+      animation-name load2
+
+  &__spiner
+    position relative
+    margin 88px auto
+    font-size 11px
+    text-indent -9999em
+    color $colorSecondary
+    transform translateZ(0)
+
+    ^[0]_for-select &
+      margin 36px auto
+
+    ^[0]_active &
+      animation-delay -.16s
+
+  &__spiner::before,
+  &__spiner::after
+    position absolute
+    top 0
+    content ''
+
+  &__spiner::before
+    left -1.5em
+    ^[0]_active &
+      animation-delay -.32s
+
+    ^[0]_size_s &
+      left -1em
+
+  &__spiner::after
+    left 1.5em
+
+    ^[0]_size_s &
+      left 1em
+
 
 @keyframes load1
-	0%,
-	80%,
-	100% 
-		box-shadow 0 0
-		height 4em
+  0%,
+  80%,
+  100%
+    box-shadow 0 0
+    height 4em
 
-	40%
-		box-shadow 0 -2em
-		height 5em
+  40%
+    box-shadow 0 -2em
+    height 5em
+
+@keyframes load2
+  0%,
+  80%,
+  100%
+    box-shadow 0 0
+    height 2em
+
+  40%
+    box-shadow 0 -.5em
+    height 2.5em

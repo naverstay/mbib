@@ -1,6 +1,10 @@
-mixin select()
+include ../loader/loader
+
+mixin select(hasLoader)
   - var classNames = attributes.class
   - attributes.class = ''
   +b.select(class=classNames)
+    if hasLoader
+      +loader._for-select._size_s._active
     +e.SELECT.control&attributes(attributes)
       block
