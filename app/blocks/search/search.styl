@@ -212,7 +212,13 @@
 
     +above(980px)
       width 40%
-      flex-basis 40%
+
+    ^[0]__advanced-inner &
+      +above(768px)
+        width 50%
+
+      +above(980px)
+        width 20%
 
   &__col
     position relative
@@ -225,6 +231,17 @@
 
     ^[0]__group-on-mobile & ~ &
       margin-left -1px
+
+    ^[0]__advanced-inner ^[0]__group-on-mobile &
+      display flex
+      width 100%
+
+      +above(768px)
+        display block
+        // width 50%
+
+      // +above(980px)
+      //   width 20%
 
     +above(768px)
       margin-bottom 10px
@@ -269,14 +286,30 @@
       +above(980px)
         display flex
         justify-content flex-end
+        width 60%
 
     &_mobile-order-last
       order 1
 
       +above(980px)
         order initial
+
   &__item
     margin-bottom 10px
+
+    ^[0]__group-on-mobile &
+      width 50%
+      flex-grow 1
+
+      +above(768px)
+        width 100%
+        flex-grow 0
+
+    ^[0]__group-on-mobile & ~ &
+      margin-left -1px
+
+      +above(768px)
+        margin-left 0
 
   &__check
     margin-right 34px

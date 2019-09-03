@@ -155,33 +155,36 @@ mixin search()
               +checkbox(name="tax", tabindex="21") Не расстаможен
             +e.item
               +checkbox(name="forChange", checked  tabindex="20") Возможен обмен
-          +e.col
-            +e.item
-              +select(name="ownerCount" data-placeholder="Владелец по счету" data-minimum-results-for-search="Infinity" tabindex="22")._search
-                option(value="")
-                option(value="fr") Один
-                option(value="bk") Два
-                option(value="fl") Три и более
-            +e.item
-              +select(name="to" data-placeholder="Данные о ТО" data-minimum-results-for-search="Infinity" tabindex="23")._search
-                option(value="")
-                option(value="fr") Есть сервисная книжка
-                option(value="bk") Обслуживался у дилера
-                option(value="fl") На гарантии
 
-          +e.col
-            +e.item
-              +select(name="ownertype" data-placeholder="Любой продавец" data-minimum-results-for-search="Infinity" tabindex="22")._search
-                option(value="")
-                option(value="fr") Все
-                option(value="bk") Автодилер
-                option(value="fl") Собственник
-            +e.item
-              +select(name="generation" data-placeholder="Поколение" data-minimum-results-for-search="Infinity" tabindex="22")._search._has-image
-                option(value="")
-                option(value="all") Все
-                option(value="gen1" data-image="gen1") VII, 2012 - н.в.
-                option(value="gen2" data-image="gen2") VI, 2009-2012
+          +e.group-on-mobile
+            +e.col
+              +e.item
+                +select(name="ownerCount" data-placeholder="Владелец по счету" data-minimum-results-for-search="Infinity" tabindex="22")._search
+                  option(value="")
+                  option(value="fr") Один
+                  option(value="bk") Два
+                  option(value="fl") Три и более
+              +e.item
+                +select(name="to" data-placeholder="Данные о ТО" data-minimum-results-for-search="Infinity" tabindex="23")._search
+                  option(value="")
+                  option(value="fr") Есть сервисная книжка
+                  option(value="bk") Обслуживался у дилера
+                  option(value="fl") На гарантии
+
+          +e.group-on-mobile
+            +e.col
+              +e.item
+                +select(name="ownertype" data-placeholder="Любой продавец" data-minimum-results-for-search="Infinity" tabindex="22")._search
+                  option(value="")
+                  option(value="fr") Все
+                  option(value="bk") Автодилер
+                  option(value="fl") Собственник
+              +e.item
+                +select(name="generation" data-placeholder="Поколение" data-minimum-results-for-search="Infinity" tabindex="22")._search._has-image
+                  option(value="")
+                  option(value="all") Все
+                  option(value="gen1" data-image="gen1") VII, 2012 - н.в.
+                  option(value="gen2" data-image="gen2") VI, 2009-2012
         +e.row
           +e.col._span_3.form__
             +e.FIELDSET.group
