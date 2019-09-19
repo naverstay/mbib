@@ -1,4 +1,5 @@
 .select
+  position: relative
   box-sizing border-box
   display block
   width 100%
@@ -14,6 +15,7 @@
   .control-group & ~ &
     margin-left -1px
     flex-grow 0
+    display flex
 
     +above(980px)
       flex-grow 1
@@ -28,6 +30,7 @@
   display: table;
   table-layout: fixed;
   float left
+  flex-grow 1
 
   .modal_mobile-select &
     left 0 !important
