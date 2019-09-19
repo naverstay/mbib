@@ -59,18 +59,18 @@ export default (() => {
 
     if (!isMobile) {
       $('.select_search .select__control').select2({
-        width: 'resolve',
+        width: '100%',
         allowClear: true,
         minimumResultsForSearch: 20
       });
 
       $('.select_has-image .select__control').select2({
-        width: 'resolve',
+        width: '100%',
         templateResult: formatState
       });
 
       $('.select_for-brand .select__control').select2({
-        width: 'resolve',
+        width: '100%',
         minimumResultsForSearch: 20,
         templateResult: formatBrandResult,
         templateSelection: formatBrandSelection,

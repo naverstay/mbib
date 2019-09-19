@@ -158,13 +158,13 @@ mixin search()
 
           +e.group-on-mobile
             +e.col
-              +e.item
+              +e.item._no-margin
                 +select(name="ownerCount" data-placeholder="Владелец по счету" data-minimum-results-for-search="Infinity" tabindex="22")._search
                   option(value="")
                   option(value="fr") Один
                   option(value="bk") Два
                   option(value="fl") Три и более
-              +e.item
+              +e.item._no-margin
                 +select(name="to" data-placeholder="Данные о ТО" data-minimum-results-for-search="Infinity" tabindex="23")._search
                   option(value="")
                   option(value="fr") Есть сервисная книжка
@@ -198,6 +198,7 @@ mixin search()
                   option(value="cambac") Камера заднего вида
                   option(value="crcont") Круиз-контроль
                   option(value="comp") Бортовой компьютер
+                  option(value="asr") Антипробуксовочная система (ASR/TCS/TRC)
 
             +e.FIELDSET.group
               +select(name="alarm[]" data-placeholder="Противоугонная система" multiple="multiple" data-minimum-results-for-search="Infinity")._multi

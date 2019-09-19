@@ -45,8 +45,8 @@ export default (() => {
           const sel = $(select).select2({
             selectionAdapter: SelectionAdapter,
             dropdownAdapter: DropdownAdapter,
-            width: 'resolve',
             allowClear: true,
+            width: '100%',
             dropdownParent: isMobile ? $('#modal .modal__body') : null,
             templateResult: (data) => {
               if (!data.id) { return data.text; }

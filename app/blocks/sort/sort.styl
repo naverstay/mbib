@@ -1,13 +1,22 @@
 .sort
-	
-	+above(768px)
-		display flex
-		justify-content space-between
-	
-	&__by
-		margin-bottom 8px
-		width 100%
-		
-		+above(768px)
-			margin-bottom 0
-			width 255px
+  display flex
+
+  +above(768px)
+    justify-content space-between
+
+  &__by
+    width 50%
+    flex-grow 1
+
+    +above(768px)
+      margin-left 0
+      width 255px
+      flex-grow 0
+
+  &__type
+    margin-left -1px
+    width 50%
+
+    +above(768px)
+      margin-left 0
+      width 255px

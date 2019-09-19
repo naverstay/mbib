@@ -229,8 +229,12 @@
       width 50%
       flex-grow 1
 
+      +above(768px)
+        display block
+
     ^[0]__group-on-mobile & ~ &
       margin-left -1px
+      flex-grow 0
 
     ^[0]__advanced-inner ^[0]__group-on-mobile &
       display flex
@@ -238,10 +242,6 @@
 
       +above(768px)
         display block
-        // width 50%
-
-      // +above(980px)
-      //   width 20%
 
     +above(768px)
       margin-bottom 10px
@@ -307,9 +307,13 @@
 
     ^[0]__group-on-mobile & ~ &
       margin-left -1px
+      flex-grow 0
 
       +above(768px)
         margin-left 0
+
+    &_no-margin
+      margin-bottom 10px
 
   &__check
     margin-right 34px
