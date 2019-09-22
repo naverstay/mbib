@@ -158,13 +158,13 @@ mixin search()
 
           +e.group-on-mobile
             +e.col
-              +e.item._no-margin
+              +e.item._additional-option
                 +select(name="ownerCount" data-placeholder="Владелец по счету" data-minimum-results-for-search="Infinity" tabindex="22")._search
                   option(value="")
                   option(value="fr") Один
                   option(value="bk") Два
                   option(value="fl") Три и более
-              +e.item._no-margin
+              +e.item._additional-option
                 +select(name="to" data-placeholder="Данные о ТО" data-minimum-results-for-search="Infinity" tabindex="23")._search
                   option(value="")
                   option(value="fr") Есть сервисная книжка

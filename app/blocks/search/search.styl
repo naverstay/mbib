@@ -105,6 +105,8 @@
     +above(768px)
       display flex
       justify-content space-between
+      margin-left -9px
+      margin-right -9px
 
   &__city-list
     +above(768px)
@@ -126,6 +128,7 @@
       margin-top 0
       flex-grow 1
       margin-left 15px
+      text-align right
 
     +above(980px)
       flex-grow 0
@@ -211,6 +214,7 @@
     width 100%
 
     +above(980px)
+      display table
       width 40%
 
     ^[0]__advanced-inner &
@@ -231,6 +235,9 @@
 
       +above(768px)
         display block
+
+      +above(980px)
+        display table-cell
 
     ^[0]__group-on-mobile & ~ &
       margin-left -1px
@@ -313,8 +320,12 @@
       +above(768px)
         margin-left 0
 
-    &_no-margin
-      margin-bottom 10px
+    &_additional-option
+      margin-bottom -1px
+
+      +above(768px)
+        margin-bottom 10px
+
 
   &__check
     margin-right 34px
