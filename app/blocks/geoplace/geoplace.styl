@@ -1,24 +1,46 @@
 .geoplace
-	display block
-	
-	&__item
-		margin-right 4px
-		margin-bottom 10px
-		
-	&__popup
-		width 100%
-		
-	&__field
-		width 100%
-		
+  display block
+
+  &__item
+    margin-right 4px
+    margin-bottom 10px
+
+  &__popup
+    width 100%
+
+  &__field
+    width 100%
+
+  &__radius
+    margin-bottom 30px
+
+  &__radius-label
+    margin-bottom 16px
+
+  &__ruler
+    position relative
+    margin-top 14px
+    display flex
+    justify-content space-between
+
+  &__ruler-marker
+    width 32px
+    text-align center
+
+  &__ruler-marker:first-child
+    text-align left
+
+  &__ruler-marker:last-child
+    text-align right
+
 .geoplace-list
-	overflow-y auto
-	max-height 200px
-	
-	&__item
-		padding 10px 15px
-		cursor pointer
-		
-		&:hover
-			color #fff
-			background-color $colorSecondary
+  overflow-y auto
+  max-height 200px
+
+  &__item
+    padding 10px 15px
+    cursor pointer
+
+    &:hover
+      color #fff
+      background-color $colorSecondary

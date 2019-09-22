@@ -5,27 +5,28 @@ include ../blocks/modal/modal-claim
 include ../blocks/modal/modal-place
 include ../blocks/modal/modal-confirm
 include ../blocks/btn/btn
+include ../blocks/range/range
 
 block head
-	- var pageTitle = 'Модальные окна';
-	- var pageMod = 'inner';
+  - var pageTitle = 'Модальные окна';
+  - var pageMod = 'inner';
 
 block content
-	div(style="margin-bottom:10px")
-		+btn('link')(href="#modalBookmark" data-effect="mfp-zoom-in").link-modal В избранное
-		+modal-bookmark
-	div(style="margin-bottom:10px")
-		+btn('link')(href="#modalPhone" data-effect="mfp-zoom-in").link-modal Показать телефон
-		+modal-phone
-		
-	div(style="margin-bottom:10px")
-		+modal-claim
-		+btn('link')(href="#modalClaim" data-effect="mfp-zoom-in").link-modal Подать жалобу
+  div(style="margin-bottom:10px")
+    +btn('link')(href="#modalBookmark" data-effect="mfp-zoom-in").link-modal В избранное
+    +modal-bookmark
+  div(style="margin-bottom:10px")
+    +btn('link')(href="#modalPhone" data-effect="mfp-zoom-in").link-modal Показать телефон
+    +modal-phone
 
-	div(style="margin-bottom:10px")
-		+modal-place
-		+btn('link')(href="#modalPlace" data-effect="mfp-zoom-in").link-modal Выбор места поиска
+  div(style="margin-bottom:10px")
+    +modal-claim
+    +btn('link')(href="#modalClaim" data-effect="mfp-zoom-in").link-modal Подать жалобу
 
-	div(style="margin-bottom:10px")
-		+modal-confirm
-		+btn('link')(href="#modalConfirm" data-effect="mfp-zoom-in").link-modal Подтверждение
+  div(style="margin-bottom:10px")
+    +modal-place
+    +btn('link')(href="#modalPlace" data-effect="mfp-zoom-in").link-modal Выбор места поиска
+
+  div(style="margin-bottom:10px")
+    +modal-confirm
+    +btn('link')(href="#modalConfirm" data-effect="mfp-zoom-in").link-modal Подтверждение

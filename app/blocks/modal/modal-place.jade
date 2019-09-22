@@ -7,44 +7,66 @@ include ../menu/menu
 include ../form/form
 include ../geoplace/geoplace-list
 include ../alert/alert
+include ../range/range
 
 mixin modal-place()
-	+b.modal#modalPlace&attributes(attributes)._size_m.mfp-with-anim.mfp-hide
-		//.mfp-hide
-		+e.head
-			+e.H5.title Выбрать место поиска
-			+e.SPAN.close.mfp-close
-				+icon('close', false).close-icon
-		+e.inner
-			+e.body
-				+alert._warning На данный момент в оиске доступны лишь населённые пункты ЮФО.
-				+form(name="place").geoplace
-					+e.row
-						+e.item._fullwidth
-							+lbl(for="placeField" hidden)
-							+select(name="place" id="placeField" data-placeholder="Регион, город, населенный пункт" tabindex="1")._dont-use-modal.geoplace__field
-								option(value="")
-								option(value="pl1") Audi
-								option(value="pl2") BMW
-								option(value="pl3") Kia
-								option(value="pl4") Lada
-								option(value="pl5") ЗАЗ
-								option(value="pl6") ГАЗ
-								option(value="pl7") УАЗ
-								option(value="pl8") BMW
-								option(value="pl9") Kia
-								option(value="pl0") Lada
-								option(value="pl11") ЗАЗ
-								option(value="pl12") ГАЗ
-								option(value="pl13") УАЗ
-							//- +input(type="text" id="placeField" value="" placeholder="Регион, город, населенный пункт").geoplace__field
-							+popup.geoplace__popup
-								+geoplace-list(getData('geoplace'))
-					+e.row
-						+e.item._fullwidth.geoplace__area
-							+btn('link', 'close')(href="")._theme_pseudo._size_s.geoplace__item Москва
-							+btn('link', 'close')(href="")._theme_pseudo._size_s.geoplace__item Московская область
-							+btn('link', 'close')(href="")._theme_pseudo._size_s.geoplace__item Калининград
-					+e.row._align_right
-						+e.item._fullwidth
-							+btn('button')(type="button")._theme_secondary Сохранить
+  +b.modal#modalPlace&attributes(attributes)._size_m.mfp-with-anim.mfp-hide
+    //.mfp-hide
+    +e.head
+      +e.H5.title Выбрать место поиска
+      +e.SPAN.close.mfp-close
+        +icon('close', false).close-icon
+    +e.inner
+      +e.body
+        +alert._warning На данный момент в оиске доступны лишь населённые пункты ЮФО.
+        +form(name="place").geoplace
+          +e.row
+            +e.item._fullwidth
+              +lbl(for="placeField" hidden)
+              +select(name="place" id="placeField" data-placeholder="Регион, город, населенный пункт" tabindex="1")._dont-use-modal.geoplace__field
+                option(value="")
+                option(value="pl1") Audi
+                option(value="pl2") BMW
+                option(value="pl3") Kia
+                option(value="pl4") Lada
+                option(value="pl5") ЗАЗ
+                option(value="pl6") ГАЗ
+                option(value="pl7") УАЗ
+                option(value="pl8") BMW
+                option(value="pl9") Kia
+                option(value="pl0") Lada
+                option(value="pl11") ЗАЗ
+                option(value="pl12") ГАЗ
+                option(value="pl13") УАЗ
+              //- +input(type="text" id="placeField" value="" placeholder="Регион, город, населенный пункт").geoplace__field
+              +popup.geoplace__popup
+                +geoplace-list(getData('geoplace'))
+          +e.row
+            +e.item._fullwidth.geoplace__area
+              +btn('link', 'close')(href="")._theme_pseudo._size_s.geoplace__item Москва
+              +btn('link', 'close')(href="")._theme_pseudo._size_s.geoplace__item Московская область
+              +btn('link', 'close')(href="")._theme_pseudo._size_s.geoplace__item Калининград
+          +e.row
+            +e.item._fullwidth.geoplace__
+              +e.radius-label
+                | Расширение радиуса поиска, км
+              +range.geoplace__radius(min=0, max="6" step="1" value="0")
+              +e.ruler
+                +e.ruler-marker
+                  +e.ruler-marker-label 0
+                +e.ruler-marker
+                  +e.ruler-marker-label 100
+                +e.ruler-marker
+                  +e.ruler-marker-label 200
+                +e.ruler-marker
+                  +e.ruler-marker-label 300
+                +e.ruler-marker
+                  +e.ruler-marker-label 400
+                +e.ruler-marker
+                  +e.ruler-marker-label 500
+                +e.ruler-marker
+                  +e.ruler-marker-label 1000
+
+          +e.row._align_right
+            +e.item._fullwidth
+              +btn('button')(type="button")._theme_secondary Сохранить
