@@ -193,6 +193,7 @@
         margin-top -1px
         clear none
 
+
     &_hide-on-tablet
       +above(768px)
         display none
@@ -379,6 +380,18 @@
 
     +above(768px)
       width auto
+
+    +above(980px)
+      display flex
+      align-items center
+      justify-content center
+
+    ^[0]__drop &
+      margin-top 10px
+      width 100%
+
+      +above(768px)
+        margin-top 0
 
   &__drop
     padding 0 10px

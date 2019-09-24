@@ -151,10 +151,6 @@ mixin search-model()
             +input(type="text", name="priceStart", placeholder="Цена от" tabindex="13")._digit-pretify
             +input(type="text", name="priceEnd", placeholder="до, ₽" tabindex="14")._digit-pretify
 
-      +e.row._sbm._valign_center
-        //- +e.col._span_2
-          //- +input(type="text", name="text", placeholder="искать по тексту объявлений" tabindex="15")._iconed
-          +icon('search', false).icon-search
-        +e.col._sbm
+        +e.col
           //- +btn('button')._theme_link(tabindex="18").search__switcher Расширенный поиск
-          +btn('button')._theme_secondary(tabindex="28").search__sbm Показать 2939 моделей
+          +btn('button')._size_control._theme_secondary(tabindex="28").search__sbm Найти
