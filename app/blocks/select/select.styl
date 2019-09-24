@@ -31,8 +31,10 @@
   width: 100%;
   display: table;
   table-layout: fixed;
-  float left
   flex-grow 1
+
+  +above(980px)
+    float left
 
   .modal_mobile-select &
     left 0 !important
