@@ -2,7 +2,7 @@ import $ from 'jquery';
 import rangeSlider from 'rangeslider-pure';
 
 const range = (() => {
-  const slider = document.querySelectorAll('input[type="range"]');
+  const slider = document.querySelectorAll('.step input[type="range"]');
   if (slider.length) {
     rangeSlider.create(slider, {
       polyfill: true
@@ -26,18 +26,6 @@ const range = (() => {
       });
     }
 
-  }
-
-  const radiusRange = document.querySelectorAll('.geoplace__radius');
-
-  if (radiusRange.length) {
-    rangeSlider.create(radiusRange, {
-      polyfill: true,
-      step: 1,
-      min: 0,
-      max: 6,
-      value: 0
-    });
   }
 })();
 
