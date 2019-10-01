@@ -1,48 +1,52 @@
 .group
-	margin-bottom 10px
-	display block
-	
-	+above(768px)
-		margin-bottom 15px
-	
-	&__list
-		column-gap 10px
-		column-count 2
-			
-		+above(480px)
-			column-count 3
-			
-		+above(640px)
-			column-gap 30px
-			column-count 4
-			
-		+above(980px)
-			column-count 6
-			widows 3
-		
-	&__list-item
-		margin-bottom 6px
-		
-		+above(768px)
-			margin-bottom unset
-		
-	&__link
-		padding 8px 0 7px
-		display inline-block
-		text-decoration none
-		
-		+above(768px)
-			padding 5px 0 4px
-		
-	&__link-name
-		display inline-block
-		color $colorSecondary
-		border-bottom 1px solid transparent
-		
-		^[0]__link:hover &
-			color $colorMain
-			border-bottom-color currentcolor
-		
-	&__link-count
-		font-size 12px
-		color darken($colorDecorative, 40)
+  margin-bottom 10px
+  display block
+
+  +above(768px)
+    margin-bottom 15px
+
+  &__list
+    column-gap 10px
+    column-count 2
+
+    +above(480px)
+      column-count 3
+
+    +above(640px)
+      column-gap 30px
+      column-count 4
+
+    +above(980px)
+      column-count 6
+      widows 3
+
+  &__list-item
+    margin-bottom 6px
+
+    +above(768px)
+      margin-bottom unset
+
+  &__link
+    padding 8px 0 7px
+    display inline-block
+    text-decoration none
+
+    +above(768px)
+      padding 5px 0 4px
+
+  &__link-name
+    display inline-block
+    color $colorSecondary
+    border-bottom 1px solid transparent
+
+    ^[0]__link_more &
+      border-bottom-style dashed
+      border-bottom-color $colorSecondary
+
+    ^[0]__link:hover &
+      color $colorMain
+      border-bottom-color currentcolor
+
+  &__link-count
+    font-size 12px
+    color darken($colorDecorative, 40)

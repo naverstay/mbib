@@ -1,16 +1,15 @@
 include ../tab/tab
 
 mixin group(data)
-	+b.group&attributes(attributes)
-		+tab._simple.group__tab
-			+e.head
-				+e.A.head-item(href="#brandPopular")._active Популярные
-				+e.A.head-item(href="#brandAll") Все
-			+e.content._active.group__(id="brandPopular")
-				+e.UL.list
-					each item in data
-						+e.list-item
-							+e.A.link(href=item.href)
-								+e.link-name #{item.name}
-								+e.link-count #{item.count}
-			+e.content(id="brandAll")
+  +b.group&attributes(attributes)
+    +e.UL.list
+      each item in data
+        if item.count === '-1'
+          +e.list-item
+            +e.A.link._more(href=item.href)
+              +e.link-name #{item.name}
+        else
+          +e.list-item
+            +e.A.link(href=item.href)
+              +e.link-name #{item.name}
+              +e.link-count #{item.count}
