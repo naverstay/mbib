@@ -1,4 +1,5 @@
 include ../loader/loader
+include ../icon/icon
 
 mixin thumb-gallery(data)
   +b.thumb-gallery&attributes(attributes)
@@ -7,3 +8,7 @@ mixin thumb-gallery(data)
         +e.item
           +e.img-wrap
             img(data-lazy=item, alt="")
+            if i === data.length - 1
+              +e.more
+                +icon('photocamera').more-icon
+                +e.more-count Ещё 5 фото
