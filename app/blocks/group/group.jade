@@ -6,7 +6,7 @@ mixin group(data)
       each item in data
         if item.count === '-1'
           +e.list-item
-            +e.A.link._more(href=item.href)
+            +e.SPAN.link._more
               +e.link-name #{item.name}
         else
           +e.list-item

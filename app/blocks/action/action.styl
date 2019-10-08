@@ -25,9 +25,8 @@
       padding 0 20px
       font-weight bold
 
-    &:hover
+    .page:not(.page_touch) &:hover
       border-color $colorMain
-
 
     .card__action &
       +above(768px)
@@ -146,8 +145,6 @@
       +above(768px)
         margin-right 0
 
-    // ^[0]__item:hover &_like svg
-
   &__icon-img
     display inline-block
     vertical-align top
@@ -161,7 +158,7 @@
       +above(768px)
         margin-right 0
 
-    ^[0]__item:hover &,
+    .page:not(.page_touch) ^[0]__item:hover &,
     ^[0]__item_active &
     // ^[0]_only-icon ^[0]__item:hover & .likeBorder
       fill $colorMain
@@ -180,7 +177,7 @@
       left 50%
       margin-left -10px
 
-    ^[0]__item:hover &,
+    .page:not(.page_touch) ^[0]__item:hover &,
     ^[0]__item_active &
       fill $colorMain
       opacity 1
