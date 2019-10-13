@@ -96,7 +96,7 @@
 
     +above(980px)
       margin-bottom 0
-      padding 25px 18px
+      padding 25px 18px 0
       background-color #fff
 
     &_draft
@@ -125,7 +125,7 @@
 
     +above(980px)
       width 75%
-      font-size 30px
+      font-size 28px
 
   &__head-price
     margin-bottom 15px
@@ -170,64 +170,33 @@
       margin-bottom 0
       padding-top 5px
       display flex
-      justify-content space-between
-      flex-wrap wrap
 
     +above(980px)
       padding 10px 19px 0
-      flex-wrap nowrap
 
     ^[0]_draft &
       margin-bottom 30px
 
+    &_owner
+      display flex
+      padding-bottom 10px
+      background-color aliceblue
+
   &__meta-data
     +above(768px)
       padding-right 15px
-      width 65%
-      flex-shrink 0
+      flex-grow 1
 
-    // +above(980px)
-
-    +above(1170px)
-      width 50%
-
+  &__meta-item
+    display inline-block
+    margin-right 20px
+    margin-bottom 15px
 
   &__meta-id
     display inline-block
 
-  &__meta-seller
-    +above(768px)
-      margin-bottom 6px
-      padding-left 15px
-      display flex
-      width 35%
-      flex-shrink 0
-      flex-direction column
-
-    +above(980px)
-      margin-bottom 0
-
-    +above(1170px)
-      width 50%
-      flex-basis 50%
-      flex-direction row
-
-  &__meta-owner
-    margin-bottom 20px
-    font-weight bold
-
-    +above(1170px)
-      margin-bottom 0
-      width 50%
-      flex-basis 50%
-      padding-left 15px
-
   &__meta-row
-    margin-bottom 15px
     line-height 1.2
-
-    +above(768px)
-      display flex
 
   &__meta-updated
     margin-bottom 15px
@@ -239,15 +208,14 @@
       flex-basis 40%
       flex-shrink 0
 
-  &__meta-input
-    +above(768px)
-      padding-left 15px
-      width 60%
-      flex-basis 60%
-      flex-grow 1
+  &__meta-remark
+    margin-left 6px
+    font-size 12px
+    font-weight normal
+    color darken($colorDecorative, 40)
 
-      &:first-child
-        padding-left 0
+    &:first-child
+      margin-left 0
 
   &__meta-contact
     +above(1170px)
@@ -261,24 +229,6 @@
       overflow hidden
       text-overflow ellipsis
       width 100%
-
-  &__meta-lbl
-    display inline-block
-    margin-right 5px
-    color darken($colorDecorative, 40)
-
-    ^[0]__meta-inspect &
-      +above(768px)
-        float none
-
-  &__meta-remark
-    margin-left 6px
-    font-size 12px
-    font-weight normal
-    color darken($colorDecorative, 40)
-
-    &:first-child
-      margin-left 0
 
   &__meta-date
     margin-right 15px
@@ -315,15 +265,70 @@
     +above(980px)
       margin-left 18px
 
+  &__owner
+    padding 5px 10px
+    display block
+
+    +above(768px)
+      padding 10px 19px
+      display flex
+
+  &__owner-data
+    margin-bottom 10px
+
+    +above(768px)
+      margin-bottom 0
+      flex-grow 1
+      display flex
+      flex-direction column
+      justify-content center
+
+  &__owner-contact
+    +above(768px)
+      margin-bottom 6px
+      padding-left 15px
+      display flex
+      width 250px
+      flex-shrink 0
+      flex-direction column
+
+    +above(980px)
+      margin-bottom 0
+
+  &__owner-name
+    width 100%
+    margin-bottom 10px
+    font-size 14px
+    font-weight bold
+
+  &__owner-remark
+    margin-left 6px
+    font-size 12px
+    font-weight normal
+    color darken($colorDecorative, 40)
+
+    &:first-child
+      margin-left 0
+
+  &__owner-lbl
+    display inline-block
+    margin-right 5px
+    color darken($colorDecorative, 40)
+
+    ^[0]__meta-inspect &
+      +above(768px)
+        float none
+
+
   &__price
     position relative
-    font-size 28px
+    font-size 24px
     font-weight bold
     letter-spacing -1px
 
     +above(768px)
       margin-right 10px
-      font-size 34px
+      font-size 28px
       white-space nowrap
 
   &__price-currency

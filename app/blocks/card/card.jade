@@ -22,43 +22,44 @@ mixin card(data, id)
       +e.meta
         +e.meta-data
           +e.meta-row
-            +e.meta-updated
+            //- +e.meta-updated
+            //-   +e.SPAN.meta-date
+            //-     +e.SPAN.meta-lbl
+            //-       +icon('round-arrow', false).meta-view-icon
+            //-       | Обновлено
+            //-     | #{item.updated}
+            +e.meta-item
               +e.SPAN.meta-date
-                +e.SPAN.meta-lbl
-                  +icon('round-arrow', false).meta-view-icon
-                  | Обновлено
-                | #{item.updated}
-            +e.meta-input
-              +e.SPAN.meta-date
-                +e.SPAN.meta-lbl
-                  +icon('clock', false).meta-view-icon
-                  | Добавлено
+                +icon('clock', false).meta-view-icon
                 | #{item.pubdate}
+
+            +e.meta-item
               +e.SPAN.meta-id № #{item.id}
 
-          +e.meta-row
-            +e.meta-updated
+            +e.meta-item
               +e.SPAN.meta-view
                 +icon('eye', false).meta-view-icon
                 | #{item.inspect.viewAll}
+              +e.SPAN.meta-remark (#{item.inspect.viewToday} сегодня)
 
-                +e.SPAN.meta-remark (#{item.inspect.viewToday} сегодня)
-
-            +e.meta-input
-              +e.meta-inspect(title="#{item.inspect.city}, #{item.inspect.address}")
-                +e.SPAN.meta-lbl
-                  +icon('pin', false).meta-view-icon
-                  | Место осмотра
-                | #{item.inspect.city}, #{item.inspect.address}
-
-        +e.meta-seller
-          +e.meta-owner
+      +e.meta._owner.card__owner
+        +e.owner-data
+          +e.owner-name
             | #{item.author}
-            +e.SPAN.meta-remark (#{item.authorStatus})
-          +e.meta-contact
-            //- +show-phone(item.contact, false).card__meta-phone
-            +show-phones(item.contact, false).card__meta-phone
-            //- +phone(item.contact).card__meta-phone
+            +e.SPAN.owner-remark (#{item.authorStatus})
+
+          +e.owner-address
+            +e.owner-inspect(title="#{item.inspect.city}, #{item.inspect.address}")
+              +e.SPAN.owner-lbl
+                +icon('pin', false).meta-view-icon
+                | Место осмотра
+              | #{item.inspect.city}, #{item.inspect.address}
+
+
+        +e.owner-contact
+          +show-phone(item.contact, false).card__meta-phone
+          //- +show-phones(item.contact, false).card__meta-phone
+          //- +phone(item.contact).card__meta-phone
 
       +e.data
         +e.data-side
@@ -112,7 +113,7 @@ mixin card(data, id)
                 +e.DD.feature-desc #{cleared}
             +e.A.feature-link(href="") Все характеристики модели в каталоге
 
-          +short-poster(item).card__data-sticky
+          //- +short-poster(item).card__data-sticky
 
         +e.data-main
           +e.gallery

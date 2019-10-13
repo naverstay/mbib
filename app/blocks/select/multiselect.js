@@ -8,27 +8,28 @@ export default (() => {
         'select2/selection/single',
         'select2/selection/placeholder',
         'select2/selection/eventRelay',
-        'select2/selection/allowClear',
         'select2/dropdown',
         'select2/dropdown/search',
         'select2/dropdown/attachBody',
         'select2/utils'
-      ], function (SingleSelection, Placeholder, EventRelay, AllowClear, Dropdown, DropdownSearch, AttachBody, Utils) {
+      ], function (SingleSelection, Placeholder, EventRelay, Dropdown, DropdownSearch, AttachBody, Utils) {
 
         const isMobile = checkIsMobile();
 
-        let SelectionAdapter = Utils.Decorate(
-          SingleSelection,
-          Placeholder
-        );
+        // let SelectionAdapter = Utils.Decorate(
+        //   SingleSelection,
+        //   Placeholder
+        // );
 
-        SelectionAdapter = Utils.Decorate(
-          Utils.Decorate(
-            SelectionAdapter,
-            AllowClear
-          ),
-          EventRelay
-        );
+        // SelectionAdapter = Utils.Decorate(
+        //   Utils.Decorate(
+        //     SelectionAdapter,
+        //   ),
+        //   EventRelay
+        // );
+
+        let SelectionAdapter = Utils.Decorate(SingleSelection, Placeholder);
+        SelectionAdapter = Utils.Decorate(SelectionAdapter, EventRelay);
 
 
         const DropdownAdapter = Utils.Decorate(
@@ -39,13 +40,12 @@ export default (() => {
           AttachBody,
         );
 
-          const multiSelects = document.querySelectorAll('.select_multi .select__control');
+        const multiSelects = document.querySelectorAll('.select_multi .select__control');
 
         multiSelects.forEach(select => {
           const sel = $(select).select2({
             selectionAdapter: SelectionAdapter,
             dropdownAdapter: DropdownAdapter,
-            allowClear: true,
             width: '100%',
             dropdownParent: isMobile ? $('#modal .modal__body') : null,
             templateResult: (data) => {

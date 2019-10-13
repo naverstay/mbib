@@ -1,10 +1,11 @@
 mixin breadcrumbs(data)
-	+b.breadcrumbs&attributes(attributes)
-		+e.UL.list
-			each item in data
-				+e.item
-					if item.href
-						+e.A.link(href=item.href) #{item.text}
-					else
-						| #{item.text}
+  +b.breadcrumbs&attributes(attributes)
+    +e.UL.list
+      each item in data
+        +e.item
+          if item.href
+            +e.A.link(href=item.href) #{item.text}
+            +icon('arr-r').sep-icon
+          else
+            | #{item.text}
 
