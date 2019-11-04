@@ -12,7 +12,8 @@ const thumbGallery = (() => {
     arrows: false,
     speed: 0,
     lazyLoad: 'ondemand',
-    dots: true
+    dots: true,
+infinite: false
   });
 
   const loader = '<div class="loader loader_active thumb-gallery__loader"><div class="loader__overlay"><div class="loader__spiner"></div></div></div>';

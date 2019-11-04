@@ -105,6 +105,7 @@
     "jade-injected": "^1.0.2",
     "jquery": "^3.2.1",
     "jquery-form-styler": "^2.0.1",
+    "json-loader": "^0.5.7",
     "lodash": "^4.17.5",
     "magnific-popup": "^1.1.0",
     "merge-stream": "^1.0.0",
