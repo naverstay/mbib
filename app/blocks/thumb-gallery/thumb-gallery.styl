@@ -54,13 +54,16 @@
     width 100%
 
 .slick-dots
-  bottom 10px
+  bottom 0
   top 10px
   padding-left 10px
   padding-right 10px
   display flex
   opacity 0
   transition opacity .3s ease
+
+  +above(980px)
+    bottom 10px
 
   .thumb-gallery:hover &
     opacity 1
@@ -75,7 +78,7 @@
     flex-grow 1
 
     .page_touch &
-      height 3px
+      height 40px
 
   li > button
     position absolute
@@ -94,6 +97,9 @@
     height 3px
     opacity 1
     background-color #fff
+
+    .page_touch &
+      bottom 10px
 
   li.slick-active > button::before
     background-color red
