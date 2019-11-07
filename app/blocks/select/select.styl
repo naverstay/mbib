@@ -9,10 +9,11 @@
     box-shadow 0 0 0 3px $colorSecondary
 
   .control-group &
-    width 50% !important
+    width 50%
     flex-grow 1
+    flex-basis 50%
 
-  .control-group & ~ &
+  .control-group &:last-child
     margin-left -1px
     flex-grow 0
     display flex
@@ -26,15 +27,17 @@
   width 100%
 
 .select2-container
-  position relative
-  margin 0
-  width: 100%;
-  display: table;
-  table-layout: fixed;
+  // position relative
+  position absolute
+  top 0
+  left 0
   flex-grow 1
 
-  +above(980px)
-    float left
+  .select2-container:not(.select2-container--open)
+    right 0
+    bottom 0
+
+  // +above(980px)
 
   .modal_mobile-select &
     left 0 !important
