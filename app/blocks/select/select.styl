@@ -2,8 +2,10 @@
   position: relative
   box-sizing border-box
   display block
-  width 100%
-  height $heightControl
+
+  &__control
+    width 100%
+    height $heightControl
 
   &:focus
     box-shadow 0 0 0 3px $colorSecondary
@@ -32,6 +34,9 @@
   top 0
   left 0
   flex-grow 1
+
+  .geoplace &
+    position relative
 
   .select2-container:not(.select2-container--open)
     right 0

@@ -38,6 +38,10 @@ const card = (() => {
   const cardDataSide = document.querySelector('.card__data-side');
   const getWindowWidth = () => window.innerWidth;
 
+  if (!cardDataSide) {
+    return;
+  }
+
   const isHeightAvaible = () => {
     const featureCardHeight = document.querySelector('.card__feature').offsetHeight;
     const cardDataSideHeight = cardDataSide.offsetHeight;

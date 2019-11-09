@@ -21,8 +21,8 @@ mixin modal-place()
         +alert._warning На данный момент в оиске доступны лишь населённые пункты ЮФО.
         +form(name="place").geoplace
           +e.row
+            +lbl(for="placeField" hidden)
             +e.item._fullwidth
-              +lbl(for="placeField" hidden)
               +select(name="place" id="placeField" data-placeholder="Регион, город, населенный пункт" tabindex="1")._dont-use-modal.geoplace__field
                 option(value="")
                 option(value="pl1") Audi
@@ -39,8 +39,8 @@ mixin modal-place()
                 option(value="pl12") ГАЗ
                 option(value="pl13") УАЗ
               //- +input(type="text" id="placeField" value="" placeholder="Регион, город, населенный пункт").geoplace__field
-              +popup.geoplace__popup
-                +geoplace-list(getData('geoplace'))
+            +popup.geoplace__popup
+              +geoplace-list(getData('geoplace'))
           +e.row
             +e.item._fullwidth.geoplace__area
               +btn('link', 'close')(href="")._theme_pseudo._size_s.geoplace__item Москва
