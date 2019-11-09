@@ -134,7 +134,7 @@ export default (() => {
 
     }
 
-  $('.pagination .select .select__control, .sort .select .select__control, .geoplace .select .select__control').select2({
+  $('.pagination .select .select__control, .sort .select .select__control').select2({
       width: '100%'
     });
 })();
