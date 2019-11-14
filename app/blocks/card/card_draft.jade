@@ -12,222 +12,213 @@ include ../show-phone/show-phone
 include ../short-poster/short-poster
 
 mixin card_draft(data, id)
-	-var item = data[id];
-	+b.card&attributes(attributes)._draft
-		+e.bar
-			+e.bar-status._error 
-				+e.bar-status-text
-					| Не опубликовано
-					+icon('forbidden', false).bar-icon
-			+e.A.bar-action(href="") Редактировать 
-				+icon('pen-admin', false).bar-icon
-			+e.A.bar-action(href="") Опубликовать 
-				+icon('add-sq', false).bar-icon
-		//- +e.bar
-			+e.bar-status._complete 
-				+e.bar-status-text
-					| Опубликовано
-					+icon('checked', false).bar-icon
-				+e.SPAN.bar-remark осталось 59 дней
-			+e.A.bar-action(href="") Редактировать 
-				+icon('pen-admin', false).bar-icon
-			+e.A.bar-action(href="") Опубликовать 
-				+icon('add-sq', false).bar-icon
-		+e.head._draft
-			+e.head-title
-				+car-name(1, 'BMW / X3 / 2013 Внедорожник 5 дв. II (F25) / xDrive 2.0 AT (184 л.с.)', 'bmw')._draft
-			+e.head-price
-				+e.price
-					| #{item.price} 
-					+e.SPAN.price-currency ₽
-				+action('like', item.isFavorite)._only-icon._is-visible.card__head-action
-		+e.body
-			+e.meta
-				+e.meta-data
-					+e.meta-row
-						+e.meta-updated
-							+e.SPAN.meta-date
-								+e.SPAN.meta-lbl 
-									+icon('round-arrow', false).meta-view-icon
-									| Обновлено
-								| #{item.updated}
-						+e.meta-input
-							+e.SPAN.meta-date
-								+e.SPAN.meta-lbl 
-									+icon('clock', false).meta-view-icon
-									| Добавлено
-								| #{item.pubdate}
-							+e.SPAN.meta-id № #{item.id}
+  -var item = data[id];
+  +b.card&attributes(attributes)._draft
+    +e.bar
+      +e.bar-status._error
+        +e.bar-status-text
+          | Не опубликовано
+          +icon('forbidden', false).bar-icon
+      +e.A.bar-action(href="") Редактировать
+        +icon('pen-admin', false).bar-icon
+      +e.A.bar-action(href="") Опубликовать
+        +icon('add-sq', false).bar-icon
+    //- +e.bar
+      +e.bar-status._complete
+        +e.bar-status-text
+          | Опубликовано
+          +icon('checked', false).bar-icon
+        +e.SPAN.bar-remark осталось 59 дней
+      +e.A.bar-action(href="") Редактировать
+        +icon('pen-admin', false).bar-icon
+      +e.A.bar-action(href="") Опубликовать
+        +icon('add-sq', false).bar-icon
+    +e.head._draft
+      +e.head-title
+        +car-name(1, 'BMW / X3 / 2013 Внедорожник 5 дв. II (F25) / xDrive 2.0 AT (184 л.с.)', 'bmw')._draft
+      +e.head-price
+        +e.price
+          | #{item.price}
+          +e.SPAN.price-currency ₽
+        +action('like', item.isFavorite)._only-icon._is-visible.card__head-action
+    +e.body
+      +e.meta
+        +e.meta-data
+          +e.meta-row
+            +e.meta-item
+              +e.SPAN.meta-date
+                +icon('clock', false).meta-view-icon
+                | #{item.pubdate}
 
-					+e.meta-row
-						+e.meta-updated
-							+e.SPAN.meta-view
-								+icon('eye', false).meta-view-icon
-								| #{item.inspect.viewAll}
+            +e.meta-item
+              +e.SPAN.meta-id № #{item.id}
 
-								+e.SPAN.meta-remark (#{item.inspect.viewToday} сегодня)
+            +e.meta-item
+              +e.SPAN.meta-view
+                +icon('eye', false).meta-view-icon
+                | #{item.inspect.viewAll}
+              +e.SPAN.meta-remark (#{item.inspect.viewToday} сегодня)
 
-						+e.meta-input
-							+e.meta-inspect
-								+e.SPAN.meta-lbl 
-									+icon('pin', false).meta-view-icon
-									| Место осмотра
-								| #{item.inspect.city}, #{item.inspect.address}
+      +e.meta._owner.card__owner
+        +e.owner-data
+          +e.owner-name
+            | #{item.author}
+            +e.SPAN.owner-remark (#{item.authorStatus})
 
-				+e.meta-seller
-					+e.meta-owner 
-						| #{item.author} 
-						+e.SPAN.meta-remark (#{item.authorStatus})
-					+e.meta-contact
-						+show-phone(item.contact).card__meta-phone
-						//- +phone(item.contact).card__meta-phone
+          +e.owner-address
+            +e.owner-inspect(title="#{item.inspect.city}, #{item.inspect.address}")
+              +e.SPAN.owner-lbl
+                +icon('pin', false).meta-view-icon
+                | Место осмотра
+              | #{item.inspect.city}, #{item.inspect.address}
 
-			+e.tab
-				+tab._default.cardtype
-					+e.head
-						+e.A.head-item._active(href="#cardPremium").cardtype__tab-premium 
-							+icon('trophy', false).head-icon.cardtype__tab-icon
-							| Спецразмещение
-						+e.A.head-item(href="#cardUp").cardtype__tab-up 
-							+icon('cursor', false).head-icon.cardtype__tab-icon
-							| Поднятие в поиске
-					+e.content._active(id="cardPremium")
-						.cardtype__content.cardtype__content_premium
-							.cardtype__fig
-								img(src="assets/images/premium.svg", alt="")
-							.cardtype__desc
-								h3 Спецразмещение
-								p Увеличьте шансы на быструю и выгодную продажу, которое увидит максимум посетителей авто-портала Mbib.ru. Ваше объявление будет выделено цветом, поднято в топ, размещено в специальном блоке на главной странице, на странице марки и в выдаче объявлений.
+        +e.owner-contact
+          +show-phone(item.contact, false).card__meta-phone
 
-							.cardtype__buy-wrap
-								ul.cardtype__feature
-									li.cardtype__feature-item Специальный блок на главной
-									li.cardtype__feature-item Выделено цветом
-									li.cardtype__feature-item Поднято в ТОП
+      +e.tab
+        +tab._default.cardtype
+          +e.head
+            +e.A.head-item._active(href="#cardPremium").cardtype__tab-premium
+              +icon('trophy', false).head-icon.cardtype__tab-icon
+              | Спецразмещение
+            +e.A.head-item(href="#cardUp").cardtype__tab-up
+              +icon('cursor', false).head-icon.cardtype__tab-icon
+              | Поднятие в поиске
+          +e.content._active(id="cardPremium")
+            .cardtype__content.cardtype__content_premium
+              .cardtype__fig
+                img(src="assets/images/premium.svg", alt="")
+              .cardtype__desc
+                h3 Спецразмещение
+                p Увеличьте шансы на быструю и выгодную продажу, которое увидит максимум посетителей авто-портала Mbib.ru. Ваше объявление будет выделено цветом, поднято в топ, размещено в специальном блоке на главной странице, на странице марки и в выдаче объявлений.
 
-								.cardtype__buy
-									+btn('button', '')._size_m._theme_akcent Активировать за 675 руб.
+              .cardtype__buy-wrap
+                ul.cardtype__feature
+                  li.cardtype__feature-item Специальный блок на главной
+                  li.cardtype__feature-item Выделено цветом
+                  li.cardtype__feature-item Поднято в ТОП
 
-					+e.content(id="cardUp")
-							.cardtype__content.cardtype__content_up
-								.cardtype__fig
-									img(src="assets/images/rocket.svg", alt="")
-								.cardtype__desc
-									h3 Экспресс-продажа в ТОП позициях
-									p Увеличьте шансы на быструю и выгодную продажу, которое увидит максимум посетителей авто-портала Mbib.ru. Ваше объявление будет выделено цветом, поднято в топ, размещено в специальном блоке на главной странице, на странице марки и в выдаче объявлений.
+                .cardtype__buy
+                  +btn('button', '')._size_m._theme_akcent Активировать за 675 руб.
 
-								.cardtype__buy-wrap
-									ul.cardtype__feature
-										li.cardtype__feature-item Специальный блок на главной
-										li.cardtype__feature-item Поднято в ТОП
+          +e.content(id="cardUp")
+              .cardtype__content.cardtype__content_up
+                .cardtype__fig
+                  img(src="assets/images/rocket.svg", alt="")
+                .cardtype__desc
+                  h3 Экспресс-продажа в ТОП позициях
+                  p Увеличьте шансы на быструю и выгодную продажу, которое увидит максимум посетителей авто-портала Mbib.ru. Ваше объявление будет выделено цветом, поднято в топ, размещено в специальном блоке на главной странице, на странице марки и в выдаче объявлений.
 
-									.cardtype__buy
-										+btn('button', '')._size_m._theme_main Активировать за 355 руб.
+                .cardtype__buy-wrap
+                  ul.cardtype__feature
+                    li.cardtype__feature-item Специальный блок на главной
+                    li.cardtype__feature-item Поднято в ТОП
 
-			+e.data
-				+e.data-side
-					+e.feature
-						+e.DL.feature-list
-							+e.feature-row
-								+e.DT.feature-term Год выпуска
-								+e.DD.feature-desc #{item.feature.year}
-							+e.feature-row
-								+e.DT.feature-term Пробег
-								+e.DD.feature-desc #{item.feature.mileage}
-							+e.feature-row
-								+e.DT.feature-term Кузов
-								+e.DD.feature-desc #{item.feature.body}
-							+e.feature-row
-								+e.DT.feature-term Цвет
-								+e.DD.feature-desc #{item.feature.color}
-							+e.feature-row
-								+e.DT.feature-term Двигатель
-								+e.DD.feature-desc #{item.feature.engineCapacity} л / #{item.feature.enginePower} л.с. / #{item.feature.engineType}
-							+e.feature-row
-								+e.DT.feature-term Коробка
-								if item.feature.transmission == 'АТ'
-									-var transmission = 'автоматическая';
-								else
-									-var transmission = 'механическая';
+                  .cardtype__buy
+                    +btn('button', '')._size_m._theme_main Активировать за 355 руб.
 
-								+e.DD.feature-desc #{transmission}
-							+e.feature-row
-								+e.DT.feature-term Привод
-								+e.DD.feature-desc #{item.feature.drive}
-							+e.feature-row
-								+e.DT.feature-term Руль
-								-var drive = item.feature.rightDrive ? 'правый' : 'левый';
-								+e.DD.feature-desc #{drive}
-							+e.feature-row
-								+e.DT.feature-term Состояние
-								+e.DD.feature-desc #{item.feature.state}
-							+e.feature-row
-								+e.DT.feature-term Владельцы
-								+e.DD.feature-desc #{item.feature.owners}
-							+e.feature-row
-								+e.DT.feature-term ПТС
-								+e.DD.feature-desc #{item.feature.pts}
-							+e.feature-row
-								+e.DT.feature-term Владение
-								+e.DD.feature-desc #{item.feature.tenure}
-							+e.feature-row
-								+e.DT.feature-term Таможня
-								-var cleared = item.feature.cleared ? 'растаможен' : 'не растаможен';
-								+e.DD.feature-desc #{cleared}
+      +e.data
+        +e.data-side
+          +e.feature
+            +e.DL.feature-list
+              +e.feature-row
+                +e.DT.feature-term Год выпуска
+                +e.DD.feature-desc #{item.feature.year}
+              +e.feature-row
+                +e.DT.feature-term Пробег
+                +e.DD.feature-desc #{item.feature.mileage}
+              +e.feature-row
+                +e.DT.feature-term Кузов
+                +e.DD.feature-desc #{item.feature.body}
+              +e.feature-row
+                +e.DT.feature-term Цвет
+                +e.DD.feature-desc #{item.feature.color}
+              +e.feature-row
+                +e.DT.feature-term Двигатель
+                +e.DD.feature-desc #{item.feature.engineCapacity} л / #{item.feature.enginePower} л.с. / #{item.feature.engineType}
+              +e.feature-row
+                +e.DT.feature-term Коробка
+                if item.feature.transmission == 'АТ'
+                  -var transmission = 'автоматическая';
+                else
+                  -var transmission = 'механическая';
 
-					+short-poster(item).card__data-sticky
+                +e.DD.feature-desc #{transmission}
+              +e.feature-row
+                +e.DT.feature-term Привод
+                +e.DD.feature-desc #{item.feature.drive}
+              +e.feature-row
+                +e.DT.feature-term Руль
+                -var drive = item.feature.rightDrive ? 'правый' : 'левый';
+                +e.DD.feature-desc #{drive}
+              +e.feature-row
+                +e.DT.feature-term Состояние
+                +e.DD.feature-desc #{item.feature.state}
+              +e.feature-row
+                +e.DT.feature-term Владельцы
+                +e.DD.feature-desc #{item.feature.owners}
+              +e.feature-row
+                +e.DT.feature-term ПТС
+                +e.DD.feature-desc #{item.feature.pts}
+              +e.feature-row
+                +e.DT.feature-term Владение
+                +e.DD.feature-desc #{item.feature.tenure}
+              +e.feature-row
+                +e.DT.feature-term Таможня
+                -var cleared = item.feature.cleared ? 'растаможен' : 'не растаможен';
+                +e.DD.feature-desc #{cleared}
 
-				+e.data-main
-					+e.gallery
-						+e.gallery-placeholder
-							+e.gallery-title Добавьте фотографи вашего авто
-							+e.gallery-desc По статистике, люди не смотрят обьявления без картинок
-							+e.gallery-bg
-							+e.gallery-add
-								+upload()._size_xxl._theme_secondary
-				
-					+e.kit
-						+e.kit-head
-							+title(3) Комплектация
-						+e.kit-list
-							+e.DL.kit-item
-								+e.DT.kit-title Безопасность
-								if item.feature.abs
-									+e.DD.kit-desc Антиблокировочная система (ABS)
-								if item.feature.servo
-									+e.DD.kit-desc Парктроник
-							+e.DL.kit-item
-								+e.DT.kit-title Салон
-								if item.feature.fabricInterior
-									+e.DD.kit-desc Тканевый салон
-								if item.feature.leatherInterior
-									+e.DD.kit-desc Кожанный салон
-							+e.DL.kit-item
-								+e.DT.kit-title Комфорт
-								if item.feature.cruiseControl
-									+e.DD.kit-desc Круиз-контроль
-								if item.feature.servo
-									+e.DD.kit-desc Усилитель руляк
-								if item.feature.tintedGlass
-									+e.DD.kit-desc Тонированные стекла
-							+e.DL.kit-item
-								+e.DT.kit-title Экстерьер
-								+e.DD.kit-desc 
-									if item.feature.alloyWheels
-										| Легкосплавные диски 
-									| #{item.feature.radiusWheels}''
-					+e.comment
-						+title(3) Комментарий продавца
-						+e.comment-body
-							| #{item.comment}
+        +e.data-main
+          +e.gallery
+            +e.gallery-placeholder
+              +e.gallery-title Добавьте фотографи вашего авто
+              +e.gallery-desc По статистике, люди не смотрят обьявления без картинок
+              +e.gallery-bg
+              +e.gallery-add
+                +upload()._size_xxl._theme_secondary
 
-		+e.bar
-			+e.bar-status._moderation
-				+e.bar-status-text
-					| Модерация
-					+icon('hourglass', false).bar-icon
-				+e.SPAN.bar-remark в течении 30 минут
-			+e.A.bar-action(href="") Редактировать 
-				+icon('pen-admin', false).bar-icon
-			+e.A.bar-action(href="") Снять с продажи 
-				+icon('close-sq', false).bar-icon
+          +e.kit
+            +e.kit-head
+              +title(3) Комплектация
+            +e.kit-list
+              +e.DL.kit-item
+                +e.DT.kit-title Безопасность
+                if item.feature.abs
+                  +e.DD.kit-desc Антиблокировочная система (ABS)
+                if item.feature.servo
+                  +e.DD.kit-desc Парктроник
+              +e.DL.kit-item
+                +e.DT.kit-title Салон
+                if item.feature.fabricInterior
+                  +e.DD.kit-desc Тканевый салон
+                if item.feature.leatherInterior
+                  +e.DD.kit-desc Кожанный салон
+              +e.DL.kit-item
+                +e.DT.kit-title Комфорт
+                if item.feature.cruiseControl
+                  +e.DD.kit-desc Круиз-контроль
+                if item.feature.servo
+                  +e.DD.kit-desc Усилитель руляк
+                if item.feature.tintedGlass
+                  +e.DD.kit-desc Тонированные стекла
+              +e.DL.kit-item
+                +e.DT.kit-title Экстерьер
+                +e.DD.kit-desc
+                  if item.feature.alloyWheels
+                    | Легкосплавные диски
+                  | #{item.feature.radiusWheels}''
+          +e.comment
+            +title(3) Комментарий продавца
+            +e.comment-body
+              | #{item.comment}
+
+    +e.bar
+      +e.bar-status._moderation
+        +e.bar-status-text
+          | Модерация
+          +icon('hourglass', false).bar-icon
+        +e.SPAN.bar-remark в течении 30 минут
+      +e.A.bar-action(href="") Редактировать
+        +icon('pen-admin', false).bar-icon
+      +e.A.bar-action(href="") Снять с продажи
+        +icon('close-sq', false).bar-icon
