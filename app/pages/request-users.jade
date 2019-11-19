@@ -6,37 +6,37 @@ include ../blocks/select/select
 include ../blocks/pager/pager
 
 block head
-	- var pageTitle = 'Список страниц';
-	- var pageMod = 'list';
+  - var pageTitle = 'Список страниц';
+  - var pageMod = 'list';
 
 block content
-	+breadcrumbs(getData('card-crumbs'))
-	+block
-		+table
-			+e.THEAD.head
-				+e.TR.row._head
-					+e.TH.head-cell Имя
-					+e.TH.head-cell Телефон
-					+e.TH.head-cell Email
-					+e.TH.head-cell Комментарий
-			+e.TBODY.body
-				+e.TR.row
-					+e.TD.cell(data-th="Имя") Игорь
-					+e.TD.cell(data-th="Телефон") +79034578455
-					+e.TD.cell(data-th="Email") mauiluser@mail.ru
-					+e.TD.cell(data-th="Комментарий") 
-						a(href="") длинная длинная ссылка
-				+e.TR.row
-					+e.TD.cell(data-th="Имя") Игорь
-					+e.TD.cell(data-th="Телефон") +79034578455
-					+e.TD.cell(data-th="Email") mauiluser@mail.ru
-					+e.TD.cell(data-th="Комментарий") 
-						a(href="") ссылка
-		+e.footer._align-content_between
-			+pager
-			div
-				+select()._search
-					option 25 объявлений на страницу
-					option 50 объявлений на страницу
-					option 75 объявлений на страницу
-					option 100 объявлений на страницу
+  +breadcrumbs(getData('card-crumbs'))
+  +block
+    +table
+      +e.THEAD.head
+        +e.TR.row._head
+          +e.TH.head-cell Имя
+          +e.TH.head-cell Телефон
+          +e.TH.head-cell Email
+          +e.TH.head-cell Комментарий
+      +e.TBODY.body
+        +e.TR.row
+          +e.TD.cell(data-th="Имя") Игорь
+          +e.TD.cell(data-th="Телефон") +79034578455
+          +e.TD.cell(data-th="Email") mauiluser@mail.ru
+          +e.TD.cell(data-th="Комментарий")
+            a(href="") длинная длинная ссылка
+        +e.TR.row
+          +e.TD.cell(data-th="Имя") Игорь
+          +e.TD.cell(data-th="Телефон") +79034578455
+          +e.TD.cell(data-th="Email") mauiluser@mail.ru
+          +e.TD.cell(data-th="Комментарий")
+            a(href="") ссылка
+    +e.footer._align-content_between
+      +pager
+      +e.footer-view
+        +select()._search
+          option 25 объявлений на страницу
+          option 50 объявлений на страницу
+          option 75 объявлений на страницу
+          option 100 объявлений на страницу
