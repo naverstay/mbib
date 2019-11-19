@@ -172,9 +172,6 @@
       +above(980px)
         flex-wrap nowrap
 
-      &:last-child
-        margin-bottom 0
-
     &_advanced
       overflow hidden
       max-height 0
@@ -272,7 +269,7 @@
       width 50%
 
     +above(980px)
-      margin-bottom 10px
+      margin-bottom 5px
       width 20%
 
       &_span_2
@@ -320,6 +317,12 @@
 
   &__item
     margin-bottom 10px
+
+    ^[0]__col:last-child &
+      margin-bottom 0
+
+      +above(768px)
+        margin-bottom 10px
 
     ^[0]__group-on-mobile &
       width 50%

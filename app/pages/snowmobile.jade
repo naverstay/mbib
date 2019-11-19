@@ -1,0 +1,14 @@
+extends /blocks/layout-default/layout-auth
+include ../blocks/breadcrumbs/breadcrumbs
+include ../blocks/text/text
+include ../blocks/search/search-snowmobile
+include ../blocks/group/group
+
+block head
+  - var pageTitle = 'MBIB';
+  - var pageMod = 'index';
+
+block content
+  +breadcrumbs(getData('index-crumbs'))
+  +text(getData('main-text'))._important
+  +search-snowmobile
