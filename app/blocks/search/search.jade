@@ -156,7 +156,7 @@ mixin search()
             +e.item
               +checkbox(name="forChange", checked  tabindex="20") Возможен обмен
 
-          +e.group-on-mobile
+          +e.group-on-mobile._column
             +e.col
               +e.item._additional-option
                 +select(name="ownerCount" data-placeholder="Владелец по счету" data-minimum-results-for-search="Infinity" tabindex="22")._search
@@ -171,7 +171,7 @@ mixin search()
                   option(value="bk") Обслуживался у дилера
                   option(value="fl") На гарантии
 
-          +e.group-on-mobile
+          +e.group-on-mobile._column
             +e.col
               +e.item
                 +select(name="ownertype" data-placeholder="Любой продавец" data-minimum-results-for-search="Infinity" tabindex="22")._search
