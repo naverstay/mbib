@@ -60,7 +60,19 @@ export default (() => {
     if (!isMobile) {
       $('.select_search .select__control').select2({
         width: '100%',
-        minimumResultsForSearch: 20
+        minimumResultsForSearch: 20,
+        templateResult: (data) => {
+          if (!data.id) { return data.text; }
+          const term = $(`option[value=${data.id}]`).first().closest('select').data('select2').dropdown.$search.val();
+          const reg = new RegExp(term, 'gi');
+          const $res = $('<div></div>');
+          const text = data.text;
+          const boldTermText = text.replace(reg, (optionText) => `<mark class="select2-results__option-highlight">${optionText}</mark>`);
+          $res.html(boldTermText);
+          $res.addClass('select2-results__option-inner');
+
+          return $res;
+        }
       });
 
       $('.select_has-image .select__control').select2({
@@ -79,7 +91,19 @@ export default (() => {
       $('.select_search .select__control').select2({
         width: '100%',
         minimumResultsForSearch: 20,
-        dropdownParent: $('#modal .modal__body')
+        dropdownParent: $('#modal .modal__body'),
+        templateResult: (data) => {
+          if (!data.id) { return data.text; }
+          const term = $(`option[value=${data.id}]`).first().closest('select').data('select2').dropdown.$search.val();
+          const reg = new RegExp(term, 'gi');
+          const $res = $('<div></div>');
+          const text = data.text;
+          const boldTermText = text.replace(reg, (optionText) => `<mark class="select2-results__option-highlight">${optionText}</mark>`);
+          $res.html(boldTermText);
+          $res.addClass('select2-results__option-inner');
+
+          return $res;
+        }
       });
 
       $('.select_has-image .select__control').select2({

@@ -50,15 +50,18 @@ export default (() => {
             dropdownParent: isMobile ? $('#modal .modal__body') : null,
             templateResult: (data) => {
               if (!data.id) { return data.text; }
-
+              const term = $(`option[value=${data.id}]`).first().closest('select').data('select2').dropdown.$search.val();
+              const reg = new RegExp(term, 'gi');
               const $res = $('<div></div>');
-
-              $res.text(data.text);
+              const text = data.text;
+              const boldTermText = text.replace(reg, (optionText) => `<mark class="select2-results__option-highlight">${optionText}</mark>`);
+              $res.html(boldTermText);
               $res.addClass('select2-results__option-inner');
 
               return $res;
             },
             templateSelection: (data) => {
+
               if (!data.id) { return data.text; }
 
               const selected = ($(select).val() || []).length;
