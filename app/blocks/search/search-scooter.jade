@@ -39,6 +39,16 @@ mixin search-scooter()
             option(value="m12" data-brand="gaz") ГАЗ
             option(value="m13" data-brand="uaz") УАЗ
         +e.col
+          +select(name="model" data-placeholder="Модель" tabindex="2")._search
+            option(value="")
+            option(value="v1") CL
+            option(value="v2") CLX
+            option(value="v3") MX
+            option(value="v4") MX5
+            option(value="v5") RL
+
+      +e.group-on-mobile
+        +e.col
           +select(name="engineType" data-placeholder="Двигатель" data-minimum-results-for-search="Infinity" tabindex="9")._search
             option(value="")
             option(value="teb") Бензин
@@ -46,14 +56,14 @@ mixin search-scooter()
             option(value="teg") Гибрид
             option(value="tee") Электро
 
-      +e.col._mobile-order-last
-        +select(name="body" data-placeholder="Число тактов" data-minimum-results-for-search="Infinity" tabindex="3")._search
-          option(value="")
-          option(value="k1") Седан
-          option(value="k2") Пикап
-          option(value="k3") Купе
-          option(value="k4") Универсал
-          option(value="k5") Хэтчбек
+        +e.col
+          +select(name="body" data-placeholder="Число тактов" data-minimum-results-for-search="Infinity" tabindex="3")._search
+            option(value="")
+            option(value="k1") Седан
+            option(value="k2") Пикап
+            option(value="k3") Купе
+            option(value="k4") Универсал
+            option(value="k5") Хэтчбек
 
       +e.col
         +control-group
@@ -105,7 +115,7 @@ mixin search-scooter()
             option(value="ye7") 2011
             option(value="ye8") 2010
 
-      +e.col._span_2
+      +e.col
         +control-group
           +select()(name="powerStart" data-placeholder="Мощность от, лс" tabindex="4")._search
             option(value="")
