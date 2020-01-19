@@ -1,15 +1,19 @@
-mixin btn(tag, iconName)
-	- var tag = tag == 'link' ? 'a' : 'button'
-		+b({tag: tag}).btn&attributes(attributes)
-			if !iconName
-				+e.SPAN.text
-					block
-			else if iconName == 'close'
-				+e.SPAN.text
-					block
-				+e.SPAN.remove
-					+icon(iconName, false).icon
-			else
-				+icon(iconName, false).icon
-				+e.SPAN.text
-					block
+//- options:
+//-   iconClass: string
+
+mixin btn(tag, iconName, options = {})
+  - var tag = tag == 'link' ? 'a' : 'button'
+  - var className = options.iconClass ? options.iconClass : ''
+  +b({tag: tag}).btn&attributes(attributes)
+    if !iconName
+      +e.SPAN.text
+        block
+    else if iconName == 'close'
+      +e.SPAN.text
+        block
+      +e.SPAN.remove
+        +icon(iconName, false).icon
+    else
+      +icon(iconName, false).icon(class=className)
+      +e.SPAN.text
+        block

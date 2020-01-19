@@ -332,4 +332,5 @@ mixin search()
           +icon('search', false).icon-search
         +e.col._span_4._sbm
           +btn('button')._theme_link(tabindex="18").search__switcher Расширенный поиск
-          +btn('button')._theme_secondary(tabindex="28").search__sbm Показать 479 544 объявлений
+          +btn('button', 'search', {iconClass: 'search__sbm-icon'})._theme_secondary(tabindex="28").search__sbm
+            | Показать 479 544 объявлений
