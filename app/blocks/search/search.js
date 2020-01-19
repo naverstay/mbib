@@ -33,6 +33,7 @@ const search = (() => {
       });
     }
   }catch (err) {
+    throw new Error(err);
   }
 
   try {
@@ -43,14 +44,15 @@ const search = (() => {
       wrap.classList.toggle(showDropClass);
     });
 
-  }catch (err) {}
+  }catch (err) {
+  }
 
   try {
     const header = wrap.querySelector('.search__header');
     const headerButton = wrap.querySelector('.search__header-toggler');
     const advanced = wrap.querySelector('.search__row_advanced');
 
-    headerButton.addEventListener('click', (e) => {
+    headerButton.addEventListener('click', () => {
       if (wrap.classList.contains('search_show-advanced')) {
         advanced.style.overflow = 'hidden';
       }
@@ -64,7 +66,21 @@ const search = (() => {
     });
 
 
-  }catch (err) {}
+  }catch (err) {
+  }
+
+  try {
+    const toggler = wrap.querySelector('.search__toggler-button');
+    const toggleBody = wrap.querySelector('.search__toggle-body');
+    const toggleBodyActiveClass = 'search__toggle-body_open';
+
+    toggler.addEventListener('click', () => {
+      toggleBody.classList.toggle(toggleBodyActiveClass);
+    });
+
+  }catch (err) {
+    throw new Error(err);
+   }
 
 })();
 

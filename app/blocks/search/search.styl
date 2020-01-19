@@ -26,6 +26,32 @@
       border-left 5px solid rgba(#fff, 0)
       border-right 5px solid rgba(#fff, 0)
 
+  &__toggler
+    margin 0 -1px 10px
+    min-width 100%
+    display block
+
+    +above(768px)
+      margin 0 -10px 10px
+
+  &__toggle-body
+    margin 0 -6px
+    padding 0 5px
+    overflow hidden
+    max-height 0
+    transition max-height .3s ease
+
+    &_open
+      max-height 2000px
+
+      +above(768px)
+        max-height 1000px
+
+
+    +above(768px)
+      margin 0 -11px
+      padding 0 10px
+
   &__header
     position relative
     margin -14px -8px 10px
