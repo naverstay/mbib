@@ -1,190 +1,201 @@
 .switcher
-	display inline-block
-	margin-right 10px
-	margin-bottom 10px
-	
-	&_fullwidth
-		width 100%
-	
-	+above(980px)
-		margin-right 20px
-	
-	&:last-child,
-	.control-group &
-		margin-right 0
-	
-	.control-group &
-		margin-bottom 0
-	
-	&__control
-		position absolute
-		z-index -1
-		opacity 0
-		margin 0
-		visibility hidden
-		
-	&__text
-		position relative
-		z-index 2
-		padding 0 19px
-		display inline-block
-		height $heightM
-		font-size 12px
-		line-height 48px
-		text-align center
-		text-decoration none
-		text-transform uppercase
-		border none
-		transition box-shadow .3s, background-color .3s, color .3s
-		cursor pointer
-		
-		&_size_s
-			height 36px
-			line-height 37px
-			
-		&_size_m
-			padding 0 15px
-			font-size 14px
-			height 40px
-			line-height 39px
-			
-		&_type_card
-			display block
-			padding 5px
-			height auto
-			line-height 1.3
-			
-		&:active,
-		^[0]__control:checked + &,
-		&_active
-			box-shadow none
-			
-		&_theme_main
-			color #fff
-			background-color $colorMain
-			background-image linear-gradient(to right, $colorMain, #E61A4D)
-			box-shadow 0 2px 0 #900
-			
-			&:hover,
-			&:focus
-				background-image linear-gradient(to right, #E61A4D, lighten($colorMain, 20))
-				
-			&:active,
-			^[0]__control:checked + &
-				background-image none
-				background-color darken($colorMain, 5)
-				box-shadow inset 0 3px 6px #900
-			
-		&_theme_secondary
-			color #fff
-			background-color $colorSecondary
-			background-image linear-gradient(to right, $colorSecondary, #528AE0)
-			box-shadow 0 2px 0 #053d93
-			
-			&:hover,
-			&:focus
-				background-image linear-gradient(to right, #528ae0, #6ba3f9)
-				box-shadow 0 2px 0 #1f57ad
-				
-			&:active,
-			^[0]__control:checked + &
-				background-image none
-				background-color #1f57ad
-				box-shadow inset 0 3px 6px #053d93
-				
-		&_theme_tertirary
-			background-color lighten($colorDecorative, 10)
-			box-shadow 0 2px 0 darken($colorDecorative, 20)
-			
-			&:hover,
-			&:focus
-				background-color $colorDecorative
-				box-shadow 0 2px 0 darken($colorDecorative, 40)
-		
-				
-			&:active,
-			^[0]__control:checked + &
-				color #fff
-				background-image none
-				background-color darken($colorDecorative, 40)
-				box-shadow 0 2px 0 darken($colorDecorative, 100)
-				
-		^[0]__control[disabled] + &
-			background-image none
-			background-color #f8f8f8
-			box-shadow none
-			
-		&_theme_simple
-			position relative
-			text-transform none
-			// color #787878
-			background-color #fff
-			border 1px solid $colorDecorative
-			transition background-color .3s, color .3s, border-color .3s
-			
-			.control-group &
-				margin-right -1px
-				margin-bottom -1px
-			
-			^[0]__control[disabled] + &
-				background-color #f8f8f8
-			
-			^[0]__control:active + &,
-			^[0]__control:checked + &
-				color #fff
-				background-color $colorSecondary
-				border-color #1f57ad
-				transform translate3D(0, 0, 0)
-			
-			^[0]__control:checked + &
-				z-index 3
-		
-		^[0]_theme_table &
-			position relative
-			padding-left 5px
-			padding-right 5px
-			margin-bottom -1px
-			display table
-			width 100%
-			font-size 14px
-			text-transform none
-			background-color #fff
-			border solid 1px $colorDecorative
-			
-		^[0]_theme_table ^[0]__control:active + &,
-		^[0]_theme_table ^[0]__control:checked + &
-			z-index 1
-			color #fff
-			background-color $colorSecondary
-			border solid 1px #1f57ad
-			transform translate3D(0, 0, 0)
-		
-		^[0]_theme_table ^[0]__control:checked + &
-			z-index 3
-			
-	&__cell
-		padding 0 10px
-		display table-cell
-		line-height 1.2
-		vertical-align middle
-		
-		&_weight_bold
-			font-weight bold
-			
-		&_color_light
-			color #555
-			
-		^[0]__control:checked + ^[0]__text &
-			color #fff
-			
-	&_theme_table
-		display block
-		margin 0
-			
-	&__title
-		margin 3px 0
-		display block
-		font-weight bold
-		
-	&__img
-		max-width 100%
+  display inline-block
+  margin-right 10px
+  margin-bottom 10px
+
+  &_fullwidth
+    width 100%
+
+  +above(980px)
+    margin-right 20px
+
+  &:last-child,
+  .control-group &
+    margin-right 0
+
+  .control-group &
+    margin-bottom 0
+
+  &__control
+    position absolute
+    z-index -1
+    opacity 0
+    margin 0
+    visibility hidden
+
+  &__text
+    position relative
+    z-index 2
+    padding 0 19px
+    display inline-block
+    height $heightM
+    font-size 12px
+    line-height 48px
+    text-align center
+    text-decoration none
+    text-transform uppercase
+    border none
+    transition box-shadow .3s, background-color .3s, color .3s
+    cursor pointer
+
+    &_size_s
+      height 36px
+      line-height 37px
+
+    &_size_m
+      padding 0 15px
+      font-size 14px
+      height 40px
+      line-height 39px
+
+    &_type_card
+      display block
+      padding 5px
+      height auto
+      line-height 1.3
+
+    &:active,
+    ^[0]__control:checked + &,
+    &_active
+      box-shadow none
+
+    &_theme_main
+      color #fff
+      background-color $colorMain
+      background-image linear-gradient(to right, $colorMain, #E61A4D)
+      box-shadow 0 2px 0 #900
+
+      &:visited
+        color #fff
+
+      &:hover,
+      &:focus
+        background-image linear-gradient(to right, #E61A4D, lighten($colorMain, 20))
+
+      &:active,
+      ^[0]__control:checked + &
+        background-image none
+        background-color darken($colorMain, 5)
+        box-shadow inset 0 3px 6px #900
+
+    &_theme_secondary
+      color #fff
+      background-color $colorSecondary
+      background-image linear-gradient(to right, $colorSecondary, #528AE0)
+      box-shadow 0 2px 0 #053d93
+
+      &:visited
+        color #fff
+
+      &:hover,
+      &:focus
+        background-image linear-gradient(to right, #528ae0, #6ba3f9)
+        box-shadow 0 2px 0 #1f57ad
+
+      &:active,
+      ^[0]__control:checked + &
+        background-image none
+        background-color #1f57ad
+        box-shadow inset 0 3px 6px #053d93
+
+    &_theme_tertirary
+      color #191919
+      background-color lighten($colorDecorative, 10)
+      box-shadow 0 2px 0 darken($colorDecorative, 20)
+
+      a&:visited,
+      &:visited
+        color: #191919
+
+      &:hover,
+      &:focus
+        background-color $colorDecorative
+        box-shadow 0 2px 0 darken($colorDecorative, 40)
+
+
+      &:active,
+      ^[0]__control:checked + &
+        color #fff
+        background-image none
+        background-color darken($colorDecorative, 40)
+        box-shadow 0 2px 0 darken($colorDecorative, 100)
+
+    ^[0]__control[disabled] + &
+      background-image none
+      background-color #f8f8f8
+      box-shadow none
+
+    &_theme_simple
+      position relative
+      text-transform none
+      // color #787878
+      background-color #fff
+      border 1px solid $colorDecorative
+      transition background-color .3s, color .3s, border-color .3s
+
+      .control-group &
+        margin-right -1px
+        margin-bottom -1px
+
+      ^[0]__control[disabled] + &
+        background-color #f8f8f8
+
+      ^[0]__control:active + &,
+      ^[0]__control:checked + &
+        color #fff
+        background-color $colorSecondary
+        border-color #1f57ad
+        transform translate3D(0, 0, 0)
+
+      ^[0]__control:checked + &
+        z-index 3
+
+    ^[0]_theme_table &
+      position relative
+      padding-left 5px
+      padding-right 5px
+      margin-bottom -1px
+      display table
+      width 100%
+      font-size 14px
+      text-transform none
+      background-color #fff
+      border solid 1px $colorDecorative
+
+    ^[0]_theme_table ^[0]__control:active + &,
+    ^[0]_theme_table ^[0]__control:checked + &
+      z-index 1
+      color #fff
+      background-color $colorSecondary
+      border solid 1px #1f57ad
+      transform translate3D(0, 0, 0)
+
+    ^[0]_theme_table ^[0]__control:checked + &
+      z-index 3
+
+  &__cell
+    padding 0 10px
+    display table-cell
+    line-height 1.2
+    vertical-align middle
+
+    &_weight_bold
+      font-weight bold
+
+    &_color_light
+      color #555
+
+    ^[0]__control:checked + ^[0]__text &
+      color #fff
+
+  &_theme_table
+    display block
+    margin 0
+
+  &__title
+    margin 3px 0
+    display block
+    font-weight bold
+
+  &__img
+    max-width 100%
