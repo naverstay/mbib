@@ -6,12 +6,6 @@
     margin-bottom 15px
 
   &__list
-    column-gap 10px
-    column-count 2
-
-    +above(480px)
-      column-count 3
-
     +above(640px)
       column-gap 30px
       column-count 4
@@ -21,9 +15,15 @@
       widows 3
 
   &__list-item
-    margin-bottom 6px
+    margin-right 10px;
+    display inline-block;
+
+    +above(640px)
+      margin-bottom 6px
+      margin-right 0
 
     +above(768px)
+      display block
       margin-bottom unset
 
   &__link

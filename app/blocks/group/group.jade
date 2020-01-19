@@ -10,6 +10,4 @@ mixin group(data)
               +e.link-name #{item.name}
         else
           +e.list-item
-            +e.A.link(href=item.href)
-              +e.link-name #{item.name}
-              +e.link-count #{item.count}
+            +e.A.link(href=item.href) <span class="group__link-name">#{item.name}</span>&nbsp;<span class="group__link-count">#{item.count}</span>
