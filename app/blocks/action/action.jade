@@ -1,42 +1,64 @@
-mixin action(item, isFavorite)
-	+b.action&attributes(attributes)
-		if !item
-			if isFavorite
-				- var mod = "_active"
-			else 
-				- var mod = ""
-			+e.A.item(href="" class=mod)
-				+e.SPAN.icon
-					+icon('like', false).icon-img._like
-					+icon('like_fill', false).icon-img._like._like_fill
-				+e.item-text 
-					if isFavorite
-						| В избранном
-					else
-						| В избранное
-			+e.A.item(href="")
-				+e.SPAN.icon
-					+icon('top', false).icon-img
-				+e.item-text Поднять обьявление
-			+e.A.item(href="")
-				//- +icon()
-				+e.SPAN.icon
-					+icon('plaint', false).icon-img
-				+e.item-text Пожаловаться
-			+e.A.item(href="")
-				//- +icon()
-				+e.SPAN.icon
-					+icon('pencil', false).icon-img
-				+e.item-text Редактировать
-			+e.A.item(href="")
-				//- +icon()
-				+e.SPAN.icon
-					+icon('close', false).icon-img
-				+e.item-text Удалить
-		else if item === 'like'
-			+e.A.item._simple(href="")
-				//- +icon()
-				+e.SPAN.icon
-					+icon('like', false).icon-img._like
-					+icon('like_fill', false).icon-img._like._like_fill
-				+e.item-text В избранное
+//options = {
+// hasPhone: boolean
+// }
+
+mixin action(item, isFavorite, options = {})
+  +b.action&attributes(attributes)
+    if !item
+      if isFavorite
+        - var mod = "_active"
+      else
+        - var mod = ""
+
+      if options.hasPhone
+      +e.group.__desktop-hidden
+        +e.group-item
+          +e.phone
+              +e.phone-button(type="button")
+                +icon('phone', false).phone-icon
+                | Показать телефон
+        +e.group-item
+          +e.A.item(href="" class=mod)
+            +e.SPAN.icon
+              +icon('like', false).icon-img._like
+              +icon('like_fill', false).icon-img._like._like_fill
+            +e.item-text
+              if isFavorite
+                | В избранном
+              else
+                | В избранное
+      +e.A.item(href="" class=mod).__mobile-hidden
+        +e.SPAN.icon
+          +icon('like', false).icon-img._like
+          +icon('like_fill', false).icon-img._like._like_fill
+        +e.item-text
+          if isFavorite
+            | В избранном
+          else
+            | В избранное
+      +e.A.item(href="")
+        +e.SPAN.icon
+          +icon('top', false).icon-img
+        +e.item-text Поднять обьявление
+      +e.A.item(href="")
+        //- +icon()
+        +e.SPAN.icon
+          +icon('plaint', false).icon-img
+        +e.item-text Пожаловаться
+      +e.A.item(href="")
+        //- +icon()
+        +e.SPAN.icon
+          +icon('pencil', false).icon-img
+        +e.item-text Редактировать
+      +e.A.item(href="")
+        //- +icon()
+        +e.SPAN.icon
+          +icon('close', false).icon-img
+        +e.item-text Удалить
+    else if item === 'like'
+      +e.A.item._simple(href="")
+        //- +icon()
+        +e.SPAN.icon
+          +icon('like', false).icon-img._like
+          +icon('like_fill', false).icon-img._like._like_fill
+        +e.item-text В избранное

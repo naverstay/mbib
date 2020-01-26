@@ -2,6 +2,29 @@
   display block
   font-size 0
 
+  &__group
+    display flex
+    margin-bottom 10px
+    height 36px
+    font-size 0
+    line-height 36px
+
+    +above(480px)
+      font-size 1rem
+
+  &__group-item
+    width 50%
+    height 100%
+    padding 0 1px
+    text-align center
+
+    &:first-child
+      padding-left 0
+
+    &:last-child
+      padding-right 0
+
+
   &__item
     position relative
     margin 0 20px 10px
@@ -14,6 +37,9 @@
     color $colorText
     background-color #fff
     border 1px dashed $colorDecorative
+
+    ^[0]__group-item &
+      font-size inherit
 
     +above(768px)
       margin 0 10px
@@ -181,3 +207,91 @@
     ^[0]__item_active &
       fill $colorMain
       opacity 1
+
+  &__phone
+
+    &:hover
+      border-style solid
+      border-color $colorMain
+
+    &_showed
+      border-color $colorSecondary
+
+  &__phone-button
+    position relative
+    padding 0 15px
+    display block
+    width 100%
+    height 36px
+    line-height 36px
+    color inherit
+    background-color #fff
+    border 1px dashed $colorDecorative
+
+    +above(768px)
+      padding-left 32px
+
+    ^[0]__phone_showed &
+      display none
+
+  &__phone-inner
+    visibility hidden
+    overflow hidden
+    height 0
+    max-height 0
+    transition ease max-height .3s, visibility .3s
+
+    ^[0]__phone_showed &
+      visibility visible
+      height auto
+      max-height 200px
+
+  &__phone-link
+    position relative
+    padding 9px 12px 9px 32px
+    display block
+    text-decoration none
+    color inherit
+    background-color #fff
+
+
+  &__phone-icon
+    position relative
+    top -2px
+    margin-right 6px
+    display inline-block
+    size 20px
+    vertical-align middle
+
+    ^[0]_only-icon &
+      margin-right 5px
+
+      +above(768px)
+        margin-right 0
+
+    ^[0]__phone:hover &
+      fill $colorMain
+
+  &__phone-number
+    display inline-block
+    font-size 16px
+    font-weight bold
+    color $colorSecondary
+
+    & + ^[0]__phone-remark
+      margin-top 12px
+
+  &__phone-remark
+    margin-top 9px
+    display block
+    font-size 11px
+
+  &__mobile-hidden
+    display none
+
+    +above(768px)
+      display block
+
+  &__desktop-hidden
+    +above(768px)
+      display none

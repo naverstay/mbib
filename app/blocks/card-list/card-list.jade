@@ -59,4 +59,4 @@ mixin card-list(data)
                       +e.phone-remark Звоните с #{item.contact.callStart} до #{item.contact.callEnd}
 
               +e.action
-                +action(false, item.isFavorite)._only-icon._hiddble
+                +action(false, item.isFavorite, {hasPhone: true})._only-icon._hiddble
