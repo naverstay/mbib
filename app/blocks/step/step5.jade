@@ -21,440 +21,442 @@ include ../alert/alert
 include ../phone-field/phone-field
 
 mixin step5()
-	+b.step&attributes(attributes)
-		+akcent-block
-			+form(name="addCar" action="" method="")._in-akcent
-				+e.navigation
-					+btn('link')(href="").__navigation-back Назад
-					+e.SPAN.navigation-spacer
-				+title(2).visuallyhidden Информация об автомобиле
-				.step__head
-					.step__head-name
-						+car-name(1, 'BMW / X3 / 2013 Внедорожник 5 дв. II (F25) / xDrive 2.0 AT (184 л.с.)', 'bmw')
-					.step__head-action
-						+btn('button', 'close')(href="")._theme_tertirary._size_s.step__head-clear Очистить
+  +b.step&attributes(attributes)
+    +akcent-block
+      +form(name="addCar" action="" method="")._in-akcent
+        +e.navigation
+          +btn('link')(href="").__navigation-back Назад
+          +e.SPAN.navigation-spacer
+        +title(2).visuallyhidden Информация об автомобиле
+        .step__head
+          .step__head-name
+            +car-name(1, 'BMW / X3 / 2013 Внедорожник 5 дв. II (F25) / xDrive 2.0 AT (184 л.с.)', 'bmw')
+          .step__head-action
+            +btn('button', 'close')(href="")._theme_tertirary._size_s.step__head-clear Очистить
 
-				+e.row
-					+e.item._fullwidth
-						+alert._warning Будьте внимательные при заполнении VIN кода
+        +e.row
+          +e.item._fullwidth
+            +alert._warning Будьте внимательные при заполнении VIN кода
 
-				+e.FIELDSET.section
-					+e.LEGEND.section-name Добавить фотографии <span class="marked">*</span>
-					+e.row
-						+e.item._fullwidth
-							+add-photo
+        +e.FIELDSET.section
+          +e.LEGEND.section-name Добавить фотографии <span class="marked">*</span>
+          +e.row
+            +e.item._fullwidth
+              +add-photo
 
-				+e.FIELDSET.section
-					+e.LEGEND.section-name Цвет <span class="marked">*</span>
-					+e.row
-						+e.item._fullwidth
-							+palette
+        +e.FIELDSET.section
+          +e.LEGEND.section-name Цвет <span class="marked">*</span>
+          +e.row
+            +e.item._fullwidth
+              +palette
 
-				+e.FIELDSET.section
-					+e.LEGEND.section-name Пробег <span class="marked">*</span>
-					+e.row._align_left
-						+e.item._tb_3._span_4
-							+input(type="text" name="mileage" placeholder="км" required)._digit-pretify
-						+e.item._tb_4._span_3
-							+checkbox(name="cleared" id="cleared") Битый или не на ходу
-						+e.item._tb_4._span_3
-							+checkbox(name="cleared" id="cleared") Не растаможен
+        +e.FIELDSET.section
+          +e.LEGEND.section-name Пробег <span class="marked">*</span>
+          +e.row._align_left
+            +e.item._tb_3._span_4
+              +input(type="text" name="mileage" placeholder="км" required)._digit-pretify
+            +e.item._tb_4._span_3
+              +checkbox(name="cleared" id="cleared") Битый или не на ходу
+            +e.item._tb_4._span_3
+              +checkbox(name="cleared" id="cleared") Не растаможен
 
-				+e.FIELDSET.section
-					+e.LEGEND.section-name Цена <span class="marked">*</span>
-					+e.row._align_left
-						+e.item._tb_3._span_4
-							+input(type="text" name="price" placeholder="укажите цену" required)._digit-pretify
-						+e.item._tb_7._span_4
-							+checkbox(name="cleared" id="forchange") Возможен обмен
+        +e.FIELDSET.section
+          +e.LEGEND.section-name Цена <span class="marked">*</span>
+          +e.row._align_left
+            +e.item._tb_3._span_4
+              +input(type="text" name="price" placeholder="укажите цену" required)._digit-pretify
+            +e.item._tb_7._span_4
+              +checkbox(name="cleared" id="forchange") Возможен обмен
 
-				+e.FIELDSET.section
-					+e.LEGEND.section-name Место осмотра <span class="marked">*</span>
-					+e.row._align_left
-						+e.item._tb_5._span_4
-							+input(type="text" name="city" placeholder="Город продажи" required)
-							+e.SPAN.remark Изменить город после размещения невозможно
-						+e.item._tb_7._span_4
-							+input(type="text" name="place" placeholder="Место осмотра")
+        +e.FIELDSET.section
+          +e.LEGEND.section-name Место осмотра <span class="marked">*</span>
+          +e.row._align_left._valign_top
+            +e.item._tb_5._span_4
+              +select(name="city" data-placeholder="Город")._search
+                option(value="")
+              //- +input(type="text" name="city" placeholder="Город продажи" required)
+              +e.SPAN.remark Изменить город после размещения невозможно
+            +e.item._tb_7._span_4
+              +input(type="text" name="place" placeholder="Место осмотра")
 
-				+e.section-wrap._marked
-					+e.FIELDSET.section
-						+e.LEGEND.section-name Личные данные <span class="marked">*</span>
-						+e.row._align_left
-							+e.item._tb_6._span_4
-								+input(type="text" name="city" placeholder="Как к вам обращаться?" required)
-								+e.SPAN.remark Имя будет указано в объявлении
-						+e.row._align_left
-							+e.item._tb_6._span_4
-								+phone-field(type="tel" name="phonePlace" id="registrPhone" placeholder="Номер телефона" tabindex="3" required minlength="16" data-too-short="Номер введён не полностью, должно быть 11 цифр" data-value-missing="Введите телефон")
-							+e.item._tb_6._span_4
-								+input(type="email" name="place" placeholder="Электронная почта (e-mail)" required)
+        +e.section-wrap._marked
+          +e.FIELDSET.section
+            +e.LEGEND.section-name Личные данные <span class="marked">*</span>
+            +e.row._align_left
+              +e.item._tb_6._span_4
+                +input(type="text" name="city" placeholder="Как к вам обращаться?" required)
+                +e.SPAN.remark Имя будет указано в объявлении
+            +e.row._align_left
+              +e.item._tb_6._span_4
+                +phone-field(type="tel" name="phonePlace" id="registrPhone" placeholder="Номер телефона" tabindex="3" required minlength="16" data-too-short="Номер введён не полностью, должно быть 11 цифр" data-value-missing="Введите телефон")
+              +e.item._tb_6._span_4
+                +input(type="email" name="place" placeholder="Электронная почта (e-mail)" required)
 
-				+e.FIELDSET.section
-					+e.LEGEND.section-name Паспорт транспортного средства (ПТС)
-					+e.row._align_left
-						+e.item._tb_6._span_6
-							+switcher(type="radio", name="pts", value="original", id="pts1", role="radio")._theme_simple._size_m Оригинал
-							+switcher(type="radio", name="pts", value="dubl", id="pts2", role="radio", checked="checked")._theme_simple._size_m Дубликат
+        +e.FIELDSET.section
+          +e.LEGEND.section-name Паспорт транспортного средства (ПТС)
+          +e.row._align_left
+            +e.item._tb_6._span_6
+              +switcher(type="radio", name="pts", value="original", id="pts1", role="radio")._theme_simple._size_m Оригинал
+              +switcher(type="radio", name="pts", value="dubl", id="pts2", role="radio", checked="checked")._theme_simple._size_m Дубликат
 
-				+e.FIELDSET.section
-					+e.LEGEND.section-name Какой вы владелец по счету?
-					+e.row._align_left
-						+e.item._tb_fullwidth._span_8
-							+switcher(type="radio", name="owner", value="first", id="owner1", role="radio")._theme_simple._size_m Первый
-							+switcher(type="radio", name="owner", value="second", id="owner2", role="radio")._theme_simple._size_m Второй
-							+switcher(type="radio", name="owner", value="third", id="owner3", role="radio", checked="checked")._theme_simple._size_m Третий и более
+        +e.FIELDSET.section
+          +e.LEGEND.section-name Какой вы владелец по счету?
+          +e.row._align_left
+            +e.item._tb_fullwidth._span_8
+              +switcher(type="radio", name="owner", value="first", id="owner1", role="radio")._theme_simple._size_m Первый
+              +switcher(type="radio", name="owner", value="second", id="owner2", role="radio")._theme_simple._size_m Второй
+              +switcher(type="radio", name="owner", value="third", id="owner3", role="radio", checked="checked")._theme_simple._size_m Третий и более
 
-				+e.FIELDSET.section
-					+e.LEGEND.section-name Дата покупки автомобиля
-					+e.row._align_left
-						+e.item._tb_2._span_2
-							+select(name="year" data-placeholder="Год")._search
-								option(value="")
-								option(value="m1") 2018
-								option(value="m2") 2017
-								option(value="m3") 2016
-								option(value="m4") 2015
-								option(value="m5") 2014
-								option(value="m6") 2013
-								option(value="m7") 2012
-								option(value="m8") 2011
-								option(value="m9") 2010
-								option(value="m0") 2009
-								option(value="m11") 2008
-								option(value="m12") 2007
-								option(value="m13") 2006
-						+e.item._tb_2._span_2
-							+select(name="month" data-placeholder="Месяц")._search
-								option(value="")
-								option(value="jan") Январь
-								option(value="feb") Февраль
-								option(value="mar") Март
-								option(value="apr") Апрель
-								option(value="may") Май
-								option(value="jun") Июнь
-								option(value="jul") Июль
-								option(value="avg") Август
-								option(value="sen") Сентябрь
-								option(value="oct") Октябрь
-								option(value="nov") Ноябрь
-								option(value="dec") Декабрь
-						+e.item._tb_6._span_4
-							+checkbox(name="garant" id="garant") На гарантии
+        +e.FIELDSET.section
+          +e.LEGEND.section-name Дата покупки автомобиля
+          +e.row._align_left
+            +e.item._tb_2._span_2
+              +select(name="year" data-placeholder="Год")._search
+                option(value="")
+                option(value="m1") 2018
+                option(value="m2") 2017
+                option(value="m3") 2016
+                option(value="m4") 2015
+                option(value="m5") 2014
+                option(value="m6") 2013
+                option(value="m7") 2012
+                option(value="m8") 2011
+                option(value="m9") 2010
+                option(value="m0") 2009
+                option(value="m11") 2008
+                option(value="m12") 2007
+                option(value="m13") 2006
+            +e.item._tb_2._span_2
+              +select(name="month" data-placeholder="Месяц")._search
+                option(value="")
+                option(value="jan") Январь
+                option(value="feb") Февраль
+                option(value="mar") Март
+                option(value="apr") Апрель
+                option(value="may") Май
+                option(value="jun") Июнь
+                option(value="jul") Июль
+                option(value="avg") Август
+                option(value="sen") Сентябрь
+                option(value="oct") Октябрь
+                option(value="nov") Ноябрь
+                option(value="dec") Декабрь
+            +e.item._tb_6._span_4
+              +checkbox(name="garant" id="garant") На гарантии
 
-				+e.FIELDSET.section
-					+e.LEGEND.section-name Укажите VIN и свидетельство о регистрации (СТС)
-					+e.row._align_left
-						+e.item._tb_6._span_4
-							+input(type="text" name="vin" placeholder="VIN или номер кузова")
-							+e.SPAN.remark Покупатели больше доверяют объявлениям с указанным <span class="nobr">VIN-номером</span>.
-						+e.item._tb_6._span_4
-							+input(type="text" name="ctc" placeholder="Cвидетельство о регистрации (СТС)")
-					small Номера VIN и СТС не показываются в объявлении!
+        +e.FIELDSET.section
+          +e.LEGEND.section-name Укажите VIN и свидетельство о регистрации (СТС)
+          +e.row._align_left
+            +e.item._tb_6._span_4
+              +input(type="text" name="vin" placeholder="VIN или номер кузова")
+              +e.SPAN.remark Покупатели больше доверяют объявлениям с указанным <span class="nobr">VIN-номером</span>.
+            +e.item._tb_6._span_4
+              +input(type="text" name="ctc" placeholder="Cвидетельство о регистрации (СТС)")
+          small Номера VIN и СТС не показываются в объявлении!
 
-				+e.FIELDSET.section._separated
-					+e.head Опции
-					+e.collapse.collapse
-						+e.collapse-head.collapse__head
-							+e.SPAN.collapse-name Безопастность и защита
-							+e.SPAN.collapse-icon
-						+e.collapse-body.collapse__body
-							+e.row
-								+e.item._tb_4._span_4
-									+e.FIELDSET.group
-										+e.LEGEND.group-name Активная безопасность
-										+e.group-item
-											+checkbox(name="abs" id="abs") Антиблокировка тормозов
-										+e.group-item
-											+checkbox(name="asr" id="asr") Антипробуксовка
-										+e.group-item
-											+checkbox(name="abs" id="esp") Курсовая устойчивость
-										+e.group-item
-											+checkbox(name="ebd" id="ebd") Распред. тормозных усилий
-										+e.group-item
-											+checkbox(name="aeb" id="aeb") Экстренное торможение
-										+e.group-item
-											+checkbox(name="arb" id="arb") Блок. дифференциала
-										+e.group-item
-											+checkbox(name="pds" id="pds") Обнаружение пешеходов
+        +e.FIELDSET.section._separated
+          +e.head Опции
+          +e.collapse.collapse
+            +e.collapse-head.collapse__head
+              +e.SPAN.collapse-name Безопастность и защита
+              +e.SPAN.collapse-icon
+            +e.collapse-body.collapse__body
+              +e.row
+                +e.item._tb_4._span_4
+                  +e.FIELDSET.group
+                    +e.LEGEND.group-name Активная безопасность
+                    +e.group-item
+                      +checkbox(name="abs" id="abs") Антиблокировка тормозов
+                    +e.group-item
+                      +checkbox(name="asr" id="asr") Антипробуксовка
+                    +e.group-item
+                      +checkbox(name="abs" id="esp") Курсовая устойчивость
+                    +e.group-item
+                      +checkbox(name="ebd" id="ebd") Распред. тормозных усилий
+                    +e.group-item
+                      +checkbox(name="aeb" id="aeb") Экстренное торможение
+                    +e.group-item
+                      +checkbox(name="arb" id="arb") Блок. дифференциала
+                    +e.group-item
+                      +checkbox(name="pds" id="pds") Обнаружение пешеходов
 
-								+e.item._tb_4._span_4
-									+e.FIELDSET.group
-										+e.LEGEND.group-name Подушки безопасности
-										+e.group-item
-											+checkbox(name="airbagf" id="airbag") Фронтальные
-										+e.group-item
-											+checkbox(name="airbagk" id="airbagk") Коленные
-										+e.group-item
-											+checkbox(name="airbagс" id="airbagс") Шторки
-										+e.group-item
-											+checkbox(name="airbagfs" id="airbagfs") Боковые передние
-										+e.group-item
-											+checkbox(name="airbagbs" id="airbagbs") Боковые задние
+                +e.item._tb_4._span_4
+                  +e.FIELDSET.group
+                    +e.LEGEND.group-name Подушки безопасности
+                    +e.group-item
+                      +checkbox(name="airbagf" id="airbag") Фронтальные
+                    +e.group-item
+                      +checkbox(name="airbagk" id="airbagk") Коленные
+                    +e.group-item
+                      +checkbox(name="airbagс" id="airbagс") Шторки
+                    +e.group-item
+                      +checkbox(name="airbagfs" id="airbagfs") Боковые передние
+                    +e.group-item
+                      +checkbox(name="airbagbs" id="airbagbs") Боковые задние
 
-								+e.item._tb_4._span_4
-									+e.FIELDSET.group
-										+e.LEGEND.group-name Противоугонная система
-										+e.group-item
-											+checkbox(name="alarm" id="alarm") Сигнализация
-										+e.group-item
-											+checkbox(name="lock" id="lock") Центральный замок
-										+e.group-item
-											+checkbox(name="immobiliser" id="immobiliser") Иммобилайзер
-										+e.group-item
-											+checkbox(name="sputnik" id="sputnik") Спутник
+                +e.item._tb_4._span_4
+                  +e.FIELDSET.group
+                    +e.LEGEND.group-name Противоугонная система
+                    +e.group-item
+                      +checkbox(name="alarm" id="alarm") Сигнализация
+                    +e.group-item
+                      +checkbox(name="lock" id="lock") Центральный замок
+                    +e.group-item
+                      +checkbox(name="immobiliser" id="immobiliser") Иммобилайзер
+                    +e.group-item
+                      +checkbox(name="sputnik" id="sputnik") Спутник
 
-					+e.collapse.collapse
-						+e.collapse-head.collapse__head
-							+e.SPAN.collapse-name Помощь при вождении
-							+e.SPAN.collapse-icon
-						+e.collapse-body.collapse__body
-							+e.row
-								+e.item._tb_2._span_3
-									+e.FIELDSET.group
-										+e.group-item
-											+checkbox(name="hd" id="prt") Автоматический парковщик
-										+e.group-item
-											+checkbox(name="hd" id="rainc") Датчик дождя
-										+e.group-item
-											+checkbox(name="hd" id="ss") Датчик света
-										+e.group-item
-											+checkbox(name="hd" id="prctb") Парктроник задний
-										+e.group-item
-											+checkbox(name="hd" id="prctf") Парктроник передний
-										+e.group-item
-											+checkbox(name="hd" id="sctrin") Система контроля слепых зон
-										+e.group-item
-											+checkbox(name="hd" id="cambac") Камера заднего вида
-										+e.group-item
-											+checkbox(name="hd" id="crcont") Круиз-контроль
-										+e.group-item
-											+checkbox(name="hd" id="comp") Бортовой компьютер
+          +e.collapse.collapse
+            +e.collapse-head.collapse__head
+              +e.SPAN.collapse-name Помощь при вождении
+              +e.SPAN.collapse-icon
+            +e.collapse-body.collapse__body
+              +e.row
+                +e.item._tb_2._span_3
+                  +e.FIELDSET.group
+                    +e.group-item
+                      +checkbox(name="hd" id="prt") Автоматический парковщик
+                    +e.group-item
+                      +checkbox(name="hd" id="rainc") Датчик дождя
+                    +e.group-item
+                      +checkbox(name="hd" id="ss") Датчик света
+                    +e.group-item
+                      +checkbox(name="hd" id="prctb") Парктроник задний
+                    +e.group-item
+                      +checkbox(name="hd" id="prctf") Парктроник передний
+                    +e.group-item
+                      +checkbox(name="hd" id="sctrin") Система контроля слепых зон
+                    +e.group-item
+                      +checkbox(name="hd" id="cambac") Камера заднего вида
+                    +e.group-item
+                      +checkbox(name="hd" id="crcont") Круиз-контроль
+                    +e.group-item
+                      +checkbox(name="hd" id="comp") Бортовой компьютер
 
-								+e.item._tb_2._span_3
-									+e.FIELDSET.group
-										+e.group-item
-											+select(name="radius" data-placeholder="Усилитель руля"  data-minimum-results-for-search="Infinity")._search
-												option(value="")
-												option(value="g") Гидроусилитель руля
-												option(value="e") Электроусилитель руля
-												option(value="ge") Электрогидроусилитель руля
-
-
-					+e.collapse.collapse
-						+e.collapse-head.collapse__head
-							+e.SPAN.collapse-name Салон, климат
-							+e.SPAN.collapse-icon
-						+e.collapse-body.collapse__body
-							+e.row
-								+e.item._tb_4._span_4
-									+e.FIELDSET.group
-										+e.LEGEND.group-name Салон
-										+e.group-item
-											+radio(name="salon" id="alarm" value="skin") Кожа
-										+e.group-item
-											+radio(name="salon" id="alarm" value="cloth") Ткань
-										+e.group-item
-											+radio(name="salon" id="alarm" value="velour") Велюр
-										+e.group-item
-											+radio(name="salon" id="alarm" value="combined") Комбинированный
-
-									+e.FIELDSET.group
-										+e.LEGEND.group-name Салон <span class="remark">(дополнительные опции)</span>
-										+e.group-item
-											+checkbox(name="drives" id="drives") Кожаный руль
-										+e.group-item
-											+checkbox(name="airlock" id="airlock") Люк
-
-								+e.item._tb_4._span_4
-									+e.FIELDSET.group
-										+e.LEGEND.group-name Управление климатом
-										+e.group-item
-											+radio(name="climat" id="climat1" value="conditioner") Кондиционер
-										+e.group-item
-											+radio(name="climat" id="climat2" value="single") Климат-контроль однозонный
-										+e.group-item
-											+radio(name="climat" id="climat" value="multizone") Климат-контроль многозонный
-
-									+e.FIELDSET.group
-										+e.LEGEND.group-name 
-											| Управление климатом <span class="remark">(дополнительные опции)</span>
-										+e.group-item
-											+checkbox(name="climatdrive" id="climatdrive") Управление на руле
-										+e.group-item
-											+checkbox(name="climatglass" id="climatglass") Атермальное остекление
-
-								+e.item._tb_4._span_4
-									+e.FIELDSET.group
-										+e.LEGEND.group-name Обогрев
-										+e.group-item
-											+checkbox(name="warmfrontsit" id="warmfrontsit") Передних сидений
-										+e.group-item
-											+checkbox(name="warmbacksit" id="warmbacksit") Задних сидений
-										+e.group-item
-											+checkbox(name="warmmiracle" id="warmmiracle") Зеркал
-										+e.group-item
-											+checkbox(name="warmbackglass" id="warmbackglass") Заднего стекла
-										+e.group-item
-											+checkbox(name="warmdrive" id="warmdrive") Руля
-
-					+e.collapse.collapse
-						+e.collapse-head.collapse__head
-							+e.SPAN.collapse-name Электростеклоподъемники, электропривод, память настроек
-							+e.SPAN.collapse-icon
-						+e.collapse-body.collapse__body
-							+e.row
-								+e.item._tb_4._span_4
-									+e.FIELDSET.group
-										+e.LEGEND.group-name Электростеклоподъемники
-										+e.group-item
-											+radio(name="windows" id="windows" value="front") Только передние
-										+e.group-item
-											+radio(name="windows" id="windows" value="full") Передние и задние
-
-								+e.item._tb_4._span_4
-									+e.FIELDSET.group
-										+e.LEGEND.group-name Электропривод <span class="remark">(дополнительные опции)</span>
-										+e.group-item
-											+checkbox(name="climatdrive" id="climatdrive") Управление на руле
-										+e.group-item
-											+checkbox(name="climatglass" id="climatglass") Атермальное остекление
-										+e.group-item
-											+checkbox(name="drivemiracle" id="drivemiracle") Зеркал
-										+e.group-item
-											+checkbox(name="driveve" id="driveve") Рулевой колонки
-										+e.group-item
-											+checkbox(name="collapsemiracle" id="collapsemiracle") Складывания зеркал
-
-								+e.item._tb_4._span_4
-									+e.FIELDSET.group
-										+e.LEGEND.group-name Память настроек
-										+e.group-item
-											+checkbox(name="memory" id="memorysit") Передних сидений
-										+e.group-item
-											+checkbox(name="memory" id="memorybacksut") Задних сидений
-										+e.group-item
-											+checkbox(name="memory" id="memorymir") Зеркал
-										+e.group-item
-											+checkbox(name="memory" id="memorybackmir") Заднего стекла
+                +e.item._tb_2._span_3
+                  +e.FIELDSET.group
+                    +e.group-item
+                      +select(name="radius" data-placeholder="Усилитель руля"  data-minimum-results-for-search="Infinity")._search
+                        option(value="")
+                        option(value="g") Гидроусилитель руля
+                        option(value="e") Электроусилитель руля
+                        option(value="ge") Электрогидроусилитель руля
 
 
-					+e.collapse.collapse
-						+e.collapse-head.collapse__head
-							+e.SPAN.collapse-name Аудиосистема, мультимедиа
-							+e.SPAN.collapse-icon
-						+e.collapse-body.collapse__body
-							+e.row
-								+e.item._tb_4._span_4
-									+e.FIELDSET.group
-										+e.LEGEND.group-name Мультимедиа и навигация
-										+e.group-item
-											+checkbox(name="cd" id="cd") CD/DVD/Blu-ray
-										+e.group-item
-											+checkbox(name="mp3" id="mp3") MP3
-										+e.group-item
-											+checkbox(name="mirc" id="mirc") Зеркал
-										+e.group-item
-											+checkbox(name="radio" id="radio") Радио
-										+e.group-item
-											+checkbox(name="tv" id="tv") TV
-										+e.group-item
-											+checkbox(name="video" id="video") Видео
-										+e.group-item
-											+checkbox(name="ondrive" id="ondrive") Управление на руле
-										+e.group-item
-											+checkbox(name="usb" id="usb") USB
+          +e.collapse.collapse
+            +e.collapse-head.collapse__head
+              +e.SPAN.collapse-name Салон, климат
+              +e.SPAN.collapse-icon
+            +e.collapse-body.collapse__body
+              +e.row
+                +e.item._tb_4._span_4
+                  +e.FIELDSET.group
+                    +e.LEGEND.group-name Салон
+                    +e.group-item
+                      +radio(name="salon" id="alarm" value="skin") Кожа
+                    +e.group-item
+                      +radio(name="salon" id="alarm" value="cloth") Ткань
+                    +e.group-item
+                      +radio(name="salon" id="alarm" value="velour") Велюр
+                    +e.group-item
+                      +radio(name="salon" id="alarm" value="combined") Комбинированный
 
-								+e.item._tb_4._span_4
-									+e.FIELDSET.group
-										+e.LEGEND.group-name Аудиосистема
-										+e.group-item
-											+radio(name="audio" id="ac2" value="ac2") 2 колонки
-										+e.group-item
-											+radio(name="audio" id="ac4" value="ac4") 4 колонки
-										+e.group-item
-											+radio(name="audio" id="ac6" value="ac6") 6 колонки
-										+e.group-item
-											+radio(name="audio" id="ac8" value="ac8") 8 колонки
+                  +e.FIELDSET.group
+                    +e.LEGEND.group-name Салон <span class="remark">(дополнительные опции)</span>
+                    +e.group-item
+                      +checkbox(name="drives" id="drives") Кожаный руль
+                    +e.group-item
+                      +checkbox(name="airlock" id="airlock") Люк
 
-					+e.collapse.collapse
-						+e.collapse-head.collapse__head
-							+e.SPAN.collapse-name Фары, шины и диски
-							+e.SPAN.collapse-icon
-						+e.collapse-body.collapse__body
-							+e.row
-								+e.item._tb_4._span_4
-									+e.FIELDSET.group
-										+e.LEGEND.group-name Фары
-										+e.group-item
-											+radio(name="headlight" id="gal" value="gal") Галогенные
-										+e.group-item
-											+radio(name="headlight" id="ksen" value="ksen") Ксеноновые
-										+e.group-item
-											+radio(name="headlight" id="diod" value="diod") Светодиодные
+                +e.item._tb_4._span_4
+                  +e.FIELDSET.group
+                    +e.LEGEND.group-name Управление климатом
+                    +e.group-item
+                      +radio(name="climat" id="climat1" value="conditioner") Кондиционер
+                    +e.group-item
+                      +radio(name="climat" id="climat2" value="single") Климат-контроль однозонный
+                    +e.group-item
+                      +radio(name="climat" id="climat" value="multizone") Климат-контроль многозонный
 
-								+e.item._tb_4._span_4
-									+e.FIELDSET.group
-										+e.LEGEND.group-name Фары <span class="remark">(дополнительные опции)</span>
-										+e.group-item
-											+checkbox(name="headlight_ad" id="pt") Противотуманные
-										+e.group-item
-											+checkbox(name="headlight_ad" id="chd") Омыватели фар
-										+e.group-item
-											+checkbox(name="headlight_ad" id="adcl") Адаптивное освещение
+                  +e.FIELDSET.group
+                    +e.LEGEND.group-name
+                      | Управление климатом <span class="remark">(дополнительные опции)</span>
+                    +e.group-item
+                      +checkbox(name="climatdrive" id="climatdrive") Управление на руле
+                    +e.group-item
+                      +checkbox(name="climatglass" id="climatglass") Атермальное остекление
 
-								+e.item._tb_4._span_4
-									+e.FIELDSET.group
-										+e.LEGEND.group-name Шины и диски (диаметр), дюймы
-										+e.group-item
-											+select(name="radius" data-placeholder="Радиус")._search
-												option(value="r14") 14
-												option(value="r15") 15
-												option(value="r16") 16
-												option(value="r17") 17
-												option(value="r18") 18
+                +e.item._tb_4._span_4
+                  +e.FIELDSET.group
+                    +e.LEGEND.group-name Обогрев
+                    +e.group-item
+                      +checkbox(name="warmfrontsit" id="warmfrontsit") Передних сидений
+                    +e.group-item
+                      +checkbox(name="warmbacksit" id="warmbacksit") Задних сидений
+                    +e.group-item
+                      +checkbox(name="warmmiracle" id="warmmiracle") Зеркал
+                    +e.group-item
+                      +checkbox(name="warmbackglass" id="warmbackglass") Заднего стекла
+                    +e.group-item
+                      +checkbox(name="warmdrive" id="warmdrive") Руля
 
-									+e.FIELDSET.group
-										+e.LEGEND.group-name Шины и диски <span class="remark">(дополнительные опции)</span>
-										+e.group-item
-											+checkbox(name="winter" id="winter") Зимние шины в комплекте
+          +e.collapse.collapse
+            +e.collapse-head.collapse__head
+              +e.SPAN.collapse-name Электростеклоподъемники, электропривод, память настроек
+              +e.SPAN.collapse-icon
+            +e.collapse-body.collapse__body
+              +e.row
+                +e.item._tb_4._span_4
+                  +e.FIELDSET.group
+                    +e.LEGEND.group-name Электростеклоподъемники
+                    +e.group-item
+                      +radio(name="windows" id="windows" value="front") Только передние
+                    +e.group-item
+                      +radio(name="windows" id="windows" value="full") Передние и задние
 
-				+e.FIELDSET.section
-					+e.LEGEND.section-name Опишите ваш автомобиль
-					+e.row
-						+e.item._tb_fullwidth._span_8
-							+area(name="comment")
-							+e.SPAN.remark Запрещается давать ссылки, указывать адреса эл.почты, телефоны, цену, предлагать услуги, не связанные с продажей этого авто.
+                +e.item._tb_4._span_4
+                  +e.FIELDSET.group
+                    +e.LEGEND.group-name Электропривод <span class="remark">(дополнительные опции)</span>
+                    +e.group-item
+                      +checkbox(name="climatdrive" id="climatdrive") Управление на руле
+                    +e.group-item
+                      +checkbox(name="climatglass" id="climatglass") Атермальное остекление
+                    +e.group-item
+                      +checkbox(name="drivemiracle" id="drivemiracle") Зеркал
+                    +e.group-item
+                      +checkbox(name="driveve" id="driveve") Рулевой колонки
+                    +e.group-item
+                      +checkbox(name="collapsemiracle" id="collapsemiracle") Складывания зеркал
 
-				+tab._default.form__tab.form__tab_in-akcent.saletype
-					+e.head
-						+e.A.head-item(href="#saleSimple").saletype__tab-simple Обычная продажа
-						+e.A.head-item._active(href="#salePremium").saletype__tab-premium Спецразмещение
-					+e.content(id="saleSimple")
-						.saletype__simple
-							.saletype__content
-								figure.saletype__fig
-									img(src="assets/images/fig-sale.png", alt="")
-								.saletype__text
-									h3 Обычная продажа
-									p Вы можете разместить объявление на Мбиб.ру бесплатно, но дополнительные услуги помогут продать автомобиль быстрее.
-							
-						+btn('button', 'add')(type="submit")._size_xxl._theme_secondary._fullwidth.saletype__sbm Добавить объявление, бесплатно!
+                +e.item._tb_4._span_4
+                  +e.FIELDSET.group
+                    +e.LEGEND.group-name Память настроек
+                    +e.group-item
+                      +checkbox(name="memory" id="memorysit") Передних сидений
+                    +e.group-item
+                      +checkbox(name="memory" id="memorybacksut") Задних сидений
+                    +e.group-item
+                      +checkbox(name="memory" id="memorymir") Зеркал
+                    +e.group-item
+                      +checkbox(name="memory" id="memorybackmir") Заднего стекла
 
-						small Размещая объявление, вы соглашаетесь с <a href="">условиями оферты</a> портала mbib.ru и <a href="">требованиями к размещению объявлений</a>.
 
-					+e.content._active(id="salePremium")
-						.saletype__premium
-							.saletype__content
-								.saletype__text
-									h3 Спецразмещение
-									p Вы можете разместить объявление на портале Мбиб.ру
-									p Дополнительные услуги помогут продать автомобиль быстрее.
+          +e.collapse.collapse
+            +e.collapse-head.collapse__head
+              +e.SPAN.collapse-name Аудиосистема, мультимедиа
+              +e.SPAN.collapse-icon
+            +e.collapse-body.collapse__body
+              +e.row
+                +e.item._tb_4._span_4
+                  +e.FIELDSET.group
+                    +e.LEGEND.group-name Мультимедиа и навигация
+                    +e.group-item
+                      +checkbox(name="cd" id="cd") CD/DVD/Blu-ray
+                    +e.group-item
+                      +checkbox(name="mp3" id="mp3") MP3
+                    +e.group-item
+                      +checkbox(name="mirc" id="mirc") Зеркал
+                    +e.group-item
+                      +checkbox(name="radio" id="radio") Радио
+                    +e.group-item
+                      +checkbox(name="tv" id="tv") TV
+                    +e.group-item
+                      +checkbox(name="video" id="video") Видео
+                    +e.group-item
+                      +checkbox(name="ondrive" id="ondrive") Управление на руле
+                    +e.group-item
+                      +checkbox(name="usb" id="usb") USB
 
-								.saletype__price-wrap
-									.saletype__price 
-										span.saletype__price-num 1000 
-										span.saletype__price-cur руб.
+                +e.item._tb_4._span_4
+                  +e.FIELDSET.group
+                    +e.LEGEND.group-name Аудиосистема
+                    +e.group-item
+                      +radio(name="audio" id="ac2" value="ac2") 2 колонки
+                    +e.group-item
+                      +radio(name="audio" id="ac4" value="ac4") 4 колонки
+                    +e.group-item
+                      +radio(name="audio" id="ac6" value="ac6") 6 колонки
+                    +e.group-item
+                      +radio(name="audio" id="ac8" value="ac8") 8 колонки
 
-						+btn('button','award')(type="submit")._size_xxl._theme_akcent._fullwidth.saletype__sbm Разместить и оплатить 1’000 руб.
-						small Размещая объявление, вы соглашаетесь с <a href="">условиями оферты</a> портала mbib.ru и <a href="">требованиями к размещению объявлений</a>.
+          +e.collapse.collapse
+            +e.collapse-head.collapse__head
+              +e.SPAN.collapse-name Фары, шины и диски
+              +e.SPAN.collapse-icon
+            +e.collapse-body.collapse__body
+              +e.row
+                +e.item._tb_4._span_4
+                  +e.FIELDSET.group
+                    +e.LEGEND.group-name Фары
+                    +e.group-item
+                      +radio(name="headlight" id="gal" value="gal") Галогенные
+                    +e.group-item
+                      +radio(name="headlight" id="ksen" value="ksen") Ксеноновые
+                    +e.group-item
+                      +radio(name="headlight" id="diod" value="diod") Светодиодные
+
+                +e.item._tb_4._span_4
+                  +e.FIELDSET.group
+                    +e.LEGEND.group-name Фары <span class="remark">(дополнительные опции)</span>
+                    +e.group-item
+                      +checkbox(name="headlight_ad" id="pt") Противотуманные
+                    +e.group-item
+                      +checkbox(name="headlight_ad" id="chd") Омыватели фар
+                    +e.group-item
+                      +checkbox(name="headlight_ad" id="adcl") Адаптивное освещение
+
+                +e.item._tb_4._span_4
+                  +e.FIELDSET.group
+                    +e.LEGEND.group-name Шины и диски (диаметр), дюймы
+                    +e.group-item
+                      +select(name="radius" data-placeholder="Радиус")._search
+                        option(value="r14") 14
+                        option(value="r15") 15
+                        option(value="r16") 16
+                        option(value="r17") 17
+                        option(value="r18") 18
+
+                  +e.FIELDSET.group
+                    +e.LEGEND.group-name Шины и диски <span class="remark">(дополнительные опции)</span>
+                    +e.group-item
+                      +checkbox(name="winter" id="winter") Зимние шины в комплекте
+
+        +e.FIELDSET.section
+          +e.LEGEND.section-name Опишите ваш автомобиль
+          +e.row
+            +e.item._tb_fullwidth._span_8
+              +area(name="comment")
+              +e.SPAN.remark Запрещается давать ссылки, указывать адреса эл.почты, телефоны, цену, предлагать услуги, не связанные с продажей этого авто.
+
+        +tab._default.form__tab.form__tab_in-akcent.saletype
+          +e.head
+            +e.A.head-item(href="#saleSimple").saletype__tab-simple Обычная продажа
+            +e.A.head-item._active(href="#salePremium").saletype__tab-premium Спецразмещение
+          +e.content(id="saleSimple")
+            .saletype__simple
+              .saletype__content
+                figure.saletype__fig
+                  img(src="assets/images/fig-sale.png", alt="")
+                .saletype__text
+                  h3 Обычная продажа
+                  p Вы можете разместить объявление на Мбиб.ру бесплатно, но дополнительные услуги помогут продать автомобиль быстрее.
+
+            +btn('button', 'add')(type="submit")._size_xxl._theme_secondary._fullwidth.saletype__sbm Добавить объявление, бесплатно!
+
+            small Размещая объявление, вы соглашаетесь с <a href="">условиями оферты</a> портала mbib.ru и <a href="">требованиями к размещению объявлений</a>.
+
+          +e.content._active(id="salePremium")
+            .saletype__premium
+              .saletype__content
+                .saletype__text
+                  h3 Спецразмещение
+                  p Вы можете разместить объявление на портале Мбиб.ру
+                  p Дополнительные услуги помогут продать автомобиль быстрее.
+
+                .saletype__price-wrap
+                  .saletype__price
+                    span.saletype__price-num 1000
+                    span.saletype__price-cur руб.
+
+            +btn('button','award')(type="submit")._size_xxl._theme_akcent._fullwidth.saletype__sbm Разместить и оплатить 1’000 руб.
+            small Размещая объявление, вы соглашаетесь с <a href="">условиями оферты</a> портала mbib.ru и <a href="">требованиями к размещению объявлений</a>.
