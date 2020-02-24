@@ -1,3 +1,3 @@
 mixin control()
-	+b.A.control&attributes(attributes)
-		block
+  +b({tag: attributes.href !== undefined ? 'a' : 'span'}).control&attributes(attributes)
+    block
