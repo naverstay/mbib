@@ -387,9 +387,11 @@
 
   &__switcher
     position relative
-    margin-right 20px
     padding-left 18px
     color $colorMain
+
+    +above(768px)
+      margin-right 20px
 
     &::before,
     &::after
@@ -416,8 +418,16 @@
   &__palette
     flex-wrap wrap
 
+  &__form-actions
+    display flex
+    justify-content space-between
+
+    +above(480px)
+      justify-content flex-end
+
   &__sbm
     width 100%
+    white-space nowrap
 
     +above(768px)
       width auto
@@ -435,8 +445,14 @@
         margin-top 0
 
   &__sbm-icon
-    top 0
     margin-right 6px
+
+    +above(768px)
+      top 0
+
+  &__clear
+    +above(480px)
+      margin-right 20px
 
   &__drop
     padding 0 10px
