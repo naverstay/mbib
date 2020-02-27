@@ -6,7 +6,7 @@ mixin short-poster(data)
     +e.H4.title #{data.name}
     +e.price
       | #{data.price}
-      +e.SPAN.price-currency ₽
+      +e.SPAN.price-currency.rouble c
       +action('like', data.isFavorite)._only-icon._is-visible.short-poster__action
     +e.owner
       | #{data.author}

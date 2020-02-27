@@ -5,7 +5,6 @@ include ../show-phone/show-phones
 include ../action/action
 include ../gallery/gallery
 include ../share/share
-include ../short-poster/short-poster
 
 mixin card(data, id)
   -var item = data[id];
@@ -15,7 +14,7 @@ mixin card(data, id)
       +e.head-price
         +e.price
           | #{item.price}
-          +e.SPAN.price-currency ₽
+          +e.SPAN.price-currency.rouble a
         +action('like', item.isFavorite)._only-icon._is-visible.card__head-action
 
     +e.body
@@ -111,8 +110,6 @@ mixin card(data, id)
                 -var cleared = item.feature.cleared ? 'растаможен' : 'не растаможен';
                 +e.DD.feature-desc #{cleared}
             +e.A.feature-link(href="") Все характеристики модели в каталоге
-
-          //- +short-poster(item).card__data-sticky
 
         +e.data-main
           +e.gallery
