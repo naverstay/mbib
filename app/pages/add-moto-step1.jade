@@ -1,0 +1,11 @@
+extends /blocks/layout-default/layout-default
+include ../blocks/breadcrumbs/breadcrumbs
+include ../blocks/step/step-moto-1
+
+block head
+  - var pageTitle = 'MBIB | Step 1';
+  - var pageMod = 'step';
+
+block content
+  +breadcrumbs(getData('index-crumbs'))
+  +step-moto-1

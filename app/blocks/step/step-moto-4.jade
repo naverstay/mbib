@@ -1,0 +1,92 @@
+include ../akcent-block/akcent-block
+include ../title/title
+include ../form/form
+include ../car-name/car-name
+include ../input/input
+include ../lbl/lbl
+include ../btn/btn
+include ../radio/radio
+include ../checkbox/checkbox
+include ../input/input
+include ../area/area
+include ../select/select
+include ../control-group/control-group
+include ../switcher/switcher
+include ../more/more
+include ../add-photo/add-photo
+include ../palette/palette
+include ../remark/remark
+include ../tab/tab
+include ../alert/alert
+include ../phone-field/phone-field
+include ../range/range
+
+mixin step-moto-4()
+  +b.step&attributes(attributes)
+    +akcent-block
+      +form(name="addCar" action="" method="")._in-akcent
+        +e.navigation
+          +btn('link')(href="").__navigation-back Назад
+          +e.SPAN.navigation-spacer
+        +title(2).visuallyhidden Информация об автомобиле
+        .step__head
+          .step__head-name
+            +car-name(1, 'BMW / X3 ', 'bmw')
+          .step__head-action
+            +btn('button', 'close')(href="")._theme_tertirary._size_s.step__head-clear Очистить
+
+        +e.FIELDSET.section
+          +e.LEGEND.section-name Тип мотоцикла
+          +e.row._align_left
+            +e.item._tb_4._span_4
+              +e.group
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Allround
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Speedway
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Внедорожный Эндуро
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Детский
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Мотоцикл повышенной проходимости
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Минибайк
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Спортивный Эндуро
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Питбайк
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Туристический Эндуро
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Триал
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Naked bike
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Спорт-байк
+            +e.item._tb_4._span_4
+              +e.group
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Дорожный
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Спорт-туризм
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Классик
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Супер-спорт
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Кастом
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Супермото
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Круизер
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Трайки
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Чоппер
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Трицикл
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Кросс
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Туристические
