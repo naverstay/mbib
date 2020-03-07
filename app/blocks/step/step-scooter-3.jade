@@ -1,0 +1,34 @@
+include ../akcent-block/akcent-block
+include ../title/title
+include ../form/form
+include ../input/input
+include ../select/select
+include ../btn/btn
+include ../checklist/checklist
+include ../more/more
+include ../car-name/car-name
+
+mixin step-scooter-3()
+  +b.step&attributes(attributes)
+    +akcent-block
+      +form(name="addCar" action="" method="")._in-akcent
+        +e.navigation
+          +btn('link')(href="").__navigation-back Назад
+          +e.SPAN.navigation-spacer
+        +title(2).visuallyhidden Информация о скутере
+        .step__head
+          .step__head-name
+            +car-name(1, 'BMW', 'bmw')
+          .step__head-action
+            +btn('button', 'close')(href="")._theme_tertirary._size_s.step__head-clear Очистить
+
+        +e.FIELDSET.section
+          +e.LEGEND.section-name Модель скутера
+          +e.row
+            +e.item._fullwidth
+              +input(type="text" name="model" placeholder="Модель")
+          +e.row
+            +e.item._fullwidth
+              +checklist(getData('modelbmw'), 'model')
+                +e.item
+                  +more Все модели
