@@ -20,7 +20,8 @@ mixin card-list(data)
               +e.thumb
                 +tile(item)
               +e.about-item
-                +e.SPAN.price #{item.price} ₽
+                +e.SPAN.price #{item.price}
+                  +e.SPAN.price-currency.rouble c
                 if item.feature.rightDrive
                   +e.SPAN.remark Правый руль
               +e.about-item
