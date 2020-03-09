@@ -1,0 +1,11 @@
+extends /blocks/layout-default/layout-default
+include ../blocks/breadcrumbs/breadcrumbs
+include ../blocks/step/step-snowmobile-4
+
+block head
+  - var pageTitle = 'MBIB | Step 1';
+  - var pageMod = 'step';
+
+block content
+  +breadcrumbs(getData('index-crumbs'))
+  +step-snowmobile-4
