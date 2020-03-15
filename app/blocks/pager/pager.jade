@@ -2,7 +2,7 @@ include ../control-group/control-group
 include ../control/control
 
 mixin pager()
-  +b.pager&attributes(attributes)._state_start
+  +b.pager&attributes(attributes)
     +control-group
       +control(href="")._disabled.pager__prev
         +icon('pagin-left', true).pager__icon
@@ -13,101 +13,102 @@ mixin pager()
       +control(href="").pager__item 4
       +control(href="").pager__item 5
       +control(href="").pager__item 6
-      +control().pager__item …
-      +control(href="").pager__next
-        +icon('pagin-right', true).pager__icon
-        span.pager__text Вперёд
-
-  +b.pager&attributes(attributes)._state_start
-    +control-group
-      +control(href="")._disabled.pager__prev
-        +icon('pagin-left', true).pager__icon
-        span.pager__text Назад
-      +control(href="").pager__item 1
-      +control(href="").pager__item.pager__item_active 2
-      +control(href="").pager__item 3
-      +control(href="").pager__item 4
-      +control(href="").pager__item 5
       +control(href="").pager__item 6
       +control().pager__item …
       +control(href="").pager__next
         +icon('pagin-right', true).pager__icon
         span.pager__text Вперёд
 
-  +b.pager&attributes(attributes)._state_start
-    +control-group
-      +control(href="")._disabled.pager__prev
-        +icon('pagin-left', true).pager__icon
-        span.pager__text Назад
-      +control(href="").pager__item 1
-      +control(href="").pager__item 2
-      +control(href="").pager__item.pager__item_active 3
-      +control(href="").pager__item 4
-      +control(href="").pager__item 5
-      +control(href="").pager__item 6
-      +control().pager__item …
-      +control(href="").pager__next
-        +icon('pagin-right', true).pager__icon
-        span.pager__text Вперёд
+  //- +b.pager&attributes(attributes)._state_start
+  //-   +control-group
+  //-     +control(href="")._disabled.pager__prev
+  //-       +icon('pagin-left', true).pager__icon
+  //-       span.pager__text Назад
+  //-     +control(href="").pager__item 1
+  //-     +control(href="").pager__item.pager__item_active 2
+  //-     +control(href="").pager__item 3
+  //-     +control(href="").pager__item 4
+  //-     +control(href="").pager__item 5
+  //-     +control(href="").pager__item 6
+  //-     +control().pager__item …
+  //-     +control(href="").pager__next
+  //-       +icon('pagin-right', true).pager__icon
+  //-       span.pager__text Вперёд
 
-  +b.pager&attributes(attributes)
-    +control-group
-      +control(href="")._disabled.pager__prev
-        +icon('pagin-left', true).pager__icon
-        span.pager__text Назад
-      +control().pager__item …
-      +control(href="").pager__item 3
-      +control(href="").pager__item 4
-      +control(href="").pager__item.pager__item_active 5
-      +control(href="").pager__item 6
-      +control(href="").pager__item 7
-      +control().pager__item …
-      +control(href="").pager__next
-        +icon('pagin-right', true).pager__icon
-        span.pager__text Вперёд
+  //- +b.pager&attributes(attributes)._state_start
+  //-   +control-group
+  //-     +control(href="")._disabled.pager__prev
+  //-       +icon('pagin-left', true).pager__icon
+  //-       span.pager__text Назад
+  //-     +control(href="").pager__item 1
+  //-     +control(href="").pager__item 2
+  //-     +control(href="").pager__item.pager__item_active 3
+  //-     +control(href="").pager__item 4
+  //-     +control(href="").pager__item 5
+  //-     +control(href="").pager__item 6
+  //-     +control().pager__item …
+  //-     +control(href="").pager__next
+  //-       +icon('pagin-right', true).pager__icon
+  //-       span.pager__text Вперёд
 
-  +b.pager&attributes(attributes)._state_end
-    +control-group
-      +control(href="")._disabled.pager__prev
-        +icon('pagin-left', true).pager__icon
-        span.pager__text Назад
-      +control().pager__item …
-      +control(href="").pager__item 2
-      +control(href="").pager__item 3
-      +control(href="").pager__item 4
-      +control(href="").pager__item 5
-      +control(href="").pager__item.pager__item_active 6
-      +control(href="").pager__item 7
-      +control(href="").pager__next
-        +icon('pagin-right', true).pager__icon
-        span.pager__text Вперёд
+  //- +b.pager&attributes(attributes)
+  //-   +control-group
+  //-     +control(href="")._disabled.pager__prev
+  //-       +icon('pagin-left', true).pager__icon
+  //-       span.pager__text Назад
+  //-     +control().pager__item …
+  //-     +control(href="").pager__item 3
+  //-     +control(href="").pager__item 4
+  //-     +control(href="").pager__item.pager__item_active 5
+  //-     +control(href="").pager__item 6
+  //-     +control(href="").pager__item 7
+  //-     +control().pager__item …
+  //-     +control(href="").pager__next
+  //-       +icon('pagin-right', true).pager__icon
+  //-       span.pager__text Вперёд
 
-  +b.pager&attributes(attributes)._state_end
-    +control-group
-      +control(href="")._disabled.pager__prev
-        +icon('pagin-left', true).pager__icon
-        span.pager__text Назад
-      +control().pager__item …
-      +control(href="").pager__item 2
-      +control(href="").pager__item 3
-      +control(href="").pager__item 4
-      +control(href="").pager__item 5
-      +control(href="").pager__item 6
-      +control(href="").pager__item.pager__item_active 7
-      +control(href="").pager__next
-        +icon('pagin-right', true).pager__icon
-        span.pager__text Вперёд
+  //- +b.pager&attributes(attributes)._state_end
+  //-   +control-group
+  //-     +control(href="")._disabled.pager__prev
+  //-       +icon('pagin-left', true).pager__icon
+  //-       span.pager__text Назад
+  //-     +control().pager__item …
+  //-     +control(href="").pager__item 2
+  //-     +control(href="").pager__item 3
+  //-     +control(href="").pager__item 4
+  //-     +control(href="").pager__item 5
+  //-     +control(href="").pager__item.pager__item_active 6
+  //-     +control(href="").pager__item 7
+  //-     +control(href="").pager__next
+  //-       +icon('pagin-right', true).pager__icon
+  //-       span.pager__text Вперёд
 
-  +b.pager&attributes(attributes)._state_end
-    +control-group
-      +control(href="")._disabled.pager__prev
-        +icon('pagin-left', true).pager__icon
-        span.pager__text Назад
-      +control().pager__item …
-      +control(href="").pager__item 4
-      +control(href="").pager__item 5
-      +control(href="").pager__item 6
-      +control(href="").pager__item.pager__item_active 7
-      +control(href="").pager__next
-        +icon('pagin-right', true).pager__icon
-        span.pager__text Вперёд
+  //- +b.pager&attributes(attributes)._state_end
+  //-   +control-group
+  //-     +control(href="")._disabled.pager__prev
+  //-       +icon('pagin-left', true).pager__icon
+  //-       span.pager__text Назад
+  //-     +control().pager__item …
+  //-     +control(href="").pager__item 2
+  //-     +control(href="").pager__item 3
+  //-     +control(href="").pager__item 4
+  //-     +control(href="").pager__item 5
+  //-     +control(href="").pager__item 6
+  //-     +control(href="").pager__item.pager__item_active 7
+  //-     +control(href="").pager__next
+  //-       +icon('pagin-right', true).pager__icon
+  //-       span.pager__text Вперёд
+
+  //- +b.pager&attributes(attributes)._state_end
+  //-   +control-group
+  //-     +control(href="")._disabled.pager__prev
+  //-       +icon('pagin-left', true).pager__icon
+  //-       span.pager__text Назад
+  //-     +control().pager__item …
+  //-     +control(href="").pager__item 4
+  //-     +control(href="").pager__item 5
+  //-     +control(href="").pager__item 6
+  //-     +control(href="").pager__item.pager__item_active 7
+  //-     +control(href="").pager__next
+  //-       +icon('pagin-right', true).pager__icon
+  //-       span.pager__text Вперёд
