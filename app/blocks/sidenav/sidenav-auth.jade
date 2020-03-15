@@ -1,24 +1,24 @@
 include ../nav/nav
 
 mixin sidenav-auth()
-	+b.sidenav&attributes(attributes)
-		+e.overlay
-		+e.btn
-			+e.btn-inner
-		+e.body
-			+e.SPAN.close
-			+e.action
-				+e.A.action-link(href="")._pseudo
-					+icon('user', false).action-icon
-					+e.action-text Александров А.
-				+e.A.action-link(href="") 
-					+icon('file', false).action-icon
-					+e.action-text Мои объявления
-				+e.A.action-link(href="") 
-					+icon('top', false).action-icon
-					+e.action-text Поднять вверх
-				+e.A.action-link(href="")._pseudo
-					+icon('like', false).action-icon
-					+e.action-text В избранное
-			+e.nav
-				+nav(getData('nav'))._sidenav
+  +b.sidenav&attributes(attributes)
+    +e.overlay
+    +e.btn
+      +e.btn-inner
+    +e.body
+      +e.SPAN.close
+      +e.action
+        +e.A.action-link(href="")._pseudo
+          +icon('user', false).action-icon
+          +e.action-text Александров А.
+        +e.A.action-link(href="")
+          +icon('file', false).action-icon
+          +e.action-text Мои объявления
+        +e.A.action-link(href="")
+          +icon('top', false).action-icon
+          +e.action-text Поднять вверх
+        +e.A.action-link(href="")._pseudo
+          +icon('like', false).action-icon
+          +e.action-text В избранное
+      +e.nav
+        +nav(getData('navAuth'))._sidenav

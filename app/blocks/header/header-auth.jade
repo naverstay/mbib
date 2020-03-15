@@ -5,18 +5,18 @@ include ../sidenav/sidenav-auth
 include ../post-ads/post-ads
 
 mixin header-auth()
-	+b.HEADER.header&attributes(attributes)
-		+e.inner.inner
-			+e.sidenav
-				+sidenav-auth
-			+e.logo
-				+logo
-			+e.nav
-				+nav(getData('navAuth'))
-			+e.spacer
-			+e.posting
-				+btn('link', 'file')(href="") Мои обновления
-			+e.user
-				+btn('link', 'user')._theme_secondary(href="").user-link Александров А.
-			+e.add
-				+post-ads(href="")
+  +b.HEADER.header&attributes(attributes)
+    +e.inner.inner
+      +e.sidenav
+        +sidenav-auth
+      +e.logo
+        +logo
+      +e.nav
+        +nav(getData('navAuth'), {isHeader: true})
+      +e.spacer
+      +e.posting
+        +btn('link', 'file')._size_s(href="") Мои обновления
+      +e.user
+        +btn('link', 'user')._size_s._theme_secondary(href="").user-link Александров А.
+      +e.add
+        +post-ads(href="")

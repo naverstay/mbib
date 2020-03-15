@@ -1,7 +1,26 @@
-mixin nav(data)
-	+b.NAV.nav&attributes(attributes)
-		+e.UL.list
-			each item in data
-				+e.item
-					+e.A.link(href=item.href)
-						+e.link-text #{item.name}
+mixin nav(data, settings = { })
+  - var isHeader = settings.isHeader || false;
+  +b.NAV.nav&attributes(attributes)
+    +e.UL.list
+      each item, index in data
+        if isHeader
+          if index < 2
+            +e.item
+              +e.A.link(href=item.href)
+                +e.link-text #{item.name}
+              if item.childs
+                +e.UL.dropdown
+                  each child in item.childs
+                    +e.LI.dropdown-item
+                      +e.A.dropdown-link(href=child.href)
+                        +e.link-text #{child.name}
+        else
+          +e.item
+            +e.A.link(href=item.href)
+              +e.link-text #{item.name}
+            if item.childs
+              +e.UL.dropdown
+                each child in item.childs
+                  +e.LI.dropdown-item
+                    +e.A.dropdown-link(href=child.href)
+                      +e.link-text #{child.name}

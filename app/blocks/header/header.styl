@@ -1,104 +1,104 @@
 .header
-	margin-bottom 10px
-	display block
-	height 55px
-	flex 0 0 auto
-	background-color darken($colorDecorative, 40)
-	
-	+above(768px)
-		margin-bottom 10px
+  margin-bottom 10px
+  display block
+  height 55px
+  flex 0 0 auto
+  background-color darken($colorDecorative, 40)
 
-	&__inner
-		display flex
-		height 100%
+  +above(768px)
+    margin-bottom 10px
 
-	&__sidenav
-		margin-left -12px
-		width 55px
-		flex-basis 55px
-		height 100%
-		
-	&__logo
-		height 100%
-		
-	&__spacer
-		flex-grow 1
-		
-		+above(1170px)
-			display none
-		
-	&__nav
-		display none
-		flex-grow 1
-		text-align center
-		
-		+above(1170px)
-			display block
-		
-	&__add
-		padding 0 0 0 3px
-		display flex
-		align-items center
-		
-		+above(370px)
-			padding-left 15px
-			
-		+above(768px)
-			padding 0 20px
-			
-	&__posting,
-	&__user
-		display none
-		align-items center
-		
-		+above(980px)
-			display flex
-			
-	&__posting
-		padding 0 20px
-		
-	&__auth
-		position relative
-		padding 0 15px 0 28px
-		display flex
-		align-self center
-		height 45px
-		font-size 16px
-		line-height 45px
-		text-decoration none
-		color #fff
-		transition color .3s, background-color .3s
-		
-		+above(600px)
-			height 100%
-			padding-left 47px
-			align-items center
-		
-		&:hover
-			color #fff
-			background-color $colorMain
-			
-	&__auth-icon
-		position absolute
-		top 50%
-		left 10px
-		margin-top -11px
-		size 22px
-		fill $colorDecorative
-		transition fill .3s
-		
-		^[0]__auth:hover &
-			fill #fff
-		
-	&__auth-text
-		padding-top 1px
-		display none
-		line-height 1.1
-		border-bottom 1px dashed rgba(#fff, .23)
-		transition border-color .3s
-		
-		+above(600px)
-			display inline-block
-		
-		^[0]__auth:hover &
-			border-bottom-color #fff
+  &__inner
+    display flex
+    height 100%
+
+  &__sidenav
+    margin-left -12px
+    width 55px
+    flex-basis 55px
+    height 100%
+
+  &__logo
+    height 100%
+
+  &__spacer
+    flex-grow 1
+
+    +above(1170px)
+      display none
+
+  &__nav
+    display none
+    flex-grow 1
+    text-align center
+
+    +above(1170px)
+      display block
+
+  &__add
+    padding 0 0 0 3px
+    display flex
+    align-items center
+
+    +above(370px)
+      padding-left 15px
+
+    +above(768px)
+      padding 0 20px
+
+  &__posting,
+  &__user
+    display none
+    align-items center
+
+    +above(980px)
+      display flex
+
+  &__posting
+    padding 0 20px
+
+  &__auth
+    position relative
+    padding 0 15px 0 28px
+    display flex
+    align-self center
+    height 45px
+    font-size 16px
+    line-height 45px
+    text-decoration none
+    color #fff
+    transition color .3s, background-color .3s
+
+    +above(600px)
+      height 100%
+      padding-left 47px
+      align-items center
+
+    &:hover
+      color #fff
+      background-color $colorMain
+
+  &__auth-icon
+    position absolute
+    top 50%
+    left 10px
+    margin-top -11px
+    size 22px
+    fill $colorDecorative
+    transition fill .3s
+
+    ^[0]__auth:hover &
+      fill #fff
+
+  &__auth-text
+    padding-top 1px
+    display none
+    line-height 1.1
+    border-bottom 1px dashed rgba(#fff, .23)
+    transition border-color .3s
+
+    +above(600px)
+      display inline-block
+
+    ^[0]__auth:hover &
+      border-bottom-color #fff
