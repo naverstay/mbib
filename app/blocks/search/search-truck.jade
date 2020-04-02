@@ -10,7 +10,7 @@ include ../control-group/control-group
 include ../palette/palette
 include ../loader/loader
 
-mixin search-lcv()
+mixin search-truck()
   +b.search&attributes(attributes)
     +loader._for-block
     +e.city
@@ -46,6 +46,23 @@ mixin search-lcv()
             option(value="v3") MX
             option(value="v4") MX5
             option(value="v5") RL
+
+      +e.group-on-mobile
+        +e.col
+          +select(name="body" data-placeholder="Тип кузова" data-minimum-results-for-search="Infinity" tabindex="3")._search
+            option(value="")
+            option(value="k1") Седан
+            option(value="k2") Пикап
+            option(value="k3") Купе
+            option(value="k4") Универсал
+            option(value="k5") Хэтчбек
+        +e.col
+          +select(name="drive" data-placeholder="Тип кабины" data-minimum-results-for-search="Infinity" tabindex="12")._search
+            option(value="")
+            option(value="fr") Передний
+            option(value="bk") Задний
+            option(value="fl") Полный
+
       +e.col
         +select(name="body" data-placeholder="Тоннаж" data-minimum-results-for-search="Infinity" tabindex="3")._search
           option(value="")
@@ -53,37 +70,23 @@ mixin search-lcv()
           option(value="k2") 1-1.5 т.
           option(value="k3") от 1.5 т.
 
-      +e.col
-        +select(name="body" data-placeholder="Тип кузова" data-minimum-results-for-search="Infinity" tabindex="3")._search
-          option(value="")
-          option(value="k1") Седан
-          option(value="k2") Пикап
-          option(value="k3") Купе
-          option(value="k4") Универсал
-          option(value="k5") Хэтчбек
-      +e.col
-        +select(name="drive" data-placeholder="Привод" data-minimum-results-for-search="Infinity" tabindex="12")._search
-          option(value="")
-          option(value="fr") Передний
-          option(value="bk") Задний
-          option(value="fl") Полный
-
-      +e.col
-        +select(name="engineType" data-placeholder="Тип двигателя" data-minimum-results-for-search="Infinity" tabindex="9")._search
-          option(value="")
-          option(value="teb") Бензин
-          option(value="ted") Дизель
-          option(value="teg") Гибрид
-          option(value="tee") Электро
-      +e.col
-        +select(name="transmission" data-placeholder="Коробка передач" data-minimum-results-for-search="Infinity" tabindex="8")._search
-          option(value="")
-          option(value="ta") Автомат
-          option(value="tm") Механическая
+      +e.group-on-mobile
+        +e.col
+          +select(name="engineType" data-placeholder="Тип двигателя" data-minimum-results-for-search="Infinity" tabindex="9")._search
+            option(value="")
+            option(value="teb") Бензин
+            option(value="ted") Дизель
+            option(value="teg") Гибрид
+            option(value="tee") Электро
+        +e.col
+          +select(name="transmission" data-placeholder="Коробка передач" data-minimum-results-for-search="Infinity" tabindex="8")._search
+            option(value="")
+            option(value="ta") Автомат
+            option(value="tm") Механическая
 
       +e.col
         +control-group
-          +select()(name="powerStart" data-placeholder="Число мест от" tabindex="4")._search
+          +select()(name="powerStart" data-placeholder="Колесн. ф-ла" tabindex="4")._search
             option(value="")
             option(value="ys1") 2017
             option(value="ys2") 2016
@@ -93,7 +96,7 @@ mixin search-lcv()
             option(value="ys6") 2012
             option(value="ys7") 2011
             option(value="ys8") 2010
-          +select(name="powerEnd" data-placeholder="до" tabindex="5")._search
+          +select(name="powerEnd" data-placeholder="Шасси" tabindex="5")._search
             option(value="")
             option(value="ye1") 2017
             option(value="ye2") 2016
@@ -179,7 +182,13 @@ mixin search-lcv()
               +input(type="text", name="priceEnd", placeholder="до л.с." tabindex="14")._digit-pretify
 
           +e.col
-            +select(name="ownertype" data-placeholder="Руль" data-minimum-results-for-search="Infinity" tabindex="22")._search
+            +select(name="ownertype" data-placeholder="Подвеска кабины" data-minimum-results-for-search="Infinity" tabindex="22")._search
+              option(value="")
+              option(value="bk") Левый
+              option(value="fl") Правый
+
+          +e.col
+            +select(name="ownertype" data-placeholder="Класс выхлопа" data-minimum-results-for-search="Infinity" tabindex="22")._search
               option(value="")
               option(value="bk") Левый
               option(value="fl") Правый
