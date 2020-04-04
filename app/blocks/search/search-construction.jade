@@ -10,7 +10,7 @@ include ../control-group/control-group
 include ../palette/palette
 include ../loader/loader
 
-mixin search-agricultural()
+mixin search-construction()
   +b.search&attributes(attributes)
     +loader._for-block
     +e.city
@@ -88,40 +88,8 @@ mixin search-agricultural()
         +e.row
           +e.col
             +control-group
-              +input(type="text", name="priceStart", placeholder="Мощность от" tabindex="13")._digit-pretify
-              +input(type="text", name="priceEnd", placeholder="до л.с." tabindex="14")._digit-pretify
-
-          +e.col
-            +control-group
               +input(type="text", name="priceStart", placeholder="Мото часы от" tabindex="13")._digit-pretify
               +input(type="text", name="priceEnd", placeholder="до" tabindex="14")._digit-pretify
-
-          +e.col
-            +control-group
-              +select(name="engineStart" data-placeholder="Объём" tabindex="10")._search
-                option(value="")
-                option(value="0.2") 0.2 л
-                option(value="0.4") 0.4 л
-                option(value="0.6") 0.6 л
-                option(value="0.8") 0.8 л
-                option(value="1") 1 л
-                option(value="1.2") 1.2 л
-                option(value="1.4") 1.4 л
-                option(value="1.6") 1.6 л
-                option(value="1.8") 1.8 л
-                option(value="2") 2 л
-              +select(name="engineEnd" data-placeholder="до, л" tabindex="11")._search
-                option(value="")
-                option(value="0.2") 0.2 л
-                option(value="0.4") 0.4 л
-                option(value="0.6") 0.6 л
-                option(value="0.8") 0.8 л
-                option(value="1") 1 л
-                option(value="1.2") 1.2 л
-                option(value="1.4") 1.4 л
-                option(value="1.6") 1.6 л
-                option(value="1.8") 1.8 л
-                option(value="2") 2 л
 
         +e.row
           +e.col._span_2
