@@ -1,0 +1,183 @@
+include ../list/list
+include ../control-group/control-group
+include ../select/select
+include ../input/input
+include ../checkbox/checkbox
+include ../radio/radio
+include ../btn/btn
+include ../switcher/switcher
+include ../control-group/control-group
+include ../palette/palette
+include ../loader/loader
+
+mixin search-bulldozers()
+  +b.search&attributes(attributes)
+    +loader._for-block
+    +e.city
+      +control-group
+        +switcher(type="radio", name="type", value="typeAll", id="typeAll", role="radio", tabindex="0", checked)._theme_tertirary._size_s Все
+        +switcher(type="radio", name="type", value="typeDiler", id="typeDiler", role="radio", tabindex="0")._theme_tertirary._size_s Новые
+        +switcher(type="radio", name="type", value="typeOwner", id="typeOwner", role="radio", tabindex="0")._theme_tertirary._size_s С пробегом
+      +e.city-other
+        +btn('link', 'pin')(href="")._theme_tertirary._size_s.search__city-btn Другой город
+    +e.row
+      +e.group-on-mobile
+        +e.col
+          +select()(name="brand" data-placeholder="Марка" tabindex="1")._search._for-brand
+            option(value="")
+            option(value="m1" data-brand="audi") Audi
+            option(value="m2" data-brand="bmw") BMW
+            option(value="m3" data-brand="kia") Kia
+            option(value="m4" data-brand="lada") Lada
+            option(value="m5" data-brand="zaz") ЗАЗ
+            option(value="m6" data-brand="gaz") ГАЗ
+            option(value="m7" data-brand="uaz") УАЗ
+            option(value="m8" data-brand="bmw") BMW
+            option(value="m9" data-brand="kia") Kia
+            option(value="m0" data-brand="lada") Lada
+            option(value="m11" data-brand="zaz") ЗАЗ
+            option(value="m12" data-brand="gaz") ГАЗ
+            option(value="m13" data-brand="uaz") УАЗ
+        +e.col
+          +select(name="model" data-placeholder="Модель" tabindex="2")._search
+            option(value="")
+            option(value="v1") CL
+            option(value="v2") CLX
+            option(value="v3") MX
+            option(value="v4") MX5
+            option(value="v5") RL
+
+      +e.col
+        +select(name="body" data-placeholder="Тип" data-minimum-results-for-search="Infinity" tabindex="3")._search
+          option(value="")
+          option(value="k1") до 1 т.
+          option(value="k2") 1-1.5 т.
+          option(value="k3") от 1.5 т.
+
+
+      +e.col._mobile-order-last
+        +control-group
+          +select()(name="yearStart" data-placeholder="Год от" tabindex="4")._search
+            option(value="")
+            option(value="ys1") 2017
+            option(value="ys2") 2016
+            option(value="ys3") 2015
+            option(value="ys4") 2014
+            option(value="ys5") 2013
+            option(value="ys6") 2012
+            option(value="ys7") 2011
+            option(value="ys8") 2010
+          +select(name="yearEnd" data-placeholder="до" tabindex="5")._search
+            option(value="")
+            option(value="ye1") 2017
+            option(value="ye2") 2016
+            option(value="ye3") 2015
+            option(value="ye4") 2014
+            option(value="ye5") 2013
+            option(value="ye6") 2012
+            option(value="ye7") 2011
+            option(value="ye8") 2010
+
+      +e.col
+        +control-group
+          +input(type="text", name="priceStart", placeholder="Цена от" tabindex="13")._digit-pretify
+          +input(type="text", name="priceEnd", placeholder="до, ₽" tabindex="14")._digit-pretify
+
+
+    .search__advanced
+      .search__advanced-inner
+        +e.row
+          +e.col
+            +control-group
+              +input(type="text", name="priceStart", placeholder="Мото часы от" tabindex="13")._digit-pretify
+              +input(type="text", name="priceEnd", placeholder="до" tabindex="14")._digit-pretify
+
+          +e.col
+            +control-group
+              +select(name="engineStart" data-placeholder="Объём" tabindex="10")._search
+                option(value="")
+                option(value="0.2") 0.2 л
+                option(value="0.4") 0.4 л
+                option(value="0.6") 0.6 л
+                option(value="0.8") 0.8 л
+                option(value="1") 1 л
+                option(value="1.2") 1.2 л
+                option(value="1.4") 1.4 л
+                option(value="1.6") 1.6 л
+                option(value="1.8") 1.8 л
+                option(value="2") 2 л
+              +select(name="engineEnd" data-placeholder="до, л" tabindex="11")._search
+                option(value="")
+                option(value="0.2") 0.2 л
+                option(value="0.4") 0.4 л
+                option(value="0.6") 0.6 л
+                option(value="0.8") 0.8 л
+                option(value="1") 1 л
+                option(value="1.2") 1.2 л
+                option(value="1.4") 1.4 л
+                option(value="1.6") 1.6 л
+                option(value="1.8") 1.8 л
+                option(value="2") 2 л
+
+          +e.col
+            +control-group
+              +input(type="text", name="priceStart", placeholder="Мощность от" tabindex="13")._digit-pretify
+              +input(type="text", name="priceEnd", placeholder="до л.с." tabindex="14")._digit-pretify
+
+          +e.col
+            +select(name="engineEnd" data-placeholder="Тяговый кл." tabindex="11")._search
+              option(value="")
+              option(value="0.2") 0.2 л
+              option(value="0.4") 0.4 л
+              option(value="0.6") 0.6 л
+              option(value="0.8") 0.8 л
+              option(value="1") 1 л
+              option(value="1.2") 1.2 л
+              option(value="1.4") 1.4 л
+              option(value="1.6") 1.6 л
+              option(value="1.8") 1.8 л
+              option(value="2") 2 л
+
+
+        +e.row
+          +e.col._span_2
+            +palette.search__palette
+
+          +e.col
+            +e.item
+              +checkbox(name="hasPhoto", checked  tabindex="19") Только с фото
+            +e.item
+              +checkbox(name="tax", tabindex="21") Не расстаможен
+            +e.item
+              +checkbox(name="forChange", checked  tabindex="20") Возможен обмен
+
+          +e.col
+            +e.item
+              +checkbox(name="hasPhoto", checked  tabindex="19") В наличии
+            +e.item
+              +checkbox(name="tax", tabindex="21") Торг
+            +e.item
+              +checkbox(name="forChange", checked  tabindex="20") С фото
+
+          +e.group-on-mobile._column
+            +e.col
+              +e.item._additional-option
+                +select(name="ownertype" data-placeholder="Любой продавец" data-minimum-results-for-search="Infinity" tabindex="22")._search
+                  option(value="")
+                  option(value="fr") Все
+                  option(value="bk") Автодилер
+                  option(value="fl") Собственник
+              +e.item._additional-option
+                +select(name="ownertype" data-placeholder="Битые" data-minimum-results-for-search="Infinity" tabindex="22")._search
+                  option(value="")
+                  option(value="fr") Не важно
+                  option(value="bk") Кроме битых
+                  option(value="fl") Битые\не на ходу
+
+    +e.row._sbm._valign_center
+      +e.col._span_2
+        +input(type="text", name="text", placeholder="искать по тексту объявлений" tabindex="15")._iconed
+        +icon('search', false).icon-search
+      +e.col._span_4._sbm
+        +btn('button')._theme_link(tabindex="18").search__switcher Расширенный поиск
+        +btn('button')._theme_secondary(tabindex="28").search__sbm Показать 479 544 объявлений

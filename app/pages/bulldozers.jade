@@ -1,0 +1,13 @@
+extends /blocks/layout-default/layout-auth
+include ../blocks/breadcrumbs/breadcrumbs
+include ../blocks/text/text
+include ../blocks/search/search-bulldozers
+include ../blocks/group/group
+
+block head
+  - var pageTitle = 'MBIB';
+  - var pageMod = 'index';
+
+block content
+  +breadcrumbs(getData('index-crumbs'))
+  +search-bulldozers
