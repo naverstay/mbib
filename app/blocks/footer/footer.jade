@@ -5,6 +5,7 @@ include ../list/list
 include ../nav/nav
 include ../modal/modal-select
 include ../modal/modal-multiselect
+include ../social/social
 
 mixin footer()
   +b.footer&attributes(attributes)
@@ -23,6 +24,7 @@ mixin footer()
 
       +e.foot
         +copy
+        +social
         +dev
 
   +modal-select
