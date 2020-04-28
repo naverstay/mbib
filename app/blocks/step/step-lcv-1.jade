@@ -1,0 +1,48 @@
+include ../akcent-block/akcent-block
+include ../title/title
+include ../form/form
+include ../car-name/car-name
+include ../input/input
+include ../lbl/lbl
+include ../btn/btn
+include ../radio/radio
+include ../checkbox/checkbox
+include ../input/input
+include ../area/area
+include ../select/select
+include ../control-group/control-group
+include ../switcher/switcher
+include ../more/more
+include ../add-photo/add-photo
+include ../palette/palette
+include ../remark/remark
+include ../tab/tab
+include ../alert/alert
+include ../phone-field/phone-field
+include ../range/range
+
+mixin step-lcv-1()
+  +b.step&attributes(attributes)
+    +akcent-block
+      +form(name="addCar" action="" method="")._in-akcent
+        +e.navigation
+          +btn('link')(href="").__navigation-back Назад
+          +e.SPAN.navigation-spacer
+
+        +e.FIELDSET.section
+          +e.LEGEND.section-name Выберите категорию
+          +e.row._align_left
+            +e.item._tb_fullwidth
+              +switcher(type="radio", name="cat", value="cat1", id="cat1", role="radio", checked="checked")._theme_simple._size_m Лёгкие коммерческие
+              +switcher(type="radio", name="cat", value="cat2", id="cat2", role="radio")._theme_simple._size_m Грузовики
+              +switcher(type="radio", name="cat", value="cat3", id="cat3", role="radio")._theme_simple._size_m Седельные тягачи
+              +switcher(type="radio", name="cat", value="cat4", id="cat3", role="radio")._theme_simple._size_m Автобусы
+              +switcher(type="radio", name="cat", value="cat4", id="cat3", role="radio")._theme_simple._size_m Прицепы и полуприцепы
+              +switcher(type="radio", name="cat", value="cat4", id="cat3", role="radio")._theme_simple._size_m Съёмные кузова
+              +switcher(type="radio", name="cat", value="cat4", id="cat3", role="radio")._theme_simple._size_m Сельскохозяйственная
+              +switcher(type="radio", name="cat", value="cat4", id="cat3", role="radio")._theme_simple._size_m Строительная и дорожная
+              +switcher(type="radio", name="cat", value="cat4", id="cat3", role="radio")._theme_simple._size_m Погрузчики
+              +switcher(type="radio", name="cat", value="cat4", id="cat3", role="radio")._theme_simple._size_m Автокраны
+              +switcher(type="radio", name="cat", value="cat4", id="cat3", role="radio")._theme_simple._size_m Экскаваторы
+              +switcher(type="radio", name="cat", value="cat4", id="cat3", role="radio")._theme_simple._size_m Бульдозеры
+              +switcher(type="radio", name="cat", value="cat4", id="cat3", role="radio")._theme_simple._size_m Коммунальная

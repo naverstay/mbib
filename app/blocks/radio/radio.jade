@@ -1,5 +1,5 @@
 mixin radio()
-	+b.LABEL.radio&attributes()(for=attributes.id)
-		+e.INPUT.control(type="radio" name=attributes.name, value=attributes.value, id=attributes.id, tabindex=attributes.tabindex, required = attributes.required, data-value-missing = attributes['data-value-missing'], checked = attributes.checked)
-		+e.SPAN.text(class=attributes.class, role=attributes.type)
-			block
+  +b.LABEL.radio&attributes()(for=attributes.id)
+    +e.INPUT.control(type="radio" name=attributes.name, value=attributes.value, id=attributes.id, tabindex=attributes.tabindex, required = attributes.required, data-value-missing = attributes['data-value-missing'], checked = attributes.checked)
+    +e.SPAN.text(class=attributes.class, role=attributes.type)
+      block
