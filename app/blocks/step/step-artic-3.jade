@@ -8,14 +8,14 @@ include ../checklist/checklist
 include ../more/more
 include ../car-name/car-name
 
-mixin step-trailer-3()
+mixin step-artic-3()
   +b.step&attributes(attributes)
     +akcent-block
       +form(name="addCar" action="" method="")._in-akcent
         +e.navigation
           +btn('link')(href="").__navigation-back Назад
           +e.SPAN.navigation-spacer
-        +title(2).visuallyhidden Информация о прицепе
+        +title(2).visuallyhidden Информация о седельном тягаче
         .step__head
           .step__head-name
             +car-name(1, 'BMW', 'bmw')

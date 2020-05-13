@@ -21,14 +21,14 @@ include ../alert/alert
 include ../phone-field/phone-field
 include ../range/range
 
-mixin step-trailer-4()
+mixin step-artic-4()
   +b.step&attributes(attributes)
     +akcent-block
       +form(name="addCar" action="" method="")._in-akcent
         +e.navigation
           +btn('link')(href="").__navigation-back Назад
           +e.SPAN.navigation-spacer
-        +title(2).visuallyhidden Информация об грузовике
+        +title(2).visuallyhidden Информация о седельном тягаче
         .step__head
           .step__head-name
             +car-name(1, 'BMW / X3 ', 'bmw')
@@ -52,188 +52,148 @@ mixin step-trailer-4()
               +checkbox(name="cleared" id="cleared") Не растаможен
 
         +e.FIELDSET.section
-          +e.LEGEND.section-name Тип подвески
+          +e.LEGEND.section-name Колёсная формула
           +e.row._align_left
             +e.item._tb_4._span_4
               +e.group
                 +e.group-item
-                  +radio(name="climat" id="climat1" value="") Рессорная
+                  +radio(name="climat" id="climat1" value="") 4x2
                 +e.group-item
-                  +radio(name="climat" id="climat1" value="") Пневмо-рессорная
+                  +radio(name="climat" id="climat1" value="") 4x4
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") 6x2
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") 6x4
             +e.item._tb_4._span_4
               +e.group
                 +e.group-item
-                  +radio(name="climat" id="climat1" value="") Торсионная
+                  +radio(name="climat" id="climat1" value="") 6x6
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") 8x4
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") 8x8
                 +e.group-item
                   +radio(name="climat" id="climat1" value="") Не указано
 
         +e.FIELDSET.section
-          +e.LEGEND.section-name Тип тормозов
+          +e.LEGEND.section-name Тип кабины
           +e.row._align_left
             +e.item._tb_4._span_4
               +e.group
                 +e.group-item
-                  +radio(name="climat" id="climat1" value="") Барабанные
+                  +radio(name="climat" id="climat1" value="") 2-х местная без спального
                 +e.group-item
-                  +radio(name="climat" id="climat1" value="") Дисковые
+                  +radio(name="climat" id="climat1" value="") 2-х местная с 1 спальным
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") 2-х местная с 2 спальными
+            +e.item._tb_4._span_4
+              +e.group
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") 3-х местная без спального
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") 3-х местная с 1 спальным
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Не указано
+
+        +e.FIELDSET.section
+          +e.LEGEND.section-name Двигатель
+          +e.row._align_left
+            +e.item._tb_4._span_4
+              +e.group
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Бензин
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Дизель
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Электро
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Гибрид
+            +e.item._tb_4._span_4
+              +e.group
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Дизель+газ
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Бензин-газ
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Газ
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Не указано
+
+        +e.FIELDSET.section
+          +e.LEGEND.section-name Коробка
+          +e.row._align_left
+            +e.item._tb_4._span_4
+              +e.group
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Автомат
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Робот
+            +e.item._tb_4._span_4
+              +e.group
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Механическая
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Не указано
+
+        +e.FIELDSET.section
+          +e.LEGEND.section-name Высота седельного устройства
+          +e.row._align_left
+            +e.item._tb_4._span_4
+              +e.group
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") 128
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") 150
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") 180
+            +e.item._tb_4._span_4
+              +e.group
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") 250
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Не указано
+
+        +e.FIELDSET.section
+          +e.LEGEND.section-name Подвеска кабины
+          +e.row._align_left
+            +e.item._tb_4._span_4
+              +e.group
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Механическая
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Пневматическая
             +e.item._tb_4._span_4
               +e.group
                 +e.group-item
                   +radio(name="climat" id="climat1" value="") Не указано
 
         +e.FIELDSET.section
-          +e.LEGEND.section-name Тип прицепа
-          +e.row._align_left
-            +e.item._tb_4._span_4
-              +e.group
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцеп бортовой
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцеп для перевозки птиц
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцеп для перевозки скота
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцеп для перевозки сыпучих грузов
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцеп изотермический
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцеп комбикормовоз
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцеп раздвижной
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцеп самосвальный
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцеп специальный
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцеп тракторный
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцеп шторный
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцеп шторно-бортовой
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцеп шторно-бортовой
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцеп-бетоносмеситель
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцеп-битумовоз
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцеп-зерновоз
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцеп-контейнеровоз
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцеп-лесовоз
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцеп-ломовоз
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцеп-низкорамный трал
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцеп-панелевоз
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцеп-панелевоз
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцеп-роспуск
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцеп-сортиментовоз
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцеп-стекловоз
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцеп-тушевоз
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцеп-тяжеловоз
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцеп-фермовоз
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцеп-фургон
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцеп-цементовоз
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцеп-цистерна
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцеп-щеповоз
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцеп-эвакуатор
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Полуприцепы для перевозки газа
-            +e.item._tb_4._span_4
-              +e.group
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Низкорамный прицеп
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Высокорамный трал
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Прицеп бортовой
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Прицеп для перевозки водной техники
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Прицеп для перевозки мотоцикла
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Прицеп для перевозки птиц
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Прицеп для перевозки скота
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Прицеп для перевозки снегохода
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Прицеп для перевозки транспортных средств
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Прицеп для торговли
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Прицеп к легковому автомобилю
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Прицеп кабельная тележка
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Прицеп подкатная тележка
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Прицеп рекламный
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Прицеп самосвальный
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Прицеп тентованный
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Прицеп тракторный
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Прицеп-ассенизатор
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Прицеп-балковоз
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Прицеп-битумовоз
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Прицеп-зерновоз
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Прицеп-коневоз
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Прицеп-контейнеровоз
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Прицеп-ломовоз
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Прицеп-палатка
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Прицеп-рефрижератор
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Прицеп-роспуск
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Прицеп-сортиментовоз
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Прицеп-трейлер
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Прицеп-фургон
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Прицеп-цистерна
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Прицеп-щеповоз
-                +e.group-item
-                  +radio(name="climat" id="climat1" value="") Прицепы для перевозки газа
-
-        +e.FIELDSET.section
-          +e.LEGEND.section-name Загрузка, кг <span class="marked">*</span>
+          +e.LEGEND.section-name Объем двигателя см³ <span class="marked">*</span>
           +e.row._align_left
             +e.item._tb_3._span_4
               +input(type="text" name="mileage" required)._digit-pretify
 
         +e.FIELDSET.section
-          +e.LEGEND.section-name Количество осей <span class="marked">*</span>
+          +e.LEGEND.section-name Мощность
           +e.row._align_left
             +e.item._tb_3._span_4
-              +input(type="text" name="mileage" required)._digit-pretify
+              +range(name="power" id="power" value="78" min="10" max="1000" step="1")._power
+            +e.item._tb_3._span_4
+              span
+                +e.SPAN.output._power 78
+                span л.с.
+
+        +e.FIELDSET.section
+          +e.LEGEND.section-name Руль
+          +e.row._align_left
+            +e.item._tb_4._span_4
+              +e.group
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Левый
+            +e.item._tb_4._span_4
+              +e.group
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Правый
 
         +e.FIELDSET.section
           +e.LEGEND.section-name Цвет <span class="marked">*</span>
@@ -268,13 +228,100 @@ mixin step-trailer-4()
                 +e.group-item
                   +checkbox(name="cleared" id="") Антиблокировочная система (ABS)
                 +e.group-item
+                  +checkbox(name="cleared" id="") Электронная тормозная система (EBS)
+                +e.group-item
+                  +checkbox(name="cleared" id="") Подушки безопасности
+                +e.group-item
+                  +checkbox(name="cleared" id="") Обогрев зеркал
+                +e.group-item
+                  +checkbox(name="cleared" id="") Круиз-контроль
+                +e.group-item
+                  +checkbox(name="cleared" id="") Автономный отопитель салона
+                +e.group-item
+                  +checkbox(name="cleared" id="") Бортовой компьютер
+                +e.group-item
+                  +checkbox(name="cleared" id="") Холодильник
+                +e.group-item
+                  +checkbox(name="cleared" id="") Навигационная система
+                +e.group-item
                   +checkbox(name="cleared" id="") Подруливающая ось
                 +e.group-item
                   +checkbox(name="cleared" id="") Подъёмная ось
                 +e.group-item
-                  +checkbox(name="cleared" id="") Пневмоподвеска
+                  +checkbox(name="cleared" id="") Предпусковой подогрев двигателя
                 +e.group-item
-                  +checkbox(name="cleared" id="") Дисковые тормоза
+                  +checkbox(name="cleared" id="") Аэродефлектор
+                +e.group-item
+                  +checkbox(name="cleared" id="") Корректор фар
+                +e.group-item
+                  +checkbox(name="cleared" id="") Противотуманные фары
+                +e.group-item
+                  +checkbox(name="cleared" id="") Тахограф
+                +e.group-item
+                  +checkbox(name="cleared" id="") Телевизор
+                +e.group-item
+                  +checkbox(name="cleared" id="") Электропривод зеркал
+
+          +e.row
+            +e.item._span_8
+              +e.FIELDSET.group
+                +e.LEGEND.group-name Горный тормоз
+                +e.group-item._inline
+                  +radio(name="cleared" id="") Отсутствуют
+                +e.group-item._inline
+                  +radio(name="cleared" id="") Интардер
+                +e.group-item._inline
+                  +radio(name="cleared" id="") Ретардер
+
+          +e.row
+            +e.item._span_8
+              +e.FIELDSET.group
+                +e.LEGEND.group-name Климат
+                +e.group-item._inline
+                  +radio(name="cleared" id="") Отсутствуют
+                +e.group-item._inline
+                  +radio(name="cleared" id="") Кондиционер
+                +e.group-item._inline
+                  +radio(name="cleared" id="") Климат-контроль
+
+          +e.row
+            +e.item._span_8
+              +e.FIELDSET.group
+                +e.LEGEND.group-name Подогрев сидений
+                +e.group-item._inline
+                  +radio(name="cleared" id="") Отсутствуют
+                +e.group-item._inline
+                  +radio(name="cleared" id="") Водительское
+                +e.group-item._inline
+                  +radio(name="cleared" id="") Оба
+
+          +e.row
+            +e.item._span_8
+              +e.FIELDSET.group
+                +e.LEGEND.group-name Электроподъемники
+                +e.group-item._inline
+                  +radio(name="cleared" id="") Отсутствуют
+                +e.group-item._inline
+                  +radio(name="cleared" id="") Все
+                +e.group-item._inline
+                  +radio(name="cleared" id="") Левый
+                +e.group-item._inline
+                  +radio(name="cleared" id="") Правый
+
+          +e.row
+            +e.item._span_8
+              +e.FIELDSET.group
+                +e.LEGEND.group-name Магнитола
+                +e.group-item._inline
+                  +radio(name="cleared" id="") Отсутствуют
+                +e.group-item._inline
+                  +radio(name="cleared" id="") CD
+                +e.group-item._inline
+                  +radio(name="cleared" id="") DVD
+                +e.group-item._inline
+                  +radio(name="cleared" id="") Кассетная
+                +e.group-item._inline
+                  +radio(name="cleared" id="") Радио
 
         +e.section-wrap._marked
           +e.FIELDSET.section
