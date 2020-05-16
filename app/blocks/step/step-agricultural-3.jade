@@ -8,14 +8,14 @@ include ../checklist/checklist
 include ../more/more
 include ../car-name/car-name
 
-mixin step-lcv-3()
+mixin step-agricultural-3()
   +b.step&attributes(attributes)
     +akcent-block
       +form(name="addCar" action="" method="")._in-akcent
         +e.navigation
           +btn('link')(href="").__navigation-back Назад
           +e.SPAN.navigation-spacer
-        +title(2).visuallyhidden Информация о мотоцикле
+        +title(2).visuallyhidden Информация о сельскохозяйственной технике
         .step__head
           .step__head-name
             +car-name(1, 'BMW', 'bmw')

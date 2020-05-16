@@ -1,0 +1,175 @@
+include ../akcent-block/akcent-block
+include ../title/title
+include ../form/form
+include ../car-name/car-name
+include ../input/input
+include ../lbl/lbl
+include ../btn/btn
+include ../radio/radio
+include ../checkbox/checkbox
+include ../input/input
+include ../area/area
+include ../select/select
+include ../control-group/control-group
+include ../switcher/switcher
+include ../more/more
+include ../add-photo/add-photo
+include ../palette/palette
+include ../remark/remark
+include ../tab/tab
+include ../alert/alert
+include ../phone-field/phone-field
+include ../range/range
+
+mixin step-autoloader-4()
+  +b.step&attributes(attributes)
+    +akcent-block
+      +form(name="addCar" action="" method="")._in-akcent
+        +e.navigation
+          +btn('link')(href="").__navigation-back Назад
+          +e.SPAN.navigation-spacer
+        +title(2).visuallyhidden Информация об автопогрузчике
+        .step__head
+          .step__head-name
+            +car-name(1, 'BMW / X3 ', 'bmw')
+          .step__head-action
+            +btn('button', 'close')(href="")._theme_tertirary._size_s.step__head-clear Очистить
+
+        +e.FIELDSET.section
+          +e.LEGEND.section-name Год выпуска <span class="marked">*</span>
+          +e.row._align_left
+            +e.item._tb_3._span_4
+              +input(type="text" name="mileage" placeholder="год" required)
+
+        +e.FIELDSET.section
+          +e.LEGEND.section-name Моточасы <span class="marked">*</span>
+          +e.row._align_left
+            +e.item._tb_3._span_4
+              +input(type="text" name="mileage" required)._digit-pretify
+
+        +e.FIELDSET.section
+          +e.LEGEND.section-name Тип автопогрузчика
+          +e.row._align_left
+            +e.item._tb_4._span_4
+              +e.group
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Боковые погрузчики
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Вилочный электропогрузчик
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Вилочный автопогрузчик
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Мини-погрузчик
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Универсальный погрузчик
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Фронтальный погрузчик
+            +e.item._tb_4._span_4
+              +e.group
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Контейнерный погрузчик
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Телескопический погрузчик
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Грейферный погрузчик
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Погрузочно-доставочная машина
+                +e.group-item
+                  +radio(name="climat" id="climat1" value="") Погрузчик-комплектовщик
+
+        +e.FIELDSET.section
+          +e.LEGEND.section-name Высота подъёма в метрах <span class="marked">*</span>
+          +e.row._align_left
+            +e.item._tb_3._span_4
+              +input(type="text" name="mileage" required)._digit-pretify
+
+        +e.FIELDSET.section
+          +e.LEGEND.section-name Цвет <span class="marked">*</span>
+          +e.row
+            +e.item._fullwidth
+              +palette
+
+        +e.FIELDSET.section
+          +e.LEGEND.section-name Цена <span class="marked">*</span>
+          +e.row._align_left
+            +e.item._tb_3._span_4
+              +input(type="text" name="price" placeholder="укажите цену" required)._digit-pretify
+            +e.item._tb_7._span_4
+              +checkbox(name="cleared" id="forchange") Возможен обмен
+
+        +e.FIELDSET.section
+          +e.LEGEND.section-name Место осмотра <span class="marked">*</span>
+          +e.row._align_left._valign_top
+            +e.item._tb_5._span_4
+              +select(name="city" data-placeholder="Город")._search
+                option(value="")
+              //- +input(type="text" name="city" placeholder="Город продажи" required)
+              +e.SPAN.remark Изменить город после размещения невозможно
+            +e.item._tb_7._span_4
+              +input(type="text" name="place" placeholder="Место осмотра")
+
+        +e.section-wrap._marked
+          +e.FIELDSET.section
+            +e.LEGEND.section-name Личные данные <span class="marked">*</span>
+            +e.row._align_left
+              +e.item._tb_6._span_4
+                +input(type="text" name="city" placeholder="Как к вам обращаться?" required)
+                +e.SPAN.remark Имя будет указано в объявлении
+            +e.row._align_left
+              +e.item._tb_6._span_4
+                +phone-field(type="tel" name="phonePlace" id="registrPhone" placeholder="Номер телефона" tabindex="3" required minlength="16" data-too-short="Номер введён не полностью, должно быть 11 цифр" data-value-missing="Введите телефон")
+              +e.item._tb_6._span_4
+                +input(type="email" name="place" placeholder="Электронная почта (e-mail)" required)
+
+        +e.FIELDSET.section
+          +e.LEGEND.section-name Паспорт транспортного средства (ПТС)
+          +e.row._align_left
+            +e.item._tb_6._span_6
+              +switcher(type="radio", name="pts", value="original", id="pts1", role="radio")._theme_simple._size_m Оригинал
+              +switcher(type="radio", name="pts", value="dubl", id="pts2", role="radio", checked="checked")._theme_simple._size_m Дубликат
+
+        +e.FIELDSET.section
+          +e.LEGEND.section-name Добавьте описание
+          +e.row
+            +e.item._tb_fullwidth._span_8
+              +area(name="comment")
+              +e.SPAN.remark Запрещается давать ссылки, указывать адреса эл.почты, телефоны, цену, предлагать услуги, не связанные с продажей этого авто.
+
+        +e.FIELDSET.section
+          +e.LEGEND.section-name Добавить фотографии <span class="marked">*</span>
+          +e.row
+            +e.item._fullwidth
+              +add-photo
+
+        +tab._default.form__tab.form__tab_in-akcent.saletype
+          +e.head
+            +e.A.head-item(href="#saleSimple").saletype__tab-simple Обычная продажа
+            +e.A.head-item._active(href="#salePremium").saletype__tab-premium Спецразмещение
+          +e.content(id="saleSimple")
+            .saletype__simple
+              .saletype__content
+                figure.saletype__fig
+                  img(src="assets/images/fig-sale.png", alt="")
+                .saletype__text
+                  h3 Обычная продажа
+                  p Вы можете разместить объявление на Мбиб.ру бесплатно, но дополнительные услуги помогут продать автомобиль быстрее.
+
+            +btn('button', 'add')(type="submit")._size_xxl._theme_secondary._fullwidth.saletype__sbm Добавить объявление, бесплатно!
+
+            small Размещая объявление, вы соглашаетесь с <a href="">условиями оферты</a> портала mbib.ru и <a href="">требованиями к размещению объявлений</a>.
+
+          +e.content._active(id="salePremium")
+            .saletype__premium
+              .saletype__content
+                .saletype__text
+                  h3 Спецразмещение
+                  p Вы можете разместить объявление на портале Мбиб.ру
+                  p Дополнительные услуги помогут продать автомобиль быстрее.
+
+                .saletype__price-wrap
+                  .saletype__price
+                    span.saletype__price-num 1000
+                    span.saletype__price-cur руб.
+
+            +btn('button','award')(type="submit")._size_xxl._theme_akcent._fullwidth.saletype__sbm Разместить и оплатить 1’000 руб.
+            small Размещая объявление, вы соглашаетесь с <a href="">условиями оферты</a> портала mbib.ru и <a href="">требованиями к размещению объявлений</a>.
