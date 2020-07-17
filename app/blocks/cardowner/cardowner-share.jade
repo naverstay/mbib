@@ -1,0 +1,19 @@
+include ../phone/phone
+include ../social/social
+
+mixin cardowner-share(data)
+  -var item = data[0];
+  -var contact = { "show" : false, "phone" : "+7 *** ** ** **",}
+  +b.cardowner&attributes(attributes)
+    +e.text._align_center
+      | Поделитесь ссылкой на сайт в любой социальной сети и получите контакты владельца
+    +social._view_block.cardowner__share
+    +e.inspect._align_center
+      | Или подождите 60 секунд
+
+    //- +e.author
+    //-   +e.author-name #{item.author}
+    //-   +e.author-status #{item.authorStatus}
+    //- +e.phone
+    //-   +phone(contact, true)._size_l.cardowner__phone-value
+
