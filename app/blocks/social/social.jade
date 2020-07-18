@@ -1,4 +1,4 @@
-mixin social()
+mixin social(showAll)
   +b.social&attributes(attributes)
     +e.A.item._fb(href="")
       +icon('fb').icon
@@ -6,3 +6,6 @@ mixin social()
       +icon('twi').icon
     +e.A.item._vk(href="")
       +icon('vk').icon
+    if showAll
+      +e.A.item._ok(href="")
+        +icon('ok').icon

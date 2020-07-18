@@ -7,9 +7,11 @@ mixin cardowner-share(data)
   +b.cardowner&attributes(attributes)
     +e.text._align_center
       | Поделитесь ссылкой на сайт в любой социальной сети и получите контакты владельца
-    +social._view_block.cardowner__share
-    +e.inspect._align_center
+    +social(true)._view_block.cardowner__share
+    +e.text._align_center
       | Или подождите 60 секунд
+    +e.phone._align_center
+      +phone(contact, true)._size_l.cardowner__phone-value
 
     //- +e.author
     //-   +e.author-name #{item.author}
