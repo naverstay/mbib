@@ -17,7 +17,7 @@
     "stylus"
   ],
   "scripts": {
-    "start": "gulp",
+    "start": "gulp --inspect",
     "build": "gulp build",
     "production": "cross-env NODE_ENV=production npm-run-all clean build",
     "make-block": "babel-node make-block.js",
@@ -63,6 +63,7 @@
     "babel-plugin-transform-runtime": "^6.9.0",
     "babel-preset-es2015": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
+    "babel-register": "^6.26.0",
     "babel-runtime": "^6.22.0",
     "bemto.jade": "^1.0.0",
     "browser-sync": "^2.10.0",
@@ -72,7 +73,7 @@
     "eslint-loader": "^1.1.1",
     "expose-loader": "^0.7.1",
     "fotorama": "^4.6.4",
-    "gulp": "^3.9.0",
+    "gulp": "^3.9.1",
     "gulp-bump": "^1.0.0",
     "gulp-cached": "^1.1.0",
     "gulp-changed": "^1.3.0",
@@ -139,5 +140,8 @@
     "notyf": "^2.0.1",
     "rangeslider-pure": "^0.4.5-1",
     "select2-multi-checkboxes": "github:wasikuss/select2-multi-checkboxes"
+  },
+  "resolutions": {
+    "graceful-fs": "^4.2.4"
   }
 }
