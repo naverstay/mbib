@@ -8,6 +8,7 @@ import gallery from '../blocks/gallery/gallery';
 import digitpretify from '../blocks/input/input';
 import cardList from '../blocks/card-list/card-list';
 import sidenav from '../blocks/sidenav/sidenav';
+import '../blocks/nav/nav';
 import modal from '../blocks/modal/modal';
 import form from '../blocks/form/form';
 import collapse from '../blocks/collapse/collapse';
@@ -34,6 +35,8 @@ $(() => {
   checkTouch();
 
   sidenav();
+
+  nav();
 
   carousel.init();
 

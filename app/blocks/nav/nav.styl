@@ -56,6 +56,10 @@
       color #fff
       background-color $colorMain
 
+    ^[0]_sidenav ^[0]__item:hover & {
+      background-color transparent
+    }
+
     ^[0]_footer &
       padding 10px 0
       display block
@@ -102,6 +106,12 @@
       left auto
       background-color transparent
       box-shadow none
+      overflow hidden
+      max-height 0
+      transition max-height .3s
+
+      &_open
+        max-height 1000px
 
   &__dropdown-link
     display block
@@ -109,9 +119,24 @@
     text-align left
     color $colorSecondary
 
-    &:hover
-      color $colorMain
-
     .sidenav &
       padding 8px 0 8px 20px
       color #fff
+
+    &:hover
+      color $colorMain
+
+  &__trigger
+    padding 10px 0
+    display flex
+    justify-content space-between
+    color #fff
+    border none
+    background-color transparent
+
+  &__trigger-icon
+    align-self center
+    margin-left 10px
+    width 12px
+    height 12px
+    fill currentColor

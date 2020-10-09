@@ -16,8 +16,13 @@ mixin nav(data, settings = { })
                         +e.link-text #{child.name}
         else
           +e.item
-            +e.A.link(href=item.href)
-              +e.link-text #{item.name}
+            if item.childs
+              +e.BUTTON.trigger
+                +e.SPAN.link-text #{item.name}
+                +icon('down-arrow').trigger-icon
+            else
+              +e.A.link(href=item.href)
+                +e.link-text #{item.name}
             if item.childs
               +e.UL.dropdown
                 each child in item.childs
