@@ -36,8 +36,6 @@ $(() => {
 
   sidenav();
 
-  nav();
-
   carousel.init();
 
   gallery.init();
