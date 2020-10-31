@@ -1,4 +1,5 @@
 extends /blocks/layout-default/layout-default
+include ../blocks/modal/modal-email
 include ../blocks/modal/modal-phone
 include ../blocks/modal/modal-phone-share
 include ../blocks/modal/modal-bookmark
@@ -35,3 +36,7 @@ block content
   div(style="margin-bottom:10px")
     +modal-confirm
     +btn('link')(href="#modalConfirm" data-effect="mfp-zoom-in").link-modal Подтверждение
+
+  div(style="margin-bottom:10px")
+    +modal-email
+    +btn('link')(href="#modalEmail" data-effect="mfp-zoom-in").link-modal Уведомление по почте

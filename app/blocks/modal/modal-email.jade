@@ -1,0 +1,24 @@
+include ../input/input
+include ../lbl/lbl
+include ../btn/btn
+include ../text/text
+include ../form/form
+include ../control-group/control-group
+
+mixin modal-email()
+  +b.modal#modalEmail&attributes(attributes)._size_s.mfp-with-anim.mfp-hide
+    +e.head
+      +e.H5.title Подписаться на уведомления
+      +e.SPAN.close.mfp-close
+        +icon('close', false).close-icon
+    +e.inner
+      +e.body
+        +text._theme_primary Укажите свою почту для получения уведомлений о новых объявлениях
+        +form(name="claim" action="" method="")
+          +e.row
+            +e.item._fullwidth
+              +lbl(for="claimAuthor" hidden)
+              +input(type="email" id="claimAuthor" placeholder="Ваш email" required)
+          +e.row._align_right
+            +e.item._fullwidth
+              +btn('button')._theme_secondary._fullwidth Подписаться
