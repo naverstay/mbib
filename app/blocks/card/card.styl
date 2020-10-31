@@ -192,8 +192,14 @@
 
   &__meta-item
     display inline-block
-    margin-right 20px
+    margin-right 15px
     margin-bottom 15px
+
+    +above(768px)
+      margin-right 20px
+
+    &:last-child
+      margin-right 0
 
   &__meta-id
     display inline-block

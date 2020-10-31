@@ -21,12 +21,6 @@ mixin card(data, id)
       +e.meta
         +e.meta-data
           +e.meta-row
-            //- +e.meta-updated
-            //-   +e.SPAN.meta-date
-            //-     +e.SPAN.meta-lbl
-            //-       +icon('round-arrow', false).meta-view-icon
-            //-       | Обновлено
-            //-     | #{item.updated}
             +e.meta-item
               +e.SPAN.meta-date
                 +icon('clock', false).meta-view-icon
@@ -38,6 +32,12 @@ mixin card(data, id)
             +e.meta-item
               +e.SPAN.meta-view
                 +icon('eye', false).meta-view-icon
+                | #{item.inspect.viewAll}
+              +e.SPAN.meta-remark (#{item.inspect.viewToday} сегодня)
+
+            +e.meta-item
+              +e.SPAN.meta-view
+                +icon('phone', false).meta-view-icon
                 | #{item.inspect.viewAll}
               +e.SPAN.meta-remark (#{item.inspect.viewToday} сегодня)
 
