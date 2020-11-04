@@ -1,0 +1,35 @@
+.toggle
+  position relative
+  display inline-block
+
+  &:last-child
+    margin-right 0
+
+  &__control
+    position absolute
+    left -9999px
+
+  &__shape
+    display block
+    box-sizing border-box
+    width 50px
+    height 25px
+    cursor pointer
+    background-color #fff
+    border 1px solid $colorDecorative
+
+    &::before
+      content ''
+      margin 2px 0 0 2px
+      display block
+      width 19px
+      height 19px
+      transition transform .3s ease, background-color .3s ease
+      background-color $colorDecorative
+
+  &__control:checked + &__shape::before
+    transform translate3d(25px, 0, 0)
+    background-color $colorSecondary
+
+  &__control:focus + &__shape
+    border-color $colorMain

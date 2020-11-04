@@ -1,0 +1,41 @@
+include ../checkbox/checkbox
+include ../btn/btn
+include ../toggle/toggle
+
+mixin subscribe-list()
+  +b.FORM.subscribe-list&attributes(attributes)
+      +e.head
+        +e.cell._checkbox
+          +checkbox(name="selectAll" id="selectAll")
+        +e.cell._actions
+          +btn(type="button")._size_s Удалить
+        +e.cell._toggle Получать на почту
+      +e.UL.wrapper
+        +e.item
+          +e.cell._checkbox
+            +checkbox(name="select")
+          +e.cell._desc
+            +e.A.link(href="")
+              +e.name BMW, 1 серия
+              +e.location Курск
+          +e.cell._action
+            +toggle(name="aq" id="aq")
+        +e.item
+          +e.cell._checkbox
+            +checkbox(name="select")
+          +e.cell._desc
+            +e.A.link(href="")
+              +e.name Мотоциклы и мототехника
+              +e.location Курск
+          +e.cell._action
+            +toggle(name="as" id="as")
+        +e.item
+          +e.cell._checkbox
+            +checkbox(name="select")
+          +e.cell._desc
+            +e.A.link(href="")
+              +e.name Транспорт/Автомобили
+              +e.location Курск
+          +e.cell._action
+            +toggle(name="ss" id="ss")
+

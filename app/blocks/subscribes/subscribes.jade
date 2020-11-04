@@ -1,0 +1,13 @@
+include ../akcent-block/akcent-block
+include ../title/title
+include ../subscribe-list/subscribe-list
+include ../pagination/pagination
+
+mixin subscribes()
+  +b.subscribes&attributes(attributes)
+    +akcent-block
+      +title(1) Избранный поиск
+      +subscribe-list
+      +pagination({simple: true}).subscribes__pagination
+
+

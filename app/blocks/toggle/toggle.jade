@@ -1,0 +1,17 @@
+mixin toggle()
+  +b.LABEL.toggle&attributes()(for=attributes.id, class=wrapClass)
+    +e.INPUT.control(
+      type="checkbox"
+      name=attributes.name
+      value=attributes.value
+      id=attributes.id
+      tabindex=attributes.tabindex
+      required = attributes.required
+      data-value-missing = attributes['data-value-missing']
+      checked = attributes.checked
+      disabled=attributes.disabled
+      role=attributes.type
+    )
+    +e.shape
+
+

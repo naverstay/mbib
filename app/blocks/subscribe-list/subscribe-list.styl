@@ -1,0 +1,55 @@
+.subscribe-list
+  display block
+  margin 40px 0 20px
+
+  +above(1170px)
+    width 80%
+
+  &__head,
+  &__wrapper
+    display table
+    width 100%
+
+  &__head
+    margin-bottom 10px
+
+  &__item
+    display table-row
+
+  &__cell
+    display table-cell
+    vertical-align top
+
+    &_checkbox
+      width 50px
+
+    &_desc,
+    &_actions
+      width 80%
+
+    ^[0]__head &_toggle
+      vertical-align middle
+
+  &__item &__cell
+    padding 10px 0
+
+  &__item &__cell:first-child,
+  &__head &__cell:first-child
+    padding-left 10px
+
+  &__item:nth-child(even) &__cell
+    background-color #fff
+
+
+  &__link
+    display inline-block
+
+  &__name
+    display block
+    margin-bottom 5px
+    font-size 16px
+    font-weight bold
+
+  &__location
+    color $colorText
+

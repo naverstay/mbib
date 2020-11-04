@@ -1,0 +1,9 @@
+extends /blocks/layout-default/layout-default
+include ../blocks/subscribes/subscribes
+
+block head
+  - var pageTitle = 'Сохранённые подписки';
+  - var pageMod = 'subscribes';
+
+block content
+  +subscribes
