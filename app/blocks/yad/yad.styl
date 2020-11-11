@@ -1,8 +1,36 @@
 .yad
-	margin-bottom 30px
-	padding 20px
-	display block
-	background-color #fff
-	
-	img
-		max-width 100%
+  margin-bottom 30px
+  padding 20px
+  display block
+  background-color #fff
+
+  img
+    max-width 100%
+
+.yad-sticky
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 50%;
+
+  margin-left: 585px;
+  display: none;
+
+  @media (min-width: 1170px) {
+    display: block;
+    padding: 10px;
+  }
+
+  &__content {
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  &_active &__content {
+    opacity: 1;
+  }
+
+  img {
+    max-width: 100%;
+  }

@@ -9,6 +9,7 @@ import digitpretify from '../blocks/input/input';
 import cardList from '../blocks/card-list/card-list';
 import sidenav from '../blocks/sidenav/sidenav';
 import '../blocks/nav/nav';
+import '../blocks/yad/yad-sticky';
 import modal from '../blocks/modal/modal';
 import form from '../blocks/form/form';
 import collapse from '../blocks/collapse/collapse';
