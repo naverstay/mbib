@@ -138,20 +138,32 @@
 
   &__city-btn
     display block
+    margin-bottom 5px
+
+    +above(480px)
+      display inline-block
+      margin-bottom 0
 
     +above(768px)
-      display inline-block
       white-space nowrap
+
+    &:first-child
+      +above(480px)
+        margin-right 10px
 
   &__city-other
     margin-top 8px
     text-align center
+
+    +above(480px)
+      display flex
 
     +above(768px)
       margin-top 0
       flex-grow 1
       margin-left 15px
       text-align right
+      justify-content flex-end
 
     +above(980px)
       flex-grow 0
