@@ -1,5 +1,10 @@
 const yadSticky = (() => {
   const sticky = document.querySelector('.yad-sticky');
+
+  if (!sticky) {
+    return;
+  }
+
   const contentBlock = document.querySelector('.content > .inner');
   const getWindowWidth = () => window.innerWidth;
   const getWindowHeight = () => window.innerHeight;
