@@ -25,7 +25,6 @@ const range = (() => {
         valueRangeOutput.innerHTML = valueRange.value;
       });
     }
-
   }
 })();
 

@@ -1,0 +1,47 @@
+include ../btn/btn
+include ../title/title
+include ../range/range
+include ../switcher/switcher
+
+mixin calculator()
+  +b.calculator&attributes(attributes)
+    +e.H4.title Рассчитай свой кредит на авто
+    +e.loan
+      +e.sum
+        +e.range
+          +e.range-field
+            +e.range-label Сумма кредита
+            +e.INPUT.range-textfield(type="text" value="50 000")
+            +range(name="value" id="value" min="50000" max="5000000" step="10000")
+            +e.range-measure
+              +e.range-step 50 тыс.
+              +e.range-step 1 млн
+              +e.range-step 2 млн
+              +e.range-step 3 млн
+              +e.range-step 4 млн
+              +e.range-step 5 млн
+      +e.period
+        +e.period-label Выберите срок
+        +switcher(type="radio" name="period" value="p1" id="p1" role="radio" checked="checked")._theme_simple._size_m 1 год
+        +switcher(type="radio" name="period" value="p2" id="p2" role="radio")._theme_simple._size_m 2 года
+        +switcher(type="radio" name="period" value="p3" id="p3" role="radio")._theme_simple._size_m 3 года
+        +switcher(type="radio" name="period" value="p4" id="p4" role="radio")._theme_simple._size_m 4 года
+        +switcher(type="radio" name="period" value="p5" id="p5" role="radio")._theme_simple._size_m 5 лет
+        +e.P.remark Расчет калькулятора произведён по ставкам, действующим при условии оформления финансовой защиты к кредиту. Не является публичной офертой.
+    +e.offer
+      +e.offer-inner
+        +e.offer-title Наше предложение
+        +e.payment
+          +e.offer-label Ежемесячный платёж
+          +e.payment-field
+            +e.BUTTON.payment-inc(type="button")
+              +icon('inc').payment-icon
+            +e.BUTTON.payment-dec(type="button")
+              +icon('dec').payment-icon
+            +e.payment-count 240 819
+            +e.payment-count-label.rouble a
+        +e.rate
+          +e.offer-label Процентная ставка
+          +e.rate-value 6,5%
+        +e.offer-submit
+          +btn._fullwidth._theme_main Заполнить заявку

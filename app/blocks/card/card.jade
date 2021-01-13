@@ -5,6 +5,7 @@ include ../show-phone/show-phones
 include ../action/action
 include ../gallery/gallery
 include ../share/share
+include ../calculator/calculator
 
 mixin card(data, id)
   -var item = data[id];
@@ -153,6 +154,8 @@ mixin card(data, id)
                   if item.feature.alloyWheels
                     | Легкосплавные диски
                   | #{item.feature.radiusWheels}''
+        +e.calculator
+          +calculator
 
     +e.action
       +share

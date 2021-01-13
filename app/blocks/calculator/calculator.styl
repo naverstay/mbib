@@ -1,0 +1,144 @@
+.calculator
+  +above(1024px)
+    display flex
+    flex-wrap wrap
+
+  &__title
+    width 100%
+    margin-bottom 16px
+    font-size 22px
+    line-height 1.36
+
+  &__loan
+    margin-bottom 10px
+
+    +above(1024px)
+      padding-right 10px
+      width 50%
+
+  &__range
+    margin-bottom 16px
+
+  &__range-field
+    padding 10px
+    background-color $bgDecorative
+
+  &__range-label
+    margin-bottom 10px
+
+  &__range-textfield
+    margin-bottom 10px
+    padding 10px
+    width 100%
+    font-size 20px
+    font-weight bold
+    background-color #fefefe
+    border none
+    border-bottom 1px solid $colorDecorative
+    color $colorText
+
+  &__range-measure
+    margin-top 15px
+    display flex
+    justify-content space-between
+    font-size 12px
+    color #818181
+
+  &__range-step
+    margin-left -9px
+
+    &:first-child,
+    &:last-child
+      margin 0
+
+  &__period-label
+    margin-bottom 10px
+
+  &__remark
+    margin-top 16px
+    font-size 12px
+    line-height 1.4
+    color #818181
+
+  &__offer
+    margin-bottom 10px
+
+    +above(1024px)
+      padding-left 10px
+      width 50%
+
+  &__offer-inner
+    padding 20px
+    display flex
+    width 100%
+    height 100%
+    flex-wrap wrap
+    align-items flex-start
+    border 1px solid $colorDecorative
+
+
+  &__offer-title
+    margin-bottom 16px
+    width 100%
+    font-size 24px
+    font-weight bold
+
+  &__payment,
+  &__rate,
+  &__offer-submit
+    margin-bottom 16px
+
+    +above(768px)
+      width 50%
+
+  &__payment
+    +above(768px)
+      padding-right 10px
+
+  &__rate
+    +above(768px)
+      padding-left 10px
+
+  &__offer-submit
+    margin-bottom 0
+
+  &__offer-label
+    margin-bottom 10px
+
+  &__payment-count,
+  &__rate-value
+    font-weight bold
+    font-size 24px
+
+  &__payment-field
+    position relative
+    padding 0 40px
+    text-align center
+
+  &__payment-inc,
+  &__payment-dec
+    position absolute
+    top 0
+    left 0
+    width 32px
+    height 32px
+    border none
+    background-color transparent
+
+  &__payment-dec
+    left auto
+    right 0
+
+  &__payment-count,
+  &__rate-value
+    display inline-block
+    height 32px
+    line-height 32px
+
+  &__payment-count-label
+    display inline-block
+    font-size 22px
+
+  &__payment-icon
+    width 32px
+    height 32px

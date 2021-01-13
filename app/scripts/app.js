@@ -17,6 +17,7 @@ import geoplace from '../blocks/geoplace/geoplace';
 import search from '../blocks/search/search';
 import '../blocks/add-photo/add-photo';
 import '../blocks/range/range';
+import '../blocks/calculator/calculator';
 import '../blocks/thumb-gallery/thumb-gallery';
 import '../blocks/phone-field/phoneField';
 import '../blocks/show-phone/show-phone';
