@@ -22,11 +22,13 @@ mixin calculator()
               +e.range-step 5 млн
       +e.period
         +e.period-label Выберите срок
-        +switcher(type="radio" name="period" value="p1" id="p1" role="radio" checked="checked")._theme_simple._size_m.calculator__period-switcher 1 год
-        +switcher(type="radio" name="period" value="p2" id="p2" role="radio")._theme_simple._size_m.calculator__period-switcher 2 года
-        +switcher(type="radio" name="period" value="p3" id="p3" role="radio")._theme_simple._size_m.calculator__period-switcher 3 года
-        +switcher(type="radio" name="period" value="p4" id="p4" role="radio")._theme_simple._size_m.calculator__period-switcher 4 года
-        +switcher(type="radio" name="period" value="p5" id="p5" role="radio")._theme_simple._size_m.calculator__period-switcher 5 лет
+        +e.period-wrap
+          +e.period-scrollable
+            +switcher(type="radio" name="period" value="p1" id="p1" role="radio" checked="checked")._theme_simple._size_m.calculator__period-switcher 1 год
+            +switcher(type="radio" name="period" value="p2" id="p2" role="radio")._theme_simple._size_m.calculator__period-switcher 2 года
+            +switcher(type="radio" name="period" value="p3" id="p3" role="radio")._theme_simple._size_m.calculator__period-switcher 3 года
+            +switcher(type="radio" name="period" value="p4" id="p4" role="radio")._theme_simple._size_m.calculator__period-switcher 4 года
+            +switcher(type="radio" name="period" value="p5" id="p5" role="radio")._theme_simple._size_m.calculator__period-switcher 5 лет
         +e.P.remark Расчет калькулятора произведён по ставкам, действующим при условии оформления финансовой защиты к кредиту. Не является публичной офертой.
     +e.offer
       +e.offer-inner
