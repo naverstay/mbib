@@ -20,8 +20,12 @@
     margin-bottom 16px
 
   &__range-field
-    padding 10px
+    padding 10px 0
     background-color $bgDecorative
+
+    +above(1024px)
+      padding-left 10px
+      padding-right 10px
 
   &__range-label
     margin-bottom 10px
@@ -50,6 +54,12 @@
     &:first-child,
     &:last-child
       margin 0
+
+  &__period .switcher
+    margin-right 5px
+
+    +above(1024px)
+      margin-right 10px
 
   &__period-label
     margin-bottom 10px
@@ -83,10 +93,16 @@
     font-size 24px
     font-weight bold
 
+  &__offer-partner-logo
+    display inline-block
+    vertical-align middle
+    margin-left 5px
+
   &__payment,
   &__rate,
   &__offer-submit
     margin-bottom 16px
+    width 100%
 
     +above(768px)
       width 50%
