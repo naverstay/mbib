@@ -94,9 +94,13 @@
     font-weight bold
 
   &__offer-partner-logo
+    margin-top 10px
     display inline-block
     vertical-align middle
-    margin-left 5px
+
+    +above(400px)
+      margin-top 0
+      margin-left 5px
 
   &__payment,
   &__rate,
