@@ -1,20 +1,23 @@
 .formblock
-	margin 0 auto
-	display block
-	max-width 480px
-	background-color #fff
-	border 1px solid $colorDecorative
-	
-	&__header
-		padding 20px
-		display flex
-		justify-content space-between
-		align-items baseline
-		border-bottom 1px solid $colorDecorative
-		
-	&__header-text
-		&&
-			margin-bottom 0
-		
-	&__body
-		padding 20px 35px 1px
+  margin 0 auto
+  display block
+  max-width 480px
+  background-color #fff
+  border 1px solid $colorDecorative
+
+  &__header
+    padding 20px
+    border-bottom 1px solid $colorDecorative
+
+    +above(400px)
+      display flex
+      justify-content space-between
+      align-items baseline
+
+  &__header-text
+    +above(400px)
+      &&
+        margin-bottom 0
+
+  &__body
+    padding 20px 35px 1px
