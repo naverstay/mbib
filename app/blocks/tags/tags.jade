@@ -2,4 +2,4 @@ include ../list/list
 
 mixin tags()
 	+b.tags&attributes(attributes)
-		+list(getData('regionList'),4)._columned.tags__list
+		+list({data: getData('regionList'), columns: 4})._columned.tags__list

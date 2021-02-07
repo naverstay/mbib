@@ -1,0 +1,10 @@
+include ../link/link
+
+mixin sort-blocks()
+  +b.sort&attributes(attributes).block
+    +e.simple
+      +link(href="").sort__link._active Карточки модели автомобилей
+      +link(href="").sort__link Карточки модели автомобилей по году
+      +link(href="").sort__link Каталог технических характеристик авто
+      +link(href="").sort__link Каталог моделей авто
+      +link(href="").sort__link Каталог моделей автомобилей: поколения и кузова

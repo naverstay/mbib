@@ -1,11 +1,14 @@
 .link
-	text-decoration none
-	color $colorSecondary
-	transition color .3s
-	
-	&_theme_decorative
-		color darken($colorDecorative, 40)
+  text-decoration none
+  color $colorSecondary
+  transition color .3s
 
-	&:hover
-		text-decoration underline
-		color $colorMain
+  &_theme_decorative
+    color darken($colorDecorative, 40)
+
+  &:hover
+    text-decoration underline
+    color $colorMain
+
+  &_active
+    color $colorMain

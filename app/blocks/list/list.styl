@@ -1,105 +1,108 @@
 .list
-	+above(768px)
-		display flex
-		flex-wrap wrap
-	
-	&_columned
-		display block
-		
-	&_column_1
-		column-count unset
-		column-gap 0
+  +above(768px)
+    display flex
+    flex-wrap wrap
 
-	&_column_4
-		column-count 2
-		column-gap 20px
-		
-		&&
-			+above(768px)
-				column-count 4
-				column-gap 30px
-		
-	&_column_5
-		+above(768px)
-			column-count 4
-			column-gap 30px
-			
-		+above(980px)
-			column-count 5
-		
-	&_column_6
-		column-count 2
-		column-gap 20px
-		
-		+above(768px)
-			column-count 5
-			column-gap 30px
-			
-		+above(980px)
-			column-count 6
-		
-	&_size_s
-		font-size 12px
-	
-	&__item
-		margin-bottom 7px
-		display inline-block
-		
-		+above(768px)
-			display flex
-			align-items flex-start
-			margin-bottom 2px
-			
-		+above(980px)
-			margin-bottom 0
-		
-		&:after 
-			position relative
-			top -1px
-			margin 0 7px
-			content '|'
-			color $colorSecondary
-			
-		&:last-child:after
-			display none
-			
-		^[0]_columned &
-			display block
-			
-			&:after
-				display none
-				
-		^[0]_size_s &
-			margin-bottom 1px
-			
-	&__link
-		padding-bottom 2px
-		display inline-block
-		text-decoration none
-		color $colorSecondary
-		border-bottom 1px solid transparent
-		transition color .3s, border-color .3s
-		
-		^[0]_columned &
-			padding 3px 0
-			line-height 1.3
-			color darken($colorDecorative, 40)
-			border-bottom none
-			
-			&:hover
-				text-decoration underline 
-				color $colorMain
-				
-			.tags &
-				color $colorSecondary
-				
-				&:hover
-					color $colorMain
-		
-		&:hover
-			color $colorMain
-			border-bottom-color currentcolor
-			
-				
-		^[0]_size_s &
-			padding 4px 0 3px
+  &_columned
+    display block
+
+  &_column_1
+    column-count unset
+    column-gap 0
+
+  &_column_4
+    column-count 2
+    column-gap 20px
+
+    &&
+      +above(768px)
+        column-count 4
+        column-gap 30px
+
+  &_column_5
+    +above(768px)
+      column-count 4
+      column-gap 30px
+
+    +above(980px)
+      column-count 5
+
+  &_column_6
+    column-count 2
+    column-gap 20px
+
+    +above(768px)
+      column-count 5
+      column-gap 30px
+
+    +above(980px)
+      column-count 6
+
+  &_size_s
+    font-size 12px
+
+  &__item
+    margin-bottom 7px
+    display inline-block
+
+    +above(768px)
+      display flex
+      align-items flex-start
+      margin-bottom 2px
+
+    +above(980px)
+      margin-bottom 0
+
+    &:after
+      position relative
+      top -1px
+      margin 0 7px
+      content '|'
+      color $colorSecondary
+
+    &:last-child:after
+      display none
+
+    ^[0]_columned &
+      display block
+
+      &:after
+        display none
+
+    ^[0]_size_s &
+      margin-bottom 1px
+
+  &__link
+    padding-bottom 2px
+    display inline-block
+    text-decoration none
+    color $colorSecondary
+    border-bottom 1px solid transparent
+    transition color .3s, border-color .3s
+
+    ^[0]_columned &
+      padding 3px 0
+      line-height 1.3
+      color darken($colorDecorative, 40)
+      border-bottom none
+
+      &:hover
+        text-decoration underline
+        color $colorMain
+
+      .tags &
+        color $colorSecondary
+
+        &:hover
+          color $colorMain
+
+    &_theme_secondary,
+    ^[0]_columned &_theme_secondary
+      color $colorSecondary
+
+    &:hover
+      color $colorMain
+      border-bottom-color currentcolor
+
+    ^[0]_size_s &
+      padding 4px 0 3px

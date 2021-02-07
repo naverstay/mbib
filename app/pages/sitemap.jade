@@ -1,0 +1,17 @@
+extends /blocks/layout-default/layout-default
+include ../blocks/sort/sort-blocks
+include ../blocks/block/block
+include ../blocks/title/title
+include ../blocks/breadcrumbs/breadcrumbs
+//- include ../blocks/catalog/catalog
+
+block head
+  - var pageTitle = 'Карта сайта';
+  - var pageMod = 'sitemap';
+
+block content
+  +breadcrumbs(getData('index-crumbs'))
+  +title(1) Карта сайта
+  +sort-blocks()
+  +block
+    +list({data: getData('regionList'), columns: 6, theme: 'secondary'})._columned
