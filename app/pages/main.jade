@@ -1,5 +1,5 @@
 extends /blocks/layout-default/layout-auth
-include ../blocks/breadcrumbs/breadcrumbs
+include ../blocks/dealer/dealer
 include ../blocks/text/text
 include ../blocks/search/search
 include ../blocks/group/group
@@ -15,8 +15,7 @@ block head
   - var pageMod = 'index';
 
 block content
-  +breadcrumbs(getData('index-crumbs'))
-  +text(getData('main-text'))._important
+  +dealer
   +search
   +group(getData('brands'))
   //- +special(getData('cars'))

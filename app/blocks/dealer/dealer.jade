@@ -1,0 +1,12 @@
+include ../show-phone/show-phone
+include ../brand/brand
+
+mixin dealer()
+  +b.dealer&attributes(attributes).block
+    +e.data
+      +e.name
+        +brand('kia').dealer__logo
+        +e.name-text KIA Центр Зеленоград
+      +e.address Московская область, Зеленоград, 37&nbsp;км Ленинградского шоссе
+    +e.contact
+      +show-phone({phone: '+79999999999'}, false)
