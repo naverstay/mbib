@@ -1,50 +1,54 @@
 .footer
-	margin-top 66px
-	display block
-	flex 0 0 auto
-	color darken($colorDecorative, 40)
-	background-color $colorText
-	
-	&__head,
-	&__foot
-		padding 26px 0 25px
-		justify-content space-between
-		border-bottom 1px solid rgba(darken($colorDecorative, 40), .3)
-		
-	&__head
-		+above(980px)
-			display flex
-			
-	&__head-logo
-		margin-bottom 10px
-		
-		+above(980px)
-			margin-bottom 0
-		
-	&__foot
-		line-height 1.6
-		border-top 1px solid rgba(darken($colorDecorative, 40), .3)
-		border-bottom none
-		
-		+above(768px)
-			display flex
+  margin-top 66px
+  display block
+  flex 0 0 auto
+  color darken($colorDecorative, 40)
+  background-color $colorText
 
-	&__section
-		padding 29px 0 26px
-		
-		&:first-child
-			padding-bottom 0
-			
-			+above(768px)
-				padding-bottom 26px
-		
-		&_mobile_hide
-			display none
-			
-			+above(768px)
-				display block
-		
-	&__section-title
-		margin-bottom 28px
-		font-size 16px
-		font-weight bold
+  &__head,
+  &__foot
+    padding 26px 0 25px
+    justify-content space-between
+    border-bottom 1px solid rgba(darken($colorDecorative, 40), .3)
+
+  &__head
+    +above(980px)
+      display flex
+
+  &__head-logo
+    margin-bottom 10px
+
+    +above(980px)
+      margin-bottom 0
+
+  &__foot
+    line-height 1.6
+    border-top 1px solid rgba(darken($colorDecorative, 40), .3)
+    border-bottom none
+
+    +above(768px)
+      display flex
+
+  &__section
+    padding 29px 0 26px
+
+    &:first-child
+      padding-bottom 0
+
+      +above(768px)
+        padding-bottom 26px
+
+    &_mobile_hide
+      display none
+
+      +above(768px)
+        display block
+
+  &__section-title
+    margin-bottom 28px
+    font-size 16px
+    font-weight bold
+
+  &__nav
+    +above(1024px)
+      width 80%

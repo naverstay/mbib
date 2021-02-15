@@ -17,6 +17,10 @@
 
     ^[0]_footer &
       font-size 14px
+      flex-wrap wrap
+
+      +above(768px)
+        margin-left -10px
 
     ^[0]_sidenav &
       display block
@@ -27,7 +31,6 @@
     height 100%
 
     ^[0]_footer &
-      flex-grow 1
       display inline-block
       height auto
       margin-right 10px
