@@ -1,17 +1,19 @@
 include ../cardowner/cardowner
 include ../notice/notice
+include ../share/share-and-claim
 
 mixin modal-phone()
-	+b.modal#modalPhone&attributes(attributes)._size_s.mfp-with-anim.mfp-hide
-		+e.head
-			+e.H5.title Показать телефон
-			+e.SPAN.close.mfp-close
-				+icon('close', false).close-icon
-		+e.inner
-			+e.body
-				+cardowner(getData('cars'))
-			+e.footer
-				+e.P.remark Пожалуйста, скажите продавцу, что вы звоните по объявлению с Mbib.ru
-				+e.notice 
-					| Внимание! Приобретая транспортное средство, 
-					+notice никогда не отправляйте предоплату.
+  +b.modal#modalPhone&attributes(attributes)._size_s.mfp-with-anim.mfp-hide
+    +e.head
+      +e.H5.title Показать телефон
+      +e.SPAN.close.mfp-close
+        +icon('close', false).close-icon
+    +e.inner
+      +e.body
+        +cardowner(getData('cars'))
+        +share-and-claim()
+      +e.footer
+        +e.P.remark Пожалуйста, скажите продавцу, что вы звоните по объявлению с Mbib.ru
+        +e.notice
+          | Внимание! Приобретая транспортное средство,
+          +notice никогда не отправляйте предоплату.

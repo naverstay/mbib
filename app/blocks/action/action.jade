@@ -1,7 +1,3 @@
-//options = {
-// hasPhone: boolean
-// }
-
 mixin action(item, isFavorite, options = {})
   +b.action&attributes(attributes)
     if !item
@@ -39,7 +35,7 @@ mixin action(item, isFavorite, options = {})
       +e.A.item(href="")
         +e.SPAN.icon
           +icon('top', false).icon-img
-        +e.item-text Поднять обьявление
+        +e.item-text Поднять объявление
       +e.A.item(href="")
         //- +icon()
         +e.SPAN.icon

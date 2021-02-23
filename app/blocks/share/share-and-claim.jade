@@ -1,0 +1,9 @@
+include ../action/action-claim
+include ./share-small
+
+mixin share-and-claim()
+  +b.share-and-claim&attributes(attributes)
+    +e.share
+      +share-small()
+    +e.claim
+      +action-claim()
