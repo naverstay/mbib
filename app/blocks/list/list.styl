@@ -31,6 +31,17 @@
     column-count 2
     column-gap 20px
 
+    &^[0]_mobile_one-column
+      column-count unset
+      column-gap 0
+
+      +above(768px)
+        column-count 5
+        column-gap 30px
+
+      +above(980px)
+        column-count 6
+
     +above(768px)
       column-count 5
       column-gap 30px
