@@ -158,7 +158,8 @@ export default (() => {
 
     }
 
-  $('.pagination .select .select__control, .sort .select .select__control').select2({
-      width: '100%'
-    });
+  $('.pagination .select .select__control, .sort .select .select__control, .select_simple .select__control').select2({
+    width: '100%',
+    minimumResultsForSearch: -1
+  });
 })();
