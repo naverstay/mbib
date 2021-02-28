@@ -1,0 +1,30 @@
+include ../formblock/formblock
+include ../form/form
+include ../lbl/lbl
+include ../input/input
+include ../btn/btn
+include ../text/text
+include ../title/title
+include ../link/link
+
+mixin auth-code()
+  +b.SECTION.auth&attributes(attributes)
+    +formblock
+      +e.HEADER.header
+        +title(3).formblock__header-text Подтверждение номера
+        +link(href="registr.html") Зарегистрироваться
+      +e.body
+        +form(name="recovery" action="" method="post").auth__form
+          +e.row
+            +text._size_l._important Введите последние 4 цифры номера, с которого мы Вам звонили
+          +e.row
+            +e.P.message._error Введённые цифры не совпадают
+          +e.row
+            +lbl(for="code") Код
+            +input(type="text" placeholder="4 последние цифры" id="code" required tabindex="0" data-value-missing="Введите логин, телефон или email").code-phone
+          +e.row
+            +btn(type="submit" tabindex="2")._theme_main Подтвердить
+          +e.row
+            +btn(type="button" tabindex="3")._theme_secondary Ввести другой номер телефона
+          +e.row
+            +btn(type="button" tabindex="4" disabled="disabled")._theme_tertirary Прислать новый код через 01:17 мин

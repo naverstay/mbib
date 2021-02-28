@@ -1,0 +1,9 @@
+extends /blocks/layout-default/layout-default
+include ../blocks/auth/auth-code
+
+block head
+  - var pageTitle = 'Код';
+  - var pageMod = 'code';
+
+block content
+  +auth-code
