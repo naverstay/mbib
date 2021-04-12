@@ -39,13 +39,9 @@
     position relative
     display flex
     padding 10px
-    padding-left 115px
     word-break break-word
 
     &::before
-      position absolute
-      top 10px
-      left 10px
       content attr(data-th)
       margin-right 10px
       display block
@@ -53,6 +49,7 @@
       font-weight bold
       text-align right
       color #555
+      flex-shrink 0
 
       +above(768px)
         display none

@@ -1,0 +1,9 @@
+include credit-calc
+include credit-offer
+
+mixin credit()
+  +b.credit&attributes(attributes)
+    +e.main
+      +credit-calc
+      +credit-offer
+    +e.side

@@ -1,0 +1,77 @@
+include ../input/input
+include ../form/form
+include ../range/range
+include ../select/select
+include ../checkbox/checkbox
+include ../lbl/lbl
+include ../text/text
+include ../title/title
+
+mixin credit-calc()
+  +b.credit-calc.block
+    +e.title
+      +title(1)
+        Калькулятор автокредитов в
+        a(href="") Пензе
+    +e.P.desc Рассчитайте автокредит на калькуляторе онлайн, чтобы выбрать лучшие условия в 2021 году! На 04.04.2021 вам доступно 6 предложений с процентными ставками от 2% до 11%.
+    +form(name="feedback" action="" method="post")
+      +e.row
+        +e.item._fullwidth
+          +lbl(for="auto") Автомобиль
+          +input(type="text" name="name" id="auto" tabindex="0")
+      +e.row
+        +e.item._tb_4._span_4
+          +e.range.credit-calc__range
+            +e.range-field
+              +lbl(for="price") Стоимость автомобиля
+              +input(type="text" value="50 000").credit-calc__range-countfield
+              +range(name="price" id="value" min="50000" max="5000000" step="10000")
+        +e.item._tb_4._span_4
+          +e.range.credit-calc__range
+            +e.range-field
+              +lbl(for="firstPay") Первоначальный взнос
+              +input(type="text" value="50 000").credit-calc__range-countfield
+              +range(name="firstPay" id="firstPay" min="50000" max="5000000" step="10000")
+        +e.item._tb_4._span_4
+          +lbl(for="years") Срок кредита
+          +select()(name="years" data-placeholder="")._simple
+            option(value="")
+            option(value="v1") 3 года
+            option(value="v2") 4 года
+            option(value="v2") 5 лет
+      +e.additional.collapse
+        +e.collapse-head.collapse__head
+          +e.SPAN.collapse-name Дополнительные условия
+          +e.SPAN.collapse-icon
+        +e.collapse-body.collapse__body
+          +e.row
+            +e.item._tb_4._span_4
+              +lbl(for="status") Состояние
+              +select()(name="years" data-placeholder="")._simple
+                option(value="")
+                option(value="v1") новый
+                option(value="v2") с пробегом
+            +e.item._tb_4._span_4
+              +lbl(for="cash") Подтверждение дохода
+              +select()(name="cash" data-placeholder="")._simple
+                option(value="")
+                option(value="v1") без подтверждения
+                option(value="v2") справка по форме банка
+                option(value="v3") справка пфр
+                option(value="v4") в свободной форме
+                option(value="v5") 2-НДФЛ
+                option(value="v6") 3-НДФЛ
+          +e.row
+            +e.item._tb_4._span_4
+              +lbl(for="type") Тип транспорта
+              +select()(name="years" data-placeholder="")._simple
+                option(value="")
+                option(value="v1") легковое авто
+                option(value="v2") грузовики
+                option(value="v3") маршрутный
+                option(value="v4") мото
+                option(value="v5") катеры и лодки
+                option(value="v6") снегоходы
+            +e.item._tb_4._span_4._without-label._vertical-align_center
+              +checkbox(name="kasko") Без каско
+

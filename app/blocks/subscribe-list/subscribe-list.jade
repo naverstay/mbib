@@ -10,6 +10,7 @@ mixin subscribe-list()
         +e.cell._actions
           +btn(type="button")._size_s Удалить
         +e.cell._toggle Получать на почту
+        //- +e.cell._toggle Уведомления в браузере
       +e.UL.wrapper
         +e.item
           +e.cell._checkbox
@@ -20,6 +21,8 @@ mixin subscribe-list()
               +e.location Курск
           +e.cell._action
             +toggle(name="aq" id="aq")
+          //- +e.cell._action
+          //-   +toggle(name="aq1" id="aq1")
         +e.item
           +e.cell._checkbox
             +checkbox(name="select")
@@ -29,6 +32,8 @@ mixin subscribe-list()
               +e.location Курск
           +e.cell._action
             +toggle(name="as" id="as")
+          //- +e.cell._action
+          //-   +toggle(name="as1" id="as1")
         +e.item
           +e.cell._checkbox
             +checkbox(name="select")
@@ -38,4 +43,6 @@ mixin subscribe-list()
               +e.location Курск
           +e.cell._action
             +toggle(name="ss" id="ss")
+          //- +e.cell._action
+          //-   +toggle(name="ss3" id="ss2")
 
