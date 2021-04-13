@@ -116,6 +116,39 @@
       display block
       width 54px
 
+  &__head
+    display flex
+    justify-content space-between
+
+  &__favorite
+    position relative
+    margin-top -6px
+    width 28px
+    height 28px
+    margin-left 10px
+
+    +above(768px)
+      display none
+
+  &__favorite-icon
+    position absolute
+    top 4px
+    left 4px
+    width 20px
+    height 20px
+    fill $colorText
+    transition fill .3s
+
+    ^[0]__favorite_active &
+      fill $colorMain
+
+  &__favorite-icon_fill
+    opacity 0
+
+    ^[0]__favorite_active &
+      opacity 1
+      fill $colorMain
+
   &__name
     position relative
     top -1px

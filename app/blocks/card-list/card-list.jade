@@ -4,7 +4,7 @@ include ../action/action
 mixin card-list(data)
   +b.card-list&attributes(attributes)
     +e.UL.list
-      each item in data
+      each item, index in data
         if item.mark
           -var mark = '_mark'
         else
@@ -12,11 +12,16 @@ mixin card-list(data)
         +e.item(class=mark)
           +e.item-body
             +e.about
-              +e.H3.name
-                +e.A.name-link(href="")
-                  if item.mark
-                    +icon('star', false).name-icon
-                  | #{item.name}
+              +e.head
+                +e.H3.name
+                  +e.A.name-link(href="")
+                    if item.mark
+                      +icon('star', false).name-icon
+                    | #{item.name}
+                if index === 2
+                  +e.A.favorite(href="")
+                    +icon('like', false).favorite-icon
+                    +icon('like_fill', false).favorite-icon._favorite-icon_fill
               +e.thumb
                 +tile(item)
               +e.about-item
