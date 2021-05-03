@@ -19,7 +19,7 @@ mixin card-list(data)
                       +icon('star', false).name-icon
                     | #{item.name}
                 if index === 2
-                  +e.A.favorite(href="")
+                  +e.A.favorite(href="")._active
                     +icon('like', false).favorite-icon
                     +icon('like_fill', false).favorite-icon._favorite-icon_fill
               +e.thumb
