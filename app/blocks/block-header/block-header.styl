@@ -1,0 +1,24 @@
+.block-header
+  padding 10px
+  color #fff
+  // box-shadow 0 2px 0 $colorDecorative
+
+  +above(768px)
+    padding 15px
+
+  &_theme_main
+    color #fff
+    background-color $colorMain
+    background-image linear-gradient(to right, $colorMain, #E61A4D)
+    box-shadow 0 2px 0 #900
+
+  &_theme_secondary
+    color #fff
+    background-color $colorSecondary
+    background-image linear-gradient(to right, $colorSecondary, #528AE0)
+    box-shadow 0 2px 0 #053d93
+
+  &_theme_tertirary
+    color $colorText
+    background-color lighten($colorDecorative, 10)
+    box-shadow 0 2px 0 darken($colorDecorative, 20)

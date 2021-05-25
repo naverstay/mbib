@@ -1,9 +1,24 @@
 include credit-calc
 include credit-offer
+include credit-text
+include credit-links
+include credit-side
+include ../block-header/block-header
+include ../title/title
+include ../pagination/pagination
 
 mixin credit()
   +b.credit&attributes(attributes)
     +e.main
       +credit-calc
+      +block-header._theme_main
+        +title(4)._no-margin Специальные предложения от банков
       +credit-offer
+      +block-header._theme_secondary
+        +title(4)._no-margin Все банки
+      +credit-offer
+      +pagination({more: true})
+      +credit-text
     +e.side
+      +credit-side
+    +credit-links()

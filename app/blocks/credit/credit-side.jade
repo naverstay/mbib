@@ -1,0 +1,21 @@
+include ../title/title
+include ../link/link
+
+mixin credit-side()
+  +b.credit-side.block
+    +title(3) Популярное
+    +e.list
+      +e.list-item
+        +link(href="") Без первоначального взноса
+      +e.list-item
+        +link(href="") Без справок о доходах
+      +e.list-item
+        +link(href="") По двум документам
+      +e.list-item
+        +link(href="") На подержанный автомобиль
+      +e.list-item
+        +link(href="") Без каско
+      +e.list-item
+        +link(href="") С господдержкой
+      +e.list-item
+        +link(href="") Самые выгодные

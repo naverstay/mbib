@@ -5,57 +5,59 @@ mixin credit-offer()
     +e.UL.list
       +e.list-item
         +e.bank.collapse
-          +e.bank-logo
-            +e.bank-logo-img
-              img(src="", alt="")
-          +e.bank-data
-            +e.name Автокредит «Рефинансирование»
-            +e.bank-price-wrap
-              +e.bank-price-item
-                +e.bank-value 5,60%
-                +e.bank-label Ставка в год
-              +e.bank-price-item
-                +e.bank-value 46 877 Р/мес
-                +e.bank-label Платеж
-              +e.bank-price-item
-                +e.bank-value -137 587 Р
-                +e.bank-label Переплата
+          +e.head.collapse__head
+            +e.bank-logo
+              +e.bank-logo-img
+                img(src="", alt="")
+            +e.bank-data
+              +e.name Автокредит «Рефинансирование»
+              +e.bank-price-wrap
+                +e.bank-price-item
+                  +e.bank-value 5,60%
+                  +e.bank-label Ставка в год
+                +e.bank-price-item
+                  +e.bank-value 46 877 Р/мес
+                  +e.bank-label Платеж
+                +e.bank-price-item
+                  +e.bank-value -137 587 Р
+                  +e.bank-label Переплата
 
-          +e.bank-actions
-            +btn('link')(href="" target="_blank") Перейти
+            +e.bank-actions
+              +btn('link')(href="" target="_blank") Перейти
 
-          +e.additional.collapse__body
-            +e.bank-filial
-              +e.SPAN.bank-filial-count 5
-              | отделений банка
-            +e.UL.bank-feature
-              +e.bank-feature-item
-                +icon('checked').bank-feature-icon
-                | Сумма от 100 000 до 3 000 000
-              +e.bank-feature-item
-                +icon('checked').bank-feature-icon
-                | Без первоначального взноса
-              +e.bank-feature-item
-                +icon('checked').bank-feature-icon
-                | Срок от 1 года 1 месяца до 5 лет
-              +e.bank-feature-item
-                +icon('checked').bank-feature-icon
-                | Процентная ставка от 5,60% до 9,50%
-              +e.bank-feature-item
-                +icon('checked').bank-feature-icon
-                | Возраст заемщика от 20 года
-              +e.bank-feature-item
-                +icon('checked').bank-feature-icon
-                | Подтверждение платёжеспособности: не требуется, по ф. банка, 2‑НДФЛ, 3‑НДФЛ, ПФР.
-              +e.bank-feature-item
-                +icon('checked').bank-feature-icon
-                | Кредит погашается ежемесячно равными (аннуитетными) платежами
-              +e.bank-feature-item
-                +icon('checked').bank-feature-icon
-                | Стаж на последнем месте работы от 3 месяцев
-              +e.bank-feature-item
-                +icon('checked').bank-feature-icon
-                | Можно без КАСКО
+          .collapse__body
+            +e.additional
+              +e.bank-filial
+                +e.SPAN.bank-filial-count 5&nbsp;
+                | отделений банка
+              +e.UL.bank-feature
+                +e.bank-feature-item
+                  +icon('checked').bank-feature-icon
+                  | Сумма от 100 000 до 3 000 000
+                +e.bank-feature-item
+                  +icon('checked').bank-feature-icon
+                  | Без первоначального взноса
+                +e.bank-feature-item
+                  +icon('checked').bank-feature-icon
+                  | Срок от 1 года 1 месяца до 5 лет
+                +e.bank-feature-item
+                  +icon('checked').bank-feature-icon
+                  | Процентная ставка от 5,60% до 9,50%
+                +e.bank-feature-item
+                  +icon('checked').bank-feature-icon
+                  | Возраст заемщика от 20 года
+                +e.bank-feature-item
+                  +icon('checked').bank-feature-icon
+                  | Подтверждение платёжеспособности: не требуется, по ф. банка, 2‑НДФЛ, 3‑НДФЛ, ПФР.
+                +e.bank-feature-item
+                  +icon('checked').bank-feature-icon
+                  | Кредит погашается ежемесячно равными (аннуитетными) платежами
+                +e.bank-feature-item
+                  +icon('checked').bank-feature-icon
+                  | Стаж на последнем месте работы от 3 месяцев
+                +e.bank-feature-item
+                  +icon('checked').bank-feature-icon
+                  | Можно без КАСКО
 
           +e.SMALL.remark Лиц. № 354
 
