@@ -12,7 +12,6 @@
       &__body
         display: flex;
         align-items: center;
-        justify-content: space-between;
         +above(480px)
           flex-wrap: wrap
           justify-content: end
@@ -34,10 +33,14 @@
       &__image
         width auto
         order 3
+        margin-left auto
         +above(480px)
           order: unset
+          margin-left 0
         img
-          max-width 140px
+          max-width 90px
+          +above(480px)
+            max-width 140px
 
 .payment-item
   display block
