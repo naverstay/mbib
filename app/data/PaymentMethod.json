@@ -1,0 +1,29 @@
+[{
+        "name": "Банковская карта",
+        "img": "assets/images/paymentMethod/visa.png"
+    },
+    {
+        "name": "ЮMoney",
+        "img": "assets/images/paymentMethod/Ymoney.png"
+    }, {
+        "name": "QIWI Wallet",
+        "img": "assets/images/paymentMethod/Ymoney.png"
+    }, {
+        "name": "WebMoney",
+        "img": "assets/images/paymentMethod/webMoney.png"
+    }, {
+        "name": "Сбербанк Онлайн",
+        "img": "assets/images/paymentMethod/sber.png"
+    }, {
+        "name": "Баланс телефона",
+        "img": "assets/images/paymentMethod/cash.png"
+    },
+    {
+        "name": "Альфа‑Клик",
+        "img": "assets/images/paymentMethod/alfa.png"
+    },
+    {
+        "name": "Наличные",
+        "img": "assets/images/paymentMethod/cash.png"
+    }
+]

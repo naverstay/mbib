@@ -1,6 +1,10 @@
 include ../payment/payment-item
+include ../btn/btn
+include ../form/form
 
-mixin payment(data)
-  .payment 
-    each item in data
-      +payment-item(item)
+mixin payment(data , columns)
+  - var currentClass = 'payment '
+  - if(columns) currentClass += 'payment_columns'
+    div(class=currentClass)
+      each item in data
+        +payment-item(item)

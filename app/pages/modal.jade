@@ -7,7 +7,7 @@ include ../blocks/modal/modal-claim
 include ../blocks/modal/modal-place
 include ../blocks/modal/modal-confirm
 include ../blocks/modal/modal-payment
-
+include ../blocks/modal/modal-payment-method
 include ../blocks/btn/btn
 include ../blocks/range/range
 
@@ -47,3 +47,9 @@ block content
   div(style="margin-bottom:10px")
     +modal-payment
     +btn('link')(href="#modalPayment" data-effect="mfp-zoom-in").link-modal Оплата
+
+  div(style="margin-bottom:10px")
+    +modal-payment-method
+    +btn('link')(href="#modalPaymentMethod" data-effect="mfp-zoom-in").link-modal Выбор способа оплаты
+
+    

@@ -1,5 +1,3 @@
-include ../input/input
-include ../lbl/lbl
 include ../btn/btn
 include ../text/text
 include ../form/form
@@ -14,8 +12,4 @@ mixin modal-payment()
     +e.inner
       +e.body
         +text._bold К оплате: 150 рублей
-        +form(name="claim" action="" method="")
-          +payment(getData('paymentItems'))
-          +e.row._align_right
-            +e.item._fullwidth
-              +btn('button')._theme_secondary Оплатить
+        +payment(getData('paymentItems'))

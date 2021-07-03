@@ -1,8 +1,43 @@
 .payment
-  width 100%
+  &_columns
+    display: flex;
+    flex-wrap: wrap;
+    +above(480px)
+      margin: 0 calc(15px / 2 * -1);
+    .payment-item
+      +above(480px)
+        margin-left calc(15px / 2)
+        margin-right calc(15px / 2)
+        width calc(100% / 2 - 15px)
+      &__body
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        +above(480px)
+          flex-wrap: wrap
+          justify-content: end
+          padding-bottom 10px
+      &__name
+        display: block
+        width auto
+        order 2
+        +above(480px)
+          order: unset
+          width: 100%
+          margin-top: 5px
+      &__radio
+        width auto
+        order 1
+        +above(480px)
+          order: unset
 
-
-
+      &__image
+        width auto
+        order 3
+        +above(480px)
+          order: unset
+        img
+          max-width 140px
 
 .payment-item
   display block

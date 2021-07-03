@@ -1,0 +1,26 @@
+include ../input/input
+include ../lbl/lbl
+include ../btn/btn
+include ../text/text
+include ../form/form
+include ../payment/payment
+
+mixin modal-payment-method()
+  +b.modal#modalPaymentMethod&attributes(attributes)._size_m.mfp-with-anim.mfp-hide
+    +e.head
+      +e.H5.title Выбор способа оплаты
+      +e.SPAN.close.mfp-close
+        +icon('close', false).close-icon
+    +e.inner
+      +e.body
+        +text Покупка «Поднятия объявления в поиске каждый день» на сайте mbib.ruна 1 месяц
+        +text._bold Цена: 299 ₽
+        +text Способ оплаты:
+        +form(name="claim" action="" method="")
+          +e.row._align_right
+            +e.item._fullwidth
+              +payment(getData('PaymentMethod'), 'columns' )
+              
+          +e.row._align_right
+            +e.item._fullwidth
+              +btn('button')._theme_secondary Оплатить
