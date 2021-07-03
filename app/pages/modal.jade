@@ -6,8 +6,11 @@ include ../blocks/modal/modal-bookmark
 include ../blocks/modal/modal-claim
 include ../blocks/modal/modal-place
 include ../blocks/modal/modal-confirm
+include ../blocks/modal/modal-payment
+
 include ../blocks/btn/btn
 include ../blocks/range/range
+
 
 block head
   - var pageTitle = 'Модальные окна';
@@ -40,3 +43,7 @@ block content
   div(style="margin-bottom:10px")
     +modal-email
     +btn('link')(href="#modalEmail" data-effect="mfp-zoom-in").link-modal Уведомление по почте
+
+  div(style="margin-bottom:10px")
+    +modal-payment
+    +btn('link')(href="#modalPayment" data-effect="mfp-zoom-in").link-modal Оплата

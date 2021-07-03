@@ -1,0 +1,31 @@
+[{
+        "number": "55559",
+        "card": "49**   ****   0050",
+        "img": "assets/images/payment/mir.png"
+    },
+    {
+        "number": "55559",
+        "card": "49**   ****   0050",
+        "img": "assets/images/payment/jcb.png"
+    },
+    {
+        "number": "55559",
+        "card": "49**   ****   0050",
+        "img": "assets/images/payment/master.png"
+    },
+    {
+        "number": "55559",
+        "card": "49**   ****   0050",
+        "img": "assets/images/payment/multi.png"
+    },
+    {
+        "number": "55559",
+        "card": "49**   ****   0050",
+        "img": "assets/images/payment/union.png"
+    },
+    {
+        "number": "55559",
+        "card": "49**   ****   0050",
+        "img": "assets/images/payment/visa.png"
+    }
+]

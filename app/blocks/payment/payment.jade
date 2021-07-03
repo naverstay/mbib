@@ -1,0 +1,6 @@
+include ../payment/payment-item
+
+mixin payment(data)
+  .payment 
+    each item in data
+      +payment-item(item)

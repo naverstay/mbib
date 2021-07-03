@@ -1,0 +1,16 @@
+include ../text/text
+include ../radio/radio
+
+mixin payment-item(data)
+  +b.payment-item.js-payment-item&attributes(attributes)  
+    +e.LABEL.body
+      +e.radio
+        +radio(name="payment" role="radio" )
+      +e.DIV.image 
+        img(src=data.img, alt="")
+      +e.number 
+        +text._size_l._no-margin #{data.number}
+      +e.card
+        +text._size_l._no-margin #{data.card}
+      +e.close 
+        +icon('close', false).close-icon

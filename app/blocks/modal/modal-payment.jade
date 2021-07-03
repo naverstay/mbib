@@ -1,0 +1,21 @@
+include ../input/input
+include ../lbl/lbl
+include ../btn/btn
+include ../text/text
+include ../form/form
+include ../payment/payment
+
+mixin modal-payment()
+  +b.modal#modalPayment&attributes(attributes)._size_m.mfp-with-anim.mfp-hide
+    +e.head
+      +e.H5.title Оплата
+      +e.SPAN.close.mfp-close
+        +icon('close', false).close-icon
+    +e.inner
+      +e.body
+        +text._bold К оплате: 150 рублей
+        +form(name="claim" action="" method="")
+          +payment(getData('paymentItems'))
+          +e.row._align_right
+            +e.item._fullwidth
+              +btn('button')._theme_secondary Оплатить
