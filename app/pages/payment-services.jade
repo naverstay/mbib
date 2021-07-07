@@ -1,0 +1,12 @@
+extends /blocks/layout-default/layout-default
+include ../blocks/block/block
+include ../blocks/payment-page/payment-page
+
+
+block head
+  - var pageTitle = 'Оплата услуг';
+  - var pageMod = 'inner';
+
+block content
+  +block._flat._no-padding
+    +payment-page()

@@ -1,0 +1,50 @@
+include ../title/title
+include ../text/text
+include ../list/list
+
+mixin payment-page(data)
+  +b.payment-page
+    +e.item
+      +title(1) Оплата услуг
+      +text._bold._theme_primary._size_l На сайте организован прием платежей с помощью ООО НКО «ЮМани».
+      +e.image
+        img(src="assets/images/ykassa.png", alt="")
+      +text._theme_primary._size_m._no-margin Для Юридических лиц и ИП оплата производится на прямую.
+    +e.item
+      +e.title
+        +title(4) Инструкция по оплате
+      +e.OL.list
+        +e.LI.list-item Выберите понравившуюся Вам услугу
+        +e.LI.list-item После формирования счёта нажмите на кнопку «Оплатить
+        +e.LI.list-item На странице платёжной системы выберите удобный способ оплаты
+        +e.LI.list-item Заполните необходимые поля для произведения оплаты и подтвердить платёж
+    +e.item
+      +e.title
+        +title(4) Доступные способы оплаты
+      +e.row
+        +e.col
+          +text._bold._theme_primary._size_s._no-margin Банковские карты
+          +e.col-content
+            img(src="assets/images/ykassa.png", alt="")
+            img(src="assets/images/ykassa.png", alt="")
+        +e.col
+          +text._bold._theme_primary._size_s._no-margin Мобильная коммерция
+          +e.col-content
+            img(src="assets/images/ykassa.png", alt="")
+            img(src="assets/images/ykassa.png", alt="")
+            img(src="assets/images/ykassa.png", alt="")
+            img(src="assets/images/ykassa.png", alt="")
+        +e.col
+          +text._bold._theme_primary._size_s._no-margin Электронные кошельки
+          +e.col-content
+            img(src="assets/images/ykassa.png", alt="")
+            img(src="assets/images/ykassa.png", alt="")
+            img(src="assets/images/ykassa.png", alt="")
+        +e.col
+          +text._bold._theme_primary._size_s._no-margin Оплата на расчетный счет
+          +e.col-content
+            img(src="assets/images/ykassa.png", alt="")
+      +text._bold._theme_primary._size_s._no-margin И другие способы оплат. Комиссия с физических лиц не взимается.
+       a(href="#") «Правила для абонентов Мегафон»,
+       |  cм также
+       a(href="#") «Тарифы и цены»

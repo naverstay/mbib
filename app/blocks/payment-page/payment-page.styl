@@ -1,0 +1,57 @@
+.payment-page
+  &__item
+    padding 20px
+    border-bottom 1px solid $colorDecorative
+    &:last-child
+      border 0
+    +above(480px)
+      padding 20px 40px
+  &__image
+    margin-bottom 17px
+  &__list
+    padding-left: 24px
+    margin-bottom: 24px
+    line-height: 1.5
+    counter-reset: section
+  &__title
+    margin-bottom 17px
+  &__list
+    list-style: auto
+    margin-bottom 0
+    &-item
+      position relative
+      margin-bottom 10px
+      &:last-child
+        margin-bottom 0
+      &:before
+        position: absolute
+        right: 100%
+        margin-right: 8px
+        font-weight bold
+        display: inline-block
+        counter-increment: section
+        content: counters(section, ".")
+  &__row
+    margin: 0 -15px
+    display: flex
+    flex-wrap: wrap
+    margin-bottom 20px
+    +above(1170px)
+      max-width: 75%
+  &__col
+    width 100%
+    padding 0 15px
+    margin-bottom 17px
+    &:last-child
+      margin-bottom 0
+
+    +above(1170px)
+      width 25%
+      margin-bottom 0
+    img
+      margin-bottom 10px
+      display block
+      &:last-child
+        margin-bottom 0
+      &:first-child
+        margin-top 12px
