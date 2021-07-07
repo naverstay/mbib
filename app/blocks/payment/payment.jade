@@ -1,6 +1,9 @@
 include ../payment/payment-item
 include ../btn/btn
+include ../text/text
 include ../form/form
+include ../input/input
+include ../checkbox/checkbox
 
 mixin payment(data , columns)
   - var currentClass = 'payment '
@@ -8,3 +11,15 @@ mixin payment(data , columns)
     div(class=currentClass)
       each item in data
         +payment-item(item)
+      .payment-content(id="card-control")
+        +checkbox(name="hasPhoto", checked  tabindex="19") Запомнить карту для последующих оплат
+      .payment-content(id="qiwi-control")
+        +text._bold._no-margin Qiwi кошелек
+        +input( placeholder="+7 000 000 00 00" type="tel" name="phone").js-phone-field__control.payment__content-control
+      .payment-content(id="phone-control")
+        +text._bold._no-margin Номер телефона
+        +input( placeholder="+7 000 000 00 00" type="tel" name="phone").js-phone-field__control.payment__content-control
+      .payment-content(id="alfa-control")
+        +text._bold._no-margin Альфа-клик логин
+        +input( placeholder="7999999999" type="nember" ).payment__content-control
+

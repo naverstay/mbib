@@ -1,5 +1,6 @@
 [{
         "name": "Банковская карта",
+        "id": "card-control",
         "img": "assets/images/paymentMethod/visa.png"
     },
     {
@@ -7,6 +8,7 @@
         "img": "assets/images/paymentMethod/Ymoney.png"
     }, {
         "name": "QIWI Wallet",
+        "id": "qiwi-control",
         "img": "assets/images/paymentMethod/qiwi.png"
     }, {
         "name": "WebMoney",
@@ -16,10 +18,12 @@
         "img": "assets/images/paymentMethod/sber.png"
     }, {
         "name": "Баланс телефона",
+        "id" : "phone-control",
         "img": "assets/images/paymentMethod/phone.png"
     },
     {
         "name": "Альфа‑Клик",
+        "id": "alfa-control" ,
         "img": "assets/images/paymentMethod/alfa.png"
     },
     {

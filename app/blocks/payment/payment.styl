@@ -1,17 +1,23 @@
+.payment-content
+  +above(480px)
+    margin-left calc(15px / 2)
+    margin-right calc(15px / 2)
+  display none
+  width: 100%
 .payment
   &_columns
-    display: flex;
-    flex-wrap: wrap;
+    display flex
+    flex-wrap wrap
     +above(480px)
-      margin: 0 calc(15px / 2 * -1);
+      margin 0 calc(15px / 2 * -1)
     .payment-item
       +above(480px)
         margin-left calc(15px / 2)
         margin-right calc(15px / 2)
         width calc(100% / 2 - 15px)
       &__body
-        display: flex;
-        align-items: center;
+        display: flex
+        align-items: center
         +above(480px)
           flex-wrap: wrap
           justify-content: end
@@ -51,9 +57,9 @@
     border-color $colorSecondary
 
 
-  
+
   &__body
-   
+
     padding 20px 10px
     cursor pointer
     display block
@@ -82,7 +88,7 @@
     width 15%
     +above(480px)
        width auto
-    
+
   &__image
     display inline-block
     vertical-align middle
@@ -103,9 +109,9 @@
     &-icon
       width 18px
       height 18px
-      &:hover 
-        fill: #c03;
-  
+      &:hover
+        fill: #c03
+
 .js-payment-item
   &_active
     border-color $colorSecondary
