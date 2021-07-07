@@ -7,7 +7,7 @@
         "img": "assets/images/paymentMethod/Ymoney.png"
     }, {
         "name": "QIWI Wallet",
-        "img": "assets/images/paymentMethod/Ymoney.png"
+        "img": "assets/images/paymentMethod/qiwi.png"
     }, {
         "name": "WebMoney",
         "img": "assets/images/paymentMethod/webMoney.png"
@@ -16,7 +16,7 @@
         "img": "assets/images/paymentMethod/sber.png"
     }, {
         "name": "Баланс телефона",
-        "img": "assets/images/paymentMethod/cash.png"
+        "img": "assets/images/paymentMethod/phone.png"
     },
     {
         "name": "Альфа‑Клик",
