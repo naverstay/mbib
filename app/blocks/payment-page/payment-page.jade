@@ -25,25 +25,31 @@ mixin payment-page(data)
         +e.col
           +text._bold._theme_primary._size_s._no-margin Банковские карты
           +e.col-content
-            img(src="assets/images/ykassa.png", alt="")
-            img(src="assets/images/ykassa.png", alt="")
+            +e.card
+              img(src="assets/images/payment/list/mastercard.png", alt="")
+            +e.card
+              img(src="assets/images/payment/list/visa.png", alt="")
         +e.col
           +text._bold._theme_primary._size_s._no-margin Мобильная коммерция
           +e.col-content
-            img(src="assets/images/ykassa.png", alt="")
-            img(src="assets/images/ykassa.png", alt="")
-            img(src="assets/images/ykassa.png", alt="")
-            img(src="assets/images/ykassa.png", alt="")
+            +e.card
+              img(src="assets/images/payment/list/beeline.png", alt="")
+            +e.card
+              img(src="assets/images/payment/list/mts.png", alt="")
+            +e.card
+              img(src="assets/images/payment/list/tele2.png", alt="")
+            +e.card
+              img(src="assets/images/payment/list/megafon.png", alt="")
         +e.col
           +text._bold._theme_primary._size_s._no-margin Электронные кошельки
           +e.col-content
-            img(src="assets/images/ykassa.png", alt="")
-            img(src="assets/images/ykassa.png", alt="")
-            img(src="assets/images/ykassa.png", alt="")
-        +e.col
-          +text._bold._theme_primary._size_s._no-margin Оплата на расчетный счет
-          +e.col-content
-            img(src="assets/images/ykassa.png", alt="")
+            +e.card
+              img(src="assets/images/payment/list/qiwi.png", alt="")
+            +e.card
+              img(src="assets/images/payment/list/webmoney.png", alt="")
+            +e.card
+              img(src="assets/images/payment/list/yoo.png", alt="")
+
       +text._bold._theme_primary._size_s._no-margin И другие способы оплат. Комиссия с физических лиц не взимается.
        a(href="#") «Правила для абонентов Мегафон»,
        |  cм также
