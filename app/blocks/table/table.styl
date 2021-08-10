@@ -4,6 +4,12 @@
 
   +above(768px)
     border 1px solid $colorDecorative
+  &_nowrap
+    .table__row
+      .table__cell:nth-child(1),.table__cell:nth-child(3),.table__cell:nth-child(3)
+        white-space: nowrap
+      .table__cell:nth-child(2) , .table__cell:nth-child(4)
+        min-width 120px
 
   &__row
     margin-bottom 10px
