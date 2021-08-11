@@ -195,6 +195,19 @@
   display flex
   align-items center
 
+.modal .select2-results__option--highlighted[aria-selected=true] .select2-results__option-close
+  display flex
+  align-items center
+
+.select2-results__option-close
+  display none
+  height 30px
+  margin-left auto
+  svg
+    fill #fff
+    width 10px
+    height 10px
+
 .select2-results__option-icon
   margin-right 10px
 
@@ -469,6 +482,8 @@
 .select2-container--default .select2-results__option--highlighted[aria-selected]
   color white
   background-color $colorSecondary
+  .select2-results-name
+    font-weight bold
 
 .select2-container--default .select2-results__group
   padding 6px

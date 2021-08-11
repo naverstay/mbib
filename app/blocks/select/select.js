@@ -16,8 +16,11 @@ export default (() => {
       const $state = $(
         `<span class="select2-results__option-brand">
           <span class="select2-results__option-icon brand brand_${brandName}"></span>
-          <span>${state.text}</span>
-        </span>`
+          <span class="select2-results-name">${state.text}</span>
+          <span class="select2-results__option-close">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/images/icon.svg#icon_close"></use></svg>
+          </span>
+          </span>`
       );
 
       return $state;
@@ -105,6 +108,13 @@ export default (() => {
           return $res;
         }
       });
+      $('.select_for-brand .select__control').select2({
+        width: '100%',
+        minimumResultsForSearch: 20,
+        dropdownParent: $('#modal .modal__body'),
+        templateResult: formatBrandResult
+      });
+
 
       $('.select_has-image .select__control').select2({
         width: '100%',
@@ -135,6 +145,12 @@ export default (() => {
         modalTitle.text(placeholder);
 
         setTimeout(() => {
+          const clearSelect = $('.select2-results__option--highlighted').find('.select2-results__option-close');
+          const selectContainer = $('.select_for-brand .select__control')
+
+          clearSelect.on('click', function() {
+            selectContainer.val(null).trigger('change');
+          })
           $.magnificPopup.open({
             alignTop: true,
             fixedContentPos: true,

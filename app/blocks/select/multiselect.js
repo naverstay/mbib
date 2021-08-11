@@ -74,6 +74,7 @@ export default (() => {
           const magnificPopup = $.magnificPopup.instance;
 
           if (isMobile ) {
+
             sel.on('select2:open', function () {
               const modal = $('.modal_mobile-select');
               const modalTitle = modal.find('.modal__title');
