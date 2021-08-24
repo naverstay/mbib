@@ -140,13 +140,10 @@
 
 .select2-results
   &__option
-    padding 8px 10px
     user-select none
+    padding 12px 19px
+    position relative
     -webkit-user-select none
-
-    +above(1170px)
-      padding-right 14px
-      padding-left 14px
 
     &[aria-selected]
       cursor pointer
@@ -191,18 +188,25 @@
     font-weight bold
 
 .select2-results__option-brand
-  position relative
   display flex
   align-items center
+
 
 .modal .select2-results__option--highlighted[aria-selected=true] .select2-results__option-close
   display flex
   align-items center
+  justify-content: center
 
 .select2-results__option-close
   display none
-  height 30px
+  height 100%
   margin-left auto
+  position absolute
+  right 0
+  top: 0
+  bottom: 0
+  width 58px
+
   svg
     fill #fff
     width 10px
