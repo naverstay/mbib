@@ -8,8 +8,13 @@ mixin payment-page(data)
       +title(1) Оплата услуг
       +text._bold._theme_primary._size_l На сайте организован прием платежей с помощью ООО НКО «ЮМани».
       +e.image
-        img(src="assets/images/ykassa.png", alt="")
-      +text._theme_primary._size_m._no-margin Для Юридических лиц и ИП оплата производится на прямую.
+        +e.row
+          +e.col
+            +e.card
+              img(src="assets/images/ykassa.png", alt="")
+          +e.col
+            +e.card
+              img(src="assets/images/payment_cloud.svg", alt="")
     +e.item
       +e.title
         +title(4) Инструкция по оплате
