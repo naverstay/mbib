@@ -1,0 +1,32 @@
+include ../../title/title
+
+mixin page-works()
+    +b.page-works
+        .inner
+            +e.title
+                +title(2)._no-margin Как это работает
+            +e.row 
+                +e.item
+                    +e.icon
+                        img(src="assets/images/icons/works/1.svg", alt="")
+                    +e.content
+                        +e.name 1. Введите ссылку на фид
+                        +e.text Получите ссылку в личном кабинете Drom, Avito или Auto.ru
+                +e.item
+                    +e.icon
+                        img(src="assets/images/icons/works/2.svg", alt="")
+                    +e.content
+                        +e.name 2. Оплатите заявку
+                        +e.text Предоставляем на тест 20 размещений объявлений. Чтобы загрузить нужное количество объявлений — выберите подходящий тариф
+                +e.item
+                    +e.icon
+                        img(src="assets/images/icons/works/3.svg", alt="")
+                    +e.content
+                        +e.name 3. Получайте звонки от клиентов
+                        +e.text Ваши объявления будут опубликованы мгновенно и вы сразу начнете получать звонки потенциальных покупателей
+                +e.item
+                    +e.icon
+                        img(src="assets/images/icons/works/4.svg", alt="")
+                    +e.content
+                        +e.name 4. Используйте обратный фид для отчёта в CRM
+                        +e.text При каждой загрузке вашего фида формируется и предоставляется обратный XML-фид с отчетом

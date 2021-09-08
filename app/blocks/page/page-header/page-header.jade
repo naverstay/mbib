@@ -1,0 +1,13 @@
+include ../../input/input
+include ../../btn/btn
+
+
+mixin page-header()
+  +b.page-header
+    .inner
+      +e.col
+        +e.name Готовый и эффективный  канал продаж транспорта
+        +e.text Если вы зарабатываете на продаже транспорта, выгружайте свои автообъявления на сайт с помощью XML и поддерживайте их в актуальном состоянии. Ваши предложения найдут больше откликов от клиентов, а вы освободитесь от длительной и кропотливой работы.
+        +e.FORM.form
+          +input(class="page-header__input" type="text"  tabindex="0" placeholder="Введите URL вашего фида")
+          +btn('button', '')._size_m._theme_red._fullwidth Выгрузить

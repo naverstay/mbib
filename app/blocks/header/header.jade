@@ -4,7 +4,7 @@ include ../sidenav/sidenav
 include ../post-ads/post-ads
 
 mixin header()
-  +b.HEADER.header&attributes(attributes)
+  +b.HEADER.header&attributes(attributes)(class=pageFull ? "full" : "")
     +e.inner.inner
       +e.sidenav
         +sidenav

@@ -8,7 +8,7 @@ include ../modal/modal-multiselect
 include ../social/social
 
 mixin footer()
-  +b.footer&attributes(attributes)
+  +b.footer&attributes(attributes)(class=pageFull ? "full" : "")
     .inner
       +e.head
         +e.head-logo
