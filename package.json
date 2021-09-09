@@ -34,6 +34,9 @@
     "minor": "gulp minor",
     "major": "gulp major"
   },
+  "eslintIgnore": [
+    "node_modules/"
+  ],
   "repository": {
     "type": "git",
     "url": "git+ssh@github.com:CSSSR/csssr-project-template.git"
