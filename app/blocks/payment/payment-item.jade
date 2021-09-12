@@ -3,18 +3,24 @@ include ../radio/radio
 
 mixin payment-item(data)
   +b.payment-item.js-payment-item&attributes(attributes)(data-id=data.id)
-    +e.LABEL.body
-      +e.radio
-        +radio(name="payment" role="radio" )
-      +e.DIV.image
-        img(src=data.img, alt="")
-      if data.name
-        +e.name
-           +text._size_l._no-margin._bold #{data.name}
-      if data.number
-        +e.number
-          +text._size_l._no-margin #{data.number}
-        +e.card
-          +text._size_l._no-margin #{data.card}
-        +e.close
-          +icon('close', false).close-icon
+    if (data.card === 'add')
+      +e.LABEL.body
+        +e.name.__name-add
+          +icon('add', false).add-icon
+          +text._size_l._no-margin._semi Добавить карту
+    else
+      +e.LABEL.body
+        +e.radio
+          +radio(name="payment" role="radio" )
+        +e.DIV.image
+          img(src=data.img, alt="")
+        if data.name
+          +e.name
+             +text._size_l._no-margin._bold #{data.name}
+        if data.number
+          +e.number
+            +text._size_l._no-margin #{data.number}
+          +e.card
+            +text._size_l._no-margin #{data.card}
+          +e.close
+            +icon('close', false).close-icon

@@ -26,6 +26,7 @@
         display: block
         width auto
         order 2
+
         +above(480px)
           order: unset
           width: 100%
@@ -53,13 +54,23 @@
   width 100%
   margin-bottom 15px
   border 1px solid #dedede
+
   &:hover
     border-color $colorSecondary
 
+  &__name-add
+    margin: 0 auto
+    display flex
+    flex-flow row nowrap
+    align-items: center
 
+  &__add-icon
+    width: 20px
+    height: 20px
+    margin-right: 10px
+    fill: #787878
 
   &__body
-
     padding 20px 10px
     cursor pointer
     display block

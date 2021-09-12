@@ -27,5 +27,10 @@
         "number": "55559",
         "card": "49**   ****   0050",
         "img": "assets/images/payment/visa.png"
+    },
+    {
+        "number": "Добавить карту",
+        "card": "add",
+        "img": ""
     }
 ]
