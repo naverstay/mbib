@@ -1,0 +1,9 @@
+mixin tooltip(tip, pos)
+	+b.tooltip&attributes(attributes)(class = 'tooltip-' + (pos || 'bottom'))
+		if (tip === 'spec')
+			+e.popup
+				p Увеличьте шансы на быструю и выгодную продажу автомобиля. Ваше объявление увидит максимум посетителей авто-портала Mbib.ru: оно будет выделено цветом, поднято в топ, размещено в специальном блоке на главной странице, на странице марки и в выдаче объявлений.
+				p.text-right
+					+e.A(href='#').link
+						+e.SPAN.link Тарифы
+						+icon('arr-r').tooltip-next-icon
