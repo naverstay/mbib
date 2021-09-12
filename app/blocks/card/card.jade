@@ -4,6 +4,7 @@ include ../show-phone/show-phone
 include ../show-phone/show-phones
 include ../action/action
 include ../gallery/gallery
+include ../tooltip/tooltip
 include ../share/share
 include ../calculator/calculator
 
@@ -114,6 +115,11 @@ mixin card(data, id)
 
         +e.data-main
           +e.gallery
+            +e.gallery-special(class='tooltip__parent')
+              +e.gallery-button
+                +icon('star_fill', false).spec-icon
+                span Спецразмещение
+              +tooltip('spec')
             if item.gallery
               +e.gallery-list
                 each img in item.gallery

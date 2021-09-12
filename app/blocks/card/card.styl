@@ -460,9 +460,41 @@
     text-decoration underline
     color #787878
 
+  &__spec-icon
+    width: 20px
+    height: 20px
+    margin-right: 7px
+    fill: #FFFBE8
+
   &__gallery
+    position: relative
     margin-bottom 15px
     width 100%
+
+    &-special
+      z-index: 1
+      position: absolute
+      left: 12px
+      top: 12px
+
+      +above(768px)
+        top: 16px;
+        left: 24px;
+
+    &-button
+      background: #CB1239
+      border-radius: 16px
+      height: 32px
+      padding: 7px 12px
+      display flex
+      flex-flow row nowrap
+      align-items center
+
+      span
+        font-weight: 500
+        font-size: 14px
+        line-height: 17px
+        color: #FFFBE8
 
     +above(980px)
       margin-bottom 30px
