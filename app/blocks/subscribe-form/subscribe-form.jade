@@ -1,0 +1,9 @@
+mixin subscribe-form()
+	+b.subscribe-form&attributes(attributes)
+		+e.title Получать на почту новые объявления по запросу «Продажа новых и подержанных автомобилей в Санкт-Петербурге»
+
+		+e.FORM.form
+			+input(class="subscribe-form__input" type="text"  tabindex="0" placeholder="Введите свой Email адрес")
+			+btn('button', '')._size_sm._theme_red._subscribe Подписаться
+
+		+e.tip Нажимая кнопку «Подписаться», я принимаю условия Оферты и даю своё согласие на обработку моих персональных данных на условиях и для целей, определенных Политикой конфиденциальности

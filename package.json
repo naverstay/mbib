@@ -25,6 +25,7 @@
     "lint:styles": "gulp styles:lint",
     "lint:templates": "gulp templates:lint",
     "lint": "npm-run-all -p lint:*",
+    "lint-fix": "eslint --fix --ext .js,.jsx .",
     "predeploy": "npm run production",
     "deploy": "gulp deploy",
     "clean": "rimraf dist app/styles/sprites/*.styl",
@@ -35,7 +36,8 @@
     "major": "gulp major"
   },
   "eslintIgnore": [
-    "node_modules/"
+    "node_modules/",
+    "dist/"
   ],
   "repository": {
     "type": "git",

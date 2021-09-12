@@ -7,6 +7,7 @@ include ../blocks/special/special
 include ../blocks/sort/sort
 include ../blocks/card-list/card-list
 include ../blocks/pagination/pagination
+include ../blocks/subscribe-form/subscribe-form
 include ../blocks/loader/loader
 include ../blocks/result-message/result-message
 
@@ -25,5 +26,6 @@ block content
     +e.P.text Показаны: 1-25 (страница&nbsp;№1).
   +card-list(getData('cars'))
   +pagination
+  +subscribe-form
   +text(getData('seo-text'))
   +loader
