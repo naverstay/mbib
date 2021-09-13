@@ -3895,7 +3895,7 @@ gulp-if@^2.0.0:
     ternary-stream "^2.0.1"
     through2 "^2.0.1"
 
-gulp-jade-inheritance@^0.5.3:
+gulp-jade-inheritance@^0.5.5:
   version "0.5.5"
   resolved "https://registry.yarnpkg.com/gulp-jade-inheritance/-/gulp-jade-inheritance-0.5.5.tgz#87d11d1362e4cfe91648cab1c7611df6ad59c9e7"
   integrity sha1-h9EdE2Lkz+kWSMqxx2Ed9q1Zyec=

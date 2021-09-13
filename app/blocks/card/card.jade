@@ -8,10 +8,10 @@ include ../tooltip/tooltip
 include ../share/share
 include ../calculator/calculator
 
-mixin card(data, id)
+mixin card(data, id, spec)
   -var item = data[id];
   +b.card&attributes(attributes)
-    +e.head
+    +e.head(class= spec ? 'card__head-spec' : '')
       +e.H1.head-title Продажа #{item.name} в Москве
       +e.head-price
         +e.price
@@ -20,7 +20,7 @@ mixin card(data, id)
         +action('like', item.isFavorite)._only-icon._is-visible.card__head-action
 
     +e.body
-      +e.meta
+      +e.meta(class= spec ? 'card__meta-spec' : '')
         +e.meta-data
           +e.meta-row
             +e.meta-item
@@ -43,7 +43,7 @@ mixin card(data, id)
                 | #{item.inspect.viewAll}
               +e.SPAN.meta-remark (#{item.inspect.viewToday} сегодня)
 
-      +e.meta._owner.card__owner
+      +e.meta._owner.card__owner(class= spec ? 'card__meta_owner-spec' : '')
         +e.owner-data
           +e.owner-name
             | #{item.author}
@@ -57,7 +57,7 @@ mixin card(data, id)
               | #{item.inspect.city}, #{item.inspect.address}
 
         +e.owner-contact
-          +show-phone(item.contact, false).card__meta-phone
+          +show-phone(item.contact, false, spec).card__meta-phone
           //- +show-phones(item.contact, false).card__meta-phone
           //- +phone(item.contact).card__meta-phone
 
@@ -115,11 +115,12 @@ mixin card(data, id)
 
         +e.data-main
           +e.gallery
-            +e.gallery-special(class='tooltip__parent')
-              +e.gallery-button
-                +icon('star_fill', false).spec-icon
-                span Спецразмещение
-              +tooltip('spec')
+            if (spec)
+              +e.gallery-special(class='tooltip__parent')
+                +e.gallery-button
+                  +icon('star_fill', false).spec-icon
+                  span Спецразмещение
+                +tooltip('spec')
             if item.gallery
               +e.gallery-list
                 each img in item.gallery

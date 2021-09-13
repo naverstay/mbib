@@ -89,7 +89,7 @@
     "gulp-group-css-media-queries": "^1.1.0",
     "gulp-if": "^2.0.0",
     "gulp-jade": "^1.1.0",
-    "gulp-jade-inheritance": "^0.5.3",
+    "gulp-jade-inheritance": "^0.5.5",
     "gulp-jsbeautifier": "^1.0.1",
     "gulp-plumber": "^1.0.1",
     "gulp-plumber-error-handler": "^1.0.0",
