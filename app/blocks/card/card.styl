@@ -94,10 +94,22 @@
       align-items flex-start
       margin-bottom 15px
 
+    &-spec
+      padding: 32px 16px 1px
+      background: #FFFBE8
+      margin-bottom: 0
+
+      +above(768px)
+        margin-bottom: 0
+        padding: 18px 12px 1px
+
     +above(980px)
       margin-bottom 0
       padding 25px 18px 0
       background-color #fff
+
+      &-spec
+        background: #FFFBE8
 
     &_draft
       padding 10px
@@ -166,6 +178,11 @@
   &__meta
     margin-bottom 15px
 
+    &-spec
+      padding: 1px 16px 16px
+      margin-bottom: 0
+      background: #FFFBE8
+
     +above(768px)
       margin-bottom 0
       padding-top 5px
@@ -184,6 +201,9 @@
       display flex
       padding-bottom 10px
       background-color aliceblue
+
+      &-spec
+        background: #FFF3B8
 
   &__meta-data
     +above(768px)

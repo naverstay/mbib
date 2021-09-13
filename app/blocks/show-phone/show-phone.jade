@@ -1,12 +1,12 @@
 include ../btn/btn
 
-mixin show-phone(data, show)
+mixin show-phone(data, show, spec)
   if show
     - mod = '_visible-phone';
   else
     - mod = '';
   +b.show-phone&attributes(attributes)(class=mod)
-    +btn()._size_xxl._theme_secondary(type="button").show-phone__button.show-phone__
+    +btn()._size_xxl(type="button" class= spec ? '_theme_main' : '_theme_secondary').show-phone__button.show-phone__
       span.show-phone__label Показать телефон
       span.show-phone__placeholder +7&nbsp;***&nbsp;***&nbsp;**&nbsp;**
     +e.A.link(href=`tel:${data.phone}`) #{data.phone}
