@@ -1,0 +1,13 @@
+extends /blocks/layout-default/layout-default
+include ../blocks/block/block
+include ../blocks/payment-page/payment-page
+include ../blocks/waiting-payment/waiting-payment
+
+block head
+  - var pageTitle = 'Ожидание завершения оплаты';
+  - var pageMod = 'inner';
+  - var innerClass = 'middle';
+
+block content
+  +block._flat._no-padding._middle
+    +waiting-payment()

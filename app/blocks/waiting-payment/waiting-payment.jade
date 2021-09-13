@@ -1,0 +1,10 @@
+mixin waiting-payment()
+  +b.waiting-payment&attributes(attributes).text-center
+    +e.title Ожидание завершения оплаты
+    p Дождитесь зачисления денежных средств на сайт. Вы также можете пропустите ожидание, нажав кнопку “Продолжить” и отслеживать статус услуги на ее странице
+
+    +e.loader
+      +icon('loader', false).icon-loader
+      span Ожидаем поступление средств
+    +e.controls.text-right
+      +btn('link')._theme_secondary._size_sm Продолжить

@@ -13,7 +13,7 @@ html(lang='ru')
   +page
     +header
     +content
-      .inner(class=pageFull ? "full" : "")
+      .inner(class= (innerClass ? innerClass : '') + (pageFull ? " full" : ""))
         block content
     +footer
     +scripts(['app.min.js'])
