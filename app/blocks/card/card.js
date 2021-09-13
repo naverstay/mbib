@@ -1,6 +1,7 @@
 import data from '../../data/cars.json';
 const card = (() => {
   const car = data[0];
+  const spec = document.querySelector('.card_spec');
   const cardMetaPhone = `
     <div class="short-poster card__data-sticky">
       <h4 class="short-poster__title">${car.name}</h4>
@@ -22,7 +23,7 @@ const card = (() => {
       <div class="short-poster__address">${car.inspect.city} ${car.inspect.address}</div>
       <div class="short-poster__contact">
         <div class="show-phone card__meta-phone">
-          <button class="btn btn_size_xxl btn_theme_secondary show-phone__button show-phone" type="button">
+          <button class="btn btn_size_xxl btn_theme_${spec ? 'main' : 'secondary'} show-phone__button show-phone" type="button">
             <span class="show-phone__text">
               <span class="show-phone__label">Показать телефон</span>
               <span class="show-phone__placeholder">+7&nbsp;***&nbsp;***&nbsp;**&nbsp;**</span>

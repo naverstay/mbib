@@ -10,7 +10,7 @@ include ../calculator/calculator
 
 mixin card(data, id, spec)
   -var item = data[id];
-  +b.card&attributes(attributes)
+  +b.card&attributes(attributes)(class= spec ? '_spec' : '')
     +e.head(class= spec ? 'card__head-spec' : '')
       +e.H1.head-title Продажа #{item.name} в Москве
       +e.head-price
@@ -20,7 +20,7 @@ mixin card(data, id, spec)
         +action('like', item.isFavorite)._only-icon._is-visible.card__head-action
 
     +e.body
-      +e.meta(class= spec ? 'card__meta-spec' : '')
+      +e.meta._stat
         +e.meta-data
           +e.meta-row
             +e.meta-item
@@ -43,7 +43,7 @@ mixin card(data, id, spec)
                 | #{item.inspect.viewAll}
               +e.SPAN.meta-remark (#{item.inspect.viewToday} сегодня)
 
-      +e.meta._owner.card__owner(class= spec ? 'card__meta_owner-spec' : '')
+      +e.meta._owner.card__owner
         +e.owner-data
           +e.owner-name
             | #{item.author}

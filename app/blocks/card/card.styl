@@ -88,28 +88,21 @@
       fill currentColor
 
   &__head
+    &-special
+      position: relative
+      display inline-block
+      margin-bottom: 16px
+
     +above(768px)
       display flex
-      flex-wrap nowrap
+      flex-wrap wrap
       align-items flex-start
       margin-bottom 15px
-
-    &-spec
-      padding: 32px 16px 1px
-      background: #FFFBE8
-      margin-bottom: 0
-
-      +above(768px)
-        margin-bottom: 0
-        padding: 18px 12px 1px
 
     +above(980px)
       margin-bottom 0
       padding 25px 18px 0
       background-color #fff
-
-      &-spec
-        background: #FFFBE8
 
     &_draft
       padding 10px
@@ -178,11 +171,6 @@
   &__meta
     margin-bottom 15px
 
-    &-spec
-      padding: 1px 16px 16px
-      margin-bottom: 0
-      background: #FFFBE8
-
     +above(768px)
       margin-bottom 0
       padding-top 5px
@@ -201,9 +189,6 @@
       display flex
       padding-bottom 10px
       background-color aliceblue
-
-      &-spec
-        background: #FFF3B8
 
   &__meta-data
     +above(768px)
@@ -644,3 +629,38 @@
   &_calculator
     width 100%
     flex-shrink 0
+
+  &_spec
+    box-shadow none
+
+    .short-poster
+      background: #FFFBE8;
+      border: 1px solid #FFF3B8;
+
+    .card__meta_stat
+      padding: 1px 16px 16px
+      margin-bottom: 0
+      background: #FFFBE8
+
+    .card__meta_owner
+      background: #FFF3B8
+
+    .card__head
+      padding: 32px 16px 1px
+      background: #FFFBE8
+      margin-bottom: 0
+
+      +above(768px)
+        margin-bottom: 0
+        padding: 18px 12px 1px
+
+    &.card_draft
+
+      .card__bar-top,
+      .card__head,
+      .card__body
+        border: solid #FFF3B8
+        border-width: 0 2px
+
+      .card__bar-top
+        border-top-width: 2px

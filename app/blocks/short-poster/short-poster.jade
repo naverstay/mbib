@@ -1,7 +1,7 @@
 include ../show-phone/show-phones
 include ../action/action
 
-mixin short-poster(data)
+mixin short-poster(data, spec)
   +b.short-poster&attributes(attributes)
     +e.H4.title #{data.name}
     +e.price
@@ -13,4 +13,4 @@ mixin short-poster(data)
       +e.SPAN.remark (#{data.authorStatus})
     +e.address #{data.inspect.city}, #{data.inspect.address}
     +e.contact
-      +show-phones(data.contact, true).card__meta-phone
+      +show-phones(data.contact, true, spec).card__meta-phone

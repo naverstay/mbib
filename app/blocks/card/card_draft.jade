@@ -8,13 +8,14 @@ include ../btn/btn
 include ../car-name/car-name
 include ../tab/tab
 include ../upload/upload
+include ../tooltip/tooltip
 include ../show-phone/show-phone
 include ../short-poster/short-poster
 
-mixin card_draft(data, id)
+mixin card_draft(data, id, spec)
   -var item = data[id];
-  +b.card&attributes(attributes)._draft
-    +e.bar
+  +b.card&attributes(attributes)._draft(class= spec ? '_spec' : '')
+    +e.bar.card__bar-top
       +e.bar-status._error
         +e.bar-status-text
           | Не опубликовано
@@ -34,6 +35,13 @@ mixin card_draft(data, id)
       +e.A.bar-action(href="") Опубликовать
         +icon('add-sq', false).bar-icon
     +e.head._draft
+      if (spec)
+        +e.head-special(class='tooltip__parent')
+          +e.gallery-button
+            +icon('star_fill', false).spec-icon
+            span Спецразмещение
+          +tooltip('spec')
+        .flex-break
       +e.head-title
         +car-name(1, 'BMW / X3 / 2013 Внедорожник 5 дв. II (F25) / xDrive 2.0 AT (184 л.с.)', 'bmw')._draft
       +e.head-price
@@ -42,7 +50,7 @@ mixin card_draft(data, id)
           +e.SPAN.price-currency ₽
         +action('like', item.isFavorite)._only-icon._is-visible.card__head-action
     +e.body
-      +e.meta
+      +e.meta._stat
         +e.meta-data
           +e.meta-row
             +e.meta-item
@@ -73,7 +81,7 @@ mixin card_draft(data, id)
               | #{item.inspect.city}, #{item.inspect.address}
 
         +e.owner-contact
-          +show-phone(item.contact, false).card__meta-phone
+          +show-phone(item.contact, false, spec).card__meta-phone
 
       +e.tab
         +tab._default.cardtype
