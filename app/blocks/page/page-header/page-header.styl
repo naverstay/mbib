@@ -1,16 +1,60 @@
 .page-header
   min-height 410px
   padding-top 32px
-  background url(../images/page-header-mob.png) center center no-repeat
-  background-color #FFF3B8 !important
+  padding-bottom: 75px
+  background #FFF3B8
+  position: relative
+  overflow: hidden
+
+  &::after
+    content: ''
+    position: absolute
+    pointer-events none
+    left: 50%
+    bottom: 0
+    height: 211px
+    opacity: .35
+    transform translateX(-50%)
+    background: url(../images/shop-mob.png) right center no-repeat
+    background-size: auto 100%;
+    max-width: 294px;
+    width: 100%
+
   +above(768px)
     min-height 390px
     padding-top 48px
-    background url(../images/page-header-tablet.png) center center no-repeat
+    padding-bottom 90px
+
+    &::before
+      content: '';
+      position: absolute;
+      bottom: 0
+      right: 0
+      left: 0
+      height: 42px
+      background: url(../images/city-mob.png) center center repeat-x
+      background-size: auto 100%
+
+    &::after
+      opacity: 1
+      max-width: calc(100% - 40px)
+      background-image: url(../images/shop.png)
+
   +above(1170px)
     min-height 480px
     padding-top: 72px
-    background url(../images/page-header.png) center center no-repeat
+
+    &::before
+      height: 68px
+      background-image: url(../images/city.png)
+
+    &::after
+      height: 415px
+      max-width: $wide
+
+  .inner
+    position: relative
+    z-index: 1
 
   &__name
     font-family $fontTitle
@@ -19,6 +63,8 @@
     font-size 24px
     line-height 28px
     color #C4372E
+    letter-spacing: -.035em
+
     +above(768px)
       margin-bottom: 18px
       font-size 32px

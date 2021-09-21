@@ -1,12 +1,30 @@
 .tooltip
   position: absolute
   z-index: 2
-  left: 0
+  left: 50%
+  width: 0
   display: none
 
   +above(980px)
     left: 50%
     transform translateX(-50%)
+
+  &::before
+    content: '';
+    position: absolute;
+    left: 50%
+    width: 0;
+    height: 0;
+    margin-left: -8px
+    border-left: 8px solid transparent
+    border-right: 8px solid transparent
+
+  &__list
+    padding-left: 24px
+    list-style disc
+
+    li
+      margin-top: 3px
 
   &__popup
     background: rgba(34, 34, 34, .95)
@@ -17,20 +35,8 @@
     width: 382px
     max-width 90vw
     padding: 16px 20px
+    display block
     position: relative
-
-    &::before
-      content: '';
-      position: absolute;
-      left: 20px
-      width: 0;
-      height: 0;
-      margin-left: -8px
-      border-left: 8px solid transparent
-      border-right: 8px solid transparent
-
-      +above(980px)
-        left: 50%
 
     p
       + p
@@ -40,22 +46,21 @@
     bottom: 100%
     padding-bottom: 12px
 
-    .tooltip__popup::before
-      top: 100%
+    &::before
+      bottom: 4px
       border-top: 8px solid rgba(34, 34, 34, .95)
 
   &-bottom
     top: 100%
     padding-top: 12px
 
-    .tooltip__popup::before
-      bottom: 100%
+    &::before
+      top: 4px
       border-bottom: 8px solid rgba(34, 34, 34, .95)
 
-  &__parent
-
-    &:hover ^[0]
-      display: block
+  //&__parent
+  //  &:hover ^[0]
+  //    display: block
 
   &__link
     color: #fff

@@ -10,9 +10,8 @@ mixin page-footer()
                     b Первые 20 размещений объявлений — бесплатно,
                     span.dt-only
                       br
-                    |  далее согласно тарифам
+                    |  далее согласно #[a(href='#') тарифам]
                  +e.FORM.form
                     +input(class="page-header__input" type="text"  tabindex="0" placeholder="Введите URL вашего фида")
-                    +btn('button', '')._size_m._theme_red._fullwidth Выгрузить
-                +e.snippet Остались вопросы? Звоните
-                    a(href="#") 8 800 505-53-81
+                    +btn('button', '')._size_sm._theme_main._fullwidth Выгрузить
+                +e.snippet Остались вопросы? Звоните #[a(href="#") 8 800 505-53-81]
