@@ -1,14 +1,42 @@
 .page-footer
   padding 36px 0
-  background-color #FFF3B8 !important
-  background url(../images/page-header-mob.png) center center no-repeat
+  background-color #FFF3B8
+  position: relative
+
+  &::after
+    content: '';
+    position: absolute;
+    bottom: 0
+    left: 50%
+    height: 107px
+    transform translateX(-50%)
+    background url(../images/shop-top-mob.png) right center no-repeat
+    background-size: auto 100%;
+    max-width: 387px;
+    margin-left: -26px
+    width: 100%
+    opacity: .1
+
   +above(768px)
-    background url(../images/page-header-tablet.png) center center no-repeat
     padding-top 48px
     padding-bottom 52px
-    background-size contain
+
+    &::after
+      opacity: 1
+      margin-left: 0
+      max-width: calc(100% - 40px)
+      background-image: url(../images/shop-top.png)
+
   +above(1170px)
     padding 64px 0
+
+    &::after
+      max-width: $wide
+      height: 152px
+
+  .inner
+    position: relative
+    z-index: 1
 
   &__name
     font-family $fontTitle
@@ -17,6 +45,8 @@
     font-size 20px
     line-height 24px
     color #C4372E
+    letter-spacing: -.025em
+
     +above(768px)
       font-size 28px
       line-height 36px
@@ -29,6 +59,13 @@
     font-weight 500
     line-height 24px
     margin-bottom 20px
+
+    a
+      color #191919
+      border-bottom: 1px solid currentcolor
+
+      &:hover
+        color #c03
 
     b
       font-weight bold
@@ -82,3 +119,7 @@
     a
       color #787878
       border-bottom: 1px solid #787878
+
+      &:hover
+        color #c03
+        border-bottom-color: currentcolor;

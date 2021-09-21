@@ -1,11 +1,12 @@
 include ../../title/title
+include ../../tooltip/tooltip
 
 mixin page-works()
     +b.page-works
         .inner
             +e.title
                 +title(2)._no-margin Как это работает
-            +e.row 
+            +e.row
                 +e.item
                     +e.icon
                         img(src="assets/images/icons/works/1.svg", alt="")
@@ -29,4 +30,9 @@ mixin page-works()
                         img(src="assets/images/icons/works/4.svg", alt="")
                     +e.content
                         +e.name 4. Используйте обратный фид для отчёта в CRM
-                        +e.text При каждой загрузке вашего фида формируется и предоставляется обратный XML-фид с отчетом
+                        +e.text
+                          span При каждой загрузке вашего фида формируется и предоставляется обратный XML-фид с отчетом
+                          +e.SPAN.tooltip(class='tooltip__parent tooltipParent')
+                            +e.tooltip-button
+                              +icon('help', false).spec-icon
+                            +tooltip('crm')
