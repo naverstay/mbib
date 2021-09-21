@@ -1,64 +1,82 @@
 .page-header
-	min-height 410px
-	padding-top 32px
-	background url(../images/page-header-mob.png) center center no-repeat
-	background-color #FFF3B8 !important
-	+above(768px)
-		min-height 390px
-		padding-top 48px
-		background url(../images/page-header-tablet.png) center center no-repeat
-	+above(1170px)
-		min-height 480px
-		padding-top: 72px
-		background url(../images/page-header.png) center center no-repeat
-	&__name
-		font-family $fontTitle
-		margin-bottom 12px
-		font-weight bold
-		font-size 24px
-		line-height 28px
-		color #C4372E
-		+above(768px)
-			font-size 32px
-			line-height 37px
-	&__text
-		font-style normal
-		font-weight normal
-		font-size 14px
-		line-height 21px
-		color #191919
-		margin-bottom 16px
-		+above(768px)
-			font-size 16px
-			line-height 24px
-		+above(1170px)
-			font-size 18px
-			line-height 27px
-			margin-bottom 24px
-	&__input
-		margin-bottom 8px
-		height 44px
-		border 1px solid #D5D5D5
-		border-radius 4px
-		+above(768px)
-			margin-bottom 24px
-	&__form
-		+above(768px)
-			max-width 465px
-			display flex
-			.btn
-				max-width 185px
-				height 41px
-		+above(1170px)
-			max-width 500px
-		.input
-			margin-bottom 8px
-			font-size 16px
-			+above(768px)
-				margin-bottom 0
-				margin-right 8px
-	&__col
-		+above(768px)
-			max-width 70%
-		+above(1170px)
-			max-width 50%
+  min-height 410px
+  padding-top 32px
+  background url(../images/page-header-mob.png) center center no-repeat
+  background-color #FFF3B8 !important
+  +above(768px)
+    min-height 390px
+    padding-top 48px
+    background url(../images/page-header-tablet.png) center center no-repeat
+  +above(1170px)
+    min-height 480px
+    padding-top: 72px
+    background url(../images/page-header.png) center center no-repeat
+
+  &__name
+    font-family $fontTitle
+    margin-bottom 12px
+    font-weight bold
+    font-size 24px
+    line-height 28px
+    color #C4372E
+    +above(768px)
+      margin-bottom: 18px
+      font-size 32px
+      line-height 37px
+
+  &__text
+    font-style normal
+    font-weight normal
+    font-size 14px
+    line-height 21px
+    color #191919
+    margin-bottom 16px
+    +above(768px)
+      font-size 16px
+      line-height 24px
+    +above(1170px)
+      font-size 18px
+      line-height 27px
+      margin-bottom 24px
+
+  &__input
+    margin-bottom 8px
+    height 44px
+    border 1px solid #D5D5D5
+    padding-left: 20px
+    padding-right: 20px
+
+    +above(768px)
+      margin-bottom 24px
+
+  &__form
+    .btn
+      text-transform: none
+      font-weight: 700
+      font-size: 16px
+
+      .btn__text
+        letter-spacing: -.05em
+
+    +above(768px)
+      max-width 465px
+      display flex
+      .btn
+        font-size: 18px
+        max-width 185px
+        height 41px
+    +above(1170px)
+      max-width 585px
+
+    .input
+      margin-bottom 8px
+      font-size 16px
+      +above(768px)
+        margin-bottom 0
+        margin-right 8px
+
+  &__col
+    +above(768px)
+      max-width 75%
+    +above(1170px)
+      max-width 51%

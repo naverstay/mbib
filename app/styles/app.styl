@@ -3,6 +3,11 @@ $tab = 768px
 $dt = 980px
 $wide = 1170px
 
+rupture.scale = 0 $mob $tab $dt $wide
+rupture.scale-names = 'xs' 's' 'm' 'l' 'xl'
+rupture.mobile-cutoff = $tab
+rupture.desktop-cutoff = $wide - 1
+
 import('sprites/*')
 import('helpers/svg-size')
 @import 'helpers/variables'
@@ -16,3 +21,8 @@ import('helpers/svg-size')
 @import '../../node_modules/notyf/dist/notyf.min.css'
 @import '../../node_modules/magnific-popup/dist/magnific-popup.css'
 import('../blocks/**/*')
+
+.dt-only
+
+  +below($wide)
+    display none
