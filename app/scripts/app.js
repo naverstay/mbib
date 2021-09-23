@@ -52,12 +52,4 @@ $(() => {
   $('.tile').on('click', () => {
     return true;
   });
-
-  $('.toggleError').on('click', function () {
-    let btn = $(this);
-    let input = $('#' + btn.attr('data-error'));
-    input.toggleClass('input_invalid');
-    return false;
-  });
-
 });

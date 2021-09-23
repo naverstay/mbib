@@ -74,6 +74,8 @@ const form = (() => {
 
 
   const authForm = document.querySelector('.form[name=auth]');
+  const feedHeaderForm = document.querySelector('.form[name=feedheader]');
+  const feedFooterForm = document.querySelector('.form[name=feedfooter]');
   const bookmarkletForm = document.querySelector('.form[name=bookmarklet]');
   const registrForm = document.querySelector('.form[name=registr]');
   const recoveryForm = document.querySelector('.form[name=recovery]');
@@ -110,6 +112,14 @@ const form = (() => {
     const $formFeedback = hyperform(feedbackForm, validatorClasses);
   }
 
+  if (feedHeaderForm) {
+    const $feedHeaderForm = hyperform(feedHeaderForm, validatorClasses);
+  }
+
+  if (feedFooterForm) {
+    const $feedFooterForm = hyperform(feedFooterForm, validatorClasses);
+  }
+
   if (claimForm) {
     const $formClaim = hyperform(claimForm, validatorClasses);
   }
@@ -124,5 +134,4 @@ const form = (() => {
 
 })();
 
-export default form
-;
+export default form;

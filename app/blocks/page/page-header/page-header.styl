@@ -88,16 +88,31 @@
       margin-bottom 24px
 
   &__input
-    margin-bottom 8px
     height 44px
     border 1px solid #D5D5D5
+    font-size 16px
     padding-left: 20px
     padding-right: 20px
 
+  &__control
+    position: relative
+    flex: 1 0 auto
+    margin-bottom 8px
+
     +above(768px)
-      margin-bottom 24px
+      margin-bottom 0
+      margin-right 8px
 
   &__form
+    max-width 100%
+    position: relative
+
+    .form__warning
+      position: absolute
+      top: 100%
+      left: 0
+      max-width 100%
+
     .btn
       text-transform: none
       font-weight: 700
@@ -115,13 +130,6 @@
         height 41px
     +above(1170px)
       max-width 585px
-
-    .input
-      margin-bottom 8px
-      font-size 16px
-      +above(768px)
-        margin-bottom 0
-        margin-right 8px
 
   &__col
     +above(768px)
