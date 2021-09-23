@@ -1,5 +1,4 @@
 .page-header
-  min-height 410px
   padding-top 32px
   padding-bottom: 75px
   background #FFF3B8
@@ -20,20 +19,24 @@
     max-width: 294px;
     width: 100%
 
+  &::before
+    content: '';
+    position: absolute;
+    bottom: 0
+    right: 0
+    left: 0
+    height: 42px
+    opacity: .15
+    background: url(../images/city-mob.png) center center repeat-x
+    background-size: auto 100%
+
   +above(768px)
     min-height 390px
     padding-top 48px
     padding-bottom 90px
 
     &::before
-      content: '';
-      position: absolute;
-      bottom: 0
-      right: 0
-      left: 0
-      height: 42px
-      background: url(../images/city-mob.png) center center repeat-x
-      background-size: auto 100%
+      opacity: 1
 
     &::after
       opacity: 1

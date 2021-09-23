@@ -29,26 +29,35 @@ import 'lazysizes';
 import 'notyf';
 
 const checkTouch = () => {
-    if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
-        document.body.classList.add('page_touch');
-    }
+  if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
+    document.body.classList.add('page_touch');
+  }
 };
 
 $(() => {
-    svg4everybody();
+  svg4everybody();
 
-    checkTouch();
+  checkTouch();
 
-    sidenav();
+  sidenav();
 
-    carousel.init();
+  carousel.init();
 
-    gallery.init();
+  gallery.init();
 
-    collapse();
+  collapse();
 
-    digitpretify();
+  digitpretify();
 
-    $('.tile').on('click', () => { return true; });
+  $('.tile').on('click', () => {
+    return true;
+  });
+
+  $('.toggleError').on('click', function () {
+    let btn = $(this);
+    let input = $('#' + btn.attr('data-error'));
+    input.toggleClass('input_invalid');
+    return false;
+  });
 
 });

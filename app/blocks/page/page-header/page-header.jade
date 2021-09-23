@@ -13,5 +13,5 @@ mixin page-header()
           span канал продаж транспорта
         +e.text Если вы зарабатываете на продаже транспорта, выгружайте свои автообъявления на сайт с помощью XML и поддерживайте их в актуальном состоянии. Ваши предложения найдут больше откликов от клиентов, а вы освободитесь от длительной и кропотливой работы.
         +e.FORM.form
-          +input(class="page-header__input" type="text"  tabindex="0" placeholder="Введите URL вашего фида")
-          +btn('button', '')._size_sm._theme_main._fullwidth Выгрузить
+          +input(class="page-header__input" type="text" id='url_feed_h' tabindex="0" required placeholder="Введите URL вашего фида")
+          +btn('button', '')._size_sm._theme_main._fullwidth.toggleError(data-error='url_feed_h') Выгрузить
