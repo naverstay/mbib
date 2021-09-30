@@ -1,0 +1,15 @@
+extends ../blocks/layout-default/layout-default
+include ../blocks/page/page-header/page-header
+include ../blocks/placement-price/placement-price
+
+
+block head
+	- var pageTitle = 'Placement cost';
+	- var pageMod = 'Placement cost';
+	- var pageFull = false;
+
+block content
+	+page-header-cost()
+	+placement-price()
+
+

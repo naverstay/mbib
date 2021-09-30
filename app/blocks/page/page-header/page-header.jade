@@ -1,6 +1,7 @@
 include ../../form/form
 include ../../input/input
 include ../../btn/btn
+include ../../../blocks/breadcrumbs/breadcrumbs
 
 mixin page-header()
   +b.page-header
@@ -17,3 +18,13 @@ mixin page-header()
           .page-header__control
             +input(class="page-header__input" name="url_feed" type="url" id='url_feed_h' tabindex="0" required data-value-missing="Введите URL вашего фида" placeholder="Введите URL вашего фида")
           +btn('button', '')._size_sm._theme_main._fullwidth.toggleError(data-error='url_feed_h') Выгрузить
+
+mixin page-header-cost()
+  +b.page-header.page-header__cost
+    .inner
+      +breadcrumbs(getData('placement-cost'))
+      +e.col
+        +e.name
+          span Стоимость размещения объявлений
+        +e.caption На сайте mbib.ru представлены тарифы для разных типов объявлений
+        +e.text Выбор интересующего вас тарифа и его стоимость зависят от автора объявления и области его размещения, указать которые вы можете в выпадающих списках ниже

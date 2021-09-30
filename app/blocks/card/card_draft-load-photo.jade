@@ -53,7 +53,7 @@ mixin card_draft(data, id)
         +e.owner-data
           +e.owner-name
             | #{item.author}
-            +e.SPAN.owner-remark (#{item.authorStatus})
+            +e.SPAN.owner-remark &nbsp;(#{item.authorStatus})
 
           +e.owner-address
             +e.owner-inspect(title="#{item.inspect.city}, #{item.inspect.address}")

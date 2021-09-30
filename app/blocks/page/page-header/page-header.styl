@@ -30,6 +30,22 @@
     background: url(../images/city-mob.png) center center repeat-x
     background-size: auto 100%
 
+  &__cost
+    margin: -10px -10px 0
+
+    &::before
+      display none
+
+    &::after
+      height: 80px
+      background-image: url(../images/shop-top-mob.png)
+
+    .breadcrumbs__list
+      margin: -15px 0 30px
+
+    +above(768px)
+      margin: -10px 0 0
+
   +above(768px)
     min-height 390px
     padding-top 48px
@@ -43,6 +59,16 @@
       max-width: calc(100% - 40px)
       background-image: url(../images/shop.png)
 
+    &__cost
+      min-height unset !important
+      padding-bottom: 25px
+
+      &::after
+        background-image: url(../images/shop-top.png)
+
+      .breadcrumbs__list
+        margin: -35px 0 30px
+
   +above(1170px)
     min-height 480px
     padding-top: 72px
@@ -54,6 +80,17 @@
     &::after
       height: 415px
       max-width: $wide
+
+    &__cost
+      &::after
+        height: 152px
+
+      .page-header__name
+        font-size: 28px
+        margin-bottom: 10px
+
+      .breadcrumbs__list
+        margin: -55px 0 30px
 
   .inner
     position: relative
@@ -71,6 +108,18 @@
       margin-bottom: 18px
       font-size 32px
       line-height 37px
+
+  &__caption
+    font-weight: 600
+    font-size: 16px
+    line-height: 21px
+    color: #191919
+    margin: 10px 0 12px
+
+    +above(768px)
+      font-size: 21px
+      line-height: 28px
+      margin-bottom: 16px
 
   &__text
     font-style normal

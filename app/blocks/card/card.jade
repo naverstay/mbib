@@ -16,7 +16,7 @@ mixin card(data, id, spec)
       +e.head-price
         +e.price
           | #{item.price}
-          +e.SPAN.price-currency.rouble a
+          +e.SPAN.price-currency ₽
         +action('like', item.isFavorite)._only-icon._is-visible.card__head-action
 
     +e.body
@@ -47,7 +47,7 @@ mixin card(data, id, spec)
         +e.owner-data
           +e.owner-name
             | #{item.author}
-            +e.SPAN.owner-remark (#{item.authorStatus})
+            +e.SPAN.owner-remark &nbsp;(#{item.authorStatus})
 
           +e.owner-address
             +e.owner-inspect(title="#{item.inspect.city}, #{item.inspect.address}")

@@ -1,0 +1,51 @@
+include ../tooltip/tooltip
+include ../select/select
+
+mixin placement(title)
+  +e.title= title
+  +e.feature
+    +e.DL.feature-list
+      +e.feature-row
+        +e.DT.feature-term Размещение объявления
+        +e.DD.feature-desc 550 ₽
+      +e.feature-row
+        +e.DT.feature-term
+          span Поднятие объявления
+          +e.SPAN.tooltip(class='tooltip__parent tooltipParent')
+            +e.tooltip-button
+              +icon('help', false).spec-icon
+            +tooltip('up')
+        +e.DD.feature-desc 275 ₽
+      +e.feature-row
+        +e.DT.feature-term
+          span Спецразмещение объявления
+          +e.SPAN.tooltip(class='tooltip__parent tooltipParent')
+            +e.tooltip-button
+              +icon('help', false).spec-icon
+            +tooltip('moto')
+        +e.DD.feature-desc 1695 ₽
+
+mixin placement-price()
+  +b.placement-price&attributes(attributes)
+    +e.card
+      +e.head
+        +e.cell
+          +e.label Область размещения:
+          +e.control
+            +select(name="region" data-placeholder="Область" data-minimum-results-for-search="Infinity" tabindex="3")._search
+              option(value="")
+              option(value="k1") Москва
+              option(value="k2") Казань
+              option(value="k3") Белгород
+        +e.cell
+          +e.label Автор объявления:
+          +e.control
+            +select(name="region" data-placeholder="Автор" data-minimum-results-for-search="Infinity" tabindex="3")._search
+              option(value="")
+              option(value="k1") Частное лицо
+              option(value="k2") Предприятие
+      +e.body
+        +e.data
+          +e.data-side
+            each val, index in ['Подержанные легковые автомобили', 'Новые легковые автомобили', 'Коммерческий транспорт и мото-транспорт']
+              +placement(val)

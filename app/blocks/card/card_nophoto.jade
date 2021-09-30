@@ -14,7 +14,7 @@ mixin card_nophoto(data, id)
 			+e.H1.head-title Продажа #{item.name} в Москве
 			+e.head-price
 				+e.price
-					| #{item.price} 
+					| #{item.price}
 					+e.SPAN.price-currency ₽
 				+action('like', item.isFavorite)._only-icon._is-visible.card__head-action
 		+e.body
@@ -23,7 +23,7 @@ mixin card_nophoto(data, id)
 					+e.meta-row
 						+e.meta-input
 							+e.SPAN.meta-date
-								+e.SPAN.meta-lbl 
+								+e.SPAN.meta-lbl
 									+icon('clock', false).meta-view-icon
 									| Добавлено
 								| #{item.pubdate}
@@ -32,15 +32,15 @@ mixin card_nophoto(data, id)
 					+e.meta-row
 						+e.meta-input
 							+e.meta-inspect(title="#{item.inspect.city}, #{item.inspect.address}")
-								+e.SPAN.meta-lbl 
+								+e.SPAN.meta-lbl
 									+icon('pin', false).meta-view-icon
 									| Место осмотра
 								| #{item.inspect.city}, #{item.inspect.address}
 
 				+e.meta-seller
-					+e.meta-owner 
-						| #{item.author} 
-						+e.SPAN.meta-remark (#{item.authorStatus})
+					+e.meta-owner
+						| #{item.author}
+						+e.SPAN.meta-remark &nbsp;(#{item.authorStatus})
 					+e.meta-contact
 						+show-phone(item.contact).card__meta-phone
 						//- +phone(item.contact).card__meta-phone
@@ -137,11 +137,11 @@ mixin card_nophoto(data, id)
 									+e.DD.kit-desc Тонированные стекла
 							+e.DL.kit-item
 								+e.DT.kit-title Экстерьер
-								+e.DD.kit-desc 
+								+e.DD.kit-desc
 									if item.feature.alloyWheels
-										| Легкосплавные диски 
+										| Легкосплавные диски
 									| #{item.feature.radiusWheels}''
-					
+
 		+e.action
 			+share
 			+action.card__action-inner
