@@ -1,4 +1,5 @@
 import data from '../../data/cars.json';
+
 const card = (() => {
   const car = data[0];
   const spec = document.querySelector('.card_spec');
@@ -52,7 +53,6 @@ const card = (() => {
 
 
   window.addEventListener('load', () => {
-    isHeightAvaible();
     if (getWindowWidth() >= 1024 && isHeightAvaible()) {
       cardDataSide.insertAdjacentHTML('beforeEnd', cardMetaPhone);
     }
@@ -60,12 +60,16 @@ const card = (() => {
 
   window.addEventListener('resize', () => {
     if (getWindowWidth() >= 1024 && isHeightAvaible()) {
-      cardDataSide.insertAdjacentHTML('beforeEnd', cardMetaPhone);
-    }else {
-      document.querySelector('.card__data-sticky').remove();
+      if (!cardDataSide.querySelector('.short-poster')) {
+        cardDataSide.insertAdjacentHTML('beforeEnd', cardMetaPhone);
+      }
+    } else {
+      let card = document.querySelector('.card__data-sticky');
+      if (card) {
+        card.remove();
+      }
     }
   });
-
 })();
 
 export default card;
