@@ -7,7 +7,7 @@ const card = (() => {
     <div class="short-poster card__data-sticky">
       <h4 class="short-poster__title">${car.name}</h4>
       <div class="short-poster__price">${car.price}
-        <span class="short-poster__price-currency rouble">a</span>
+        <span class="short-poster__price-currency"><span class="roboto-rub">₽</span></span>
         <div class="action action_only-icon action_is-visible short-poster__action">
           <a href="" class="action__item action__item_simple">
             <span class="action__icon">

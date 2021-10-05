@@ -16,7 +16,7 @@ mixin card(data, id, spec)
       +e.head-price
         +e.price
           | #{item.price}
-          +e.SPAN.price-currency ₽
+          +e.SPAN.price-currency #[span.roboto-rub ₽]
         +action('like', item.isFavorite)._only-icon._is-visible.card__head-action
 
     +e.body

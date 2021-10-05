@@ -26,7 +26,7 @@ mixin card-list(data)
                 +tile(item)
               +e.about-item
                 +e.SPAN.price #{item.price}
-                  +e.SPAN.price-currency &nbsp;₽
+                  +e.SPAN.price-currency &nbsp;#[span.roboto-rub ₽]
                 if item.feature.rightDrive
                   +e.SPAN.remark Правый руль
               +e.about-item

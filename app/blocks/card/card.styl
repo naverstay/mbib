@@ -346,10 +346,6 @@
       white-space nowrap
 
   &__price-currency
-    font-size 20px
-    font-weight normal
-    letter-spacing 0
-
     +above(768px)
       font-size 28px
 
@@ -656,6 +652,11 @@
         margin-bottom: 0
         padding: 18px 12px 1px
 
+    &:not(.card_draft)
+      .card__data
+        +below(767px)
+          padding: 0 10px
+
     &.card_draft
       .card__bar-status_moderation
         color: #191919
@@ -684,9 +685,12 @@
 
       .card__meta
         padding: 16px 10px 20px
-        margin-left: -10px
-        margin-right: -10px
 
         .card__meta-data
           padding-left: 6px
           padding-right: 6px
+
+      &.card_draft
+        .card__meta
+          margin-left: -10px
+          margin-right: -10px

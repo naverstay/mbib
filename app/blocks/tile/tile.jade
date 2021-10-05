@@ -13,7 +13,7 @@ mixin tile(data, needAbout)
       +e.about
         +e.H3.name #{data.name}
         +e.P.desc
-          +e.SPAN.price #{data.price} ₽,
+          +e.SPAN.price #{data.price} #[span.roboto-rub ₽],
           | #{data.feature.year},
           | #{data.feature.mileage} км
         +e.address #{data.inspect.city}

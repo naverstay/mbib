@@ -7,7 +7,7 @@ mixin placement(title)
     +e.DL.feature-list
       +e.feature-row
         +e.DT.feature-term Размещение объявления
-        +e.DD.feature-desc 550 ₽
+        +e.DD.feature-desc 550 #[span.roboto-rub ₽]
       +e.feature-row
         +e.DT.feature-term
           span Поднятие объявления
@@ -15,7 +15,7 @@ mixin placement(title)
             +e.tooltip-button
               +icon('help', false).spec-icon
             +tooltip('up')
-        +e.DD.feature-desc 275 ₽
+        +e.DD.feature-desc 275 #[span.roboto-rub ₽]
       +e.feature-row
         +e.DT.feature-term
           span Спецразмещение объявления
@@ -23,7 +23,7 @@ mixin placement(title)
             +e.tooltip-button
               +icon('help', false).spec-icon
             +tooltip('moto')
-        +e.DD.feature-desc 1695 ₽
+        +e.DD.feature-desc 1695 #[span.roboto-rub ₽]
 
 mixin placement-price()
   +b.placement-price&attributes(attributes)
