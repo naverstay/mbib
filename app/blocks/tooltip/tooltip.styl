@@ -10,8 +10,8 @@
     transform translateX(-50%)
 
   &::before
-    content: '';
-    position: absolute;
+    content: ''
+    position: absolute
     left: 50%
     width: 0;
     height: 0;
@@ -33,10 +33,18 @@
     color: #FFFFFF;
     border-radius: 7px / 4px
     width: 382px
-    max-width 90vw
+    max-width 80vw
     padding: 16px 20px
     display block
     position: relative
+
+    &::before
+      content: '';
+      position: absolute;
+      top: -12px;
+      bottom: -12px;
+      left: 0;
+      right: 0;
 
     p
       + p

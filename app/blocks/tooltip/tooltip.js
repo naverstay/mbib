@@ -5,19 +5,21 @@ export default (() => {
     let tooltip = $(this);
 
     tooltip.on('mouseenter', function () {
-      let parent = tooltip.find('.tooltip').show();
-      let popup = parent.find('.tooltip__popup');
+      let tooltipBody = tooltip.find('.tooltip').show();
+      let popup = tooltipBody.find('.tooltip__popup');
+      popup.css('left', 'auto');
+      let offsetLeft = popup.offset().left;
       let popupW = Math.round(popup[0].getBoundingClientRect().width);
       let newX = -popupW / 2;
       let minGap = 20;
-      let correction = Math.round(tooltip.offset().left + newX);
+      let correction = Math.round(offsetLeft + newX);
 
       if (correction < minGap) {
         newX -= correction - minGap;
       }
 
-      if ((correction + minGap + popupW) > window.innerWidth) {
-        newX -= correction + minGap + popupW - window.innerWidth;
+      if ((correction + minGap + popupW) > document.body.offsetWidth) {
+        newX -= correction + minGap + popupW - document.body.offsetWidth;
       }
 
       popup.css('left', Math.min(popupW - minGap, Math.min(-minGap, newX)));
