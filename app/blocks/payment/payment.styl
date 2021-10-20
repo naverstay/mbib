@@ -21,6 +21,7 @@
 
         +above(480px)
           flex-wrap: wrap
+          justify-content: end
           padding-bottom 10px
       &__name
         display: block
@@ -79,7 +80,10 @@
       display flex
       align-items center
       width 100%
-      justify-content: flex-start
+      justify-content: space-between
+
+      .payment_columns &
+        justify-content: flex-start
 
   &__number
     display inline-block
