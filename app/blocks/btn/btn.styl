@@ -1,6 +1,9 @@
 .btn
+  cursor pointer
   padding 0 13px
-  display inline-block
+  display inline-flex
+  align-items center
+  justify-content center
   white-space: nowrap
   height $heightM
   font-size 12px
@@ -161,22 +164,18 @@
 
   &__icon
     position relative
-    top 5px
     display inline-block
     size 20px
     fill currentcolor
 
     ^[0]__remove &
-      top 1px
       size 11px
 
     ^[0]_size_xxl &
-      top 9px
       size 26px
 
       +above(768px)
         size 40px
-        vertical-align top
 
   &_space_left
     margin-left 10px

@@ -2,7 +2,7 @@
 //-   iconClass: string
 
 mixin btn(tag, iconName, options = {})
-  - var tag = tag == 'link' ? 'a' : 'button'
+  - var tag = tag == 'div' ? 'div' : tag == 'link' ? 'a' : 'button'
   - var className = options.iconClass ? options.iconClass : ''
   +b({tag: tag}).btn&attributes(attributes)
     if !iconName
