@@ -4,10 +4,8 @@ include ../radio/radio
 mixin payment-item(data)
   +b.payment-item.js-payment-item&attributes(attributes)(data-id=data.id)
     if (data.card === 'add')
-      +e.LABEL.body
-        +e.name.__name-add
-          +icon('add', false).add-icon
-          +text._size_l._no-margin._semi Добавить карту
+      +btn('button', 'add')._size_xxl._theme_link._fullwidth Добавить карту
+
     else
       +e.LABEL.body
         +e.radio
