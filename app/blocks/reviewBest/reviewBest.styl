@@ -1,5 +1,22 @@
-.review__list.mode-best
+.review_best
+  +below(768px)
+    margin: 0 -15px
 
+    .slick-slide
+      padding: 0 16px
+      width: calc(100vw - 30px)
+      margin-left: -20px
+
+      .review__list-desc
+        margin-top: 4px
+
+      .review__rating
+        left: 12px
+
+      &:first-child
+        margin-left: -16px
+
+.review__list.mode-best
   .review__list-item
     height: 264px
     float: left
@@ -49,8 +66,8 @@
     .review__list-about
       position: absolute;
       bottom: 3px
-      left: -8px
-      right: -8px
+      left: 0
+      right: 0
       background: transparent
 
       +above(768px)

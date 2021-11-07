@@ -1,7 +1,7 @@
 include ../akcent-block/akcent-block
 
 mixin reviewBest(list)
-  +b.review&attributes(attributes)
+  +b.review._best&attributes(attributes)
     +e.list.mode-best.js-best-slider
       each item in list
         +e.list-item

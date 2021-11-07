@@ -2,29 +2,10 @@ import $ from 'jquery';
 import checkIsMobile from '../../scripts/isMobile.js';
 import 'slick-carousel';
 
-const thumbGallery = (() => {
-
+const reviewGallery = (() => {
+  let slick = null;
   const isMobile = checkIsMobile();
-
-  let slick = $('.js-best-slider').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    speed: 0,
-    lazyLoad: 'ondemand',
-    dots: true,
-    infinite: false,
-    mobileFirst: true,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: "unslick"
-      }
-    ]
-  });
-
   const loader = '<div class="loader loader_active thumb-gallery__loader"><div class="loader__overlay"><div class="loader__spiner"></div></div></div>';
-
 
   $('.thumb-gallery__inner').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
     const curSlide = $(slick.$slides.get(nextSlide));
@@ -48,7 +29,43 @@ const thumbGallery = (() => {
     });
   }
 
+  // Создание слайдера
+  const breakpoint = window.matchMedia('(min-width:768px)');
+
+  const enableSlider = function () {
+    console.log('enableSlider');
+    slick = $('.js-best-slider').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      dots: false,
+      speed: 700,
+      lazyLoad: 'ondemand',
+      infinite: false,
+      mobileFirst: true,
+      variableWidth: true,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: "unslick"
+        }
+      ]
+    });
+  };
+
+  const breakpointChecker = function () {
+    if (window.innerWidth < 768) {
+      return enableSlider();
+    } else {
+      return false;
+    }
+  };
+
+  breakpoint.addListener(breakpointChecker);
+
+  breakpointChecker();
+
   return slick;
 })();
 
-export default thumbGallery;
+export default reviewGallery;
