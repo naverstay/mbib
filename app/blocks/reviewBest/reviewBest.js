@@ -6,14 +6,21 @@ const thumbGallery = (() => {
 
   const isMobile = checkIsMobile();
 
-  $('.thumb-gallery__inner').slick({
+  let slick = $('.js-best-slider').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
     speed: 0,
     lazyLoad: 'ondemand',
     dots: true,
-    infinite: false
+    infinite: false,
+    mobileFirst: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: "unslick"
+      }
+    ]
   });
 
   const loader = '<div class="loader loader_active thumb-gallery__loader"><div class="loader__overlay"><div class="loader__spiner"></div></div></div>';
@@ -41,6 +48,7 @@ const thumbGallery = (() => {
     });
   }
 
+  return slick;
 })();
 
 export default thumbGallery;

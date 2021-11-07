@@ -7,13 +7,24 @@
   background-image: linear-gradient(to right, #f8f8f8, #fff)
   border 2px solid #dedede
 
+  &.search_show-no
+    border: 0
+    background: #fff
+    box-shadow: 0 24px 96px rgba(0, 0, 0, 0.02), 0px 6px 18px rgba(0, 0, 0, 0.02), 0px 2px 4px rgba(0, 0, 0, 0.02);
+
+    &::after
+      display none
+
   +above(768px)
     margin-bottom 27px
     padding 10px 24px 0
     width 100%
     box-shadow 0 27px 23px -12px rgba(#000, .2)
 
-    &:after
+    .reviews &
+      padding: 30px 34px 12px
+
+    &::after
       position absolute
       top 100%
       right 0
@@ -25,6 +36,10 @@
       border-top 4px solid darken($colorDecorative, 20)
       border-left 5px solid rgba(#fff, 0)
       border-right 5px solid rgba(#fff, 0)
+
+  +above(980px)
+    .reviews &
+      padding: 30px 40px 16px
 
   &__toggler
     margin 0 -1px 10px
@@ -281,6 +296,66 @@
       +above(980px)
         width 20%
 
+  &__group
+    position relative
+    z-index 1
+    display flex
+    width 100%
+    padding: 0 5px
+    margin-bottom: 8px
+
+    +above(768px)
+      margin-bottom: 12px
+
+    +above(980px)
+      margin-bottom: 8px
+
+    &-cell
+      flex: 1 0 auto
+      position: relative
+
+    &.size-rest
+      order 1
+
+      +above(768px)
+        width 19%
+        margin-left: auto
+
+      +above(980px)
+        width 25%
+
+        .search__group-cell
+          min-width: 50%
+          margin-left auto
+          flex 0
+
+    &.size-25
+      &.search__age
+        order 1
+
+      +above(768px)
+        width 33.33%
+
+        &.search__age
+          width: 66.66%
+
+      +above(980px)
+        width 25%
+
+        &.search__age
+          order 0
+          width: 25%
+
+    &.size-50
+      order 1
+
+      +above(768px)
+        flex 1 0 auto
+        max-width 76.5%
+
+      +above(980px)
+        max-width 50%
+
   &__col
     position relative
     margin-bottom -1px
@@ -522,66 +597,66 @@
 
   &__tab
     width 100%
-    &&
-      +above(768px)
-        margin-bottom -24px
-        padding 24px
 
-  &__tab-content
-    padding-top 20px
+&&
++above(768px)
+  margin-bottom -24px
+  padding 24px
 
-  &__gallery
-    margin-bottom 20px
-    width 100%
+&__tab-content
+  padding-top 20px
 
-  &__about
-    width 100%
+&__gallery
+  margin-bottom 20px
+  width 100%
 
-    +above(768px)
-      display flex
+&__about
+  width 100%
 
-  &__about-rate
+  +above(768px)
     display flex
-    padding-right 24px
-    width 244px
-    flex-basis 244px
-    flex-shrink 0
 
-  &__about-rating
-    margin-right 15px
-    width 60px
-    height 60px
-    border-radius 50%
-    padding 4px
-    background-image linear-gradient(to right, $colorMain, $colorSecondary)
+&__about-rate
+  display flex
+  padding-right 24px
+  width 244px
+  flex-basis 244px
+  flex-shrink 0
 
-  &__about-rating-value
-    display block
-    width 52px
-    height 52px
-    font-size 22px
-    font-weight bold
-    line-height 52px
-    text-align center
-    border-right 50%
-    background-color #fff
-    border-radius 50%
+&__about-rating
+  margin-right 15px
+  width 60px
+  height 60px
+  border-radius 50%
+  padding 4px
+  background-image linear-gradient(to right, $colorMain, $colorSecondary)
 
-  &__about-review
-    padding-top 5px
-    line-height 1.5
-    font-size 16px
-    font-weight bold
-    color #787878
+&__about-rating-value
+  display block
+  width 52px
+  height 52px
+  font-size 22px
+  font-weight bold
+  line-height 52px
+  text-align center
+  background-color #fff
+  border-radius 50%
 
-  &__about-review-link
-    display inline-block
-    color $colorSecondary
+&__about-review
+  padding-top 5px
+  line-height 1.5
+  font-size 16px
+  font-weight bold
+  color #787878
 
-  &__about-desc
-    padding-top 5px
-    line-height 1.71429
-    color #787878
+&__about-review-link
+  display inline-block
+  color $colorSecondary
 
-    p
-      margin 0
+&__about-desc
+  padding-top 5px
+  line-height 1.71429
+  color #787878
+
+  p
+    margin 0

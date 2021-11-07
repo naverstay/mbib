@@ -1,0 +1,219 @@
+.review
+  display block
+
+  + .title.title_level_1
+    margin-top: 24px
+    margin-bottom: 24px
+
+    +above(980px)
+      margin-top: 10px
+
+  &__help
+    background: #fff
+    text-align: center
+    padding: 20px 30px
+
+    .btn
+      text-transform: none
+
+    p
+      font-weight: 600
+      font-size: 16px
+      line-height: 21px
+      color: #191919
+      letter-spacing: -.03em
+
+    +above(768px)
+      text-align: left
+      display flex
+      align-items center
+      justify-content space-between
+
+      p
+        font-size: 21px
+        line-height: 32px
+
+      .btn
+        min-width 200px
+        margin-right: 5px
+        margin-left: 20px
+
+    +above(980px)
+      p
+        font-size: 18px
+        line-height: 21px
+
+      .btn
+        margin-right: 0
+        margin-left: 40px
+
+  &__list
+    position relative
+    margin 0
+    clearfix()
+
+    +above(768px)
+      margin 0 -10px
+
+    +above(980px)
+      margin 0 -15px
+
+  &__list-item
+    position relative
+    padding 0
+    float left
+    width 100%
+    overflow hidden
+    margin-bottom: 12px
+    font-weight: 400
+
+    +above(768px)
+      width 50%
+      padding: 0 10px
+      float left
+      margin-bottom: 30px
+
+    +above(980px)
+      padding 0 15px
+      width 33.33%
+
+    &_wide
+      width: 100%
+
+    &_align-tablet_right
+      +above(768px)
+        float right
+
+      +above(980px)
+        float left
+
+    &_align_right
+      float right
+
+  &__rating
+    z-index 1
+    position absolute
+    top 16px
+    left: 12px
+    height 28px
+    padding 6px 12px
+    background #CB1239
+    border-radius 14px
+    font-weight 500
+    font-size 14px
+    line-height 16px
+    color: #FFF
+    display flex
+    align-items center
+
+    span
+      padding-left: 7px
+
+    &-icon
+      width: 15px
+      height: 14px
+      fill #fff
+
+    +above(768px)
+      left: 20px
+
+  &__link-wrap
+    display block
+    height: 200px
+    overflow hidden
+    position: relative
+
+    +above(768px)
+      height: 207px
+
+    +above(980px)
+      height: 200px
+
+  &__list-fig
+    width 100%
+    height 100%
+    font-size 0
+    will-change transform
+    transform scale(1)
+    transition transform .4s ease
+
+    ^[0]__link-wrap:hover &
+      transform scale(1.07)
+
+  &__list-img
+    display block
+    width 100%
+    height 100%
+    object-fit cover
+
+  &__list-about
+    padding: 20px
+    background: #fff
+    box-shadow: 0 24px 96px rgba(0, 0, 0, 0.02), 0 6px 18px rgba(0, 0, 0, 0.02), 0 2px 4px rgba(0, 0, 0, 0.02)
+    font-size: 14px
+    line-height: 21px
+    color: #787878
+
+    +above(768px)
+      left 12px
+      bottom 12px
+
+    +above(980px)
+      left 30px
+      bottom 16px
+
+  &__list-desc
+    margin: 8px 0 12px
+    min-height 84px
+    overflow hidden
+    font-size 14px
+    line-height 21px
+    color #787878
+    display: -webkit-box
+    -webkit-box-orient: vertical
+    -webkit-line-clamp: 4
+
+  &__list-name
+    font-weight: bold
+    font-size 18px
+    line-height 21px
+    display flex
+    align-items center
+    color #191919
+
+  &__footer
+    display flex
+    justify-content space-between
+    align-items: center
+    font-size: 14px
+    line-height: 16px
+    color: #787878
+
+    &-more
+      cursor: pointer
+      font-weight: 400
+
+      &:hover
+        text-decoration: underline
+
+    &-views
+      display flex
+      align-items: center
+
+      svg
+        width: 12px
+        height: 12px
+        fill: #787878
+
+      span
+        padding-left: 9px
+
+    &:hover
+      color inherit
+      text-decoration inherit
+
+    &::after
+      content ','
+
+    &:last-child::after
+      display none

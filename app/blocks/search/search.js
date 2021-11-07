@@ -1,11 +1,17 @@
 const search = (() => {
   const wrap = document.querySelector('.search');
 
-  if (!wrap) { return false; }
+  if (!wrap) {
+    return false;
+  }
 
   try {
-
     const switcher = wrap.querySelector('.search__switcher');
+
+    if (!switcher) {
+      return;
+    }
+
     const switcherText = switcher.querySelector('.btn__text');
     const switcherLabelOpen = 'Скрыть поиск';
     const switcherLabelСlose = 'Расширенный поиск';
@@ -32,7 +38,7 @@ const search = (() => {
         wrapper.classList.toggle('form__group_is-accordion-open');
       });
     }
-  }catch (err) {
+  } catch (err) {
     throw new Error(err);
   }
 
@@ -44,7 +50,7 @@ const search = (() => {
       wrap.classList.toggle(showDropClass);
     });
 
-  }catch (err) {
+  } catch (err) {
   }
 
   try {
@@ -66,7 +72,7 @@ const search = (() => {
     });
 
 
-  }catch (err) {
+  } catch (err) {
   }
 
   try {
@@ -74,13 +80,14 @@ const search = (() => {
     const toggleBody = wrap.querySelector('.search__toggle-body');
     const toggleBodyActiveClass = 'search__toggle-body_open';
 
-    toggler.addEventListener('click', () => {
-      toggleBody.classList.toggle(toggleBodyActiveClass);
-    });
-
-  }catch (err) {
+    if (toggler) {
+      toggler.addEventListener('click', () => {
+        toggleBody.classList.toggle(toggleBodyActiveClass);
+      });
+    }
+  } catch (err) {
     throw new Error(err);
-   }
+  }
 
 })();
 

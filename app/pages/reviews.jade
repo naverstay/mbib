@@ -1,0 +1,22 @@
+extends ../blocks/layout-default/layout-default
+include ../blocks/search/search-generation
+include ../blocks/search/search-bike
+include ../blocks/search/search-review
+include ../blocks/breadcrumbs/breadcrumbs
+include ../blocks/title-block/title-block
+include ../blocks/reviewBest/reviewBest
+include ../blocks/review/review
+
+block head
+  - var pageTitle = 'Отзывы';
+  - var pageMod = 'reviews';
+  - var innerClass = 'reviews';
+
+block content
+  +breadcrumbs(getData('reviews-crumbs.json'))
+  +title(1, 2) Лучшие отзывы недели
+  +reviewBest(getData('reviewsBest'))
+  +title(1, 2) Все отзывы
+  +search-review()
+  +review(getData('reviewsAll'), true)
+

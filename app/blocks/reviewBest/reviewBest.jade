@@ -1,0 +1,22 @@
+include ../akcent-block/akcent-block
+
+mixin reviewBest(list)
+  +b.review&attributes(attributes)
+    +e.list.mode-best.js-best-slider
+      each item in list
+        +e.list-item
+          +e.A.link-wrap(href="")
+            +e.__rating
+              +icon('star_fill', false).rating-icon
+              span= item.rating
+            +e.FIGURE.list-fig
+              +e.IMG.list-img(src=item.img alt=item.name)
+          +e.list-about
+            +e.H3.list-name #{item.name}
+            +e.P.list-desc= item.info
+            +e.footer
+              +e.SPAN.footer-views
+                +icon('eye', false).views-icon
+                span= item.views
+                  | &nbsp;просмотров
+              +e.A.footer-more(href='#') Читать далее

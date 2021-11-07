@@ -1,0 +1,32 @@
+include ../akcent-block/akcent-block
+include ../pagination/pagination
+
+mixin review(list, hasPagination)
+  +b.review&attributes(attributes)
+    +e.list
+      each item, index in list
+        if index === 6
+          +e.list-item._wide
+            +e.help.w-100p
+              p Помогите другим читателям выбрать авто — оставьте отзыв о своей машине
+              +btn('link', 'add')&attributes(attributes)._theme_secondary._size_sm
+                | Добавить отзыв
+        +e.list-item
+          +e.A.link-wrap(href="")
+            +e.__rating
+              +icon('star_fill', false).rating-icon
+              span= item.rating
+            +e.FIGURE.list-fig
+              +e.IMG.list-img(src=item.img alt=item.name)
+          +e.list-about
+            +e.H3.list-name #{item.name}
+            +e.P.list-desc= item.info
+            +e.footer
+              +e.SPAN.footer-views
+                +icon('eye', false).views-icon
+                span= item.views
+                  | &nbsp;просмотров
+              +e.A.footer-more(href='#') Читать далее
+
+    if hasPagination
+      +pagination._no-padding._flat._transparent

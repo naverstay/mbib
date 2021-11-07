@@ -2,12 +2,12 @@
 	position relative
 	display block
 	height 100%
-	
+
 	&__btn
 		position relative
 		height 100%
 		cursor pointer
-		
+
 	&__btn-inner
 		position absolute
 		top 50%
@@ -16,7 +16,7 @@
 		width 28px
 		height 2px
 		background-color #fff
-		
+
 		&::before,
 		&::after
 			position absolute
@@ -25,13 +25,13 @@
 			height 100%
 			content ''
 			background-color #fff
-		
+
 		&::before
 			top -8px
-			
+
 		&::after
 			bottom -8px
-			
+
 	&__close
 		position absolute
 		top 20px
@@ -39,7 +39,7 @@
 		width 34px
 		height 34px
 		cursor pointer
-		
+
 		&::before,
 		&::after
 			position absolute
@@ -50,13 +50,13 @@
 			height 2px
 			content ''
 			background-color #fff
-			
+
 		&::before
 			transform rotate(-45deg)
-			
+
 		&::after
 			transform rotate(45deg)
-			
+
 	&__overlay
 		position fixed
 		z-index 50
@@ -67,7 +67,7 @@
 		display none
 		visibility hidden
 		opacity 0
-		
+
 		.page_open-side &
 			display block
 			visibility visible
@@ -88,16 +88,16 @@
 		will-change transform
 		transition transform .4s
 		transform translate3D(-100%, 0, 0)
-		
+
 		.page_open-side &
 			transform translate3D(0, 0, 0)
-		
+
 	&__action
 		margin-bottom 14px
 		padding 20px 0
 		font-size 16px
 		border-bottom 1px solid rgba(#fff, .23)
-		
+
 	&__action-link
 		position relative
 		margin-bottom 5px
@@ -106,10 +106,10 @@
 		text-decoration none
 		color #fff
 		transition color .3s
-		
+
 		&:hover
 			color $colorMain
-		
+
 	&__action-icon
 		position absolute
 		top 2px
@@ -117,10 +117,10 @@
 		size 20px
 		fill currentcolor
 		transition fill .3s
-		
+
 	&__action-text
 		display inline-block
 		border-bottom 1px solid rgba(#fff, .23)
-		
+
 		^[0]__action-link_pseudo &
 			border-bottom-style dashed

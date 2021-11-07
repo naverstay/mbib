@@ -1,0 +1,80 @@
+.review__list.mode-best
+
+  .review__list-item
+    height: 264px
+    float: left
+
+    .review__list-desc
+      min-height 0
+      -webkit-line-clamp: 5
+
+    +above(768px)
+      width: 50%
+      height: 199px
+      margin-bottom: 16px
+
+      &:not(:first-child)
+        .review__list-about
+          padding-bottom: 10px
+
+        .review__list-desc
+          -webkit-line-clamp: 2
+
+      &:first-child
+        height: 414px
+
+      .review__list-name
+        font-size: 21px
+        line-height: 25px
+        letter-spacing: -.01em
+
+    +above(980px)
+      height: 220px
+      float: left;
+      margin-bottom: 30px
+
+      &:not(:first-child)
+        .review__list-desc
+          -webkit-line-clamp: 3
+
+      &:first-child
+        height: 470px
+
+        .review__list-desc
+          -webkit-line-clamp: 4
+
+    .review__link-wrap
+      height: 100%
+
+    .review__list-about
+      position: absolute;
+      bottom: 3px
+      left: -8px
+      right: -8px
+      background: transparent
+
+      +above(768px)
+        left: 10px
+        right: 10px
+
+      +above(980px)
+        left: 15px
+        right: 15px
+
+      .review__footer-views
+        opacity: 0.65;
+
+        svg
+          fill: #fff
+
+      .review__footer,
+      .review__footer-more,
+      .review__list-name,
+      .review__list-desc
+        color: #fff
+
+      .review__footer-more
+        text-decoration: underline
+
+        &:hover
+          text-decoration: none
