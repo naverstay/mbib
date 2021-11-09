@@ -12,7 +12,7 @@ mixin review(list, hasPagination)
               +btn('link', 'add')&attributes(attributes)._theme_secondary._size_sm
                 | Добавить отзыв
         +e.list-item
-          +e.A.link-wrap(href="")
+          +e.A.link-wrap(href="/review-page.html")
             +e.__rating
               +icon('star_fill', false).rating-icon
               span= item.rating
@@ -26,7 +26,7 @@ mixin review(list, hasPagination)
                 +icon('eye', false).views-icon
                 span= item.views
                 span.hide-on-mobile &nbsp;просмотров
-              +e.A.footer-more(href='#') Читать далее
+              +e.A.footer-more(href='/review-page.html') Читать далее
 
     if hasPagination
       +pagination._no-padding._flat._transparent

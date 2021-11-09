@@ -5,7 +5,7 @@ mixin reviewBest(list)
     +e.list.mode-best.js-best-slider
       each item in list
         +e.list-item
-          +e.A.link-wrap(href="")
+          +e.A.link-wrap(href="/review-page.html")
             +e.__rating
               +icon('star_fill', false).rating-icon
               span= item.rating
@@ -19,4 +19,4 @@ mixin reviewBest(list)
                 +icon('eye', false).views-icon
                 span= item.views
                   | &nbsp;просмотров
-              +e.A.footer-more(href='#') Читать далее
+              +e.A.footer-more(href='/review-page.html') Читать далее

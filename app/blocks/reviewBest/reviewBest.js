@@ -33,7 +33,6 @@ const reviewGallery = (() => {
   const breakpoint = window.matchMedia('(min-width:768px)');
 
   const enableSlider = function () {
-    console.log('enableSlider');
     slick = $('.js-best-slider').slick({
       slidesToShow: 1,
       slidesToScroll: 1,

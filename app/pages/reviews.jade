@@ -1,6 +1,4 @@
 extends ../blocks/layout-default/layout-default
-include ../blocks/search/search-generation
-include ../blocks/search/search-bike
 include ../blocks/search/search-review
 include ../blocks/breadcrumbs/breadcrumbs
 include ../blocks/title-block/title-block
@@ -19,4 +17,3 @@ block content
   +title(1, 2) Все отзывы
   +search-review()
   +review(getData('reviewsAll'), true)
-
