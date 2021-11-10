@@ -21,6 +21,7 @@ import '../blocks/range/range';
 import '../blocks/calculator/calculator';
 import '../blocks/thumb-gallery/thumb-gallery';
 import '../blocks/reviewBest/reviewBest';
+import '../blocks/reviewAbout/reviewAbout';
 import '../blocks/phone-field/phoneField';
 import '../blocks/phone-field/phoneField';
 import '../blocks/payment/payment-item';

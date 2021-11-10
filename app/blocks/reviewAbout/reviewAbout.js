@@ -1,22 +1,23 @@
 import $ from 'jquery';
+import checkIsMobile from '../../scripts/isMobile.js';
 import 'slick-carousel';
 
 const reviewGallery = (() => {
-  const breakPoint = 768;
+  const breakPoint = 1170;
   let slick = null;
 
   // Создание слайдера
   const breakpoint = window.matchMedia(`(min-width:${breakPoint}px)`);
 
   const enableSlider = function () {
-    slick = $('.js-best-slider').slick({
+    slick = $('.js-aside-slider').slick({
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: false,
       dots: false,
       speed: 700,
       lazyLoad: 'ondemand',
-      infinite: false,
+      infinite: true,
       mobileFirst: true,
       variableWidth: true,
       responsive: [

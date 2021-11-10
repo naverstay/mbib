@@ -1,0 +1,112 @@
+include ../akcent-block/akcent-block
+include ../title-block/title-block
+include ../social/social
+
+
+mixin reviewAbout(review)
+  +b.review-about&attributes(attributes)
+    +title(1, 2)= review.car_name
+    +e.views
+      +icon('eye', false).views-icon
+      span= review.review_counter
+    +e.top
+      +e.top-image
+        +e.IMG(src=review.main_image)
+
+      +e.top-ratings
+        +e.top-options
+          +e.top-options__title Оценки:
+          +e.DL.top-options__list
+            .options__list-item.mob-order_-1
+              dt Внешний вид
+              dd.option-rating= review.ratings.look
+            .options__list-item
+              dt Салон
+              dd.option-rating= review.ratings.salon
+            .options__list-item.mob-order_-1
+              dt Двигатель
+              dd.option-rating= review.ratings.engine
+            .options__list-item
+              dt Ходовая часть
+              dd.option-rating= review.ratings.chassis
+            .options__list-total
+              dt Общая
+              dd.option-rating= review.ratings.total
+
+      +e.top-specifications
+        +e.top-options
+          +e.top-options__title Характеристики:
+          +e.DL.top-options__list
+            .options__list-row
+              dt Год выпуска:
+              dd= review.review_params.year
+            .options__list-row
+              dt Тип кузова:
+              dd= review.review_params.type
+            .options__list-row
+              dt Трансмиссия:
+              dd= review.review_params.transmission
+            .options__list-row
+              dt Привод:
+              dd= review.review_params.wd
+            .options__list-row
+              dt Поколение:
+              dd= review.review_params.generation
+            .options__list-row
+              dt Двигатель:
+              dd= review.review_params.engine
+            .options__list-row
+              dt Расход по трассе:
+              dd= review.review_params.highway_consumption
+            .options__list-row
+              dt Расход по городу:
+              dd= review.review_params.city_consumption
+            .options__list-row
+              dt Год приобретения:
+              dd= review.review_params.purchase_year
+            .options__list-row
+              dt Пробег:
+              dd= review.review_params.mileage
+            .options__list-row
+              dt Руль:
+              dd= review.review_params.wheal
+
+    +e.content
+      +e.content-title Отзыв владельца
+      +e.text
+        each val, index in review.review
+          p= val
+          if (index === 5)
+            +e.aside
+              +e.aside-content
+                +e.aside-caption Купить #[a(href='#') Renault Arkana] на mbib.ru
+                +e.aside-slider.js-aside-slider
+                  +e.aside-slide
+                    .slide-image
+                      img(src='assets/images/catalog/arkana_1.jpg')
+                    .slide-footer
+                      .slide-location Санкт-перетбург
+                      .slide-name Arkana 2020
+                      .slide-price 1 720 000 ₽
+                  +e.aside-slide
+                    .slide-image
+                      img(src='assets/images/catalog/arkana_2.jpg')
+                    .slide-footer
+                      .slide-location Москва
+                      .slide-name Arkana 2021
+                      .slide-price 1 840 000 ₽
+                  +e.aside-slide
+                    .slide-image
+                      img(src='assets/images/catalog/arkana_2.jpg')
+                    .slide-footer
+                      .slide-location Москва
+                      .slide-name Arkana 2019
+                      .slide-price 1 581 000 ₽
+
+    +e.footer
+      +e.footer-published
+        +e.footer-caption Опубликовано 12 Сентября 2021
+        +e.footer-author Павел Николаев  •  Северобайкальск
+      +e.footer-share
+        .footer-caption Поделиться:
+        +social(true)._view_block.cardowner__share
