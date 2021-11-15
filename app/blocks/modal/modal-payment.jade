@@ -14,7 +14,6 @@ mixin modal-payment()
         +text._bold К оплате: 150 рублей
         +form(name="claim" action="" method="")
           +payment(getData('paymentItems'))
-          +e.row._align_right
+          +e.row._align_right.mob-sticky
             +e.item._fullwidth
-              +btn('button')._theme_secondary Оплатить
-
+              +btn('button')._theme_secondary.mw-100p Оплатить

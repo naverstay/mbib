@@ -1,7 +1,7 @@
 include ../text/text
 include ../radio/radio
 
-mixin payment-item(data)
+mixin payment-item(data, checked)
   +b.payment-item.js-payment-item&attributes(attributes)(data-id=data.id)
     if (data.card === 'add')
       +btn('button', 'add')._size_xxl._theme_link._fullwidth Добавить карту
@@ -9,7 +9,7 @@ mixin payment-item(data)
     else
       +e.LABEL.body
         +e.radio
-          +radio(name="payment" role="radio" )
+          +radio(name="payment" role="radio" checked=checked)
         +e.DIV.image
           img(src=data.img, alt="")
         if data.name
