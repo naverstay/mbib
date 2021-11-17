@@ -1,0 +1,24 @@
+mixin tools()
+  +b.tools&attributes(attributes)
+    +e.wrap.inner(class= business ? ' wide' : '')
+      +e.title
+        +title(2)._no-margin Инструменты продвижения
+      +e.description Хотите, чтобы ваш товар показывался выше конкурентов и привлекал больше покупателей? Воспользуйтесь возможностями инструментов для продвижения
+
+      +e.UL.list
+        +e.LI
+          +e.item
+            +e.item-preview
+              img(src='assets/images/for-business/tool-1.svg')
+            +e.item-title Поднятие в поиске
+            +e.item-info Ваше объявление снова будет поднято на самое начало рубрики в списке объявлений, как будто вы только что его разместили
+            +e.item-footer
+              +btn('link', '')._size_sm._theme_main.toggleError(data-error='url_feed_f') Начать продавать
+        +e.LI
+          +e.item
+            +e.item-preview
+              img(src='assets/images/for-business/tool-2.svg')
+            +e.item-title Спецразмещение
+            +e.item-info Объявление будет выделено цветом и поднято в топ. Также мы разместим его в специальном блоке на главной странице, странице марки и в выдаче объявлений.
+            +e.item-footer
+              +btn('link', '')._size_sm._theme_main.toggleError(data-error='url_feed_f') Начать продавать

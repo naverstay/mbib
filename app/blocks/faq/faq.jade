@@ -1,0 +1,14 @@
+include ../title/title
+include ../link/link
+
+mixin faq(faq)
+  +b.faq
+    .inner
+      +e.title
+        +title(2)._no-margin Ответы на частые вопросы
+      +e.wrapper
+        each item, index in faq
+          +e.item
+            +e.item-content.js-faq-item
+              +e.name= item.q
+              +e.text.js-faq-text!= item.a

@@ -1,0 +1,17 @@
+include ../title/title
+include ../link/link
+
+mixin uploads()
+  +b.uploads
+    +e.wrapper
+      +e.content
+        +e.title
+          +title(2)._no-margin Бесплатно загружайте прайс-листы, фиды, таблицы и базы данных любого формата
+        +e.text Загружайте прайс-листы, фиды, таблицы, базы данных любого формата. Все, что не может быть обработано автоматически, будет обработано нашими специалистами вручную.
+        +e.controls
+          +btn('button', '')._size_sm._theme_main.toggleError(data-error='url_feed_f') Загрузить
+
+      +e.deco
+        +e.car
+          +e.car-ground
+          +e.IMG.car-img(src='assets/images/for-business/car-y.svg' alt='')
