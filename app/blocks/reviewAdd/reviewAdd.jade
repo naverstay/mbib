@@ -10,16 +10,23 @@ include ../select/select
 include ../popup/popup
 include ../social/social
 
-mixin reviewAdd()
+mixin reviewAdd(user)
   +b.review-add&attributes(attributes)
     +title(1, 2) Добавить отзыв об автомобиле
 
     +form(name="review-add-form" action="" method="post").review-add__form
       +e.row-caption Информация о вас
       +e.row._align_left
-        +e.item._tb_6._span_4
-          +e.LABEL.cell-name(for='email') E-mail: <span class="marked">*</span>
-          +input(type="text" name="email" placeholder="Введите ваш E-Mail адрес" id="email" required)
+        if (user)
+          +e.item._span_flex
+            +e.cell-name.mob-hidden &nbsp;
+            +e.SPAN.user-name
+              +icon('user', false).user-icon
+              span Руслан Масленков
+        else
+          +e.item._tb_6._span_4
+            +e.LABEL.cell-name(for='email') E-mail: <span class="marked">*</span>
+            +input(type="text" name="email" placeholder="Введите ваш E-Mail адрес" id="email" required)
         +e.item._tb_6._span_4
           +e.LABEL.cell-name(for='placeField') Регион: <span class="marked">*</span>
           +select(name="place" id="placeField" data-placeholder="Регион" tabindex="1")._search
@@ -99,4 +106,4 @@ mixin reviewAdd()
           "Какие автомобили рассматривали? Чем ваш выбор оказался лучше конкурентов?").area-comment
 
       +e.form-send
-        +btn('button', '')._size_sm._theme_main._subscribe Авторизоваться и опубликовать
+        +btn('button', '')._size_sm._theme_main._subscribe= user ? 'Опубликовать' : 'Авторизоваться и опубликовать'
