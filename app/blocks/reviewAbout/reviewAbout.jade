@@ -5,7 +5,8 @@ include ../social/social
 
 mixin reviewAbout(review)
   +b.review-about&attributes(attributes)
-    +title(1, 2)= review.car_name
+    +title(1, 2)
+      a(href='#')= review.car_name
     +e.views
       +icon('eye', false).views-icon
       span= review.review_counter

@@ -19,7 +19,8 @@ mixin review(list, hasPagination)
             +e.FIGURE.list-fig
               +e.IMG.list-img(src=item.img alt=item.name)
           +e.list-about
-            +e.H3.list-name #{item.name}
+            +e.H3.list-name
+              a(href='#') #{item.name}
             +e.P.list-desc= item.info
             +e.footer
               +e.SPAN.footer-views
