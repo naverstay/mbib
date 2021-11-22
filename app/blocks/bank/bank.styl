@@ -2,20 +2,70 @@
   margin-bottom: 12px
   background: #FFF
   box-shadow: 0 24px 96px rgba(0, 0, 0, 0.02), 0 6px 18px rgba(0, 0, 0, 0.02), 0 2px 4px rgba(0, 0, 0, 0.02)
-  padding: 20px 16px
+  padding: 14px 16px 20px
 
   +above(768px)
+    padding-top: 20px
     margin-bottom: 20px
-    display grid
-    grid-template-columns 123px 123px 2fr 2fr 3fr
+
+    &__header
+      display grid
+      grid-template-columns 123px 123px 2fr 2fr 3fr
 
   +above(1170px)
-    margin-bottom: 20px
-    display grid
-    grid-template-columns 246px 2fr 2fr 2fr 2fr 4fr
+    &__header
+      display grid
+      grid-template-columns 246px 2fr 2fr 2fr 2fr 4fr
+
+  &__name
+    font-weight: bold
+    font-size: 18px
+    line-height: 21px
+    color: #191919
+    margin-bottom: 18px
+    letter-spacing: -.03em
+
+  &__options
+    &-cell
+      display flex
+      margin-bottom: 18px
+
+      dt
+        width: 50%
+        padding-right: 5px
+        font-size: 14px
+        line-height: 16px
+        color: #787878
+        opacity: 0.65
+
+      dd
+        width: 50%
+        font-weight: bold
+        font-size: 16px
+        line-height: 19px
+        display: flex
+        align-items: center
+        color: #191919
+
+  &__logo
+    margin-bottom: 5px
 
   &__footer
+    font-size: 14px
+    line-height: 18px
     text-align: center
+    color: #787878
+
+    .btn
+      text-transform: none
+      font-size: 15px
+
+    +below(767px)
+      .btn
+        width: 100%
+
+      &-info
+        padding: 18px 20px 0
 
     +above(768px)
       padding-top: 20px
@@ -23,5 +73,10 @@
       display flex
       align-items center
       justify-content space-between
+
+      &-info
+        padding-top: 0
+        padding-right: 20px
+        order -1
 
 

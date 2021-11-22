@@ -1,9 +1,27 @@
 mixin bank(item, name)
   +b.bank&attributes(attributes)
-    +e.logo
-      img(src=`assets/images/banks/${item}.svg`)
-    +e.name= name
+    +e.header
+      +e.logo
+        img(src=`assets/images/banks/${item}.svg`)
+      +e.name= name
+      +e.DL.options
+        +e.options-cell
+          dt Ставка
+          dd от 5.9%
+        +e.options-cell
+          dt Период
+          dd 5 лет
+        +e.options-cell
+          dt Сумма
+          dd 500 000 ₽
+        +e.options-cell
+          dt Переплата
+          dd 99 000 ₽
+        +e.options-cell
+          dt Платеж
+          dd 11 650 ₽ / мес.
+
     +e.footer
       +btn('button', '')._size_sm._theme_main._send-bid Отправить заявку
-      +e.SPAN.info Отправьте заявку сейчас и получите одобрение до конца дня
+      +e.footer-info Отправьте заявку сейчас и получите одобрение до конца дня
 
