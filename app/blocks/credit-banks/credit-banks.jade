@@ -1,0 +1,15 @@
+include ../../blocks/title/title
+
+mixin credit-banks(success)
+  +b.credit-banks&attributes(attributes)
+    +title(1, 2) Предложения по вашей заявке
+    if (success)
+      +e.success
+        +icon('check-mark', false).result-icon
+        span Отлично! Вам одобрен кредит
+    else
+      +e.denial
+        +icon('checked', false).result-icon
+        span Отказ! Вам не одобрен кредит
+
+    block

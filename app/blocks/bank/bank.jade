@@ -1,0 +1,9 @@
+mixin bank(item, name)
+  +b.bank&attributes(attributes)
+    +e.logo
+      img(src=`assets/images/banks/${item}.svg`)
+    +e.name= name
+    +e.footer
+      +btn('button', '')._size_sm._theme_main._send-bid Отправить заявку
+      +e.SPAN.info Отправьте заявку сейчас и получите одобрение до конца дня
+

@@ -1,0 +1,27 @@
+.bank
+  margin-bottom: 12px
+  background: #FFF
+  box-shadow: 0 24px 96px rgba(0, 0, 0, 0.02), 0 6px 18px rgba(0, 0, 0, 0.02), 0 2px 4px rgba(0, 0, 0, 0.02)
+  padding: 20px 16px
+
+  +above(768px)
+    margin-bottom: 20px
+    display grid
+    grid-template-columns 123px 123px 2fr 2fr 3fr
+
+  +above(1170px)
+    margin-bottom: 20px
+    display grid
+    grid-template-columns 246px 2fr 2fr 2fr 2fr 4fr
+
+  &__footer
+    text-align: center
+
+    +above(768px)
+      padding-top: 20px
+      border-top: 1px solid #DEDEDE
+      display flex
+      align-items center
+      justify-content space-between
+
+

@@ -1,0 +1,18 @@
+extends ../blocks/layout-default/layout-default
+include ../blocks/credit-banks/credit-banks
+include ../blocks/bank/bank
+include ../blocks/breadcrumbs/breadcrumbs
+
+block head
+  - var pageTitle = 'Credit Banks';
+  - var pageMod = 'Credit Banks';
+
+block content
+  - var banks = ['logo_alfa' ,'logo_gazprom' ,'logo_rgs' ,'logo_sber' ,'logo_tinkoff' ,'logo_uralsib'];
+  - var programmes = ['СберКредит наличными' ,'Автокредит' ,'Кредит наличными' ,'УралСиб кредит на покупку авто' ,'АльфаКредит наличными' ,'Автокредит от РГС'];
+  +breadcrumbs(getData('credit-banks-crumbs.json'))
+
+  +credit-banks(true)
+    each item, ind in banks
+      +bank(item, programmes[ind])
+
