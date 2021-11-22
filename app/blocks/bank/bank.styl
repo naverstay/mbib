@@ -5,17 +5,72 @@
   padding: 14px 16px 20px
 
   +above(768px)
-    padding-top: 20px
+    padding: 20px 30px 25px
     margin-bottom: 20px
 
     &__header
       display grid
       grid-template-columns 123px 123px 2fr 2fr 3fr
 
+      .bank__logo
+        grid-column-start 1
+        grid-column-end 3
+        grid-row 1
+
+      .bank__name
+        margin-bottom: 5px
+        grid-column-start 3
+        grid-column-end 6
+        grid-row 1
+        display flex
+        align-items center
+
+    .bank__options
+      padding-top: 8px
+      grid-column-start 1
+      grid-column-end 6
+      grid-row 2
+      display grid
+      grid-template-columns 3fr 3fr 3.75fr 3.75fr 4.25fr
+
+      &-cell
+        flex-flow column nowrap
+        padding-bottom: 10px
+
+        dd
+          font-size: 18px
+
+        dt
+          margin-bottom: 15px
+          font-size: 16px
+
   +above(1170px)
+    margin-bottom: 25px
+
     &__header
       display grid
-      grid-template-columns 246px 2fr 2fr 2fr 2fr 4fr
+      grid-template-columns 246px 2fr 2fr 2fr 2fr auto
+
+      .bank__logo
+        grid-column-start 1
+        grid-column-end 2
+        grid-row-start 1
+        grid-row-end 3
+        padding-top: 20px
+
+      .bank__name
+        margin-bottom: 20px
+        grid-column-start 2
+        grid-column-end 6
+        grid-row 1
+
+    .bank__options
+      padding-bottom: 5px
+      grid-column-start 2
+      grid-column-end 7
+      grid-row 2
+      display grid
+      grid-template-columns 2.75fr 2.75fr 3.25fr 3.25fr 6.5fr
 
   &__name
     font-weight: bold
@@ -31,7 +86,6 @@
       margin-bottom: 18px
 
       dt
-        width: 50%
         padding-right: 5px
         font-size: 14px
         line-height: 16px
@@ -39,13 +93,16 @@
         opacity: 0.65
 
       dd
-        width: 50%
         font-weight: bold
         font-size: 16px
         line-height: 19px
         display: flex
         align-items: center
         color: #191919
+
+      +below(767px)
+        dt, dd
+          width: 50%
 
   &__logo
     margin-bottom: 5px
@@ -74,9 +131,15 @@
       align-items center
       justify-content space-between
 
+      .btn
+        padding: 0 24px
+
       &-info
         padding-top: 0
         padding-right: 20px
         order -1
 
-
+    +above(1170px)
+      &-info
+        font-size: 16px
+        line-height: 19px

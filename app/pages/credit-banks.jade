@@ -2,17 +2,24 @@ extends ../blocks/layout-default/layout-default
 include ../blocks/credit-banks/credit-banks
 include ../blocks/bank/bank
 include ../blocks/breadcrumbs/breadcrumbs
+include ../blocks/title/title
 
 block head
   - var pageTitle = 'Credit Banks';
   - var pageMod = 'Credit Banks';
+  - var innerClass = 'credit-banks__inner';
 
 block content
   - var banks = ['logo_sber', 'logo_gazprom', 'logo_tinkoff', 'logo_uralsib', 'logo_alfa', 'logo_rgs' ];
   - var programmes = ['СберКредит наличными', 'Автокредит', 'Кредит наличными', 'УралСиб кредит на покупку авто', 'АльфаКредит наличными', 'Автокредит от РГС'];
-  +breadcrumbs(getData('credit-banks-crumbs.json'))
 
-  +credit-banks(true)
+  +b.credit-banks
+    +breadcrumbs(getData('credit-banks-crumbs.json'))
+
+    +title(1, 2) Предложения по вашей заявке
+    +e.success
+      +icon('check-mark', false).result-icon
+      span Отлично! Вам одобрен кредит
+
     each item, ind in banks
       +bank(item, programmes[ind])
-
