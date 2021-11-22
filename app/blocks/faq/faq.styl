@@ -45,7 +45,8 @@
 
     &-content.open
       .faq__name::before
-        transform rotate(135deg)
+        transform rotate(-45deg)
+        opacity: 1
 
     +above(1170px)
       padding-bottom: 22px
@@ -68,10 +69,11 @@
       margin-top: -5px
       width: 7px
       height: 7px
-      transition transform .3s
-      transform rotate(-45deg)
+      transition transform .3s, opacity .3s
+      transform rotate(135deg)
       border: solid #787878
       border-width: 2px 2px 0 0
+      opacity .5
 
     +above(768px)
       font-size: 17px
