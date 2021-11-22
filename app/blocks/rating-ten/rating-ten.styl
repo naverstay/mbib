@@ -1,0 +1,30 @@
+.rating-ten
+  display block
+  width: 100%
+
+  .switcher
+    margin-bottom: 12px
+    margin-right: 4px
+
+    &__text
+      font-size: 14px
+      width: 30px
+      padding: 0
+      text-align: center
+
+      +above(768px)
+        width: 32px
+
+  &__caption
+    font-size: 14px
+    line-height: 16px
+    color: #191919
+    margin-bottom: 12px
+
+  +above(768px)
+    display flex
+    flex-flow row nowrap
+    align-items center
+
+    &__caption
+      width: 165px

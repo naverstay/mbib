@@ -1,0 +1,10 @@
+include ../switcher/switcher
+
+mixin rating-ten(label, name, val)
+  - var valuesArray = [...Array(10).keys()];
+
+  +b.rating-ten&attributes(attributes)
+    +e.caption= label
+    +e.values
+      each v, vi in valuesArray
+        +switcher(type="radio" name= name value= (v + 1) id= (name + '_' + (v + 1)) role="radio" checked=(v + 1 === val) )._theme_gray._size_xs= v + 1

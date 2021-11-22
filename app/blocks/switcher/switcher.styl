@@ -38,6 +38,10 @@
     transition box-shadow .3s, background-color .3s, color .3s
     cursor pointer
 
+    &_size_xs
+      height 32px
+      line-height 33px
+
     &_size_s
       height 36px
       line-height 37px
@@ -112,7 +116,6 @@
         background-color $colorDecorative
         box-shadow 0 2px 0 darken($colorDecorative, 40)
 
-
       &:active,
       ^[0]__control:checked + &
         color #fff
@@ -124,6 +127,25 @@
       background-image none
       background-color #f8f8f8
       box-shadow none
+
+    &_theme_gray
+      color #191919
+      background-color $bgDecorative
+
+      a&:visited,
+      &:visited
+        color: #fff
+
+      &:hover,
+      &:focus
+        background-color #CC0033
+        color: #fff
+
+      &:active,
+      ^[0]__control:checked + &
+        color #fff
+        font-weight: 700
+        background-color #CC0033
 
     &_theme_simple
       position relative
