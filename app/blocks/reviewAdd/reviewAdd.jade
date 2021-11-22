@@ -1,0 +1,48 @@
+include ../akcent-block/akcent-block
+include ../title-block/title-block
+include ../form/form
+include ../lbl/lbl
+include ../geoplace/geoplace-list
+include ../input/input
+include ../select/select
+include ../popup/popup
+include ../social/social
+
+mixin reviewAdd()
+  +b.review-about&attributes(attributes)
+    +title(1, 2) Добавить отзыв об автомобиле
+
+    +form(name="review-add-form" action="" method="post").review--add-form
+      +e.form__row-caption Информация о вас
+      +e.row._align_left
+        +e.item._tb_3._span_4
+          +e.cell
+            +e.cell-name E-mail: <span class="marked">*</span>
+            +input(type="text" name="email" required)
+        +e.item._tb_3._span_4
+          +e.cell
+            +e.cell-name Регион: <span class="marked">*</span>
+            +e.item._fullwidth
+              +lbl(for="placeField" hidden)
+              +select(name="place" id="placeField" data-placeholder="Регион, город, населенный пункт" tabindex="1")._dont-use-modal.geoplace__field
+                option(value="")
+                option(value="pl1") Audi
+                option(value="pl2") BMW
+                option(value="pl3") Kia
+                option(value="pl4") Lada
+                option(value="pl5") ЗАЗ
+                option(value="pl6") ГАЗ
+                option(value="pl7") УАЗ
+                option(value="pl8") BMW
+                option(value="pl9") Kia
+                option(value="pl0") Lada
+                option(value="pl11") ЗАЗ
+                option(value="pl12") ГАЗ
+                option(value="pl13") УАЗ
+              +popup.geoplace__popup
+                +geoplace-list(getData('geoplace'))
+
+      +input(class="subscribe-form__input" type="text"  tabindex="0" placeholder="Введите свой Email адрес")
+
+      +e.form-send
+        +btn('button', '')._size_sm._theme_main._subscribe Авторизоваться и опубликовать
