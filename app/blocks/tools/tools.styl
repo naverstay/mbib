@@ -1,0 +1,120 @@
+.tools
+  padding: 0 30px 32px
+
+  +below(767px)
+    padding: 64px 0 24px
+
+  +above(1170px)
+    padding-top: 45px
+
+  &__wrap
+    +above(768px)
+      max-width 1140px
+      padding: 44px 30px 3px
+      background: #FFF
+      box-shadow: 0 24px 96px rgba(0, 0, 0, 0.02), 0 6px 18px rgba(0, 0, 0, 0.02), 0 2px 4px rgba(0, 0, 0, 0.02)
+
+    +above(1170px)
+      padding-top: 52px
+      padding-bottom: 12px
+
+  &__title
+    text-align: center
+
+    .title_level_2
+      font-size: 24px
+      line-height: 28px
+
+      +above(768px)
+        font-size: 28px
+        line-height: 33px
+
+      +above(1170px)
+        font-size: 32px
+        line-height: 37px
+
+  &__description
+    padding: 12px 20px 0
+    text-align: center
+    font-size: 16px
+    line-height: 24px
+    color: #787878
+
+    +above(1170px)
+      max-width 800px
+      margin: 0 auto
+      padding-top: 16px
+
+  &__list
+    list-style none
+
+    li
+      padding: 0 8px
+      margin-top: 24px
+      margin-bottom: 38px
+
+    +above(768px)
+      margin: 0 -8px
+      display flex
+      align-items stretch
+
+      li
+        width: 50%
+        margin-top: 32px
+
+    +above(1170px)
+      margin: 0 auto
+      max-width 970px
+
+      li
+        padding: 0 12px
+
+  &__item
+    height: 100%
+    display flex
+    flex-flow column nowrap
+    align-items stretch
+
+    &-footer
+      margin-top: auto
+
+      .btn
+        width: 200px
+        text-transform: none
+        font-size: 16px
+
+    &-preview
+      margin-bottom: 26px
+
+      img
+        display block
+        width: 100%
+
+      +above(768px)
+        margin-bottom: 20px
+
+    &-title
+      margin-bottom: 4px
+      font-weight: 600
+      letter-spacing: -.03em
+      font-size: 18px
+      line-height: 21px
+      display: flex
+      align-items: center
+      color: #191919
+
+      +above(768px)
+        margin-bottom: 8px
+        font-size: 21px
+        line-height: 25px
+
+    &-info
+      font-size: 14px
+      line-height: 21px
+      color: #787878
+      margin-bottom: 16px
+
+      +above(1170px)
+        font-size: 16px
+        line-height: 24px
+        margin-bottom: 24px

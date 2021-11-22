@@ -1,0 +1,20 @@
+extends ../blocks/layout-default/layout-default
+include ../blocks/page/page-footer/page-footer
+include ../blocks/channel/channel
+include ../blocks/uploads/uploads
+include ../blocks/faq/faq
+include ../blocks/tools/tools
+include ../blocks/page/page-indicators/page-indicators
+
+block head
+  - var pageTitle = 'For Business';
+  - var pageMod = 'For Business';
+  - var pageFull = true;
+
+block content
+  +channel()
+  +page-indicators(true)
+  +uploads()
+  +tools()
+  +faq(getData('faq-1'))
+  +page-footer(true)

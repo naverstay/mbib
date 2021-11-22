@@ -83,52 +83,36 @@
   &__body
     padding 20px 10px
     cursor pointer
-    display block
     position relative
-    +above(480px)
-      display flex
-      align-items center
-      width 100%
-      justify-content: space-between
+    display flex
+    align-items center
+    width 100%
+    justify-content: space-between
 
-      .payment_columns &
-        justify-content: flex-start
+    .payment_columns &
+      justify-content: flex-start
 
   &__number
     display inline-block
     vertical-align middle
-    width 20%
-    +above(480px)
-       width auto
+
   &__card
     display inline-block
     vertical-align middle
-    width calc(100% - 25%)
-    +above(480px)
-       width auto
+
   &__radio
     display inline-block
     vertical-align middle
-    width 15%
-    +above(480px)
-       width auto
 
   &__image
     display inline-block
     vertical-align middle
-    width calc(100% - 20%)
-    +above(480px)
-       width auto
+
     img
       max-width 76px
   &__close
-    position absolute
-    top 20px
-    right 15px
-    +above(480px)
-      position relative
-      top 0
-      right 0
+    position relative
+    margin-left: 10px
 
     &-icon
       width 18px

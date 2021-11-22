@@ -1,0 +1,24 @@
+include ../title/title
+include ../link/link
+
+mixin channel()
+  +b.channel
+    +e.wrapper
+      +e.deco
+        +e.rocket
+          +e.IMG.rocket-img(src='assets/images/for-business/rocket-y.svg' alt='')
+        +e.feedback.pos-1
+          +e.feedback-logo M
+          +e.feedback-caption Фид загружен
+          +e.feedback-text 127 новых объявлений созданы
+        +e.feedback.pos-2
+          +e.feedback-logo M
+          +e.feedback-caption Прайс-лист добавлен
+          +e.feedback-text 223 объявления обновлены
+
+      +e.content
+        +e.title
+          +title(1)._no-margin MBIB — эффективный канал продаж транспорта
+        +e.text Просто размещайте объявления транспорта, автозапчастей или шин, а привлечение покупателей и организацию процессов рекламы и продаж оставьте нам
+        +e.controls
+          +btn('button', '')._size_sm._theme_main.toggleError(data-error='url_feed_f') Начать продавать

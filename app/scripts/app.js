@@ -25,6 +25,7 @@ import '../blocks/reviewAbout/reviewAbout';
 import '../blocks/phone-field/phoneField';
 import '../blocks/phone-field/phoneField';
 import '../blocks/payment/payment-item';
+import '../blocks/faq/faq';
 import '../blocks/card/card';
 import '../blocks/credit/credit';
 import 'lazysizes';

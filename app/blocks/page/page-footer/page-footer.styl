@@ -4,18 +4,25 @@
   position: relative
 
   &::after
-    content: '';
-    position: absolute;
+    content: ''
+    position: absolute
     bottom: 0
     left: 50%
     height: 104px
     transform translateX(-50%)
     background url(../images/red_car.svg) right center no-repeat
-    background-size: auto 100%;
-    max-width: 387px;
+    background-size: auto 100%
+    max-width: 387px
     margin-left: -26px
     width: 100%
     opacity: .1
+
+  &.page-footer__city
+    +below(767px)
+      padding: 45px 5px 30px
+
+      .page-footer__name
+        margin-bottom: 24px
 
   +above(768px)
     padding-top 48px
@@ -27,12 +34,39 @@
       height: 110px
       max-width: calc(100% - 40px)
 
+    &.page-footer__city
+      .btn
+        max-width: 320px
+
+      &::before
+        content: ''
+        position: absolute
+        bottom: 0
+        right: 0
+        left: 0
+        height: 42px
+        opacity: .15
+        background: url(../images/city-mob.png) center center repeat-x
+        background-size: auto 100%
+
   +above(1170px)
     padding 64px 0
 
     &::after
       max-width: $wide
       height: 157px
+
+    &.page-footer__city
+
+      &::before
+        height: 68px
+        background-image: url(../images/city.png)
+
+      .page-footer__name
+        margin-bottom: 24px
+
+      .page-footer__col
+        padding-left: 12px
 
   .inner
     position: relative
@@ -108,6 +142,10 @@
       .btn
         max-width 185px
         height 41px
+
+      &.btn_wide
+        max-width 320px
+
     +above(1170px)
       max-width 585px
 
@@ -133,4 +171,4 @@
 
       &:hover
         color #c03
-        border-bottom-color: currentcolor;
+        border-bottom-color: currentcolor

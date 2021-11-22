@@ -2,20 +2,24 @@ include ../../form/form
 include ../../input/input
 include ../../btn/btn
 
-mixin page-footer()
-  +b.page-footer
+mixin page-footer(business)
+  +b.page-footer(class= business ? ' page-footer__city' : '')
     .inner
       +e.col
         +e.name Начните получать звонки покупателей прямо сейчас!
-        +e.text
-          b Первые 20 размещений объявлений — бесплатно,
-          span.dt-only
-            br
-          |  далее согласно #[a(href='#') тарифам]
+        if (business)
+          +form(name="feedfooter" action="" method="post").page-footer__form
+            +btn('button', '')._size_sm._theme_main._fullwidth._wide.toggleError(data-error='url_feed_f') Начать продавать
+        else
+          +e.text
+            b Первые 20 размещений объявлений — бесплатно,
+            span.dt-only
+              br
+            |  далее согласно #[a(href='#') тарифам]
 
-        +form(name="feedfooter" action="" method="post").page-footer__form
-          .page-footer__control
-            +input(class="page-footer__input" type="url" name="url_feed" id='url_feed_f' tabindex="0" required data-value-missing="Введите URL вашего фида" placeholder="Введите URL вашего фида")
-          +btn('button', '')._size_sm._theme_main._fullwidth.toggleError(data-error='url_feed_f') Выгрузить
+          +form(name="feedfooter" action="" method="post").page-footer__form
+            .page-footer__control
+              +input(class="page-footer__input" type="url" name="url_feed" id='url_feed_f' tabindex="0" required data-value-missing="Введите URL вашего фида" placeholder="Введите URL вашего фида")
+            +btn('button', '')._size_sm._theme_main._fullwidth.toggleError(data-error='url_feed_f') Выгрузить
 
         +e.snippet Остались вопросы? Звоните #[a(href="#") 8 800 505-53-81]

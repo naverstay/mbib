@@ -21,6 +21,6 @@ mixin modal-payment-method()
             +e.item._fullwidth
               +payment(getData('PaymentMethod'), 'columns')
 
-          +e.row._align_right
+          +e.row._align_right.mob-sticky
             +e.item._fullwidth
-              +btn('button')._theme_secondary Оплатить
+              +btn('button')._theme_secondary.mw-100p Оплатить

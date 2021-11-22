@@ -1,0 +1,170 @@
+.uploads
+  text-align: center
+
+  &__text
+    font-size: 16px
+    line-height: 24px
+    color: #787878
+
+    +below(767px)
+      padding: 0 20px
+
+  &__title
+    margin-bottom 12px
+
+    .title
+      font-size: 21px
+      line-height: 28px
+
+    +above(768px)
+      margin-bottom 8px
+
+      .title
+        font-size: 24px
+        line-height: 32px
+
+    +above(1170px)
+      margin-top: 40px
+      margin-bottom: 15px
+
+      .title
+        font-size: 28px
+        line-height: 36px
+
+  &__deco
+    pointer-events none
+    margin: 0 -15px
+    padding-right: 40px
+    border-bottom: 12px solid #49484D
+
+    +above(768px)
+      width: 290px
+      margin: 0
+      border: 0
+
+    +above(1170px)
+      width: 352px
+      margin-top: 20px
+      margin-left: 80px
+
+  &__controls
+    padding-top: 20px
+    padding-bottom: 35px
+
+    .btn
+      width: 200px
+      text-transform: none
+      font-size: 16px
+
+    +below(767px)
+      text-align: center
+
+  &__car
+
+    img
+      display block
+      width 100%
+      position: relative
+      margin-bottom: -1px
+      z-index: 1
+
+    &::before
+      content: ''
+      z-index: -1
+      position: absolute
+      left: 50%
+      top: 50%
+      border-radius: 100%
+      transform translate(-50%, -50%)
+      width: 100vw
+      height: 100vh
+      transition border-radius .3s
+      background: radial-gradient(110.62% 66.78% at 59.75% 40.75%, #FFF3B8 0%, #F4E28A 100%)
+
+      +below(767px)
+        border-radius: 0
+
+    +above(768px)
+      width: 290px
+      height: 260px
+      overflow: hidden
+      border-radius: 130px 0 0 130px
+      position: relative
+
+      &-ground
+        width: 260px
+        height: 52px
+        position: absolute
+        bottom: 0
+        left: 0
+        overflow hidden
+
+        &::before
+          content: ''
+          z-index: -1
+          position: absolute
+          bottom: 0
+          left: 0
+          border-radius: 100%
+          width: 260px
+          height: 260px
+          transition border-radius .3s
+          background: #49484D
+
+      img
+        position: absolute
+        bottom: 45px
+        left: -50px
+        right: -15px
+        width: auto
+
+      &::before
+        width: 260px
+        height: 260px
+        left: 0
+        transform: translate(0, -50%)
+
+    +above(1170px)
+      width: 460px
+      height: 300px
+      border-radius: 150px 0 0 150px
+
+      &-ground
+        height: 62px
+        width: 300px
+
+        &::before
+          width: 300px
+          height: 300px
+
+      img
+        bottom: 57px
+        width: 385px
+
+      &::before
+        width: 300px
+        height: 300px
+
+  &__wrapper
+    overflow: hidden
+    position: relative
+    padding: 30px 15px 0
+
+    +above(768px)
+      padding-bottom: 40px
+      max-width 1140px
+      margin: 0 auto
+      display flex
+
+  +above(768px)
+    padding: 50px 15px 0
+    text-align: left
+
+  &__content
+    +above(768px)
+      width: calc(100% - 290px)
+      padding-left: 40px
+      order 1
+
+    +above(1170px)
+      width: calc(100% - 500px)
