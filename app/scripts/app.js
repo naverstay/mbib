@@ -20,6 +20,7 @@ import '../blocks/add-photo/add-photo';
 import '../blocks/range/range';
 import '../blocks/calculator/calculator';
 import '../blocks/thumb-gallery/thumb-gallery';
+import '../blocks/credit-steps-slider/credit-steps-slider';
 import '../blocks/reviewBest/reviewBest';
 import '../blocks/reviewAbout/reviewAbout';
 import '../blocks/phone-field/phoneField';

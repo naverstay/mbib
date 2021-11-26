@@ -1,0 +1,14 @@
+include ../credit-steps-slider/credit-steps-slider
+include ../breadcrumbs/breadcrumbs
+include ../title/title
+
+mixin credit-steps(step)
+  - var steps = ['Заполните короткую онлайн-заявку', 'Мы сразу покажем самые выгодные предложения банков', 'Получаете решение онлайн, и машина мечты ваша!'];
+
+  +b.credit-bank-steps&attributes(attributes)
+    +breadcrumbs(getData('credit-calc-crumbs.json'))
+
+    +title(1, 2) Онлайн-заявка на кредит во все банки
+
+    +credit-steps-slider()
+
