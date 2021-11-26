@@ -9,6 +9,7 @@ include ../rating-ten/rating-ten
 include ../select/select
 include ../popup/popup
 include ../social/social
+include ../add-photo/add-photo
 
 mixin reviewAdd(user)
   +b.review-add&attributes(attributes)
@@ -97,6 +98,13 @@ mixin reviewAdd(user)
         +e.item._tb_6._span_3
           +e.LABEL.cell-name(for='acquisition_year') Год приобретения:
           +input(type="text" name="acquisition_year" placeholder="Год покупки авто" id="acquisition_year")
+
+      +e.row._align_left
+        +e.item._fullwidth
+          .photos-block
+            +e.LABEL.cell-name(for='mileage') Фотографии автомобиля:
+            +e.cell-description Вы можете менять порядок фотографий, перетаскивая их
+            +add-photo
 
       +e.row._align_left
         +e.item._fullwidth
