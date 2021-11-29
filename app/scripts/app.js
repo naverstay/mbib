@@ -1,5 +1,6 @@
+import 'babel-polyfill';
 import svg4everybody from 'svg4everybody';
-import $ from 'jquery';
+// import $ from 'jquery';
 import tab from '../blocks/tab/tab';
 import select from '../blocks/select/select';
 import tooltip from '../blocks/tooltip/tooltip';
@@ -20,6 +21,7 @@ import '../blocks/add-photo/add-photo';
 import '../blocks/range/range';
 import '../blocks/calculator/calculator';
 import '../blocks/thumb-gallery/thumb-gallery';
+import '../blocks/credit-steps-slider/credit-steps-slider';
 import '../blocks/reviewBest/reviewBest';
 import '../blocks/reviewAbout/reviewAbout';
 import '../blocks/phone-field/phoneField';

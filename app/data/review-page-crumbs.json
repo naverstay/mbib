@@ -4,14 +4,26 @@
     "text": "mbib.ru"
   },
   {
-    "href": "/reviews",
+    "href": "/",
     "text": "Отзывы"
   },
   {
-    "href": "/reviews",
+    "href": "/",
     "text": "Мои отзывы"
   },
   {
-    "text": "Добавить отзыв об автомобиле"
+    "href": "/",
+    "text": "Renault"
+  },
+  {
+    "href": "/",
+    "text": "Arkana"
+  },
+  {
+    "href": "/",
+    "text": "2019"
+  },
+  {
+    "text": "Отзыв автовладельца Renault Arkana 2019"
   }
 ]
