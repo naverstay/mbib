@@ -1,10 +1,11 @@
 include ../credit-steps-slider/credit-steps-slider
 include ../breadcrumbs/breadcrumbs
 include ../title/title
+include ../../blocks/faq/faq
+include ../../blocks/better-circs/better-circs
+include ../../blocks/best-offers/best-offers
 
-mixin credit-steps(step)
-  - var steps = ['Заполните короткую онлайн-заявку', 'Мы сразу покажем самые выгодные предложения банков', 'Получаете решение онлайн, и машина мечты ваша!'];
-
+mixin credit-steps(stepIndex)
   +b.credit-bank-steps&attributes(attributes)
     +breadcrumbs(getData('credit-calc-crumbs.json'))
 
@@ -12,3 +13,11 @@ mixin credit-steps(step)
 
     +credit-steps-slider()
 
+    +title(1, 2) Договоримся с банками на лучших условиях
+
+    +better-circs()
+
+    +e.faq
+      +faq(getData('faq-2'))
+
+    +best-offers()
