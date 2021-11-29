@@ -6,7 +6,7 @@
     "build": "webpack --mode production",
     "watch": "webpack --mode development --watch",
     "server": "webpack --watch --hot --mode development --env server",
-    "make-block": "babel-node make-block.js",
+    "make-block": "node make-block.mjs",
     "lint": "eslint --max-warnings=0 ./app/**/*.js"
   },
   "author": "Evgenii Kuznetsov <harsel1234@gmail.com> (https://github.com/evgen3)",
