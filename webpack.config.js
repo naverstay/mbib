@@ -221,23 +221,26 @@ module.exports = env => ({
     ]
   },
   optimization: {
-    minimizer: [
-      new CssnanoPlugin({
-        test: /\.css$/i,
-        sourceMap: false,
-        cssnanoOptions: {
-          preset: ['default', {
-            zindex: false
-          }]
-        }
-      }),
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true
-      }),
-      new OptimizeCSSAssetsPlugin({})
-    ]
+    minimize: false
   },
+  //optimization: {
+    //minimizer: [
+    //  new CssnanoPlugin({
+    //    test: /\.css$/i,
+    //    sourceMap: false,
+    //    cssnanoOptions: {
+    //      preset: ['default', {
+    //        zindex: false
+    //      }]
+    //    }
+    //  }),
+    //  new UglifyJsPlugin({
+    //    cache: true,
+    //    parallel: true
+    //  }),
+    //  new OptimizeCSSAssetsPlugin({})
+    //]
+  //},
   plugins: [
     new CleanWebpackPlugin(distPath),
     new CopyWebpackPlugin([{
