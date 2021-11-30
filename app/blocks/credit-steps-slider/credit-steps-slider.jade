@@ -1,7 +1,0 @@
-mixin credit-steps-slider()
-  - var steps = ['Заполните короткую онлайн-заявку', 'Мы сразу покажем самые выгодные предложения банков', 'Получаете решение онлайн, и машина мечты ваша!'];
-  +b.credit-steps-slider.js-credit-steps&attributes(attributes)
-    each step, index in steps
-      +e.step
-        +e.step-index!= (index + 1)
-        +e.step-text= step
