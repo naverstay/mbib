@@ -1,0 +1,9 @@
+include ../control-group/control-group
+include ../control/control
+
+mixin sort-claim()
+	+b.sort&attributes(attributes).block
+		+e.type
+			+control-group._flex
+				+control(href="")._active Активные
+				+control(href="") Закрытые

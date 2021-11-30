@@ -1,0 +1,7 @@
+mixin upload()
+	- const classNames = attributes.class;
+	- attributes.class = '';
+	+b.LABEL.upload&attributes(attributes).btn(for="uploadFile", class=classNames)
+		+icon('tap', false).icon._tap
+		span Добавить фотографии
+		+e.INPUT.control#uploadFile(type="file" name="images" accept="image/*" multiple)

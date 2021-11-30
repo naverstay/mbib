@@ -1,0 +1,19 @@
+include ../../../node_modules/bemto.pug/bemto.pug
+include ../mixins/jade-injected
+include ../icon/icon
+include ../page/page
+include ../header/header
+include ../content/content
+include ../footer/footer
+include ../scripts/scripts
+
+doctype html
+html(lang='ru')
+  include ../head/head
+  +page
+    +header
+    +content
+      .inner(class= (innerClass ? innerClass : '') + (pageFull ? " full" : ""))
+        block content
+    +footer
+    +scripts(['app.min.js'])

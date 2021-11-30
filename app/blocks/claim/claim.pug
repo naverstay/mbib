@@ -1,0 +1,19 @@
+include ../form/form
+include ../area/area
+include ../btn/btn
+
+mixin claim(data)
+	+form.claim__&attributes(attributes)
+		+e.row
+			+e.TIME.date(datetime="2017-07-05") #{data.date}
+			+e.status #{data.status}
+			+e.type #{data.type}
+			+e.author
+				+e.A.author-link(href=data.author.link) #{data.author.name}
+		+e.row
+			+e.P.text #{data.text}
+			+e.comment
+				+area(name="comment" placeholder="Комментарий").claim__area
+			+e.buttons
+				+btn(type="submit")._theme_main._side_s.claim__sbm Утвердить
+				+btn(type="button")._theme_tertirary._side_s Отклонить

@@ -1,0 +1,56 @@
+.credit-steps-slider
+  position: relative
+  padding-bottom: 50px
+
+  +above(768px)
+    display flex
+    justify-content space-between
+    align-items center
+
+  .slick-dots
+    bottom: 0
+    display block
+
+    li
+      height: 20px
+      width: 12px
+      margin: 0 2px
+
+      &.slick-active > button::before
+        background: #787878
+
+      button
+        &::before
+          content: ''
+          position: absolute
+          top: 50%
+          left: 50%
+          margin: -4px 0 0 -4px
+          border-radius: 100%
+          width: 8px
+          height: 8px
+          border: 1px solid #787878
+
+  &__step
+    display inline-flex !important
+    flex-flow column nowrap
+    align-items center
+
+    &-index
+      width: 56px
+      height: 56px
+      margin-bottom: 12px
+      border-radius: 100%
+      background: #CC0033
+      font-size: 24px
+      line-height: 28px
+      color: #FFF
+      display flex
+      align-items center
+      justify-content center
+
+    &-text
+      font-size: 16px
+      line-height: 21px
+      text-align: center
+      color: #191919

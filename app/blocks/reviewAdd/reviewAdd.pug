@@ -1,0 +1,109 @@
+include ../akcent-block/akcent-block
+include ../title-block/title-block
+include ../form/form
+include ../lbl/lbl
+include ../geoplace/geoplace-list
+include ../input/input
+include ../area/area
+include ../rating-ten/rating-ten
+include ../select/select
+include ../popup/popup
+include ../social/social
+
+mixin reviewAdd(user)
+  +b.review-add&attributes(attributes)
+    +title(1, 2) Добавить отзыв об автомобиле
+
+    +form(name="review-add-form" action="" method="post").review-add__form
+      +e.row-caption Информация о вас
+      +e.row._align_left
+        if (user)
+          +e.item._span_flex
+            +e.cell-name.mob-hidden &nbsp;
+            +e.SPAN.user-name
+              +icon('user', false).user-icon
+              span Руслан Масленков
+        else
+          +e.item._tb_6._span_4
+            +e.LABEL.cell-name(for='email') E-mail: <span class="marked">*</span>
+            +input(type="text" name="email" placeholder="Введите ваш E-Mail адрес" id="email" required)
+        +e.item._tb_6._span_4
+          +e.LABEL.cell-name(for='placeField') Регион: <span class="marked">*</span>
+          +select(name="place" id="placeField" data-placeholder="Регион" tabindex="1")._search
+            option(value="")
+            option(value="pl1") Москва
+            option(value="pl2") Белгород
+            option(value="pl3") Новгород
+
+      +e.row-caption Информация о машине
+      +e.row._align_left
+        +e.item._tb_6._span_3
+          +e.LABEL.cell-name(for='brand') Марка: <span class="marked">*</span>
+          +select()(name="brand" id="brand" data-placeholder="Марка" tabindex="2")._search._for-brand
+            option(value="")
+            option(value="m1" data-brand="audi") Audi
+            option(value="m2" data-brand="bmw") BMW
+            option(value="m3" data-brand="kia") Kia
+            option(value="m4" data-brand="lada") Lada
+            option(value="m5" data-brand="zaz") ЗАЗ
+            option(value="m6" data-brand="gaz") ГАЗ
+            option(value="m7" data-brand="uaz") УАЗ
+            option(value="m8" data-brand="bmw") BMW
+            option(value="m9" data-brand="kia") Kia
+            option(value="m0" data-brand="lada") Lada
+            option(value="m11" data-brand="zaz") ЗАЗ
+            option(value="m12" data-brand="gaz") ГАЗ
+            option(value="m13" data-brand="uaz") УАЗ
+        +e.item._tb_6._span_3
+          +e.LABEL.cell-name(for='model') Модель: <span class="marked">*</span>
+          +select(name="model" id="model" data-placeholder="Модель" tabindex="3")._search
+            option(value="")
+            option(value="v1") CL
+            option(value="v2") CLX
+            option(value="v3") MX
+            option(value="v4") MX5
+            option(value="v5") RL
+        +e.item._tb_6._span_3
+          +e.LABEL.cell-name(for='generation') Поколение: <span class="marked">*</span>
+          +select(name="generation" id="generation" data-placeholder="Поколение" data-minimum-results-for-search="Infinity" tabindex="4")._search._has-image
+            option(value="")
+            option(value="all") Все
+            option(value="gen1" data-image="gen1") VII, 2012 - н.в.
+            option(value="gen2" data-image="gen2") VI, 2009-2012
+        +e.item._tb_6._span_3
+          +e.LABEL.cell-name(for='ownertype') Руль: <span class="marked">*</span>
+          +select(name="ownertype" id="ownertype" data-placeholder="Руль" data-minimum-results-for-search="Infinity" tabindex="5")._search
+            option(value="")
+            option(value="bk") Левый
+            option(value="fl") Правый
+
+      +e.row-caption Оценка автомобиля
+      +rating-ten('Внешний вид:', 'appearance', 8)
+      +rating-ten('Салон:', 'salon', 9)
+      +rating-ten('Двигатель:', 'engine', 0)
+      +rating-ten('Ходовая часть:', 'chassis', 0)
+
+      +e.row-caption Мой отзыв
+      +e.row._align_left
+        +e.item._tb_6._span_3
+          +e.LABEL.cell-name(for='mileage') Пробег, км:
+          +input(type="text" name="mileage" placeholder="Пробег авто" id="email")
+        +e.item._tb_6._span_3
+          +e.LABEL.cell-name(for='highway_consumption') Расход по трассе, л/100км:
+          +input(type="text" name="highway_consumption" placeholder="Расход авто по трассе" id="highway_consumption")
+        +e.item._tb_6._span_3
+          +e.LABEL.cell-name(for='city_consumption') Расход по городу, л/100км:
+          +input(type="text" name="city_consumption" placeholder="Расход авто по городу" id="city_consumption")
+        +e.item._tb_6._span_3
+          +e.LABEL.cell-name(for='acquisition_year') Год приобретения:
+          +input(type="text" name="acquisition_year" placeholder="Год покупки авто" id="acquisition_year")
+
+      +e.row._align_left
+        +e.item._fullwidth
+          +e.LABEL.cell-name(for='comment') Текстовый отзыв:
+          +area(name="comment" placeholder="Расскажите о том, как выбирали автомобиль: какие машины у вас были раньше? \n" +
+          "Что хотели получить от вашего будущего автомобиля, когда искали подходящий вариант на рынке? \n" +
+          "Какие автомобили рассматривали? Чем ваш выбор оказался лучше конкурентов?").area-comment
+
+      +e.form-send
+        +btn('button', '')._size_sm._theme_main._subscribe= user ? 'Опубликовать' : 'Авторизоваться и опубликовать'
