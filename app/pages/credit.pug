@@ -1,0 +1,11 @@
+extends ../blocks/layout-default/layout-auth
+include ../blocks/breadcrumbs/breadcrumbs
+include ../blocks/credit/credit
+
+block head
+  - var pageTitle = 'MBIB';
+  - var pageMod = 'credit';
+
+block content
+  +breadcrumbs(getData('index-crumbs'))
+  +credit

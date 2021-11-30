@@ -1,0 +1,6 @@
+include ../title/title
+
+mixin title-block(arg = {level: '2'})
+	+b.title-block&attributes(attributes).block
+		+title(arg.level).title-block__title
+			block

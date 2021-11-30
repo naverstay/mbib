@@ -1,0 +1,16 @@
+include ../input/input
+include ../btn/btn
+include ../text/text
+
+mixin modal-confirm()
+	+b.modal#modalConfirm&attributes(attributes)._size_s.mfp-with-anim.mfp-hide
+		+e.head
+			+e.H5.title Требуется подверждение
+			+e.SPAN.close.mfp-close
+				+icon('close', false).close-icon
+		+e.inner
+			+e.body
+				+text Удалить это объявление?
+			+e.footer._align_right
+				+btn('button')._theme_secondary Отменить
+				+btn('button')._theme_main._space_left Удалить

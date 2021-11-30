@@ -1,0 +1,12 @@
+extends ../blocks/layout-default/layout-default
+include ../blocks/credit-steps/credit-steps
+
+block head
+  - var pageTitle = 'Credit Calc';
+  - var pageMod = 'Credit Calc';
+  - var innerClass = 'credit-calc__inner';
+
+block content
+
+  +credit-steps(1)
+

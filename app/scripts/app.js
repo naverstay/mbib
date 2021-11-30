@@ -1,5 +1,6 @@
+import 'babel-polyfill';
 import svg4everybody from 'svg4everybody';
-import $ from 'jquery';
+// import $ from 'jquery';
 import tab from '../blocks/tab/tab';
 import select from '../blocks/select/select';
 import tooltip from '../blocks/tooltip/tooltip';

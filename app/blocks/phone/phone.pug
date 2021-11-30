@@ -1,0 +1,17 @@
+mixin phone(data, show)
+	if !data.show
+		-var mod = '_hidenumber'
+	else
+		-var mod = ''
+	if show
+		-var mod = ''
+
+	+b.A.phone&attributes(attributes)(href="", class=mod)
+		if mod !== ''
+			+icon('phone', false).icon
+			+e.placeholder Показать телефон
+			+e.number #{data.phone}
+		else
+			+icon('phone', false).icon
+			+e.number #{data.phone}
+

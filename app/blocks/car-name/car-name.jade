@@ -1,8 +1,0 @@
-include ../brand/brand
-
-mixin car-name(level, name, icon)
-	+b.car-name&attributes(attributes)(class="_level_"+level)
-		-var iconName = level === 1 ? icon + "_b" : icon
-		+e.SPAN.icon
-			+brand(iconName)
-		+e.SPAN.text #{name}

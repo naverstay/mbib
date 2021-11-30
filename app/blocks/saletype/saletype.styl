@@ -2,38 +2,38 @@
 	margin-top 60px
 	display block
 	background-color #fff
-	
+
 	.tab&
 		margin-bottom 0
-	
+
 	&__simple,
 	&__premium
 		position relative
 		margin -20px -10px 30px
 		padding 20px 8px
-			
+
 		+above(768px)
 			margin -20px -30px 30px
 			padding 20px 30px
-		
+
 	&__simple
 		background #e4f2dd url(../images/bg-sale.png) right bottom no-repeat
 		box-shadow inset 0 2px 0 #b4e19d
 		background-size contain
-		
+
 		+above(768px)
 			padding-bottom 127px
 			background-size auto
-			
+
 		+above(980px)
 			padding-bottom 20px
-		
+
 	&__premium
 		padding-bottom 118px
 		background #fff3b5 url(../images/bg-city.png) bottom right repeat-x
 		box-shadow inset 0 2px 0 #ffe03e
 		overflow hidden
-		
+
 		&::before
 			position absolute
 			z-index 1
@@ -47,36 +47,36 @@
 			content ''
 			background url(../images/bg-shop.png) 0 bottom no-repeat
 			background-size contain
-			
+
 			+above(400px)
 				right 0
-				
+
 			+above(768px)
 				padding-bottom 0
 				width 514px
 				height 369px
-				
+
 			+above(980px)
 				right -70px
-				
+
 			+above(1170px)
 				right 0
-			
+
 		+above(400px)
 			padding-bottom 80px
-			
+
 		+above(768px)
 			padding-bottom 237px
-			
+
 		+above(980px)
 			padding-bottom 20px
-		
+
 	&__tab-simple.tab__head-item_active
 		position relative
 		z-index 1
 		background-color #e4f2dd
 		box-shadow inset 0 2px 0 #b4e19d, 0 4px 0 #e4f2dd
-		
+
 	&__tab-premium.tab__head-item_active
 		position relative
 		z-index 1
@@ -86,51 +86,51 @@
 	&__content
 		display flex
 		min-height 224px
-		
+
 		+above(768px)
 			min-height 284px
-		
+
 	&__fig
 		display none
 		margin-right 45px
-		
+
 		+above(768px)
 			display block
-		
+
 	&__text
 		margin-top 15px
 		width 420px
 		font-size 14px
 		line-height 1.5
-		
+
 		+above(768px)
 			margin-top 35px
 			font-size 16px
 			font-weight bold
-		
+
 		^[0]__premium &
 			width 100%
-			
+
 			+above(980px)
 				width 350px
 				margin-left 20px
-		
+
 		h3
 			margin-bottom 14px
 			font-size 28px
 			font-weight bold
 			line-height 1.1
-			
+
 			+above(768px)
 				margin-bottom 24px
 				font-size 34px
-			
+
 			^[0]__premium &
 				color #c53226
-		
+
 		p
 			margin-bottom 1.5em
-			
+
 	&__price-wrap
 		position absolute
 		bottom 0
@@ -143,25 +143,25 @@
 		content ''
 		background url(../images/bg-price.png) 0 bottom no-repeat
 		background-size contain
-	
+
 		// +above(600px)
 			// right 35%
-			
+
 		+above(400px)
 			right 180px
-			
+
 		+above(768px)
 			right 348px
 			// padding-bottom 0
 			width 378px
 			height 304px
-			
+
 		+above(980px)
 			right 270px
-			
+
 		+above(1170px)
 			right 348px
-				
+
 	&__price
 		position absolute
 		bottom 54%
@@ -169,7 +169,7 @@
 		font-size 16px
 		color #ffe984
 		transform translate(50%, 0)
-		
+
 		+above(768px)
 			top 89px
 			left 50%
@@ -179,28 +179,28 @@
 			font-size 20px
 			font-weight normal
 			transform none
-		
+
 	&__price-num
 		font-size 20px
-		
+
 		+above(768px)
 			font-size 40px
-	
+
 	&__sbm
 		margin-bottom 20px
-		
+
 		+above(768px)
 			height $heightXXL_t
 			font-size 30px
-			
+
 		+above(980px)
 			font-size 34px
-		
+
 		.btn__text
 			width 210px
 			text-align left
 			vertical-align middle
-			
+
 			+above(480px)
 				width auto
 				text-align center

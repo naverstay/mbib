@@ -5,10 +5,10 @@
 	width 100%
 	background-color #fff
 	border 1px dashed #ababab
-	
+
 	+above(768px)
 		padding 24px
-		
+
 	&__control
 		position absolute
 		top -9999px
@@ -16,7 +16,7 @@
 		font-size 0
 		clip rect(1px 1px 1px 1px)
 		opacity 0
-	
+
 	&__item
 		position relative
 		margin 0 1px 2px
@@ -29,15 +29,15 @@
 		text-align center
 		background-color #fff
 		border 1px solid $colorDecorative
-		
+
 		img
 			max-width 100%
 			max-height 100%
-		
+
 		+above(768px)
 			width 19.63%
 			height 75px
-		
+
 		+above(980px)
 			width 12.5%
 			min-width 116px
@@ -53,18 +53,18 @@
 			color #fff
 			background-color $colorSecondary
 			background-image linear-gradient(to right, $colorSecondary, #528AE0)
-			
+
 			+above(980px)
 				height auto
-			
+
 			+above(980px)
 				flex-direction column
 				width 23.6%
 				height 100px
-				
+
 		&_error
 			border-color $colorMain
-				
+
 	&__item-remove
 		position absolute
 		top 3px
@@ -73,7 +73,7 @@
 		cursor pointer
 		background-color #fff
 		border-radius 50%
-		
+
 		&::before,
 		&::after
 			position absolute
@@ -84,13 +84,13 @@
 			height 20px
 			content ''
 			background-color $colorMain
-			
+
 		&::before
 			transform rotate(-45deg)
-			
+
 		&::after
 			transform rotate(45deg)
-			
+
 	&__progress
 		position absolute
 		right 0
@@ -98,49 +98,49 @@
 		bottom 0
 		height 4px
 		background-color rgba(#fff, .7)
-		
+
 	&__progress-bar
 		display block
 		height 100%
 		background-color $colorSecondary
-		
+
 	&__progress-bar_success
 		height 100%
 		background-color $colorAkcent
 
 	&__icon
 		display inline-block
-		
+
 		+above(980px)
 			margin-right 0
 			margin-bottom 10px
 			display block
-		
+
 		&:last-child
 			margin-bottom 0
-		
+
 		&_tap
 			margin-right 20px
 			size 38px
 			fill #fff
-			
+
 			+above(980px)
 				margin-right 0
-			
+
 		&_drive
-			sprite $drive
-			
+			sprite($drive)
+
 		&_forward
-			sprite $forward
-			
+			sprite($forward)
+
 		&_left
-			sprite $left
-		
+			sprite($left)
+
 		&_db
-			sprite $db
-			
+			sprite($db)
+
 		&_df
-			sprite $df
-			
+			sprite($df)
+
 		&_right
-			sprite $right
+			sprite($right)

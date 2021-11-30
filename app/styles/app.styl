@@ -1,3 +1,5 @@
+@import '../../node_modules/rupture/rupture/index.styl'
+
 $mob = 370px
 $tab = 768px
 $dt = 980px
@@ -8,19 +10,18 @@ rupture.scale-names = 'xs' 's' 'm' 'l' 'xl'
 rupture.mobile-cutoff = $tab
 rupture.desktop-cutoff = $wide - 1
 
-import('sprites/*')
-import('helpers/svg-size')
+@import 'sprites/*'
+@import 'helpers/svg-size'
 @import 'helpers/variables'
 @import 'helpers/mixins'
 @import 'helpers/fonts'
 @import 'helpers/optimize'
 @import 'helpers/typography'
-
 @import '../../node_modules/rangeslider-pure/dist/range-slider.css'
 @import '../../node_modules/fotorama/fotorama.css'
-@import '../../node_modules/notyf/dist/notyf.min.css'
+@import '../../node_modules/notyf/notyf.min.css'
 @import '../../node_modules/magnific-popup/dist/magnific-popup.css'
-import('../blocks/**/*')
+@import '../blocks/**/*'
 
 .roboto-rub
   font-family Roboto, sans-serif
@@ -29,3 +30,5 @@ import('../blocks/**/*')
 
   +below($wide)
     display none
+
+@import 'brands'

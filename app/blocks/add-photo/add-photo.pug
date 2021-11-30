@@ -1,0 +1,34 @@
+mixin add-photo(arg = {withoutInput : false})
+	+b.add-photo&attributes(attributes)
+		if !arg.withoutInput
+			+e.LABEL.item._main(for="addPhotoField")
+				+icon('tap', false).icon._tap
+				span Добавить фотографии
+				+e.INPUT.control#addPhotoField(type="file" name="images" accept="image/*" multiple)
+		+e.item._placeholder
+			+e.SPAN.icon._drive
+		+e.item._placeholder
+			+e.SPAN.icon._forward
+		+e.item._placeholder
+			+e.SPAN.icon._left
+		+e.item._placeholder
+			+e.SPAN.icon._db
+		+e.item._placeholder
+			+e.SPAN.icon._df
+		+e.item._placeholder
+			+e.SPAN.icon._right
+		+e.item._error
+			img(src="assets/images/bmw/3.jpg", alt="")
+			+e.SPAN.item-remove
+			+e.SPAN.progress
+				+e.SPAN.progress-bar(style="width:0%")
+		+e.item
+			img(src="assets/images/bmw/3.jpg", alt="")
+			+e.SPAN.item-remove
+			+e.SPAN.progress
+				+e.SPAN.progress-bar(style="width:73%")
+		+e.item
+			img(src="assets/images/bmw/3.jpg", alt="")
+			+e.SPAN.item-remove
+			+e.SPAN.progress
+				+e.SPAN.progress-bar._success(style="width:100%")
