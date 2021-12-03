@@ -1,4 +1,5 @@
 include ../credit-steps-slider/credit-steps-slider
+include ../credit-steps-form/credit-steps-form
 include ../breadcrumbs/breadcrumbs
 include ../title/title
 include ../../blocks/faq/faq
@@ -12,6 +13,8 @@ mixin credit-steps(stepIndex)
     +title(1, 2) Онлайн-заявка на кредит во все банки
 
     +credit-steps-slider()
+
+    +credit-steps-form(1)
 
     +title(1, 2) Договоримся с банками на лучших условиях
 
