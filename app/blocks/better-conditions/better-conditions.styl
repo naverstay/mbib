@@ -1,0 +1,80 @@
+.better-conditions
+  display block
+  max-width 1005px
+  margin: 0 auto 5px
+  padding: 20px 7px
+
+  +above(768px)
+    margin-bottom: 30px
+    padding: 0
+
+  &__wrap
+    position: relative
+
+  &__row
+    +above(768px)
+      display grid
+      grid-template-columns 1fr 1fr
+      grid-column-gap 10px
+      padding-bottom: 8px
+
+  &__col
+    position: relative
+    padding-left: 64px
+    min-height 48px
+    margin-bottom: 24px
+
+  &__name
+    font-weight: 700
+    font-size: 18px
+    line-height: 24px
+    color: #191919
+    margin-bottom: 4px
+    letter-spacing: -.015em
+
+  &__text
+    font-size: 16px
+    line-height: 24px
+    display: flex
+    align-items: center
+    color: #787878
+
+  &__icon
+    position: absolute
+    top: 0
+    left: 0
+    border-radius: 100%
+    width: 48px
+    height: 48px
+    background: #CC0033
+    display flex
+    align-items center
+    justify-content center
+
+  +above(768px)
+    &__col
+      padding-left: 84px
+
+    &__icon
+      height: 64px
+      width: 64px
+
+
+  +above(1170px)
+    &__wrap
+      padding: 13px 30px
+
+    &__row
+      padding-bottom: 18px
+
+    &__col
+      padding-left: 98px
+
+    &__name
+      font-size: 21px
+      line-height: 25px
+
+    &__icon
+      height: 64px
+      width: 64px
+

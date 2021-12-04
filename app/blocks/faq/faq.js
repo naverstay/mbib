@@ -1,4 +1,4 @@
-import $ from 'jquery';
+// import $ from 'jquery';
 
 const faqItem = (() => {
   $('.js-faq-item').on('click', function () {

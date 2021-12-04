@@ -1,18 +1,75 @@
 .credit-bank-steps
+  overflow: hidden
+
+  &.inner
+    padding-top: 16px
 
   .title.title_level_1
+    font-size: 24px
+    line-height: 28px
+    margin-top: 16px
     text-align: center
+
+  .title.title_level_2
+    font-size: 24px
+    line-height: 32px
+
+    +below(767px)
+      text-align: center
+
+
+  +above(768px)
+
+    .title.title_level_1
+      text-align: center
+      margin-top: 30px
+      margin-bottom: 36px
+      font-size: 28px
+      line-height: 33px
+
+    .title.title_level_2
+      font-size: 28px
+      line-height: 42px
+      margin-bottom: 0
+      margin-top: -5px
+
+  +above(1170px)
+    overflow: visible
+
+    &.inner
+      padding-top: 16px
+
+    .title.title_level_1
+      margin-top: 32px
+      margin-bottom: 40px
+      font-size: 32px
+      line-height: 37px
+
+    .title.title_level_2
+      font-size: 32px
+      margin-bottom: 10px
 
   &__faq
     background: #fff
-    margin: 0 -20px
+    margin: 0 -20px 48px
     padding: 32px 16px 10px
 
+    .faq__item:last-child
+      margin-bottom: 0
+
+    .faq__name
+      font-weight: 400
+
     +above(768px)
-      padding: 36px 30px 20px
+      padding: 36px 0 2px
+      margin: 0 0 50px
 
     +above(1170px)
-      padding: 48px 97px 30px
+      margin: 0 15px
+      padding: 8px 67px 20px
+
+      .faq__title
+        margin-top: 40px
 
     .faq
       margin: 0

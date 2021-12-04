@@ -1,4 +1,4 @@
-import $ from 'jquery';
+// import $ from 'jquery';
 
 const cardList = (() => {
 	$('.card-list__phone-button').on('click', function(){

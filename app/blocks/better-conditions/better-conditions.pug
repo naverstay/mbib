@@ -1,25 +1,25 @@
-mixin better-circs()
-  +b.better-circs&attributes(attributes)
-    +e.wrap.inner(class= business ? ' wide' : '')
+mixin better-conditions()
+  +b.better-conditions&attributes(attributes)
+    +e.wrap
       +e.row
         +e.col
-          +e.icon(class= (business ? ' icon_round' : ''))
-            img(src="assets/images/icons/look" + (business ? '-red' : '') + ".svg", alt="")
+          +e.icon
+            img(src="assets/images/icons/verified.svg", alt="")
           +e.name Низкие ставки
           +e.text Мы предлагаем нашим пользователям специальные условия: от 6.5% годовых
         +e.col
-          +e.icon(class= (business ? ' icon_round' : ''))
-            img(src="assets/images/icons/phone" + (business ? '-red' : '') + ".svg", alt="")
+          +e.icon
+            img(src="assets/images/icons/clock.svg", alt="")
           +e.name Подача заявки онлайн
           +e.text Обратиться во все крупнейшие банки сегодня можно за считанные минуты не выходя из дома
       +e.row
         +e.col
-          +e.icon(class= (business ? ' icon_round' : ''))
-            img(src="assets/images/icons/hand-shake" + (business ? '-red' : '') + ".svg", alt="")
+          +e.icon
+            img(src="assets/images/icons/list.svg", alt="")
           +e.name Решение от банка за 10 минут
           +e.text Через считаные минуты вы начнете получать ответы на вашу заявку от банков
         +e.col
-          +e.icon(class= (business ? ' icon_round' : ''))
-            img(src="assets/images/icons/verified" + (business ? '-red' : '') + ".svg", alt="")
+          +e.icon
+            img(src="assets/images/icons/sandglass.svg", alt="")
           +e.name Срок до 5 лет
           +e.text Возможность оформить кредит на выгодных условиях с максимальным сроком 5 лет

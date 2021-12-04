@@ -258,7 +258,9 @@ module.exports = env => ({
       $: 'jquery',
       jQuery: 'jquery',
       'window.$': 'jquery',
-      'window.jQuery': 'jquery'
+      'window.jQuery': 'jquery',
+      'nouislider': 'nouislider',
+      'window.nouislider': 'nouislider'
     }),
     new SpriteLoaderPlugin({
       plainSprite: true,

@@ -1,2 +1,100 @@
 .best-offers
-  display block
+  display flex
+  align-items center
+  flex-flow column nowrap
+  overflow: hidden
+  margin-bottom: 48px
+
+  &__logo
+    width: 100%
+    height: 72px
+    display flex
+    align-items center
+    justify-content center
+    padding: 10px 12px
+    background: #FFFFFF
+    box-shadow: 0px 24px 96px rgba(0, 0, 0, 0.02), 0px 6px 18px rgba(0, 0, 0, 0.02), 0px 2px 4px rgba(0, 0, 0, 0.02)
+
+    img
+      max-width 100%
+      max-height 100%
+      display block
+
+  &__description
+    padding: 15px 0
+    font-size: 16px
+    line-height: 24px
+    color: #787878
+
+    p
+      margin-bottom: 10px
+
+  &__banks-items
+    margin: 0 -100px
+    width 408px
+    display flex
+    flex-flow row wrap
+    align-items center
+    justify-content center
+
+    li
+      flex 0 0 33.33%
+      padding: 6px
+
+      &.bank-1
+      &.bank-3
+      &.bank-4
+      &.bank-6
+        transform translateY(50%)
+
+  +above(768px)
+    flex-flow row nowrap
+
+    &__info
+      width: 50%
+
+    &__banks
+      width: 50%
+
+    &__logo
+      height: 96px
+      padding: 30px 28px
+
+    &__banks-items
+      width: 100%
+      margin: 0
+      justify-content flex-end
+
+      li
+        flex 0 0 50%
+        padding: 12px 8px
+
+        &.bank-5
+          transform translateY(50%)
+
+        &.bank-4
+        &.bank-6
+          transform none
+
+  +above(1171px)
+    padding: 72px 0 20px
+
+    &__info
+      padding: 30px 70px 0
+
+    &__logo
+      padding: 30px 20px
+
+    &__banks-items
+      justify-content center
+
+      li
+        flex 0 0 33.33%
+        padding: 12px 15px
+
+        &.bank-5
+          transform none
+
+        &.bank-4
+        &.bank-6
+          transform translateY(50%)

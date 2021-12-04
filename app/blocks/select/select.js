@@ -1,4 +1,4 @@
-import $ from 'jquery';
+// import $ from 'jquery';
 import 'magnific-popup';
 import 'select2';
 import checkIsMobile from '../../scripts/isMobile.js';

@@ -17,6 +17,44 @@
     width: 100%
     opacity: .1
 
+  &.page-footer__credit
+    .page-footer__name
+      margin-bottom: 18px
+
+    .page-footer__col
+      +below(767px)
+        padding: 0 7px
+
+      +above(768px)
+        max-width 52%
+
+    .btn
+      font-size: 16px
+      text-transform: none
+
+      +above(768px)
+        min-width 320px
+
+    &::after
+      display none
+
+    &::before
+      content: ''
+      position: absolute
+      bottom: 0
+      right: 0
+      left: 0
+      height: 42px
+      opacity: .15
+      background: url(../images/city-mob.png) center center repeat-x
+      background-size: auto 100%
+
+    +above(768px)
+
+      &::after
+        display block
+        background-image: url(../images/shop-top.png)
+
   &.page-footer__city
     +below(767px)
       padding: 45px 5px 30px
@@ -27,6 +65,10 @@
   +above(768px)
     padding-top 48px
     padding-bottom 52px
+
+    &.page-footer__credit
+      padding-top: 35px
+      padding-bottom: 40px
 
     &::after
       opacity: 1
@@ -67,6 +109,20 @@
 
       .page-footer__col
         padding-left: 12px
+
+    &.page-footer__credit
+      .page-footer__name
+        font-size: 36px
+        line-height: 42px
+
+      .page-footer__text
+        max-width 600px
+        font-size: 21px
+        line-height: 32px
+
+      .page-footer__col
+        max-width: 73%
+        padding: 10px 15px
 
   .inner
     position: relative

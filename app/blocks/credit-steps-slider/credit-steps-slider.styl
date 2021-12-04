@@ -1,11 +1,14 @@
 .credit-steps-slider
   position: relative
-  padding-bottom: 50px
+  padding-bottom: 43px
 
   +above(768px)
-    display flex
+    display grid
+    grid-template-columns 1fr 1fr 1fr
+    grid-column-gap 10px
     justify-content space-between
-    align-items center
+    align-items flex-start
+    padding: 0 25px 20px
 
   .slick-dots
     bottom: 0
@@ -48,9 +51,43 @@
       display flex
       align-items center
       justify-content center
+      position: relative
+
+      +above(1170px)
+        margin-bottom: 16px
 
     &-text
       font-size: 16px
       line-height: 21px
       text-align: center
       color: #191919
+
+      +above(768px)
+        max-width 220px
+        margin: 0 auto
+
+      +above(1170px)
+        max-width 310px
+
+    +above(768px)
+      .credit-steps-slider__step-index
+        &::after
+          content: ''
+          position: absolute
+          top: 50%
+          height: 1px
+          width: 140px
+          margin: 0 24px
+          background: #C5C5C5
+          left: 100%
+
+      &:last-child .credit-steps-slider__step-index::after
+        display none
+
+    +above(1170px)
+      .credit-steps-slider__step-index::after
+        width: 254px
+        margin: 0 40px
+
+  +above(1170px)
+    padding: 0 5px 20px

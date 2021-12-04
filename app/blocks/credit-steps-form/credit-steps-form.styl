@@ -1,2 +1,119 @@
+.credit-steps-wrapper
+  background: #FFF
+  box-shadow: 0 24px 96px rgba(0, 0, 0, 0.02), 0px 6px 18px rgba(0, 0, 0, 0.02), 0px 2px 4px rgba(0, 0, 0, 0.02)
+  padding: 32px 16px 16px
+  max-width 675px
+  margin: 7px auto 48px
+  position: relative
+
+  .btn
+    text-transform: none
+
+  &__deco
+    pointer-events none
+    z-index: -1
+    position: absolute
+    bottom: 100%
+    margin-bottom: -37px
+    left: 50%
+    width: calc(100vw + 160px)
+    transform translateX(-50%)
+    border-bottom: 8px solid #49484D
+
+    &::after,
+    &::before
+      content: ''
+      position: absolute
+      bottom: -1px
+      width: 235px
+      height: 95px
+      background-repeat: no-repeat
+      background-position: 100% 100%;
+      background-size: contain
+
+    &::after
+      right: -20px
+      background-image: url(../images/credit-steps/car-yellow.svg)
+
+
+    &::before
+      left: -20px
+      background-image: url(../images/credit-steps/car-red.svg)
+      transform: scale(-1, 1)
+
+  &__title
+    font-weight: 600
+    font-size: 21px
+    line-height: 25px
+    margin-bottom: 24px
+    letter-spacing: -.025em
+
+  +below(767px)
+    .form__row
+      margin-bottom: 8px
+
+    .form__item
+      + .form__item
+        margin-top: 5px
+
+  +above(768px)
+    padding: 24px 16px 16px
+    margin-bottom: 64px
+
+    &__deco
+      margin-bottom: -70px
+
+      &::after
+        right: -50px
+
+      &::before
+        left: -50px
+
+      &::after,
+      &::before
+        height: 107px
+        width: 50vw
+
+    &__title
+      margin-bottom: 32px
+
+  +above(1170px)
+    max-width 1005px
+    padding: 40px 30px 30px
+    margin-bottom: 80px
+    margin-top: 26px
+
+    &__deco
+      margin-bottom: -80px
+
+      &::after
+        right: -145px
+
+      &::before
+        left: -145px
+
+      &::after,
+      &::before
+        height: 145px
+
+  +above(1600px)
+    &__deco
+      width: 100vw
+
 .credit-steps-form
-  display block
+
+  .lbl
+    font-weight: normal
+
+  .form__row_footer
+    +above(768px)
+      justify-content: flex-end
+
+      .form__item
+        justify-content: flex-end
+
+    .btn
+      min-width 164px
+
+      +below(767px)
+        width: 100%

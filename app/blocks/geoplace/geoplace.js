@@ -1,4 +1,4 @@
-import $ from 'jquery';
+// import $ from 'jquery';
 import 'select2';
 
 const geoplace = (() => {
@@ -6,7 +6,7 @@ const geoplace = (() => {
 		width : '100%',
 		dropdownParent: $('#modalPlace .modal__body')
 	});;
-	
+
 	const placePopup = $('.popup.geoplace__popup');
 	const area = $('.geoplace__area');
 	const listItems = $('.geoplace-list__item');

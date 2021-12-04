@@ -1,3 +1,35 @@
-mixin credit-steps-form()
-  +b.credit-steps-form&attributes(attributes)
-    block
+include ../form/form
+include ../select/select
+include ../lbl/lbl
+include ../btn/btn
+include ../input/input
+include ../noUiSlider/noUiSlider
+
+mixin credit-steps-form(step)
+  +b.credit-steps-wrapper&attributes(attributes)
+    +e.deco
+    +e.title Заявка на подбор кредита
+    +form(name="credit-step-form" action="" method="post").credit-steps-form
+      +e.row
+        +e.item._tb_6
+          +e.range.credit-calc__range
+            +e.range-field
+              +lbl(for="credit-sum") Сумма кредита:
+              +input(type="text" id="credit-sum" value="50 000" placeholder="Сумма кредита")
+              +noUiSlider(data-range="100000,300000,1000000,3000000" data-step="10000" data-values="0,33.33,66.66,100" data-target='credit-sum' data-format='currency')
+
+        +e.item._tb_6
+          +e.range.credit-calc__range
+            +e.range-field
+              +lbl(for="credit-period") Срок кредита:
+              +select(id="credit-period" name="brand" data-placeholder="Срок кредита" tabindex="1")._simple
+                option(value="")
+                option(value="1") 1 год
+                option(value="2") 2 года
+                option(value="4") 4 года
+                option(value="5") 5 лет
+              +noUiSlider(data-range="1,2,4,5" data-step="1" data-values="0,33.33,66.66,100" data-format='date')
+
+      +e.row._footer
+        +e.item._tb_4
+          +btn('button', '')._size_lg._theme_secondary Далее

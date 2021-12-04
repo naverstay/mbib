@@ -1,4 +1,4 @@
-import $ from 'jquery';
+// import $ from 'jquery';
 
 const paymentItem = (() => {
     const item = $('.js-payment-item')

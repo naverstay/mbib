@@ -23,3 +23,16 @@ mixin page-footer(business)
             +btn('button', '')._size_sm._theme_main._fullwidth.toggleError(data-error='url_feed_f') Выгрузить
 
         +e.snippet Остались вопросы? Звоните #[a(href="#") 8 800 505-53-81]
+
+mixin page-footer-credit()
+  +b.page-footer.page-footer__credit
+    .inner
+      +e.col
+        +e.name Не упустите шанс получить автомобиль мечты
+        +e.text Проверьте возможность получения кредита, это бесплатно и не займет больше трех минут
+
+        +form(name="feedfooter" action="" method="post").page-footer__form
+          .page-footer__control
+            +btn('button', '')._size_sm._theme_main._fullwidth.toggleError(data-error='url_feed_f') Проверить
+
+        +e.snippet Остались вопросы? Звоните #[a(href="#") 8 800 505-53-81]

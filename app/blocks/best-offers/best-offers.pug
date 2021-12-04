@@ -1,16 +1,17 @@
 include ../title/title
 
 mixin best-offers()
-  - var banks = ['logo_sber', 'logo_gazprom', 'logo_tinkoff', 'logo_uralsib', 'logo_alfa', 'logo_rgs' ];
+  - var banks = ['logo_sber', 'logo_tinkoff', 'logo_vtb', 'logo_gazprom', 'logo_alfa', 'logo_uralsib', 'logo_rgs' ];
 
   +b.best-offers&attributes(attributes)
     +e.info
-      +title(1, 2) Получите предложения от 30+ крупнейших банков
+      +title(2, 2) Получите предложения от 30+&nbsp;крупнейших банков
       +e.description
         p Онлайн-заявка позволяет выбрать наиболее подходящие условия, сэкономив время и силы: обратиться во все банки можно не выходя из дома
         p 92% отправленых с нашего сайта заявок получают одобрение банком
-      +e.banks
-        +e.UL.banks-items
-          each item in banks
-            +e.LI.bank(class= ('bank-' + (index + 1)))
+    +e.banks
+      +e.UL.banks-items
+        each item, index in banks
+          +e.LI.bank(class= ('bank-' + (index + 1)))
+            +e.logo
               +e.IMG(src= `assets/images/banks/${item}.svg`)

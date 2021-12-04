@@ -1,4 +1,4 @@
-import $ from 'jquery';
+// import $ from 'jquery';
 import '../../../node_modules/fotorama/fotorama';
 export default {
 	init() {

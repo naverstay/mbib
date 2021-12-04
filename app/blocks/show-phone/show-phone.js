@@ -1,4 +1,4 @@
-import $ from 'jquery';
+// import $ from 'jquery';
 
 const showPhone = (() => {
 	$('.show-phone__button').on('click', function(){
