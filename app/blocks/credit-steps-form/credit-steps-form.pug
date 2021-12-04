@@ -11,28 +11,31 @@ mixin credit-steps-form(step)
     +e.deco
     +e.title Заявка на подбор кредита
     +form(name="credit-step-form" action="" method="post").credit-steps-form
-      +e.row
-        +e.item._tb_6
-          +e.range.credit-calc__range
-            +e.range-field
-              +lbl(for="credit-sum") Сумма кредита:
-              +input(type="text" id="credit-sum" value="50 000" placeholder="Сумма кредита")
-              +noUiSlider(data-range="100000,300000,1000000,3000000" data-step="10000" data-values="0,33.33,66.66,100" data-target='credit-sum' data-format='currency')
+      if (step < 2)
+        +e.row
+          +e.item._tb_6
+            +e.range.credit-calc__range
+              +e.range-field
+                +lbl(for="credit-sum") Сумма кредита:
+                +input(type="text" id="credit-sum" value="50 000" placeholder="Сумма кредита")
+                +noUiSlider(data-range="100000,300000,1000000,3000000" data-step="10000" data-values="0,33.33,66.66,100" data-target='credit-sum' data-format='currency')
 
-        +e.item._tb_6
-          +e.range.credit-calc__range
-            +e.range-field
-              +lbl(for="credit-period") Срок кредита:
-              +select(id="credit-period" name="brand" data-placeholder="Срок кредита" tabindex="1")._simple
-                option(value="")
-                option(value="1") 1 год
-                option(value="2") 2 года
-                option(value="4") 4 года
-                option(value="5") 5 лет
-              +noUiSlider(data-range="1,2,4,5" data-step="1" data-values="0,33.33,66.66,100" data-format='date')
+          +e.item._tb_6
+            +e.range.credit-calc__range
+              +e.range-field
+                +lbl(for="credit-period") Срок кредита:
+                +select(id="credit-period" name="credit-period" data-placeholder="Срок кредита" tabindex="1")._simple
+                  option(value="")
+                  option(value="1") 1 год
+                  option(value="2") 2 года
+                  option(value="4") 4 года
+                  option(value="5") 5 лет
+                +noUiSlider(data-range="1,2,4,5" data-step="1" data-values="0,33.33,66.66,100" data-format='date')
 
-      if (step === 2)
-        +e.caption Личные данные
+      if (step === 1)
+        +e.caption
+          span.step-name Личные данные
+          span.step-counter!= `Шаг ${step} из 4`
         +e.row
           +e.item._tb_6
             +e.input-field
@@ -54,10 +57,102 @@ mixin credit-steps-form(step)
               +lbl(for="credit-phone") Номер телефона:
               +input(type="text" id="credit-phone").js-phone-field__control
 
-      +e.row._footer
-        if (step > 1)
+      if (step === 2)
+        +e.caption
+          span.step-name Дополнительный контакт
+          span.step-counter!= `Шаг ${step} из 4`
+        +e.info Лучше указать номер родственника или друга. Такую заявку можно отправить в большее количество банков, а вероятность одобрения кредита будет выше.
+        +e.row
           +e.item._tb_6
+            +e.input-field
+              +lbl(for="credit-guarantor") ФИО контактного лица:
+              +input(type="text" id="credit-guarantor")
+
+          +e.item._tb_6
+            +e.input-field
+              +lbl(for="credit-guarantor-phone") Номер телефона:
+              +input(type="text" id="credit-guarantor-phone").js-phone-field__control
+
+      if (step === 3)
+        +e.caption
+          span.step-name Паспортные данные
+          span.step-counter!= `Шаг ${step} из 4`
+        +e.row
+          +e.item._tb_6
+            +e.input-field
+              +lbl(for="credit-passport") Серия и номер паспорта:
+              +input(type="text" id="credit-passport")
+
+          +e.item._tb_6
+            +e.input-field
+              +lbl(for="credit-passport-date") Дата выдачи паспорта:
+              +input(type="text" id="credit-passport-date")
+
+        +e.row
+          +e.item._tb_6
+            +e.input-field
+              +lbl(for="credit-passport-code") Код подразделения:
+              +input(type="text" id="credit-passport-code")
+
+          +e.item._tb_6
+            +e.input-field
+              +lbl(for="credit-passport-office") Кем выдан:
+              +input(type="text" id="credit-passport-office")
+
+        +e.row
+          +e.item._tb_6
+            +e.input-field
+              +lbl(for="credit-passport-birthday") Дата рождения:
+              +input(type="text" id="credit-passport-birthday")
+
+          +e.item._tb_6
+            +e.input-field
+              +lbl(for="credit-passport-birthplace") Место рождения:
+              +input(type="text" id="credit-passport-birthplace")
+
+      if (step === 4)
+        +e.caption
+          span.step-name Место работы
+          span.step-counter!= `Шаг ${step} из 4`
+        +e.row
+          +e.item._tb_6
+            +e.input-field
+              +lbl(for="credit-employment-type") Тип занятости:
+              +select(id="credit-employment-type" name="employment-type" data-placeholder="Тип занятости" tabindex="1")._simple
+                  option(value="")
+                  option(value="1") Работа по найму
+                  option(value="2") Директор
+          +e.item._tb_6
+            +e.input-field
+              +lbl(for="credit-work-start") Начало работы на текущем месте:
+              +input(type="text" id="credit-work-start" )
+
+        +e.row
+          +e.item._tb_6
+            +e.input-field
+              +lbl(for="credit-monthly-income") Ежемесячный доход:
+              +select(id="credit-monthly-income" name="monthly-income" data-placeholder="Ежемесячный доход" tabindex="1")._simple
+                option(value="")
+                option(value="1") Работа по найму
+                option(value="2") Директор
+          +e.item._tb_6
+            +e.input-field
+              +lbl(for="credit-income-proof") Подтверждение дохода:
+              +select(id="credit-income-proof" name="income-proof" data-placeholder="Подтверждение дохода" tabindex="1")._simple
+                option(value="")
+                option(value="1") НДФЛ-1
+                option(value="2") НДФЛ-2
+
+      +e.row._footer
+        if (step === 1)
+          +e.item._tb_7
             +checkbox(name="accept_rules" id="accept_rules") Я принимаю условия передачи информации
 
-        +e.item._tb_4
-          +btn('link', '')(href=`credit-step-${step + 1}.html`)._size_lg._theme_secondary Далее
+        +e.item
+          if (step === 4)
+            +btn('link', '')(href='credit-banks.html')._size_lg._theme_main Просмотреть предложения
+
+          else
+            +btn('link', '')(href=`credit-step-${step + 1}.html`)._size_lg._theme_secondary Далее
+            if (step === 2)
+              span.skip-link Пропустить
