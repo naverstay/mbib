@@ -3,6 +3,7 @@ include ../select/select
 include ../lbl/lbl
 include ../btn/btn
 include ../input/input
+include ../checkbox/checkbox
 include ../noUiSlider/noUiSlider
 
 mixin credit-steps-form(step)
@@ -30,6 +31,33 @@ mixin credit-steps-form(step)
                 option(value="5") 5 лет
               +noUiSlider(data-range="1,2,4,5" data-step="1" data-values="0,33.33,66.66,100" data-format='date')
 
+      if (step === 2)
+        +e.caption Личные данные
+        +e.row
+          +e.item._tb_6
+            +e.input-field
+              +lbl(for="credit-name") Имя:
+              +input(type="text" id="credit-name")
+
+          +e.item._tb_6
+            +e.input-field
+              +lbl(for="credit-sername") Фамилия:
+              +input(type="text" id="credit-sername")
+        +e.row
+          +e.item._tb_6
+            +e.input-field
+              +lbl(for="credit-email") E-mail:
+              +input(type="text" id="credit-email")
+
+          +e.item._tb_6
+            +e.input-field
+              +lbl(for="credit-phone") Номер телефона:
+              +input(type="text" id="credit-phone").js-phone-field__control
+
       +e.row._footer
+        if (step > 1)
+          +e.item._tb_6
+            +checkbox(name="accept_rules" id="accept_rules") Я принимаю условия передачи информации
+
         +e.item._tb_4
-          +btn('button', '')._size_lg._theme_secondary Далее
+          +btn('link', '')(href=`credit-step-${step + 1}.html`)._size_lg._theme_secondary Далее

@@ -6,6 +6,9 @@
   margin: 7px auto 48px
   position: relative
 
+  .lbl
+    font-family Roboto, sans-serif
+
   .btn
     text-transform: none
 
@@ -41,12 +44,30 @@
       background-image: url(../images/credit-steps/car-red.svg)
       transform: scale(-1, 1)
 
+  .form__input-field
+    width: 100%
+
+    +below(767px)
+      margin-bottom: -5px
+
+    +above(768px)
+      margin-bottom: 10px
+
+  .form__caption
+    font-weight: 600
+    font-size: 18px
+    line-height: 21px
+    margin-top: 12px
+    margin-bottom: 20px
+
+    +above(768px)
+      margin-top: 25px
+
   &__title
     font-weight: 600
     font-size: 21px
     line-height: 25px
     margin-bottom: 24px
-    letter-spacing: -.025em
 
   +below(767px)
     .form__row
@@ -83,6 +104,10 @@
     margin-bottom: 80px
     margin-top: 26px
 
+    .lbl
+      font-size: 16px
+      line-height: 19px
+
     &__deco
       margin-bottom: -80px
 
@@ -107,9 +132,11 @@
 
   .form__row_footer
     +above(768px)
-      justify-content: flex-end
+      align-items center
+      justify-content space-between
 
-      .form__item
+      .form__item:last-child
+        margin-left: auto
         justify-content: flex-end
 
     .btn

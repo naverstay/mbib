@@ -1,0 +1,15 @@
+extends ../blocks/layout-default/layout-default
+include ../blocks/credit-steps/credit-steps
+include ../blocks/page/page-footer/page-footer
+
+block head
+  - var pageTitle = 'Credit Calc';
+  - var pageMod = 'Credit Calc';
+  - var innerClass = 'credit-calc__inner';
+  - var pageFull = true;
+
+block content
+
+  +credit-steps(2)
+
+  +page-footer-credit()
