@@ -16,16 +16,19 @@ mixin nav(data, settings = { })
                         +e.link-text #{child.name}
         else
           +e.item
-            if item.childs
-              +e.BUTTON.trigger
-                +e.SPAN.link-text #{item.name}
-                +icon('down-arrow').trigger-icon
+            if item.name === 'splitter'
+              +e.splitter
             else
-              +e.A.link(href=item.href)
-                +e.link-text #{item.name}
-            if item.childs
-              +e.UL.dropdown
-                each child in item.childs
-                  +e.LI.dropdown-item
-                    +e.A.dropdown-link(href=child.href)
-                      +e.link-text #{child.name}
+              if item.childs
+                +e.BUTTON.trigger
+                  +e.SPAN.link-text #{item.name}
+                  +icon('down-arrow').trigger-icon
+              else
+                +e.A.link(href=item.href)
+                  +e.link-text #{item.name}
+              if item.childs
+                +e.UL.dropdown
+                  each child in item.childs
+                    +e.LI.dropdown-item
+                      +e.A.dropdown-link(href=child.href)
+                        +e.link-text #{child.name}

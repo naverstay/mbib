@@ -10,6 +10,9 @@
   &__list
     font-size 16px
 
+    .sidenav__nav &
+      padding-top: 10px
+
     +above(768px)
       display flex
       height 100%
@@ -40,28 +43,26 @@
         margin-right 0
 
   &__link
-    padding 10px
     display block
     align-self center
     text-decoration none
     color #fff
+    margin-bottom 3px
+    padding 12px 0 12px 20px
+    transition background-color .3s
 
-    +above(768px)
-      padding 10px 20px
-      display flex
-      height 100%
-      align-items center
-      justify-content center
-      transition background-color .3s, color .3s
+    //+above(768px)
+    //  padding 10px 20px
+    //  display flex
+    //  height 100%
+    //  align-items center
+    //  justify-content center
+    //  transition background-color .3s, color .3s
 
     &:hover,
     ^[0]__item:hover &
       color #fff
       background-color $colorMain
-
-    ^[0]_sidenav ^[0]__item:hover & {
-      background-color transparent
-    }
 
     ^[0]_footer &
       padding 10px 0
@@ -75,14 +76,8 @@
         background-color transparent
 
     ^[0]_sidenav &
-      padding-right 0
-      padding-left 0
-      display inline-block
+      display block
       text-align left
-
-      &:hover
-        color $colorMain
-        background-color transparent
 
   &__link-text
     display inline-block
@@ -123,14 +118,25 @@
     color $colorSecondary
 
     .sidenav &
-      padding 8px 0 8px 20px
-      color #fff
+      color: #fff
+      margin-bottom 3px
+      padding 12px 0 12px 20px
+      transition background-color .3s
+
+      &:hover
+        color: #fff
+        background-color $colorMain
 
     &:hover
       color $colorMain
 
+  &__splitter
+    margin: 16px 16px 24px
+    height: 1px
+    background: rgba(#fff, .23)
+
   &__trigger
-    padding 10px 0
+    padding 12px 0 12px 20px
     display flex
     justify-content space-between
     color #fff
@@ -143,3 +149,7 @@
     width 12px
     height 12px
     fill currentColor
+    transition transform .3s
+
+    .nav__item_open &
+      transform rotate(180deg)

@@ -35,7 +35,7 @@
   &__close
     position absolute
     top 20px
-    left 30px
+    left 24px
     width 34px
     height 34px
     cursor pointer
@@ -79,7 +79,7 @@
     top 0
     right 100%
     bottom 0
-    padding 73px 30px 30px
+    padding 73px 14px 30px
     overflow-y auto
     width 100%
     max-width 360px
@@ -93,28 +93,40 @@
       transform translate3D(100%, 0, 0)
 
   &__action
+    position: relative
     margin-bottom 14px
-    padding 20px 0
+    padding 20px 0 15px
     font-size 16px
-    border-bottom 1px solid rgba(#fff, .23)
+
+    &::after
+      content: ''
+      position: absolute
+      height: 1px
+      right: 16px
+      left: 16px
+      bottom: 0
+      background-color rgba(#fff, .23)
 
   &__action-link
     position relative
-    margin-bottom 5px
-    padding 5px 0 5px 30px
+    margin-bottom 3px
+    padding 12px 0 12px 56px
+    transition background-color .3s
     display block
     text-decoration none
+    font-size: 16px
+    line-height: 18px
     color #fff
-    transition color .3s
 
     &:hover
-      color $colorMain
+      background-color $colorMain
 
   &__action-icon
     position absolute
-    top 2px
-    left 0
+    top: 50%
+    left: 20px
     size 20px
+    transform translateY(-50%)
     fill currentcolor
     transition fill .3s
 
