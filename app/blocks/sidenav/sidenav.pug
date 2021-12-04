@@ -10,15 +10,21 @@ mixin sidenav()
       +e.action
         +e.A.action-link(href="")._pseudo
           +icon('user', false).action-icon
-          +e.action-text Войти
-        +e.A.action-link(href="")
+          +e.action-text Руслан Масленков
+        //-+e.A.action-link(href="")
           +icon('top', false).action-icon
           +e.action-text Поднять вверх
         +e.A.action-link(href="")._pseudo
-          +icon('like', false).action-icon
-          +e.action-text В избранное
+          +icon('list', false).action-icon
+          +e.action-text Мои объявления
         +e.A.action-link(href="")._pseudo
           +icon('download', false).action-icon
           +e.action-text Пакетная загрузка
+        +e.A.action-link(href="")._pseudo
+          +icon('add-list', false).action-icon
+          +e.action-text Разместить прайс-лист
+        +e.A.action-link(href="")._pseudo
+          +icon('like', false).action-icon
+          +e.action-text В избранное
       +e.nav
         +nav(getData('nav'))._sidenav
