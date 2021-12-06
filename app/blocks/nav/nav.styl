@@ -43,21 +43,20 @@
         margin-right 0
 
   &__link
-    display block
-    align-self center
-    text-decoration none
+    padding 10px 20px
+    display flex
+    height 100%
+    align-items center
+    justify-content center
+    transition background-color .3s, color .3s
     color #fff
-    margin-bottom 3px
-    padding 12px 0 12px 20px
-    transition background-color .3s
 
-    //+above(768px)
-    //  padding 10px 20px
-    //  display flex
-    //  height 100%
-    //  align-items center
-    //  justify-content center
-    //  transition background-color .3s, color .3s
+    .sidenav__nav &
+      align-self center
+      text-decoration none
+      margin-bottom 3px
+      padding 12px 20px
+      transition background-color .3s
 
     &:hover,
     ^[0]__item:hover &
