@@ -1,0 +1,87 @@
+.upload-progress
+  display block
+  padding-bottom: 6px
+
+  +above(768px)
+    padding-bottom: 20px
+
+  &__header
+    position: relative
+    display flex
+    align-items center
+    flex-flow row nowrap
+    height: 24px
+
+  &__file
+    font-weight: 600
+    font-size: 16px
+    max-width 28%
+    overflow: hidden
+    text-overflow ellipsis
+    white-space: nowrap
+
+  &__gray
+    color: #787878
+
+  &__red
+    color: $colorMain
+
+  &__green
+    color: #78B64B
+
+  &__info
+    margin-left: auto
+    display: flex
+    align-items: center
+    max-width 70%
+
+    .upload-progress__btn
+      margin-right: 10px
+      margin-left: 0
+      padding: 3px
+
+  &__controls
+    display flex
+    padding-left: 8px
+
+  &__btn
+    display block
+    cursor: pointer
+    width: 24px
+    height: 24px
+    border-radius: 100%
+    margin-left: 12px
+    padding: 5px
+    transition background-color .3s
+
+    svg
+      max-width 100%
+      max-height 100%
+
+    &_gray
+      background: #EAEAEA
+
+    &_red
+      background: rgba(204, 0, 51, 0.15)
+
+    &_green
+      background: linear-gradient(90deg, rgba(120, 182, 75, 0.25) 0%, rgba(108, 168, 64, 0.25) 100%)
+
+  &__line
+    position: relative
+    background: rgba(#3870C6, 0.25)
+    border-radius: 2px
+    height: 4px
+    margin-top: 12px
+
+  &__val
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    background: #3870C6
+    border-radius: inherit
+    transition width .3s
+
+    &.upload-progress__success
+      background: linear-gradient(90deg, #78B64B 0%, #6CA840 100%)

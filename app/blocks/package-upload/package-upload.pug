@@ -1,0 +1,52 @@
+include ../../blocks/upload-block/upload-block
+include ../form/form
+include ../select/select
+include ../lbl/lbl
+include ../btn/btn
+include ../input/input
+include ../upload-progress/upload-progress
+
+mixin package-upload()
+  +b.package-upload&attributes(attributes)
+    .inner
+      +upload-block()
+        +form(name="upload" action="" method="post").package-upload__form
+          .package-upload__title Пакетная загрузка
+          +e.row
+            +e.item._fullwidth
+              +e.input-field
+                +lbl(for="feed-link") Ссылка на фид:
+                +input(type="text" id="feed-link" )
+
+          +e.row._footer
+            +e.item._span_flex
+              +btn('label', '')._size_lg._theme_secondary
+                input(type='file').visuallyhidden
+                span Добавить файл
+            +e.item._span_flex
+              +btn('button', '')._size_lg._theme_main Создать
+
+      +upload-block()
+        .package-upload__title Добавленные файлы
+        +upload-progress(33, 'feed.xls', 'осталось 25 секунд', 'pause')
+
+      +upload-block()
+        .package-upload__title Добавленные файлы
+        +upload-progress(0, 'feed.xls', 'Ошибка загрузки', 'fail')
+
+      +upload-block()
+        .package-upload__title Добавленные файлы
+        +upload-progress(100, 'feed.xls', '', 'success')
+
+      +upload-block()
+        .package-upload__title Добавленные файлы
+        +upload-progress(0, 'feed.xls', 'Отправлен на модерацию', 'moderate')
+
+      +upload-block()
+        .package-upload__title Добавленные файлы
+        +upload-progress(0, 'feed.xls', 'Отклонен модератором (Причина: пустой документ)', 'rejected')
+
+      +upload-block()
+        .package-upload__title Добавленные файлы
+        +upload-progress(0, 'feed.xls', 'Успешно загружен', 'confirmed')
+

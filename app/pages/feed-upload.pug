@@ -1,0 +1,18 @@
+extends ../blocks/layout-default/layout-default
+include ../blocks/page/page-header/page-header
+include ../blocks/page/page-indicators/page-indicators
+include ../blocks/page/page-funds/page-funds
+include ../blocks/page/page-works/page-works
+include ../blocks/page/page-footer/page-footer
+include ../blocks/package-upload/package-upload
+
+block head
+  - var pageTitle = 'Feed Upload';
+  - var pageMod = 'Feed Upload';
+  - var pageFull = true
+
+block content
+  +package-upload()
+  +page-funds()
+  +page-works()
+  +page-footer()
