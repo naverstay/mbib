@@ -40,6 +40,11 @@ mixin upload-progress(percent, file, info, state)
           +e.SPAN.btn(class= '_green')
             +icon('check-green', false)
 
+      else if (state === 'confirmed')
+        +e.SPAN.controls
+          +e.SPAN.btn(class= '_red')
+            +icon('remove', false)
+
     if (state === 'pause' || state === 'success')
       +e.line
         +e.val(style="width: " + percent + "%" class= percent === 100 ? ' __success' : '')

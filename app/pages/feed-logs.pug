@@ -1,0 +1,12 @@
+extends ../blocks/layout-default/layout-default
+include ../blocks/package-upload/package-upload
+include ../blocks/feed-details/feed-details
+
+block head
+  - var pageTitle = 'Feed Logs';
+  - var pageMod = 'Feed Logs';
+  - var pageFull = true
+
+block content
+  +package-upload(true)
+  +feed-details()

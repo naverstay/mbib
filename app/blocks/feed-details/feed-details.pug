@@ -1,0 +1,57 @@
+include ../../blocks/table-feed/table-feed
+
+mixin feed-details()
+  +b.feed-details&attributes(attributes)
+    .inner
+      +e.title Телефоны салонов
+      +e.scroller
+        +table-feed()
+          +e.THEAD.head
+            +e.TR.row._head
+              +e.TH.head-cell Номер телефона
+              +e.TH.head-cell Количество объявлений
+          +e.TBODY.body
+            +e.TR.row
+              +e.TD.cell(data-th="Телефон") +79612966010
+              +e.TD.cell(data-th="Количество") 2
+
+      +e.title Логи импорта
+      +e.scroller
+        +table-feed()
+          +e.THEAD.head
+            +e.TR.row._head
+              +e.TH.head-cell Дата
+              +e.TH.head-cell Загружено
+              +e.TH.head-cell Обновлено
+              +e.TH.head-cell Пропущено
+              +e.TH.head-cell Ошибки
+          +e.TBODY.body
+            +e.TR.row
+              +e.TD.cell(data-th="Дата") 17.11.2021
+              +e.TD.cell(data-th="Загружено") 2
+              +e.TD.cell(data-th="Обновлено") 0
+              +e.TD.cell(data-th="Пропущено") 0
+              +e.TD.cell(data-th="Ошибки") 17
+
+      +e.title Детали загрузки фида за 17.11.2021
+      +e.scroller
+        +table-feed()
+          +e.THEAD.head
+            +e.TR.row._head
+              +e.TH.head-cell Дата, время
+              +e.TH.head-cell VIN
+              +e.TH.head-cell Объявление
+              +e.TH.head-cell Статус
+
+          +e.TBODY.body
+            each row, rowIndex in [...Array(9).keys()]
+              +e.TR.row
+                +e.TD.cell(data-th="Дата, время") Только что
+                +e.TD.cell(data-th="VIN") 1FTWR72P1LVA41778
+                +e.TD.cell(data-th="Объявление")
+                  a(href='#') Volkswagen Golf, 2011
+                +e.TD.cell(data-th="Статус")
+                  if (rowIndex % 2)
+                    | Создано: недопустимое значение Ad > Transmission
+                  else
+                    | Создано: секция Ad

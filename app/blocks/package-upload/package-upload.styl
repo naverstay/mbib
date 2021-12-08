@@ -1,6 +1,9 @@
 .package-upload
   margin: 32px 0 56px
 
+  &_logs
+    margin-bottom: 48px
+
   &__title
     font-weight: bold
     font-size: 21px
@@ -17,6 +20,31 @@
     .form__input-field
       width: 100%
 
+
+    .upload-input
+      +below(767px)
+        width: 100%
+
+      +above(768px)
+        margin-right: 0
+        flex 1 0 auto
+
+    .upload-button
+      +below(767px)
+        width: 100%
+        padding-top: 6px
+
+      +above(768px)
+        margin-left: 8px
+        width: 184px
+
+    .form___footer-or
+      margin: auto
+      padding: 0 12px
+
+      +below(767px)
+        margin: -16px auto 12px
+
     .form__row_footer
       justify-content flex-end
       padding-top: 8px
@@ -25,17 +53,17 @@
         +below(767px)
           flex 1 0
 
-        .btn
-          text-transform: none
-          font-size: 14px
-          width 100%
+    .btn
+      text-transform: none
+      font-size: 14px
+      width 100%
 
-          .btn__text
-            letter-spacing 0
+      .btn__text
+        letter-spacing 0
 
-          +above(768px)
-            width 184px
+      +above(768px)
+        width 184px
 
-          +above(1170px)
-            font-size: 16px
+      +above(1170px)
+        font-size: 16px
 
