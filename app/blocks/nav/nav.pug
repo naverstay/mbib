@@ -4,7 +4,7 @@ mixin nav(data, settings = { })
     +e.UL.list
       each item, index in data
         if isHeader
-          if index < 2
+          if index < 4
             +e.item
               +e.A.link(href=item.href)
                 +e.link-text #{item.name}

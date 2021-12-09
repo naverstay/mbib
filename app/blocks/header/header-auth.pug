@@ -14,9 +14,15 @@ mixin header-auth()
       +e.nav
         +nav(getData('navAuth'), {isHeader: true})
       +e.spacer
-      +e.posting
-        +btn('link', 'like')._size_s._theme_secondary(href="") Избранное
-      +e.user
-        +btn('link', 'user')._size_s._theme_secondary(href="").user-link Александров А.
+      +e.A.auth(href="")
+        +icon('like', false).auth-icon
+        +e.SPAN.auth-text Избранное
+      +e.A.auth(href="")
+        +icon('user', false).auth-icon
+        +e.SPAN.auth-text Maslenkow
+      //+e.posting
+      //  +btn('link', 'like')._size_s._theme_link(href="") Избранное
+      //+e.user
+      //  +btn('link', 'user')._size_s._theme_link(href="").user-link Maslenkow
       +e.add
-        +post-ads(href="")
+        +post-ads(href="№")
