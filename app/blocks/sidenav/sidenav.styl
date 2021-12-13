@@ -35,7 +35,7 @@
   &__close
     position absolute
     top 20px
-    left 24px
+    left 30px
     width 34px
     height 34px
     cursor pointer
@@ -77,9 +77,9 @@
     position fixed
     z-index 100
     top 0
-    right 100%
+    left 0
     bottom 0
-    padding 73px 14px 30px
+    padding 73px 30px 30px
     overflow-y auto
     width 100%
     max-width 360px
@@ -87,45 +87,51 @@
     background-color $colorText
     will-change transform
     transition transform .4s
-    transform translate3D(0, 0, 0)
+    transform translate3D(-100%, 0, 0)
 
     .page_open-side &
-      transform translate3D(100%, 0, 0)
+      transform translate3D(0, 0, 0)
 
   &__action
-    position: relative
     margin-bottom 14px
-    padding 20px 0 15px
+    padding 15px 0
     font-size 16px
-
-    &::after
-      content: ''
-      position: absolute
-      height: 1px
-      right: 16px
-      left: 16px
-      bottom: 0
-      background-color rgba(#fff, .23)
+    border-bottom 1px solid rgba(#fff, .23)
 
   &__action-link
     position relative
-    margin-bottom 3px
-    padding 12px 0 12px 56px
-    transition background-color .3s
+    margin-bottom 5px
+    //padding 5px 0 5px 30px
+    padding 12px 0 12px 40px
     display block
     text-decoration none
-    font-size: 16px
-    line-height: 18px
     color #fff
+    transition color .3s
 
     &:hover
-      background-color $colorMain
+      color $colorMain
+
+    &_price
+
+      &::before
+        z-index: -1
+        content: ''
+        position: absolute
+        top: 0
+        bottom: 0
+        right: -17px
+        left: -17px
+        background: $colorMain
+
+      &:hover
+        color #000
 
   &__action-icon
     position absolute
     top: 50%
-    left: 20px
+    left: 0
     size 20px
+    margin-top -2px
     transform translateY(-50%)
     fill currentcolor
     transition fill .3s
