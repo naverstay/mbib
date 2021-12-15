@@ -1,4 +1,5 @@
 include ../../blocks/table-feed/table-feed
+include ../pagination/pagination
 
 mixin feed-details()
   +b.feed-details&attributes(attributes)
@@ -55,3 +56,5 @@ mixin feed-details()
                     | Создано: недопустимое значение Ad > Transmission
                   else
                     | Создано: секция Ad
+
+      +pagination._no-padding._flat._transparent._active-gray
