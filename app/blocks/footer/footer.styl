@@ -8,6 +8,12 @@
   &.full
     margin-top 0
 
+  &__counter
+    +below(767px)
+      position: absolute
+      right: 10px
+      top: 26px
+
   &__head,
   &__foot
     padding 26px 0 25px
@@ -31,6 +37,7 @@
 
     +above(768px)
       display flex
+      align-items center
 
   &__section
     padding 29px 0 26px
