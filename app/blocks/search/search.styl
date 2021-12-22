@@ -17,9 +17,6 @@
     .control-group
       min-height 40px
 
-      +below(767px)
-        margin-top: 10px
-
   &.search_show-no
     border: 0
     background: #fff
@@ -39,15 +36,6 @@
     padding 10px 24px 0
     width 100%
     box-shadow 0 27px 23px -12px rgba(#000, .2)
-
-
-    &.search_quarter
-      padding: 24px 36px 0
-
-      .search__col_sbm
-        .btn
-          padding-left: 26px
-          padding-right: 26px
 
     .reviews &
       padding: 30px 34px 12px
@@ -201,9 +189,9 @@
     +above(500px)
       margin-top 0
       width auto
+      margin-left: 15px
 
     +above(768px)
-      margin-left 15px
       text-align right
 
     +above(980px)
@@ -431,11 +419,6 @@
       padding 0 1px
       width 50%
 
-      .search_quarter &
-        padding-right 6px
-        padding-left 6px
-        margin-bottom: 12px
-
     +above(980px)
       margin-bottom 5px
       width 20%
@@ -445,6 +428,9 @@
 
       &_span_2
         width 40%
+
+        .search_quarter .search__row_sbm > &
+          width: 50%
 
       &_span_3
         width 25%
@@ -484,7 +470,7 @@
         width 60%
 
         .search_quarter &
-          width: 60%
+          width: 50%
 
     &_mobile-order-last
       order 1
