@@ -3,6 +3,30 @@
   margin-bottom 12px
   display block
 
+  &__features
+    display block
+    padding: 8px 0
+    column-count 2
+    column-gap 5px
+
+    &-item
+      display flex
+      margin-bottom: 9px
+
+      dt
+        color: #787878
+        padding-right: 3px
+
+        &:empty
+          display none
+
+      dd
+        color: #000
+        font-weight: 500
+
+    +above(768px)
+      column-count 3
+
   &__list
     margin-bottom 10px
 
@@ -176,6 +200,11 @@
     display inline-block
     font-size 16px
     font-weight bold
+
+    &-count
+      font-weight: normal
+      color: #787878
+      font-size: 14px
 
   &__feature
     line-height 1.73

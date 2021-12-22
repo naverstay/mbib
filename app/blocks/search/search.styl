@@ -7,6 +7,19 @@
   background-image: linear-gradient(to right, #f8f8f8, #fff)
   border 2px solid #dedede
 
+  &.search_quarter
+
+    .search__col_sbm
+      .btn__icon
+        width: 16px
+        height: 16px
+
+    .control-group
+      min-height 40px
+
+      +below(767px)
+        margin-top: 10px
+
   &.search_show-no
     border: 0
     background: #fff
@@ -26,6 +39,15 @@
     padding 10px 24px 0
     width 100%
     box-shadow 0 27px 23px -12px rgba(#000, .2)
+
+
+    &.search_quarter
+      padding: 24px 36px 0
+
+      .search__col_sbm
+        .btn
+          padding-left: 26px
+          padding-right: 26px
 
     .reviews &
       padding: 30px 34px 12px
@@ -295,6 +317,9 @@
     +above(980px)
       width 40%
 
+      .search_quarter &
+        width: 50%
+
     ^[0]__advanced-inner &_column
       +above(768px)
         width 50%
@@ -406,9 +431,17 @@
       padding 0 1px
       width 50%
 
+      .search_quarter &
+        padding-right 6px
+        padding-left 6px
+        margin-bottom: 12px
+
     +above(980px)
       margin-bottom 5px
       width 20%
+
+      .search_quarter .search__row:not(.search__row_sbm) > &
+        width: 25%
 
       &_span_2
         width 40%
@@ -442,10 +475,16 @@
       +above(768px)
         width 100%
 
+        .search_quarter &
+          width: 50%
+
       +above(980px)
         display flex
         justify-content flex-end
         width 60%
+
+        .search_quarter &
+          width: 60%
 
     &_mobile-order-last
       order 1

@@ -1,13 +1,14 @@
 include ../title/title
 
 mixin text(data)
-	if data 
-		- var container = (!data) ? 'div' : 'section';
+  if data
+    - var container = (!data) ? 'div' : 'section';
 
-	+b({tag: container}).text&attributes(attributes)
-		if data
-			+title(data.titleLevel).text__title #{data.title}
-			+e.body !{data.content}
-		else
-			+e.body
-				block
+  +b({tag: container}).text&attributes(attributes)
+    if data
+      +title(data.titleLevel).text__title #{data.title}
+      if (data.content)
+        +e.body !{data.content}
+    else
+      +e.body
+        block

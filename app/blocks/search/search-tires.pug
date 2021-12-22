@@ -1,0 +1,118 @@
+include ../list/list
+include ../control-group/control-group
+include ../select/select
+include ../input/input
+include ../checkbox/checkbox
+include ../radio/radio
+include ../btn/btn
+include ../switcher/switcher
+include ../control-group/control-group
+include ../palette/palette
+include ../loader/loader
+
+mixin search-tires()
+  +b.search&attributes(attributes)._quarter
+    +e.toggler
+      +btn._fullwidth.__toggler-button Параметры поиска
+        span (5)
+    +loader._for-block
+    +e.toggle-body._open
+      +e.city
+        +control-group
+          +switcher(type="radio", name="type", value="typeAll", id="typeAll", role="radio", tabindex="0", checked)._theme_tertirary._size_s Все
+          +switcher(type="radio", name="type", value="typeDiler", id="typeDiler", role="radio", tabindex="0")._theme_tertirary._size_s Новые
+          +switcher(type="radio", name="type", value="typeOwner", id="typeOwner", role="radio", tabindex="0")._theme_tertirary._size_s Б/У
+        +btn('link', 'search-liked')(href="")._theme_link._size_s.search__save Сохранить поиск
+        +e.city-other
+          +btn('link', 'pin')(href="")._theme_tertirary._size_s.search__city-btn Другой город
+      +e.row
+        +e.group-on-mobile
+          +e.col
+            +select()(name="width" data-placeholder="Ширина, мм" tabindex="1")._search._for-width
+              option(value="")
+              option(value="w1" data-width="175") 175
+              option(value="w2" data-width="185") 185
+              option(value="w3" data-width="195") 195
+              option(value="w4" data-width="205") 205
+              option(value="w5" data-width="215") 215
+              option(value="w6" data-width="225") 225
+          +e.col
+            +select(name="height" data-placeholder="Высота, %" tabindex="2")._search
+              option(value="")
+              option(value="55") 55
+              option(value="65") 65
+              option(value="75") 75
+        +e.col
+          +select(name="diameter" data-placeholder="Диаметр, ”" tabindex="2")._search
+            option(value="")
+            option(value="14") 14”
+            option(value="15") 15”
+            option(value="16") 16”
+
+        +e.col
+          +control-group
+            +input(type="text", name="priceStart", placeholder="Цена от" tabindex="13")._digit-pretify
+            +input(type="text", name="priceEnd", placeholder="до, ₽" tabindex="14")._digit-pretify
+
+        +e.group-on-mobile
+          +e.col
+            +select(name="manufacturer" data-placeholder="Производитель" data-minimum-results-for-search="Infinity" tabindex="9")._search
+              option(value="")
+              option(value="teb") Бензин
+              option(value="ted") Дизель
+              option(value="teg") Гибрид
+              option(value="tee") Электро
+
+          +e.col
+            +select(name="model" disabled data-placeholder="Модель" data-minimum-results-for-search="Infinity" tabindex="9")._search
+              option(value="")
+              option(value="col1") 1
+              option(value="col2") 2
+              option(value="col3") 3
+              option(value="col4") 4
+
+        +e.group-on-mobile
+          +e.col
+            +select(name="season" data-placeholder="Сезон" data-minimum-results-for-search="Infinity" tabindex="9")._search
+              option(value="")
+              option(value="teb") Зима
+              option(value="ted") Лето
+
+          +e.col
+            +select(name="model" data-placeholder="Состояние" data-minimum-results-for-search="Infinity" tabindex="9")._search
+              option(value="")
+              option(value="col1") 1
+              option(value="col2") 2
+              option(value="col3") 3
+              option(value="col4") 4
+
+      .search__advanced
+        .search__advanced-inner
+          +e.row
+            +e.group-on-mobile
+              +e.col
+                +select(name="tire-type" data-placeholder="Тип шины" data-minimum-results-for-search="Infinity" tabindex="12")._search
+                  option(value="")
+                  option(value="fr") Передний
+                  option(value="bk") Задний
+                  option(value="fl") Полный
+
+              +e.col
+                +select(name="protector" data-placeholder="Протектор" data-minimum-results-for-search="Infinity" tabindex="8")._search
+                  option(value="")
+                  option(value="ta") Автомат
+                  option(value="tm") Механическая
+
+            +e.group-on-mobile
+              +e.col._span_flex
+                +control-group._flex._middle
+                  +checkbox(name="RunFlat", checked  tabindex="19") RunFlat
+                  +checkbox(name="hasPhoto", checked  tabindex="21") Только с фото
+
+      +e.row._sbm._valign_center
+        +e.col._span_2
+          +input(type="text", name="text", placeholder="искать по тексту объявлений" tabindex="15")._iconed
+          +icon('search', false).icon-search
+        +e.col._span_4._sbm
+          +btn('button')._theme_link(tabindex="18").search__switcher Расширенный поиск
+          +btn('button', 'search')._theme_secondary(tabindex="28").search__sbm НАЙТИ

@@ -1,0 +1,43 @@
+extends ../blocks/layout-default/layout-auth
+include ../blocks/breadcrumbs/breadcrumbs
+include ../blocks/text/text
+include ../blocks/search/search
+include ../blocks/search/search-type
+include ../blocks/search/search-agricultural
+include ../blocks/search/search-artic
+include ../blocks/search/search-atv
+include ../blocks/search/search-tires
+
+include ../blocks/group/group
+include ../blocks/special/special
+include ../blocks/sort/sort
+include ../blocks/card-list/card-list
+include ../blocks/pagination/pagination
+include ../blocks/subscribe-form/subscribe-form
+include ../blocks/loader/loader
+include ../blocks/result-message/result-message
+
+block head
+  - var pageTitle = 'Продажа шин в России';
+  - var pageMod = 'Tires Page';
+  - var innerClass = 'tires-page';
+
+block content
+  +breadcrumbs(getData('tire-crumbs'))
+  +text({
+    "title": "Продажа шин в России",
+    "titleLevel": 1,
+    "content": ""
+  })._important
+
+  +search-tires
+
+  +group(getData('brands'))
+  //- +special(getData('cars'))
+  +sort
+  +result-message
+    +e.P.text Найдено: 45811&nbsp;объявлений.
+    +e.P.text Показаны: 1-25 (страница&nbsp;№1).
+  +card-list(getData('tires'), 'tires')
+  +pagination._no-padding._flat._transparent
+  +subscribe-form()

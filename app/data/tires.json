@@ -1,0 +1,342 @@
+[
+  {
+    "mark": true,
+    "id": "1053286718",
+    "name": "Continental ContiWinterContact TS 830 P 245/45 R18",
+    "price": "24 999",
+    "thumbs": [
+      "assets/images/tires/tires-1.png"
+    ],
+    "gallery": [
+      "assets/images/tires/tires-1.png",
+      "assets/images/tires/tires-2.png",
+      "assets/images/tires/tires-3.png",
+      "assets/images/tires/tires-4.png"
+    ],
+    "author": "Сергей",
+    "authorcount": 1,
+    "authorStatus": " Частное лицо",
+    "pubdate": " 46 минут назад",
+    "updated": " 46 минут назад",
+    "contact": {
+      "show": false,
+      "phone": "+7 912 669-66-66",
+      "callStart": "16:00",
+      "callEnd": "20:00"
+    },
+    "claim": {
+      "date": "сегодня в 13:08",
+      "status": "закрыта",
+      "type": "Перекупщик или салон",
+      "text": "Продам 2- ух комнатную благоустроенную квартиру на 1 этаже 5- ти этажного",
+      "author": {
+        "name": "Анастасия",
+        "link": ""
+      }
+    },
+    "inspect": {
+      "show": false,
+      "city": "Дилер",
+      "address": "ул. Дворянская, д. 10",
+      "viewAll": "1923",
+      "viewToday": "193"
+    },
+    "isFavorite": true
+  },
+  {
+    "id": "1053286718",
+    "name": "Bridgestone Blizzak DM-V2 225/55 R19",
+    "price": "24 999",
+    "thumbs": [
+      "assets/images/tires/tires-2.png"
+    ],
+    "gallery": [
+      "assets/images/tires/tires-2.png",
+      "assets/images/tires/tires-3.png",
+      "assets/images/tires/tires-4.png",
+      "assets/images/tires/tires-1.png"
+    ],
+    "author": "ООО Иварт Авто",
+    "authorcount": 1,
+    "authorStatus": " Дилер",
+    "pubdate": ", сегодня в 15:48",
+    "updated": " 46 минут назад",
+    "contact": {
+      "show": false,
+      "phone": "+7 912 669-66-66",
+      "callStart": "16:00",
+      "callEnd": "20:00"
+    },
+    "claim": {
+      "date": "сегодня в 13:08",
+      "status": "закрыта",
+      "type": "Перекупщик или салон",
+      "text": "Продам 2- ух комнатную благоустроенную квартиру на 1 этаже 5- ти этажного",
+      "author": {
+        "name": "Анастасия",
+        "link": ""
+      }
+    },
+    "inspect": {
+      "show": false,
+      "city": "Пятигорск",
+      "address": "ул. Дворянская, д. 10",
+      "viewAll": "1923",
+      "viewToday": "193"
+    }
+  },
+  {
+    "id": "1053286718",
+    "name": "Nokian Hakkapeliitta R2 SUV 265/65 R17",
+    "price": "24 999",
+    "thumbs": [
+      "assets/images/tires/tires-3.png"
+    ],
+    "gallery": [
+      "assets/images/tires/tires-2.png",
+      "assets/images/tires/tires-3.png",
+      "assets/images/tires/tires-4.png",
+      "assets/images/tires/tires-1.png"
+    ],
+    "author": "ООО Иварт Авто",
+    "authorcount": 1,
+    "authorStatus": " Дилер",
+    "pubdate": ", сегодня в 15:48",
+    "updated": " 46 минут назад",
+    "contact": {
+      "show": false,
+      "phone": "+7 912 669-66-66",
+      "callStart": "16:00",
+      "callEnd": "20:00"
+    },
+    "claim": {
+      "date": "сегодня в 13:08",
+      "status": "закрыта",
+      "type": "Перекупщик или салон",
+      "text": "Продам 2- ух комнатную благоустроенную квартиру на 1 этаже 5- ти этажного",
+      "author": {
+        "name": "Анастасия",
+        "link": ""
+      }
+    },
+    "inspect": {
+      "show": false,
+      "city": "Пятигорск",
+      "address": "ул. Дворянская, д. 10",
+      "viewAll": "1923",
+      "viewToday": "193"
+    }
+  },
+  {
+    "id": "1053286718",
+    "mark": true,
+    "name": "Continental ContiWinterContact TS 850 225/45 R17",
+    "price": "24 999",
+    "thumbs": [
+      "assets/images/tires/tires-4.png"
+    ],
+    "gallery": [
+      "assets/images/tires/tires-2.png",
+      "assets/images/tires/tires-3.png",
+      "assets/images/tires/tires-4.png",
+      "assets/images/tires/tires-1.png"
+    ],
+    "author": "ООО Иварт Авто",
+    "authorcount": 1,
+    "authorStatus": " Дилер",
+    "pubdate": ", сегодня в 15:48",
+    "updated": " 46 минут назад",
+    "contact": {
+      "show": false,
+      "phone": "+7 912 669-66-66",
+      "callStart": "16:00",
+      "callEnd": "20:00"
+    },
+    "claim": {
+      "date": "сегодня в 13:08",
+      "status": "закрыта",
+      "type": "Перекупщик или салон",
+      "text": "Продам 2- ух комнатную благоустроенную квартиру на 1 этаже 5- ти этажного",
+      "author": {
+        "name": "Анастасия",
+        "link": ""
+      }
+    },
+    "inspect": {
+      "show": false,
+      "city": "Пятигорск",
+      "address": "ул. Дворянская, д. 10",
+      "viewAll": "1923",
+      "viewToday": "193"
+    }
+  },
+  {
+    "id": "1053286718",
+    "name": "Continental ContiWinterContact TS 830 P 245/45 R18",
+    "price": "24 999",
+    "thumbs": [
+      "assets/images/tires/tires-1.png"
+    ],
+    "gallery": [
+      "assets/images/tires/tires-1.png",
+      "assets/images/tires/tires-2.png",
+      "assets/images/tires/tires-3.png",
+      "assets/images/tires/tires-4.png"
+    ],
+    "author": "Сергей",
+    "authorcount": 1,
+    "authorStatus": " Частное лицо",
+    "pubdate": " 46 минут назад",
+    "updated": " 46 минут назад",
+    "contact": {
+      "show": false,
+      "phone": "+7 912 669-66-66",
+      "callStart": "16:00",
+      "callEnd": "20:00"
+    },
+    "claim": {
+      "date": "сегодня в 13:08",
+      "status": "закрыта",
+      "type": "Перекупщик или салон",
+      "text": "Продам 2- ух комнатную благоустроенную квартиру на 1 этаже 5- ти этажного",
+      "author": {
+        "name": "Анастасия",
+        "link": ""
+      }
+    },
+    "inspect": {
+      "show": false,
+      "city": "Дилер",
+      "address": "ул. Дворянская, д. 10",
+      "viewAll": "1923",
+      "viewToday": "193"
+    },
+    "isFavorite": true
+  },
+  {
+    "id": "1053286718",
+    "name": "Bridgestone Blizzak DM-V2 225/55 R19",
+    "price": "24 999",
+    "thumbs": [
+      "assets/images/tires/tires-2.png"
+    ],
+    "gallery": [
+      "assets/images/tires/tires-2.png",
+      "assets/images/tires/tires-3.png",
+      "assets/images/tires/tires-4.png",
+      "assets/images/tires/tires-1.png"
+    ],
+    "author": "ООО Иварт Авто",
+    "authorcount": 1,
+    "authorStatus": " Дилер",
+    "pubdate": ", сегодня в 15:48",
+    "updated": " 46 минут назад",
+    "contact": {
+      "show": false,
+      "phone": "+7 912 669-66-66",
+      "callStart": "16:00",
+      "callEnd": "20:00"
+    },
+    "claim": {
+      "date": "сегодня в 13:08",
+      "status": "закрыта",
+      "type": "Перекупщик или салон",
+      "text": "Продам 2- ух комнатную благоустроенную квартиру на 1 этаже 5- ти этажного",
+      "author": {
+        "name": "Анастасия",
+        "link": ""
+      }
+    },
+    "inspect": {
+      "show": false,
+      "city": "Пятигорск",
+      "address": "ул. Дворянская, д. 10",
+      "viewAll": "1923",
+      "viewToday": "193"
+    }
+  },
+  {
+    "id": "1053286718",
+    "name": "Nokian Hakkapeliitta R2 SUV 265/65 R17",
+    "price": "24 999",
+    "thumbs": [
+      "assets/images/tires/tires-3.png"
+    ],
+    "gallery": [
+      "assets/images/tires/tires-2.png",
+      "assets/images/tires/tires-3.png",
+      "assets/images/tires/tires-4.png",
+      "assets/images/tires/tires-1.png"
+    ],
+    "author": "ООО Иварт Авто",
+    "authorcount": 1,
+    "authorStatus": " Дилер",
+    "pubdate": ", сегодня в 15:48",
+    "updated": " 46 минут назад",
+    "contact": {
+      "show": false,
+      "phone": "+7 912 669-66-66",
+      "callStart": "16:00",
+      "callEnd": "20:00"
+    },
+    "claim": {
+      "date": "сегодня в 13:08",
+      "status": "закрыта",
+      "type": "Перекупщик или салон",
+      "text": "Продам 2- ух комнатную благоустроенную квартиру на 1 этаже 5- ти этажного",
+      "author": {
+        "name": "Анастасия",
+        "link": ""
+      }
+    },
+    "inspect": {
+      "show": false,
+      "city": "Пятигорск",
+      "address": "ул. Дворянская, д. 10",
+      "viewAll": "1923",
+      "viewToday": "193"
+    }
+  },
+  {
+    "id": "1053286718",
+    "name": "Continental ContiWinterContact TS 850 225/45 R17",
+    "price": "24 999",
+    "thumbs": [
+      "assets/images/tires/tires-4.png"
+    ],
+    "gallery": [
+      "assets/images/tires/tires-2.png",
+      "assets/images/tires/tires-3.png",
+      "assets/images/tires/tires-4.png",
+      "assets/images/tires/tires-1.png"
+    ],
+    "author": "ООО Иварт Авто",
+    "authorcount": 1,
+    "authorStatus": " Дилер",
+    "pubdate": ", сегодня в 15:48",
+    "updated": " 46 минут назад",
+    "contact": {
+      "show": false,
+      "phone": "+7 912 669-66-66",
+      "callStart": "16:00",
+      "callEnd": "20:00"
+    },
+    "claim": {
+      "date": "сегодня в 13:08",
+      "status": "закрыта",
+      "type": "Перекупщик или салон",
+      "text": "Продам 2- ух комнатную благоустроенную квартиру на 1 этаже 5- ти этажного",
+      "author": {
+        "name": "Анастасия",
+        "link": ""
+      }
+    },
+    "inspect": {
+      "show": false,
+      "city": "Пятигорск",
+      "address": "ул. Дворянская, д. 10",
+      "viewAll": "1923",
+      "viewToday": "193"
+    }
+  }
+]
