@@ -53,8 +53,8 @@ mixin card-disk(data, id, spec)
             +e.owner-inspect(title="#{item.inspect.city}, #{item.inspect.address}")
               +e.SPAN.owner-lbl
                 +icon('pin', false).meta-view-icon
-                | Место осмотра
-              | #{item.inspect.city}, #{item.inspect.address}
+                span Место осмотра&nbsp;
+                b #{item.inspect.city}, #{item.inspect.address}
 
         +e.owner-contact
           +show-phone(item.contact, false, spec).card__meta-phone
@@ -66,51 +66,36 @@ mixin card-disk(data, id, spec)
           +e.feature
             +e.DL.feature-list
               +e.feature-row
-                +e.DT.feature-term Год выпуска
-                +e.DD.feature-desc #{item.feature.year}
+                +e.DT.feature-term Производитель
+                +e.DD.feature-desc Skill Wheels
               +e.feature-row
-                +e.DT.feature-term Пробег
-                +e.DD.feature-desc #{item.feature.mileage}
+                +e.DT.feature-term Количество
+                +e.DD.feature-desc 4
               +e.feature-row
-                +e.DT.feature-term Кузов
-                +e.DD.feature-desc #{item.feature.body}
-              +e.feature-row
-                +e.DT.feature-term Цвет
-                +e.DD.feature-desc #{item.feature.color}
-              +e.feature-row
-                +e.DT.feature-term Двигатель
-                +e.DD.feature-desc #{item.feature.engineCapacity} л / #{item.feature.enginePower} л.с. / #{item.feature.engineType}
-              +e.feature-row
-                +e.DT.feature-term Коробка
-                if item.feature.transmission == 'АТ'
-                  -var transmission = 'автоматическая';
-                else
-                  -var transmission = 'механическая';
-
-                +e.DD.feature-desc #{transmission}
-              +e.feature-row
-                +e.DT.feature-term Привод
-                +e.DD.feature-desc #{item.feature.drive}
-              +e.feature-row
-                +e.DT.feature-term Руль
-                -var drive = item.feature.rightDrive ? 'правый' : 'левый';
-                +e.DD.feature-desc #{drive}
+                +e.DT.feature-term Тип
+                +e.DD.feature-desc Кованые
               +e.feature-row
                 +e.DT.feature-term Состояние
-                +e.DD.feature-desc #{item.feature.state}
+                +e.DD.feature-desc Новые
               +e.feature-row
-                +e.DT.feature-term Владельцы
-                +e.DD.feature-desc #{item.feature.owners}
+                +e.DT.feature-term Диаметр, “
+                +e.DD.feature-desc 22
               +e.feature-row
-                +e.DT.feature-term ПТС
-                +e.DD.feature-desc #{item.feature.pts}
+                +e.DT.feature-term Масса, кг
+                +e.DD.feature-desc 15,00
               +e.feature-row
-                +e.DT.feature-term Владение
-                +e.DD.feature-desc #{item.feature.tenure}
+                +e.DT.feature-term Ширина, “
+                +e.DD.feature-desc 9.5
               +e.feature-row
-                +e.DT.feature-term Таможня
-                -var cleared = item.feature.cleared ? 'растаможен' : 'не растаможен';
-                +e.DD.feature-desc #{cleared}
+                +e.DT.feature-term Вылет, мм
+                +e.DD.feature-desc 15
+              +e.feature-row
+                +e.DT.feature-term Сверловка
+                +e.DD.feature-desc 139.70x6
+              +e.feature-row
+                +e.DT.feature-term Диаметр ЦО
+                +e.DD.feature-desc 45
+
             +e.A.feature-link(href="") Все характеристики модели в каталоге
 
         +e.data-main
@@ -131,7 +116,7 @@ mixin card-disk(data, id, spec)
             +e.comment-body
               | #{item.comment}
 
-          +e.kit
+          //-+e.kit
             +e.kit-head
               +title(3) Комплектация
             +e.kit-list
