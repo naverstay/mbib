@@ -7,7 +7,8 @@ include ../blocks/search/search-agricultural
 include ../blocks/search/search-artic
 include ../blocks/search/search-atv
 include ../blocks/search/search-disks
-
+include ../blocks/headblock/headblock
+include ../blocks/pager/pager-load
 include ../blocks/group/group
 include ../blocks/special/special
 include ../blocks/sort/sort
@@ -16,28 +17,18 @@ include ../blocks/pagination/pagination
 include ../blocks/subscribe-form/subscribe-form
 include ../blocks/loader/loader
 include ../blocks/result-message/result-message
+include ../blocks/card/card-disk
 
 block head
-  - var pageTitle = 'Продажа колёсных дисков в России';
+  - var pageTitle = 'Кованые диски Skill SV087 R22 J9.5 ET+15 6x139.7 Dodge';
   - var pageMod = 'Disks Page';
   - var innerClass = 'disks-page';
 
 block content
   +breadcrumbs(getData('tire-crumbs'))
-  +text({
-    "title": "Продажа шин в России",
-    "titleLevel": 1,
-    "content": ""
-  })._important
+  +card-disk(getData('disks'), 0)
+  +headblock
 
-  +search-disks
-
-  +group(getData('brands'))
-  //- +special(getData('cars'))
-  +sort
-  +result-message
-    +e.P.text Найдено: 45811&nbsp;объявлений.
-    +e.P.text Показаны: 1-25 (страница&nbsp;№1).
   +card-list(getData('tires'), 'disks')
-  +pagination._no-padding._flat._transparent
-  +subscribe-form()
+
+  +pager-load

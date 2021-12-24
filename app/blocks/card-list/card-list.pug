@@ -90,6 +90,81 @@ mixin card-list(data, mode)
                 +e.action
                   +action(false, item.isFavorite, {hasPhone: true})._only-icon._hiddble
 
+        else if (mode === 'disks')
+          +e.item(class=mark)
+            +e.item-body
+              +e.about
+                +e.head
+                  +e.H3.name
+                    +e.A.name-link(href="")
+                      if item.mark
+                        +icon('star', false).name-icon
+                      | #{item.name}
+                  if index === 2
+                    +e.A.favorite(href="")._active
+                      +icon('like', false).favorite-icon
+                      +icon('like_fill', false).favorite-icon._favorite-icon_fill
+                +e.thumb
+                  +tile(item)
+                +e.about-item
+                  +e.SPAN.price #{item.price}
+                    +e.SPAN.price-currency &nbsp;#[span.roboto-rub ₽]
+                    +e.SPAN.price-count / 4 шт.
+
+                +e.about-item
+                  +e.DL.features
+                    +e.features-item
+                      dt Ширина:
+                      dd 245мм
+                    +e.features-item
+                      dt Высота:
+                      dd 45%
+                    +e.features-item
+                      dt Диаметр:
+                      dd 17”
+                    +e.features-item
+                      dt Сезон:
+                      dd Зимние
+                    +e.features-item
+                      dt Протектор:
+                      dd Шипованные
+                    +e.features-item
+                      dt Состояние:
+                      dd Б/У
+                    +e.features-item.mob-hidden.col-spacer
+
+                if item.count
+                  +e.P.comment
+                    | #{item.comment}
+                +e.about-item
+                  +e.SPAN.place #[a(href='#') #{item.inspect.city}],
+                  +e.SPAN.pubdate #{item.pubdate}
+              +e.contact
+                +e.author
+                  +e.author-name #{item.author}
+                  if item.authorStatus
+                    | ,
+                    +e.SPAN.author-status #{item.authorStatus}
+                  if item.authorcount > 1
+                    +e.author-count #{item.authorcount} объявлений
+
+                - var mod = item.contact.show ? '_showed' : '';
+                +e.phone
+                  +e.phone-button(type="button")
+                    +icon('phone', false).phone-icon
+                    | Показать телефон
+                  +e.phone-inner
+                    +e.A.phone-link(href="" class=mod)
+                      +icon('phone', false).phone-icon
+                      +e.phone-number #{item.contact.phone}
+                      if item.inspect.show
+                        +e.phone-remark Место осмотра: #{item.inspect.city}
+                      if item.contact.callStart
+                        +e.phone-remark Звоните с #{item.contact.callStart} до #{item.contact.callEnd}
+
+                +e.action
+                  +action(false, item.isFavorite, {hasPhone: true})._only-icon._hiddble
+
         else
           +e.item(class=mark)
             +e.item-body

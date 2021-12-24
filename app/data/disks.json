@@ -1,0 +1,82 @@
+[
+  {
+    "id": "1053286718",
+    "name": "Кованые диски Skill SV087 R22 J9.5 ET+15 6x139.7 Dodge",
+    "price": "1 957 000",
+    "thumbs": [
+      "assets/images/bmw/3.jpg",
+      "assets/images/bmw/3.jpg"
+    ],
+    "gallery": [
+      "assets/images/bmw/bmw3-1.jpg",
+      "assets/images/bmw/bmw3-2.jpg",
+      "assets/images/bmw/bmw3-3.jpg",
+      "assets/images/bmw/bmw3-4.jpg",
+      "assets/images/bmw/bmw3-5.jpg",
+      "assets/images/bmw/bmw3-6.jpg",
+      "assets/images/bmw/bmw3-7.jpg",
+      "assets/images/bmw/bmw3-8.jpg",
+      "assets/images/bmw/bmw3-9.jpg",
+      "assets/images/bmw/bmw3-10.jpg",
+      "assets/images/bmw/bmw3-11.jpg",
+      "assets/images/bmw/bmw3-12.jpg"
+    ],
+    "author": "Алексей",
+    "authorcount": 1,
+    "authorStatus": "частное лицо",
+    "pubdate": "4 июля",
+    "updated": "4 июля",
+    "contact": {
+      "show": false,
+      "phone": "+7 912 669-66-66",
+      "callStart": "16:00",
+      "callEnd": "20:00"
+    },
+    "inspect": {
+      "show": false,
+      "city": "Москва",
+      "address": "ул. Дворянская, д. 10",
+      "viewAll": "1923",
+      "viewToday": "193"
+    },
+    "feature": {
+      "year": "1996",
+      "rightDrive": true,
+      "mileage": "420 000",
+      "body": "седан-хардтоп",
+      "color": "серебристый",
+      "transmission": "АТ",
+      "drive": "задний",
+      "engineType": "бензин",
+      "engineCapacity": "2.0",
+      "enginePower": "91",
+      "state": "не требует ремонта",
+      "owners": "1",
+      "pts": "оригинал",
+      "tenure": "4 года и 1 месяц",
+      "cleared": true,
+      "abs": true,
+      "sensors": false,
+      "cruiseControl": true,
+      "tintedGlass": true,
+      "servo": true,
+      "leatherInterior": false,
+      "fabricInterior": true,
+      "alloyWheels": true,
+      "radiusWheels": 15,
+      "driverAirbag": true
+    },
+    "comment": "Кованые диски Skill изготавливаются по индивидуальным заказам в соответствии с пожеланиями наших клиентов и особенностями их автомобилей, что делает их 100% эксклюзивными. Линейка уже готовых дизайнов дисков всё время пополняется новыми актуальными моделями. Наши инженеры работают над улучшением структуры сплава, повышением функциональности и достижением превосходной производительности продукции.",
+    "claim": {
+      "date": "сегодня в 13:08",
+      "status": "закрыта",
+      "type": "Перекупщик или салон",
+      "text": "Продам 2- ух комнатную благоустроенную квартиру на 1 этаже 5- ти этажного",
+      "author": {
+        "name": "Анастасия",
+        "link": ""
+      }
+    },
+    "isFavorite": true
+  }
+]
