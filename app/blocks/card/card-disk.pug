@@ -131,6 +131,37 @@ mixin card-disk(data, id, spec)
             +e.comment-body
               | #{item.comment}
 
+          +e.kit
+            +e.kit-head
+              +title(3) Комплектация
+            +e.kit-list
+              +e.DL.kit-item
+                +e.DT.kit-title Безопасность
+                if item.feature.abs
+                  +e.DD.kit-desc Антиблокировочная система (ABS)
+                if item.feature.servo
+                  +e.DD.kit-desc Парктроник
+              +e.DL.kit-item
+                +e.DT.kit-title Салон
+                if item.feature.fabricInterior
+                  +e.DD.kit-desc Тканевый салон
+                if item.feature.leatherInterior
+                  +e.DD.kit-desc Кожанный салон
+              +e.DL.kit-item
+                +e.DT.kit-title Комфорт
+                if item.feature.cruiseControl
+                  +e.DD.kit-desc Круиз-контроль
+                if item.feature.servo
+                  +e.DD.kit-desc Усилитель руляк
+                if item.feature.tintedGlass
+                  +e.DD.kit-desc Тонированные стекла
+              +e.DL.kit-item
+                +e.DT.kit-title Экстерьер
+                +e.DD.kit-desc
+                  if item.feature.alloyWheels
+                    | Легкосплавные диски
+                  | #{item.feature.radiusWheels}''
+
     +e.action
       +share
       +action.card__action-inner

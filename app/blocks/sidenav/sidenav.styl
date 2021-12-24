@@ -77,7 +77,7 @@
     position fixed
     z-index 100
     top 0
-    left 0
+    right: 100%
     bottom 0
     padding 73px 30px 30px
     overflow-y auto
@@ -87,10 +87,9 @@
     background-color $colorText
     will-change transform
     transition transform .4s
-    transform translate3D(-100%, 0, 0)
 
     .page_open-side &
-      transform translate3D(0, 0, 0)
+      transform translate3D(100%, 0, 0)
 
   &__action
     margin-bottom 14px
