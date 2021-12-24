@@ -1,6 +1,18 @@
 .form
   display block
 
+  &__step-counter
+    font-size 14px
+    line-height 16px
+    color #787878
+    opacity 0.65
+    display flex
+    align-items center
+
+    +above(1170px)
+      font-size 18px
+      line-height 21px
+
   &__navigation
     margin-bottom 20px
     display flex
@@ -19,6 +31,24 @@
   &__section
     margin-bottom 10px
     border none
+
+    &_cell-v1
+      &.form__section
+        margin-bottom: 0
+
+      .form__item
+        margin-bottom: 12px
+
+        +above(768px)
+          margin-bottom 24px
+
+    &_step
+      display flex
+      flex-align center
+      justify-content space-between
+
+      .title
+        margin-bottom 0
 
     +above(768px)
       margin-bottom 25px
@@ -384,3 +414,17 @@
     width 100%
     border none
     color $colorText
+
+
+.tab-spacer
+  display none !important
+
+  +above(768px)
+    display block !important
+
+  +above(980px)
+    display none !important
+
+.w-100p-below-dt
+  +below(1169px)
+    width: 100%
