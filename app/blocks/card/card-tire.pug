@@ -8,7 +8,7 @@ include ../tooltip/tooltip
 include ../share/share
 include ../calculator/calculator
 
-mixin card-disk(data, id, spec)
+mixin card-tire(data, id, spec)
   -var item = data[id];
   +b.card&attributes(attributes)(class= spec ? '_spec' : '')
     +e.head(class= spec ? 'card__head-spec' : '')
@@ -17,6 +17,7 @@ mixin card-disk(data, id, spec)
         +e.price
           | #{item.price}
           +e.SPAN.price-currency #[span.roboto-rub ₽]
+          +e.SPAN.price-count &nbsp;/ 4 шт.
         +action('like', item.isFavorite)._only-icon._is-visible.card__head-action
 
     +e.body
@@ -61,34 +62,43 @@ mixin card-disk(data, id, spec)
             +e.DL.feature-list
               +e.feature-row
                 +e.DT.feature-term Производитель
-                +e.DD.feature-desc Skill Wheels
+                +e.DD.feature-desc Continental
               +e.feature-row
-                +e.DT.feature-term Количество
-                +e.DD.feature-desc 4
+                +e.DT.feature-term Номер
+                +e.DD.feature-desc 650855896
               +e.feature-row
-                +e.DT.feature-term Тип
-                +e.DD.feature-desc Кованые
+                +e.DT.feature-term Модель
+                +e.DD.feature-desc Snow Cross
               +e.feature-row
                 +e.DT.feature-term Состояние
-                +e.DD.feature-desc Новые
+                +e.DD.feature-desc Б/у
+              +e.feature-row
+                +e.DT.feature-term Бесплатный шиномонтаж
+                +e.DD.feature-desc Нет
+              +e.feature-row
+                +e.DT.feature-term Сезонное хранение
+                +e.DD.feature-desc Да
+              +e.feature-row
+                +e.DT.feature-term Сезон
+                +e.DD.feature-desc Зимние
+              +e.feature-row
+                +e.DT.feature-term Протектор
+                +e.DD.feature-desc Нешипованные
+              +e.feature-row
+                +e.DT.feature-term Ширина, мм
+                +e.DD.feature-desc 245
+              +e.feature-row
+                +e.DT.feature-term Высота, %
+                +e.DD.feature-desc 45
               +e.feature-row
                 +e.DT.feature-term Диаметр, “
-                +e.DD.feature-desc 22
+                +e.DD.feature-desc 17
               +e.feature-row
-                +e.DT.feature-term Масса, кг
-                +e.DD.feature-desc 15,00
+                +e.DT.feature-term RunFlat
+                +e.DD.feature-desc Нет
               +e.feature-row
-                +e.DT.feature-term Ширина, “
-                +e.DD.feature-desc 9.5
-              +e.feature-row
-                +e.DT.feature-term Вылет, мм
-                +e.DD.feature-desc 15
-              +e.feature-row
-                +e.DT.feature-term Сверловка
-                +e.DD.feature-desc 139.70x6
-              +e.feature-row
-                +e.DT.feature-term Диаметр ЦО
-                +e.DD.feature-desc 45
+                +e.DT.feature-term Износ, %
+                +e.DD.feature-desc 30
 
             +e.A.feature-link(href="") Все характеристики модели в каталоге
 
