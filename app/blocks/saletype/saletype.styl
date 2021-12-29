@@ -1,206 +1,319 @@
 .saletype
-	margin-top 60px
-	display block
-	background-color #fff
+  margin-top 60px
+  display block
+  background-color #fff
 
-	.tab&
-		margin-bottom 0
+  .tab&
+    margin-bottom 0
 
-	&__simple,
-	&__premium
-		position relative
-		margin -20px -10px 30px
-		padding 20px 8px
+  &__simple,
+  &__premium
+    position relative
+    margin -20px -10px 30px
+    padding 20px 8px
 
-		+above(768px)
-			margin -20px -30px 30px
-			padding 20px 30px
+    +above(768px)
+      margin -20px -30px 30px
+      padding 20px 30px
 
-	&__simple
-		background #e4f2dd url(../images/bg-sale.png) right bottom no-repeat
-		box-shadow inset 0 2px 0 #b4e19d
-		background-size contain
+  &__simple
+    background #e4f2dd url(../images/bg-sale.png) right bottom no-repeat
+    box-shadow inset 0 2px 0 #b4e19d
+    background-size contain
 
-		+above(768px)
-			padding-bottom 127px
-			background-size auto
+    +above(768px)
+      padding-bottom 127px
+      background-size auto
 
-		+above(980px)
-			padding-bottom 20px
+    +above(980px)
+      padding-bottom 20px
 
-	&__premium
-		padding-bottom 118px
-		background #fff3b5 url(../images/bg-city.png) bottom right repeat-x
-		box-shadow inset 0 2px 0 #ffe03e
-		overflow hidden
+    &-tire
+      background: #466FC0
+      box-shadow none
+      overflow: hidden
+      padding-bottom: 35px
 
-		&::before
-			position absolute
-			z-index 1
-			bottom 0
-			right -50px
-			width 257px
-			height 185px
-			// padding-bottom 62.7898%
-			// width 85vmin
-			// max-width 514px
-			content ''
-			background url(../images/bg-shop.png) 0 bottom no-repeat
-			background-size contain
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        min-width: 1100px
+        background url(../images/bg-sale.png) right bottom no-repeat
 
-			+above(400px)
-				right 0
+      +below(1169px)
+        &::before
+          opacity: .35
 
-			+above(768px)
-				padding-bottom 0
-				width 514px
-				height 369px
+        .saletype__content
+          padding-right: 100px
 
-			+above(980px)
-				right -70px
+      .saletype__fig img
+        height: 180px
+        width: 180px
 
-			+above(1170px)
-				right 0
+      +below(767px)
+        .saletype__text
+          height auto
+          min-height 130px
 
-		+above(400px)
-			padding-bottom 80px
+        .saletype__fig
+          display block
+          position: absolute
+          right: 0
+          transform scale(-1, 1) translateX(-60%)
 
-		+above(768px)
-			padding-bottom 237px
+        &::before
+          display none
 
-		+above(980px)
-			padding-bottom 20px
+      .saletype__fig
+        padding-top: 30px
 
-	&__tab-simple.tab__head-item_active
-		position relative
-		z-index 1
-		background-color #e4f2dd
-		box-shadow inset 0 2px 0 #b4e19d, 0 4px 0 #e4f2dd
+      .saletype__text
+        color: #fff
 
-	&__tab-premium.tab__head-item_active
-		position relative
-		z-index 1
-		background-color #fff3b5
-		box-shadow inset 0 2px 0 #ffe03e, 0 4px 0 #fff3b5
+  &__premium
+    padding-bottom 118px
+    background #fff3b5 url(../images/bg-city.png) bottom right repeat-x
+    box-shadow inset 0 2px 0 #ffe03e
+    overflow hidden
 
-	&__content
-		display flex
-		min-height 224px
+    &::before
+      position absolute
+      z-index 1
+      bottom 0
+      right -50px
+      width 257px
+      height 185px
+      // padding-bottom 62.7898%
+      // width 85vmin
+      // max-width 514px
+      content ''
+      background url(../images/bg-shop.png) 0 bottom no-repeat
+      background-size contain
 
-		+above(768px)
-			min-height 284px
+      +above(400px)
+        right 0
 
-	&__fig
-		display none
-		margin-right 45px
+      +above(768px)
+        padding-bottom 0
+        width 514px
+        height 369px
 
-		+above(768px)
-			display block
+      +above(980px)
+        right -70px
 
-	&__text
-		margin-top 15px
-		width 420px
-		font-size 14px
-		line-height 1.5
+      +above(1170px)
+        right 0
 
-		+above(768px)
-			margin-top 35px
-			font-size 16px
-			font-weight bold
+    +above(400px)
+      padding-bottom 80px
 
-		^[0]__premium &
-			width 100%
+    +above(768px)
+      padding-bottom 237px
 
-			+above(980px)
-				width 350px
-				margin-left 20px
+    +above(980px)
+      padding-bottom 20px
 
-		h3
-			margin-bottom 14px
-			font-size 28px
-			font-weight bold
-			line-height 1.1
+    &-tire.saletype__premium
+      background: #92BD73
+      box-shadow none
+      padding-bottom: 35px
 
-			+above(768px)
-				margin-bottom 24px
-				font-size 34px
+      &::before
+        background: url(../images/bg-shop.png) right 50px bottom no-repeat
+        background-size: contain
+        max-height 100%
 
-			^[0]__premium &
-				color #c53226
+      +below(1169px)
+        &::before
+          opacity: .35
+          height: 170px
+          right: auto
+          left: 400px
 
-		p
-			margin-bottom 1.5em
+        .saletype__content
+          min-height 130px
+          padding-right: 75px
 
-	&__price-wrap
-		position absolute
-		bottom 0
-		right 130px
-		// padding-bottom 54%
-		// width 63vmin
-		// max-width 378px
-		width 189px
-		height 152px
-		content ''
-		background url(../images/bg-price.png) 0 bottom no-repeat
-		background-size contain
+        .saletype__fig img
+          height: 150px
+          width: 150px
 
-		// +above(600px)
-			// right 35%
+      +below(767px)
+        .saletype__text
+          height auto
+          min-height 130px
 
-		+above(400px)
-			right 180px
+        .saletype__fig
+          display block
+          position: absolute
+          right: 0
+          transform scale(-1, 1) translateX(-80%)
 
-		+above(768px)
-			right 348px
-			// padding-bottom 0
-			width 378px
-			height 304px
+        &::before
+          display none
 
-		+above(980px)
-			right 270px
+      .saletype__fig
+        padding-top: 30px
 
-		+above(1170px)
-			right 348px
+      .saletype__text
+        color: #fff
 
-	&__price
-		position absolute
-		bottom 54%
-		right 50%
-		font-size 16px
-		color #ffe984
-		transform translate(50%, 0)
+        h3
+          color: inherit
 
-		+above(768px)
-			top 89px
-			left 50%
-			bottom auto
-			right auto
-			margin-left -70px
-			font-size 20px
-			font-weight normal
-			transform none
+  &__tab-simple.tab__head-item_active
+    position relative
+    z-index 1
+    background-color #e4f2dd
+    box-shadow inset 0 2px 0 #b4e19d, 0 4px 0 #e4f2dd
 
-	&__price-num
-		font-size 20px
+    &.saletype__tab-simple--tire
+      background-color: #466FC0
+      box-shadow none
+      color: #fff
 
-		+above(768px)
-			font-size 40px
+  &__tab-premium.tab__head-item_active
+    position relative
+    z-index 1
+    background-color #fff3b5
+    box-shadow inset 0 2px 0 #ffe03e, 0 4px 0 #fff3b5
 
-	&__sbm
-		margin-bottom 20px
+    &.saletype__tab-premium--tire
+      background-color: #92BD73
+      box-shadow none
+      color: #fff
 
-		+above(768px)
-			height $heightXXL_t
-			font-size 30px
+  &__content
+    display flex
+    min-height 224px
 
-		+above(980px)
-			font-size 34px
+    +above(768px)
+      min-height 284px
 
-		.btn__text
-			width 210px
-			text-align left
-			vertical-align middle
+  &__fig
+    display none
+    margin-right 45px
 
-			+above(480px)
-				width auto
-				text-align center
+    +above(768px)
+      display block
+
+  &__text
+    margin-top 15px
+    width 420px
+    font-size 14px
+    line-height 1.5
+
+    +above(768px)
+      margin-top 35px
+      font-size 16px
+      font-weight bold
+
+    ^[0]__premium &
+      width 100%
+
+      +above(980px)
+        width 350px
+        margin-left 20px
+
+    h3
+      margin-bottom 14px
+      font-size 28px
+      font-weight bold
+      line-height 1.1
+
+      +above(768px)
+        margin-bottom 24px
+        font-size 34px
+
+      ^[0]__premium &
+        color #c53226
+
+    p
+      margin-bottom 1.5em
+
+  &__price-wrap
+    position absolute
+    bottom 0
+    right 130px
+    // padding-bottom 54%
+    // width 63vmin
+    // max-width 378px
+    width 189px
+    height 152px
+    content ''
+    background url(../images/bg-price.png) 0 bottom no-repeat
+    background-size contain
+
+    // +above(600px)
+    // right 35%
+
+    +above(400px)
+      right 180px
+
+    +above(768px)
+      right 348px
+      // padding-bottom 0
+      width 378px
+      height 304px
+
+    +above(980px)
+      right 270px
+
+    +above(1170px)
+      right 348px
+
+  &__price
+    position absolute
+    bottom 54%
+    right 50%
+    font-size 16px
+    color #ffe984
+    transform translate(50%, 0)
+
+    +above(768px)
+      top 89px
+      left 50%
+      bottom auto
+      right auto
+      margin-left -70px
+      font-size 20px
+      font-weight normal
+      transform none
+
+  &__price-num
+    font-size 20px
+
+    +above(768px)
+      font-size 40px
+
+  &__sbm
+    margin-bottom 20px
+
+    +above(768px)
+      height $heightXXL_t
+      font-size 30px
+
+    +above(980px)
+      font-size 34px
+
+    .btn__text
+      width 210px
+      text-align left
+      vertical-align middle
+
+      +above(480px)
+        width auto
+        text-align center
+
+  &-tire
+    .btn
+      font-size: 15px
+
+      +above(768px)
+        font-size: 21px
+

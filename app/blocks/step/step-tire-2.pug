@@ -1,0 +1,115 @@
+include ../akcent-block/akcent-block
+include ../title/title
+include ../form/form
+include ../car-name/car-name
+include ../input/input
+include ../lbl/lbl
+include ../btn/btn
+include ../radio/radio
+include ../checkbox/checkbox
+include ../input/input
+include ../area/area
+include ../select/select
+include ../control-group/control-group
+include ../switcher/switcher
+include ../more/more
+include ../add-photo/add-photo
+include ../palette/palette
+include ../remark/remark
+include ../tab/tab
+include ../alert/alert
+include ../phone-field/phone-field
+include ../range/range
+
+mixin step-tire-2()
+  +b.step&attributes(attributes)
+    +akcent-block
+      +form(name="addCar" action="" method="")._in-akcent
+        +e.section._step
+          +title(1) Подать объявление о продаже шин
+          +e.SPAN.step-counter
+            +btn('link', 'left-arrow')(href="")._theme_tertirary._size_m.search__city-btn Назад
+            span Шаг 2/2
+
+        +e.FIELDSET.section
+          +e.LEGEND.section-name Добавьте фотографии
+          +e.cell-description Вы можете менять порядок фотографий, перетаскивая их
+          +e.row
+            +e.item._fullwidth
+              +add-photo
+
+        +e.section-wrap._marked
+          +e.FIELDSET.section
+            +e.LEGEND.section-name Личные данные <span class="marked">*</span>
+            +e.row._align_left
+              +e.item._tb_6._span_4
+                +lbl(for="user-name")
+                  span Имя: <span class="marked">*</span>
+                  +e.SPAN.remark Имя будет указано в объявлении
+
+                +input(type="text" id="user-name" name="user-name" placeholder="Как к вам обращаться?" required)
+
+              +e.item._tb_6._span_4
+                +lbl(for="user-phone") Номер телефона:
+                +phone-field(type="tel" name="user-phone" id="user-phone" placeholder="Номер телефона для связи" tabindex="3" required minlength="16" data-too-short="Номер введён не полностью, должно быть 11 цифр" data-value-missing="Введите телефон")
+              +e.item._tb_6._span_4
+                +lbl(for="user-email") E-mail:
+                +input(type="email" name="user-email" id="user-email" placeholder="Электронная почта (e-mail)" required)
+
+        +e.FIELDSET.section
+          +e.LEGEND.section-name Дополнительная информация
+          +e.row._align_left
+            +e.item._tb_3._span_4
+              +lbl(for="tire-price") Цена, ₽: <span class="marked">*</span>
+              +input(type="text" name="tire-price" id="tire-price" placeholder="Укажите цену продажи" required)._digit-pretify
+            +e.item._tb_7._span_4
+              .lbl.mob-hidden() &nbsp;
+              +control-group._flex._middle._h-40
+                +checkbox(name="cleared" id="forchange") Возможен обмен
+
+        +e.FIELDSET.section
+          +e.row._align_left._valign_top
+            +e.item._tb_5._span_4
+              +lbl(for="tire-city") Город: <span class="marked">*</span>
+              +input(type="text" name="tire-city" id="tire-city" placeholder="Город, в котором находится товар")
+            +e.item._tb_7._span_4
+              +lbl(for="tire-place") Место осмотра: <span class="marked">*</span>
+              +input(type="text" name="tire-place" id="tire-place" placeholder="Место осмотра")
+
+        +e.FIELDSET.section
+          +e.row
+            +e.item._fullwidth
+              +lbl(for="tire-comment") Комментарий:
+              +area(name="tire-comment" id="tire-comment" placeholder="В нескольких предложениях опишите свой товар, этот текст будет показан на странице объявления.\nНе указывайте адреса электронной почты, телефоны и цену, а так же не предлагайте услуги, не связанные с продажей конкретного товара. ")
+
+        +tab._default.form__tab.form__tab_in-akcent.saletype.saletype-tire
+          +e.head
+            +e.A.head-item(href="#saleSimple").saletype__tab-simple.saletype__tab-simple--tire Обычная продажа
+            +e.A.head-item._active(href="#salePremium").saletype__tab-premium.saletype__tab-premium--tire Спецразмещение
+          +e.content(id="saleSimple")
+            .saletype__simple.saletype__simple-tire
+              .saletype__content
+                figure.saletype__fig
+                  img(src="assets/images/tire-sale.svg", alt="")
+                .saletype__text
+                  h3 Обычная продажа
+                  p Размещение объявления на mbib.ru всегда бесплатно. <br> Однако вы можете увеличить шансы на быструю и выгодную продажу, воспользовавшись нашими дополнительными услугами — просто переключите вкладку.
+
+            +btn('div')(type="submit")._size_l._theme_secondary._fullwidth._normal Бесплатно разместить объявление
+
+            +e.tip.text-center
+              small Размещая объявление, вы соглашаетесь с <a href="#">условиями оферты</a> портала mbib.ru и <a href="#">требованиями к размещению объявлений</a>.
+
+          +e.content._active(id="salePremium")
+            .saletype__premium.saletype__premium-tire
+              .saletype__content
+                figure.saletype__fig
+                  img(src="assets/images/tire-premium.svg", alt="")
+                .saletype__text
+                  h3 Спецразмещение
+                  p Увеличьте шансы на быструю и выгодную продажу, которое увидит максимум посетителей авто-портала mbib.ru. Ваше объявление будет выделено цветом, поднято в топ, размещено в специальном блоке на главной странице, странице марки и в выдаче объявлений.
+
+            +btn('div','award')(type="submit")._size_l._theme_premium._fullwidth._normal Оплатить 1000₽ и разместить объявление
+
+            +e.tip.text-center
+              small Размещая объявление, вы соглашаетесь с <a href="#">условиями оферты</a> портала mbib.ru и <a href="#">требованиями к размещению объявлений</a>.

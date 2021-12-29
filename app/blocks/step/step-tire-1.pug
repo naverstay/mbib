@@ -18,7 +18,8 @@ mixin step-tire-1()
       +form(name="addCar" action="" method="")._in-akcent
         +e.section._step
           +title(1) Подать объявление о продаже шин
-          +e.SPAN.step-counter Шаг 1/2
+          +e.SPAN.step-counter
+            span Шаг 1/2
         +e.FIELDSET.section._cell-v1
           +e.LEGEND.section-name Основная информация
 
@@ -144,7 +145,7 @@ mixin step-tire-1()
                 option(value="v5") RL
 
             +e.item._span_4._tb_6
-              +lbl().tab-spacer &nbsp;
+              .lbl.tab-spacer &nbsp;
               +control-group._flex._middle._h-40
                 +checkbox(name="RunFlat" tabindex="13") RunFlat
 

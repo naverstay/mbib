@@ -15,6 +15,13 @@
   background-color #ddd
   border none
 
+  &_normal
+    text-transform: none
+    font-weight: 500
+
+    .btn__text
+      letter-spacing 0
+
   &_size_s
     height $heightS
     line-height @height + 1
@@ -96,6 +103,22 @@
       background-color #1f57ad
       background-image none
       box-shadow inset 0 3px 6px #053d93
+
+
+  &_theme_premium
+    color #fff
+    background-color $colorPremium
+    box-shadow: 0 2px 0 #5a813d
+
+    &:hover,
+    &:focus
+      background #5a813d
+      box-shadow 0 2px 0 #5a813d
+
+    &:active,
+    ^[0]_active&
+      background-color #5a813d
+      box-shadow inset 0 3px 6px #5a813d
 
 
   &_theme_tertirary

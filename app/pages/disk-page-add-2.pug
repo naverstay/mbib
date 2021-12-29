@@ -1,0 +1,13 @@
+extends ../blocks/layout-default/layout-auth
+include ../blocks/breadcrumbs/breadcrumbs
+include ../blocks/step/step-disk-2
+
+block head
+  - var pageTitle = 'Кованые диски Skill SV087 R22 J9.5 ET+15 6x139.7 Dodge';
+  - var pageMod = 'Disks Page';
+  - var innerClass = 'disks-page';
+
+block content
+  +breadcrumbs(getData('index-crumbs'))
+  +step-disk-2
+
