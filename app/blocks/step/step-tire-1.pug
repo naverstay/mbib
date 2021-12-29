@@ -12,12 +12,12 @@ include ../area/area
 include ../select/select
 include ../control-group/control-group
 
-mixin step-disk-1()
+mixin step-tire-1()
   +b.step&attributes(attributes)
     +akcent-block
       +form(name="addCar" action="" method="")._in-akcent
         +e.section._step
-          +title(1) Подать объявление о продаже колесных дисков
+          +title(1) Подать объявление о продаже шин
           +e.SPAN.step-counter Шаг 1/2
         +e.FIELDSET.section._cell-v1
           +e.LEGEND.section-name Основная информация
@@ -34,14 +34,19 @@ mixin step-disk-1()
                 option(value="v5") RL
 
             +e.item._span_4._tb_6
-              +lbl(for="model") Тип: <span class="marked">*</span>
-              +select._search(name="model" id="model" data-placeholder="Уточните модель шин" tabindex="2")
+              +lbl(for="model") Модель: <span class="marked">*</span>
+              +select._search(name="model" disabled id="model" data-placeholder="Уточните модель шин" tabindex="2")
                 option(value="")
                 option(value="v1") CL
                 option(value="v2") CLX
                 option(value="v3") MX
                 option(value="v4") MX5
                 option(value="v5") RL
+
+            +e.item._span_4._tb_6
+              +lbl(for="art-number") Номер запчасти:
+              +input(type="text" name="text" id="art-number" placeholder="Укажите номер (если есть)" tabindex="3")
+
 
         +e.FIELDSET.section._cell-v1
           +e.LEGEND.section-name Состояние и количество
@@ -59,38 +64,23 @@ mixin step-disk-1()
 
             +e.item._span_4._tb_6
               +lbl(for="deterioration") Износ, %:
-              +select._search(name="deterioration" id="deterioration" data-placeholder="Уточните износ шин" tabindex="5")
+              +select._search(name="deterioration" disabled id="deterioration" data-placeholder="Уточните износ шин" tabindex="5")
                 option(value="")
                 option(value="v1") CL
                 option(value="v2") CLX
                 option(value="v3") MX
                 option(value="v4") MX5
                 option(value="v5") RL
+
+            +e.item._span_4._tb_6
+              +lbl(for="art-number") Количество: <span class="marked">*</span>
+              +input(type="number" min=1 name="text" id="art-number" placeholder="Количество шин в комплекте" tabindex="6").appearance
+
 
         +e.FIELDSET.section._cell-v1
           +e.LEGEND.section-name Технические характеристики
 
           +e.row
-            +e.item._span_4._tb_6
-              +lbl(for="diameter") Диаметр, ”: <span class="marked">*</span>
-              +select._search(name="diameter" id="diameter" data-placeholder="Выберите диаметр шин в дюймах" tabindex="9")
-                option(value="")
-                option(value="v1") CL
-                option(value="v2") CLX
-                option(value="v3") MX
-                option(value="v4") MX5
-                option(value="v5") RL
-
-            +e.item._span_4._tb_6
-              +lbl(for="weight") Масса, кг: <span class="marked">*</span>
-              +select._search(name="weight" id="weight" data-placeholder="Выберите высоту шин в %" tabindex="8")
-                option(value="")
-                option(value="v1") CL
-                option(value="v2") CLX
-                option(value="v3") MX
-                option(value="v4") MX5
-                option(value="v5") RL
-
             +e.item._span_4._tb_6
               +lbl(for="width") Ширина, мм: <span class="marked">*</span>
               +select._search(name="width" id="width" data-placeholder="Выберите ширину шин в мм" tabindex="7")
@@ -101,11 +91,31 @@ mixin step-disk-1()
                 option(value="v4") MX5
                 option(value="v5") RL
 
+            +e.item._span_4._tb_6
+              +lbl(for="height") Высота, %: <span class="marked">*</span>
+              +select._search(name="height" id="height" data-placeholder="Выберите высоту шин в %" tabindex="8")
+                option(value="")
+                option(value="v1") CL
+                option(value="v2") CLX
+                option(value="v3") MX
+                option(value="v4") MX5
+                option(value="v5") RL
+
+            +e.item._span_4._tb_6
+              +lbl(for="diameter") Диаметр, ”: <span class="marked">*</span>
+              +select._search(name="diameter" id="diameter" data-placeholder="Выберите диаметр шин в дюймах" tabindex="9")
+                option(value="")
+                option(value="v1") CL
+                option(value="v2") CLX
+                option(value="v3") MX
+                option(value="v4") MX5
+                option(value="v5") RL
+
             +e.item._span_4._tb_6.tab-spacer &nbsp
 
             +e.item._span_4._tb_6
-              +lbl(for="offset") Вылет, мм: <span class="marked">*</span>
-              +select._search(name="offset" id="offset" data-placeholder="Выберите тип шин" tabindex="10")
+              +lbl(for="type") Тип шины: <span class="marked">*</span>
+              +select._search(name="type" id="type" data-placeholder="Выберите тип шин" tabindex="10")
                 option(value="")
                 option(value="v1") CL
                 option(value="v2") CLX
@@ -114,8 +124,8 @@ mixin step-disk-1()
                 option(value="v5") RL
 
             +e.item._span_4._tb_6
-              +lbl(for="drilling") Сверловка: <span class="marked">*</span>
-              +select._search(name="drilling" id="drilling" data-placeholder="Выберите сезон" tabindex="11")
+              +lbl(for="season") Сезон: <span class="marked">*</span>
+              +select._search(name="season" id="season" data-placeholder="Выберите сезон" tabindex="11")
                 option(value="")
                 option(value="v1") CL
                 option(value="v2") CLX
@@ -124,8 +134,37 @@ mixin step-disk-1()
                 option(value="v5") RL
 
             +e.item._span_4._tb_6
-              +lbl(for="diameter_co") Диаметр ЦО: <span class="marked">*</span>
-              +select._search(name="diameter_co" id="diameter_co" data-placeholder="Выберите тип протектора" tabindex="12")
+              +lbl(for="protector") Протектор: <span class="marked">*</span>
+              +select._search(name="protector" id="protector" data-placeholder="Выберите тип протектора" tabindex="12")
+                option(value="")
+                option(value="v1") CL
+                option(value="v2") CLX
+                option(value="v3") MX
+                option(value="v4") MX5
+                option(value="v5") RL
+
+            +e.item._span_4._tb_6
+              +lbl().tab-spacer &nbsp;
+              +control-group._flex._middle._h-40
+                +checkbox(name="RunFlat" tabindex="13") RunFlat
+
+        +e.FIELDSET.section._cell-v1
+          +e.LEGEND.section-name Прочая информация
+
+          +e.row
+            +e.item._span_4._tb_6
+              +lbl(for="fitting") Бесплатный шиномонтаж:
+              +select._search(name="fitting" id="fitting" data-placeholder="Уточните возможность " tabindex="14")
+                option(value="")
+                option(value="v1") CL
+                option(value="v2") CLX
+                option(value="v3") MX
+                option(value="v4") MX5
+                option(value="v5") RL
+
+            +e.item._span_4._tb_6
+              +lbl(for="storage") Сезонное хранение:
+              +select._search(name="storage" id="storage" data-placeholder="Уточните возможность " tabindex="15")
                 option(value="")
                 option(value="v1") CL
                 option(value="v2") CLX

@@ -1,0 +1,12 @@
+extends ../blocks/layout-default/layout-auth
+include ../blocks/breadcrumbs/breadcrumbs
+include ../blocks/step/step-tire-1
+
+block head
+  - var pageTitle = 'Подать объявление о продаже шин';
+  - var pageMod = 'Tires Page';
+  - var innerClass = 'tires-page';
+
+block content
+  +breadcrumbs(getData('index-crumbs'))
+  +step-tire-1
