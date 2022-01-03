@@ -3,7 +3,7 @@ include ../blocks/breadcrumbs/breadcrumbs
 include ../blocks/headblock/headblock
 include ../blocks/pager/pager-load
 include ../blocks/card-list/card-list
-include ../blocks/card/card-tire_draft
+include ../blocks/card/card-disk_draft
 
 block head
   - var pageTitle = 'Кованые диски Skill SV087 R22 J9.5 ET+15 6x139.7 Dodge';
@@ -12,9 +12,9 @@ block head
 
 block content
   +breadcrumbs(getData('tire-crumbs'))
-  +card-tire-draft(getData('tires'), 0)
+  +card-disk-draft(getData('disks'), 0)
   +headblock
 
-  +card-list(getData('tires'), 'tires')
+  +card-list(getData('tires'), 'disks')
 
   +pager-load

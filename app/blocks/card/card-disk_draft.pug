@@ -1,21 +1,19 @@
 include ../title/title
 include ../phone/phone
+include ../show-phone/show-phone
+include ../show-phone/show-phones
 include ../action/action
 include ../gallery/gallery
+include ../tooltip/tooltip
 include ../share/share
-include ../action/action
-include ../btn/btn
 include ../car-name/car-name
 include ../tab/tab
-include ../upload/upload
-include ../tooltip/tooltip
-include ../show-phone/show-phone
-include ../short-poster/short-poster
+include ../calculator/calculator
 
-mixin card_draft(data, id, spec)
+mixin card-disk-draft(data, id, spec)
   -var item = data[id];
-  +b.card&attributes(attributes)._draft(class= spec ? '_spec' : '')
-    +e.bar.card__bar-top
+  +b.card&attributes(attributes)(class= spec ? '_spec' : '')._draft
+    +e.bar
       +e.bar-status._error
         +e.bar-status-text
           | Не опубликовано
@@ -24,31 +22,14 @@ mixin card_draft(data, id, spec)
         +icon('pen-admin', false).bar-icon
       +e.A.bar-action(href="") Опубликовать
         +icon('add-sq', false).bar-icon
-    //- +e.bar
-      +e.bar-status._complete
-        +e.bar-status-text
-          | Опубликовано
-          +icon('checked', false).bar-icon
-        +e.SPAN.bar-remark осталось 59 дней
-      +e.A.bar-action(href="") Редактировать
-        +icon('pen-admin', false).bar-icon
-      +e.A.bar-action(href="") Опубликовать
-        +icon('add-sq', false).bar-icon
-    +e.head._draft
-      if (spec)
-        +e.head-special(class='tooltip__parent tooltipParent')
-          +e.gallery-button
-            +icon('star_fill', false).spec-icon
-            span Спецразмещение
-          +tooltip('spec')
-        .flex-break
-      +e.head-title
-        +car-name(1, 'BMW / X3 / 2013 Внедорожник 5 дв. II (F25) / xDrive 2.0 AT (184 л.с.)', 'bmw')._draft
+    +e.head(class= spec ? 'card__head-spec' : '')
+      +e.H1.head-title #{item.name}
       +e.head-price
         +e.price
           | #{item.price}
           +e.SPAN.price-currency #[span.roboto-rub ₽]
         +action('like', item.isFavorite)._only-icon._is-visible.card__head-action
+
     +e.body
       +e.meta._stat
         +e.meta-data
@@ -77,37 +58,23 @@ mixin card_draft(data, id, spec)
             +e.owner-inspect(title="#{item.inspect.city}, #{item.inspect.address}")
               +e.SPAN.owner-lbl
                 +icon('pin', false).meta-view-icon
-                | Место осмотра
-              | #{item.inspect.city}, #{item.inspect.address}
+                span Место осмотра&nbsp;
+                b #{item.inspect.city}, #{item.inspect.address}
 
         +e.owner-contact
           +show-phone(item.contact, false, spec).card__meta-phone
+          //- +show-phones(item.contact, false).card__meta-phone
+          //- +phone(item.contact).card__meta-phone
 
       +e.tab
         +tab._default.cardtype
           +e.head
-            +e.A.head-item._active(href="#cardPremium").cardtype__tab-premium
-              +icon('trophy', false).head-icon.cardtype__tab-icon
-              | Спецразмещение
             +e.A.head-item(href="#cardUp").cardtype__tab-up
               +icon('cursor', false).head-icon.cardtype__tab-icon
               | Поднятие в поиске
-          +e.content._active(id="cardPremium")
-            .cardtype__content.cardtype__content_premium
-              .cardtype__fig
-                img(src="assets/images/premium.svg", alt="")
-              .cardtype__desc
-                h3 Спецразмещение
-                p Увеличьте шансы на быструю и выгодную продажу, которое увидит максимум посетителей авто-портала Mbib.ru. Ваше объявление будет выделено цветом, поднято в топ, размещено в специальном блоке на главной странице, на странице марки и в выдаче объявлений.
-
-              .cardtype__buy-wrap
-                ul.cardtype__feature
-                  li.cardtype__feature-item Специальный блок на главной
-                  li.cardtype__feature-item Выделено цветом
-                  li.cardtype__feature-item Поднято в ТОП
-
-                .cardtype__buy
-                  +btn('button', '')._size_m._theme_akcent Активировать за 675 руб.
+            +e.A.head-item._active(href="#cardPremium").cardtype__tab-premium
+              +icon('trophy', false).head-icon.cardtype__tab-icon
+              | Спецразмещение
 
           +e.content(id="cardUp")
             .cardtype__content.cardtype__content_up
@@ -125,67 +92,79 @@ mixin card_draft(data, id, spec)
                 .cardtype__buy
                   +btn('button', '')._size_m._theme_main Активировать за 355 руб.
 
+          +e.content._active(id="cardPremium")
+            .cardtype__content.cardtype__content_premium
+              .cardtype__fig
+                img(src="assets/images/premium.svg", alt="")
+              .cardtype__desc
+                h3 Спецразмещение
+                p Увеличьте шансы на быструю и выгодную продажу, которое увидит максимум посетителей авто-портала Mbib.ru. Ваше объявление будет выделено цветом, поднято в топ, размещено в специальном блоке на главной странице, на странице марки и в выдаче объявлений.
+
+              .cardtype__buy-wrap
+                ul.cardtype__feature
+                  li.cardtype__feature-item Специальный блок на главной
+                  li.cardtype__feature-item Выделено цветом
+                  li.cardtype__feature-item Поднято в ТОП
+
+                .cardtype__buy
+                  +btn('button', '')._size_m._theme_akcent Активировать за 675 руб.
+
       +e.data
         +e.data-side
           +e.feature
             +e.DL.feature-list
               +e.feature-row
-                +e.DT.feature-term Год выпуска
-                +e.DD.feature-desc #{item.feature.year}
+                +e.DT.feature-term Производитель
+                +e.DD.feature-desc Skill Wheels
               +e.feature-row
-                +e.DT.feature-term Пробег
-                +e.DD.feature-desc #{item.feature.mileage}
+                +e.DT.feature-term Количество
+                +e.DD.feature-desc 4
               +e.feature-row
-                +e.DT.feature-term Кузов
-                +e.DD.feature-desc #{item.feature.body}
-              +e.feature-row
-                +e.DT.feature-term Цвет
-                +e.DD.feature-desc #{item.feature.color}
-              +e.feature-row
-                +e.DT.feature-term Двигатель
-                +e.DD.feature-desc #{item.feature.engineCapacity} л / #{item.feature.enginePower} л.с. / #{item.feature.engineType}
-              +e.feature-row
-                +e.DT.feature-term Коробка
-                if item.feature.transmission == 'АТ'
-                  -var transmission = 'автоматическая';
-                else
-                  -var transmission = 'механическая';
-
-                +e.DD.feature-desc #{transmission}
-              +e.feature-row
-                +e.DT.feature-term Привод
-                +e.DD.feature-desc #{item.feature.drive}
-              +e.feature-row
-                +e.DT.feature-term Руль
-                -var drive = item.feature.rightDrive ? 'правый' : 'левый';
-                +e.DD.feature-desc #{drive}
+                +e.DT.feature-term Тип
+                +e.DD.feature-desc Кованые
               +e.feature-row
                 +e.DT.feature-term Состояние
-                +e.DD.feature-desc #{item.feature.state}
+                +e.DD.feature-desc Новые
               +e.feature-row
-                +e.DT.feature-term Владельцы
-                +e.DD.feature-desc #{item.feature.owners}
+                +e.DT.feature-term Диаметр, “
+                +e.DD.feature-desc 22
               +e.feature-row
-                +e.DT.feature-term ПТС
-                +e.DD.feature-desc #{item.feature.pts}
+                +e.DT.feature-term Масса, кг
+                +e.DD.feature-desc 15,00
               +e.feature-row
-                +e.DT.feature-term Владение
-                +e.DD.feature-desc #{item.feature.tenure}
+                +e.DT.feature-term Ширина, “
+                +e.DD.feature-desc 9.5
               +e.feature-row
-                +e.DT.feature-term Таможня
-                -var cleared = item.feature.cleared ? 'растаможен' : 'не растаможен';
-                +e.DD.feature-desc #{cleared}
+                +e.DT.feature-term Вылет, мм
+                +e.DD.feature-desc 15
+              +e.feature-row
+                +e.DT.feature-term Сверловка
+                +e.DD.feature-desc 139.70x6
+              +e.feature-row
+                +e.DT.feature-term Диаметр ЦО
+                +e.DD.feature-desc 45
+
+            +e.A.feature-link(href="") Все характеристики модели в каталоге
 
         +e.data-main
           +e.gallery
-            +e.gallery-placeholder
-              +e.gallery-title Добавьте фотографи вашего авто
-              +e.gallery-desc По статистике, люди не смотрят обьявления без картинок
-              +e.gallery-bg
-              +e.gallery-add
-                +upload()._size_xxl._theme_secondary
+            if (spec)
+              +e.gallery-special(class='tooltip__parent tooltipParent')
+                +e.gallery-button
+                  +icon('star_fill', false).spec-icon
+                  span Спецразмещение
+                +tooltip('spec')
+            if item.gallery
+              +e.gallery-list
+                each img in item.gallery
+                  img(src=img, alt="")
 
-          +e.kit
+          +e.comment
+            +title(3) Комментарий продавца
+            +e.comment-body
+              | #{item.comment}
+
+          //-+e.kit
             +e.kit-head
               +title(3) Комплектация
             +e.kit-list
@@ -215,10 +194,6 @@ mixin card_draft(data, id, spec)
                   if item.feature.alloyWheels
                     | Легкосплавные диски
                   | #{item.feature.radiusWheels}''
-          +e.comment
-            +title(3) Комментарий продавца
-            +e.comment-body
-              | #{item.comment}
 
     +e.bar
       +e.bar-status._moderation
