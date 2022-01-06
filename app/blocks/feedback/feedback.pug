@@ -17,29 +17,50 @@ mixin feedback()
   +b.SECTION.feedback&attributes(attributes)
     +formblock
       +e.HEADER.header
-        +title(3).formblock__header-text Техподержка сайта
+        +title(3).formblock__header-text Обратная связь
       +e.body
         +form(name="feedback" action="" method="post")
           +e.row
-            +lbl(for="feedbackName") Имя
+            +lbl(for="feedbackName") Имя: <span class="marked">*</span>
             +input(type="text" name="name" id="feedbackName" tabindex="0" required data-value-missing="Введите имя" autofocus)
           +e.row
-            +lbl(for="feedbackPhone") Телефон
+            +lbl(for="feedbackPhone") Телефон: <span class="marked">*</span>
             +phone-field(type="tel" name="phone" id="feedbackPhone" tabindex="1" placeholder="+7 000 000 00 00" required minlength="16" data-too-short="Номер введён не полностью, должно быть 11 цифр" data-value-missing="Введите телефон")
           +e.row
-            +lbl(for="feedbackEmail") E-mail
+            +lbl(for="feedbackEmail") E-mail: <span class="marked">*</span>
             +input(type="email" name="email" id="feedbackEmail" tabindex="2" required data-value-missing="Введите e-mail")
           +e.row
-            +lbl(for="feedbackType") Тип обращения
+            +lbl(for="feedbackType") Тема сообщения:
+            +select()(name="feedbackType" data-placeholder="" tabindex="3" required data-value-missing="Выберите тему")._simple
+              option(value="")
+              option(value="v1") Добавление недостающей марки или модели
+              option(value="v2") Добавление недостающей марки или модели 2
+
+          +e.row
+            +e.caption Уточните тип, марку и модель добавляемого транспорта
+          +e.row
+            +lbl(for="feedbackType") Тип:
             +select()(name="feedbackType" data-placeholder="" tabindex="3" required data-value-missing="Выберите тип")._simple
               option(value="")
               option(value="v1") Тип 1
               option(value="v2") Тип 2
           +e.row
-            +lbl(for="feedbackMessage") Сообщение
-            +area(name="message" id="feedbackMessage" tabindex="4" required data-value-missing="Введите сообщение")
+            +lbl(for="feedbackType") Марка:
+            +select()(name="feedbackType" data-placeholder="" tabindex="3" required data-value-missing="Выберите или введите марку")._simple
+              option(value="")
+              option(value="v1") Тип 1
+              option(value="v2") Тип 2
+          +e.row
+            +lbl(for="feedbackType") Модель:
+            +select()(name="feedbackType" data-placeholder="" tabindex="3" required data-value-missing="Выберите или введите модель")._simple
+              option(value="")
+              option(value="v1") Тип 1
+              option(value="v2") Тип 2
+          +e.row
+            +lbl(for="feedbackMessage") Комментарий:
+            +area(name="message" id="feedbackMessage" placeholder="Если необходимо, предоставьте дополнительную информацию" tabindex="4")
           +e.row._align_right
-            +btn(tabindex="5")._theme_main Отправить
+            +btn(tabindex="5")._theme_main._normal._size_s Отправить
           +e.row
             +text
               | Нажимая кнопку «Отправить», я принимаю условия Предоставления услуг, Оферты и даю своё согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных
