@@ -38,18 +38,18 @@
     ^[0]_default &
       padding 0 10px
       display inline-block
-      height 60px
+      height 50px
       font-size 14px
       font-weight bold
-      line-height 60px
+      line-height 54px
       text-decoration none
       color $colorText
       text-align center
       flex-grow 1
 
       +above(480px)
-        padding 0 30px
-        font-size 18px
+        padding 0 28px
+        font-size 16px
 
       +above(600px)
         flex-grow initial
@@ -89,6 +89,7 @@
 
   &__content
     display none
+    overflow hidden
 
     &_active
       display block
@@ -100,7 +101,7 @@
         padding 20px 30px
 
   &__tip
-    font-size: 14px
-    color: #787878
-    opacity: 0.65
-    padding: 22px 0 10px
+    font-size 16.5px
+    color #787878
+    opacity 0.65
+    padding 22px 0 10px
