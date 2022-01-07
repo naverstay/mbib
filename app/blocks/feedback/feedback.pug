@@ -22,16 +22,16 @@ mixin feedback()
         +form(name="feedback" action="" method="post")
           +e.row
             +lbl(for="feedbackName") Имя: <span class="marked">*</span>
-            +input(type="text" name="name" id="feedbackName" tabindex="0" required data-value-missing="Введите имя" autofocus)
+            +input(type="text" name="name" id="feedbackName" tabindex="01" required data-value-missing="Введите имя")
           +e.row
             +lbl(for="feedbackPhone") Телефон: <span class="marked">*</span>
-            +phone-field(type="tel" name="phone" id="feedbackPhone" tabindex="1" placeholder="+7 000 000 00 00" required minlength="16" data-too-short="Номер введён не полностью, должно быть 11 цифр" data-value-missing="Введите телефон")
+            +phone-field(type="tel" name="phone" id="feedbackPhone" tabindex="2" placeholder="+7 000 000 00 00" required minlength="16" data-too-short="Номер введён не полностью, должно быть 11 цифр" data-value-missing="Введите телефон")
           +e.row
             +lbl(for="feedbackEmail") E-mail: <span class="marked">*</span>
-            +input(type="email" name="email" id="feedbackEmail" tabindex="2" required data-value-missing="Введите e-mail")
+            +input(type="email" name="email" id="feedbackEmail" tabindex="23" required data-value-missing="Введите e-mail")
           +e.row
             +lbl(for="feedbackType") Тема сообщения:
-            +select()(name="feedbackType" data-placeholder="" tabindex="3" required data-value-missing="Выберите тему")._simple
+            +select()(name="feedbackType" data-placeholder="" tabindex="4" required data-value-missing="Выберите тему")._simple
               option(value="")
               option(value="v1") Добавление недостающей марки или модели
               option(value="v2") Добавление недостающей марки или модели 2
@@ -40,25 +40,33 @@ mixin feedback()
             +e.caption Уточните тип, марку и модель добавляемого транспорта
           +e.row
             +lbl(for="feedbackType") Тип:
-            +select()(name="feedbackType" data-placeholder="" tabindex="3" required data-value-missing="Выберите тип")._simple
+            +select()(name="feedbackType" data-placeholder="" tabindex="5" required data-value-missing="Выберите тип")._simple
               option(value="")
               option(value="v1") Тип 1
               option(value="v2") Тип 2
           +e.row
-            +lbl(for="feedbackType") Марка:
-            +select()(name="feedbackType" data-placeholder="" tabindex="3" required data-value-missing="Выберите или введите марку")._simple
+            +lbl(for="brand") Марка:
+            +select()(name="brand" id="brand" data-placeholder="Выберите или введите марку" data-minimum-results-for-search="3" tabindex="6")._search._for-brand
               option(value="")
-              option(value="v1") Тип 1
-              option(value="v2") Тип 2
+              option(value="m1" data-brand="audi") Audi
+              option(value="m2" data-brand="bmw") BMW
+              option(value="m3" data-brand="kia") Kia
+              option(value="m4" data-brand="lada") Lada
+              option(value="m5" data-brand="zaz") ЗАЗ
+              option(value="m6" data-brand="gaz") ГАЗ
+              option(value="m7" data-brand="uaz") УАЗ
           +e.row
-            +lbl(for="feedbackType") Модель:
-            +select()(name="feedbackType" data-placeholder="" tabindex="3" required data-value-missing="Выберите или введите модель")._simple
+            +lbl(for="model") Модель:
+            +select()(name="model" id="model" data-placeholder="Выберите или введите модель" data-minimum-results-for-search="3" tabindex="7")._search._simple
               option(value="")
-              option(value="v1") Тип 1
-              option(value="v2") Тип 2
+              option(value="v1") CL
+              option(value="v2") CLX
+              option(value="v3") MX
+              option(value="v4") MX5
+              option(value="v5") RL
           +e.row
             +lbl(for="feedbackMessage") Комментарий:
-            +area(name="message" id="feedbackMessage" placeholder="Если необходимо, предоставьте дополнительную информацию" tabindex="4")
+            +area(name="message" id="feedbackMessage" placeholder="Если необходимо, предоставьте дополнительную информацию" tabindex="8")
           +e.row._align_right
             +btn(tabindex="5")._theme_main._normal._size_s Отправить
           +e.row
