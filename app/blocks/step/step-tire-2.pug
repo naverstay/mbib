@@ -84,9 +84,9 @@ mixin step-tire-2()
 
         +tab._default.form__tab.form__tab_in-akcent.saletype
           +e.head
-            +e.A.head-item(href="#saleSimple").saletype__tab-simple.saletype__tab-simple--tire Обычная продажа
-            +e.A.head-item._active(href="#salePremium").saletype__tab-premium.saletype__tab-premium--tire Спецразмещение
-          +e.content(id="saleSimple")
+            +e.A.head-item._active(href="#saleSimple").saletype__tab-simple.saletype__tab-simple--tire Обычная продажа
+            +e.A.head-item(href="#salePremium").saletype__tab-premium.saletype__tab-premium--tire Спецразмещение
+          +e.content._active(id="saleSimple")
             .saletype__simple
               .saletype__content
                 figure.saletype__fig
@@ -100,7 +100,7 @@ mixin step-tire-2()
             +e.tip.text-center
               small Размещая объявление, вы соглашаетесь с <a href="#">условиями оферты</a> портала mbib.ru и <a href="#">требованиями к размещению объявлений</a>.
 
-          +e.content._active(id="salePremium")
+          +e.content(id="salePremium")
             .saletype__premium
               .saletype__content
                 figure.saletype__fig
