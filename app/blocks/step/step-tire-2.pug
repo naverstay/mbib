@@ -82,12 +82,12 @@ mixin step-tire-2()
               +lbl(for="tire-comment") Комментарий:
               +area(name="tire-comment" id="tire-comment" placeholder="В нескольких предложениях опишите свой товар, этот текст будет показан на странице объявления.\nНе указывайте адреса электронной почты, телефоны и цену, а так же не предлагайте услуги, не связанные с продажей конкретного товара. ")
 
-        +tab._default.form__tab.form__tab_in-akcent.saletype.saletype-tire
+        +tab._default.form__tab.form__tab_in-akcent.saletype
           +e.head
             +e.A.head-item(href="#saleSimple").saletype__tab-simple.saletype__tab-simple--tire Обычная продажа
             +e.A.head-item._active(href="#salePremium").saletype__tab-premium.saletype__tab-premium--tire Спецразмещение
           +e.content(id="saleSimple")
-            .saletype__simple.saletype__simple-tire
+            .saletype__simple
               .saletype__content
                 figure.saletype__fig
                   img(src="assets/images/tire-sale.svg", alt="")
@@ -101,12 +101,14 @@ mixin step-tire-2()
               small Размещая объявление, вы соглашаетесь с <a href="#">условиями оферты</a> портала mbib.ru и <a href="#">требованиями к размещению объявлений</a>.
 
           +e.content._active(id="salePremium")
-            .saletype__premium.saletype__premium-tire
+            .saletype__premium
               .saletype__content
                 figure.saletype__fig
                   img(src="assets/images/tire-premium.svg", alt="")
                 .saletype__text
-                  h3 Спецразмещение
+                  h3
+                    b Спецразмещение
+                    span 1000₽
                   p Увеличьте шансы на быструю и выгодную продажу, которое увидит максимум посетителей авто-портала mbib.ru. Ваше объявление будет выделено цветом, поднято в топ, размещено в специальном блоке на главной странице, странице марки и в выдаче объявлений.
 
             +btn('div','award')(type="submit")._size_l._theme_premium._fullwidth._normal Оплатить 1000₽ и разместить объявление
