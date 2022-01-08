@@ -86,9 +86,14 @@ export default (() => {
       });
     });
 
-    $('.select_has-image .select__control').select2({
-      width: '100%',
-      templateResult: formatState
+    $('.select_has-image').each((index, select) => {
+      let selectSearch = $(select);
+
+      selectSearch.find('.select__control').select2({
+        width: '100%',
+        tags: selectSearch.hasClass('select_tags'),
+        templateResult: formatState
+      });
     });
 
     $('.select_for-brand').each((index, select) => {
@@ -132,68 +137,73 @@ export default (() => {
     $('.select_for-brand').each((index, select) => {
       let selectSearch = $(select);
 
+      selectSearch.find('.select__control')
+        .on('select2:open', function () {
+          const modal = $('.modal_mobile-select');
+          const modalTitle = modal.find('.modal__title');
+          const dropdown = modal.find('.select2-dropdown');
+          const placeholder = $(this).attr('data-placeholder');
+
+          modal.find('.select2-container').css({
+            'position': 'relative',
+            'top': 0,
+            'left': 0
+          });
+
+          dropdown.css({
+            'position': 'relative',
+            'top': 0,
+            'left': 0,
+            'width': '100%'
+          });
+
+          modalTitle.text(placeholder);
+
+          setTimeout(() => {
+            const clearSelect = $('.select2-results__option--highlighted').find('.select2-results__option-close');
+            const selectContainer = selectSearch.find('.select__control');
+
+            clearSelect.on('click', function () {
+              selectContainer.val(null).trigger('change');
+            });
+
+            $.magnificPopup.open({
+              alignTop: true,
+              fixedContentPos: true,
+              items: {
+                src: modal, // can be a HTML string, jQuery object, or CSS selector
+                type: 'inline'
+              }
+            });
+          }, 0);
+        })
+        .on('select2:close', function () {
+          const modal = $('.modal_mobile-select');
+          $.magnificPopup.close({
+            items: {
+              src: modal, // can be a HTML string, jQuery object, or CSS selector
+              type: 'inline'
+            }
+          });
+        })
+        .select2({
+          width: '100%',
+          minimumResultsForSearch: 20,
+          tags: selectSearch.hasClass('select_tags'),
+          dropdownParent: $('#modal .modal__body'),
+          templateResult: formatBrandResult
+        });
+    });
+
+    $('.select_has-image').each((index, select) => {
+      let selectSearch = $(select);
+
       selectSearch.find('.select__control').select2({
         width: '100%',
-        tags: selectSearch.hasClass('select_tags'),
         minimumResultsForSearch: 20,
+        tags: selectSearch.hasClass('select_tags'),
         dropdownParent: $('#modal .modal__body'),
-        templateResult: formatBrandResult
-      });
-    });
-
-    $('.select_has-image .select__control').select2({
-      width: '100%',
-      minimumResultsForSearch: 20,
-      dropdownParent: $('#modal .modal__body'),
-      templateResult: formatState
-    });
-
-    $('.select_search .select__control').on('select2:open', function () {
-      const modal = $('.modal_mobile-select');
-      const modalTitle = modal.find('.modal__title');
-      const dropdown = modal.find('.select2-dropdown');
-      const placeholder = $(this).attr('data-placeholder');
-
-      modal.find('.select2-container').css({
-        'position': 'relative',
-        'top': 0,
-        'left': 0
-      });
-
-      dropdown.css({
-        'position': 'relative',
-        'top': 0,
-        'left': 0,
-        'width': '100%'
-      });
-
-      modalTitle.text(placeholder);
-
-      setTimeout(() => {
-        const clearSelect = $('.select2-results__option--highlighted').find('.select2-results__option-close');
-        const selectContainer = $('.select_for-brand .select__control');
-
-        clearSelect.on('click', function () {
-          selectContainer.val(null).trigger('change');
-        });
-        $.magnificPopup.open({
-          alignTop: true,
-          fixedContentPos: true,
-          items: {
-            src: modal, // can be a HTML string, jQuery object, or CSS selector
-            type: 'inline'
-          }
-        });
-      }, 0);
-    });
-
-    $('.select_search .select__control').on('select2:close', function () {
-      const modal = $('.modal_mobile-select');
-      $.magnificPopup.close({
-        items: {
-          src: modal, // can be a HTML string, jQuery object, or CSS selector
-          type: 'inline'
-        }
+        templateResult: formatState
       });
     });
   }
