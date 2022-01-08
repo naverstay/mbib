@@ -46,7 +46,7 @@ mixin feedback()
               option(value="v2") Тип 2
           +e.row
             +lbl(for="brand") Марка:
-            +select()(name="brand" id="brand" data-placeholder="Выберите или введите марку" data-minimum-results-for-search="3" tabindex="6")._search._for-brand
+            +select()(name="brand" id="brand" data-placeholder="Выберите или введите марку" data-minimum-results-for-search="3" tabindex="6")._for-brand._tags
               option(value="")
               option(value="m1" data-brand="audi") Audi
               option(value="m2" data-brand="bmw") BMW
@@ -57,7 +57,7 @@ mixin feedback()
               option(value="m7" data-brand="uaz") УАЗ
           +e.row
             +lbl(for="model") Модель:
-            +select()(name="model" id="model" data-placeholder="Выберите или введите модель" data-minimum-results-for-search="3" tabindex="7")._search._simple
+            +select()(name="model" id="model" data-placeholder="Выберите или введите модель" data-minimum-results-for-search="3" tabindex="7")._simple._tags
               option(value="")
               option(value="v1") CL
               option(value="v2") CLX

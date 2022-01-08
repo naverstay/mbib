@@ -9,10 +9,11 @@ export default (() => {
     if (!state.id) {
       return state.text;
     }
-    const brandName = state.element.getAttribute('data-brand');
+    const brandName = state.hasOwnProperty('element') ? state.element.getAttribute('data-brand') : '';
     if (!brandName) {
       return state.text;
     }
+
     const $state = $(
       `<span class="select2-results__option-brand">
           <span class="select2-results__option-icon brand brand_${brandName}"></span>
@@ -30,7 +31,7 @@ export default (() => {
     if (!state.id) {
       return state.text;
     }
-    const brandName = state.element.getAttribute('data-brand');
+    const brandName = state.hasOwnProperty('element') ? state.element.getAttribute('data-brand') : '';
     if (!brandName) {
       return state.text;
     }
@@ -61,23 +62,28 @@ export default (() => {
   };
 
   if (!isMobile) {
-    $('.select_search .select__control').select2({
-      width: '100%',
-      minimumResultsForSearch: 20,
-      templateResult: (data) => {
-        if (!data.id) {
-          return data.text;
-        }
-        const term = $(`option[value=${data.id}]`).first().closest('select').data('select2').dropdown.$search.val();
-        const reg = new RegExp(term, 'gi');
-        const $res = $('<div></div>');
-        const text = data.text;
-        const boldTermText = text.replace(reg, (optionText) => `<mark class="select2-results__option-highlight">${optionText}</mark>`);
-        $res.html(boldTermText);
-        $res.addClass('select2-results__option-inner');
+    $('.select_search').each((index, select) => {
+      let selectSearch = $(select);
 
-        return $res;
-      }
+      selectSearch.find('.select__control').select2({
+        width: '100%',
+        tags: selectSearch.hasClass('select_tags'),
+        minimumResultsForSearch: 20,
+        templateResult: (data) => {
+          if (!data.id) {
+            return data.text;
+          }
+          const term = $(`option[value=${data.id}]`).first().closest('select').data('select2').dropdown.$search.val();
+          const reg = new RegExp(term, 'gi');
+          const $res = $('<div></div>');
+          const text = data.text;
+          const boldTermText = text.replace(reg, (optionText) => `<mark class="select2-results__option-highlight">${optionText}</mark>`);
+          $res.html(boldTermText);
+          $res.addClass('select2-results__option-inner');
+
+          return $res;
+        }
+      });
     });
 
     $('.select_has-image .select__control').select2({
@@ -85,40 +91,55 @@ export default (() => {
       templateResult: formatState
     });
 
-    $('.select_for-brand .select__control').select2({
-      width: '100%',
-      minimumResultsForSearch: 20,
-      templateResult: formatBrandResult,
-      templateSelection: formatBrandSelection
+    $('.select_for-brand').each((index, select) => {
+      let selectSearch = $(select);
+
+      selectSearch.find('.select__control').select2({
+        width: '100%',
+        tags: selectSearch.hasClass('select_tags'),
+        minimumResultsForSearch: 20,
+        templateResult: formatBrandResult,
+        templateSelection: formatBrandSelection
+      });
     });
 
-  }else {
-    $('.select_search .select__control').select2({
-      width: '100%',
-      minimumResultsForSearch: 20,
-      dropdownParent: $('#modal .modal__body'),
-      templateResult: (data) => {
-        if (!data.id) {
-          return data.text;
+  } else {
+    $('.select_search').each((index, select) => {
+      let selectSearch = $(select);
+
+      selectSearch.find('.select__control').select2({
+        width: '100%',
+        tags: selectSearch.hasClass('select_tags'),
+        minimumResultsForSearch: 20,
+        dropdownParent: $('#modal .modal__body'),
+        templateResult: (data) => {
+          if (!data.id) {
+            return data.text;
+          }
+          const term = $(`option[value=${data.id}]`).first().closest('select').data('select2').dropdown.$search.val();
+          const reg = new RegExp(term, 'gi');
+          const $res = $('<div></div>');
+          const text = data.text;
+          const boldTermText = text.replace(reg, (optionText) => `<mark class="select2-results__option-highlight">${optionText}</mark>`);
+          $res.html(boldTermText);
+          $res.addClass('select2-results__option-inner');
+
+          return $res;
         }
-        const term = $(`option[value=${data.id}]`).first().closest('select').data('select2').dropdown.$search.val();
-        const reg = new RegExp(term, 'gi');
-        const $res = $('<div></div>');
-        const text = data.text;
-        const boldTermText = text.replace(reg, (optionText) => `<mark class="select2-results__option-highlight">${optionText}</mark>`);
-        $res.html(boldTermText);
-        $res.addClass('select2-results__option-inner');
-
-        return $res;
-      }
-    });
-    $('.select_for-brand .select__control').select2({
-      width: '100%',
-      minimumResultsForSearch: 20,
-      dropdownParent: $('#modal .modal__body'),
-      templateResult: formatBrandResult
+      });
     });
 
+    $('.select_for-brand').each((index, select) => {
+      let selectSearch = $(select);
+
+      selectSearch.find('.select__control').select2({
+        width: '100%',
+        tags: selectSearch.hasClass('select_tags'),
+        minimumResultsForSearch: 20,
+        dropdownParent: $('#modal .modal__body'),
+        templateResult: formatBrandResult
+      });
+    });
 
     $('.select_has-image .select__control').select2({
       width: '100%',
@@ -175,11 +196,17 @@ export default (() => {
         }
       });
     });
-
   }
 
-  $('.pagination .select .select__control, .sort .select .select__control, .select_simple .select__control').select2({
-    width: '100%',
-    minimumResultsForSearch: -1
+  $('.pagination .select, .sort .select, .select_simple').each((index, select) => {
+    let selectSearch = $(select);
+
+    selectSearch.find('.select__control').select2({
+      width: '100%',
+      tags: selectSearch.hasClass('select_tags'),
+      minimumResultsForSearch: -1
+    });
   });
+
+  return false;
 })();
