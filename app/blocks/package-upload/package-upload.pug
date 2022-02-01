@@ -32,24 +32,24 @@ mixin package-upload(logs)
       if (!logs)
         +upload-block()
           .package-upload__title Добавленные фиды
-          +upload-progress(33, 'feed.xls', 'осталось 25 секунд', 'pause')
+          +upload-progress(33, 'обратный фид', 'осталось 25 секунд', 'pause')
 
         +upload-block()
           .package-upload__title Добавленные фиды
-          +upload-progress(0, 'feed.xls', 'Ошибка загрузки', 'fail')
+          +upload-progress(0, 'обратный фид', 'Ошибка загрузки', 'fail')
 
         +upload-block()
           .package-upload__title Добавленные фиды
-          +upload-progress(100, 'feed.xls', '', 'success')
+          +upload-progress(100, 'обратный фид', '', 'success')
 
         +upload-block()
           .package-upload__title Добавленные фиды
-          +upload-progress(0, 'feed.xls', 'Отправлен на модерацию', 'moderate')
+          +upload-progress(0, 'обратный фид', 'Отправлен на модерацию', 'moderate')
 
         +upload-block()
           .package-upload__title Добавленные фиды
-          +upload-progress(0, 'feed.xls', 'Отклонен модератором (Причина: пустой документ)', 'rejected')
+          +upload-progress(0, 'обратный фид', 'Отклонен модератором (Причина: пустой документ)', 'rejected')
 
       +upload-block()
         .package-upload__title Добавленные фиды
-        +upload-progress(0, 'feed.xls', 'Успешно загружен', 'confirmed')
+        +upload-progress(0, 'обратный фид', 'Успешно загружен', 'confirmed')

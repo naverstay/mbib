@@ -3,7 +3,10 @@ include ../icon/icon
 mixin upload-progress(percent, file, info, state)
   +b.upload-progress&attributes(attributes)
     +e.header
-      +e.SPAN.file(class= state === 'fail' ? ' __gray' : state === 'rejected' ? ' __red' : '')= file
+      +e.SPAN.file(class= state === 'fail' ? ' __gray' : state === 'rejected' ? ' __red' : '')
+        a(href='#') mbib
+        | &nbsp;|&nbsp;
+        a(href='#')= file
       +e.SPAN.info
         if (state === 'confirmed')
           +e.SPAN.btn

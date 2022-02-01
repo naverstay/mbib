@@ -12,10 +12,13 @@
     flex-flow row nowrap
     height: 24px
 
+    +below(767px)
+      height auto
+      flex-wrap wrap
+
   &__file
     font-weight: 600
     font-size: 16px
-    max-width 28%
     overflow: hidden
     text-overflow ellipsis
     white-space: nowrap
@@ -35,6 +38,12 @@
     align-items: center
     max-width 70%
 
+    +below(767px)
+      max-width 100%
+      width 100%
+      order 1
+      margin-top 5px
+
     .upload-progress__btn
       margin-right: 10px
       margin-left: 0
@@ -42,7 +51,10 @@
 
   &__controls
     display flex
-    padding-left: 8px
+    padding-left 8px
+
+    +below(767px)
+      margin-left auto
 
   &__btn
     display block
