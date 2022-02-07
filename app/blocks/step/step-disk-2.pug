@@ -86,32 +86,34 @@ mixin step-disk-2()
           +e.head
             +e.A.head-item._active(href="#saleSimple").saletype__tab-simple.saletype__tab-simple--tire Обычная продажа
             +e.A.head-item(href="#salePremium").saletype__tab-premium.saletype__tab-premium--tire Спецразмещение
-          +e.content._active(id="saleSimple")
-            .saletype__simple
-              .saletype__content
-                figure.saletype__fig
-                  img(src="assets/images/tire-sale.svg", alt="")
-                .saletype__text
-                  h3 Обычная продажа
-                  p Размещение объявления на mbib.ru всегда бесплатно. <br> Однако вы можете увеличить шансы на быструю и выгодную продажу, воспользовавшись нашими дополнительными услугами — просто переключите вкладку.
 
-            +btn('div')(type="submit")._size_l._theme_secondary._fullwidth._normal Бесплатно разместить объявление
+          +e.body
+            +e.content._active(id="saleSimple")
+              .saletype__simple
+                .saletype__content
+                  figure.saletype__fig
+                    img(src="assets/images/tire-sale.svg", alt="")
+                  .saletype__text
+                    h3 Обычная продажа
+                    p Размещение объявления на mbib.ru всегда бесплатно. <br> Однако вы можете увеличить шансы на быструю и выгодную продажу, воспользовавшись нашими дополнительными услугами — просто переключите вкладку.
 
-            +e.tip.text-center
-              small Размещая объявление, вы соглашаетесь с <a href="#">условиями оферты</a> портала mbib.ru и <a href="#">требованиями к размещению объявлений</a>.
+              +btn('div')(type="submit")._size_l._theme_secondary._fullwidth._normal Бесплатно разместить объявление
 
-          +e.content(id="salePremium")
-            .saletype__premium
-              .saletype__content
-                figure.saletype__fig
-                  img(src="assets/images/tire-premium.svg", alt="")
-                .saletype__text
-                  h3
-                    b Спецразмещение
-                    span 1000₽
-                  p Увеличьте шансы на быструю и выгодную продажу, которое увидит максимум посетителей авто-портала mbib.ru. Ваше объявление будет выделено цветом, поднято в топ, размещено в специальном блоке на главной странице, странице марки и в выдаче объявлений.
+              +e.tip.text-center
+                small Размещая объявление, вы соглашаетесь с <a href="#">условиями оферты</a> портала mbib.ru и <a href="#">требованиями к размещению объявлений</a>.
 
-            +btn('div','award')(type="submit")._size_l._theme_premium._fullwidth._normal Оплатить 1000₽ и разместить объявление
+            +e.content(id="salePremium")
+              .saletype__premium
+                .saletype__content
+                  figure.saletype__fig
+                    img(src="assets/images/tire-premium.svg", alt="")
+                  .saletype__text
+                    h3
+                      b Спецразмещение
+                      span 1000₽
+                    p Увеличьте шансы на быструю и выгодную продажу, которое увидит максимум посетителей авто-портала mbib.ru. Ваше объявление будет выделено цветом, поднято в топ, размещено в специальном блоке на главной странице, странице марки и в выдаче объявлений.
 
-            +e.tip.text-center
-              small Размещая объявление, вы соглашаетесь с <a href="#">условиями оферты</a> портала mbib.ru и <a href="#">требованиями к размещению объявлений</a>.
+              +btn('div','premium')(type="submit")._size_l._theme_premium._fullwidth._normal Оплатить 1000₽ и разместить объявление
+
+              +e.tip.text-center
+                small Размещая объявление, вы соглашаетесь с <a href="#">условиями оферты</a> портала mbib.ru и <a href="#">требованиями к размещению объявлений</a>.

@@ -465,31 +465,33 @@ mixin step-truck-4()
           +e.head
             +e.A.head-item(href="#saleSimple").saletype__tab-simple Обычная продажа
             +e.A.head-item._active(href="#salePremium").saletype__tab-premium Спецразмещение
-          +e.content(id="saleSimple")
-            .saletype__simple
-              .saletype__content
-                figure.saletype__fig
-                  img(src="assets/images/fig-sale.png", alt="")
-                .saletype__text
-                  h3 Обычная продажа
-                  p Вы можете разместить объявление на Мбиб.ру бесплатно, но дополнительные услуги помогут продать автомобиль быстрее.
 
-            +btn('div', 'add')._size_xxl._theme_secondary._fullwidth.saletype__sbm Добавить объявление, бесплатно!
+          +e.body
+            +e.content(id="saleSimple")
+              .saletype__simple
+                .saletype__content
+                  figure.saletype__fig
+                    img(src="assets/images/fig-sale.png", alt="")
+                  .saletype__text
+                    h3 Обычная продажа
+                    p Вы можете разместить объявление на Мбиб.ру бесплатно, но дополнительные услуги помогут продать автомобиль быстрее.
 
-            small Размещая объявление, вы соглашаетесь с <a href="">условиями оферты</a> портала mbib.ru и <a href="">требованиями к размещению объявлений</a>.
+              +btn('div', 'add')._size_xxl._theme_secondary._fullwidth.saletype__sbm Бесплатно разместить объявление
 
-          +e.content._active(id="salePremium")
-            .saletype__premium
-              .saletype__content
-                .saletype__text
-                  h3 Спецразмещение
-                  p Вы можете разместить объявление на портале Мбиб.ру
-                  p Дополнительные услуги помогут продать автомобиль быстрее.
+              small Размещая объявление, вы соглашаетесь с <a href="">условиями оферты</a> портала mbib.ru и <a href="">требованиями к размещению объявлений</a>.
 
-                .saletype__price-wrap
-                  .saletype__price
-                    span.saletype__price-num 1000
-                    span.saletype__price-cur руб.
+            +e.content._active(id="salePremium")
+              .saletype__premium
+                .saletype__content
+                  .saletype__text
+                    h3 Спецразмещение
+                    p Вы можете разместить объявление на портале Мбиб.ру
+                    p Дополнительные услуги помогут продать автомобиль быстрее.
 
-            +btn('button','award')(type="submit")._size_xxl._theme_akcent._fullwidth.saletype__sbm Разместить и оплатить 1’000 руб.
-            small Размещая объявление, вы соглашаетесь с <a href="">условиями оферты</a> портала mbib.ru и <a href="">требованиями к размещению объявлений</a>.
+                  .saletype__price-wrap
+                    .saletype__price
+                      span.saletype__price-num 1000
+                      span.saletype__price-cur руб.
+
+              +btn('button','premium')(type="submit")._size_xxl._theme_akcent._fullwidth.saletype__sbm Оплатить 1000₽ и разместить объявление
+              small Размещая объявление, вы соглашаетесь с <a href="">условиями оферты</a> портала mbib.ru и <a href="">требованиями к размещению объявлений</a>.

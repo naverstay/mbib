@@ -92,38 +92,40 @@ mixin card_draft(data, id, spec)
             +e.A.head-item(href="#cardUp").cardtype__tab-up
               +icon('cursor', false).head-icon.cardtype__tab-icon
               | Поднятие в поиске
-          +e.content._active(id="cardPremium")
-            .cardtype__content.cardtype__content_premium
-              .cardtype__fig
-                img(src="assets/images/premium.svg", alt="")
-              .cardtype__desc
-                h3 Спецразмещение
-                p Увеличьте шансы на быструю и выгодную продажу, которое увидит максимум посетителей авто-портала Mbib.ru. Ваше объявление будет выделено цветом, поднято в топ, размещено в специальном блоке на главной странице, на странице марки и в выдаче объявлений.
 
-              .cardtype__buy-wrap
-                ul.cardtype__feature
-                  li.cardtype__feature-item Специальный блок на главной
-                  li.cardtype__feature-item Выделено цветом
-                  li.cardtype__feature-item Поднято в ТОП
+          +e.body
+            +e.content._active(id="cardPremium")
+              .cardtype__content.cardtype__content_premium
+                .cardtype__fig
+                  img(src="assets/images/premium.svg", alt="")
+                .cardtype__desc
+                  h3 Спецразмещение
+                  p Увеличьте шансы на быструю и выгодную продажу, которое увидит максимум посетителей авто-портала Mbib.ru. Ваше объявление будет выделено цветом, поднято в топ, размещено в специальном блоке на главной странице, на странице марки и в выдаче объявлений.
 
-                .cardtype__buy
-                  +btn('button', '')._size_m._theme_akcent Активировать за 675 руб.
+                .cardtype__buy-wrap
+                  ul.cardtype__feature
+                    li.cardtype__feature-item Специальный блок на главной
+                    li.cardtype__feature-item Выделено цветом
+                    li.cardtype__feature-item Поднято в ТОП
 
-          +e.content(id="cardUp")
-            .cardtype__content.cardtype__content_up
-              .cardtype__fig
-                img(src="assets/images/rocket.svg", alt="")
-              .cardtype__desc
-                h3 Экспресс-продажа в ТОП позициях
-                p Увеличьте шансы на быструю и выгодную продажу, которое увидит максимум посетителей авто-портала Mbib.ru. Ваше объявление будет выделено цветом, поднято в топ, размещено в специальном блоке на главной странице, на странице марки и в выдаче объявлений.
+                  .cardtype__buy
+                    +btn('button', '')._size_m._theme_akcent Активировать за 675 руб.
 
-              .cardtype__buy-wrap
-                ul.cardtype__feature
-                  li.cardtype__feature-item Специальный блок на главной
-                  li.cardtype__feature-item Поднято в ТОП
+            +e.content(id="cardUp")
+              .cardtype__content.cardtype__content_up
+                .cardtype__fig
+                  img(src="assets/images/rocket.svg", alt="")
+                .cardtype__desc
+                  h3 Экспресс-продажа в ТОП позициях
+                  p Увеличьте шансы на быструю и выгодную продажу, которое увидит максимум посетителей авто-портала Mbib.ru. Ваше объявление будет выделено цветом, поднято в топ, размещено в специальном блоке на главной странице, на странице марки и в выдаче объявлений.
 
-                .cardtype__buy
-                  +btn('button', '')._size_m._theme_main Активировать за 355 руб.
+                .cardtype__buy-wrap
+                  ul.cardtype__feature
+                    li.cardtype__feature-item Специальный блок на главной
+                    li.cardtype__feature-item Поднято в ТОП
+
+                  .cardtype__buy
+                    +btn('button', '')._size_m._theme_main Активировать за 355 руб.
 
       +e.data
         +e.data-side
