@@ -117,7 +117,6 @@
         right -95px
 
       .saletype__content
-        min-height 130px
         padding-right 40px
 
       .saletype__fig img
@@ -166,7 +165,7 @@
     display flex
     position: relative
     z-index: 1
-    align-items: center
+    align-items: flex-start
 
   &__fig
     display none
@@ -184,6 +183,7 @@
       font-size 16px
       line-height: 1.6
       width 480px
+      padding-top: 30px
 
     ^[0]__premium &
       width 100%
@@ -191,6 +191,7 @@
       +above(980px)
         max-width 48%
         width 530px
+        padding-top: 30px
         margin-left 15px
 
     h3
@@ -212,17 +213,11 @@
     position absolute
     bottom 0
     right 130px
-    // padding-bottom 54%
-    // width 63vmin
-    // max-width 378px
     width 189px
     height 152px
     content ''
     background url(../images/bg-price.png) 0 bottom no-repeat
     background-size contain
-
-    // +above(600px)
-    // right 35%
 
     +above(400px)
       right 180px
