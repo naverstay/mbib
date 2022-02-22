@@ -5,27 +5,36 @@
   flex 0 0 auto
   color darken($colorDecorative, 40)
   background-color $colorText
+
   &.full
     margin-top 0
 
-  &__counter
-    +below(767px)
+  +below(767px)
+    padding: 0 7px
+
+    &__counter
       position: absolute
-      right: 10px
+      right: 16px
       top: 26px
 
   &__head,
   &__foot
-    padding 26px 0 25px
+    padding 26px 0 14px
     justify-content space-between
-    border-bottom 1px solid rgba(darken($colorDecorative, 40), .3)
+
+    +above(1170px)
+      padding-top: 48px
 
   &__head
     +above(980px)
       display flex
+      align-items: flex-start
+      justify-content space-between
+      position: relative
+      flex-flow row wrap
 
   &__head-logo
-    margin-bottom 10px
+    margin-bottom 15px
 
     +above(980px)
       margin-bottom 0
@@ -40,13 +49,10 @@
       align-items center
 
   &__section
-    padding 29px 0 26px
+    padding 0 0 20px
 
-    &:first-child
-      padding-bottom 0
-
-      +above(768px)
-        padding-bottom 26px
+    +above(768px)
+      padding-bottom 26px
 
     &_mobile_hide
       display none
@@ -55,10 +61,50 @@
         display block
 
   &__section-title
-    margin-bottom 28px
-    font-size 16px
-    font-weight bold
+    margin-bottom 14px
+    font-size 14px
+    font-weight 400
+
+    +above(768px)
+      margin-bottom: 16px
+
+    +above(1170px)
+      margin-bottom: 20px
 
   &__nav
-    +above(1024px)
-      width 80%
+    width: 100%
+
+    +above(768px)
+      margin: 18px 0
+
+  .inner
+    +above(768px)
+      display flex
+      flex-flow row nowrap
+      align-items flex-start
+      justify-content space-between
+
+      .footer__head
+        width: 31%
+
+      .footer__lists
+        width: 61.5%
+        padding: 26px 0 14px
+        display flex
+        flex-flow row nowrap
+        align-items flex-start
+
+      .footer__section
+        min-width 38%
+
+    +above(1170px)
+
+      .footer__head
+        width: 25.5%
+
+      .footer__lists
+        width: 56.7%
+
+
+      .footer__section
+        min-width 38%
