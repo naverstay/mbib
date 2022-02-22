@@ -8,16 +8,19 @@ include ../tooltip/tooltip
 include ../share/share
 include ../calculator/calculator
 
-mixin card(data, id, spec)
+mixin card(data, id, spec, archive)
   -var item = data[id];
   +b.card&attributes(attributes)(class= spec ? '_spec' : '')
     +e.head(class= spec ? 'card__head-spec' : '')
+      - if (archive)
+        +e.head-archive Архивное объявление
       +e.H1.head-title Продажа #{item.name} в Москве
       +e.head-price
         +e.price
           | #{item.price}
           +e.SPAN.price-currency #[span.roboto-rub ₽]
-        +action('like', item.isFavorite)._only-icon._is-visible.card__head-action
+        - if (!archive)
+          +action('like', item.isFavorite)._only-icon._is-visible.card__head-action
 
     +e.body
       +e.meta._stat
@@ -43,7 +46,7 @@ mixin card(data, id, spec)
                 | #{item.inspect.viewAll}
               +e.SPAN.meta-remark (#{item.inspect.viewToday} сегодня)
 
-      +e.meta._owner.card__owner
+      +e.meta._owner.card__owner(class= archive ? ' card__meta_archive' : '')
         +e.owner-data
           +e.owner-name
             | #{item.author}

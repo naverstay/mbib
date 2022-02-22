@@ -185,7 +185,7 @@ module.exports = env => ({
         ]
       },
       {
-        test: /\.pug$/,
+        test: /(archive|main)\.pug$/,
         include: pugPath,
         use: [
           {

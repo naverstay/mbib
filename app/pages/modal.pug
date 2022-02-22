@@ -2,6 +2,7 @@ extends ../blocks/layout-default/layout-default
 include ../blocks/modal/modal-email
 include ../blocks/modal/modal-phone
 include ../blocks/modal/modal-phone-share
+include ../blocks/modal/modal-phone-archive
 include ../blocks/modal/modal-bookmark
 include ../blocks/modal/modal-claim
 include ../blocks/modal/modal-place
@@ -21,6 +22,10 @@ block content
     +modal-bookmark
   div(style="margin-bottom:10px")
     +btn('link')(href="#modalPhone" data-effect="mfp-zoom-in").link-modal Показать телефон
+    +modal-phone
+
+  div(style="margin-bottom:10px")
+    +btn('link')(href="#modalPhoneArchive" data-effect="mfp-zoom-in").link-modal Показать телефон архив
     +modal-phone
 
   div(style="margin-bottom:10px")

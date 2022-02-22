@@ -1,0 +1,25 @@
+extends ../blocks/layout-default/layout-default
+include ../blocks/breadcrumbs/breadcrumbs
+include ../blocks/card/card
+include ../blocks/card-list/card-list
+include ../blocks/block/block
+include ../blocks/headblock/headblock
+include ../blocks/pager/pager-load
+include ../blocks/yad/yad
+include ../blocks/yad/yad-sticky
+include ../blocks/tags/tags
+
+
+block head
+  - var pageTitle = 'Купить Mercedes-Benz E-klasse V (W213, S213, C238) в Москве';
+  - var pageMod = 'card';
+
+block content
+  +breadcrumbs(getData('card-crumbs'))
+  +card(getData('cars'), 0, false, true)
+  +headblock
+  +card-list(getData('cars'))
+  +pager-load
+  +yad
+  +yad-sticky
+  +tags
