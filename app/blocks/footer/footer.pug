@@ -7,26 +7,30 @@ include ../modal/modal-select
 include ../modal/modal-multiselect
 include ../social/social
 
+- var menuCategory_1 = [{href : "#",text : "Удаление объявлений"},{href : "#",text : "Тарифы"},{href : "#",text : "Пакетная загрузка"},{href : "#",text : "Разместить прайс-лист"}]
+
+- var menuCategory_2 = [{href : "#",text : "Правила сайта"},{href : "#",text : "Политика конфиденциальности"},{href : "#",text : "Условия предоставления услуг"},{href : "#",text : "Оферта"},{href : "#",text : "Обратная связь"},{href : "#",text : "Каталог"},{href : "#",text : "Карта сайта"}]
+
 mixin footer()
   +b.footer&attributes(attributes)(class=pageFull ? "full" : "")
     .inner
       +e.head
         +e.head-logo
           +logo._footer
+
+        +e.counter <!--LiveInternet counter--><a href="https://www.liveinternet.ru/click" target="_blank"><img id="licnt0D21" width="88" height="31" style="border:0"  title="LiveInternet: показано число просмотров за 24 часа, посетителей за 24 часа и за сегодня" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" alt=""/></a><script>(function(d,s){d.getElementById("licnt0D21").src= "https://counter.yadro.ru/hit?t14.6;r"+escape(d.referrer)+ ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+ (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+ ";h"+escape(d.title.substring(0,150))+";"+Math.random()}) (document,screen)</script><!--/LiveInternet-->
+
         +e.nav
-          +nav(getData('navFoot'))._footer
+          +copy
+
       +e.lists
         +e.section
-          +e.H5.section-title Продажа авто
-          +list({data: getData('cityList'), columns: 6})._columned
+          +e.H5.section-title КАТЕГОРИЯ 1
+          //-+list({data: getData('cityList'), columns: 6})._columned
+          +list({data: menuCategory_1})._columned._main
         +e.section
-          +list({data: getData('regionList'), columns: 5})._columned._size_s
-
-      +e.foot
-        +copy
-        +e.counter <!--LiveInternet counter--><a href="https://www.liveinternet.ru/click" target="_blank"><img id="licnt0D21" width="88" height="31" style="border:0"  title="LiveInternet: показано число просмотров за 24 часа, посетителей за 24 часа и за сегодня" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" alt=""/></a><script>(function(d,s){d.getElementById("licnt0D21").src= "https://counter.yadro.ru/hit?t14.6;r"+escape(d.referrer)+ ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+ (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+ ";h"+escape(d.title.substring(0,150))+";"+Math.random()}) (document,screen)</script><!--/LiveInternet-->
-        //-+social
-        //-+dev
+          +e.H5.section-title КАТЕГОРИЯ 2
+          +list({data: menuCategory_2, columns: 2})._columned._split
 
   +modal-select
   //- +modal-multiselect

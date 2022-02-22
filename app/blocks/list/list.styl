@@ -6,6 +6,19 @@
   &_columned
     display block
 
+    .footer &
+      display flex
+      flex-flow row wrap
+
+      +above(768px)
+        display block
+
+  &_split.list_columned
+    +above(1170px)
+      columns: 2
+      column-gap: 95px
+      margin-right: -150px
+
   &_column_1
     column-count unset
     column-gap 0
@@ -82,6 +95,17 @@
     ^[0]_size_s &
       margin-bottom 1px
 
+    .footer &
+      margin-right: 10px
+      margin-bottom 12px
+
+      +above(768px)
+        margin-bottom 13px
+        margin-right: 0
+
+      +above(1170px)
+        margin-bottom 17px
+
   &__link
     padding-bottom 2px
     display inline-block
@@ -96,15 +120,30 @@
       color darken($colorDecorative, 40)
       border-bottom none
 
+      .footer &
+        padding 0
+        line-height 16px
+        border-bottom 1px solid rgba(255,255,255,.35)
+
       &:hover
         text-decoration underline
         color $colorMain
+
+        .footer &
+          border-bottom-color #fff
 
       .tags &
         color $colorSecondary
 
         &:hover
           color $colorMain
+
+    ^[0]_main &
+      color #fff
+
+      &:hover
+        text-decoration underline
+        color $colorMain
 
     &_theme_secondary,
     ^[0]_columned &_theme_secondary
