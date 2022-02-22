@@ -1,6 +1,10 @@
 .card
   margin 10px 0 30px
   display block
+  background-color #fff
+
+  +below(979px)
+    padding: 20px 16px
 
   &_draft
     box-shadow 0 0 0 2px $colorDecorative
@@ -89,6 +93,34 @@
       fill currentColor
 
   &__head
+    position: relative
+
+    &-archive
+      background: #F5F5F5
+      border-radius: 4px
+      margin-bottom: 8px
+      padding: 8px 12px
+      font-size: 13px
+      line-height: 15px
+      color: #787878
+      display inline-block
+
+      +above(768px)
+        position: absolute
+        right: 0
+        top: 0
+        letter-spacing: .045em
+
+        ~ .card__head-price
+          transform: translateY(30px)
+
+          .card__price
+            margin-left: auto
+
+      +above(980px)
+        right: 20px
+        top: 16px
+
     &-special
       position: relative
       display inline-block
@@ -191,6 +223,13 @@
       padding-bottom 10px
       background-color aliceblue
 
+      +below(979px)
+        margin-left: -16px
+        margin-right: -16px
+
+    &_archive
+      background: #F0F0F0
+
   &__meta-data
     +above(768px)
       padding-right 15px
@@ -281,7 +320,7 @@
       margin-left 18px
 
   &__owner
-    padding 5px 10px
+    padding 20px 10px
     display block
 
     +above(768px)
@@ -341,12 +380,14 @@
     position relative
     font-size 24px
     font-weight bold
-    letter-spacing -1px
+    letter-spacing 0.02em
 
     +above(768px)
-      margin-right 10px
       font-size 28px
       white-space nowrap
+
+      &:not(:only-child)
+        margin-right: 10px
 
   &__price-currency
     +above(768px)

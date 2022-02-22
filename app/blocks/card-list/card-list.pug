@@ -12,7 +12,7 @@ mixin card-list(data, mode)
 
         if (mode === 'tires')
           +e.item(class=mark)
-            +e.item-body
+            +e.item-body(class= (index ? '' : ' card-list__item-body--archive'))
               +e.about
                 +e.head
                   +e.H3.name
@@ -73,6 +73,9 @@ mixin card-list(data, mode)
                   if item.authorcount > 1
                     +e.author-count #{item.authorcount} объявлений
 
+                if (!index)
+                  +e.archive Архивное объявление
+
                 - var mod = item.contact.show ? '_showed' : '';
                 +e.phone
                   +e.phone-button(type="button")
@@ -92,7 +95,7 @@ mixin card-list(data, mode)
 
         else if (mode === 'disks')
           +e.item(class=mark)
-            +e.item-body
+            +e.item-body(class= (index ? '' : ' card-list__item-body--archive'))
               +e.about
                 +e.head
                   +e.H3.name
@@ -148,6 +151,9 @@ mixin card-list(data, mode)
                   if item.authorcount > 1
                     +e.author-count #{item.authorcount} объявлений
 
+                if (!index)
+                  +e.archive Архивное объявление
+
                 - var mod = item.contact.show ? '_showed' : '';
                 +e.phone
                   +e.phone-button(type="button")
@@ -167,7 +173,7 @@ mixin card-list(data, mode)
 
         else
           +e.item(class=mark)
-            +e.item-body
+            +e.item-body(class= (index ? '' : ' card-list__item-body--archive'))
               +e.about
                 +e.head
                   +e.H3.name
@@ -207,6 +213,9 @@ mixin card-list(data, mode)
                   if item.authorcount > 1
                     +e.author-count #{item.authorcount} объявлений
 
+                if (!index)
+                  +e.archive Архивное объявление
+
                 - var mod = item.contact.show ? '_showed' : '';
                 +e.phone
                   +e.phone-button(type="button")
@@ -219,7 +228,7 @@ mixin card-list(data, mode)
                       if item.inspect.show
                         +e.phone-remark Место осмотра: #{item.inspect.city}
                       if item.contact.callStart
-                        +e.phone-remark Звоните с #{item.contact.callStart} до #{item.contact.callEnd}
+                       +e.phone-remark Звоните с #{item.contact.callStart} до #{item.contact.callEnd}
 
                 +e.action
                   +action(false, item.isFavorite, {hasPhone: true})._only-icon._hiddble
