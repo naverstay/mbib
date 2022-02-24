@@ -13,6 +13,6 @@ mixin list({data, columns, theme})
     each item in data
       +e.item
         if item.href
-          +e.A.link(href=item.href class=themeLinkMod) #{item.text}
+          +e.A.link(href=item.href class=themeLinkMod): span #{item.text}
         else
           | #{item.text}

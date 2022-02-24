@@ -6,7 +6,7 @@
   &_columned
     display block
 
-    .footer &
+    .footer > .inner > .footer__lists &
       display flex
       flex-flow row wrap
 
@@ -99,7 +99,7 @@
     ^[0]_size_s &
       margin-bottom 1px
 
-    .footer &
+    .footer > .inner > .footer__lists &
       margin-right: 10px
       margin-bottom 12px
 
@@ -124,30 +124,36 @@
       color darken($colorDecorative, 40)
       border-bottom none
 
-      .footer &
+      .footer > .inner > .footer__lists &
         padding 0
         line-height 16px
-        text-decoration: none !important
-        border-bottom 1px solid rgba(255,255,255,.35)
+        text-decoration: underline
+        color rgba(255,255,255,.35)
+
+        span
+          color: #787878
 
       &:hover
         text-decoration underline
         color $colorMain
 
-        .footer &
-          border-bottom-color #c03
+        .footer > .inner > .footer__lists &
+          color $colorMain
+
+          span
+            color $colorMain
 
       .tags &
         color $colorSecondary
 
         &:hover
-          color $colorMain
+          color $colorMain !important
 
-    ^[0]_main &
-      color #fff
+    .footer > .inner > .footer__lists .list_main &
+      span
+        color #fff
 
       &:hover
-        text-decoration underline
         color $colorMain
 
     &_theme_secondary,

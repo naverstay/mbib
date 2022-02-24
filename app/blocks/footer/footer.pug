@@ -25,12 +25,18 @@ mixin footer()
 
       +e.lists
         +e.section
-          +e.H5.section-title КАТЕГОРИЯ 1
           //-+list({data: getData('cityList'), columns: 6})._columned
           +list({data: menuCategory_1})._columned._main
         +e.section
-          +e.H5.section-title КАТЕГОРИЯ 2
           +list({data: menuCategory_2, columns: 2})._columned._split
+
+    .inner: .footer-location
+      +e.lists
+        +e.section
+          +e.H5.section-title Продажа авто
+          +list({data: getData('cityList'), columns: 6})._columned
+        +e.section
+          +list({data: getData('regionList'), columns: 5})._columned._size_s
 
   +modal-select
   //- +modal-multiselect
