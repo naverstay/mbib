@@ -6,13 +6,13 @@ include ../blocks/page/page-works/page-works
 include ../blocks/page/page-footer/page-footer
 
 block head
-	- var pageTitle = 'XML';
-	- var pageMod = 'XML';
-	- var pageFull = true
+  - var pageTitle = 'XML';
+  - var pageMod = 'XML';
+  - var pageFull = true
 
 block content
-	+page-header()
-	+page-indicators()
-	+page-funds()
-	+page-works()
-	+page-footer()
+  +page-header()
+  +page-works()
+  +page-funds()
+  +page-indicators()
+  +page-footer()
