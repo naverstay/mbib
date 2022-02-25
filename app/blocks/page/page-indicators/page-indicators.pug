@@ -2,33 +2,34 @@ include ../../title/title
 
 mixin page-indicators(business)
     +b.page-indicators
-        +e.wrap.inner(class= business ? ' wide' : '')
-            +e.title
-                +title(2)._no-margin Показатели портала mbib.ru
-            +e.row
-                +e.col
-                    +e.icon(class= (business ? ' icon_round' : ''))
-                        img(src="assets/images/icons/look" + (business? '-red' : '') + ".svg", alt="")
-                    +e.name 1 271 127 332 раза
-                    +e.text объявления наших пользователей были показаны потенциальным покупателям
-                +e.col
-                    +e.icon(class= (business ? ' icon_round' : ''))
-                        img(src="assets/images/icons/phone" + (business? '-red' : '') + ".svg", alt="")
-                    +e.name 277 439 978 раз
-                    +e.text потенциальные покупатели открыли номер телефона в объявлениях на сайте
-                +e.col
-                    if (business)
-                      +e.icon(class= (business ? ' icon_round' : ''))
-                        img(src="assets/images/icons/hand-shake" + (business? '-red' : '') + ".svg", alt="")
-                      +e.name 980 партнеров
-                      +e.text уже пользуются услугами по загрузке прайс-листов и фидов на постоянной основе
-                    else
-                      +e.icon(class= (business ? ' icon_round' : ''))
-                          img(src="assets/images/icons/code" + (business? '-red' : '') + ".svg", alt="")
-                      +e.name 980 фидов
-                      +e.text уже подключено для профессиональных продавцов и автодилеров
-                +e.col
-                    +e.icon(class= (business ? ' icon_round' : ''))
-                        img(src="assets/images/icons/verified" + (business? '-red' : '') + ".svg", alt="")
-                    +e.name 4 года
-                    +e.text помогаем нашим пользователям покупать и продавать автомобили
+        .inner(class= business ? ' wide' : '')
+            +e.wrap
+                +e.title
+                    +title(2)._no-margin Показатели портала mbib.ru
+                +e.row
+                    +e.col
+                        +e.icon(class= (business ? ' icon_round' : ''))
+                            img(src="assets/images/icons/look" + (business? '-red' : '') + ".svg", alt="")
+                        +e.name 1 271 127 332 раза
+                        +e.text объявления наших пользователей были показаны потенциальным покупателям
+                    +e.col
+                        +e.icon(class= (business ? ' icon_round' : ''))
+                            img(src="assets/images/icons/phone" + (business? '-red' : '') + ".svg", alt="")
+                        +e.name 277 439 978 раз
+                        +e.text потенциальные покупатели открыли номер телефона в объявлениях на сайте
+                    +e.col
+                        if (business)
+                          +e.icon(class= (business ? ' icon_round' : ''))
+                            img(src="assets/images/icons/hand-shake" + (business? '-red' : '') + ".svg", alt="")
+                          +e.name 980 партнеров
+                          +e.text уже пользуются услугами по загрузке прайс-листов и фидов на постоянной основе
+                        else
+                          +e.icon(class= (business ? ' icon_round' : ''))
+                              img(src="assets/images/icons/code" + (business? '-red' : '') + ".svg", alt="")
+                          +e.name 980 фидов
+                          +e.text уже подключено для профессиональных продавцов и автодилеров
+                    +e.col
+                        +e.icon(class= (business ? ' icon_round' : ''))
+                            img(src="assets/images/icons/verified" + (business? '-red' : '') + ".svg", alt="")
+                        +e.name 4 года
+                        +e.text помогаем нашим пользователям покупать и продавать автомобили
