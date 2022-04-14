@@ -16,7 +16,7 @@ include ../switcher/switcher
 include ../generation/generation
 
 mixin search-review()
-  +b.search&attributes(attributes)
+  +b.search&attributes(attributes)._no-after
     +loader._for-block
 
     +e.toggler
