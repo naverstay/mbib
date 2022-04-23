@@ -29,6 +29,18 @@ const reviewGallery = (() => {
     });
   };
 
+  $('.js-aside-slider-all').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    dots: false,
+    speed: 700,
+    lazyLoad: 'ondemand',
+    infinite: true,
+    mobileFirst: true,
+    variableWidth: true,
+  });
+
   const breakpointChecker = function () {
     if (window.innerWidth < breakPoint) {
       return enableSlider();

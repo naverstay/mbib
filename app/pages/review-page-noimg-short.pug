@@ -1,0 +1,14 @@
+extends ../blocks/layout-default/layout-default
+include ../blocks/breadcrumbs/breadcrumbs
+include ../blocks/reviewAbout/reviewAbout
+include ../blocks/review/review
+
+block head
+  - var pageTitle = 'Отзыв';
+  - var pageMod = 'review-page';
+  - var innerClass = 'review-page';
+
+block content
+  +breadcrumbs(getData('review-page-crumbs.json'))
+
+  +reviewAbout(getData('review-page'), true, true)

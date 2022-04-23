@@ -99,8 +99,62 @@
       top: 12px
 
   &__top
+
+    &.review-about__block
+      display block
+
+      +above(768px)
+        .review-about__top-ratings
+          .review-about__top-options__list
+            display grid
+
+      +above(1170px)
+        .review-about__aside-slide
+          .slide-image,
+          .slide-footer
+            width: 238px
+
+        .review-about__aside
+          display block
+          margin: 0 0 16px
+          width: 100%
+          order 0
+
+          .review-about__aside-content
+            margin-right: -585px
+
+          ~ p
+            width: auto !important
+            margin-right: -585px !important
+
+        .review-about__text > p
+          width: 100%
+          margin-right: 0
+
+        .review-about__top-specifications,
+        .review-about__top-ratings
+          float right
+          width: 555px
+          margin-left: 30px
+          clear: both
+
+    .review-about__content
+      grid-row-end: 3
+      grid-row-start: 1
+
     &-image
       margin-bottom: 24px
+
+      +above(768px)
+        margin-bottom: 4px
+
+        .car-card__gallery
+          max-width: calc(100vw - 247px - 18px - 60px)
+
+      +above(1170px)
+
+        .car-card__gallery
+          max-width: 100%
 
       img
         display block
@@ -197,7 +251,11 @@
 
           dt
             color: #191919
-            margin: 0
+            margin: 0 0 auto
+            word-break: break-all
+            min-height 40px
+            display flex
+            align-items center
 
           dd
             position: absolute
@@ -270,7 +328,7 @@
         .review-about__top-options__list
           display grid
           padding-top: 10px
-          grid-template-columns: auto auto 98px
+          grid-template-columns: 1fr 1fr 98px
 
       .review-about__top-specifications
         grid-column-start 2
@@ -302,9 +360,32 @@
       display flex
       flex-flow: row wrap
 
+      ~ .review-about__aside
+        clear both
+
+        .review-about__aside-content
+          margin-right: 0 !important
+
       > p
         margin-right: 360px
         width: calc(100% - 360px)
+
+      &.review-about__wide
+
+        .review-about__aside-slide
+          .slide-image,
+          .slide-footer
+            width: 238px
+
+        .review-about__aside
+          display block
+          margin: 0 0 16px
+          width: 100%
+          order 0
+
+        p
+          width: 100%
+          margin-right: 0
 
   &__aside
     +above(1170px)
@@ -357,7 +438,7 @@
       .slide-footer
         width: 238px
         display grid
-        grid-template-columns auto auto
+        grid-template-columns 1fr 1fr
 
         +above(1170px)
           width: 100%
