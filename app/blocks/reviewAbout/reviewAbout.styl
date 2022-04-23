@@ -65,6 +65,9 @@
       margin-top: 24px
       margin-right: 360px
 
+      .review-about__short &
+        margin-right: 0
+
   &__content
     margin-top: -10px
 
@@ -196,12 +199,15 @@
 
           dd
             width: 39%
+            max-width: 39%
+            flex 1 0 auto
             padding-left: 5px
             padding-right: 5px
             font-weight: bold
 
             +above(768px)
               width: 48%
+              max-width: 48%
 
         .options__list-total
           background: #CC0033
@@ -429,6 +435,7 @@
       margin: 0 -7px
 
     &-slide
+      display block
       margin: 0 7px
       float: left
 

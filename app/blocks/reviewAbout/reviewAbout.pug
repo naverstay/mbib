@@ -68,21 +68,21 @@ mixin reviewSlider(review, noImg, short)
     +e.aside-content
       +e.aside-caption Купить #[a(href='#') Renault Arkana] на mbib.ru
       +e.aside-slider(class= (noImg || short) ? 'js-aside-slider-all' : 'js-aside-slider')
-        +e.aside-slide
+        +e.A.aside-slide(href='#')
           .slide-image
             img(src='assets/images/catalog/arkana_1.jpg')
           .slide-footer
             .slide-location Санкт-перетбург
             .slide-name Arkana 2020
             .slide-price 1 720 000 ₽
-        +e.aside-slide
+        +e.A.aside-slide(href='#')
           .slide-image
             img(src='assets/images/catalog/arkana_2.jpg')
           .slide-footer
             .slide-location Москва
             .slide-name Arkana 2021
             .slide-price 1 840 000 ₽
-        +e.aside-slide
+        +e.A.aside-slide(href='#')
           .slide-image
             img(src='assets/images/catalog/arkana_2.jpg')
           .slide-footer
@@ -105,7 +105,7 @@ mixin reviewBlock(review, noImg, short)
     +reviewSlider(review, noImg, short)
 
 mixin reviewAbout(review, noImg, short)
-  +b.review-about&attributes(attributes)
+  +b.review-about&attributes(attributes)(class = (short || noImg) ? 'review-about__short' : '')
     +title(1, 2)
       a(href='#')= review.car_name
     +e.views
