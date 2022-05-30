@@ -59,6 +59,9 @@ mixin card(data, id, spec, archive)
                 | Место осмотра
               | #{item.inspect.city}, #{item.inspect.address}
 
+        +e.owner-vin
+          +btn('div')(type="submit")._size_xl._theme_premium._fullwidth Проверить авто по VIN
+
         +e.owner-contact
           +show-phone(item.contact, false, spec).card__meta-phone
           //- +show-phones(item.contact, false).card__meta-phone

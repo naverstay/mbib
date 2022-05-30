@@ -228,7 +228,8 @@ mixin card-list(data, mode)
                       if item.inspect.show
                         +e.phone-remark Место осмотра: #{item.inspect.city}
                       if item.contact.callStart
-                       +e.phone-remark Звоните с #{item.contact.callStart} до #{item.contact.callEnd}
-
+                        +e.phone-remark Звоните с #{item.contact.callStart} до #{item.contact.callEnd}
+                +e.vin
+                  +btn('div')(type="submit")._size_s._theme_premium._fullwidth Проверить авто по VIN
                 +e.action
                   +action(false, item.isFavorite, {hasPhone: true})._only-icon._hiddble

@@ -1,0 +1,16 @@
+include ../sales-report/sales-report
+include ../input/input
+include ../lbl/lbl
+include ../btn/btn
+include ../text/text
+include ../form/form
+
+mixin modal-sales-thanks()
+  +b.modal#modalSalesThanks&attributes(attributes)._size_s.mfp-with-anim.mfp-hide
+    +e.head
+      +e.H5.title Спасибо за покупку!
+      +e.SPAN.close.mfp-close
+        +icon('close', false).close-icon
+    +e.inner
+      +e.body
+        +sales-report(true)

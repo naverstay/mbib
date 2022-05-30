@@ -9,6 +9,8 @@ include ../blocks/modal/modal-place
 include ../blocks/modal/modal-confirm
 include ../blocks/modal/modal-payment
 include ../blocks/modal/modal-payment-method
+include ../blocks/modal/modal-sales-report
+include ../blocks/modal/modal-sales-thanks
 include ../blocks/btn/btn
 include ../blocks/range/range
 
@@ -20,13 +22,14 @@ block content
   div(style="margin-bottom:10px")
     +btn('link')(href="#modalBookmark" data-effect="mfp-zoom-in").link-modal В избранное
     +modal-bookmark
+
   div(style="margin-bottom:10px")
     +btn('link')(href="#modalPhone" data-effect="mfp-zoom-in").link-modal Показать телефон
     +modal-phone
 
   div(style="margin-bottom:10px")
     +btn('link')(href="#modalPhoneArchive" data-effect="mfp-zoom-in").link-modal Показать телефон архив
-    +modal-phone
+    +modal-phone-archive
 
   div(style="margin-bottom:10px")
     +btn('link')(href="#modalPhoneShare" data-effect="mfp-zoom-in").link-modal Показать телефон + социалки
@@ -56,4 +59,10 @@ block content
     +modal-payment-method
     +btn('link')(href="#modalPaymentMethod" data-effect="mfp-zoom-in").link-modal Выбор способа оплаты
 
+  div(style="margin-bottom:10px")
+    +modal-sales-report
+    +btn('link')(href="#modalSalesReport" data-effect="mfp-zoom-in").link-modal Купить отчет по авто
 
+  div(style="margin-bottom:10px")
+    +modal-sales-thanks
+    +btn('link')(href="#modalSalesThanks" data-effect="mfp-zoom-in").link-modal Спасибо за покупку

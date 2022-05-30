@@ -1,0 +1,19 @@
+include ../sales-report/sales-report
+include ../input/input
+include ../lbl/lbl
+include ../btn/btn
+include ../text/text
+include ../form/form
+
+mixin modal-sales-report()
+  +b.modal#modalSalesReport&attributes(attributes)._size_s.mfp-with-anim.mfp-hide
+    +e.head
+      +e.H5.title Купить отчет по авто
+      +e.SPAN.close.mfp-close
+        +icon('close', false).close-icon
+    +e.inner
+      form.form(name="sales_report" action="" method="")
+        +e.body
+          +sales-report
+        +e.footer
+          +btn('button')._theme_premium._fullwidth Купить полный отчет
