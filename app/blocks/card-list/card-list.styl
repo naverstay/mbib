@@ -143,13 +143,14 @@
 
     +above(768px)
       margin-top 20px
-      margin-bottom 0
+      margin-bottom 40px
       display flex
       width 100%
       align-items flex-start
 
     +above(980px)
       margin-top 0
+      margin-bottom 0
       flex-flow column
       align-items: flex-end
       width 200px
@@ -157,15 +158,15 @@
 
   &__action
     +above(768px)
-      margin-left 30px
+      position absolute
+      right 10px
+      bottom 10px
+      display block
 
     +above(980px)
-      position absolute
-      top 16px
       right 16px
       bottom 16px
-      margin-left 0
-      display block
+      top 16px
       width 54px
 
   &__head
@@ -265,9 +266,11 @@
 
     +above(768px)
       width 25%
+      margin-bottom 0
 
     +above(980px)
       width auto
+      margin-bottom 15px
 
   &__author-name
     display inline
@@ -281,8 +284,8 @@
     font-size 12px
     color darken($colorDecorative, 40)
 
-    +above(980px)
-      // margin-top -5px
+  &__vin
+    margin-left auto
 
   &__phone
     display none
@@ -298,7 +301,6 @@
       border-color $colorSecondary
 
     +above(768px)
-      display block
       margin-bottom 0
       margin-left 30px
       display inline-block
